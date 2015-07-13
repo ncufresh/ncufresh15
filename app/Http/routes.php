@@ -35,12 +35,26 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('qa/create', 'QaController@create');
 });
 
+
 // Q&A
 Route::get('qa', 'QaController@index');
+
 
 //Department and club
 Route::get('club', array('as' => 'club', 'uses' => 'ClubController@index'));
 Route::get('newClub', array('as' => 'newClub', 'uses' => 'NewClubController@index'));
 
+
 //Campus
 Route::get('campus', 'Campus\CampusController@index');
+
+
+//Document
+//Route::get('document', array('as' => 'document', 'uses' => 'documentController@index'))
+//後台新增公告
+Route::get('backstage_document', function () {
+    return view('document/backstage_important_cal');
+});
+
+//抓在哪個分頁
+//Route::get('document/{}/{}/{}', function($, $, $){});
