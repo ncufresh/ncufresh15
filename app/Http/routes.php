@@ -24,7 +24,16 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-// Home
-Route::get('home', function() {
-    return view('home.index');
+// Q&A
+Route::get('qa', 'QaController@index');
+
+// Authenticated routes...
+Route::group(['middleware' => 'auth'], function () {
+    // Home
+    Route::get('home', function() {
+        return view('home.index');
+    });
+
+    // Q&A
+    Route::get('qa/create', 'QaController@create');
 });
