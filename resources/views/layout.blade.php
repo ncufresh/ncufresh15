@@ -29,26 +29,26 @@
         <div id='container' class="container z-depth-2">
 			<div id='banner'>
 				<div class='row banner-menu'>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>1</a></div>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>2</a></div>
+					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3' href='/campus'>校園導覽</a></div>
+					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>新生必讀</a></div>
 					<div class='col s4'>1</div>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>4</a></div>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>4</a></div>
+					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
+					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>常用連結</a></div>
 				</div>
 				<div id='banner-img' class='row'>
 				</div>
 				<div class='row banner-menu'>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>1</a></div>
-                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>Q&amp;A</a>
+					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='/club'>系所社團</a></div>
+                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>新生Q&amp;A</a>
                         <ul id='qadropdown' class='dropdown-content'>
                             <li><a href="/qa">Q&amp;A</a></li>
-                            <li><a href="/qa/create?type=qa">New Post</a></li>
+                            <li><a href="/qa/create?type=qa">我要發問</a></li>
                             <li class="divider"></li>
-                            <li><a href="/qa/create?type=report">Report</a></li>
+                            <li><a href="/qa/create?type=report">問題回報</a></li>
                         </ul>
                     </div>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>3</a></div>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>4</a></div>
+					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='video2'>影音專區</a></div>
+					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='about'>關於我們</a></div>
 				</div>
 			</div>
 			<div id='content'>
