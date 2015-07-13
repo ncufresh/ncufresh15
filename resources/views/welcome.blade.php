@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('title', 'YOLO')
-
 @section('css')
 <style>
 #test {
@@ -12,8 +11,9 @@
 
 @section('js')
 <!--<script src=''></script> -->
+
 @stop
 
 @section('content')
-<div id='test'>test</div>
+content yolo
 @stop
