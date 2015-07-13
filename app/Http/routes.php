@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Campus
+Route::get('campus', 'Campus\CampusController@index');
+//Campus
