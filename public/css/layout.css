@@ -1,0 +1,28 @@
+#content {
+	padding: 30px;
+}
+#container {
+	border-radius: 5px;
+	background-color: rgb(255,255,255);
+	margin-top: 55px;
+	overflow: hidden;
+}
+#banner-img {
+	background-image: url(https://pmcvariety.files.wordpress.com/2013/08/pewdiepie.png?w=1000&h=720&crop=1);
+	height: 30vh;
+	background-position-y: -130px;
+}
+#banner>.row {
+	margin: 0px;
+}
+.banner-menu .btn {
+	width: 100%;
+}
+.banner-menu {
+	background-color: rgb(38,50,56);
+	min-height: 40px;
+	padding: 10px;
+}
+body {
+	background-color: #F5F5F5;
+}
