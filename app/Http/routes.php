@@ -41,3 +41,6 @@ Route::get('qa', 'QaController@index');
 //Department and club
 Route::get('club', array('as' => 'club', 'uses' => 'ClubController@index'));
 Route::get('newClub', array('as' => 'newClub', 'uses' => 'NewClubController@index'));
+
+//Campus
+Route::get('campus', 'Campus\CampusController@index');
