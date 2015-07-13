@@ -39,7 +39,14 @@
 				</div>
 				<div class='row banner-menu'>
 					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>1</a></div>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>2</a></div>
+                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>Q&amp;A</a>
+                        <ul id='qadropdown' class='dropdown-content'>
+                            <li><a href="/qa">Q&amp;A</a></li>
+                            <li><a href="/qa/create?type=qa">New Post</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/qa/create?type=report">Report</a></li>
+                        </ul>
+                    </div>
 					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>3</a></div>
 					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3'>4</a></div>
 				</div>
