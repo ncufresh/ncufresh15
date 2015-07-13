@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//==========================================================================================
+//Document
+//Route::get('document', array('as' => 'document', 'uses' => 'documentController@index'))
+//後台新增公告
+Route::get('backstage_document', function () {
+    return view('document/backstage_important_cal');
+});
+
+//抓在哪個分頁
+//Route::get('document/{}/{}/{}', function($, $, $){});
