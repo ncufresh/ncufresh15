@@ -3,6 +3,11 @@
 @section('title', 'YOLO')
 
 @section('css')
+<style>
+#test {
+	height: 1000px;
+}
+</style>
 @stop
 
 @section('js')
@@ -10,5 +15,5 @@
 @stop
 
 @section('content')
-content yolo
+<div id='test'>test</div>
 @stop
