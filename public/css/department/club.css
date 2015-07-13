@@ -1,0 +1,44 @@
+.butSelect {
+	color: gray
+}
+/***選單*****************************************************************************/
+.selection {
+	position: absolute;
+}
+#sel1 {
+	margin-left: 14%;
+}
+#sel2 {
+	margin-left: 28%;
+}
+#sel3{
+	margin-left: 42%;
+}
+.bigFont {
+	font-size: 40px;
+}
+/***新增****************************************************************************/
+#butUp {
+	margin-top: 0%;
+	margin-bottom: 10px;
+	width: 100%;
+}
+/***系所社團類別********************************************************************/
+.butGroup {
+	position: relative;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 300px;
+	height: 80px;
+	font-size: 25px;
+	text-align: center;
+}
+.group {
+	text-align: center;
+}
+/***下拉選單**************************************************************************/
+.slideSel {
+	height: 100px;
+	width: 100%;
+}
