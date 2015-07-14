@@ -9,6 +9,7 @@
 	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
+	min-height: 1000px;
 }
 #banner-img {
 	height: 210px;
@@ -76,7 +77,7 @@ nav.is-visible {
 }
 footer {
 	background-color: #ee6e73;
-	height: 60px;
+	height: 10%;
 	line-height: 60px;
 	text-align: center;
 }
