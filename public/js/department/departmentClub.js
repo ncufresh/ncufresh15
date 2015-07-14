@@ -6,7 +6,7 @@ $(document).ready(function() {
 		var fileName = $("#fileName").val();
 		$.ajax({
 			type: 'POST',
-			url: 'department/upFile',
+			url: 'upFile',
 			data: {
 				"fileName": fileName
 			},
