@@ -3,11 +3,10 @@ var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
 canvas.height = 480;
-
 //document.body.appendChild(canvas);
 document.getElementById('gg').appendChild(canvas);
-//canvas.style.background = '#D1E0FF';
 
+///////////////////
 // Background image
 var bgReady = false;
 var bgImage = new Image();
@@ -31,6 +30,8 @@ monsterImage.onload = function () {
 	monsterReady = true;
 };
 monsterImage.src = "game_images/monster.png";
+////////////////
+
 
 // Game objects
 var hero = {
