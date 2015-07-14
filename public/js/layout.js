@@ -1,5 +1,10 @@
 var currentScroll;
 $(document).ready(function(){
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$(window).scroll(function(){
 		currentScroll = $(window).scrollTop();
 		if (currentScroll > 390){
