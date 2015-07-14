@@ -29,7 +29,6 @@
 #copyright {
 	color: white;
 	font-weight: 500;
-	text-align: center;
 	font-size: 1.1em;
 	letter-spacing: 1px;
 }
@@ -51,10 +50,35 @@ nav.is-visible {
 .brand-logo {
 	margin-left: 10px;
 }
+#portal {
+	transition: 2s ease-in-out;
+	display: inline-block;
+	position: fixed;
+	top: 77vh;
+	left: 89%;
+	width: 40px;
+}
+#portal-menu {
+	display: inline-block;
+}
+#portal-trigger {
+	width: 1px;
+	height: 1px;
+	padding: 0;
+}
+#portal-img {
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	background-image: url("http://media.semgeek.com/wp-content/uploads/2010/11/ppc-geek.jpg");
+	background-size: 72px 69px;
+	background-position: -15px -7PX;
+}
 footer {
 	background-color: #ee6e73;
 	height: 60px;
 	line-height: 60px;
+	text-align: center;
 }
 body {
 	background-color: #F5F5F5;

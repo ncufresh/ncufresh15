@@ -51,6 +51,18 @@
 		<footer>
 			<div id='copyright'>YOLO© 2014 Copyright Text</div>
 		</footer>
+		<div id='portal'>
+			<div id='portal-img'></div>
+			<div id='portal-menu'>
+				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='dropdown1'></a>
+				<ul id='dropdown1' class='dropdown-content'>
+					<li><a href="#!">one</a></li>
+					<li><a href="#!">two</a></li>
+					<li class="divider"></li>
+					<li><a href="#!">three</a></li>
+				</ul>
+			</div>
+		</div>
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/layout.js') }}"></script>
