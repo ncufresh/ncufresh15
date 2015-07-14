@@ -50,7 +50,7 @@
 		</div>
     </div>
     <div id="test3" class="col s12" style="padding: 30px;">
-    	<form action="new" method="POST">
+    	<form action="new" method="POST"  enctype="multipart/form-data">
     		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<label>選擇類別</label>
 			<div class="input-field col s12">
@@ -80,14 +80,14 @@
 			</div>
 			<div class="row">
         	  	<div class="input-field col s12">
-        	    	<textarea name="clubContent" id="textarea1" class="materialize-textarea" length="120"></textarea>
+        	    	<textarea name="clubContent" id="textarea1" class="materialize-textarea" length="600"></textarea>
         	   		<label for="textarea1">內容</label>
         	  	</div>
         	</div>
 			<div class="file-field input-field">
       			<input class="file-path validate" type="text">
       			<div>
-        			<input name="fileName" id="file" type="file" class="validate" onchange="getFileName(this.value)">
+        			<input name="fileName" id="file" type="file" class="validate" multiple="multiple" onchange="getFileName(this.value)">
         			<label id="fileName" for="file">選擇圖片</label>
       			</div>
    			</div>

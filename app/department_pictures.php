@@ -1,10 +1,10 @@
-<?php
+<?php namespace App;
 
-namespace App;
+use App\department_pictures;
 
 use Illuminate\Database\Eloquent\Model;
 
-class important_cal extends Model
+class department_pictures extends Model
 {
-    protected $fillable = ['id', 'reid', 'picName'];
+    protected $fillable = ['id', 'rfid', 'picName'];
 }
