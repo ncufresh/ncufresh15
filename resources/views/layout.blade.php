@@ -38,7 +38,7 @@
 				<div id='banner-img' class='row'>
 				</div>
 				<div class='row banner-menu'>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='/club'>系所社團</a></div>
+					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='/backstage_department'>系所社團</a></div>
                     <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>新生Q&amp;A</a>
                         <ul id='qadropdown' class='dropdown-content'>
                             <li><a href="/qa">Q&amp;A</a></li>
