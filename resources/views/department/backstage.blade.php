@@ -50,7 +50,7 @@
 		</div>
     </div>
     <div id="test3" class="col s12" style="padding: 30px;">
-    	<form action="new" method="POST"  enctype="multipart/form-data">
+    	{!! Form::open(array('url'=>'/department/new', 'method'=>'post', 'files' => true))!!}
     		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<label>選擇類別</label>
 			<div class="input-field col s12">
@@ -87,7 +87,7 @@
 			<div class="file-field input-field">
       			<input class="file-path validate" type="text">
       			<div>
-        			<input name="fileName" id="file" type="file" class="validate" multiple="multiple" onchange="getFileName(this.value)">
+      				<input name="fileName" id="file" type="file" class="validate" multiple="multiple" onchange="getFileName(this.value)">
         			<label id="fileName" for="file">選擇圖片</label>
       			</div>
    			</div>
@@ -97,7 +97,7 @@
 			<div>
 				<button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">確認上傳</button>
 			</div>
-		</form>	
+		{!! Form::close()!!}
     </div>
 </div>
 @stop

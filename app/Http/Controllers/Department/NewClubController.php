@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Log;
 
 class NewClubController extends Controller {
 	
-	function __construct()
-	{
-		$this -> middleware('guest');
+	function __construct() {
 	}
 
 	public function store( Request $request) {
@@ -32,7 +30,7 @@ class NewClubController extends Controller {
     	$file_count = count($files);
     	// start count how many uploaded
     	$uploadcount = 0;
-    	Log::info("============file data fileName==========:".$files."====================file data fileCount=================".$file_count);
+    	Log::info("============file data fileName: ".$files."====================file data fileCount: ".$file_count);
     	foreach($files as $files) {
     	  	$rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
     	  	$validator = Validator::make(array('file'=> $files), $rules);
@@ -46,7 +44,7 @@ class NewClubController extends Controller {
     	}
     	if($uploadcount == $file_count){
     	  	Session::flash('success', 'Upload successfully'); 
-    	  	return redirect('department/backstage');
+    	  	return redirect('/department/backstage');
     	} 
     	else {
     		return "123";
