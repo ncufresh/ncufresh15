@@ -55,6 +55,7 @@ Route::get('newClub', array('as' => 'newClub', 'uses' => 'NewClubController@inde
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
+Route::post('campus/backstage_intro', 'Campus\IntroController@store');
 //******************************************************************************************************
 
 

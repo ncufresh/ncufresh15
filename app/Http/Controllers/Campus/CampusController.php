@@ -1,14 +1,18 @@
-<?php namespace App\Http\Controllers\Campus;
+<?php
 
+namespace App\Http\Controllers\Campus;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CampusController extends Controller {
+use App\campus;
 
-	public function __construct() {
-		
+class CampusController extends Controller
+{
+    public function index() {
+    	$introductions = campus::select('introduction', 'view_id')->get();
+		return view('campus/backstage')->with('introductions', $introductions);
 	}
-
-	public function index() {
-		return view('campus/backstage');
-	} 
 }
