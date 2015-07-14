@@ -11,4 +11,5 @@
 
 @section('content')
 content qa create
+{{ $type }}
 @stop

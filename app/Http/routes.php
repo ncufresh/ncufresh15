@@ -41,7 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 // Q&A
 //******************************************************************************************************
-Route::get('qa', 'QaController@index');
+Route::get('qa/answer', 'QaController@answer');
+Route::post('qa/answer', 'QaController@store_answer');
+Route::get('qa/view', 'QaController@view');
+Route::get('qa/{category?}', 'QaController@index');
 //******************************************************************************************************
 
 
