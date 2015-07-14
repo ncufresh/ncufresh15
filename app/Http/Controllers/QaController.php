@@ -40,9 +40,14 @@ class QaController extends Controller
         };
         $answer = null;
         if ($category == -1) {
-            $answers = DB::table('qa_answers')->paginate(10);
+            $answers = DB::table('qa_answers')
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);
         } else {
-            $answers = DB::table('qa_answers')->where('category', $category)->paginate(2);
+            $answers = DB::table('qa_answers')
+                ->orderBy('created_at', 'desc')
+                ->where('category', $category)
+                ->paginate(10);
         }
         $counts = [
             QaAnswer::where('category', 0)->count(),
