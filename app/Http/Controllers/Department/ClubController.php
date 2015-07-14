@@ -1,11 +1,14 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Department;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class NewClubController extends Controller {
+/**
+* 
+*/
+class ClubController extends Controller {
 	
 	public function __construct()
 	{
@@ -13,6 +16,6 @@ class NewClubController extends Controller {
 	}
 
 	public function index() {
-		return view('department.newClub');
+		return view('department.backstage');
 	}
 }
