@@ -9,6 +9,11 @@ $(document).ready(function(){
 			window.setTimeout(hideNav, 300);
 		}
 	});
+	$("#portal-img").hover(function(){
+		$("#portal-trigger").click();
+	}, function(){
+		//$("body").click();
+	});
 });
 
 function hideNav() {
@@ -18,3 +23,4 @@ function hideNav() {
 function showNav() {
 	$("nav").removeClass("is-hidden").addClass("is-visible");
 }
+
