@@ -31,7 +31,10 @@
 				<div class='row banner-menu'>
 					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3' href='/campus'>校園導覽</a></div>
 					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>新生必讀</a></div>
-					<div class='col s4'>1</div>
+					<div class='col s4'>
+					<div>j</div>
+					<a id='logo' href='/'>logo</a>
+					</div>
 					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
 					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>常用連結</a></div>
 				</div>
@@ -55,9 +58,7 @@
             	@yield('content')
 			</div>
         </div>
-		<footer>
-			<div id='copyright'>YOLO© 2014 Copyright Text</div>
-		</footer>
+		<footer class="page-footer">NCU Fresh© 2015 Copyright Text</footer>
 		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
