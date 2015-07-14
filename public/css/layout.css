@@ -38,7 +38,7 @@
 #nav-fixed {
 	position: fixed;
 	top: 0px;
-	z-index: 2;
+	z-index: 3;
 }
 nav.is-hidden {
 	opacity: 0;

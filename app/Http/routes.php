@@ -13,9 +13,8 @@
 
 // crash and jxcode
 //******************************************************************************************************
-Route::get('/', function () {
-    return view('welcome');
-});
+// index
+Route::get('/', 'HomepageController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
