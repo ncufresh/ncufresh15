@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', '系所與社團')
+@section('title', '系所社團')
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
