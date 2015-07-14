@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Q&A
     Route::get('qa/create', 'QaController@create');
+    Route::get('qa/questions', 'QaController@index_questions');
+    Route::post('qa/create', 'QaController@store_question');
 });
 //******************************************************************************************************
 
@@ -44,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('qa/answer', 'QaController@answer');
 Route::post('qa/answer', 'QaController@store_answer');
 Route::get('qa/view', 'QaController@view');
+Route::get('qa/solved', 'QaController@solved');
 Route::get('qa/{category?}', 'QaController@index');
 //******************************************************************************************************
 

@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use DB;
 use Log;
 use App\QaAnswer;
+use App\QaQuestion;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class QaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the QA
      *
      * @return Response
      */
@@ -59,6 +60,25 @@ class QaController extends Controller
     }
 
     /**
+     * Display a listing of the questions
+     *
+     * @return Response
+     */
+    public function index_questions() {
+        $questions = DB::table('qa_question')
+            ->orderBy('solved', 'asc')
+            ->orderBy('category', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('qa.questions', [
+            'questions' => $questions,
+            'categoryString' => ['中大生活', '行政', '學務', '小遊戲', '問題回報'],
+            'solvedString' => ['還沒解決', '已解決'],
+            'markString' => ['標記為已解決', '標記為未解決']
+        ]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return Response
@@ -99,9 +119,16 @@ class QaController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store_question(Request $request)
     {
         //
+        $question = new QaQuestion;
+        $question->category = $request->category;
+        $question->title = $request->title;
+        $question->content = $request->content;
+        $question->solved = false;
+        $question->save();
+        return redirect('qa');
     }
 
     /**
@@ -133,6 +160,19 @@ class QaController extends Controller
         $answer->views += 1;
         $answer->save();
         return response()->json(["id" => $request->id, "views" => $answer->views]);
+    }
+
+    /**
+     * mark solved or not
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function solved(Request $request)
+    {
+        $answer = QaQuestion::find($request->id);
+        $answer->solved = $request->solved;
+        $answer->save();
     }
 
     /**

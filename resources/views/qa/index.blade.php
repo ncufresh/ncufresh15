@@ -74,7 +74,7 @@ td.expand {
             </thead>
             <tbody>
                 @foreach ($answers as $answer)
-                    <tr class="modal-trigger" href="#modal{{$answer->id}}" data-id="{{$answer->id}}">
+                    <tr class="modal-trigger answer" href="#modal{{$answer->id}}" data-id="{{$answer->id}}">
                         <td class="shrink"><span class="category">{{$categoryString[$answer->category]}}</span></td>
                         <td class="shrink">{{ date('m-d', strtotime($answer->created_at)) }}</td>
                         <td class="expand">{{ $answer->title }}</td>
