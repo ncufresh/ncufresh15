@@ -88,3 +88,12 @@ body {
 	background-color: #F5F5F5;
 	min-height: 100%;
 }
+
+.pagination li {
+    padding: 0;
+}
+.pagination li a {
+    margin: 0;
+    display: block;
+    width: 30px;
+}

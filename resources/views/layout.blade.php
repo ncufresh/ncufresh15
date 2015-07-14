@@ -47,8 +47,10 @@
                         <ul id='qadropdown' class='dropdown-content'>
                             <li><a href="/qa">Q&amp;A</a></li>
                             <li><a href="/qa/create?type=qa">我要發問</a></li>
-                            <li class="divider"></li>
                             <li><a href="/qa/create?type=report">問題回報</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/qa/questions">檢視問題</a></li>
+                            <li><a href="/qa/answer">新增Q&amp;A</a></li>
                         </ul>
                     </div>
 					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='video2'>影音專區</a></div>

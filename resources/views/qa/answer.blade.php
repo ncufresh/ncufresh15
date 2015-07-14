@@ -12,7 +12,7 @@
 
 @section('content')
 <div id="answer-form" class="row" style="padding: 0 10%;">
-    <form class="col s12" action="/qa/create" method="post">
+    <form class="col s12" action="/qa/answer" method="post">
         {!! csrf_field() !!}
         @if (count($errors) > 0)
             <div id="error-msg" class="card-panel red">
@@ -24,13 +24,8 @@
                 </ul>
             </div>
         @endif
-        @if ($type == "qa")
-            <h2>我要發問</h2>
-        @else
-            <h2>問題回報</h2>
-        @endif
+        <h2>新增Q&amp;A</h2>
         <div class="row">
-            @if ($type == "qa")
             <div class="input-field col s3">
                 <select name="category">
                     <option value="0">中大生活</option>
@@ -40,10 +35,7 @@
                 </select>
                 <label>類別</label>
             </div>
-            @else
-                <input type="hidden" name="category" value="4">
-            @endif
-            <div class="input-field col {{$type == "qa" ? "s9" : "s12"}}">
+            <div class="input-field col s9">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="input_title" type="text" class="validate" name="title">
                 <label for="input_title">標題</label>
@@ -52,7 +44,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="ans-content" class="materialize-textarea" name="content"></textarea>
-                <label for="ans-content">問題描述</label>
+                <label for="ans-content">內文</label>
             </div>
         </div>
         <div class="input-field row">
