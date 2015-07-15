@@ -51,15 +51,30 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
+// Chomp sound
+var snd = new Audio("game_audio/goat.wav");
+///////////////////////////////////////////////////
 // Reset the game when the player catches a monster
 var reset = function () {
+	
+	if(snd.currentTime > 0)
+	{
+		snd.currentTime=0; //this is to make sure the sound resets if it is still playing
+	}
+	snd.play();
+
+	/*
 	hero.x = canvas.width / 2;
 	hero.y = canvas.height / 2;
+	*/
 
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
 };
+	hero.x = canvas.width / 2;
+	hero.y = canvas.height / 2;
+/////////////////////////////////////////////////////
 
 // Update game objects
 var update = function (modifier) {
@@ -138,5 +153,6 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 
 // Let's play this game!
 var then = Date.now();
+
 reset();
 main();
