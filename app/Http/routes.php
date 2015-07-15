@@ -74,4 +74,9 @@ Route::get('backstage_document', function () {
 Route::get('video2', function () {
     return view('video2');
 });
+Route::get('video', function () {
+    return view('video');
+});
+
+
 //******************************************************************************************************
