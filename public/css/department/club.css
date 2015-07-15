@@ -1,6 +1,3 @@
-#content {
-	height: 500px;
-}
 .butSelect {
 	color: gray
 }
@@ -48,4 +45,11 @@
 .slideSel {
 	height: 100px;
 	width: 100%;
+}
+/***選項Class*************************************************************************/
+.col.s12 {
+	display: block;
+}
+.contentHidden {
+
 }

@@ -10,43 +10,45 @@
 @stop
 
 @section('content')
-<div class="row">
-    <div class="col s12">
-      	<ul class="tabs">
-        	<li class="tab col s3"><a href="#test1">修改系所</a></li>
-        	<li class="tab col s3"><a class="active" href="#test2">修改社團</a></li>
-        	<li class="tab col s3"><a href="#test3">新增</a></li>
-      	</ul>
-    </div><br>
+<div>
+	<div class="row">
+    	<div class="col s12">
+    	  	<ul class="tabs">
+    	    	<li class="tab col s3"><a href="#test1">修改系所</a></li>
+    	    	<li class="tab col s3"><a class="active" href="#test2">修改社團</a></li>
+    	    	<li class="tab col s3"><a href="#test3">新增</a></li>
+      		</ul>
+    	</div><br>
+    </div>
     <div id="test1" class="col s12" style="padding: 30px;">
     	<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">文學院</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">理學院</label>
+			<a href="1"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">文學院</label></a>
+			<a href="2"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">理學院</label></a>
 		</div>
 		<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">工學院</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">管理學院</label>
+			<a href="3"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">工學院</label></a>
+			<a href="4"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">管理學院</label></a>
 		</div>
 		<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">資訊電機學院</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">地球科學學院</label>
+			<a href="5"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">資訊電機學院</label></a>
+			<a href="6"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">地球科學學院</label></a>
 		</div>
 		<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">客家學院</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">生醫理工學院</label>
+			<a href="7"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">客家學院</label></a>
+			<a href="8"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">生醫理工學院</label></a>
 		</div>
 	</div>
     <div id="test2" class="col s12" style="padding: 30px;">
     	<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">學術性</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">康樂性</label>
+			<a href="9"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">學術性</label></a>
+			<a href="10"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">康樂性</label></a>
 		</div>
 		<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">康樂性</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">服務性</label>
+			<a href="11"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">聯誼性</label></a>
+			<a href="12"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">服務性</label></a>
 		</div>
 		<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">系學會</label>
+			<a href="13"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">系學會</label></a>
 		</div>
     </div>
     <div id="test3" class="col s12" style="padding: 30px;">
