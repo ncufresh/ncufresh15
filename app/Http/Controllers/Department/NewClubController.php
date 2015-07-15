@@ -24,9 +24,14 @@ class NewClubController extends Controller {
 		//$fileName = $request->get('fileName');
 		departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
 
-        $file = Input::file('fileName')->getClientOriginalName();
-        Input::file('fileName')->move(__DIR__.'..\..\..\..\..\public\uploads\departments', $file);
-        department_pictures::create(['picName'=>$file]);
+        $files = Input::file('fileName');
+        $fileCount = count($files);
+        foreach ($files as $file) {
+            $destinationPath = 'uploads\departments';
+            $filename = $file->getClientOriginalName();
+            $upload_success = $file->move($destinationPath, $filename);
+            department_pictures::create(['picName'=>$filename]);
+        }
     	
         return redirect('/department/backstage');
 	}
