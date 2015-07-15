@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'VIDEO2')
+@section('title', 'VIDEO')
   <meta charset="utf-8">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -50,14 +50,14 @@ $(document).ready(function(){
 
 <!--最上面那條row(red accent-2)-->    
 <div class="row">
-<div class="col" style="width:15%;">
+<div class="col s2">
 <h5 style="color:grey">首頁</h5>
 </div>
-<div class="col" style="width:20%;">
+<div class="col s3">
 <h5 style="color:grey">影音專區</h5>
 </div>
-<div class="col" style="width:15%;">
-<h5 style="color:grey">影片2</h5>
+<div class="col s2">
+<h5 style="color:grey">影片1</h5>
 </div>
 <div class="row"></div>
 <!--有影片的section( teal lighten-2)-->    
