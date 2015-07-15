@@ -47,7 +47,7 @@ Route::get('qa', 'QaController@index');
 //Department and club
 //******************************************************************************************************
 Route::get('department/backstage', array('as' => 'backstage_department', 'uses' => 'Department\ClubController@index'));
-Route::post('department/new', 'Department\NewClubController@store');
+Route::post('department/new', $arrayName = array('as' => 'department/new', 'uses' => 'Department\NewClubController@store'));
 //******************************************************************************************************
 
 
