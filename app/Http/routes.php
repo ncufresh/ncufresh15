@@ -65,13 +65,7 @@ Route::get('campus', 'Campus\CampusController@index');
 
 //Document
 //******************************************************************************************************
-//Route::get('document', array('as' => 'document', 'uses' => 'documentController@index'))
-//後台新增公告
-Route::get('backstage_document', function () {
-    return view('document/backstage_important_cal');
-});
-//抓在哪個分頁
-//Route::get('document/{}/{}/{}', function($, $, $){});
+Route::get('document', 'Document\documentController@index');
 //******************************************************************************************************
 
 // video
