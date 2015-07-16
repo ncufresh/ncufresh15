@@ -17,15 +17,6 @@ $(document).ready(function(){
 		hover: false
 	});
 
-	$(window).scroll(function(){
-		currentScroll = $(window).scrollTop();
-		if (currentScroll > 390){
-			window.setTimeout(showNav, 300);
-		}else {
-			window.setTimeout(hideNav, 300);
-		}
-	});
-
 	$('#portal-img').click(function(e) {
 		e.stopPropagation();
 		if (portalToggle) {
@@ -46,14 +37,6 @@ function portalMenuOn(){
 
 function portalMenuOff(){
 	$("body").click();
-}
-
-function hideNav() {
-	$("nav").removeClass("is-visible").addClass("is-hidden");
-}
-
-function showNav() {
-	$("nav").removeClass("is-hidden").addClass("is-visible");
 }
 
 function getPortalT() {
