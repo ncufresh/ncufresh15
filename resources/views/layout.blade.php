@@ -19,7 +19,7 @@
 					<li><a href="{{ url('campus') }}">校園導覽</a></li>
 					<li><a href="#">新生必讀</a></li>
 					<li><a href="#">中大生活</a></li>
-					<li><a class='dropdown-button' data-activates='nav-links' href="#">常用連結</a></li>
+					<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
 					<ul id='nav-links' class='dropdown-content'>
 						<li><a href="#!">one</a></li>
 						<li><a href="#!">two</a></li>
@@ -43,7 +43,7 @@
 					<a id='logo' href='{{url('/')}}'>logo</a>
 					</div>
 					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
-					<div class='col s2'><a class=' btn grey darken-3 dropdown-button' data-activates='banner-links'>常用連結</a></div>
+					<div class='col s2'><a class='links btn grey darken-3' data-activates='banner-links'>常用連結</a></div>
 					<ul id='banner-links' class='dropdown-content'>
 						<li><a href="#!">one</a></li>
 						<li><a href="#!">two</a></li>
@@ -55,7 +55,7 @@
 				</div>
 				<div class='row banner-menu'>
 					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('department')}}'>系所社團</a></div>
-                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>新生Q&amp;A</a>
+                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 links btn' data-activates='qadropdown'>新生Q&amp;A</a>
                         <ul id='qadropdown' class='dropdown-content'>
                             <li><a href="{{ url('qa') }}">Q&amp;A</a></li>
                             <li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
@@ -77,8 +77,8 @@
 		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
-				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='dropdown1'></a>
-				<ul id='dropdown1' class='dropdown-content'>
+				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
+				<ul id='menu-list' class='dropdown-content'>
 					<li><a href="#!">one</a></li>
 					<li><a href="#!">two</a></li>
 					<li class="divider"></li>
