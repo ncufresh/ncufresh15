@@ -1,4 +1,3 @@
-
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
@@ -10,23 +9,20 @@ document.getElementById('gg').appendChild(canvas);
 
 // Game objects
 var hero = {
-	speed: 256 // movement in pixels per second
+	speed: 256, // movement in pixels per second
+	x : canvas.width / 2,
+	y : canvas.height / 2,
+	width : 32,
+	height : 32
 };
 var monster = {};
 var monstersCaught = 0;
 
-var block = {};
+var block1 = {x:173,y:224,width:32,height:160,type:"block"};
+var block2 = {x:300,y:288,width:162,height:32,type:"block"};
+var block3 = {x:365,y:159,width:32,height:32,type:"block"};
 
-// Handle keyboard controls
-var keysDown = {};
-
-addEventListener("keydown", function (e) {
-	keysDown[e.keyCode] = true;
-}, false);
-
-addEventListener("keyup", function (e) {
-	delete keysDown[e.keyCode];
-}, false);
+var blocks=[block1,block2,block3];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");
@@ -48,91 +44,50 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
-};
-hero.x = canvas.width / 2;
-hero.y = canvas.height / 2;
+	monster.width = 32;
+	monster.height = 32;
 
-block.x = 96 ;
-block.y = 96 ;
+	for (i=0;i<blocks.length ;i++ )
+	{
+		if (isTouching(monster,blocks[i]))
+		{
+			reset();
+		}
+	}
+
+};
 /////////////////////////////////////////////////////
 
-// Update game objects
-var update = function (modifier) {
-	if (38 in keysDown) { // Player holding up
-		if(hero.y-hero.speed * modifier >= 0 ){ // wall
-			hero.y -= hero.speed * modifier;
-		}
-	}
-	if (40 in keysDown) { // Player holding down
-		if(hero.y+hero.speed * modifier <= canvas.height-32 ){ // wall
-			hero.y += hero.speed * modifier;
-		}
-	}
-	if (37 in keysDown) { // Player holding left
-		if(hero.x-hero.speed * modifier >= 0 ){ // wall
-			hero.x -= hero.speed * modifier;
-		}		
-	}
-	if (39 in keysDown) { // Player holding right
-		if(hero.x+hero.speed * modifier <= canvas.width-32 ){ // wall
-			hero.x += hero.speed * modifier;
-		}
-		
-		if (isTouching(hero,block))
-		{
-			hero.x = block.x - 32 ;//- 1;
-		}			
-	}
-
-
-	// Are they touching?
-	if(isTouching(hero,monster)){
-		++monstersCaught;
-		reset();
-	}
-/*	if (
-		hero.x <= (monster.x + 32)
-		&& monster.x <= (hero.x + 32)
-		&& hero.y <= (monster.y + 32)
-		&& monster.y <= (hero.y + 32)
-	) {
-		++monstersCaught;
-		reset();
-	}*/
-};
-
-// Handle touching
-function  isTouching(a,b) {
-	if(	
-		a.x <= (b.x + 32)
-		&& b.x <= (a.x + 32)
-		&& a.y <= (b.y + 32)
-		&& b.y <= (a.y + 32) )
-	{
-		return true;
-	}
-	else {
-		return false
-
-	}
-}
 
 // Draw everything
 var render = function () {
 	if (bgReady) {
 		ctx.drawImage(bgImage, 0, 0);
 	}
-
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x, hero.y);
 	}
-
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
-
 	if (blockReady) {
-		ctx.drawImage(blockImage, block.x, block.y);
+		for (i=0;i<blocks.length ;i++ )
+		{
+			if (blocks[i].width!=32) {
+				for(j=0;j<5;j++){
+					ctx.drawImage(blockImage, blocks[i].x+32*j, blocks[i].y);
+				}
+			}
+			else if(blocks[i].height!=32){
+				for(j=0;j<5;j++){
+					ctx.drawImage(blockImage, blocks[i].x, blocks[i].y+32*j);
+				}			
+			}
+			else{
+				ctx.drawImage(blockImage, blocks[i].x, blocks[i].y);
+			}
+		}
+		
 	}
 
 	// Score

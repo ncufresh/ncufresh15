@@ -17,9 +17,11 @@
 
 @section('js')
 
-<!--_img need upper than _main-->  
+<!--_img && _event need upper than _main-->  
 <script type="text/javascript" src="{{ asset('js/game_js/game_img.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/game_js/game_event.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/game_js/game_main.js') }}"></script>
+
 
 
 
