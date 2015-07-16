@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLifeTable extends Migration
+class CreatePicturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,6 +12,13 @@ class CreateLifeTable extends Migration
      */
     public function up()
     {
+        Schema::create('pictures',function(Blueprint $table) {
+            $table->increments('id');
+            $table->integer('ref_id');
+            $table->string('name');
+            $table->timestamps();
+        });
+
         //
     }
 

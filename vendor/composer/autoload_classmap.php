@@ -8,8 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
-    'CreateLifeTable' => $baseDir . '/database/migrations/2015_07_15_101415_create_life_table.php',
+    'CreateLifesTable' => $baseDir . '/database/migrations/2015_07_16_070812_create_lifes_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePicturesTable' => $baseDir . '/database/migrations/2015_07_16_072448_create_pictures_table.php',
     'CreateQaAnswerTable' => $baseDir . '/database/migrations/2015_07_14_020939_create_qa_answer_table.php',
     'CreateQaQuestion' => $baseDir . '/database/migrations/2015_07_14_112041_create_qa_question.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
