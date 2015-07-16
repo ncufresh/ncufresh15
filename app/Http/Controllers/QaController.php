@@ -108,8 +108,7 @@ class QaController extends Controller
             $type = 'report';
             break;
         default:
-            $type = 'qa';
-            break;
+            return redirect('qa');
         }
         return view('qa.create', [
             'type' => $type
