@@ -45,7 +45,7 @@
             @endif
             <div class="input-field col {{$type == "qa" ? "s9" : "s12"}}">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="input_title" type="text" class="validate" name="title">
+                <input id="input_title" type="text" class="validate" name="title" value="{{Input::old('title')}}">
                 <label for="input_title">標題</label>
             </div>
         </div>
