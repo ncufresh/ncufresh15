@@ -6,9 +6,36 @@ $(document).ready(function() {
 
 		var id = $(this).attr("id");
 		$("#view_id").val(id);
+
+		$("#introduction").val("");
+		$("#label_intro").attr("class", "");
+		$("#error").empty();
+
+		$.ajax({
+
+			type: "GET",
+			url: "campus/" + id,
+			dataType: "json",
+
+			success: function(msg) {
+				console.log(msg);
+				if(msg.introduction == null)
+				{
+					$("#campus_content").empty();
+				}
+				else
+				{
+					$("#campus_content").text(msg.introduction);
+				}
+			},
+
+			error: function(msg) {
+				alert("fail to post");
+			}
+		});
 	})
 
-	$("#newform").submit(function() {
+	$("#writeIntro").submit(function(event) {
 		
 		event.preventDefault();
 
@@ -26,7 +53,12 @@ $(document).ready(function() {
 
 			success: function(msg) {
 				console.log(msg);
-				$("#campus_content").text(msg.introduction);
+				$("#error").text(msg.error);
+				
+				if(msg.error=="")
+				{
+					$("#campus_content").text(msg.introduction);
+				}
 			},
 
 			error: function(msg) {

@@ -3,7 +3,6 @@
 @section('title', '校園導覽')
 
 @section('css')
-<meta name="_token" content="{{ csrf_token() }}">
 <link href="{{ asset('css/campus/style.css') }}" rel="stylesheet">
 @stop
 
@@ -85,31 +84,31 @@
 	<li>
 		<div class="collapsible-header">飲食</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item">七舍餐廳</a>
-			<a class="collection-item">九舍餐廳</a>
-			<a class="collection-item">松苑餐廳</a>
-			<a class="collection-item">小木屋</a>
-			<a class="collection-item">校園café</a>
-			<a class="collection-item">女14地下廣場</a>
+			<a class="collection-item" id="48">七舍餐廳</a>
+			<a class="collection-item" id="49">九舍餐廳</a>
+			<a class="collection-item" id="50">松苑餐廳</a>
+			<a class="collection-item" id="51">小木屋</a>
+			<a class="collection-item" id="52">校園café</a>
+			<a class="collection-item" id="53">女14地下廣場</a>
 		</div>
 	</li>
 	<li>
 		<div class="collapsible-header">住宿</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item">國際學生宿舍</a>
-			<a class="collection-item">研究生宿舍</a>
-			<a class="collection-item">中大會館</a>
-			<a class="collection-item">男三舍</a>
-			<a class="collection-item">男五舍</a>
-			<a class="collection-item">男六舍</a>
-			<a class="collection-item">男七舍</a>
-			<a class="collection-item">男九舍</a>
-			<a class="collection-item">男十一舍</a>
-			<a class="collection-item">男十二舍</a>
-			<a class="collection-item">男十三舍</a>
-			<a class="collection-item">女一～四舍</a>
-			<a class="collection-item">女五舍</a>
-			<a class="collection-item">女十四舍</a>
+			<a class="collection-item" id="54">國際學生宿舍</a>
+			<a class="collection-item" id="55">研究生宿舍</a>
+			<a class="collection-item" id="56">中大會館</a>
+			<a class="collection-item" id="57">男三舍</a>
+			<a class="collection-item" id="58">男五舍</a>
+			<a class="collection-item" id="59">男六舍</a>
+			<a class="collection-item" id="60">男七舍</a>
+			<a class="collection-item" id="61">男九舍</a>
+			<a class="collection-item" id="62">男十一舍</a>
+			<a class="collection-item" id="63">男十二舍</a>
+			<a class="collection-item" id="64">男十三舍</a>
+			<a class="collection-item" id="65">女一～四舍</a>
+			<a class="collection-item" id="66">女五舍</a>
+			<a class="collection-item" id="67">女十四舍</a>
 		</div>
 	</li>
 </ul>

@@ -14,7 +14,23 @@ class IntroController extends Controller
 	public function store(Request $request){
 		$introduction = $request->get('introduction');
 		$view_id = $request->get('view_id');
-		campus::create(['introduction'=>$introduction, 'view_id'=>$view_id]);
-		return response()->json(['introduction'=>$introduction, 'view_id'=>$view_id]);
+
+		$error = "";
+		$rows = campus::where('view_id', $view_id)->count();
+		if ($introduction=="")
+		{
+			$error = "*請輸入文字";
+		}
+		else if($rows==0)
+		{
+			campus::create(['introduction'=>$introduction, 'view_id'=>$view_id]);
+		}
+		else
+		{
+			campus::where('view_id', $view_id)
+					->update(['introduction'=>$introduction]);
+		}
+
+		return response()->json(['introduction'=>$introduction, 'view_id'=>$view_id, 'error'=>$error]);
 	}
 }

@@ -61,6 +61,7 @@ Route::post('department/new', 'Department\NewClubController@store');
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
 Route::post('campus/backstage_intro', 'Campus\IntroController@store');
+Route::get('campus/{view_id}', 'Campus\CampusController@showIntro');
 //******************************************************************************************************
 
 

@@ -1,0 +1,9 @@
+a.collection-item {
+	cursor: pointer;
+}
+
+#error {
+	color: red;
+	font-size: 120%;
+	font-weight: bold;
+}
