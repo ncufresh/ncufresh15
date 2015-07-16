@@ -23,7 +23,6 @@
 }
 #banner-img {
 	height: 210px;
-	background: url(http://blog.turn.tw/wp-content/uploads/2014/10/Laravel-%E2%80%93-a-beautiful-PHP-framework.png) 0px 0px no-repeat;
 	background-size: 100% 100%;
 }
 #banner>.row {
@@ -33,9 +32,12 @@
 	width: 100%;
 }
 .banner-menu {
-	background-color: rgb(38,50,56);
+	background-color: white;
 	min-height: 40px;
 	padding: 10px;
+}
+.banner-menu a{
+	text-align: center;
 }
 #nav-fixed {
 	position: fixed;
@@ -73,11 +75,12 @@ nav {
 	width: 65px;
 	display: inline-block;
 }
-.page-footer {
-	height: 45px;
-	line-height: 22px;
+#footer {
+	height: 70px;
+	line-height: 35px;
 	color: rgb(255,255,255);
 	text-align: center;
+	background-color: #212121;
 }
 body {
 	background-color: #F5F5F5;
