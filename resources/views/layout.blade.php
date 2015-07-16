@@ -19,7 +19,13 @@
 					<li><a href="{{ url('campus') }}">校園導覽</a></li>
 					<li><a href="#">新生必讀</a></li>
 					<li><a href="#">中大生活</a></li>
-					<li><a href="#">常用連結</a></li>
+					<li><a class='dropdown-button' data-activates='nav-links' href="#">常用連結</a></li>
+					<ul id='nav-links' class='dropdown-content'>
+						<li><a href="#!">one</a></li>
+						<li><a href="#!">two</a></li>
+						<li class="divider"></li>
+						<li><a href="#!">three</a></li>
+					</ul>
 					<li><a href="{{ url('department')}}">系所社團</a></li>
 					<li><a href="{{ url('qa') }}">新生Q&amp;A</a></li>
 					<li><a href="{{ url('video2') }}">影音專區</a></li>
