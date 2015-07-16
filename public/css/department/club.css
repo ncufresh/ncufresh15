@@ -37,6 +37,10 @@
 .group {
 	text-align: center;
 }
+.departmentsList, .clubsList, .addNew {
+	display: none;
+}
+
 /***下拉選單**************************************************************************/
 .slideSel {
 	height: 100px;

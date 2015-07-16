@@ -13,9 +13,8 @@
 
 // crash and jxcode
 //******************************************************************************************************
-Route::get('/', function () {
-    return view('welcome');
-});
+// index
+Route::get('/', 'HomepageController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -35,20 +34,26 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Q&A
     Route::get('qa/create', 'QaController@create');
+    Route::get('qa/questions', 'QaController@index_questions');
+    Route::post('qa/create', 'QaController@store_question');
 });
 //******************************************************************************************************
 
 
 // Q&A
 //******************************************************************************************************
-Route::get('qa', 'QaController@index');
+Route::get('qa/answer', 'QaController@answer');
+Route::post('qa/answer', 'QaController@store_answer');
+Route::get('qa/view', 'QaController@view');
+Route::get('qa/solved', 'QaController@solved');
+Route::get('qa/{category?}', 'QaController@index');
 //******************************************************************************************************
 
 
 //Department and club
 //******************************************************************************************************
-Route::get('club', array('as' => 'club', 'uses' => 'ClubController@index'));
-Route::get('newClub', array('as' => 'newClub', 'uses' => 'NewClubController@index'));
+Route::get('department/backstage', array('as' => 'backstage_department', 'uses' => 'Department\ClubController@index'));
+Route::post('department/new', 'Department\NewClubController@store');
 //******************************************************************************************************
 
 

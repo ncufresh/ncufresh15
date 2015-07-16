@@ -16,6 +16,6 @@ class ClubController extends Controller {
 	}
 
 	public function index() {
-		return view('department.index');
+		return view('department.backstage');
 	}
 }

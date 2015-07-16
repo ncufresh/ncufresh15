@@ -9,6 +9,15 @@
 	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
+	min-height: 1000px;
+}
+#logo {
+	position: absolute;
+	top: 68px;
+	display: inline-block;
+	width: 22.5%;
+	height: 73px;
+	background-color: white;
 }
 #banner-img {
 	height: 210px;
@@ -26,17 +35,10 @@
 	min-height: 40px;
 	padding: 10px;
 }
-#copyright {
-	color: white;
-	font-weight: 500;
-	text-align: center;
-	font-size: 1.1em;
-	letter-spacing: 1px;
-}
 #nav-fixed {
 	position: fixed;
 	top: 0px;
-	z-index: 2;
+	z-index: 3;
 }
 nav.is-hidden {
 	opacity: 0;
@@ -51,12 +53,47 @@ nav.is-visible {
 .brand-logo {
 	margin-left: 10px;
 }
-footer {
-	background-color: #ee6e73;
-	height: 60px;
-	line-height: 60px;
+#portal {
+	transition: 6s ease-in-out;
+	display: inline-block;
+	position: fixed;
+	top: 65vh;
+	left: 89%;
+	width: 40px;
+	z-index: 4;
+}
+#portal-menu {
+	display: inline-block;
+}
+#portal-trigger {
+	width: 1px;
+	height: 1px;
+	padding: 0;
+}
+#portal-img {
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	background-image: url("http://media.semgeek.com/wp-content/uploads/2010/11/ppc-geek.jpg");
+	background-size: 72px 69px;
+	background-position: -15px -7PX;
+}
+.page-footer {
+	height: 45px;
+	line-height: 22px;
+	color: rgb(255,255,255);
+	text-align: center;
 }
 body {
 	background-color: #F5F5F5;
 	min-height: 100%;
+}
+
+.pagination li {
+    padding: 0;
+}
+.pagination li a {
+    margin: 0;
+    display: block;
+    width: 30px;
 }
