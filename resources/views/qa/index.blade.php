@@ -56,7 +56,7 @@ td.expand {
     </div>
     <div class="col s9">
         @foreach ($answers as $answer)
-        <div id="modal{{$answer->id}}" class="modal modal-fixed-footer">
+        <div id="show{{$answer->id}}" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>{{ $answer->title }}</h4>
                 <p>{!! nl2br(e($answer->content)) !!}</p>
@@ -82,7 +82,7 @@ td.expand {
                 </thead>
                 <tbody>
                     @foreach ($top_answers as $top_answer)
-                        <tr class="modal-trigger answer" href="#modal{{$top_answer->id}}" data-id="{{$top_answer->id}}">
+                        <tr class="modal-trigger answer" href="#show{{$top_answer->id}}" data-id="{{$top_answer->id}}">
                             <td class="shrink"><span class="category">{{$categoryString[$top_answer->category]}}</span></td>
                             <td class="shrink">{{ date('m-d', strtotime($top_answer->created_at)) }}</td>
                             <td class="expand">{{ $top_answer->title }}</td>

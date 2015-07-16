@@ -1,6 +1,7 @@
 $(function() {
     $('.modal-trigger').leanModal();
     $('.modal-trigger.answer').click(function() {
+
         $.ajax({
             url: '/qa/view?id=' + $(this).attr('data-id'),
             type: 'GET',
