@@ -6,7 +6,6 @@ canvas.height = 480;
 //document.body.appendChild(canvas);
 document.getElementById('gg').appendChild(canvas);
 
-
 // Game objects
 var hero = {
 	speed: 256, // movement in pixels per second
@@ -18,11 +17,13 @@ var hero = {
 var monster = {};
 var monstersCaught = 0;
 
-var block1 = {x:173,y:224,width:32,height:160,type:"block"};
-var block2 = {x:300,y:288,width:162,height:32,type:"block"};
+var block1 = {x:165,y:120,width:32,height:320,type:"block"};
+var block2 = {x:300,y:288,width:160,height:32,type:"block"};
 var block3 = {x:365,y:159,width:32,height:32,type:"block"};
 
-var blocks=[block1,block2,block3];
+var block4 = {x:165,y:32,width:96,height:32,type:"block"};
+
+var blocks=[block1,block2,block3,block4];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");
@@ -74,12 +75,12 @@ var render = function () {
 		for (i=0;i<blocks.length ;i++ )
 		{
 			if (blocks[i].width!=32) {
-				for(j=0;j<5;j++){
+				for(j=0;j<blocks[i].width/32;j++){
 					ctx.drawImage(blockImage, blocks[i].x+32*j, blocks[i].y);
 				}
 			}
 			else if(blocks[i].height!=32){
-				for(j=0;j<5;j++){
+				for(j=0;j<blocks[i].height/32;j++){
 					ctx.drawImage(blockImage, blocks[i].x, blocks[i].y+32*j);
 				}			
 			}
