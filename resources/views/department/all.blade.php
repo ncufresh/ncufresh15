@@ -15,9 +15,9 @@
     	<div id="show{{$content->id}}" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>{{ $content->name }}</h4>
-                <p>{{ ($content->content) }}</p>
+                <p>{{ $content->content }}</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer">            
                 <button class="modal-action modal-close waves-effect waves-light btn-flat">關閉</button>
                 <a class="waves-effect waves-light btn-flat">編輯</a>
                 <a class="waves-effect waves-light btn-flat red">刪除</a>

@@ -38,7 +38,7 @@ class ClubController extends Controller {
                 $filename = uniqid()."_".$filename;
             }
             $upload_success = $file->move($destinationPath, $filename);
-            department_pictures::create(['picName'=>$filename]);
+            department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
         }
         return redirect('/department');
 	}
