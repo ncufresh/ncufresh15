@@ -59,30 +59,62 @@ td.expand {
                 <p>{!! nl2br(e($answer->content)) !!}</p>
             </div>
             <div class="modal-footer">
-                <button class="modal-action modal-close waves-effect waves-green btn-flat">關閉</button>
+                <button class="modal-action modal-close waves-effect waves-light btn-flat">關閉</button>
+                <a class="waves-effect waves-light btn-flat" href="{{action('QaController@edit', $answer->id)}}">編輯</a>
+                <a class="waves-effect waves-light btn-flat red" href="{{action('QaController@destroy', $answer->id)}}">刪除</a>
             </div>
         </div>
         @endforeach
-        <table>
-            <thead>
-                <tr>
-                    <td data-sort="string" class="shrink">類別</td>
-                    <td data-sort="string" class="shrink">日期</td>
-                    <td data-sort="string" class="expand">標題</td>
-                    <td data-sort="int" class="shrink">觀看次數</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($answers as $answer)
-                    <tr class="modal-trigger answer" href="#modal{{$answer->id}}" data-id="{{$answer->id}}">
-                        <td class="shrink"><span class="category">{{$categoryString[$answer->category]}}</span></td>
-                        <td class="shrink">{{ date('m-d', strtotime($answer->created_at)) }}</td>
-                        <td class="expand">{{ $answer->title }}</td>
-                        <td id="view{{$answer->id}}" class="shrink center-align">{{ $answer->views }}</td>
+        @if ($top_answers != null)
+        <div class="card-panel">
+            <h4>熱門Q&amp;A</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <td data-sort="string" class="shrink">類別</td>
+                        <td data-sort="string" class="shrink">日期</td>
+                        <td data-sort="string" class="expand">標題</td>
+                        <td data-sort="int" class="shrink">觀看次數</td>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($top_answers as $top_answer)
+                        <tr class="modal-trigger answer" href="#modal{{$top_answer->id}}" data-id="{{$top_answer->id}}">
+                            <td class="shrink"><span class="category">{{$categoryString[$top_answer->category]}}</span></td>
+                            <td class="shrink">{{ date('m-d', strtotime($top_answer->created_at)) }}</td>
+                            <td class="expand">{{ $top_answer->title }}</td>
+                            <td class="shrink center-align view{{$top_answer->id}}">{{ $top_answer->views }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @endif
+        <div class="card-panel">
+            @if ($top_answers != null)
+            <h4>全部Q&amp;A</h4>
+            @endif
+            <table>
+                <thead>
+                    <tr>
+                        <td data-sort="string" class="shrink">類別</td>
+                        <td data-sort="string" class="shrink">日期</td>
+                        <td data-sort="string" class="expand">標題</td>
+                        <td data-sort="int" class="shrink">觀看次數</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($answers as $answer)
+                        <tr class="modal-trigger answer" href="#modal{{$answer->id}}" data-id="{{$answer->id}}">
+                            <td class="shrink"><span class="category">{{$categoryString[$answer->category]}}</span></td>
+                            <td class="shrink">{{ date('m-d', strtotime($answer->created_at)) }}</td>
+                            <td class="expand">{{ $answer->title }}</td>
+                            <td class="shrink center-align view{{$answer->id}}">{{ $answer->views }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         <div class="center-align">
             @include('pagination.default', ['paginator' => $answers])
         </div>

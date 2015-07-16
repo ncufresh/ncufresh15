@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use DB;
 use Log;
@@ -39,7 +40,13 @@ class QaController extends Controller
             break;
         };
         $answer = null;
+        $top_answers = null;
         if ($category == -1) {
+            $top_answers = DB::table('qa_answers')
+                ->orderBy('views', 'desc')
+                ->orderBy('created_at', 'desc')
+                ->take(5)
+                ->get();
             $answers = DB::table('qa_answers')
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
@@ -55,11 +62,13 @@ class QaController extends Controller
             QaAnswer::where('category', 2)->count(),
             QaAnswer::where('category', 3)->count(),
         ];
+
         return view('qa.index', [
             'category' => $category,
             'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
             'counts' => $counts,
             'answers' => $answers,
+            'top_answers' => $top_answers,
             'categoryString'=> ['中大生活', '行政', '學務', '小遊戲']
         ]);
     }
@@ -88,7 +97,7 @@ class QaController extends Controller
      *
      * @return Response
      */
-    public function create(Request $request)
+    public function create_question(Request $request)
     {
         $type = null;
         switch($request->input('type', 'qa')) {
@@ -112,7 +121,7 @@ class QaController extends Controller
      *
      * @return Response
      */
-    public function answer()
+    public function create_answer()
     {
         //
         return view('qa.answer');
@@ -126,7 +135,16 @@ class QaController extends Controller
      */
     public function store_question(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'category' => 'required|integer',
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $question = new QaQuestion;
         $question->category = $request->category;
         $question->title = $request->title;
@@ -144,6 +162,16 @@ class QaController extends Controller
      */
     public function store_answer(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'category' => 'required|integer',
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $answer = new QaAnswer;
         $answer->category = $request->category;
         $answer->title = $request->title;
@@ -162,8 +190,10 @@ class QaController extends Controller
     public function view(Request $request)
     {
         $answer = QaAnswer::find($request->id);
-        $answer->views += 1;
-        $answer->save();
+        if ($answer != null) {
+            $answer->views += 1;
+            $answer->save();
+        }
         return response()->json(["id" => $request->id, "views" => $answer->views]);
     }
 
@@ -175,20 +205,18 @@ class QaController extends Controller
      */
     public function solved(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'solved' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['msg'=> 'error']);
+        }
         $answer = QaQuestion::find($request->id);
-        $answer->solved = $request->solved;
-        $answer->save();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
+        if ($answer != null) {
+            $answer->solved = $request->solved;
+            $answer->save();
+        }
     }
 
     /**
@@ -199,7 +227,11 @@ class QaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $answer = QaAnswer::find($id);
+        if ($answer == null) {
+            return redirect('qa');
+        }
+        return view('qa.answer', ['answer' => $answer]);
     }
 
     /**
@@ -211,7 +243,22 @@ class QaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'category' => 'required',
+            'title'    => 'required',
+            'content'  => 'required'
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $answer = QaAnswer::find($id);
+        $answer->category = $request->category;
+        $answer->title = $request->title;
+        $answer->content = $request->content;
+        $answer->save();
+        return redirect('qa');
     }
 
     /**
@@ -223,5 +270,10 @@ class QaController extends Controller
     public function destroy($id)
     {
         //
+        $answer = QaAnswer::find($id);
+        if ($answer != null) {
+            $answer->delete();
+        }
+        return redirect('qa');
     }
 }

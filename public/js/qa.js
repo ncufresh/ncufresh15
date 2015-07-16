@@ -8,7 +8,7 @@ $(function() {
 
             success: function(msg) {
                 msg = JSON.parse(msg);
-                $("#view"+msg.id).html(msg.views);
+                $(".view"+msg.id).html(msg.views);
             }
         });
     });
