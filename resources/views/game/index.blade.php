@@ -7,7 +7,7 @@
 
 @section('content')
 <div id="gg" tabindex="0">
-    <script type="text/javascript" src="{{ asset('js/game_js/game.js') }}"></script>
+    
 </div>
 
 
@@ -16,10 +16,15 @@
 @stop
 
 @section('js')
-    <!--<script type="text/javascript" src="{{ asset('js/game_js/game.js') }}"></script>-->
-<script type="text/javascript">
 
-//
+<!--_img need upper than _main-->  
+<script type="text/javascript" src="{{ asset('js/game_js/game_img.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/game_js/game_main.js') }}"></script>
+
+
+
+<script type="text/javascript">
+//hide the scroll
 $(function() {
     var btn = $("#gg");
 
@@ -34,7 +39,6 @@ $(function() {
     });
 
 });
-
 </script>
 
 @stop
