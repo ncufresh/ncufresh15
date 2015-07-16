@@ -1,9 +1,6 @@
 @extends('layout')
 
 @section('title', 'VIDEO')
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 @section('css')
 <style type="text/css">
 .center{
@@ -19,15 +16,36 @@
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
+.pic{
+  border-radius:10%;
+  border: 2px white;
+}
 </style>
 
 @stop
 
 @section('js')
 <!--<script src=''></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
+
+function changeImageA() {
+    var image = document.getElementById('ImageA');
+    if (image.src.match("tJ8PE")) {
+        image.src = "https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400";
+    } else {
+        image.src = "https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400";
+    }
+}
+
+function changeImageB() {
+    var image = document.getElementById('ImageB');
+    if (image.src.match("Dclmc")) {
+        image.src = "https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400";
+    } else {
+        image.src = "https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400";
+    }
+}
+
 $(document).ready(function(){
   $("#send").click(function(){
     event.preventDefault();//preven default event from happens
@@ -50,50 +68,28 @@ $(document).ready(function(){
 
 <!--最上面那條row(red accent-2)-->    
 <div class="row">
-<div class="col s2">
+<div class="col" style="width:15%;">
 <h5 style="color:grey">首頁</h5>
 </div>
-<div class="col s3">
+<div class="col" >
 <h5 style="color:grey">影音專區</h5>
 </div>
-<div class="col s2">
-<h5 style="color:grey">影片1</h5>
-</div>
 <div class="row"></div>
-<!--有影片的section( teal lighten-2)-->    
-      <div class="col s8" style=";">
-          <div class="video-container">
-         <iframe width="854" height="510" src="https://www.youtube.com/embed/83I_5lq5MwI" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <p>影片簡介：</p>
-          <p>一一一一</p>
-          <p>一一一一</p>
-      </div>
-<!--留言的Ssection( orange accent-2)-->    
-      <div class="col s4 " style=";" >
-         <div class="card blue-grey darken-1 hoverable" style=";">
-            <div class="card-content white-text" style="height:85%;">
-              <span class="card-title">留言板</span>
-
-
-            </div>
-            <div class="card-action">
-            <div class="col s9">
-            <p style="color:white">Message:</p>
-            <input type="text" name="message" style="background-color: white; width:100%;height:25px;vertical-align:left">
-            </div>
-            <div class="col s1">
-            <p>  </p>
-            <br>
-            <button type="submit" id="send" class="btn btn-primary" style="width:15%;height:25px;">
-              <i class="material-icons" style="margin-left:-5px;line-height: normal;">send</i>
-            </button>
-            </div>
-            </div>
-          </div>
-         </div>
-    </div>
-
+<!--左邊-->
+<div class="card-action">
+<div class="row">
+<h5 style="color:black;text-align:center;">影音專區</h5>  
+</div>
+<div class="col" style="width:46%">
+<img  id="ImageA" onmouseover="changeImageA()" class="pic" src="https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400" align="right">
+</div>
+<div class="col s2 " style="width:8%">
+<p>  </p>
+</div>
+<div class="col s5 " style="width:46%">
+<img id="ImageB" onmouseover="changeImageB()" class="pic" src="https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400" >
+</div>
+</div>
 
 
 

@@ -1,9 +1,5 @@
 @extends('layout')
-
 @section('title', 'VIDEO2')
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 @section('css')
 <style type="text/css">
 .center{
@@ -20,13 +16,10 @@
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 </style>
-
 @stop
 
 @section('js')
 <!--<script src=''></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
   $("#send").click(function(){
@@ -80,12 +73,12 @@ $(document).ready(function(){
             <div class="card-action">
             <div class="col s9">
             <p style="color:white">Message:</p>
-            <input type="text" name="message" style="background-color: white; width:100%;height:25px;vertical-align:left">
+            <input type="text" name="message" style="background-color: white; width:100%;height:25px;margin-left:-5px">
             </div>
-            <div class="col s1">
+            <div class="col s3">
             <p>  </p>
             <br>
-            <button type="submit" id="send" class="btn btn-primary" style="width:15%;height:25px;">
+            <button type="submit" id="send" style="width:20px;height:25px;margin-top:12px;margin-left:-10px;" class="waves-effect waves-light btn" >
               <i class="material-icons" style="margin-left:-5px;line-height: normal;">send</i>
             </button>
             </div>
