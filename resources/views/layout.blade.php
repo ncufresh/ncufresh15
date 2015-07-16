@@ -9,66 +9,77 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="csrf-token" content="{{ csrf_token() }}">
+		<style>
+			#portal-img {
+				background: url('{{asset("img/Untitled.png")}}');
+				background-size: 65px;
+			}
+		</style>
 		@yield('css')
     </head>
     <body>
-		<nav id='nav-fixed' class='is-hidden'>
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">NCU Fresh</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="{{ url('campus') }}">校園導覽</a></li>
-					<li><a href="#">新生必讀</a></li>
-					<li><a href="#">中大生活</a></li>
-					<li><a class='dropdown-button' data-activates='nav-links' href="#">常用連結</a></li>
-					<ul id='nav-links' class='dropdown-content'>
-						<li><a href="#!">one</a></li>
-						<li><a href="#!">two</a></li>
-						<li class="divider"></li>
-						<li><a href="#!">three</a></li>
+		@if (Request::url() != url('/'))
+			<nav id='nav-fixed' class='is-visible'>
+				<div class="nav-wrapper">
+					<a href="{{ url('/') }}" class="brand-logo">NCU Fresh</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="{{ url('campus') }}">校園導覽</a></li>
+						<li><a href="#">新生必讀</a></li>
+						<li><a href="#">中大生活</a></li>
+						<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
+						<ul id='nav-links' class='dropdown-content'>
+							<li><a href="#!">one</a></li>
+							<li><a href="#!">two</a></li>
+							<li class="divider"></li>
+							<li><a href="#!">three</a></li>
+						</ul>
+						<li><a href="{{ url('department')}}">系所社團</a></li>
+						<li><a href="{{ url('qa') }}">新生Q&amp;A</a></li>
+						<li><a href="{{ url('video2') }}">影音專區</a></li>
+						<li><a href="#">關於我們</a></li>
 					</ul>
-					<li><a href="{{ url('department')}}">系所社團</a></li>
-					<li><a href="{{ url('qa') }}">新生Q&amp;A</a></li>
-					<li><a href="{{ url('video2') }}">影音專區</a></li>
-					<li><a href="#">關於我們</a></li>
-				</ul>
-			</div>
-		</nav>
+				</div>
+			</nav>
+        <div id='container' class="nav-margin container z-depth-2">
+		@endif
+			@if (Request::url() === url('/'))
         <div id='container' class="container z-depth-2">
-			<div id='banner'>
-				<div class='row banner-menu'>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('campus') }}'>校園導覽</a></div>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>新生必讀</a></div>
-					<div class='col s4'>
-					<div>yo</div>
-					<a id='logo' href='{{url('/')}}'>logo</a>
+				<div id='banner'>
+					<div class='row banner-menu'>
+						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('campus') }}'>校園導覽</a></div>
+						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>新生必讀</a></div>
+						<div class='col s4'>
+						<div>yo</div>
+						<a id='logo' href='{{url('/')}}'>logo</a>
+						</div>
+						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
+						<div class='col s2'><a class='links btn grey darken-3' data-activates='banner-links'>常用連結</a></div>
+						<ul id='banner-links' class='dropdown-content'>
+							<li><a href="#!">one</a></li>
+							<li><a href="#!">two</a></li>
+							<li class="divider"></li>
+							<li><a href="#!">three</a></li>
+						</ul>
 					</div>
-					<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
-					<div class='col s2'><a class=' btn grey darken-3 dropdown-button' data-activates='banner-links'>常用連結</a></div>
-					<ul id='banner-links' class='dropdown-content'>
-						<li><a href="#!">one</a></li>
-						<li><a href="#!">two</a></li>
-						<li class="divider"></li>
-						<li><a href="#!">three</a></li>
-					</ul>
+					<div id='banner-img' class='row'>
+					</div>
+					<div class='row banner-menu'>
+						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('department')}}'>系所社團</a></div>
+						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3 links btn' data-activates='qadropdown'>新生Q&amp;A</a>
+							<ul id='qadropdown' class='dropdown-content'>
+								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
+								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
+								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
+								<li class="divider"></li>
+								<li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
+								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
+							</ul>
+						</div>
+						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('video2') }}'>影音專區</a></div>
+						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('about')}}'>關於我們</a></div>
+					</div>
 				</div>
-				<div id='banner-img' class='row'>
-				</div>
-				<div class='row banner-menu'>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('department')}}'>系所社團</a></div>
-                    <div class='col s3'><a class='waves-effect waves-light btn grey darken-3 dropdown-button btn' data-activates='qadropdown'>新生Q&amp;A</a>
-                        <ul id='qadropdown' class='dropdown-content'>
-                            <li><a href="{{ url('qa') }}">Q&amp;A</a></li>
-                            <li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
-                            <li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
-                            <li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
-                        </ul>
-                    </div>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('video2') }}'>影音專區</a></div>
-					<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('about')}}'>關於我們</a></div>
-				</div>
-			</div>
+			@endif
 			<div id='content'>
             	@yield('content')
 			</div>
@@ -77,8 +88,8 @@
 		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
-				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='dropdown1'></a>
-				<ul id='dropdown1' class='dropdown-content'>
+				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
+				<ul id='menu-list' class='dropdown-content'>
 					<li><a href="#!">one</a></li>
 					<li><a href="#!">two</a></li>
 					<li class="divider"></li>
