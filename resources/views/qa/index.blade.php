@@ -22,6 +22,9 @@ td.shrink {
 td.expand {
     width: 99%;
 }
+.modal-content > p {
+    word-wrap: break-word;
+}
 </style>
 @stop
 
