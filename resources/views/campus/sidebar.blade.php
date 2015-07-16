@@ -12,7 +12,7 @@
 
 @section('content')
 <div class="row">
-<ul class="collapsible col s3" data-collapsible="accordion">
+<ul class="collapsible" id="slidebar" data-collapsible="accordion">
 	<li>
 		<div class="collapsible-header">行政</div>
 		<div class="collapsible-body collection">
@@ -54,65 +54,61 @@
 		</div>
 	</li>
 	<li>
-		<div class="collapsible-header">中大十景</div>
+		<div class="collapsible-header">中大美景</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item" id="30">中大路上</a>
-			<a class="collection-item" id="31">筆墨紙硯</a>
-			<a class="collection-item" id="32">情人步道</a>
-			<a class="collection-item" id="33">綠草如茵</a>
-			<a class="collection-item" id="34">太極銅雕</a>
-			<a class="collection-item" id="35">烏龜池畔</a>
-			<a class="collection-item" id="36">中大湖景</a>
-			<a class="collection-item" id="37">百花川語</a>
-			<a class="collection-item" id="38">松濤書閣</a>
-			<a class="collection-item" id="39">女舍廣場</a>
+			<a class="collection-item" id="30">中大正門</a>
+			<a class="collection-item" id="31">蘊行</a>
+			<a class="collection-item" id="32">國泰樹</a>
+			<a class="collection-item" id="33">太極銅雕</a>
+			<a class="collection-item" id="34">中大湖</a>
+			<a class="collection-item" id="35">百花川</a>
 		</div>
 	</li>
 	<li>
 		<div class="collapsible-header">運動</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item" id="40">溜冰場</a>
-			<a class="collection-item" id="41">羽球館</a>
-			<a class="collection-item" id="42">網球館</a>
-			<a class="collection-item" id="43">田徑場</a>
-			<a class="collection-item" id="44">攀岩場</a>
-			<a class="collection-item" id="45">排球場</a>
-			<a class="collection-item" id="46">籃球場</a>
-			<a class="collection-item" id="47">室內游泳池</a>
+			<a class="collection-item" id="36">溜冰場</a>
+			<a class="collection-item" id="37">羽球館</a>
+			<a class="collection-item" id="38">網球館</a>
+			<a class="collection-item" id="39">田徑場</a>
+			<a class="collection-item" id="40">攀岩場</a>
+			<a class="collection-item" id="41">排球場</a>
+			<a class="collection-item" id="42">籃球場</a>
+			<a class="collection-item" id="43">室內游泳池</a>
 		</div>
 	</li>
 	<li>
 		<div class="collapsible-header">飲食</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item" id="48">七舍餐廳</a>
-			<a class="collection-item" id="49">九舍餐廳</a>
-			<a class="collection-item" id="50">松苑餐廳</a>
-			<a class="collection-item" id="51">小木屋</a>
-			<a class="collection-item" id="52">校園café</a>
-			<a class="collection-item" id="53">女14地下廣場</a>
+			<a class="collection-item" id="44">七舍餐廳</a>
+			<a class="collection-item" id="45">九舍餐廳</a>
+			<a class="collection-item" id="46">松苑餐廳</a>
+			<a class="collection-item" id="47">小木屋</a>
+			<a class="collection-item" id="48">校園café</a>
+			<a class="collection-item" id="49">女14地下廣場</a>
 		</div>
 	</li>
 	<li>
 		<div class="collapsible-header">住宿</div>
 		<div class="collapsible-body collection">
-			<a class="collection-item" id="54">國際學生宿舍</a>
-			<a class="collection-item" id="55">研究生宿舍</a>
-			<a class="collection-item" id="56">中大會館</a>
-			<a class="collection-item" id="57">男三舍</a>
-			<a class="collection-item" id="58">男五舍</a>
-			<a class="collection-item" id="59">男六舍</a>
-			<a class="collection-item" id="60">男七舍</a>
-			<a class="collection-item" id="61">男九舍</a>
-			<a class="collection-item" id="62">男十一舍</a>
-			<a class="collection-item" id="63">男十二舍</a>
-			<a class="collection-item" id="64">男十三舍</a>
-			<a class="collection-item" id="65">女一～四舍</a>
-			<a class="collection-item" id="66">女五舍</a>
-			<a class="collection-item" id="67">女十四舍</a>
+			<a class="collection-item" id="50">國際學生宿舍</a>
+			<a class="collection-item" id="51">研究生宿舍</a>
+			<a class="collection-item" id="52">中大會館</a>
+			<a class="collection-item" id="53">男三舍</a>
+			<a class="collection-item" id="54">男五舍</a>
+			<a class="collection-item" id="55">男六舍</a>
+			<a class="collection-item" id="56">男七舍</a>
+			<a class="collection-item" id="57">男九舍</a>
+			<a class="collection-item" id="58">男十一舍</a>
+			<a class="collection-item" id="59">男十二舍</a>
+			<a class="collection-item" id="60">男十三舍</a>
+			<a class="collection-item" id="61">女一～四舍</a>
+			<a class="collection-item" id="62">女五舍</a>
+			<a class="collection-item" id="63">女十四舍</a>
 		</div>
 	</li>
 </ul>
-<div class="container col s9">
+<div class="container" id="main">
 @yield('main')
 </div>
 </div>

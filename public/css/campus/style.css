@@ -7,3 +7,13 @@ a.collection-item {
 	font-size: 120%;
 	font-weight: bold;
 }
+
+#slidebar {
+	float: left;
+	width: 20%;
+}
+
+#main {
+	margin-left: 25%;
+	width: 70%;
+}
