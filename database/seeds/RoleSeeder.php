@@ -14,14 +14,21 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+        // ------------------------------
+        // add role
+        // ------------------------------
         $adminRole = Role::create([
             'name' => 'Admin',
             'slug' => 'admin',
             'description' => '神仙大人',
             'level' => 100,
         ]);
-        $jxcode = User::find(1);
-        $jxcode->attachRole($adminRole);
+        $god = User::create([
+            'name' => '神',
+            'email' => 'god@godmail.god',
+            'password' => bcrypt('ihavethepower'),
+        ]);
+        $god->attachRole($adminRole);
 
         $salesRole = Role::create([
             'name' => 'Sales',
@@ -41,12 +48,18 @@ class RoleSeeder extends Seeder
         // ------------------------------
         // add permission 
         // ------------------------------
-        $manageQaPermission = Permission::create([
-            'name' => 'Manage qa',
-            'slug' => 'manage.qa',
+        $managePermission = Permission::create([
+            'name' => 'Management',
+            'slug' => 'management',
             'description' => '管理Q&A',
         ]);
-        $salesRole->attachPermission($manageQaPermission);
+        $salesRole->attachPermission($managePermission);
 
+        $adminPermission = Permission::create([
+            'name' => 'Admin',
+            'slug' => 'admin',
+            'description' => '管理所有東西',
+        ]);
+        $adminRole->attachPermission($adminPermission);
     }
 }

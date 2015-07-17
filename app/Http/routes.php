@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     // Manage Q&A
-    Route::group(['middleware' => 'permission:manage.qa'], function() {
+    Route::group(['middleware' => 'permission:management'], function() {
         Route::get ('qa/questions'   , 'QaController@index_questions');
         Route::get ('qa/answer'      , 'QaController@create_answer');
         Route::post('qa/answer'      , 'QaController@store_answer');
