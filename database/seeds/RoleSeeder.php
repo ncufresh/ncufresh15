@@ -23,12 +23,6 @@ class RoleSeeder extends Seeder
             'description' => '神仙大人',
             'level' => 100,
         ]);
-        $god = User::create([
-            'name' => '神',
-            'email' => 'god@godmail.god',
-            'password' => bcrypt('ihavethepower'),
-        ]);
-        $god->attachRole($adminRole);
 
         $salesRole = Role::create([
             'name' => 'Sales',

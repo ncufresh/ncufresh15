@@ -26,15 +26,16 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // show user
-Route::resource('user', 'UserController', ['only' => ['index', 'show']]);
+Route::get('user'     , 'UserController@index');
+Route::get('user/{id}', 'UserController@show');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
-        Route::resource('user', 'UserController', [
-            'except' => ['index', 'show'],
-        ]);
+        Route::get ('user/edit/{id}'  , 'UserController@edit');
+        Route::post('user/update/{id}'  , 'UserController@update');
+        Route::get ('user/delete/{id}', 'UserController@destroy');
     });
 
     // Home

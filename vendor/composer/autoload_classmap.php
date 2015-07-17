@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddSoftdeleteUser' => $baseDir . '/database/migrations/2015_07_17_120456_add_softdelete_user.php',
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
+    'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',

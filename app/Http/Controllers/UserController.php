@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +16,9 @@ class UserController extends Controller
      * @return Response
      */
     public function index()
-    {
-        //
+    {        
+        $users = User::latest()->paginate(15);
+        return view('user.index', ['users' => $users]);
     }
 
     /**
@@ -26,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return redirect('user');
     }
 
     /**
@@ -37,7 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('user');
     }
 
     /**
@@ -46,9 +48,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        return view('user.show');
     }
 
     /**
@@ -59,7 +61,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('user.edit', ['user' => $user]);
     }
 
     /**
@@ -71,7 +74,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return redirect('user');
     }
 
     /**
@@ -82,6 +87,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        if (!$user->hasRole('admin')) {
+            $user->delete();
+        }
+        return redirect('user');
     }
 }
