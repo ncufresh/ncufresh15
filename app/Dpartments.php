@@ -1,10 +1,10 @@
 <?php namespace App;
 
-use App\departments;
+use App\Departments;
 
 use Illuminate\Database\Eloquent\Model;
 
-class departments extends Model
+class Departments extends Model
 {
     protected $fillable = ['id', 'category', 'name', 'content'];
 }

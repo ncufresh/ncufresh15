@@ -58,6 +58,8 @@ Route::get ('qa/{category?}' , 'QaController@index');
 Route::get('department', array('as' => 'department', 'uses' => 'Department\ClubController@index'));
 Route::post('department/new', $arrayName = array('as' => 'department/new', 'uses' => 'Department\ClubController@store'));
 Route::get('department/{cate}', 'Department\ClubController@department');
+Route::post('department/update', 'Department\ClubController@update');
+Route::post('department/content', 'Department\ClubController@getContent');
 //******************************************************************************************************
 
 

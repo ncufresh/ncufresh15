@@ -2,8 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\departments;
-use App\department_pictures;
+use App\Departments;
+use App\Department_pictures;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -26,7 +26,7 @@ class ClubController extends Controller {
 		$category = $request->get('cateValue');
 		$name = $request->get('clubName');
 		$content = $request->get('clubContent');
-		departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
+		Departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
 
         //Files upload
         $files = Input::file('fileName');
@@ -38,7 +38,7 @@ class ClubController extends Controller {
                 $filename = uniqid()."_".$filename;
             }
             $upload_success = $file->move($destinationPath, $filename);
-            department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
+            Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
         }
         return redirect('/department');
 	}
@@ -46,47 +46,62 @@ class ClubController extends Controller {
 	public function department($cate) {
 		switch ($cate) {
 			case 1:
-				$content = departments::where('category', 6)->get();
+				$content = Departments::where('category', 6)->get();
 				break;
 			case 2:
-				$content = departments::where('category', 7)->get();
+				$content = Departments::where('category', 7)->get();
 				break;
 			case 3:
-				$content = departments::where('category', 8)->get();
+				$content = Departments::where('category', 8)->get();
 				break;
 			case 4:
-				$content = departments::where('category', 9)->get();
+				$content = Departments::where('category', 9)->get();
 				break;
 			case 5:
-				$content = departments::where('category', 10)->get();
+				$content = Departments::where('category', 10)->get();
 				break;
 			case 6:
-				$content = departments::where('category', 11)->get();
+				$content = Departments::where('category', 11)->get();
 				break;
 			case 7:
-				$content = departments::where('category', 12)->get();
+				$content = Departments::where('category', 12)->get();
 				break;
 			case 8:
-				$content = departments::where('category', 13)->get();
+				$content = Departments::where('category', 13)->get();
 				break;
 			case 9:
-				$content = departments::where('category', 1)->get();
+				$content = Departments::where('category', 1)->get();
 				break;
 			case 10:
-				$content = departments::where('category', 2)->get();
+				$content = Departments::where('category', 2)->get();
 				break;
 			case 11:
-				$content = departments::where('category', 3)->get();
+				$content = Departments::where('category', 3)->get();
 				break;
 			case 12:
-				$content = departments::where('category', 4)->get();
+				$content = Departments::where('category', 4)->get();
 				break;
 			case 13:
-				$content = departments::where('category', 5)->get();
+				$content = Departments::where('category', 5)->get();
 				break;
 			default:
 				break;
 		}
-		return view('department\all')->with('content', $content);
+		return view('department\all')->with('list', $content);
+	}
+
+	public function update(Request $request) {
+		$id = $request->get('id');
+		$name = $request->get('name');
+		$content = $request->get('content');
+		Departments::where('id', $id)->update(['name'=>$name, 'content'=>$content]);
+		return "123";
+	}
+
+	public function getContent(Request $request) {
+		$id = $request->get('id');
+		$name = Departments::where('id', $id)->value('name');
+		$content = Departments::where('id', $id)->value('content');
+		return response()->json(['content'=>$content, 'name'=>$name]);
 	}
 }
