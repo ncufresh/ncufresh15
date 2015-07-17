@@ -12,7 +12,7 @@
 
 @section('content')
 <div class="row">
-<ul class="collapsible" id="slidebar" data-collapsible="accordion">
+<ul class="collapsible col" id="slidebar" data-collapsible="accordion">
 	<li>
 		<div class="collapsible-header">行政</div>
 		<div class="collapsible-body collection">

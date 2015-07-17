@@ -11,9 +11,15 @@ a.collection-item {
 #slidebar {
 	float: left;
 	width: 20%;
+	margin: 0% 3%;
 }
 
 #main {
-	margin-left: 25%;
+	margin-left: 27%;
 	width: 70%;
+}
+
+#campus {
+	background: url('{{asset("img/campus/tree.jpg")}}');
+	background-size: 100% 100%;
 }

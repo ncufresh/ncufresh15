@@ -1,6 +1,7 @@
 @extends('campus/sidebar')
 
 @section('main')
+<div id="campus" class="row"></div>
 <div class="card blue lighten-4">
 	<div class="card-content">
 		<span id="campus_title" class="card-title black-text">行政大樓</span>
