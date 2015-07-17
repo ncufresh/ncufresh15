@@ -3,14 +3,18 @@
 @section('title', 'GAME')
 
 @section('css')
+
+<style>
+    body{ background-color: ivory; }
+    canvas{border:1px solid red;}
+</style>
+
 @stop
 
 @section('content')
 <div id="gg" tabindex="0">
     
 </div>
-
-
 
 
 @stop

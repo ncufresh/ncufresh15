@@ -4,8 +4,11 @@ var bgReady = false;
 var bgImage = new Image();
 bgImage.onload = function () {
 	bgReady = true;
+	//console.log(bgImage.width+"/"+bgImage.height);
 };
-bgImage.src = "game_images/background.png";
+bgImage.src = "game_images/background2.png";
+
+//bgImage.src = "game_images/background.png";
 
 // Hero image
 var heroReady = false;
