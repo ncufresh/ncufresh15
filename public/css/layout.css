@@ -18,8 +18,8 @@
 	top: 0px;
 	display: inline-block;
 	width: 22.5%;
-	height: 73px;
-	background-color: white;
+	height: 100px;
+	background-color: transparent;
 }
 #banner-img {
 	height: 210px;
@@ -54,7 +54,7 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	transition: 6s ease-in-out;
+	/*transition: 6s ease-in-out;*/
 	display: inline-block;
 	position: fixed;
 	top: 65vh;
