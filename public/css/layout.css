@@ -38,6 +38,10 @@
 }
 .banner-menu a{
 	text-align: center;
+	width: 100%;
+}
+.banner-menu a:hover {
+	background-color: #e3f2fd;
 }
 #nav-fixed {
 	position: fixed;
