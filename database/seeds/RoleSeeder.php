@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Bican\Roles\Models\Role;
+use Bican\Roles\Models\Permission;
 use App\User;
 
 class RoleSeeder extends Seeder
@@ -19,7 +20,6 @@ class RoleSeeder extends Seeder
             'description' => '神仙大人',
             'level' => 100,
         ]);
-        $adminRole->save();
         $jxcode = User::find(1);
         $jxcode->attachRole($adminRole);
 
@@ -29,7 +29,6 @@ class RoleSeeder extends Seeder
             'description' => '猴子',
             'level' => 50,
         ]);
-        $salesRole->save();
         
         $userRole = Role::create([
             'name' => 'User',
@@ -37,6 +36,17 @@ class RoleSeeder extends Seeder
             'description' => '香蕉',
             'level' => 10,
         ]);
-        $userRole->save();
+
+
+        // ------------------------------
+        // add permission 
+        // ------------------------------
+        $manageQaPermission = Permission::create([
+            'name' => 'Manage qa',
+            'slug' => 'manage.qa',
+            'description' => '管理Q&A',
+        ]);
+        $salesRole->attachPermission($manageQaPermission);
+
     }
 }
