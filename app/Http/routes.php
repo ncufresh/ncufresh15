@@ -33,20 +33,23 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     // Q&A
-    Route::get('qa/create', 'QaController@create');
-    Route::get('qa/questions', 'QaController@index_questions');
-    Route::post('qa/create', 'QaController@store_question');
 });
 //******************************************************************************************************
 
 
 // Q&A
 //******************************************************************************************************
-Route::get('qa/answer', 'QaController@answer');
-Route::post('qa/answer', 'QaController@store_answer');
-Route::get('qa/view', 'QaController@view');
-Route::get('qa/solved', 'QaController@solved');
-Route::get('qa/{category?}', 'QaController@index');
+Route::get ('qa/questions'   , 'QaController@index_questions');
+Route::get ('qa/create'      , 'QaController@create_question');
+Route::post('qa/create'      , 'QaController@store_question');
+Route::get ('qa/answer'      , 'QaController@create_answer');
+Route::post('qa/answer'      , 'QaController@store_answer');
+Route::get ('qa/edit/{id}'   , 'QaController@edit');
+Route::post('qa/update/{id}' , 'QaController@update');
+Route::get ('qa/delete/{id}' , 'QaController@destroy');
+Route::get ('qa/view'        , 'QaController@view');
+Route::get ('qa/solved'      , 'QaController@solved');
+Route::get ('qa/{category?}' , 'QaController@index');
 //******************************************************************************************************
 
 
