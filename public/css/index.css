@@ -1,0 +1,27 @@
+#content {
+	height: 100%;
+}
+
+#r1 {
+	height: 400px;
+}
+
+#r2 {
+	height: 170px;
+}
+
+#post-container {
+	margin-right: 5%;
+	width: 45%;
+	height: 100%;
+}
+
+#slider-container {
+	width: 50%;
+	height: 100%;
+	padding-top: 10px;
+}
+
+#calender-container {
+	height: 100%;
+}
