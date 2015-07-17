@@ -25,8 +25,18 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// show user
+Route::resource('user', 'UserController', ['only' => ['index', 'show']]);
+
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    // Dashboard
+    Route::group(['middleware' => 'permission:admin'], function() {
+        Route::resource('user', 'UserController', [
+            'except' => ['index', 'show'],
+        ]);
+    });
+
     // Home
     Route::get('home', function() {
         return view('home.index');
