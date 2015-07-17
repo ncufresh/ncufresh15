@@ -16,18 +16,18 @@ class IntroController extends Controller
 		$view_id = $request->get('view_id');
 
 		$error = "";
-		$rows = campus::where('view_id', $view_id)->count();
+		$rows = Campus::where('view_id', $view_id)->count();
 		if ($introduction=="")
 		{
 			$error = "*請輸入文字";
 		}
 		else if($rows==0)
 		{
-			campus::create(['introduction'=>$introduction, 'view_id'=>$view_id]);
+			Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id]);
 		}
 		else
 		{
-			campus::where('view_id', $view_id)
+			Campus::where('view_id', $view_id)
 					->update(['introduction'=>$introduction]);
 		}
 

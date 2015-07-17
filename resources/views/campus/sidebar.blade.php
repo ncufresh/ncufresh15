@@ -8,6 +8,8 @@
 
 @section('js')
 <script src="{{ asset('js/campus/renew.js') }}"></script>
+<script src="{{ asset('js/campus/show_map.js') }}"></script>
+<script src="{{ asset('js/campus/write_intro.js') }}"></script>
 @stop
 
 @section('content')

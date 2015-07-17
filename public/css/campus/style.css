@@ -19,7 +19,16 @@ a.collection-item {
 	width: 70%;
 }
 
+#pictures {
+	position: relative;
+}
+
 #campus {
-	background: url('{{asset("img/campus/tree.jpg")}}');
-	background-size: 100% 100%;
+	width: 100%;
+}
+
+#map {
+	position: absolute;
+	right: 0%;
+	width: 8%;
 }

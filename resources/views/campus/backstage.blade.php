@@ -1,7 +1,10 @@
 @extends('campus/sidebar')
 
 @section('main')
-<div id="campus" class="row"></div>
+<div id="pictures">
+	<img id="map" src="{{asset('img/campus/NCU_Campus.jpg')}}">
+	<img id="campus" src="{{asset('img/campus/tree.jpg')}}">
+</div>
 <div class="card blue lighten-4">
 	<div class="card-content">
 		<span id="campus_title" class="card-title black-text">行政大樓</span>
