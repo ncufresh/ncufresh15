@@ -1,6 +1,7 @@
 $(function() {
     $('.modal-trigger').leanModal();
     $('.modal-trigger.answer').click(function() {
+
         $.ajax({
             url: '/qa/view?id=' + $(this).attr('data-id'),
             type: 'GET',
@@ -8,7 +9,7 @@ $(function() {
 
             success: function(msg) {
                 msg = JSON.parse(msg);
-                $("#view"+msg.id).html(msg.views);
+                $(".view"+msg.id).html(msg.views);
             }
         });
     });
