@@ -21,9 +21,7 @@ var block1 = {x:165,y:120,width:32,height:320,type:"block"};
 var block2 = {x:300,y:288,width:160,height:32,type:"block"};
 var block3 = {x:365,y:159,width:32,height:32,type:"block"};
 
-var block4 = {x:165,y:32,width:96,height:32,type:"block"};
-
-var blocks=[block1,block2,block3,block4];
+var blocks=[block1,block2,block3];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");
