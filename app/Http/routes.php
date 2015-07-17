@@ -42,7 +42,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get ('qa/questions'   , 'QaController@index_questions');
 Route::get ('qa/create'      , 'QaController@create_question');
 Route::post('qa/create'      , 'QaController@store_question');
-Route::get ('qa/answer'      , 'QaController@create_answer');
+Route::get ('qa/answer', [
+    'middleware' => 'role:admin',
+    'uses' => 'QaController@create_answer',
+]);
 Route::post('qa/answer'      , 'QaController@store_answer');
 Route::get ('qa/edit/{id}'   , 'QaController@edit');
 Route::post('qa/update/{id}' , 'QaController@update');
