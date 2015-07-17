@@ -53,3 +53,10 @@
 .contentHidden {
 
 }
+/***編輯******************************************************************************/
+.isvisible {
+	display: block;
+}
+.ishidden {
+	display: none;
+}

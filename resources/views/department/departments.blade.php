@@ -93,9 +93,6 @@
       			</div>
    			</div>
 			<div>
-				<label id="butUp" class="waves-effect waves-light btn-large grey lighten-2 butSelect">圖片上傳</label>
-			</div>
-			<div>
 				<button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">確認上傳</button>
 			</div>
 		{!! Form::close()!!}

@@ -1,6 +1,15 @@
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
+    $('#editBut').click(function(){
+    	$('.mainContent').removeClass('isvisible').addClass('ishidden');
+    	$('.mainEdit').removeClass('ishidden').addClass('isvisible');
+    });
+    $('#finishBut').click(function(){
+    	$('.mainContent').removeClass('ishidden').addClass('isvisible');
+    	$('.mainEdit').removeClass('isvisible').addClass('ishidden');
+    });
 });
+
 function getFileName(file) {
 	var files = document.getElementById("file").files;
 	for (var i = 0; i < files.length; i++) {
