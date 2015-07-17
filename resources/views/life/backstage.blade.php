@@ -1,36 +1,35 @@
 @extends('layout')
 
-@section('title','中大生活')
-
-@section('css')
-<style>
-h1 {
-	color:blue;
-	margin:0px auto;
-}
-</style>
-@stop
+@section('title','輸入中大生活的資料')
 
 @section('content')
 <div class="row">
-	<div class="col" style="width:15%">	
-		<a href="" style="font-size:150%">首頁</a>
-	</div>
-	<div class="col" style="width:15%">
-		<a href="" style="font-size:150%">中大生活</a>
-	</div><br>
-	<div class="col s12 m4 l8">
-		<h1>中大生活</h1>
-	</div><br>
-
-	<body>
-		<img src="http://bred.ari.users.photofile.ru/photo/bred.ari/200739011/xlarge/210690924.jpg" width="500" height="700" alt="pic">
-		<map name="pic">
-			<area shape="circle" coords="">
-		</map>
-	</body>
-
-</div>  
-	
-
+	<form class="col s12" action="">
+		<div class="input-field col s12">  <!--選擇類別(食、住、育、樂、行)-->
+			<select class="browser-default" id="choose">
+				<option value="" display selected>選擇類別</option>
+				<option value="1">食</option>
+				<option value="2">住</option>
+				<option value="3">育</option>
+				<option value="4">樂</option>
+				<option vlaue="5">行</option>
+			</select>
+		</div>	
+		<div class="row">  <!--輸入介紹的文字內容-->
+			<div class="input-field col s12">
+				<input id="description" type="text" class="validate">
+				<label for="description">介紹的文字內容</label>
+			</div>
+		</div>
+		<div class="row">  <!--輸入影片網址-->
+			<div class="input-field col s12">
+				<input id="video" type="text">
+				<label for="video">影片網址</label>
+			</div>
+		</div>
+		<div class="input-field row">
+			<button class="btn waves-effect waves-light right indigo" type="submit" name="action">提交</button>
+		</div>
+	</form>
+</div>
 @stop
