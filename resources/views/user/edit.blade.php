@@ -49,16 +49,6 @@
             <input id="input_student_id" type="text" class="validate" name="student_id" value="{{Input::old('student_id')?Input::old('student_id'):$user->student_id}}">
             <label for="input_student_id">學號</label>
         </div>
-        <div class="row input-field">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="input_department" type="text" class="validate" name="department">
-            <label for="input_department">系所</label>
-        </div>
-        <div class="row input-field">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="input_grade" type="text" class="validate" name="grade">
-            <label for="input_grade">年級</label>
-        </div>
         <div class="input-field row">
             <button class="btn waves-effect waves-light right indigo" type="submit">修改</button>
         </div>
