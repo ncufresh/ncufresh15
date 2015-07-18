@@ -55,6 +55,12 @@ td.expand {
         </div> 
     </div>
     <div class="col s9">
+        <a href="{{url('qa/create?type=qa')}}" class="waves-effect waves-light btn">
+            <i class="material-icons left">message</i>我要發問
+        </a>
+        <a href="{{url('qa/create?type=report')}}" class="waves-effect waves-light btn">
+            <i class="material-icons left">report_problem</i>問題回報
+        </a>
         @foreach ($answers as $answer)
         <div id="show{{$answer->id}}" class="modal modal-fixed-footer">
             <div class="modal-content">

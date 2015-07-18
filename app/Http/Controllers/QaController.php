@@ -149,6 +149,7 @@ class QaController extends Controller
         $question->title = $request->title;
         $question->content = $request->content;
         $question->solved = false;
+        $question->author_id = $request->user()->id;
         $question->save();
         return redirect('qa');
     }

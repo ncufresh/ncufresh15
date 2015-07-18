@@ -18,7 +18,7 @@ class QaQuestion extends Model
      *
      * @var array
      */
-    protected $fillable = ['category', 'title', 'content', 'solved'];
+    protected $fillable = ['category', 'title', 'content', 'solved', 'author_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
