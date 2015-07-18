@@ -70,6 +70,7 @@ function getFileName(file) {
     	console.log(files[i].name);
 	}
 }
+
 function clickCate(num) {
 	switch(num) {
 		case 1:
