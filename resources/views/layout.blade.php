@@ -48,7 +48,15 @@
 							<li><a href="#!">three</a></li>
 						</ul>
 						<li><a href="{{ url('department')}}">系所社團</a></li>
-						<li><a href="{{ url('qa') }}">新生Q&amp;A</a></li>
+						<li><a id='nav-qa-trigger' data-activates='nav-qa' href="{{ url('qa') }}">新生Q&amp;A</a></li>
+							<ul id='nav-qa' class='dropdown-content'>
+								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
+								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
+								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
+								<li class="divider"></li>
+								<li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
+								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
+							</ul>
 						<li><a href="{{ url('video2') }}">影音專區</a></li>
 						<li><a href="#">關於我們</a></li>
 					</ul>

@@ -23,6 +23,12 @@ $(document).ready(function(){
 		hover: false
 	});
 
+	$("#nav-qa-trigger").dropdown({
+		constrain_width: false,
+		hover: true,
+		belowOrigin: true
+	});
+
 	$('#portal-img').click(function(e) {
 		e.stopPropagation();
 		if (portalToggle) {
