@@ -12,6 +12,9 @@
 
 @section('content')
 <div id="answer-form" class="row" style="padding: 0 10%;">
+    <a href="{{url('qa/questions')}}" class="waves-effect waves-light btn">
+        <i class="material-icons left">input</i>返回問題列表
+    </a>
     <form class="col s12" action="{{isset($answer)?action('QaController@update', $answer->id):url('qa/answer')}}" method="post">
         {!! csrf_field() !!}
         @if (count($errors) > 0)

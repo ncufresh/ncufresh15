@@ -26,4 +26,7 @@ class QaQuestion extends Model
      * @var array
      */
     //protected $hidden = ['password', 'remember_token'];
+    public function author() {
+        return $this->hasOne('App\User', 'id', 'author_id');
+    }
 }

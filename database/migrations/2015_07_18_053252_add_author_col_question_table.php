@@ -12,7 +12,7 @@ class AddAuthorColQuestionTable extends Migration
      */
     public function up()
     {
-        Schema::table('question', function(Blueprint $table) {
+        Schema::table('qa_question', function(Blueprint $table) {
             $table->integer('author_id');
         });
     }
@@ -24,7 +24,7 @@ class AddAuthorColQuestionTable extends Migration
      */
     public function down()
     {
-        Schema::table('question', function(Blueprint $table) {
+        Schema::table('qa_question', function(Blueprint $table) {
             $table->dropColumn('author_id');
         });
     }
