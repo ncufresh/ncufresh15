@@ -77,10 +77,10 @@ Route::get('backstage_document', function () {
 // video
 //******************************************************************************************************
 Route::get('video2', function () {
-    return view('video2');
+    return view('video\video2');
 });
 Route::get('video', function () {
-    return view('video');
+    return view('video\video');
 });
 
 //******************************************************************************************************

@@ -22,18 +22,36 @@
 <!--<script src=''></script> -->
 <script>
 $(document).ready(function(){
-  $("#send").click(function(){
-    event.preventDefault();//preven default event from happens
 
-    $.post("some.php",
-    {
-      name: $("#n").val(),
-      comment: $("#c").val()
-    },
-    function(result){
-      $("#0").prepend(result);
-    });
-  }); 
+ $("#send").on("click", function() {
+    event.preventDefault();
+    $.ajax({  //ajax
+    url:"add.php", //including index.php!!!
+    type: "POST",
+    data: {name: $("#SendName").val() , comment: $("#SendComment").val() },   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
+
+    success: function(msg) {
+    console.log(msg);   //js, save data
+         $("#0").append($(msg).hide().fadeIn(1000));  //append: add in the back
+          }
+      });
+  });
+ $(document).on("click", ".delete" , function() {
+     event.preventDefault();
+    $.ajax({  //ajax
+    url:"delete.php", //including index.php!!!
+    type: "POST",
+    data: {id: $(this).val()},   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
+
+    success: function(msg) {
+    console.log(msg);   //js, save data
+         $("#"+msg).hide(1000);  //append: add in the back
+          }
+      });
+  });
+
+
+
 });
 </script>
 
