@@ -21,6 +21,13 @@
 			#banner {
 				box-shadow: 0px 1px 10px 0.5px grey;
 			}
+			#logo {
+				background-image: url('{{asset("img/indexLogo.png")}}');
+				background-size: 100% 100%;
+			}
+			#nop {
+				opacity: 0;
+			}
 		</style>
 		@yield('css')
     </head>
@@ -41,7 +48,15 @@
 							<li><a href="#!">three</a></li>
 						</ul>
 						<li><a href="{{ url('department')}}">系所社團</a></li>
-						<li><a href="{{ url('qa') }}">新生Q&amp;A</a></li>
+						<li><a id='nav-qa-trigger' data-activates='nav-qa' href="{{ url('qa') }}">新生Q&amp;A</a></li>
+							<ul id='nav-qa' class='dropdown-content'>
+								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
+								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
+								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
+								<li class="divider"></li>
+								<li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
+								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
+							</ul>
 						<li><a href="{{ url('video2') }}">影音專區</a></li>
 						<li><a href="#">關於我們</a></li>
 					</ul>
@@ -56,8 +71,8 @@
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>新生必讀</a></div>
 						<div class='col s4'>
-						<div>yo</div>
-						<a id='logo' href='{{url('/')}}'>logo</a>
+						<div id='nop'>yo</div>
+						<a id='logo' href='{{url('/')}}'></a>
 						</div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>中大生活</a></div>
 						<div class='col s2'><a class='links waves-effect waves-teal btn-flat' data-activates='banner-links'>常用連結</a></div>
@@ -72,7 +87,7 @@
 					</div>
 					<div class='row banner-menu'>
 						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('department')}}'>系所社團</a></div>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat' data-activates='qadropdown'>新生Q&amp;A</a>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
 							<ul id='qadropdown' class='dropdown-content'>
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
 								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
