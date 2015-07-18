@@ -23,9 +23,6 @@ td.shrink {
 td.expand {
     width: 99%;
 }
-.modal-content > p {
-    word-wrap: break-word;
-}
 </style>
 @stop
 
@@ -67,19 +64,6 @@ td.expand {
         <a href="{{url('qa/create?type=report')}}" class="waves-effect waves-light btn">
             <i class="material-icons left">report_problem</i>問題回報
         </a>
-        @foreach ($answers as $answer)
-        <div id="show{{$answer->id}}" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <h4>{{ $answer->title }}</h4>
-                <p>{!! nl2br(e($answer->content)) !!}</p>
-            </div>
-            <div class="modal-footer">
-                <button class="modal-action modal-close waves-effect waves-light btn-flat">關閉</button>
-                <a class="waves-effect waves-light btn-flat" href="{{action('QaController@edit', $answer->id)}}">編輯</a>
-                <a class="waves-effect waves-light btn-flat red" href="{{action('QaController@destroy', $answer->id)}}">刪除</a>
-            </div>
-        </div>
-        @endforeach
         @if ($top_answers != null)
         <div class="card-panel">
             <h4>熱門Q&amp;A</h4>
