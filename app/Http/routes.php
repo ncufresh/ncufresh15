@@ -87,13 +87,12 @@ Route::get('campus', 'Campus\CampusController@index');
 
 //Document
 //******************************************************************************************************
-//Route::get('document', array('as' => 'document', 'uses' => 'documentController@index'))
-//後台新增公告
-Route::get('backstage_document', function () {
-    return view('document/backstage_important_cal');
-});
-//抓在哪個分頁
-//Route::get('document/{}/{}/{}', function($, $, $){});
+Route::get('document', 'Document\DocumentController@index');
+Route::get('document/ckeditor', 'Document\DocumentController@editor');
+Route::post('document/add_content', array('as' => 'document/add_content', 'uses' => 'Document\DocumentController@store'));
+Route::get('department/{id_1}', 'Document\DocumentController@document_1');
+Route::get('department/{id_1}/{id_2}', 'Document\DocumentController@document_2');
+Route::get('department/{id_1}/{id_2}/{id_3}', 'Document\DocumentController@document_3');
 //******************************************************************************************************
 
 // video
