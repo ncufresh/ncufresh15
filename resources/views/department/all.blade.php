@@ -1,31 +1,63 @@
-@extends('department\list')
+@extends('layout')
 
 @section('title', '系所社團')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
+@stop
+@section('js')
+    <script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
+@stop
 
-@section('main')
+@section('content')
 <div>
-	<div class="col s1">
-    	<a href="/department"><i class="small material-icons">navigate_before</i></a>
+    @foreach($content as $content)
+    @endforeach
+    <!--新增-->
+    <div>
+        <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/add">新增</a>
+        <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
     </div>
-    <div id="test1" class="col s12" style="padding: 30px;">
-    	@foreach($list as $list)
-    	<div class="group">
-            <input name="id" type="hidden" value="{{ $list->id }}">
-			<a id="showModal" class="modal-trigger waves-effect waves-light btn-large grey lighten-2 butSelect butGroup" href="#show">{{ $list->name }}</a>
-		</div>
-        @endforeach
-    	<div id="show" class="modal modal-fixed-footer">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="modal-content fullContent">
-                
-            </div>
-            <div class="modal-footer">
-                <a class=" modal-action modal-close waves-effect waves-green btn-flat" id="finishBut">關閉</a>
-                <button class="modal-action modal-close waves-effect waves-light btn-flat" id="completeBut">完成</button>
-                <a class="waves-effect waves-light btn-flat" id="editBut">編輯</a>
-                <a class="waves-effect waves-light btn-flat red">刪除</a>
+    <div class="col s1">
+        <i class="small material-icons">navigate_before</i>
+    </div>
+</div>
+<div class="container">
+@if($sect === 1)
+    <div>
+        <h3>{{ $content->name }}</h3>
+        <p>{{ $content->content }}</p>
+    </div>
+    @foreach($picture as $picture)
+    <div>
+        <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+    </div>
+    @endforeach
+@elseif($sect === 2)
+    {!! Form::open(array('url'=>'/group/update', 'method'=>'post', 'files' => true))!!}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="id" value="{{ $content->id }}">
+        <input type="hidden" name="originName" value="{{ $content->name }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="name" id="name" type="text" class="validate" value="{{ $content->name }}">
+                <label for="name">名稱</label>
             </div>
         </div>
-	</div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea name="content" id="textarea1" class="materialize-textarea" length="600">{{ $content->content }}</textarea>
+                <label for="textarea1">內容</label>
+            </div>
+        </div>
+        @foreach($picture as $picture)
+        <div>
+            <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+        </div>
+        @endforeach
+        <div>
+            <button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">送出</button>
+        </div>
+    {!! Form::close()!!}
+@endif
 </div>
 @stop
