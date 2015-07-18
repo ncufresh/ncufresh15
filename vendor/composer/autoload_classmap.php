@@ -7,11 +7,18 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddAuthorColQuestionTable' => $baseDir . '/database/migrations/2015_07_18_053252_add_author_col_question_table.php',
+    'AddSoftdeleteUser' => $baseDir . '/database/migrations/2015_07_17_120456_add_softdelete_user.php',
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
+    'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',
+    'CreatePermissionUserTable' => $baseDir . '/database/migrations/2015_02_09_132439_create_permission_user_table.php',
+    'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_01_26_115212_create_permissions_table.php',
     'CreateQaAnswerTable' => $baseDir . '/database/migrations/2015_07_14_020939_create_qa_answer_table.php',
     'CreateQaQuestion' => $baseDir . '/database/migrations/2015_07_14_112041_create_qa_question.php',
+    'CreateRoleUserTable' => $baseDir . '/database/migrations/2015_01_15_114412_create_role_user_table.php',
+    'CreateRolesTable' => $baseDir . '/database/migrations/2015_01_15_105324_create_roles_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -477,6 +484,8 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'RemoveColUserTable' => $baseDir . '/database/migrations/2015_07_17_142315_remove_col_user_table.php',
+    'RoleSeeder' => $baseDir . '/database/seeds/RoleSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -515,4 +524,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateUserTable' => $baseDir . '/database/migrations/2015_07_17_075146_update_user_table.php',
 );

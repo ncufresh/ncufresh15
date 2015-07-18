@@ -14,6 +14,13 @@
 				background: url('{{asset("img/Untitled.png")}}');
 				background-size: 65px;
 			}
+			#banner-img {
+				background: url('{{asset("img/banner.jpg")}}');
+				background-size: 100% 100%;
+			}
+			#banner {
+				box-shadow: 0px 1px 10px 0.5px grey;
+			}
 		</style>
 		@yield('css')
     </head>
@@ -46,14 +53,14 @@
         <div id='container' class="container z-depth-2">
 				<div id='banner'>
 					<div class='row banner-menu'>
-						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('campus') }}'>校園導覽</a></div>
-						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>新生必讀</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>新生必讀</a></div>
 						<div class='col s4'>
 						<div>yo</div>
 						<a id='logo' href='{{url('/')}}'>logo</a>
 						</div>
-						<div class='col s2'><a class='waves-effect waves-light btn grey darken-3'>中大生活</a></div>
-						<div class='col s2'><a class='links btn grey darken-3' data-activates='banner-links'>常用連結</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>中大生活</a></div>
+						<div class='col s2'><a class='links waves-effect waves-teal btn-flat' data-activates='banner-links'>常用連結</a></div>
 						<ul id='banner-links' class='dropdown-content'>
 							<li><a href="#!">one</a></li>
 							<li><a href="#!">two</a></li>
@@ -64,8 +71,8 @@
 					<div id='banner-img' class='row'>
 					</div>
 					<div class='row banner-menu'>
-						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('department')}}'>系所社團</a></div>
-						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3 links btn' data-activates='qadropdown'>新生Q&amp;A</a>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('department')}}'>系所社團</a></div>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat' data-activates='qadropdown'>新生Q&amp;A</a>
 							<ul id='qadropdown' class='dropdown-content'>
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
 								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
@@ -75,8 +82,8 @@
 								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
 							</ul>
 						</div>
-						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('video2') }}'>影音專區</a></div>
-						<div class='col s3'><a class='waves-effect waves-light btn grey darken-3' href='{{ url('about')}}'>關於我們</a></div>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
 					</div>
 				</div>
 			@endif
@@ -84,7 +91,7 @@
             	@yield('content')
 			</div>
         </div>
-		<footer class="page-footer">NCU Fresh© 2015 Copyright Text</footer>
+		<footer class="page-footer" id='footer'>NCU Fresh© 2015 Copyright Text</footer>
 		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>

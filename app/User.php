@@ -4,13 +4,16 @@ namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Bican\Roles\Traits\HasRoleAndPermission;
+use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract, HasRoleAndPermissionContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, HasRoleAndPermission, SoftDeletes;
 
     /**
      * The database table used by the model.
@@ -24,7 +27,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+        'name', 
+        'email', 
+        'password', 
+        'department', 
+        'grade',
+        'student_id',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -32,4 +42,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+    protected $dates = ['deleted_at'];
+
 }

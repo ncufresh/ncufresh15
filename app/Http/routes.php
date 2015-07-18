@@ -25,30 +25,43 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// show user
+Route::get('user'     , 'UserController@index');
+Route::get('user/{id}', 'UserController@show');
+
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    // Dashboard
+    Route::group(['middleware' => 'permission:admin'], function() {
+        Route::get ('user/edit/{id}'  , 'UserController@edit');
+        Route::post('user/update/{id}'  , 'UserController@update');
+        Route::get ('user/delete/{id}', 'UserController@destroy');
+    });
+
     // Home
     Route::get('home', function() {
         return view('home.index');
     });
 
-    // Q&A
+    // Manage Q&A
+    Route::group(['middleware' => 'permission:management'], function() {
+        Route::get ('qa/questions'   , 'QaController@index_questions');
+        Route::get ('qa/answer'      , 'QaController@create_answer');
+        Route::post('qa/answer'      , 'QaController@store_answer');
+        Route::get ('qa/edit/{id}'   , 'QaController@edit');
+        Route::post('qa/update/{id}' , 'QaController@update');
+        Route::get ('qa/delete/{id}' , 'QaController@destroy');
+        Route::get ('qa/solved'      , 'QaController@solved');
+    });
 });
 //******************************************************************************************************
 
 
 // Q&A
 //******************************************************************************************************
-Route::get ('qa/questions'   , 'QaController@index_questions');
 Route::get ('qa/create'      , 'QaController@create_question');
 Route::post('qa/create'      , 'QaController@store_question');
-Route::get ('qa/answer'      , 'QaController@create_answer');
-Route::post('qa/answer'      , 'QaController@store_answer');
-Route::get ('qa/edit/{id}'   , 'QaController@edit');
-Route::post('qa/update/{id}' , 'QaController@update');
-Route::get ('qa/delete/{id}' , 'QaController@destroy');
 Route::get ('qa/view'        , 'QaController@view');
-Route::get ('qa/solved'      , 'QaController@solved');
 Route::get ('qa/{category?}' , 'QaController@index');
 //******************************************************************************************************
 
