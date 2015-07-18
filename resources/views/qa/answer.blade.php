@@ -8,6 +8,12 @@
 @section('js')
 <!--<script src=''></script> -->
 <script src='{{ asset('js/select.js') }}'></script>
+<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    $(function() {
+        CKEDITOR.replace('ans-content');
+    });
+</script>
 @stop
 
 @section('content')
@@ -49,9 +55,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <textarea id="ans-content" class="materialize-textarea" name="content">{{isset($answer)?$answer->content:''}}</textarea>
-                <label for="ans-content">內文</label>
+            <div class="col s12">
+                <textarea id="ans-content" name="content">{{isset($answer)?$answer->content:''}}</textarea>
             </div>
         </div>
         <div class="input-field row">

@@ -19,6 +19,12 @@ td.shrink {
 td.expand {
     width: 99%;
 }
+#ans-content td {
+    border:1px solid rgba(34, 36, 38, 0.1);
+}
+#ans-content strong {
+    font-weight: bold;
+}
 </style>
 @stop
 
@@ -59,6 +65,9 @@ td.expand {
         <a href="{{url('qa/create?type=report')}}" class="waves-effect waves-light btn">
             <i class="material-icons left">report_problem</i>問題回報
         </a>
+        <a href="{{url('qa/edit/'.$answer->id)}}" class="waves-effect waves-light btn">
+            <i class="material-icons left">description</i>編輯此Q&amp;A
+        </a>
         <table>
             <thead>
                 <tr>
@@ -77,9 +86,9 @@ td.expand {
                 </tr>
             </tbody>
         </table>
-        <div>
+        <div id="ans-content">
             <p style="font-size:1.2em;">
-                {!! nl2br($answer->content) !!}
+                {!! $answer->content !!}
             </p>
         </div>
     </div>

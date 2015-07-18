@@ -196,7 +196,7 @@ class QaController extends Controller
         $answer = new QaAnswer;
         $answer->category = $request->category;
         $answer->title = strip_tags($request->title);
-        $answer->content = strip_tags($request->content, '<p><a><hr>');
+        $answer->content = $this->sanitize($request->content);
         $answer->views = 0;
         $answer->save();
         return redirect('qa');
@@ -276,10 +276,10 @@ class QaController extends Controller
         }
         $answer = QaAnswer::find($id);
         $answer->category = $request->category;
-        $answer->title = $request->title;
-        $answer->content = $request->content;
+        $answer->title = strip_tags($request->title);
+        $answer->content = $this->sanitize($request->content);
         $answer->save();
-        return redirect('qa');
+        return redirect('qa/'.$answer->id);
     }
 
     /**
@@ -296,5 +296,13 @@ class QaController extends Controller
             $answer->delete();
         }
         return redirect('qa');
+    }
+
+
+    // helpers
+    private function sanitize($dirty) {
+        return strip_tags($dirty,
+            '<img><table><thead><tbody><tr><td><th><h1><h2><h3><pre><ins><a><p><s><strong><em><span><ul><ol><li><blockquote>'
+        );
     }
 }

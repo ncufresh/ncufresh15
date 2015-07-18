@@ -11,11 +11,11 @@ use App\document;
 class DocumentController extends Controller
 {
     public function index() {
-		return view('document\document_layout');	//到頁面(第一次是到104校曆?)
+		return view('document.document_layout');	//到頁面(第一次是到104校曆?)
 	}
 
 	public function editor() {
-		return view('document\editor');
+		return view('document.editor');
 	}
 
 	public function store(Request $request) {
