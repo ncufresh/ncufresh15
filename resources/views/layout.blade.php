@@ -47,7 +47,7 @@
 							<li class="divider"></li>
 							<li><a href="#!">three</a></li>
 						</ul>
-						<li><a href="{{ url('department')}}">系所社團</a></li>
+						<li><a href="{{ url('group')}}">系所社團</a></li>
 						<li><a id='nav-qa-trigger' data-activates='nav-qa' href="{{ url('qa') }}">新生Q&amp;A</a></li>
 							<ul id='nav-qa' class='dropdown-content'>
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
@@ -86,7 +86,7 @@
 					<div id='banner-img' class='row'>
 					</div>
 					<div class='row banner-menu'>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('department')}}'>系所社團</a></div>
+						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('group')}}'>系所社團</a></div>
 						<div class='col s3'><a class='waves-effect waves-teal btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
 							<ul id='qadropdown' class='dropdown-content'>
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
