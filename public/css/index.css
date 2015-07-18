@@ -25,3 +25,25 @@
 #calender-container {
 	height: 100%;
 }
+
+.tab-content {
+	overflow: auto;
+	height: 85%;
+}
+
+.category {
+	display: block;
+	position: relative;
+	width: 50%;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.cat1 {
+	background-color: #6a1b9a;
+}
+
+.cat2 {
+	background-color: #0288d1;
+}
