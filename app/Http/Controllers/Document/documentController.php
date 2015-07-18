@@ -11,17 +11,22 @@ use App\document;
 class DocumentController extends Controller
 {
     public function index() {
-		return view('document\document_layout');	//到頁面(第一次是到104校曆?)
+		return view('document.document_layout');	//到頁面(第一次是到104校曆?)
 	}
 
 	public function editor() {
-		return view('document\editor');
+		return view('document.editor');
 	}
 
 	public function store(Request $request) {
-		document::create($request->all());
-		document(45);
-		return re;
+		$doc = document::create($request->all());
+		return response()->json(['text'=>$doc]);
+		//return redirect('document/get_content/'.$doc->id.'');
+	}
+
+	public function get_content($id){
+		$content = document::where('page_id',0)->value('text');
+		return view('document.page')->with('text',$content);
 	}
 
 	public function document_1($id_1) {
@@ -38,7 +43,7 @@ class DocumentController extends Controller
 		}
 
 		$content = document::where('category',1)->value('text');
-		return view('document\page')->with('text',$content);
+		return view('document.page')->with('text',$content);
 	}
 	public function document_2($id_1,$id_2) {
 		if($id_1===1){
@@ -121,7 +126,7 @@ class DocumentController extends Controller
 		}
 
 		$content = document::where('category',1)->value('text');
-		return view('document\page')->with('text',$content);
+		return view('document.page')->with('text',$content);
 	}
 	public function document_3($id_1,$id_2,$id_3) {
 		if($id_1===1){
@@ -248,6 +253,6 @@ class DocumentController extends Controller
 		}
 
 		$content = document::where('category',1)->value('text');
-		return view('document\page')->with('text',$content);
+		return view('document.page')->with('text',$content);
 	}
 }

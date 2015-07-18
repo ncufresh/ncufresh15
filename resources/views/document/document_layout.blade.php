@@ -139,9 +139,7 @@
     <li><a href="52">104年大一新生入住交通管制圖及報到流程</a></li>
   </ul>
 
-  <a class="waves-effect waves-light btn" href="document/ckeditor">新增</a>
-  <a class="waves-effect waves-light btn">編輯</a>
-  <a class="waves-effect waves-light btn">刪除</a>
+  <a class="waves-effect waves-light btn" href="/document/ckeditor">編輯</a>
 @yield('text')
 @stop
 

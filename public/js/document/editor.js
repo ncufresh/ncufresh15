@@ -1,28 +1,21 @@
-$(function() {
+$(document).ready(function(){
 	CKEDITOR.replace( 'editor1' );
-
+	$("#text_done").click(function(){
+		var content = CKEDITOR.instances.editor1.getData();
+		$.ajax({
+			url:"/document/add_content", 
+			type: "POST",
+			data: {"text": content},
+			dataType: "json",
+	
+			success: function(msg) {
+				console.log(content);
+				$("#text").html("<div>"+content+"</div>");
+    	 	},
+    	 	error: function(xhr, status, error){
+    	 		var err = eval("("+ xhr.respinseText+ ")");
+    			alert(err.Message);
+    	 	}
+		});
+	});
 });
-
-function save() {
-	var content = CKEDITOR.instances.editor1.getData();
-	$.ajaxSetup({
-		headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
-
-	// ajax
-	$.ajax({
-		url:"/document/add_content", 
-		type: "POST",
-		data: {text: content},
-		success: function(msg) {
-			console.log(msg);
-			alert("我成功了YA~~");
-     	},
-     	error: function(xhr, status, error){
-     		var err = eval("("+ xhr.respinseText+ ")");
-    		alert(err.Message);
-     	}
-	});
-}
