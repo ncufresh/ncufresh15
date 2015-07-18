@@ -2,34 +2,46 @@
 
 @section('title','輸入中大生活的資料')
 
+@section('js')
+<script src='{{ asset('js/select.js') }}'></script> <!--一定要引用才能顯示select-->
+@stop
+
 @section('content')
-<div class="row">
-	<form class="col s12" action="">
-		<div class="input-field col s12">  <!--選擇類別(食、住、育、樂、行)-->
-			<select class="browser-default" id="choose">
-				<option value="" display selected>選擇類別</option>
-				<option value="1">食</option>
-				<option value="2">住</option>
-				<option value="3">育</option>
-				<option value="4">樂</option>
-				<option vlaue="5">行</option>
-			</select>
+<div id="lifedescription" class="row" style="padding:0 10%;">
+	<form class="col s12" action="{{action('Life\LifeController@store')}}" method="post">
+		{!! csrf_field() !!}
+		<h2>新增中大生活的資料</h2>
+		<div class="row">
+			<div class="input-field col s3">  <!--選擇類別(食、住、育、樂、行)-->
+				<select name="lifecategory">
+					<option value="0">食</option>
+					<option value="1">住</option>
+					<option value="2">育</option>
+					<option value="3">樂</option>
+					<option vlaue="4">行</option>
+				</select>
+				<label>類別</label>
+			</div>
+			<div class="input-field col s9">  <!--輸入影片網址-->
+				 <i class="material-icons prefix" style="font-size:2rem">info</i> 
+				<input id="input_video" type="text" name="video">
+				<label for="input_video">影片網址</label>
+			</div>
 		</div>	
 		<div class="row">  <!--輸入介紹的文字內容-->
 			<div class="input-field col s12">
-				<input id="description" type="text" class="validate">
+				 <i class="material-icons prefix">mode_edit</i>
+				<input id="life_description" type="text" class="validate" name="description">
 				<label for="description">介紹的文字內容</label>
 			</div>
 		</div>
-		<div class="row">  <!--輸入影片網址-->
-			<div class="input-field col s12">
-				<input id="video" type="text">
-				<label for="video">影片網址</label>
-			</div>
-		</div>
 		<div class="input-field row">
-			<button class="btn waves-effect waves-light right indigo" type="submit" name="action">提交</button>
-		</div>
+			<div class="right-align">
+				<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+					<i class="material-icons">send</i>
+				</button>
+			</div>	
+		</div>  
 	</form>
 </div>
 @stop

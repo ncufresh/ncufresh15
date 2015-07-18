@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddColumnLifestable' => $baseDir . '/database/migrations/2015_07_18_113115_add_column_lifestable.php',
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
     'CreateLifesTable' => $baseDir . '/database/migrations/2015_07_16_070812_create_lifes_table.php',

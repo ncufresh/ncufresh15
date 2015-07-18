@@ -86,10 +86,9 @@ Route::get('video2', function () {
 
 // life
 //******************************************************************************************************
-Route::get('life',function(){
-    return view('life/index');
+Route::get('life', 'Life\LifeController@index');
+Route::get('life/backstage',function(){
+    return view('life.backstage');
 });
-Route::get('lifeback',function(){
-    return view('life/backstage');
-});
+Route::post('life/create','Life\LifeController@store');
 //******************************************************************************************************

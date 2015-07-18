@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Life;
 
 use Illuminate\Http\Request;
 
@@ -17,6 +17,7 @@ class LifeController extends Controller
     public function index()
     {
         //
+        return view('life.index');
     }
 
     /**
@@ -37,6 +38,11 @@ class LifeController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'lifecategory' => 'requested',
+            'description' => 'requested'
+        ]);
+        if($validator->fail())
         //
     }
 
