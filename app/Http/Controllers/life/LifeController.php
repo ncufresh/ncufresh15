@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Life;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
+use App\Life;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -39,10 +41,16 @@ class LifeController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'lifecategory' => 'requested',
-            'description' => 'requested'
+            'category' => 'required',
+            'content' => 'required'
         ]);
-        if($validator->fail())
+        if($validator->fails()){
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        Life::created($request->all());
+        return redirect('life');
         //
     }
 

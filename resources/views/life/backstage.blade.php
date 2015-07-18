@@ -13,7 +13,7 @@
 		<h2>新增中大生活的資料</h2>
 		<div class="row">
 			<div class="input-field col s3">  <!--選擇類別(食、住、育、樂、行)-->
-				<select name="lifecategory">
+				<select name="category">
 					<option value="0">食</option>
 					<option value="1">住</option>
 					<option value="2">育</option>
@@ -31,8 +31,8 @@
 		<div class="row">  <!--輸入介紹的文字內容-->
 			<div class="input-field col s12">
 				 <i class="material-icons prefix">mode_edit</i>
-				<input id="life_description" type="text" class="validate" name="description">
-				<label for="description">介紹的文字內容</label>
+				<input id="life_content" type="text" class="validate" name="content">
+				<label for="content">介紹的文字內容</label>
 			</div>
 		</div>
 		<div class="input-field row">
