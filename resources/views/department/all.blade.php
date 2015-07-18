@@ -25,7 +25,7 @@
 @if($sect === 1)
     <div>
         <h3>{{ $content->name }}</h3>
-        <p>{{ $content->content }}</p>
+        <p>{!! nl2br(htmlentities($content->content)) !!}</p>
     </div>
     @foreach($picture as $picture)
     <div>
