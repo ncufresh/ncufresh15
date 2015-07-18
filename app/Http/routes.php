@@ -61,10 +61,6 @@ Route::post('group/new', 'Department\ClubController@store');
 Route::get('group/{group}/{cate}', 'Department\ClubController@cate');
 Route::get('group/{group}/show/{id}', 'Department\ClubController@show');
 Route::post('group/update','Department\ClubController@update');
-
-Route::get('department/{cate}', 'Department\ClubController@department');
-Route::post('department/update', 'Department\ClubController@update');
-Route::post('department/content', 'Department\ClubController@getContent');
 //******************************************************************************************************
 
 
