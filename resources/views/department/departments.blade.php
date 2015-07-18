@@ -1,57 +1,70 @@
-@extends('department\list')
+@extends('layout')
 
 @section('title', '系所社團')
 
-@section('main')
+@section('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
+@stop
+@section('js')
+	<script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
+@stop
+
+@section('content')
 <div>
-    <div id="test1" class="col s12" style="padding: 30px;">
+	<!--新增-->
+	<div>
+		<a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/add">新增</a>
+	</div>
+	<div class="col s1">
+    	<i class="small material-icons">navigate_before</i>
+    </div>
+@if($page === 1)
+	<!--總攬-->
+    <div>
     	<div class="group">
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup" onclick="clickCate(2)">系所</label>
-			<label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup" onclick="clickCate(3)">社團</label>
+    		<a href="/group/departments"><label class="waves-effect waves-grey white">系所</label></a>
+    		<a href="/group/clubs"><label class="waves-effect waves-grey white">社團</label></a>
 		</div>
     </div>
-    <div id="test2" class="col s12" style="padding: 30px;">
-    	<div class="col s1">
-    		<i class="small material-icons" onclick="clickCate(1)">navigate_before</i>
-    	</div>
+@elseif($page === 2)
+    <!--系所-->
+    <div>
     	<div class="group">
-			<a href="/department/1"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">文學院</label></a>
-			<a href="/department/2"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">理學院</label></a>
+			<a href="/group/departments/1"><label class="waves-effect waves-grey white">文學院</label></a>
+			<a href="/group/departments/2"><label class="waves-effect waves-grey white">理學院</label></a>
 		</div>
 		<div class="group">
-			<a href="/department/3"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">工學院</label></a>
-			<a href="/department/4"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">管理學院</label></a>
+			<a href="/group/departments/3"><label class="waves-effect waves-grey white">工學院</label></a>
+			<a href="/group/departments/4"><label class="waves-effect waves-grey white">管理學院</label></a>
 		</div>
 		<div class="group">
-			<a href="/department/5"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">資訊電機學院</label></a>
-			<a href="/department/6"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">地球科學學院</label></a>
+			<a href="/group/departments/5"><label class="waves-effect waves-grey white">資訊電機學院</label></a>
+			<a href="/group/departments/6"><label class="waves-effect waves-grey white">地球科學學院</label></a>
 		</div>
 		<div class="group">
-			<a href="/department/7"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">客家學院</label></a>
-			<a href="/department/8"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">生醫理工學院</label></a>
+			<a href="/group/departments/7"><label class="waves-effect waves-grey white">客家學院</label></a>
+			<a href="/group/departments8"><label class="waves-effect waves-grey white">生醫理工學院</label></a>
 		</div>
 	</div>
-    <div id="test3" class="col s12" style="padding: 30px;">
-    	<div class="col s1">
-    		<i class="small material-icons" onclick="clickCate(1)">navigate_before</i>
-    	</div>
+@elseif($page === 3)
+	<!--社團-->
+    <div>
     	<div class="group">
-			<a href="/department/9"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">學術性</label></a>
-			<a href="/department/10"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">康樂性</label></a>
+			<a href="/group/clubs/1"><label class="waves-effect waves-grey white">學術性</label></a>
+			<a href="/group/clubs/2"><label class="waves-effect waves-grey white">康樂性</label></a>
 		</div>
 		<div class="group">
-			<a href="/department/11"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">聯誼性</label></a>
-			<a href="/department/12"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">服務性</label></a>
+			<a href="/group/clubs/3"><label class="waves-effect waves-grey white">聯誼性</label></a>
+			<a href="/group/clubs/4"><label class="waves-effect waves-grey white">服務性</label></a>
 		</div>
 		<div class="group">
-			<a href="/department/13"><label class="waves-effect waves-light btn-large grey lighten-2 butSelect butGroup">系學會</label></a>
+			<a href="/group/clubs/5"><label class="waves-effect waves-grey white">系學會</label></a>
 		</div>
     </div>
-    <div id="test4" class="col s12" style="padding: 30px;">
-    	<div class="col s1">
-    		<i class="small material-icons" onclick="clickCate(1)">navigate_before</i>
-    	</div>
-    	{!! Form::open(array('url'=>'/department/new', 'method'=>'post', 'files' => true))!!}
+@elseif($page === 4)
+    <!--新增-->
+    <div>
+    	{!! Form::open(array('url'=>'/group/new', 'method'=>'post', 'files' => true))!!}
     		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<label>選擇類別</label>
 			<div class="input-field col s12">
@@ -97,5 +110,15 @@
 			</div>
 		{!! Form::close()!!}
     </div>
+@elseif($page === 5)
+    <!--顯示內容-->
+    <div>
+        @foreach($list as $list)
+        <div class="group">
+            <a href="show/{{ $list->id }}"><label class="waves-effect waves-grey white">{{ $list->name }}</label></a>
+        </div>
+        @endforeach
+    </div>
+@endif
 </div>
 @stop
