@@ -106,7 +106,7 @@
       			</div>
    			</div>
 			<div>
-				<button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">確認上傳</button>
+				<button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">確認</button>
 			</div>
 		{!! Form::close()!!}
     </div>

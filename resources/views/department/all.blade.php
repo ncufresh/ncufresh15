@@ -50,10 +50,19 @@
             </div>
         </div>
         @foreach($picture as $picture)
+        @if($picture != null)
         <div>
             <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
         </div>
+        @endif
         @endforeach
+        <div class="file-field input-field">
+            <input class="file-path validate" type="text">
+            <div>
+            <input name="fileName[]" id="file" type="file" class="validate" multiple="multiple" onchange="getFileName(this.value)">
+                <label id="fileName" for="file">選擇圖片</label>
+            </div>
+        </div>
         <div>
             <button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">送出</button>
         </div>

@@ -20,7 +20,7 @@ class ClubController extends Controller {
 	}
 
 	public function index() {
-		return view('department\departments')->with('page', 1);
+		return view('department.departments')->with('page', 1);
 	}
 
 	public function store( Request $request) {
@@ -29,17 +29,20 @@ class ClubController extends Controller {
 		$content = $request->get('clubContent');
 		Departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
 
-        //Files upload
-        $files = Input::file('fileName');
-        foreach ($files as $file) {
-            $destinationPath = 'uploads\departments';
-            $filename = uniqid()."_".$file->getClientOriginalName();
-            //Check file name exist or not
-            while (file_exists($destinationPath."\\".$filename)) {
-                $filename = uniqid()."_".$filename;
-            }
-            $upload_success = $file->move($destinationPath, $filename);
-            Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
+		$fileExist = $request->get('fileName');
+		//Files upload
+		if ($fileExist != null) {
+        	$files = Input::file('fileName');
+        	foreach ($files as $file) {
+        	    $destinationPath = 'uploads\departments';
+        	    $filename = uniqid()."_".$file->getClientOriginalName();
+        	    //Check file name exist or not
+        	    while (file_exists($destinationPath."\\".$filename)) {
+        	        $filename = uniqid()."_".$filename;
+        	    }
+        	    $upload_success = $file->move($destinationPath, $filename);
+        	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
+        	}
         }
         return redirect('/group');
 	}
@@ -47,14 +50,14 @@ class ClubController extends Controller {
 	public function group($group) {
 		switch ($group) {
 			case 'departments':
-				return view('department\departments')->with('page', 2);
+				return view('department.departments')->with('page', 2);
 				break;
 			
 			case 'clubs':
-				return view('department\departments')->with('page', 3);
+				return view('department.departments')->with('page', 3);
 				break;
 			case 'add':
-				return view('department\departments')->with('page', 4);
+				return view('department.departments')->with('page', 4);
 				break;
 		}
 	}
@@ -111,9 +114,9 @@ class ClubController extends Controller {
 			$content = Departments::where('id', $cate)->get();
 			$name = Departments::where('id', $cate)->value('name');
 			$picture = Department_pictures::where('rfid', $name)->get();
-			return view('department\all')->with(['content'=>$content, 'picture'=>$picture, 'sect'=>2]);
+			return view('department.all')->with(['content'=>$content, 'picture'=>$picture, 'sect'=>2]);
 		}
-		return view('department\departments')->with(['list'=>$content, 'page'=>5]);
+		return view('department.departments')->with(['list'=>$content, 'page'=>5]);
 	}
 
 	public function show($group, $id) {
@@ -121,7 +124,7 @@ class ClubController extends Controller {
 			$content = Departments::where('id', $id)->get();
 			$name = Departments::where('id', $id)->value('name');
 			$picture = Department_pictures::where('rfid', $name)->get();
-			return view('department\all')->with(['content'=>$content, 'picture'=>$picture, 'sect'=>1]);
+			return view('department.all')->with(['content'=>$content, 'picture'=>$picture, 'sect'=>1]);
 		}
 		else
 			return "error link";
@@ -135,6 +138,23 @@ class ClubController extends Controller {
 		Departments::where('id', $id)->update(['name'=>$name, 'content'=>$content]);
 		Department_pictures::where('rfid', $originName)->update(['rfid'=>$name]);
 		$category = Departments::where('id', $id)->value('category');
+
+		$fileExist = $request->get('fileName');
+		//Files upload
+		if ($fileExist != null) {
+        	$files = Input::file('fileName');
+        	foreach ($files as $file) {
+        	    $destinationPath = 'uploads\departments';
+        	    $filename = uniqid()."_".$file->getClientOriginalName();
+        	    //Check file name exist or not
+        	    while (file_exists($destinationPath."\\".$filename)) {
+        	        $filename = uniqid()."_".$filename;
+        	    }
+        	    $upload_success = $file->move($destinationPath, $filename);
+        	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
+        	}
+        }
+        
 		if ($category <= 5 && $category > 0) {
 			return redirect('/group/clubs/show/'.$id);
 		}
