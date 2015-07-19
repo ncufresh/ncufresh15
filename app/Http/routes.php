@@ -18,6 +18,7 @@ Route::get('/', 'HomepageController@index');
 
 //Admin of Homepage
 Route::get('/admin', 'AdminController@index');
+Route::post('/admin/ann/new', 'AdminController@storeAnn');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

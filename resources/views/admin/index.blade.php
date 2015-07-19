@@ -31,19 +31,19 @@
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="title" type="text" class="validate" required>
+										<input id="title" type="text" name='title' class="validate" required>
 										<label for="title">公告標題</label>
 									</div>
 									<div class="input-field col s12">
-										<input id="url" type="url" class="validate" required>
+										<input id="url" type="url" name='url' class="validate" required>
 										<label for="url">文章連結</label>
 									</div>
 										<p>
-											<input class='with-gap' name="cat" type="radio" id="cat1" />
+											<input class='with-gap' name="category" type="radio" id="cat1" value="1" selected/>
 											<label for="cat1">必讀</label>
 										</p>
 										<p>
-											<input class="with-gap" name="cat" type="radio" id="cat2"  />
+											<input class="with-gap" name="category" type="radio" value="2" id="cat2"/>
 											<label for="cat2">Q&amp;A</label>
 										</p>
 								</div>
