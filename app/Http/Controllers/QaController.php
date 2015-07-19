@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use App\Helpers\SitemapHelper;
 use App\QaAnswer;
 use App\QaQuestion;
 use App\Http\Requests;
@@ -12,6 +13,10 @@ use App\Http\Controllers\Controller;
 
 class QaController extends Controller
 {
+    function __construct() {
+        SitemapHelper::push('Q&amp;A', 'qa');
+    }
+
     /**
      * Display a listing of the QA
      *
@@ -19,19 +24,22 @@ class QaController extends Controller
      */
     public function index($category = 'all')
     {
-        //Sitemap::pushLocation('123l', '456');
         switch($category) {
         case 'life': 
             $category = 0;
+            SitemapHelper::push('中大生活', 'qa/life');
             break;
         case 'gov': 
             $category = 1;
+            SitemapHelper::push('行政', 'qa/gov');
             break;
         case 'student': 
             $category = 2;
+            SitemapHelper::push('學務', 'qa/student');
             break;
         case 'game': 
             $category = 3;
+            SitemapHelper::push('小遊戲', 'qa/game');
             break;
         default:
             $category = -1;
@@ -101,6 +109,7 @@ class QaController extends Controller
             QaAnswer::where('category', 2)->count(),
             QaAnswer::where('category', 3)->count(),
         ];
+        SitemapHelper::push($answer->title, 'qa/'.$answer->id);
         return view('qa.show', [
             'answer' => $answer,
             'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
