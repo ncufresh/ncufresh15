@@ -40,7 +40,7 @@ class LifeController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        /*$validator = Validator::make($request->all(),[
             'category' => 'required',
             'content' => 'required'
         ]);
@@ -50,7 +50,7 @@ class LifeController extends Controller
                 ->withInput();
         }
         Life::created($request->all());
-        return redirect('life');
+        return redirect('life');*/
         //
     }
 
@@ -86,6 +86,22 @@ class LifeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validator = Validator::make($request->all(),[
+            'category' => 'required',
+            'content' => 'required'
+        ]);
+        if($validator->fails()){
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $answer = Life::find($id);
+        $answer->category = $requset->category;
+        $answer->video = $request->video;
+        $answer->content = $request->content;
+        $answer->save();
+        //Life::update($request->all());
+        return redirect('life');
     }
 
     /**

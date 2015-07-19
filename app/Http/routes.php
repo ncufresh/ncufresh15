@@ -90,5 +90,5 @@ Route::get('life', 'Life\LifeController@index');
 Route::get('life/backstage',function(){
     return view('life.backstage');
 });
-Route::post('life/create','Life\LifeController@store');
+Route::post('life/update/{id}','Life\LifeController@update');
 //******************************************************************************************************
