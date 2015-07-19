@@ -15,5 +15,7 @@
 @stop
 
 @section('content')
-content show user
+{{$user->name}}
+{{$user->email}}
+{{$user->student_id}}
 @stop

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\User;
+use Bican\Roles\Models\Role;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -50,7 +52,8 @@ class UserController extends Controller
      */
     public function show(Request $request, $id)
     {
-        return view('user.show');
+        $user = User::findOrFail($id);
+        return view('user.show', $user, ['user' => $user]);
     }
 
     /**
@@ -62,7 +65,11 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('user.edit', ['user' => $user]);
+        $roles = Role::orderBy('level', 'asc')->get();
+        return view('user.edit', [
+            'user' => $user,
+            'roles' => $roles,
+        ]);
     }
 
     /**
@@ -74,8 +81,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $user->student_id = $request->student_id;
+        $pwValidator = Validator::make($request->all(), [
+            'password' => 'required|confirmed|min:6',
+        ]);
+        if ($pwValidator->fails()) {
+            if ($request->has('password')) {
+                return back()
+                    ->withErrors($pwValidator)
+                    ->withInput();
+            }
+        } else {
+            $user->password = bcrypt($request->password);
+        }
+        $user->save();
+        if ($request->has('role')) {
+            $newRole = Role::findOrFail($request->role);
+            $user->detachAllRoles();
+            $user->attachRole($newRole);
+        }
+        
         return redirect('user');
     }
 

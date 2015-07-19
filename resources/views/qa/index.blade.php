@@ -78,7 +78,7 @@ td.expand {
                 </thead>
                 <tbody>
                     @foreach ($top_answers as $top_answer)
-                        <tr class="answer" onclick="document.location = '/qa/{{$top_answer->id}}'" data-id="{{$top_answer->id}}">
+                        <tr class="answer" onclick="document.location = '{{url('qa/'.$top_answer->id)}}';" data-id="{{$top_answer->id}}">
                             <td class="shrink"><span class="category">{{$categoryString[$top_answer->category]}}</span></td>
                             <td class="shrink">{{ date('m-d', strtotime($top_answer->created_at)) }}</td>
                             <td class="expand">{{ $top_answer->title }}</td>

@@ -10,8 +10,7 @@
 @stop
 
 @section('js')
-<!--<script src=''></script> -->
-
+<script src="{{ asset('js/select.js') }}"></script>
 @stop
 
 @section('content')
@@ -41,14 +40,24 @@
         </div>
         <div class="row input-field">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="input_password" type="password" class="validate" name="password_confirm">
-            <label for="input_password">密碼確認</label>
+            <input id="input_password_confirmation" type="password" class="validate" name="password_confirmation">
+            <label for="input_password_confirmation">密碼確認</label>
         </div>
         <div class="row input-field">
             <i class="material-icons prefix">account_circle</i>
             <input id="input_student_id" type="text" class="validate" name="student_id" value="{{Input::old('student_id')?Input::old('student_id'):$user->student_id}}">
             <label for="input_student_id">學號</label>
         </div>
+        @role('admin')
+            <div class="input-field">
+                <select name="role">
+                    @foreach ($roles as $role)
+                        <option value="{{$role->id}}" {{($user->is($role->id) || $role == $roles[0]) ?"selected='selected'":""}}>{{$role->description}}</option>
+                    @endforeach
+                </select>
+                <label>權限</label>
+            </div>
+        @endrole
         <div class="input-field row">
             <button class="btn waves-effect waves-light right indigo" type="submit">修改</button>
         </div>
