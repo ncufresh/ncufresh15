@@ -7,7 +7,8 @@
 }
 
 #r2 {
-	height: 170px;
+	height: 100px;
+	padding-top: 30px;
 }
 
 #post-container {
@@ -23,5 +24,76 @@
 }
 
 #calender-container {
+	height: 75%;
+}
+
+.tab-content {
+	overflow: auto;
+	height: 85%;
+}
+
+.category {
+	display: block;
+	position: relative;
+	width: 50%;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#calender-container>.row {
 	height: 100%;
+}
+
+#calender-container .col {
+	height: 100%;
+}
+
+#event-container {
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.cat1 {
+	background-color: #6a1b9a;
+}
+
+.cat2 {
+	background-color: #0288d1;
+}
+
+#event1 {
+	background-color: #2962ff;
+}
+
+#event2 {
+	background-color: #2979ff;
+}
+
+#event3 {
+	background-color: #448aff;
+}
+
+#event4 {
+	background-color: #82b1ff;
+}
+
+.row>.dick-container {
+	padding: 8% 0 8% 0;
+}
+
+#event1-dick {
+	display: block;
+	background-color: #2962ff;
+}
+
+#event2-dick {
+	display: block;
+	background-color: #2979ff;
+}
+
+#event3-dick {
+	display: block;
+	background-color: #448aff;
 }
