@@ -57,9 +57,6 @@
 			<a href="/group/clubs/3"><label class="waves-effect waves-grey white">聯誼性</label></a>
 			<a href="/group/clubs/4"><label class="waves-effect waves-grey white">服務性</label></a>
 		</div>
-		<div class="group">
-			<a href="/group/clubs/5"><label class="waves-effect waves-grey white">系學會</label></a>
-		</div>
     </div>
 @elseif($page === 4)
     <!--新增-->
@@ -74,16 +71,15 @@
 			      	<option value="2">康樂性</option>
 			      	<option value="3">聯誼性</option>
 			      	<option value="4">服務性</option>
-			      	<option value="5">系學會</option>
 			      	<option value="" disabled selected>系所</option>
-			      	<option value="6">文學院</option>
-			      	<option value="7">理學院</option>
-			      	<option value="8">工學院</option>
-			      	<option value="9">管理學院</option>
-			      	<option value="10">資訊電機學院</option>
-			      	<option value="11">地球科學學院</option>
-			      	<option value="12">客家學院</option>
-			      	<option value="13">生醫理工學院</option>
+			      	<option value="5">文學院</option>
+			      	<option value="6">理學院</option>
+			      	<option value="7">工學院</option>
+			      	<option value="8">管理學院</option>
+			      	<option value="9">資訊電機學院</option>
+			      	<option value="10">地球科學學院</option>
+			      	<option value="11">客家學院</option>
+			      	<option value="12">生醫理工學院</option>
 			    </select>
 			</div>
 			<div class="row">
