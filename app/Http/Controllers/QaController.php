@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-use DB;
-use Log;
 use App\QaAnswer;
 use App\QaQuestion;
 use App\Http\Requests;
@@ -21,7 +19,7 @@ class QaController extends Controller
      */
     public function index($category = 'all')
     {
-        //
+        //Sitemap::pushLocation('123l', '456');
         switch($category) {
         case 'life': 
             $category = 0;
@@ -42,17 +40,14 @@ class QaController extends Controller
         $answer = null;
         $top_answers = null;
         if ($category == -1) {
-            $top_answers = DB::table('qa_answers')
-                ->orderBy('views', 'desc')
+            $top_answers = QaAnswer::orderBy('views', 'desc')
                 ->orderBy('created_at', 'desc')
                 ->take(5)
                 ->get();
-            $answers = DB::table('qa_answers')
-                ->orderBy('created_at', 'desc')
+            $answers = QaAnswer::orderBy('created_at', 'desc')
                 ->paginate(10);
         } else {
-            $answers = DB::table('qa_answers')
-                ->orderBy('created_at', 'desc')
+            $answers = QaAnswer::orderBy('created_at', 'desc')
                 ->where('category', $category)
                 ->paginate(10);
         }
@@ -203,22 +198,6 @@ class QaController extends Controller
     }
 
     /**
-     * add one view to the qa
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function view(Request $request)
-    {
-        $answer = QaAnswer::find($request->id);
-        if ($answer != null) {
-            $answer->views += 1;
-            $answer->save();
-        }
-        return response()->json(["id" => $request->id, "views" => $answer->views]);
-    }
-
-    /**
      * mark solved or not
      *
      * @param  int  $id
@@ -248,10 +227,7 @@ class QaController extends Controller
      */
     public function edit($id)
     {
-        $answer = QaAnswer::find($id);
-        if ($answer == null) {
-            return redirect('qa');
-        }
+        $answer = QaAnswer::findOrFail($id);
         return view('qa.answer', ['answer' => $answer]);
     }
 
