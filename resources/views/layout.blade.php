@@ -88,13 +88,15 @@
 				</div>
 			@endif
 			<div id='content'>
-                <div id="breadcrumbs">
-                    <a href="{{url('')}}">首頁</a>
-                    @foreach (\App\Helpers\SitemapHelper::getLocations() as $location)
-                        &gt;
-                        <a href="{{$location['url']}}">{{$location['name']}}</a>
-                    @endforeach
-                </div>
+		        @if (Request::url() != url('/'))
+                    <div id="breadcrumbs">
+                        <a href="{{url('/')}}">首頁</a>
+                        @foreach (\App\Helpers\SitemapHelper::getLocations() as $location)
+                            &gt;
+                            <a href="{{$location['url']}}">{{$location['name']}}</a>
+                        @endforeach
+                    </div>
+                @endif
             	@yield('content')
 			</div>
         </div>
