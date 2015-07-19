@@ -1,4 +1,3 @@
-
 // Handle keyboard controls
 var keysDown = {};
 
@@ -9,7 +8,6 @@ addEventListener("keydown", function (e) {
 addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
-
 
 // Update game objects
 var update = function (modifier) {
@@ -26,7 +24,13 @@ var update = function (modifier) {
 				hero.y = blocks[i].y + blocks[i].height +1;
 			}
 		}
-	
+
+		canask=false;
+		if(isTouching(hero,box)){
+			hero.y = box.y + box.height + 1 ;
+			canask=true;
+		}
+
 	}
 	if (40 in keysDown) { // Player holding down
 		if(hero.y+hero.speed * modifier <= bgImage.height-32 ){ // edge
@@ -42,6 +46,11 @@ var update = function (modifier) {
 			}
 		}
 
+		canask=false;
+		if(isTouching(hero,box)){
+			hero.y = box.y - box.height - 1 ;
+			canask=true;
+		}
 
 	}
 	if (37 in keysDown) { // Player holding left
@@ -58,6 +67,12 @@ var update = function (modifier) {
 			}
 		}
 
+		canask=false;
+		if(isTouching(hero,box)){
+			hero.x = box.x + box.width + 1 ;
+			canask=true;
+		}		
+
 	}
 	if (39 in keysDown) { // Player holding right
 		if(hero.x+hero.speed * modifier <= bgImage.width-32 ){ // edge
@@ -73,6 +88,12 @@ var update = function (modifier) {
 			}
 		}
 		
+		canask=false;
+		if(isTouching(hero,box)){
+			hero.x = box.x - box.width - 1 ;
+			canask=true;
+		}	
+
 	}
 
 	// Are they touching?
@@ -80,6 +101,7 @@ var update = function (modifier) {
 		++monstersCaught;
 		reset();
 	}
+
 };
 
 // Handle touching
@@ -98,3 +120,8 @@ function isTouching(a,b) {
 
 	}
 }
+
+
+
+
+

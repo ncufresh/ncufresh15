@@ -29,5 +29,15 @@ var blockImage = new Image();
 blockImage.onload = function () {
 	blockReady = true;
 };
-blockImage.src = "game_images/icecream.png";
+blockImage.src = "game_images/wall.png";
+
+// Box image
+var boxReady = false;
+var boxImage = new Image();
+boxImage.onload = function () {
+	boxReady = true;
+};
+boxImage.src = "game_images/box1.png";
 ////////////////
+
+
