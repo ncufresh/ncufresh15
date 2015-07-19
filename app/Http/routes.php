@@ -16,6 +16,9 @@
 // index
 Route::get('/', 'HomepageController@index');
 
+//Admin of Homepage
+Route::get('/admin', 'AdminController@index');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
