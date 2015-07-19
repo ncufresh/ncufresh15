@@ -34,6 +34,11 @@
 							<td>$0.87</td>
 						</tr>
 						<tr>
+							<td ><span class='category cat2'>Alvin</span></td>
+							<td>Eclair</td>
+							<td>$0.87</td>
+						</tr>
+						<tr>
 							<td ><span class='category cat1'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
