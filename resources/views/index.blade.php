@@ -15,51 +15,49 @@
 		<div class="row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s2"><a href="#test1">Tab1</a></li>
-					<li class="tab col s2"><a class="active" href="#test2">Tab2</a></li>
-					<li class="tab col s2 disabled"><a href="#test3">Tab3</a></li>
-					<li class="tab col s2"><a href="#test4">Tab4</a></li>
+					<li class="tab col s2"><a class="active" href="#test1">Tab1</a></li>
+					<li class="tab col s2"><a  href="#test2">Tab2</a></li>
+					<li class="tab col s2"><a href="#test3">Tab3</a></li>
 				</ul>
 			</div>
-			<div id="test1" class="col s12">
+			<div id="test1" class="col s12 tab-content">
 				<table class='bordered striped'>
 					<tbody>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat1'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat2'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat1'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat1'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat2'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 						<tr>
-							<td>Alvin</td>
+							<td ><span class='category cat2'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<div id="test2" class="col s12">Test 2</div>
-			<div id="test3" class="col s12">Test 3</div>
-			<div id="test4" class="col s12">Test 4</div>
+			<div id="test2" class="col s12 tab-content">Test 2</div>
+			<div id="test3" class="col s12 tab-content">Test 3</div>
 		</div>
 	</div>
 	<div id='slider-container'class="col s6">
@@ -98,6 +96,34 @@
 	</div>
 </div>
 <div id='r2' class='row'>
-	<div id='calender-container'></div>
+	<div id='calender-container'>
+		<div class="row">
+			<div class="col s1 valign-wrapper arrow-container"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
+			<div class="col s10 valign-wrapper">
+				<div id='event-container' class="row">
+					<div id='event1' class='col s3'></div>
+					<div id='event2' class='col s3'>
+						<div class='row'>
+							<div class='col s1 dick-container'><span id='event1-dick'>&nbsp;</span></div>
+							<div class='col s11'></div>
+						</div>
+					</div>
+					<div id='event3' class='col s3'>
+						<div class='row'>
+							<div class='col s1 dick-container'><span id='event2-dick'>&nbsp;</span></div>
+							<div class='col s11'></div>
+						</div>
+					</div>
+					<div id='event4' class='col s3'>
+						<div class='row'>
+							<div class='col s1 dick-container'><span id='event3-dick'>&nbsp;</span></div>
+							<div class='col s11'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>
+		</div>
+	</div>
 </div>
 @stop
