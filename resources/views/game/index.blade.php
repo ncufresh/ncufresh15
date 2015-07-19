@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-<div id="gg" tabindex="0">
+<div id="gamecanvas" tabindex="0">
     
 </div>
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
 //hide the scroll
 $(function() {
-    var btn = $("#gg");
+    var btn = $("#gamecanvas");
 
     btn.focus(function(){
         console.log("Click");

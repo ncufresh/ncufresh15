@@ -3,13 +3,9 @@ var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
 canvas.height = 480;
-//document.body.appendChild(canvas);
-document.getElementById('gg').appendChild(canvas);
+document.getElementById('gamecanvas').appendChild(canvas);
 
-var origin = {
-	x: 0,
-	y: 0
-}
+
 // Game objects
 var hero = {
 	speed: 256, // movement in pixels per second
@@ -39,11 +35,6 @@ var reset = function () {
 	}
 	snd.play();
 
-	/*
-	hero.x = canvas.width / 2;
-	hero.y = canvas.height / 2;
-	*/
-
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
@@ -57,57 +48,47 @@ var reset = function () {
 			reset();
 		}
 	}
-
 };
 /////////////////////////////////////////////////////
+
+// Is hero in the edge? true->if || false->direct draw
 var hx = false;
 var hy = false;
+// handling draw everything
 function draw(img, x, y, t) {
-	var nx = x - (hero.x-canvas.width / 2);
-	var ny = y - (hero.y-canvas.height / 2);
-	if (t == 'bg') {
+	var nx = x - (hero.x-canvas.width / 2); // now x
+	var ny = y - (hero.y-canvas.height / 2); // now y
+
+	//t(thing):'hero' or else
+	if (t == 'hero') {
 		if (hx) {
-			nx = 0;
-			if (hero.x > canvas.width) {
-				nx = canvas.width-bgImage.width;
-			}
-		}
-		if (hy) {
-			ny = 0;
-			if (hero.y > canvas.height) {
-				ny = canvas.height-bgImage.height;
-			}
-		}
-	} else if (t == 'hero') {
-		if (hx) {
-			nx = hero.x;
-			if (hero.x > canvas.width) {
+			nx = hero.x; // left
+			if (hero.x > canvas.width) { // or right
 				nx = hero.x - (bgImage.width-canvas.width);
 			}
-		}
-		else {
+		} else { // always in the middle
 			nx = x;
 		}
-		if (hy) {
+		///
+		if (hy) { // top
 			ny = hero.y;
-			if (hero.y > canvas.height) {
+			if (hero.y > canvas.height) { // or botton
 				ny = hero.y - (bgImage.height-canvas.height);
 			}
-		}
-		else {
+		} else { // always in the middle
 			ny = y;
 		}
-	} else {
+	} else { // background,monster,blocks......
 		if (hx) {
-			nx = x;
-			if (hero.x > canvas.width) {
+			nx = x; // left
+			if (hero.x > canvas.width) { // or right
 				nx = x - (bgImage.width-canvas.width);
 			}
 		}
-		
+		///
 		if (hy) {
-			ny = y;
-			if (hero.y > canvas.height) {
+			ny = y; // top
+			if (hero.y > canvas.height) { // or botton
 				ny = y - (bgImage.height-canvas.height);
 			}
 		}
@@ -120,10 +101,13 @@ function draw(img, x, y, t) {
 
 // Draw everything
 var render = function () {
-	hx = -(hero.x-canvas.width / 2) > 0 || -(hero.x-canvas.width/2) < canvas.width-bgImage.width;
-	hy = -(hero.y-canvas.height / 2) > 0 || -(hero.y-canvas.height/2) < canvas.height-bgImage.height;
+
+	// Is hero in the edge? true->if(){}... || false->direct draw
+	hx = hero.x-canvas.width/2 < 0 || hero.x-canvas.width/2 > bgImage.width-canvas.width;
+	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > bgImage.height-canvas.height;
+
 	if (bgReady) {
-		draw(bgImage, 0, 0, 'bg');
+		draw(bgImage, 0, 0);
 	}
 	if (heroReady) {
 		draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
