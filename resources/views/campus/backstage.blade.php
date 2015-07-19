@@ -3,6 +3,7 @@
 @section('main')
 <div id="pictures">
 	<img id="map" src="{{asset('img/campus/NCU_Campus.jpg')}}">
+	<img id="small_map" src="{{asset('img/campus/map.jpg')}}">
 	<img id="campus" src="{{asset('img/campus/tree.jpg')}}">
 </div>
 <div class="card blue lighten-4">

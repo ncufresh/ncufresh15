@@ -27,7 +27,7 @@ a.collection-item {
 	width: 100%;
 }
 
-#map {
+#map, #small_map {
 	position: absolute;
 	right: 0%;
 	width: 8%;
