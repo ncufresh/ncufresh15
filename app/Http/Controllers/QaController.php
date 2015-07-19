@@ -79,8 +79,7 @@ class QaController extends Controller
      * @return Response
      */
     public function index_questions() {
-        $questions = DB::table('qa_question')
-            ->orderBy('solved', 'asc')
+        $questions = QaQuestion::orderBy('solved', 'asc')
             ->orderBy('category', 'desc')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
@@ -89,6 +88,29 @@ class QaController extends Controller
             'categoryString' => ['中大生活', '行政', '學務', '小遊戲', '問題回報'],
             'solvedString' => ['還沒解決', '已解決'],
             'markString' => ['標記為已解決', '標記為未解決']
+        ]);
+    }
+
+    /**
+     * Show the question
+     *
+     * @return Response
+     */
+    public function show($id) {
+        $answer = QaAnswer::findOrFail($id);
+        $answer->views += 1;
+        $answer->save();
+        $counts = [
+            QaAnswer::where('category', 0)->count(),
+            QaAnswer::where('category', 1)->count(),
+            QaAnswer::where('category', 2)->count(),
+            QaAnswer::where('category', 3)->count(),
+        ];
+        return view('qa.show', [
+            'answer' => $answer,
+            'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
+            'counts' => $counts,
+            'categoryString' => ['中大生活', '行政', '學務', '小遊戲', '問題回報'],
         ]);
     }
 
@@ -108,8 +130,7 @@ class QaController extends Controller
             $type = 'report';
             break;
         default:
-            $type = 'qa';
-            break;
+            return redirect('qa');
         }
         return view('qa.create', [
             'type' => $type
@@ -123,7 +144,6 @@ class QaController extends Controller
      */
     public function create_answer()
     {
-        //
         return view('qa.answer');
     }
 
@@ -150,8 +170,9 @@ class QaController extends Controller
         $question->title = $request->title;
         $question->content = $request->content;
         $question->solved = false;
+        $question->author_id = $request->user()->id;
         $question->save();
-        return redirect('qa');
+        return redirect('qa/submitted');
     }
 
     /**
@@ -174,8 +195,8 @@ class QaController extends Controller
         }
         $answer = new QaAnswer;
         $answer->category = $request->category;
-        $answer->title = $request->title;
-        $answer->content = $request->content;
+        $answer->title = strip_tags($request->title);
+        $answer->content = $this->sanitize($request->content);
         $answer->views = 0;
         $answer->save();
         return redirect('qa');
@@ -255,10 +276,10 @@ class QaController extends Controller
         }
         $answer = QaAnswer::find($id);
         $answer->category = $request->category;
-        $answer->title = $request->title;
-        $answer->content = $request->content;
+        $answer->title = strip_tags($request->title);
+        $answer->content = $this->sanitize($request->content);
         $answer->save();
-        return redirect('qa');
+        return redirect('qa/'.$answer->id);
     }
 
     /**
@@ -275,5 +296,13 @@ class QaController extends Controller
             $answer->delete();
         }
         return redirect('qa');
+    }
+
+
+    // helpers
+    private function sanitize($dirty) {
+        return strip_tags($dirty,
+            '<img><table><thead><tbody><tr><td><th><h1><h2><h3><pre><ins><a><p><s><strong><em><span><ul><ol><li><blockquote>'
+        );
     }
 }

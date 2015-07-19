@@ -8,10 +8,19 @@
 @section('js')
 <!--<script src=''></script> -->
 <script src='{{ asset('js/select.js') }}'></script>
+<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    $(function() {
+        CKEDITOR.replace('ans-content');
+    });
+</script>
 @stop
 
 @section('content')
 <div id="answer-form" class="row" style="padding: 0 10%;">
+    <a href="{{url('qa/questions')}}" class="waves-effect waves-light btn">
+        <i class="material-icons left">input</i>返回問題列表
+    </a>
     <form class="col s12" action="{{isset($answer)?action('QaController@update', $answer->id):url('qa/answer')}}" method="post">
         {!! csrf_field() !!}
         @if (count($errors) > 0)
@@ -46,9 +55,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <textarea id="ans-content" class="materialize-textarea" name="content">{{isset($answer)?$answer->content:''}}</textarea>
-                <label for="ans-content">內文</label>
+            <div class="col s12">
+                <textarea id="ans-content" name="content">{{isset($answer)?$answer->content:''}}</textarea>
             </div>
         </div>
         <div class="input-field row">

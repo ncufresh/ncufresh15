@@ -24,6 +24,9 @@
                 </ul>
             </div>
         @endif
+        <a href="{{url('qa')}}" class="waves-effect waves-light btn">
+            <i class="material-icons left">input</i>返回Q&amp;A
+        </a>
         @if ($type == "qa")
             <h2>我要發問</h2>
         @else
