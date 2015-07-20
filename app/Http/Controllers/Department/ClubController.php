@@ -28,8 +28,17 @@ class ClubController extends Controller {
 		$name = $request->get('clubName');
 		$content = $request->get('clubContent');
 		Departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
+		
+		
+
 		//Files upload
-        	$files = Input::file('fileName');
+        $files = Input::file('fileName');
+        $rules = array('image' => 'required', );
+		$validator = Validator::make($files, $rules);
+		if ($validator->fails()) {
+			return "fails";
+		}
+		else {
         	foreach ($files as $file) {
         	    $destinationPath = 'uploads\departments';
         	    $filename = uniqid()."_".$file->getClientOriginalName();
@@ -40,6 +49,7 @@ class ClubController extends Controller {
         	    $upload_success = $file->move($destinationPath, $filename);
         	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
         	}
+        }
         return redirect('/group');
 	}
 
