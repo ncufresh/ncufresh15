@@ -9,7 +9,10 @@ use App\Announcement;
 
 class AdminController extends Controller{
 	public function index(){
-		return view('admin.index');
+		$anns = Announcement::all();
+		return view('admin.index', [
+			'announcements' => $anns
+		]);
 	}
 
 	public function storeAnn(Request $request){
@@ -18,6 +21,21 @@ class AdminController extends Controller{
 			'url'=>$request->input('url'),
 			'category'=>$request->input('category')
 		]);
-		return redirect('admin/');
+		return redirect('admin');
+	}
+
+	public function updateAnn(Request $request, $id){
+		$ann = Announcement::find($id);
+		$ann->title = $request->title;
+		$ann->url = $request->url;
+		$ann->category = $request->category;
+		$ann->save();
+		return redirect('admin');
+	}
+
+	public function deleteAnn(Request $request, $id){
+		$ann = Announcement::find($id);
+		$ann->delete();
+		return redirect('admin');
 	}
 }

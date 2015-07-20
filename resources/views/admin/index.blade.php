@@ -55,6 +55,58 @@
 						</form>
 					</div>
 				</div>
+				<table class='responsive-table'>
+					<thead>
+						<tr>
+							<th data-field="id">Category</th>
+							<th data-field="name">Title</th>
+							<th data-field="price">Url</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach ($announcements as $ann)
+						<tr>
+							<td>{{ $ann->category }}</td>
+							<td>{{ $ann->title }}</td>
+							<td>{{ $ann->url }}</td>
+							<td>
+								<a  class='btn update-ann-trigger' href='#ann-update'>Edit</a>
+								<div id="ann-update" class="modal">
+									<form action='admin/ann/update/' method='POST'>
+										<div class="modal-content">
+											<h4>Update Announcement</h4>
+											<input type="hidden" name="_token" value="{{ csrf_token() }}">
+											<div class="row">
+												<div class="input-field col s12">
+													<input id="ann-update-title" type="text" name='title' class="validate" required>
+													<label for="ann-update-title">公告標題</label>
+												</div>
+												<div class="input-field col s12">
+													<input id="ann-update-url" type="url" name='url' class="validate" required>
+													<label for="ann-update-url">文章連結</label>
+												</div>
+													<p>
+														<input class='with-gap' name="category" type="radio" id="ann-update-cat1" value="1"/>
+														<label for="ann-update-cat1">必讀</label>
+													</p>
+													<p>
+														<input class="with-gap" name="category" type="radio" value="2" id="ann-update-cat2"/>
+														<label for="ann-update-cat2">Q&amp;A</label>
+													</p>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type='submit' class="waves-effect waves-green btn">Update</button>
+											<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">關閉</a>
+										</div>
+									</form>
+								</div>
+							</td>
+							<td><a href="{{url('admin/ann/delete/'.$ann->id)}}" class="waves-effect waves-light btn">Delete</a></td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div id="test2" class="col s12">Calender</div>
