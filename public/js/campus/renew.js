@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-	$("a.collection-item").click(function(event) {
-		event.preventDefault();
+	$("a.collection-item").click(function() {
 		var title = $(this).text();
 		$("#campus_title").text(title);
 
@@ -14,19 +13,19 @@ $(document).ready(function() {
 
 		switch (id) {
 			case '0':
-				$("#campus").attr("src", "/img/campus/tree.jpg");
+				$("#campus").attr("src", "./img/campus/tree.jpg");
 				break;
 			case '1':
-				$("#campus").attr("src", "/img/campus/library.jpg");
+				$("#campus").attr("src", "./img/campus/library.jpg");
 				break;
 			default:
-				$("#campus").attr("src", "/img/campus/tree.jpg");
+				$("#campus").attr("src", "./img/campus/tree.jpg");
 		}
 
 		$.ajax({
 
 			type: "GET",
-			url: "/campus/" + id,
+			url: "campus/" + id,
 			dataType: "json",
 
 			success: function(msg) {
@@ -42,7 +41,7 @@ $(document).ready(function() {
 			},
 
 			error: function(msg) {
-				alert("fail");
+				alert("fail to post");
 			}
 		});
 	})
