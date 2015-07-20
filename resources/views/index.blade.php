@@ -34,6 +34,11 @@
 							<td>$0.87</td>
 						</tr>
 						<tr>
+							<td ><span class='category cat2'>Alvin</span></td>
+							<td>Eclair</td>
+							<td>$0.87</td>
+						</tr>
+						<tr>
 							<td ><span class='category cat1'>Alvin</span></td>
 							<td>Eclair</td>
 							<td>$0.87</td>
@@ -101,25 +106,10 @@
 			<div class="col s1 valign-wrapper arrow-container"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
 			<div class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
-					<div id='event1' class='col s3'></div>
-					<div id='event2' class='col s3'>
-						<div class='row'>
-							<div class='col s1 dick-container'><span id='event1-dick'>&nbsp;</span></div>
-							<div class='col s11'></div>
-						</div>
-					</div>
-					<div id='event3' class='col s3'>
-						<div class='row'>
-							<div class='col s1 dick-container'><span id='event2-dick'>&nbsp;</span></div>
-							<div class='col s11'></div>
-						</div>
-					</div>
-					<div id='event4' class='col s3'>
-						<div class='row'>
-							<div class='col s1 dick-container'><span id='event3-dick'>&nbsp;</span></div>
-							<div class='col s11'></div>
-						</div>
-					</div>
+					<div id='event1' class='col s3 dick'></div>
+					<div id='event2' class='col s3 dick'></div>
+					<div id='event3' class='col s3 dick'></div>
+					<div id='event4' class='col s3'></div>
 				</div>
 			</div>
 			<div class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>

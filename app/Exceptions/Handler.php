@@ -39,6 +39,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof \Bican\Roles\Exceptions\PermissionDeniedException) {
+            return redirect()->back();
+        }
         return parent::render($request, $e);
     }
 }

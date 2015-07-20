@@ -24,26 +24,31 @@
                 </ul>
             </div>
         @endif
-        <h2>Register</h2>
+        <h2>註冊</h2>
         <div class="input-field row">
             <i class="material-icons prefix">perm_identity</i>
             <input id="input_name" type="text" class="validate" name="name">
-            <label for="input_name">Name</label>
+            <label for="input_name">姓名</label>
         </div>
         <div class="input-field row">
             <i class="material-icons prefix">account_circle</i>
             <input id="input_account" type="email" class="validate" name="email">
-            <label for="input_account">Account</label>
+            <label for="input_account">電子郵件</label>
         </div>
         <div class="input-field row">
             <i class="material-icons prefix">vpn_key</i>
             <input id="input_password" type="password" class="validate" name="password">
-            <label for="input_password">Password</label>
+            <label for="input_password">密碼</label>
         </div>
         <div class="input-field row">
             <i class="material-icons prefix">vpn_key</i>
             <input id="input_password_confirmation" type="password" class="validate" name="password_confirmation">
-            <label for="input_password_confirmation">Confirm Password</label>
+            <label for="input_password_confirmation">確認密碼</label>
+        </div>
+        <div class="input-field row">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="input_student_id" type="text" class="validate" name="student_id">
+            <label for="input_student_id">學號</label>
         </div>
         <div class="input-field row">
             <button class="btn waves-effect waves-light right indigo" type="submit">Submit</button>
