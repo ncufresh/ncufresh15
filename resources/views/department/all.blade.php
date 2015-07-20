@@ -6,6 +6,8 @@
 @stop
 @section('js')
     <script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jssor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jssor.slider.min.js') }}"></script>
 @stop
 
 @section('content')
@@ -27,11 +29,16 @@
         <h3>{{ $content->name }}</h3>
         <p>{!! nl2br(htmlentities($content->content)) !!}</p>
     </div>
-    @foreach($picture as $picture)
-    <div>
-        <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px;
+        height: 300px;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
+            overflow: hidden;">
+            @foreach($picture as $picture)
+            <div><img u="image" src="{{ asset('uploads/departments/'.$picture->picName.'') }}" /></div>
+            @endforeach
+        </div>
     </div>
-    @endforeach
 @elseif($sect === 2)
     {!! Form::open(array('url'=>'/group/update', 'method'=>'post', 'files' => true))!!}
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
