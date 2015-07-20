@@ -150,6 +150,6 @@
 	margin-left: 0;
 }
 
-#ann-tab1 a {
+#ann-tab a, #qa-tab a, #doc-tab a {
 	color: white;
 }
