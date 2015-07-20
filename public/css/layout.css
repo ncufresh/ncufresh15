@@ -99,3 +99,9 @@ body {
     display: block;
     width: 30px;
 }
+
+@media only screen and (max-width: 800px) {
+	#container {
+		width: 100%;
+	}
+}
