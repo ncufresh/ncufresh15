@@ -153,3 +153,12 @@
 #ann-tab a, #qa-tab a, #doc-tab a {
 	color: white;
 }
+
+#post-container a:hover {
+	color: #bbdefb;
+}
+
+.indicators {
+	top: 355px;
+	z-index: 2;
+}

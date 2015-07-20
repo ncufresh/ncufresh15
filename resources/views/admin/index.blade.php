@@ -56,16 +56,16 @@
 					<div class='row'>
 						<div class='col s1 ann-cat-col' id='ann-cat-{{ $ann->id }}'>
 							@if($ann->category == 1)
-								<span class='ann-tag-type1'>Type1</span>
+								<span class='ann-tag-type1'>Q&amp;A</span>
 							@else
-								<span class='ann-tag-type2'>Type2</span>
+								<span class='ann-tag-type2'>公告</span>
 							@endif
 						</div>
 						<div class='col s4 ann-title-col' id='ann-title-{{ $ann->id }}'>{{ $ann->title }}</div>
 						<div class='col s3 ann-url-col' id='ann-url-{{$ann->id}}'>{{ $ann->url }}</div>
 						<div class='col s4'>
-							<a class='btn update-ann-trigger' data-id='{{ $ann->id }}' href='#ann-update-modal'>Edit</a>
-							<a href="{{url('admin/ann/delete/'.$ann->id)}}" class="waves-effect waves-light btn">Delete</a>
+							<a class='btn update-ann-trigger' data-id='{{ $ann->id }}' href='#ann-update-modal'>編輯</a>
+							<a href="{{url('admin/ann/delete/'.$ann->id)}}" class="waves-effect waves-light btn">刪除</a>
 						</div>
 					</div>
 					@endforeach
@@ -75,7 +75,7 @@
 			<div id="ann-update-modal" class="modal">
 				<form id='ann-update-form' action='admin/ann/update/' method='POST'>
 					<div class="modal-content">
-						<h4>Update Announcement</h4>
+						<h4>更新公告</h4>
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="row">
 							<div class="input-field col s12">
@@ -95,7 +95,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type='submit' class="waves-effect waves-green btn">Update</button>
+						<button type='submit' class="waves-effect waves-green btn">更新</button>
 						<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">關閉</a>
 					</div>
 				</form>

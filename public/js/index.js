@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('.slider').slider({full_width: true, height: 320});
+	$('.slider').slider({full_width: true, height: 390});
 });
