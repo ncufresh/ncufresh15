@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCampusTable extends Migration
+class AddTitleToCampusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,8 @@ class CreateCampusTable extends Migration
      */
     public function up()
     {
-        Schema::create('campus', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->text('introduction');
-            $table->integer('view_id');
+        Schema::table('campus', function (Blueprint $table) {
+            $table->string('title');
         });
     }
 
@@ -27,6 +24,8 @@ class CreateCampusTable extends Migration
      */
     public function down()
     {
-        Schema::drop('campus');
+        Schema::table('campus', function (Blueprint $table) {
+            $table->dropColumn('title');
+        });
     }
 }

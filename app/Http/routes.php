@@ -90,6 +90,9 @@ Route::post('department/content', 'Department\ClubController@getContent');
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
+Route::get('campus/add_view', function() {
+	return view('campus.addView');
+});
 Route::post('campus/backstage_intro', 'Campus\IntroController@store');
 Route::get('campus/{view_id}', 'Campus\CampusController@showIntro');
 //******************************************************************************************************

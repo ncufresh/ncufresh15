@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\campus;
+use App\Campus;
 
 class IntroController extends Controller
 {
