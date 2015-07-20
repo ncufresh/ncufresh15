@@ -45,7 +45,7 @@ class QaController extends Controller
             $category = -1;
             break;
         };
-        $answer = null;
+        $answers = null;
         $top_answers = null;
         if ($category == -1) {
             $top_answers = QaAnswer::orderBy('views', 'desc')

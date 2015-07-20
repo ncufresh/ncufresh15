@@ -64,7 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
         Route::post('qa/update/{id}' , 'QaController@update');
         Route::get ('qa/delete/{id}' , 'QaController@destroy');
-        Route::get ('qa/solved/{id}'      , 'QaController@solved');
+        Route::get ('qa/solved'      , 'QaController@solved');
     });
 });
 //******************************************************************************************************

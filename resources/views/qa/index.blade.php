@@ -33,7 +33,7 @@ td.expand {
 
 @section('content')
 <div class="row">
-    <div class="col s3">
+    <div id="category-menu" class="col s3">
         <div class="collection">
             <a href="/qa" class="collection-item {{$category == -1 ? 'active' : ''}}">
                 全部<span class="badge">{{$all_count}}</span>
