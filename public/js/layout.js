@@ -1,6 +1,12 @@
-var currentScroll, portalToggle;
+var currentScroll;
+var portal = null; // object
+var portalToggle;
+var portalTop, portalLeft;
+var portalHover;
+window.onload = init;
 $(document).ready(function(){
 	portalToggle = false;
+	portalHover = false;
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -17,18 +23,31 @@ $(document).ready(function(){
 		hover: false
 	});
 
+	$("#nav-qa-trigger").dropdown({
+		constrain_width: false,
+		hover: true,
+		belowOrigin: true
+	});
+
 	$('#portal-img').click(function(e) {
 		e.stopPropagation();
 		if (portalToggle) {
 			portalMenuOff();
 		} else {
 			portalMenuOn();
-			setTimeout(portalMenuOff, 3000);
 		}
 		portalToggle = !portalToggle;
 	});
 
-	setInterval(setPortalPosition, 6000);
+	$('#portal').hover(function() {
+		portalHover = true;
+		$(this).stop();
+	}, function(){
+		portalHover = false;
+		setTimeout(portalMenuOff, 3000);
+		init();
+	});
+
 });
 
 function portalMenuOn(){
@@ -36,22 +55,23 @@ function portalMenuOn(){
 }
 
 function portalMenuOff(){
-	$("body").click();
+	if (!portalHover) {
+		$("body").click();
+	}
 }
 
-function getPortalT() {
-	var top; //50~70
-	top = Math.random()*20+50;
-	return top;
+function randomPosition(){
+	portalTop = Math.random()*50;
+	portalLeft = Math.random()*38+50;
 }
 
-function getPortalL() {
-	var left;
-	left = Math.random()*39+50;
-	return left;
+function doMove() {
+	randomPosition();
+	$("#portal").animate({
+		top: ""+portalTop+"vh",
+   		left: ""+portalLeft+"%"},5000, doMove);
 }
 
-function setPortalPosition() {
-	$("#portal").css("top", getPortalT()+"vh");
-	$("#portal").css("left", getPortalL()+"%");
+function init() {
+	doMove();
 }

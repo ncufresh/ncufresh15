@@ -7,7 +7,8 @@
 }
 
 #r2 {
-	height: 170px;
+	height: 100px;
+	padding-top: 30px;
 }
 
 #post-container {
@@ -23,5 +24,83 @@
 }
 
 #calender-container {
+	height: 75%;
+}
+
+.tab-content {
+	overflow: auto;
+	height: 85%;
+}
+
+.category {
+	display: block;
+	position: relative;
+	width: 50%;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#calender-container>.row {
 	height: 100%;
+}
+
+#calender-container .col {
+	height: 100%;
+}
+
+#event-container {
+	height: 100%;
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
+	position: relative;
+}
+
+.cat1 {
+	background-color: #6a1b9a;
+}
+
+.cat2 {
+	background-color: #0288d1;
+}
+
+#event1 {
+	background-color: #2962ff;
+}
+
+#event1:after {
+	background-color: #2962ff;
+	left: 23%;
+}
+
+#event2 {
+	background-color: #2979ff;
+}
+
+#event2:after {
+	background-color: #2979ff;
+	left: 48%;
+}
+
+#event3 {
+	background-color: #448aff;
+}
+
+#event3:after {
+	background-color: #448aff;
+	left: 73.2%;
+}
+
+#event4 {
+	background-color: #82b1ff;
+}
+
+.dick:after {
+	content: "";
+	width: 4%;
+	height: 2em;
+	position: absolute;
+	top: 0.7em;
+	border-radius: 50%;
 }
