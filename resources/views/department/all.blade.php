@@ -29,11 +29,9 @@
         <h3>{{ $content->name }}</h3>
         <p>{!! nl2br(htmlentities($content->content)) !!}</p>
     </div>
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px;
-        height: 300px;">
+    <div id="slider1_container" style="position: relative; width: 650px; height: 350px;">
         <!-- Slides Container -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
-            overflow: hidden;">
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 650px; height: 350px; overflow: hidden;">
             @foreach($picture as $picture)
             <div><img u="image" src="{{ asset('uploads/departments/'.$picture->picName.'') }}" /></div>
             @endforeach
