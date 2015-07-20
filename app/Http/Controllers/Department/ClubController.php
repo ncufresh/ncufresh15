@@ -24,31 +24,31 @@ class ClubController extends Controller {
 	}
 
 	public function store( Request $request) {
-		$validator = Validator::make($request->all(), ['fileName'=>'mimes:jpeg,png',]);
-		if ($validator->fails()) {
-			return "type wrong!!!";
-		} else {
-			$category = $request->get('cateValue');
-			$name = $request->get('clubName');
-			$content = $request->get('clubContent');
-			Departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
-			//Files upload
-			$files = Input::file('fileName');
-			var_dump($files);
-			if ($files[0] != NULL) {
-				foreach ($files as $file) {
-	        	    $destinationPath = 'uploads\departments';
-	        	    $filename = uniqid()."_".$file->getClientOriginalName();
-	        	    //Check file name exist or not
-	        	    while (file_exists($destinationPath."\\".$filename)) {
-	        	        $filename = uniqid()."_".$filename;
-	        	    }
-	        	    $upload_success = $file->move($destinationPath, $filename);
-	        	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
-	        	}
-			}
-	        return redirect('/group');
+		$category = $request->get('cateValue');
+		$name = $request->get('clubName');
+		$content = $request->get('clubContent');
+		$new = Departments::create(['category'=>$category, 'name'=>$name, 'content'=>$content]);
+		//Files upload
+		$files = Input::file('fileName');
+		// var_dump($files);
+		if ($files[0] != NULL) {
+			foreach ($files as $file) {
+	       	    $destinationPath = 'uploads\departments';
+	       	    $filename = uniqid()."_".$file->getClientOriginalName();
+	       	    //Check file name exist or not
+	       	    while (file_exists($destinationPath."\\".$filename)) {
+	       	        $filename = uniqid()."_".$filename;
+	       	    }
+	       	    $upload_success = $file->move($destinationPath, $filename);
+	       	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
+	       	}
 		}
+		//url
+		if ($category < 5 && $category > 0) {
+			return redirect('/group/clubs/show/'.$new->id);
+		}
+		else
+			return redirect('/group/departments/show/'.$new->id);
 	}
 
 	public function group($group) {
@@ -56,7 +56,6 @@ class ClubController extends Controller {
 			case 'departments':
 				return view('department.departments')->with('page', 2);
 				break;
-			
 			case 'clubs':
 				return view('department.departments')->with('page', 3);
 				break;
