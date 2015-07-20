@@ -18,9 +18,6 @@
 				background: url('{{asset("img/banner.jpg")}}');
 				background-size: 100% 100%;
 			}
-			#banner {
-				box-shadow: 0px 1px 10px 0.5px grey;
-			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 100% 100%;
@@ -71,9 +68,9 @@
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>新生必讀</a></div>
 						<div class='col s4'>
-						<div id='nop'>yo</div>
-						<a id='logo' href='{{url('/')}}'></a>
-						</div>
+                            <div id='nop'>yo</div>
+                            <a id='logo' href='{{url('/')}}'></a>
+                        </div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>中大生活</a></div>
 						<div class='col s2'><a class='links waves-effect waves-teal btn-flat' data-activates='banner-links'>常用連結</a></div>
 						<ul id='banner-links' class='dropdown-content'>
@@ -86,8 +83,8 @@
 					<div id='banner-img' class='row'>
 					</div>
 					<div class='row banner-menu'>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('group')}}'>系所社團</a></div>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('group')}}'>系所社團</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
 							<ul id='qadropdown' class='dropdown-content'>
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
 								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
@@ -97,12 +94,21 @@
 								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
 							</ul>
 						</div>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>
-						<div class='col s3'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
+						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
 					</div>
 				</div>
 			@endif
 			<div id='content'>
+		        @if (Request::url() != url('/'))
+                    <div id="breadcrumbs">
+                        <a href="{{url('/')}}">首頁</a>
+                        @foreach (\App\Helpers\SitemapHelper::getLocations() as $location)
+                            &gt;
+                            <a href="{{$location['url']}}">{{$location['name']}}</a>
+                        @endforeach
+                    </div>
+                @endif
             	@yield('content')
 			</div>
         </div>

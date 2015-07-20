@@ -1,0 +1,23 @@
+#test1 .row {
+	margin-left: 0;
+	margin-top: 30px;
+}
+
+#ann-new-trigger {
+	margin-bottom: 10px;
+}
+
+.ann-url-col {
+	overflow: hidden;
+}
+.ann-tag-type1 {
+	display: inline-block;
+	color: white;
+	background-color: darkblue;
+}
+
+.ann-tag-type2 {
+	display: inline-block;
+	color: white;
+	background-color: #006600;
+}
