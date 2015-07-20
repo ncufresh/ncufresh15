@@ -13,7 +13,7 @@ class CampusController extends Controller
 {
     public function index() {
     	$introduction = Campus::where('view_id', 0)->value('introduction');
-		return view('campus.backstage')->with('introduction', $introduction);
+		return view('campus.campus')->with('introduction', $introduction);
 	}
 
 	public function showIntro($view_id) {
