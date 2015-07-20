@@ -36,6 +36,12 @@ td.expand {
 
 @section('content')
 <div class="row">
+    <a href="{{url('qa')}}" class="waves-effect waves-light btn">
+        <i class="material-icons left">input</i>返回Q&amp;A
+    </a>
+    <a href="{{url('qa/answer')}}" class="waves-effect waves-light btn">
+        <i class="material-icons left">note_add</i>新增Q&amp;A
+    </a>
     @foreach ($questions as $question)
     <div id="modal{{$question->id}}" class="modal modal-fixed-footer">
         <div class="modal-content">
@@ -55,6 +61,7 @@ td.expand {
                 <td class="expand">標題</td>
                 <td class="shrink">檢視</td>
                 <td class="shrink">狀態</td>
+                <td class="shrink">發問者</td>
             </tr>
         </thead>
         <tbody>
@@ -71,6 +78,11 @@ td.expand {
                     <td class="shrink center-align chk-mark">
                         <input type='checkbox' id="chk{{$question->id}}" {{$question->solved == true ? 'checked="checked"' : ''}}>
                         <label for="chk{{$question->id}}" data-id="{{$question->id}}" data-solved="{{!$question->solved}}">{{$solvedString[$question->solved]}}</label>
+                    </td>
+                    <td class="expand">
+                        <a href="{{ url('user/'.$question->author->id) }}" class="tooltipped" data-position="bottom" data-tooltip="{{ $question->author->email }}">
+                            {{ $question->author->name }}
+                        </a>
                     </td>
                 </tr>
             @endforeach

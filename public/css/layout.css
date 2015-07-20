@@ -8,7 +8,7 @@
 	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
-	min-height: 1000px;
+	min-height: 910px;
 }
 .nav-margin {
 	margin-top: 65px;
@@ -18,8 +18,8 @@
 	top: 0px;
 	display: inline-block;
 	width: 22.5%;
-	height: 73px;
-	background-color: white;
+	height: 100px;
+	background-color: transparent;
 }
 #banner-img {
 	height: 210px;
@@ -38,6 +38,10 @@
 }
 .banner-menu a{
 	text-align: center;
+	width: 100%;
+}
+.banner-menu a:hover {
+	background-color: #e3f2fd;
 }
 #nav-fixed {
 	position: fixed;
@@ -54,7 +58,7 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	transition: 6s ease-in-out;
+	/*transition: 6s ease-in-out;*/
 	display: inline-block;
 	position: fixed;
 	top: 65vh;

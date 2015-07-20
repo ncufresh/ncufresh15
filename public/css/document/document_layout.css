@@ -1,0 +1,27 @@
+#content {
+  padding: 0px;
+}
+
+#main {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.main-list {
+  display: inline-block;
+  padding: .5em;
+  vertical-align: top;
+  
+  & > ul, & > div {
+    position: absolute;
+    top: 2em;
+    right: 0;
+    display: none;
+    width: 100vw;
+
+    & > li {
+      display: inline-block;
+      padding: .2em;
+    }
+  }
+}
