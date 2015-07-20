@@ -82,5 +82,5 @@ Route::get('video2', function () {
 Route::get('video', function () {
     return view('video\video');
 });
-
+Route::post('video2', 'Department\NewClubController@store');
 //******************************************************************************************************
