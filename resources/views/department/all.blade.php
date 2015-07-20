@@ -18,7 +18,7 @@
         <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
     </div>
     <div class="col s1">
-        <i class="small material-icons">navigate_before</i>
+        <i class="small material-icons" onclick="">navigate_before</i>
     </div>
 </div>
 <div class="container">
@@ -52,8 +52,14 @@
         @foreach($picture as $picture)
         @if($picture != null)
         <div>
-            <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+            <p>
+                <input name="deleteImage[]" type="checkbox" id="deleteImage{{ $picture->id }}" value="{{ $picture->picName }}">
+                <label for="deleteImage{{ $picture->id }}">刪除</label>
+            </p>
         </div>
+        <div>
+            <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+        </div><br>
         @endif
         @endforeach
         <div class="file-field input-field">
