@@ -13,6 +13,13 @@ class LifesPictures extends Migration
     public function up()
     {
         //
+        Schema::drop('pictures');
+        Schema::create('lifes_pictures',function(Blueprint $table) {
+            $table->increments('id');
+            $table->integer('lifes_id');
+            $table->text('url');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +29,12 @@ class LifesPictures extends Migration
      */
     public function down()
     {
-        //
+       Schema::create('pictures',function(Blueprint $table) {
+            $table->increments('id');
+            $table->integer('ref_id');
+            $table->string('name');
+            $table->timestamps();
+        });       
+       Schema::drop('life_pictures');
     }
 }

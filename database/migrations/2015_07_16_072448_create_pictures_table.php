@@ -29,6 +29,6 @@ class CreatePicturesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('pictures');
     }
 }
