@@ -14,53 +14,57 @@
 	<div id='post-container' class="col s5">
 		<div class="row">
             <ul class="tabs">
-                <li class="tab dick col s2 grey darken-1"><a class="active" href="#test1">全部</a></li>
-                <li class="tab dick col s2 grey lighten-1"><a  href="#test2">Q&amp;A</a></li>
-                <li class="tab dick col s2 grey darken-1"><a href="#test3">新生必讀</a></li>
+                <li class="tab dick col s2 grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
+                <li class="tab dick col s2 grey lighten-1"><a  href="#qa-tab">Q&amp;A</a></li>
+                <li class="tab dick col s2 grey darken-1"><a href="#doc-tab">新生必讀</a></li>
             </ul>
-			<div id="test1" class="tab-content">
-				<table>
-					<tbody>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-					</tbody>
-				</table>
+			<div id="ann-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					<div class='row'>
+						<div class='col s3'>
+							@if ($ann->category == '1')
+								<span class='category cat1'>Type1</span>
+							@else
+								<span class='category cat2'>Type2</span>
+							@endif
+						</div>
+						<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+						<div class='col s6'>
+							<a href="{{$ann->url}}">{{$ann->title}}</a>
+						</div>
+					</div>
+				@endforeach
 			</div>
-			<div id="test2" class="tab-content">Test 2</div>
-			<div id="test3" class="tab-content">Test 3</div>
+			<div id="qa-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					@if ($ann->category == '1')
+						<div class='row'>
+							<div class='col s3'>
+								<span class='category cat1'>Type1</span>
+							</div>
+							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+							<div class='col s6'>
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							</div>
+						</div>
+					@endif
+				@endforeach
+			</div>
+			<div id="doc-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					@if ($ann->category == '2')
+						<div class='row'>
+							<div class='col s3'>
+								<span class='category cat2'>Type2</span>
+							</div>
+							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+							<div class='col s6'>
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							</div>
+						</div>
+					@endif
+				@endforeach
+			</div>
 		</div>
 	</div>
 	<div id='slider-container'class="col s7">

@@ -6,10 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Announcement;
 
 class HomepageController extends Controller{
 
 	public function index(){
-		return view('index');
+		$anns = Announcement::all();
+		return view('index', [
+			"announcements" => $anns
+		]);
 	}
 }
