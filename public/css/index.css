@@ -1,9 +1,6 @@
-#content {
-	height: 100%;
-}
-
 #r1 {
 	height: 400px;
+    margin:0;
 }
 
 #r2 {
@@ -11,25 +8,60 @@
 	padding-top: 30px;
 }
 
-#post-container {
-	margin-right: 5%;
-	width: 45%;
-	height: 100%;
-}
-
-#slider-container {
-	width: 50%;
-	height: 100%;
-	padding-top: 10px;
-}
-
 #calender-container {
 	height: 75%;
 }
 
 .tab-content {
-	overflow: auto;
+    overflow-y: auto;
 	height: 85%;
+    background-color: #5f5f5f;
+}
+
+.tab-content table {
+    color: #f5f5f5;
+}
+
+.tabs>li:nth-child(odd)>a {
+    color: #fefefe;
+}
+
+.tabs>li:nth-child(1):after {
+	background-color: #757575;
+	left: 31.5%;
+	content: "";
+	width: 4%;
+	height: 1.4em;
+	position: absolute;
+	top: 0.8em;
+	border-radius: 50%;
+}
+
+.tabs>li:nth-child(2):after {
+	background-color: #bdbdbd;
+	left: 65%;
+	content: "";
+	width: 4%;
+	height: 1.4em;
+	position: absolute;
+	top: 0.8em;
+	border-radius: 50%;
+}
+
+.tabs>li:nth-child(odd)>a:hover {
+    color: #fff;
+}
+
+.tabs>li:nth-child(even)>a {
+    color: #424242;
+}
+
+.tabs>li:nth-child(even)>a:hover {
+    color: #616161;
+}
+
+.tabs .indicator {
+    background-color: #fff;
 }
 
 .category {
@@ -104,3 +136,4 @@
 	top: 0.7em;
 	border-radius: 50%;
 }
+

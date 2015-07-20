@@ -13,15 +13,13 @@
 <div id='r1' class='row'>
 	<div id='post-container' class="col s5">
 		<div class="row">
-			<div class="col s12">
-				<ul class="tabs">
-					<li class="tab col s2"><a class="active" href="#test1">Tab1</a></li>
-					<li class="tab col s2"><a  href="#test2">Tab2</a></li>
-					<li class="tab col s2"><a href="#test3">Tab3</a></li>
-				</ul>
-			</div>
-			<div id="test1" class="col s12 tab-content">
-				<table class='bordered striped'>
+            <ul class="tabs">
+                <li class="tab dick col s2 grey darken-1"><a class="active" href="#test1">全部</a></li>
+                <li class="tab dick col s2 grey lighten-1"><a  href="#test2">Q&amp;A</a></li>
+                <li class="tab dick col s2 grey darken-1"><a href="#test3">新生必讀</a></li>
+            </ul>
+			<div id="test1" class="tab-content">
+				<table>
 					<tbody>
 						<tr>
 							<td ><span class='category cat1'>Alvin</span></td>
@@ -61,11 +59,11 @@
 					</tbody>
 				</table>
 			</div>
-			<div id="test2" class="col s12 tab-content">Test 2</div>
-			<div id="test3" class="col s12 tab-content">Test 3</div>
+			<div id="test2" class="tab-content">Test 2</div>
+			<div id="test3" class="tab-content">Test 3</div>
 		</div>
 	</div>
-	<div id='slider-container'class="col s6">
+	<div id='slider-container'class="col s7">
 		<div class="slider">
 			<ul class="slides">
 				<li>
