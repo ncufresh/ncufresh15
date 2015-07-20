@@ -24,6 +24,9 @@
                 </ul>
             </div>
         @endif
+        <a href="{{url('qa')}}" class="waves-effect waves-light btn">
+            <i class="material-icons left">input</i>返回Q&amp;A
+        </a>
         @if ($type == "qa")
             <h2>我要發問</h2>
         @else
@@ -45,7 +48,7 @@
             @endif
             <div class="input-field col {{$type == "qa" ? "s9" : "s12"}}">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="input_title" type="text" class="validate" name="title">
+                <input id="input_title" type="text" class="validate" name="title" value="{{Input::old('title')}}">
                 <label for="input_title">標題</label>
             </div>
         </div>

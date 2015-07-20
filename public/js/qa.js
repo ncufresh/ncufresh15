@@ -1,17 +1,5 @@
 $(function() {
     $('.modal-trigger').leanModal();
-    $('.modal-trigger.answer').click(function() {
-        $.ajax({
-            url: '/qa/view?id=' + $(this).attr('data-id'),
-            type: 'GET',
-            dataType: 'text',
-
-            success: function(msg) {
-                msg = JSON.parse(msg);
-                $("#view"+msg.id).html(msg.views);
-            }
-        });
-    });
     $('.chk-mark label').click(function() {
         var self = $(this);
         console.log(self.attr('data-solved'));
@@ -30,4 +18,5 @@ $(function() {
             $('#row'+self.attr('data-id')).removeClass('solved');
         }
     });
+    $('.tooltipped').tooltip({delay: 50});
 });

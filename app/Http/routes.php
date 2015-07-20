@@ -25,35 +25,65 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// show user
+Route::get('user'     , 'UserController@index');
+Route::get('user/{id}', 'UserController@show');
+
+// Q&A
+//------------------------------------------------------------------------------------------------------
+Route::get ('qa' , 'QaController@index');
+Route::get ('qa/{id}' , 'QaController@show')->where('id', '[0-9]+');
+Route::get ('qa/view' , 'QaController@view');
+Route::get ('qa/category/{category?}' , 'QaController@index');
+Route::get ('qa/submitted' , function() {
+    return view('qa.submitted');
+});
+//------------------------------------------------------------------------------------------------------
+
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    // Dashboard
+    Route::group(['middleware' => 'permission:admin'], function() {
+        Route::get ('user/edit/{id}'  , 'UserController@edit');
+        Route::post('user/update/{id}'  , 'UserController@update');
+        Route::get ('user/delete/{id}', 'UserController@destroy');
+    });
+
     // Home
     Route::get('home', function() {
         return view('home.index');
     });
 
-    // Q&A
-    Route::get('qa/create', 'QaController@create');
-    Route::get('qa/questions', 'QaController@index_questions');
-    Route::post('qa/create', 'QaController@store_question');
+    // Manage Q&A
+    Route::get ('qa/create'      , 'QaController@create_question');
+    Route::post('qa/create'      , 'QaController@store_question');
+    Route::group(['middleware' => 'permission:management'], function() {
+        Route::get ('qa/questions'   , 'QaController@index_questions');
+        Route::get ('qa/answer'      , 'QaController@create_answer');
+        Route::post('qa/answer'      , 'QaController@store_answer');
+        Route::get ('qa/edit/{id}'   , 'QaController@edit');
+        Route::post('qa/update/{id}' , 'QaController@update');
+        Route::get ('qa/delete/{id}' , 'QaController@destroy');
+        Route::get ('qa/solved/{id}'      , 'QaController@solved');
+    });
 });
 //******************************************************************************************************
 
 
-// Q&A
-//******************************************************************************************************
-Route::get('qa/answer', 'QaController@answer');
-Route::post('qa/answer', 'QaController@store_answer');
-Route::get('qa/view', 'QaController@view');
-Route::get('qa/solved', 'QaController@solved');
-Route::get('qa/{category?}', 'QaController@index');
-//******************************************************************************************************
 
 
 //Department and club
 //******************************************************************************************************
-Route::get('department/backstage', array('as' => 'backstage_department', 'uses' => 'Department\ClubController@index'));
-Route::post('department/new', 'Department\NewClubController@store');
+Route::get('group', 'Department\ClubController@index');
+Route::get('group/{group}', 'Department\ClubController@group');
+Route::post('group/new', 'Department\ClubController@store');
+Route::get('group/{group}/{cate}', 'Department\ClubController@cate');
+Route::get('group/{group}/show/{id}', 'Department\ClubController@show');
+Route::post('group/update','Department\ClubController@update');
+
+Route::get('department/{cate}', 'Department\ClubController@department');
+Route::post('department/update', 'Department\ClubController@update');
+Route::post('department/content', 'Department\ClubController@getContent');
 //******************************************************************************************************
 
 
@@ -65,13 +95,12 @@ Route::get('campus', 'Campus\CampusController@index');
 
 //Document
 //******************************************************************************************************
-//Route::get('document', array('as' => 'document', 'uses' => 'documentController@index'))
-//後台新增公告
-Route::get('backstage_document', function () {
-    return view('document/backstage_important_cal');
-});
-//抓在哪個分頁
-//Route::get('document/{}/{}/{}', function($, $, $){});
+Route::get('document', 'Document\DocumentController@index');
+Route::get('document/ckeditor', 'Document\DocumentController@editor');
+Route::post('document/add_content', array('as' => 'document/add_content', 'uses' => 'Document\DocumentController@store'));
+Route::get('department/{id_1}', 'Document\DocumentController@document_1');
+Route::get('department/{id_1}/{id_2}', 'Document\DocumentController@document_2');
+Route::get('department/{id_1}/{id_2}/{id_3}', 'Document\DocumentController@document_3');
 //******************************************************************************************************
 
 // video
