@@ -7,6 +7,19 @@ bgImage.onload = function () {
 };
 bgImage.src = "game_images/background2.png";
 
+///////////////////////////
+bgImage.width = 3200;
+bgImage.height = 3200;
+///////////////////////////
+
+// Grasss image
+var grassReady = false;
+var grassImage = new Image();
+grassImage.onload = function () {
+	grassReady = true;
+};
+grassImage.src = "game_images/grass.png";
+
 // Hero image
 var heroReady = false;
 var heroImage = new Image();
@@ -29,7 +42,7 @@ var blockImage = new Image();
 blockImage.onload = function () {
 	blockReady = true;
 };
-blockImage.src = "game_images/wall.png";
+blockImage.src = "game_images/block.png";
 
 // Box image
 var boxReady = false;
@@ -39,5 +52,13 @@ boxImage.onload = function () {
 };
 boxImage.src = "game_images/box1.png";
 ////////////////
+
+// test image
+var testReady = false;
+var testImage = new Image();
+testImage.onload = function () {
+	testReady = true;
+};
+testImage.src = "game_images/test.png";
 
 

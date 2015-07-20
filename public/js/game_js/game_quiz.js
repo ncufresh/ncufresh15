@@ -30,7 +30,7 @@ var question = function () {
 		ctx.font = '20px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
-		ctx.fillText("C: Cajon", canvas.width / 2, canvas.height / 2 +180);	
+		ctx.fillText("C: Cherry", canvas.width / 2, canvas.height / 2 +180);	
 
         switch (select){
             case 1:

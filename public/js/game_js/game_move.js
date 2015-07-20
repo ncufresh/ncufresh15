@@ -11,9 +11,14 @@ addEventListener("keyup", function (e) {
 
 // Update game objects
 var update = function (modifier) {
+
+	//var distance = 4 ;
+
 	if (38 in keysDown) { // Player holding up
 		if(hero.y-hero.speed * modifier >= 0 ){ // edge
 			hero.y -= hero.speed * modifier;
+		} else{
+			hero.y = 0 ;
 		}
 
 		// walls
@@ -35,6 +40,8 @@ var update = function (modifier) {
 	if (40 in keysDown) { // Player holding down
 		if(hero.y+hero.speed * modifier <= bgImage.height-32 ){ // edge
 			hero.y += hero.speed * modifier;
+		} else{
+			hero.y = bgImage.height-32;
 		}
 
 		// walls
@@ -56,6 +63,8 @@ var update = function (modifier) {
 	if (37 in keysDown) { // Player holding left
 		if(hero.x-hero.speed * modifier >= 0 ){ // edge
 			hero.x -= hero.speed * modifier;
+		} else{
+			hero.x = 0 ;
 		}
 
 		// walls
@@ -77,6 +86,8 @@ var update = function (modifier) {
 	if (39 in keysDown) { // Player holding right
 		if(hero.x+hero.speed * modifier <= bgImage.width-32 ){ // edge
 			hero.x += hero.speed * modifier;
+		} else {
+			hero.x = bgImage.width-32;
 		}
 		
 		// walls

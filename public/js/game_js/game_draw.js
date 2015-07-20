@@ -51,9 +51,20 @@ var render = function () {
 	hx = hero.x-canvas.width/2 < 0 || hero.x-canvas.width/2 > bgImage.width-canvas.width;
 	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > bgImage.height-canvas.height;
 
-	if (bgReady) {
-		draw(bgImage, 0, 0);
+
+	// if (bgReady) {
+	// 	draw(bgImage, 0, 0);
+	// }
+	if (grassReady) {
+		for (var i = 0; i <100; i++) {
+			for (var j = 0; j < 100; j++) {
+				draw(grassImage,32*i,32*j);
+				//draw(testImage,32*i,32*j);
+			};
+		};
+		
 	}
+
 	if (heroReady) {
 		draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
 	}
@@ -83,9 +94,9 @@ var render = function () {
 	}
 
 	// Score
-	ctx.fillStyle = "rgb(250, 250, 250)";
+	ctx.fillStyle = "rgba(0, 0, 0,0.8)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Random monster caught: " + monstersCaught, 32, 32);
+	ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
 };

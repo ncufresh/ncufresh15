@@ -1,8 +1,10 @@
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
+// canvas.width = 512;
+// canvas.height = 480;
+canvas.width = 640;
+canvas.height = 512;
 document.getElementById('gamecanvas').appendChild(canvas);
 
 
@@ -11,25 +13,27 @@ var hero = {
 	speed: 256, // movement in pixels per second
 	x : canvas.width / 2,
 	y : canvas.height / 2,
-	width : 32,
-	height : 32,
+	width : 30,  // thin!!!!!!!!!!!!!
+	height : 30, // thin!!!!!!!!!!!!!
 	canmove : true
 };
 var monster = {};
 var monstersCaught = 0;
 
 var box = {
-	x : 250,
-	y : 200,
+	x : 32,
+	y : 64,
 	width : 32,
 	height : 32
 };
 
-var block1 = {x:165,y:120,width:32,height:320,type:"block"};
-var block2 = {x:1500,y:288,width:160,height:32,type:"block"};
-var block3 = {x:365,y:159,width:32,height:32,type:"block"};
+var block1 = {x:160,y:32,width:32,height:320,type:"block"};
+var block2 = {x:960,y:288,width:1280,height:32,type:"block"};
+var block3 = {x:320,y:0,width:32,height:192,type:"block"};
+var block4 = {x:0,y:320,width:896,height:32,type:"block"};
+var block5 = {x:96,y:32,width:32,height:320,type:"block"};
 
-var blocks=[block1,block2,block3];
+var blocks=[block1,block2,block3,block4,block5];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");
