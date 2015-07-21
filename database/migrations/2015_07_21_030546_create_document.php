@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatDocument extends Migration
+class CreateDocument extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,11 @@ class CreatDocument extends Migration
     {
         Schema::create('document', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('page_id');     //分頁
-            $table->text('text');   //內文
+            $table->text('page_id');
+            $table->integer('page_id_2');
+            $table->integer('catagory');
+            $table->text('title');      //目錄會抓這欄的標題
+            $table->text('content');   //內文
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreatDocument extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('document');
     }
 }

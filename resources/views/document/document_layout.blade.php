@@ -9,134 +9,142 @@
 @section('content')
 <!--選單-->
 <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' data-beloworigin="true" href='document/1' data-activates='dd1'>大學部新生註冊須知</a>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd1'>大學部新生註冊須知</a>
   <ul id='dd1' class='dropdown-content'>
-    <li><a href="document/1/1"><h5><ins><strong>學籍</strong></ins></h5></a>
+    <li><a href=""><h5><ins><strong>學籍</strong></ins></h5></a>
       <div>
         <ul>
-          <li><a href="document/1/1/1">學籍資料登錄 (全部學生，休學前已完成者仍須登入做資料確認)</a></li>
-          <li><a href="document/1/1/2">學籍注意事項</a></li>
+          @foreach($cat_1 as $cat_1)
+          <li><a href="/document/{{$cat_1->page_id}}/{{$cat_1->page_id_2}}/{{$cat_1->id}}">{{$cat_1->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="document/1/2"><h5><ins><strong>繳費</strong></ins></h5></a>
+    <li><a href=""><h5><ins><strong>繳費</strong></ins></h5></a>
       <div>
         <ul>
-          <li><a href="document/1/2/1">繳費(全部學生)</a></li>
-          <li><a href="document/1/2/2">退費標準 (繳費後申請 休、退學者)</a></li>
-          <li><a href="document/1/2/3">境外生應加辦事項(境外生)</a></li>
-          <li><a href="document/1/2/4">就學貸款(有需要者)</a></li>
-          <li><a href="document/1/2/5">弱勢學生助學計畫(符合資格者)</a></li>
-          <li><a href="document/1/2/6">學雜費專區</a></li>
+          @foreach($cat_2 as $cat_2)
+          <li><a href="/document/{{$cat_2->page_id}}/{{$cat_2->page_id_2}}/{{$cat_2->id}}">{{$cat_2->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="document/1/3"><h5><ins><strong>兵役</strong></ins></h5></a>
+    <li><a href=""><h5><ins><strong>兵役</strong></ins></h5></a>
       <div>
         <ul>
-          <li><a href="document/1/3">凡男生(含復學生)均應注意下列事項，以確保自身權益：</a></li>
-          <li><a href="document/1/3">兵役資料繳交時程</a></li>
-          <li><a href="document/1/3">大專校院役男申請二階段常備兵役軍事訓練須知</a></li>
-          <li><a href="document/1/3">兵役資料表 (凡本國籍男生皆須填交)</a></li>
+          @foreach($cat_3 as $cat_3)
+          <li><a href="/document/{{$cat_3->page_id}}/{{$cat_3->page_id_2}}/{{$cat_3->id}}">{{$cat_3->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="14"><h5><ins><strong>住宿</strong></ins></h5></a>
+    <li><a href=""><h5><ins><strong>住宿</strong></ins></h5></a>
       <div>
         <ul>
-          <li><a href="141">住宿申請(有需要者)</a></li>
-          <li><a href="142">住宿生活規範事項及宿舍設施使用規定</a></li>
+          @foreach($cat_4 as $cat_4)
+          <li><a href="/document/{{$cat_4->page_id}}/{{$cat_4->page_id_2}}/{{$cat_4->id}}">{{$cat_4->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="15"><h5><ins><strong>學生證</strong></ins></h5></a>
+    <li><a href=""><h5><ins><strong>學生證</strong></ins></h5></a>
       <div>
         <ul>
-          <li><a href="151">繳交學歷證件、身分證件 (大一新生)</a></li>
-          <li><a href="152">領取學生證 (完成註冊程序者)</a></li>
+          @foreach($cat_5 as $cat_5)
+          <li><a href="/document/{{$cat_5->page_id}}/{{$cat_5->page_id_2}}/{{$cat_5->id}}">{{$cat_5->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="16"><h5><ins><strong>其他注意事項(大學部)</strong></ins></h5></a></li>
+    <li><a href=""><h5><ins><strong>其他注意事項(大學部)</strong></ins></h5></a></li>
+      <div>
+        <ul>
+          @foreach($cat_6 as $cat_6)
+          <li><a href="/document/{{$cat_6->page_id}}/{{$cat_6->page_id_2}}/{{$cat_6->id}}">{{$cat_6->title}}</a></li>
+          @endforeach
+        </ul>
+      </div>
   </ul>
-  <a class='dropdown-button btn' data-beloworigin="true" href="2" data-activates='dd2'>研究所新生須知</a>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd2'>研究所新生須知</a>
   <ul id='dd2' class='dropdown-content'>
-    <li><a href="21">學籍</a>
+    <li><a href="">學籍</a>
       <div>
         <ul>
-          <li><a href="211">學籍資料登錄 (全部新生)</a></li>
-          <li><a href="212">學籍注意事項</a></li>
+          @foreach($cat_7 as $cat_7)
+          <li><a href="/document/{{$cat_7->page_id}}/{{$cat_7->page_id_2}}/{{$cat_7->id}}">{{$cat_7->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="22">繳費</a>
+    <li><a href="">繳費</a>
       <div>
         <ul>
-          <li><a href="221">繳費(全部學生)</a></li>
-          <li><a href="222">退費標準 (繳費後申請 休、退學者)</a></li>
-          <li><a href="223">境外生應加辦事項(境外生)</a></li>
-          <li><a href="224">就學貸款(有需要者)</a></li>
-          <li><a href="225">弱勢學生助學計畫(符合資格者)</a></li>
-          <li><a href="226">學雜費專區</a></li>
+          @foreach($cat_8 as $cat_8)
+          <li><a href="/document/{{$cat_8->page_id}}/{{$cat_8->page_id_2}}/{{$cat_8->id}}">{{$cat_8->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="23">兵役</a>
+    <li><a href="">兵役</a>
       <div>
         <ul>
-          <li><a href="231">兵役事宜(本國籍男生)</a></li>
-          <li><a href="232">兵役資料繳交時程</a></li>
-          <li><a href="233">大專校院役男申請二階段常備兵役軍事訓練須知</a></li>
-          <li><a href="234">兵役資料表 (凡本國籍男生皆須填交)</a></li>
+          @foreach($cat_9 as $cat_9)
+          <li><a href="/document/{{$cat_9->page_id}}/{{$cat_9->page_id_2}}/{{$cat_9->id}}">{{$cat_9->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="24">住宿</a>
+    <li><a href="">住宿</a>
       <div>
         <ul>
-          <li><a href="241">住宿申請(有需要者)</a></li>
-          <li><a href="242">住宿生活規範事項及宿舍設施使用規定</a></li>
+          @foreach($cat_10 as $cat_10)
+          <li><a href="/document/{{$cat_10->page_id}}/{{$cat_10->page_id_2}}/{{$cat_10->id}}">{{$cat_10->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="25">學生證</a>
+    <li><a href="">學生證</a>
       <div>
         <ul>
-          <li><a href="251"></a></li>
+          @foreach($cat_11 as $cat_11)
+          <li><a href="/document/{{$cat_11->page_id}}/{{$cat_11->page_id_2}}/{{$cat_11->id}}">{{$cat_11->title}}</a></li>
+          @endforeach
         </ul>
       </div>
     </li>
-    <li><a href="26">其他注意事項(研究所)</a>
+    <li><a href="">其他注意事項(研究所)</a>
+      <div>
+        <ul>
+          @foreach($cat_12 as $cat_12)
+          <li><a href="/document/{{$cat_12->page_id}}/{{$cat_12->page_id_2}}/{{$cat_12->id}}">{{$cat_12->title}}</a></li>
+          @endforeach
+        </ul>
+      </div>
     </li>
   </ul>
-  <a class='dropdown-button btn' data-beloworigin="true" href='3' data-activates='dd3'>輔導及活動專區</a>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd3'>新生周</a>
   <ul id='dd3' class='dropdown-content'>
-    <li><a href="31">大一新生周</a></li>
-    <li><a href="32">大一周會</a></li>
-    <li><a href="33">心理輔導</a></li>
-    <li><a href="34">104學年度全校大一親師座談會</a></li>
-    <li><a href="35">學生學習輔導機制</a></li>
-    <li><a href="36">導師輔導</a></li>
-    <li><a href="37">104年特殊教育服務</a></li>
-    <li><a href="38">性別平等教育委員會網站</a></li>
-    <li><a href="39">研究生新生座談 (全部新生)</a></li>
+    @foreach($cat_13 as $cat_13)
+    <li><a href="/document/{{$cat_13->page_id}}/{{$cat_13->page_id_2}}/{{$cat_13->id}}">{{$cat_13->title}}</a></li>
+    @endforeach
   </ul>
-  <a class='dropdown-button btn' data-beloworigin="true" href='4' data-activates='dd4'>生活相關須知</a>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd3'>輔導及活動專區</a>
+  <ul id='dd3' class='dropdown-content'>
+    @foreach($cat_14 as $cat_14)
+    <li><a href="/document/{{$cat_14->page_id}}/{{$cat_14->page_id_2}}/{{$cat_14->id}}">{{$cat_14->title}}</a></li>
+    @endforeach
+  </ul>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd4'>生活相關須知</a>
   <ul id='dd4' class='dropdown-content'>
-    <li><a href="41">大一選課與共同必修</a></li>
-    <li><a href="42">學生申訴評議委員會</a></li>
-    <li><a href="43">圖書館</a></li>
-    <li><a href="44">電算中心</a></li>
-    <li><a href="45">宿舍服務中心</a></li>
-    <li><a href="46">服務學習</a></li>
-    <li><a href="47">智慧財產權</a></li>
-    <li><a href="48">簽署啟用圖書館服務 (全部學生)</a></li>
-    <li><a href="49">學生掛號郵件</a></li>
+    @foreach($cat_15 as $cat_15)
+    <li><a href="/document/{{$cat_15->page_id}}/{{$cat_15->page_id_2}}/{{$cat_15->id}}">{{$cat_15->title}}</a></li>
+    @endforeach
   </ul>
-  <a class='dropdown-button btn' data-beloworigin="true" href='5' data-activates='dd5'>文件及下載專區</a>
+  <a class='dropdown-button btn' data-beloworigin="true" href="" data-activates='dd5'>文件及下載專區</a>
   <ul id='dd5' class='dropdown-content'>
-    <li><a href="51">104學年新生報到車輛通行證</a></li>
-    <li><a href="52">104年大一新生入住交通管制圖及報到流程</a></li>
+    @foreach($cat_16 as $cat_16)
+    <li><a href="/document/{{$cat_16->page_id}}/{{$cat_16->page_id_2}}/{{$cat_16->id}}">{{$cat_16->title}}</a></li>
+    @endforeach
   </ul>
 
   <a class="waves-effect waves-light btn" href="/document/ckeditor">編輯</a>
