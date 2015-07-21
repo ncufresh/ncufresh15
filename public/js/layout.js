@@ -68,8 +68,8 @@ function randomPosition(){
 function doMove() {
 	randomPosition();
 	$("#portal").animate({
-		top: ""+portalTop+"vh",
-   		left: ""+portalLeft+"%"},5000, doMove);
+		top: ""+portalTop+"px",
+   		left: ""+portalLeft+"px"},5000, doMove);
 }
 
 function init() {

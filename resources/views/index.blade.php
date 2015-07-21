@@ -105,7 +105,7 @@
 <div id='r2' class='row'>
 	<div id='calender-container'>
 		<div class="row">
-			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
+			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&laquo;</a></div>
 			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
 					<div id='event1' class='col s3 dick'></div>
@@ -114,7 +114,7 @@
 					<div id='event4' class='col s3'></div>
 				</div>
 			</div>
-			<div id='arrow-container2' class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>
+			<div id='arrow-container2' class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&raquo;</a></div>
 		</div>
 	</div>
 </div>

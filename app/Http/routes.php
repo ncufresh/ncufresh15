@@ -25,6 +25,9 @@ Route::post('/admin/cal/new', 'AdminController@storeCal');
 Route::get('/admin/cal/delete/{id}', 'AdminController@deleteCal');
 Route::post('/admin/cal/update/{id}', 'AdminController@updateCal');
 
+//Get Calender by ajax
+Route::get('/calender', 'CalenderController@get');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
