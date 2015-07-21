@@ -21,6 +21,9 @@ Route::get('/admin', 'AdminController@index');
 Route::post('/admin/ann/new', 'AdminController@storeAnn');
 Route::get('/admin/ann/delete/{id}', 'AdminController@deleteAnn');
 Route::post('/admin/ann/update/{id}', 'AdminController@updateAnn');
+Route::post('/admin/cal/new', 'AdminController@storeCal');
+Route::get('/admin/cal/delete/{id}', 'AdminController@deleteCal');
+Route::post('/admin/cal/update/{id}', 'AdminController@updateCal');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

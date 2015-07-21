@@ -6,12 +6,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Announcement;
+use App\Calender;
+use Log;
 
 class AdminController extends Controller{
 	public function index(){
 		$anns = Announcement::all();
+		$cals = Calender::all();
 		return view('admin.index', [
-			'announcements' => $anns
+			'announcements' => $anns,
+			'calenders' => $cals
 		]);
 	}
 
@@ -36,6 +40,31 @@ class AdminController extends Controller{
 	public function deleteAnn(Request $request, $id){
 		$ann = Announcement::find($id);
 		$ann->delete();
+		return redirect('admin');
+	}
+
+	public function storeCal(Request $request){
+		//Log::info("date:".$request->date.".");
+		Calender::create([
+			'title'=>$request->input('title'),
+			'content'=>$request->input('content'),
+			'event_date'=>$request->date
+		]);
+		return redirect('admin');
+	}
+
+	public function updateCal(Request $request, $id){
+		$cal = Calender::find($id);
+		$cal->title = $request->title;
+		$cal->content = $request->content;
+		$cal->event_date = $request->date;
+		$cal->save();
+		return redirect('admin');
+	}
+
+	public function deleteCal(Request $request, $id){
+		$cal = Calender::find($id);
+		$cal->delete();
 		return redirect('admin');
 	}
 }
