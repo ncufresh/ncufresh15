@@ -20,7 +20,11 @@
 	</li>
 	<li>
 		<a class="collapsible-header">行政</a>
-		<div class="collapsible-body collection"><a class="collection-item">行政大樓</a></div>
+		@foreach($campus as $item)
+			<div class="collapsible-body collection">
+				<a class="collection-item" href="/campus/{{$item->id}}">{{ $item->title }}</a>
+			</div>
+		@endforeach
 	</li>
 	<li>
 		<a class="collapsible-header">系館</a>
