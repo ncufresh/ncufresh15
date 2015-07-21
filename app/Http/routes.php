@@ -16,6 +16,12 @@
 // index
 Route::get('/', 'HomepageController@index');
 
+//Admin of Homepage
+Route::get('/admin', 'AdminController@index');
+Route::post('/admin/ann/new', 'AdminController@storeAnn');
+Route::get('/admin/ann/delete/{id}', 'AdminController@deleteAnn');
+Route::post('/admin/ann/update/{id}', 'AdminController@updateAnn');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -64,7 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
         Route::post('qa/update/{id}' , 'QaController@update');
         Route::get ('qa/delete/{id}' , 'QaController@destroy');
-        Route::get ('qa/solved/{id}'      , 'QaController@solved');
+        Route::get ('qa/solved'      , 'QaController@solved');
     });
 });
 //******************************************************************************************************
