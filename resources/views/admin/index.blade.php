@@ -103,22 +103,23 @@
 		</div>
 		<div id="cal-tab" class="col s12">
 			<div class='row'>
-				<a id='cal-new-trigger' class='btn' href='#cal-new'><i class="material-icons left">chat_bubble_outline</i>新增Calender</a>
+				<a id='cal-new-trigger' class='btn' href='#cal-new'><i class="material-icons left">chat_bubble_outline</i>新增行事曆</a>
 				<div id="cal-new" class="modal">
 					<form action='cal/new' method='POST'>
 						<div class="modal-content">
-							<h4>新增Calender</h4>
+							<h4>新增行事曆</h4>
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="input-field col s12">
 								<input id="cal-title" type="text" name='title' class="validate" required>
-								<label for="cal-title">Caledner標題</label>
+								<label for="cal-title">行事曆標題</label>
 							</div>
 							<div class="input-field col s12">
 								<textarea id="cal-content" name='content' class="validate materialize-textarea" required></textarea>
-								<label for="cal-content">Content</label>
+								<label for="cal-content">事項內容</label>
 							</div>
 							<div class="input-field col s12">
 								<input id='cal-date' name='date' type="date" required>
+								<label for="cal-date">事件日期</label>
 							</div>
 							<button type='submit' class="waves-effect waves-green btn">新增</button>
 							<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">關閉</a>
@@ -143,7 +144,7 @@
 			<div id="cal-update-modal" class="modal">
 				<form id='cal-update-form' action='cal/update/' method='POST'>
 					<div class="modal-content">
-						<h4>更新Calender</h4>
+						<h4>更新行事曆</h4>
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="input-field col s12">
 							<input id="cal-update-title" type="text" name='title' class="validate" required>
