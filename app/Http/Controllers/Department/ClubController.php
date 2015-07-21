@@ -33,14 +33,18 @@ class ClubController extends Controller {
 		// var_dump($files);
 		if ($files[0] != NULL) {
 			foreach ($files as $file) {
-	       	    $destinationPath = base_path().'\public\uploads\departments';
-	       	    $filename = uniqid()."_".$file->getClientOriginalName();
-	       	    //Check file name exist or not
-	       	    while (file_exists($destinationPath."\\".$filename)) {
-	       	        $filename = uniqid()."_".$filename;
+				$validator = Validator::make(['fileName'=>$file], ['fileName'=>'image',]);
+				if ($validator->fails()) {
+				} else {
+	       	    	$destinationPath = base_path().'\public\uploads\departments';
+	       	    	$filename = uniqid()."_".$file->getClientOriginalName();
+	       	    	//Check file name exist or not
+	       	    	while (file_exists($destinationPath."\\".$filename)) {
+	       	    	    $filename = uniqid()."_".$filename;
+	       	    	}
+	       	    	$upload_success = $file->move($destinationPath, $filename);
+	       	    	Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
 	       	    }
-	       	    $upload_success = $file->move($destinationPath, $filename);
-	       	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
 	       	}
 		}
 		//url
@@ -143,6 +147,7 @@ class ClubController extends Controller {
 		if ($deletePics != null) {
 			foreach ($deletePics as $deletePic) {
 				Department_pictures::where('picName', $deletePic)->delete();
+				File::delete(base_path().'\public\uploads\departments\\'.$deletePic);
 			}
 		}
 		//files upload
@@ -150,14 +155,18 @@ class ClubController extends Controller {
 		var_dump($files);
 		if ($files[0] != NULL) {
 			foreach ($files as $file) {
-        	    $destinationPath = 'uploads\departments';
-        	    $filename = uniqid()."_".$file->getClientOriginalName();
-        	    //Check file name exist or not
-        	    while (file_exists($destinationPath."\\".$filename)) {
-        	        $filename = uniqid()."_".$filename;
+				$validator = Validator::make(['fileName'=>$file], ['fileName'=>'image',]);
+				if ($validator->fails()) {
+				} else {
+        	    	$destinationPath = base_path().'\public\uploads\departments';
+        	    	$filename = uniqid()."_".$file->getClientOriginalName();
+        	    	//Check file name exist or not
+        	    	while (file_exists($destinationPath."\\".$filename)) {
+        	    	    $filename = uniqid()."_".$filename;
+        	    	}
+        	    	$upload_success = $file->move($destinationPath, $filename);
+        	    	Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
         	    }
-        	    $upload_success = $file->move($destinationPath, $filename);
-        	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
         	}
 		}
         //url
