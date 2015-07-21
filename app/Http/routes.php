@@ -76,6 +76,14 @@ Route::group(['middleware' => 'auth'], function () {
 //******************************************************************************************************
 
 
+// File upload center
+//******************************************************************************************************
+Route::get('file', 'FileController@index');
+Route::get('file/{id}', 'FileController@show');
+Route::get('file/edit/{id}', 'FileController@edit');
+Route::post('file/update/{id}', 'FileController@update');
+Route::post('file/store', 'FileController@store');
+//******************************************************************************************************
 
 
 //Department and club
