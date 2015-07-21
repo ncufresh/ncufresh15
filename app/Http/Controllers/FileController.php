@@ -90,7 +90,8 @@ class FileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $file = FileUpload::findOrFail($id);
+        return view('file.edit', ['file' => $file]);
     }
 
     /**
@@ -102,7 +103,9 @@ class FileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = FileUpload::findOrFail($id);
+        $file->update($request->all());
+        return redirect('file');
     }
 
     /**

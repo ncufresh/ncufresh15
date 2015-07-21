@@ -42,8 +42,8 @@ $(document).ready(function(){
                         <div>
                             <input type="text" value="{{url('file/'.$file->url)}}"/>
                             <a href="{{url('file/'.$file->url)}}" class="blue-text">下載</a>
-                            <a href="#" class="blue-text">編輯</a>
-                            <a href="#" class="red-text">刪除</a>
+                            <a href="{{url('file/edit/'.$file->id)}}" class="blue-text">編輯</a>
+                            <a href="{{url('file/delete/'.$file->id)}}" class="red-text">刪除</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ $(document).ready(function(){
             @endforeach
         </div>
         <div id="files" class="col s12">
-            @foreach($files as $file)
+            @foreach($files as $key => $file)
             <div class="col m4">
                 <div class="card">
                     <div class="card-action center-align">
@@ -62,8 +62,8 @@ $(document).ready(function(){
                         <div>
                             <input type="text" value="{{url('file/'.$file->url)}}"/>
                             <a href="{{url('file/'.$file->url)}}" class="blue-text">下載</a>
-                            <a href="#" class="blue-text">編輯</a>
-                            <a href="#" class="red-text">刪除</a>
+                            <a href="{{url('file/edit/'.$file->id)}}" class="blue-text">編輯</a>
+                            <a href="{{url('file/delete/'.$file->id)}}" class="red-text">刪除</a>
                         </div>
                     </div>
                 </div>
