@@ -33,7 +33,7 @@ class ClubController extends Controller {
 		// var_dump($files);
 		if ($files[0] != NULL) {
 			foreach ($files as $file) {
-	       	    $destinationPath = base_path().'public\uploads\departments';
+	       	    $destinationPath = base_path().'\public\uploads\departments';
 	       	    $filename = uniqid()."_".$file->getClientOriginalName();
 	       	    //Check file name exist or not
 	       	    while (file_exists($destinationPath."\\".$filename)) {
@@ -41,7 +41,6 @@ class ClubController extends Controller {
 	       	    }
 	       	    $upload_success = $file->move($destinationPath, $filename);
 	       	    Department_pictures::create(['picName'=>$filename, 'rfid'=>$name]);
-	       	    //return var_dump($file);
 	       	}
 		}
 		//url
