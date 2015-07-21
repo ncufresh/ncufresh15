@@ -25,3 +25,7 @@ function getFileName(file) {
     	console.log(files[i].name);
 	}
 }
+
+function goBack() {
+    window.history.back();
+}

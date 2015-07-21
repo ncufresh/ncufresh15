@@ -20,7 +20,7 @@
         <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
     </div>
     <div class="col s1">
-        <i class="small material-icons" onclick="">navigate_before</i>
+        <i class="small material-icons" onclick="goBack()">navigate_before</i>
     </div>
 </div>
 <div class="container">
