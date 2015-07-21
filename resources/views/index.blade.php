@@ -11,7 +11,7 @@
 
 @section('content')
 <div id='r1' class='row'>
-	<div id='post-container' class="col s5">
+	<div id='post-container' class="col s12 m12 l5">
 		<div class="row">
             <ul class="tabs">
                 <li class="tab dick col s2 grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
@@ -67,7 +67,7 @@
 			</div>
 		</div>
 	</div>
-	<div id='slider-container'class="col s7">
+	<div id='slider-container'class="col s12 m12 l7">
 		<div class="slider">
 			<ul class="slides">
 				<li>
@@ -105,8 +105,8 @@
 <div id='r2' class='row'>
 	<div id='calender-container'>
 		<div class="row">
-			<div class="col s1 valign-wrapper arrow-container"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
-			<div class="col s10 valign-wrapper">
+			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
+			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
 					<div id='event1' class='col s3 dick'></div>
 					<div id='event2' class='col s3 dick'></div>
@@ -114,7 +114,7 @@
 					<div id='event4' class='col s3'></div>
 				</div>
 			</div>
-			<div class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>
+			<div id='arrow-container2' class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>
 		</div>
 	</div>
 </div>

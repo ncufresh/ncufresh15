@@ -6,6 +6,8 @@
 #r2 {
 	height: 100px;
 	padding-top: 30px;
+	margin-left: -4%;
+	margin-right: -4%;
 }
 
 #calender-container {
@@ -161,4 +163,21 @@
 .indicators {
 	top: 355px;
 	z-index: 2;
+}
+
+#arrow-container1 {
+	width: 5%;
+	padding-right: 0;
+	padding-left: 0;
+}
+#arrow-container2 {
+	width: 5%;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#puzzle-container {
+	width: 90%;
+	padding-right: 0;
+	padding-left: 0;
 }
