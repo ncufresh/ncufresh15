@@ -7,10 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddAuthorColQuestionTable' => $baseDir . '/database/migrations/2015_07_18_053252_add_author_col_question_table.php',
+    'AddDocumentColumn' => $baseDir . '/database/migrations/2015_07_17_120718_add_document_column.php',
     'AddSoftdeleteUser' => $baseDir . '/database/migrations/2015_07_17_120456_add_softdelete_user.php',
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
+    'CreatDocument' => $baseDir . '/database/migrations/2015_07_16_142342_creat_document.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
+    'CreateDepartmentPicturesTable' => $baseDir . '/database/migrations/2015_07_16_120716_create_department_pictures_table.php',
+    'CreateDepartmentsTable' => $baseDir . '/database/migrations/2015_07_14_142833_create_departments_table.php',
+    'CreateFileTable' => $baseDir . '/database/migrations/2015_07_21_033152_create_file_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',
     'CreatePermissionUserTable' => $baseDir . '/database/migrations/2015_02_09_132439_create_permission_user_table.php',

@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-use DB;
-use Log;
+use App\Helpers\SitemapHelper;
 use App\QaAnswer;
 use App\QaQuestion;
 use App\Http\Requests;
@@ -14,6 +13,10 @@ use App\Http\Controllers\Controller;
 
 class QaController extends Controller
 {
+    function __construct() {
+        SitemapHelper::push('Q&amp;A', 'qa');
+    }
+
     /**
      * Display a listing of the QA
      *
@@ -21,38 +24,38 @@ class QaController extends Controller
      */
     public function index($category = 'all')
     {
-        //
         switch($category) {
         case 'life': 
             $category = 0;
+            SitemapHelper::push('中大生活', 'qa/life');
             break;
         case 'gov': 
             $category = 1;
+            SitemapHelper::push('行政', 'qa/gov');
             break;
         case 'student': 
             $category = 2;
+            SitemapHelper::push('學務', 'qa/student');
             break;
         case 'game': 
             $category = 3;
+            SitemapHelper::push('小遊戲', 'qa/game');
             break;
         default:
             $category = -1;
             break;
         };
-        $answer = null;
+        $answers = null;
         $top_answers = null;
         if ($category == -1) {
-            $top_answers = DB::table('qa_answers')
-                ->orderBy('views', 'desc')
+            $top_answers = QaAnswer::orderBy('views', 'desc')
                 ->orderBy('created_at', 'desc')
                 ->take(5)
                 ->get();
-            $answers = DB::table('qa_answers')
-                ->orderBy('created_at', 'desc')
+            $answers = QaAnswer::orderBy('created_at', 'desc')
                 ->paginate(10);
         } else {
-            $answers = DB::table('qa_answers')
-                ->orderBy('created_at', 'desc')
+            $answers = QaAnswer::orderBy('created_at', 'desc')
                 ->where('category', $category)
                 ->paginate(10);
         }
@@ -106,6 +109,7 @@ class QaController extends Controller
             QaAnswer::where('category', 2)->count(),
             QaAnswer::where('category', 3)->count(),
         ];
+        SitemapHelper::push($answer->title, 'qa/'.$answer->id);
         return view('qa.show', [
             'answer' => $answer,
             'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
@@ -203,22 +207,6 @@ class QaController extends Controller
     }
 
     /**
-     * add one view to the qa
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function view(Request $request)
-    {
-        $answer = QaAnswer::find($request->id);
-        if ($answer != null) {
-            $answer->views += 1;
-            $answer->save();
-        }
-        return response()->json(["id" => $request->id, "views" => $answer->views]);
-    }
-
-    /**
      * mark solved or not
      *
      * @param  int  $id
@@ -248,10 +236,7 @@ class QaController extends Controller
      */
     public function edit($id)
     {
-        $answer = QaAnswer::find($id);
-        if ($answer == null) {
-            return redirect('qa');
-        }
+        $answer = QaAnswer::findOrFail($id);
         return view('qa.answer', ['answer' => $answer]);
     }
 
