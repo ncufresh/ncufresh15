@@ -8,8 +8,10 @@ class CreateCalenderTable extends Migration{
 		Schema::create('calenders', function(Blueprint $table){
 			$table->increments('id');
 			$table->string('title');
-			$table->string('content');
+			$table->text('content');
 			$table->date('event_date');
+			$table->date('previous_date')->default('0000-00-00');
+			$table->date('next_date')->default('2016-12-31');
 			$table->timestamps();
 		});
     }

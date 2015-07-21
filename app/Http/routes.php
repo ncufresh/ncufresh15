@@ -18,15 +18,17 @@ Route::get('/', 'HomepageController@index');
 
 //Admin of Homepage
 Route::get('/admin', 'AdminController@index');
-Route::post('/admin/ann/new', 'AdminController@storeAnn');
-Route::get('/admin/ann/delete/{id}', 'AdminController@deleteAnn');
-Route::post('/admin/ann/update/{id}', 'AdminController@updateAnn');
-Route::post('/admin/cal/new', 'AdminController@storeCal');
-Route::get('/admin/cal/delete/{id}', 'AdminController@deleteCal');
-Route::post('/admin/cal/update/{id}', 'AdminController@updateCal');
 
-//Get Calender by ajax
+//Announcement on Homepage
+Route::post('/ann/new', 'AnnouncementController@store');
+Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
+Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+// Calender on Homepage
 Route::get('/calender', 'CalenderController@get');
+Route::post('/cal/new', 'CalenderController@store');
+Route::get('/cal/delete/{id}', 'CalenderController@destroy');
+Route::post('/cal/update/{id}', 'CalenderController@update');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

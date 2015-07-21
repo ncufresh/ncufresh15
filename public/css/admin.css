@@ -29,7 +29,26 @@
 }
 
 #cal-new {
-	max-height: 90%;
-	height: 80%;
+	max-height: 95%;
+	height: 91%;
 	width: 80%;
+}
+
+#cals-container {
+	word-break: break-all;
+}
+
+#cal-content {
+	max-height: 200px;
+	overflow: auto;
+}
+
+#cal-update-content {
+	max-height: 200px;
+	overflow: auto;
+}
+
+#cal-update-modal {
+	max-height: 95%;
+	height: 91%;
 }

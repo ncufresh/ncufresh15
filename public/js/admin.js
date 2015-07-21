@@ -12,6 +12,14 @@ $(document).ready(function(){
 			$("#cal-update-modal").css("top","5%");
 		}
 	});
+	$("#cal-date").pickadate({
+		selectMonths: true,
+		format: 'yyyy-mm-dd'
+	});
+	$("#cal-update-date").pickadate({
+		selectMonths: true,
+		format: 'yyyy-mm-dd'
+	});
 	$(".update-ann-trigger").click(function(){
 		var ann_id = $(this).data("id");
 		var title = $("#ann-title-"+ann_id).text();
