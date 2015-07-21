@@ -99,7 +99,7 @@ Route::get('campus', 'Campus\CampusController@index');
 Route::get('campus/add_view', function() {
 	return view('campus.addView');
 });
-Route::post('campus/backstage_intro', 'Campus\IntroController@store');
+Route::post('campus/new_view', 'Campus\CampusController@store');
 Route::get('campus/{view_id}', 'Campus\CampusController@showIntro');
 //******************************************************************************************************
 

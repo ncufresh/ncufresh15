@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("#writeIntro").submit(function(event) {
+	$("#test").submit(function(event) {
 		
 		event.preventDefault();
 
