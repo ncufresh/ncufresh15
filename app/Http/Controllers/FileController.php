@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
+use Storage;
 use App\FileUpload;
 use App\Helpers\SitemapHelper;
 use App\Http\Requests;
@@ -61,7 +63,8 @@ class FileController extends Controller
                 }
                 $file->move($uploadFolder, $newname);
                 $fileRecord = new FileUpload;
-                $fileRecord->name = $file->getClientOriginalName();
+                $fileRecord->name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $fileRecord->ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
                 $fileRecord->url = $newname;
                 $fileRecord->is_img = $is_img;
                 $fileRecord->save();
@@ -79,7 +82,7 @@ class FileController extends Controller
     public function show($id)
     {
         $file = FileUpload::where('url', $id)->first();
-        return response()->download(base_path().'/storage/app/'.$id, $file->name);
+        return response()->download(base_path().'/storage/app/'.$id, $file->name.".".$file->ext);
     }
 
     /**
@@ -116,6 +119,9 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $file = FileUpload::findOrFail($id);
+        Storage::delete($file->url);
+        $file->delete();
+        return redirect('file');
     }
 }
