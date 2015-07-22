@@ -30,39 +30,74 @@
     </head>
     <body>
 		@if (Request::url() != url('/'))
-			<nav id='nav-fixed' class='is-visible'>
-				<div class="nav-wrapper">
-					<a href="{{ url('/') }}" class="brand-logo">NCU Fresh</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="{{ url('campus') }}">校園導覽</a></li>
-						<li><a href="#">新生必讀</a></li>
-						<li><a href="#">中大生活</a></li>
-						<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
-						<ul id='nav-links' class='dropdown-content'>
-							<li><a href="#!">one</a></li>
-							<li><a href="#!">two</a></li>
-							<li class="divider"></li>
-							<li><a href="#!">three</a></li>
-						</ul>
-						<li><a href="{{ url('group')}}">系所社團</a></li>
-						<li><a id='nav-qa-trigger' data-activates='nav-qa' href="{{ url('qa') }}">新生Q&amp;A</a></li>
-							<ul id='nav-qa' class='dropdown-content'>
-								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
-								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
-								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
-								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
-							</ul>
-						<li><a href="{{ url('video2') }}">影音專區</a></li>
-						<li><a href="#">關於我們</a></li>
-					</ul>
-				</div>
-			</nav>
-        <div id='container' class="nav-margin container z-depth-2">
+		<nav>
+		@else
+		<nav id="home-nav">
 		@endif
+			<div class="nav-wrapper">
+			<a href="{{url('/')}}" class="brand-logo">NCU Fresh</a>
+			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="{{ url('campus') }}">校園導覽</a></li>
+				<li><a href="#">新生必讀</a></li>
+				<li><a href="#">中大生活</a></li>
+				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
+				<ul id='nav-links' class='dropdown-content'>
+					<li><a href="#!">one</a></li>
+					<li><a href="#!">two</a></li>
+					<li class="divider"></li>
+					<li><a href="#!">three</a></li>
+				</ul>
+				<li><a href="{{ url('group')}}">系所社團</a></li>
+				<li><a id='nav-qa-trigger' data-activates='nav-qa' href="{{ url('qa') }}">新生Q&amp;A</a></li>
+				<ul id='nav-qa' class='dropdown-content'>
+					<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
+					<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
+					<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
+				</ul>
+				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="#">關於我們</a></li>
+			</ul>
+			<ul class="side-nav" id="mobile-nav">
+				<li><a href="{{ url('campus') }}">校園導覽</a></li>
+				<li><a href="#">新生必讀</a></li>
+				<li><a href="#">中大生活</a></li>
+				<li class='no-padding'>
+					<ul class="collapsible collapsible-accordion">
+						<li class="bold">
+							<a class="collapsible-header  waves-effect waves-teal">常用連結</a>
+							<div class="collapsible-body" style="display: block;">
+								<ul>
+									<li><a href="#">Link1</a></li>
+									<li><a href="#">Link2</a></li>
+									<li><a href="#">Link3</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class='no-padding'>
+					<ul class="collapsible collapsible-accordion">
+						<li class="bold">
+							<a class="collapsible-header  waves-effect waves-teal">新生Q&amp;A</a>
+							<div class="collapsible-body" style="display: block;">
+								<ul>
+									<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
+									<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
+									<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li><a href="{{ url('group')}}">系所社團</a></li>
+				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="#">關於我們</a></li>
+			</ul>
+			</div>
+		</nav>
+        <div id='container' class="nav-margin container z-depth-2">
 			@if (Request::url() === url('/'))
-        <div id='container' class="container z-depth-2">
 				<div id='banner'>
 					<div class='row banner-menu'>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
@@ -89,9 +124,6 @@
 								<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
 								<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
 								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ url('/qa/questions') }}">檢視問題</a></li>
-								<li><a href="{{ url('/qa/answer') }}">新增Q&amp;A</a></li>
 							</ul>
 						</div>
 						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>

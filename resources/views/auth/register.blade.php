@@ -51,7 +51,8 @@
             <label for="input_student_id">學號</label>
         </div>
         <div class="input-field row">
-            <button class="btn waves-effect waves-light right indigo" type="submit">Submit</button>
+            <a href="{{url('auth/login')}}">已經有帳號嗎?點這裡登入</a>
+            <button class="btn waves-effect waves-light right indigo" type="submit">註冊</button>
         </div>
     </form>
 </div>
