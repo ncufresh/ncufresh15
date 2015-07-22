@@ -7,6 +7,7 @@ window.onload = init;
 $(document).ready(function(){
 	portalToggle = false;
 	portalHover = false;
+	$(".button-collapse").sideNav();
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -68,8 +69,8 @@ function randomPosition(){
 function doMove() {
 	randomPosition();
 	$("#portal").animate({
-		top: ""+portalTop+"px",
-   		left: ""+portalLeft+"px"},5000, doMove);
+		top: ""+portalTop+"vh",
+   		left: ""+portalLeft+"%"},5000, doMove);
 }
 
 function init() {
