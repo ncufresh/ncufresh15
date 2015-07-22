@@ -11,6 +11,7 @@ return array(
     'AddSoftdeleteUser' => $baseDir . '/database/migrations/2015_07_17_120456_add_softdelete_user.php',
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
+    'CalenderSeeder' => $baseDir . '/database/seeds/CalenderSeeder.php',
     'CreatDocument' => $baseDir . '/database/migrations/2015_07_16_142342_creat_document.php',
     'CreateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_19_185404_create_announcement_table.php',
     'CreateCalenderTable' => $baseDir . '/database/migrations/2015_07_21_034122_create_calender_table.php',

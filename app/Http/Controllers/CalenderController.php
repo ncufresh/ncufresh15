@@ -13,11 +13,15 @@ class CalenderController extends Controller{
 
 	}
 	public function store(Request $request){
+		$pre_date = Calender::where('event_date','<',$request->date)
+					->orderBy('event_date', 'desc')->first()->event_date;
+		/*
 		Calender::create([
 			'title'=>$request->input('title'),
 			'content'=>$request->input('content'),
 			'event_date'=>$request->date
 		]);
+		 */
 		return redirect('admin');
 	}
 	public function update(Request $request, $id){
