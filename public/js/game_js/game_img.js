@@ -62,3 +62,14 @@ testImage.onload = function () {
 testImage.src = "game_images/test.png";
 
 
+
+
+var herosReady = false;
+var heroImageArray = new Array();
+heroImageArray.onload = function () {
+	herosReady = true;
+};
+for (var i = 0; i < 12; i++) {
+	heroImageArray[i] = new Image();
+	heroImageArray[i].src = "game_images/hero/"+i+".png";
+};

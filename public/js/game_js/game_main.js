@@ -15,6 +15,18 @@ var hero = {
 	y : canvas.height / 2,
 	width : 30,  // thin!!!!!!!!!!!!!
 	height : 30, // thin!!!!!!!!!!!!!
+	direction: {
+		x: 0,
+		y: 0,
+		now: "down"
+	},
+
+	// Animation settings
+	animSet: 1,
+	animFrame: 0,
+	animNumFrames: 2,
+	animDelay: 200,
+	animTimer: 0,
 	canmove : true
 };
 var monster = {};
@@ -71,6 +83,7 @@ var main = function () {
 	then = now;
 
 	if (hero.canmove) {
+		anim(delta); // game_animation.js
 		update(delta / 1000); // game_move.js
 	}
 	render(); // game_draw.js

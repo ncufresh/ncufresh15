@@ -58,16 +58,40 @@ var render = function () {
 	if (grassReady) {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
-				draw(grassImage,32*i,32*j);
-				//draw(testImage,32*i,32*j);
+				//draw(grassImage,32*i,32*j);
+				draw(testImage,32*i,32*j);
 			};
 		};
 		
 	}
+	// if (heroReady) {
+	// 	draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
+	// }
 
-	if (heroReady) {
-		draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
-	}
+	if (true) {
+		var nowimage = hero.animSet+hero.animFrame;
+		if (hero.direction.x==0 && hero.direction.y ==0) {
+			console.log(hero.direction.now);
+		    switch (hero.direction.now){
+            case "up":
+            	draw(heroImageArray[0], canvas.width / 2, canvas.height / 2, 'hero');
+                break;
+            case "down":
+            	draw(heroImageArray[3], canvas.width / 2, canvas.height / 2, 'hero');     
+                break;
+            case "left":
+           		draw(heroImageArray[6], canvas.width / 2, canvas.height / 2, 'hero');   
+                break;
+            case "right":
+            	draw(heroImageArray[9], canvas.width / 2, canvas.height / 2, 'hero');  
+                break;
+      		}
+		} else {
+			draw(heroImageArray[nowimage], canvas.width / 2, canvas.height / 2, 'hero');
+		}
+	}	
+
+
 	if (boxReady) {
 		draw(boxImage, box.x, box.y);
 	}
