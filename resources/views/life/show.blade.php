@@ -4,6 +4,11 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href='{{ asset('css/life/coverflow.css') }}' />
+	<style type="text/css">
+		#coverflow{
+			font-family:inital !importment;
+		}
+	</style>
 @stop
 
 @section('js')
@@ -22,7 +27,7 @@
 		<a class="waves-effect waves-light btn" href="{{url('life/edit/'.$show->id)}}"><i class="material-icons left">settings</i>後台管理</a>
 	</div>	
 </div>
-<div id="coverflow">
+<div id="coverflow"  style="height:400px;">
 	@foreach($pictures as $picture)
 		<a href="{{ $picture->url }}" target="_blank">
 			<img src="{{$picture->url}}" width="400" height="400">	
@@ -32,10 +37,10 @@
 
 <!--圖片-->
 
-<div class="row" style="margin-top:500px">
+<div class="row" style="margin-top:500px;">
 	<div class=" center align">
 		<div class="card-panel hoverable">
-			<p>{!! nl2br(e($show->content)) !!}</p>   <!--  -->
+			<p>{!! $show->content !!}</p>   <!--  -->
 		</div>
 	</div>		
 </div>

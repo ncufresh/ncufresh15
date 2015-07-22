@@ -116,8 +116,11 @@ class LifeController extends Controller
                 ->withInput();
         }
         $life = Life::findOrFail($id);
-        $life->update($request->all()); /*將新輸入的資料更新到資料庫*/
-        //Life::update($request->all());
+        $life->category = $request->category;
+        $life->video = $request->video;
+        $life->content = $this->sanitize($request->content);
+        $life->save();
+        //$life->update($request->all()); /*將新輸入的資料更新到資料庫*/
         return redirect('life/'.$id);
     }
 
@@ -166,5 +169,10 @@ class LifeController extends Controller
         $Life_pictures = LifePictures::findOrFail($id);
         $Life_pictures->delete();
         return back();
+    }
+    private function sanitize($dirty) {
+        return strip_tags($dirty,
+            '<img><table><thead><tbody><tr><td><th><h1><h2><h3><pre><ins><a><p><s><strong><em><span><ul><ol><li><blockquote>'
+        );
     }
 }

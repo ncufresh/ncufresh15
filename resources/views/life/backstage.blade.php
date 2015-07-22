@@ -4,12 +4,21 @@
 
 @section('js')
 <script src='{{ asset('js/select.js') }}'></script> <!--一定要引用才能顯示select-->
+<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    $(function() {
+        CKEDITOR.replace('ans-content');
+    });
+</script>
 @stop
 
 @section('content')
 <div id="lifedescription" class="row" style="padding:0 10%;">
 	<form class="col s12" action="{{action('Life\LifeController@update',$show->id)}}" method="post">
 		{!! csrf_field() !!}   <!--驗證身分-->
+		<div class="row">
+			<a href="{{ url('life/'.$show->id) }}" class="btn waves-effect waves-light"><i class="material-icons left">list</i>返回</a>
+		</div>
 		<h2>編輯中大生活的資料</h2>
 		<div class="row">
 			<div class="input-field col s3">  <!--選擇類別(食、住、育、樂、行)-->
@@ -28,8 +37,7 @@
 		</div>	
 		<div class="row">  <!--輸入介紹的文字內容-->
 			<div class="input-field col s12">
-				<textarea id="life_content" class="materialize-textarea validate" name="content">{{$show->content}}</textarea>
-				<label for="content">介紹的文字內容</label>
+				<textarea id="ans-content" name="content">{{$show->content}}</textarea>
 			</div>
 		</div>
 		<div class="input-field row">
