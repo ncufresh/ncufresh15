@@ -20,10 +20,20 @@
     </div>
 @if($page === 1)
 	<!--總攬-->
-    <div>
-    	<div class="group">
-    		<a href="/group/departments"><label class="waves-effect waves-grey white">系所</label></a>
-    		<a href="/group/clubs"><label class="waves-effect waves-grey white">社團</label></a>
+    <div class="secPuzzle1">
+    	<div class="group row groupPuzzle1">
+			<a href="/group/departments">
+	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+	    			<i class="material-icons large">account_balance</i>
+    				<label class="puzzle1Text">系所</label>
+    			</div>
+    		</a>
+    		<a href="/group/clubs">
+	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+	    			<i class="material-icons large">supervisor_account</i>
+    				<label class="puzzle1Text">社團</label>
+    			</div>
+    		</a>
 		</div>
     </div>
 @elseif($page === 2)
@@ -48,14 +58,28 @@
 	</div>
 @elseif($page === 3)
 	<!--社團-->
-    <div>
-    	<div class="group">
-			<a href="/group/clubs/1"><label class="waves-effect waves-grey white">學術性</label></a>
-			<a href="/group/clubs/2"><label class="waves-effect waves-grey white">康樂性</label></a>
-		</div>
-		<div class="group">
-			<a href="/group/clubs/3"><label class="waves-effect waves-grey white">聯誼性</label></a>
-			<a href="/group/clubs/4"><label class="waves-effect waves-grey white">服務性</label></a>
+    <div class="secPuzzle1">
+    	<div class="group row groupPuzzle1">
+			<a href="/group/clubs/1">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="waves-effect waves-grey puzzle1Text">學術性</label>
+				</div>
+			</a>
+			<a href="/group/clubs/2">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="waves-effect waves-grey puzzle1Text">康樂性</label>
+				</div>
+			</a>
+			<a href="/group/clubs/3">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="waves-effect waves-grey puzzle1Text">聯誼性</label>
+				</div>
+			</a>
+			<a href="/group/clubs/4">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="waves-effect waves-grey puzzle1Text">服務性</label>
+				</div>
+			</a>
 		</div>
     </div>
 @elseif($page === 4)
