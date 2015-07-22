@@ -84,22 +84,12 @@ $(document).ready(function(){
 
 <!--最上面那條row(red accent-2)-->    
 <div class="row">
-<div class="col" style="width:15%;">
-<h5 style="color:grey">首頁</h5>
-</div>
-<div class="col" style="width:20%;">
-<h5 style="color:grey">影音專區</h5>
-</div>
-<div class="col" style="width:15%;">
-<h5 style="color:grey">影片2</h5>
-</div>
-<div class="row"></div>
 <!--有影片的section( teal lighten-2)-->    
       <div class="col s8" style=";">
 
 
   <video id="my_video_1" class="video-js vjs-default-skin" 
-      controls preload="none" width="583px" height="400px" data-setup='{}'
+      controls preload="none" width="550px" height="400px" data-setup='{}'
       poster='http://video-js.zencoder.com/oceans-clip.jpg'>
     <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
     <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
@@ -141,7 +131,7 @@ $(document).ready(function(){
 
 
 
-
+</div>
     </body>
   </html>
 
