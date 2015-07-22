@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use App\Helpers\SitemapHelper;
 use App\User;
 use Bican\Roles\Models\Role;
 use App\Http\Requests;
@@ -12,6 +13,11 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+    public function __construct() {
+        SitemapHelper::push('使用者列表', 'user');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return redirect('user');
+        return redirect('auth/register');
     }
 
     /**
@@ -53,6 +59,7 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
+        SitemapHelper::push($user->name, 'user/'.$user->id);
         return view('user.show', $user, ['user' => $user]);
     }
 
