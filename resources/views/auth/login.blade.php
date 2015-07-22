@@ -24,19 +24,20 @@
                 </ul>
             </div>
         @endif
-        <h2>Login</h2>
+        <h2>登入</h2>
         <div class="input-field row">
             <i class="material-icons prefix">account_circle</i>
             <input id="input_account" type="email" class="validate" name="email">
-            <label for="input_account">Account</label>
+            <label for="input_account">電子郵件</label>
         </div>
         <div class="input-field row">
             <i class="material-icons prefix">vpn_key</i>
             <input id="input_password" type="password" class="validate" name="password">
-            <label for="input_password">Password</label>
+            <label for="input_password">密碼</label>
         </div>
         <div class="input-field row">
-            <button class="btn waves-effect waves-light right indigo" type="submit">Login</button>
+            <a href="{{url('auth/register')}}">還沒有帳號嗎?點這裡註冊</a>
+            <button class="btn waves-effect waves-light right indigo" type="submit">登入</button>
         </div>
     </form>
 </div>
