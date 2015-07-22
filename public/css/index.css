@@ -186,3 +186,15 @@
 	padding-right: 0;
 	padding-left: 0;
 }
+#home-nav {
+	display: none;
+}
+
+@media only screen and (max-width: 992px) {
+	#home-nav {
+		display: block;
+	}
+	#banner {
+		display: none;
+	}
+}
