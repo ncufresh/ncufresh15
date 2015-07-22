@@ -2,6 +2,11 @@
 
 @section('title', 'YOLO')
 @section('css')
+<style>
+.card {
+    overflow: unset;
+}
+</style>
 @stop
 
 @section('js')
@@ -9,6 +14,7 @@
 $(document).ready(function(){
     $('ul.tabs').tabs();
     $("input:text").focus(function() { $(this).select(); } );
+    $('.materialboxed').materialbox();
 });
 </script>
 @stop
@@ -35,7 +41,7 @@ $(document).ready(function(){
             <div class="col m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{url('file/'.$file->url)}}"/>
+                        <img class="materialboxed" src="{{url('file/'.$file->url)}}"/>
                     </div>
                     <div class="card-action">
                         <span class="card-title grey-text text-darken-4">{{$file->name}}</span>

@@ -20,7 +20,6 @@
             <span>檔案名稱</span>
             <input type="text" name="name" value="{{$file->name}}"/>
             <button class="waves-effect waves-light btn blue right" type="submit">修改</button>
-            <p class="red-text">記得要打副檔名！！！</p>
         </form>
     </div>
 </div>
