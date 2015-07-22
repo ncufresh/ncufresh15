@@ -16,6 +16,20 @@
 // index
 Route::get('/', 'HomepageController@index');
 
+//Admin of Homepage
+Route::get('/admin', 'AdminController@index');
+
+//Announcement on Homepage
+Route::post('/ann/new', 'AnnouncementController@store');
+Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
+Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+// Calender on Homepage
+Route::get('/calender', 'CalenderController@get');
+Route::post('/cal/new', 'CalenderController@store');
+Route::get('/cal/delete/{id}', 'CalenderController@destroy');
+Route::post('/cal/update/{id}', 'CalenderController@update');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -39,6 +53,7 @@ Route::get ('qa/submitted' , function() {
     return view('qa.submitted');
 });
 //------------------------------------------------------------------------------------------------------
+Route::get('file/{id}', 'FileController@show');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
@@ -64,8 +79,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
         Route::post('qa/update/{id}' , 'QaController@update');
         Route::get ('qa/delete/{id}' , 'QaController@destroy');
-        Route::get ('qa/solved/{id}'      , 'QaController@solved');
+        Route::get ('qa/solved'      , 'QaController@solved');
+
+        // File upload center
+        //------------------------------------------------------------------------------------------------------
+        Route::get('file', 'FileController@index');
+        Route::get('file/edit/{id}', 'FileController@edit');
+        Route::get('file/delete/{id}', 'FileController@destroy');
+        Route::post('file/update/{id}', 'FileController@update');
+        Route::post('file/store', 'FileController@store');
+        //------------------------------------------------------------------------------------------------------
     });
+
 });
 //******************************************************************************************************
 

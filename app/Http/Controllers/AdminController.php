@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Announcement;
 use App\Calender;
+use Log;
 
-class HomepageController extends Controller{
-
+class AdminController extends Controller{
 	public function index(){
 		$anns = Announcement::all();
-		return view('index', [
-			"announcements" => $anns,
+		$cals = Calender::all();
+		return view('admin.index', [
+			'announcements' => $anns,
+			'calenders' => $cals
 		]);
 	}
 }
