@@ -99,3 +99,12 @@ body {
     display: block;
     width: 30px;
 }
+
+@media only screen and (max-width: 992px) {
+	#container {
+		width: 100%;
+	}
+	#slider-container {
+		padding: 0;
+	}
+}

@@ -6,6 +6,8 @@
 #r2 {
 	height: 100px;
 	padding-top: 30px;
+	margin-left: -4%;
+	margin-right: -4%;
 }
 
 #calender-container {
@@ -150,6 +152,37 @@
 	margin-left: 0;
 }
 
-#ann-tab1 a {
+#ann-tab a, #qa-tab a, #doc-tab a {
 	color: white;
+}
+
+#post-container a:hover {
+	color: #bbdefb;
+}
+
+.indicators {
+	top: 355px;
+	z-index: 2;
+}
+
+#arrow-container1 {
+	width: 5%;
+	padding-right: 0;
+	padding-left: 0;
+}
+#arrow-container2 {
+	width: 5%;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.arrow {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+#puzzle-container {
+	width: 90%;
+	padding-right: 0;
+	padding-left: 0;
 }
