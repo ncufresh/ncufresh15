@@ -108,8 +108,11 @@ Route::post('department/content', 'Department\ClubController@getContent');
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
 Route::get('campus/add_view', 'Campus\CampusController@addView');
-Route::post('campus/new_view', 'Campus\CampusController@store');
-Route::get('campus/{view_id}', 'Campus\CampusController@showIntro');
+Route::post('campus/add_view', 'Campus\CampusController@store');
+Route::get('campus/{id}', 'Campus\CampusController@showView');
+Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
+Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
+Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
 //******************************************************************************************************
 
 

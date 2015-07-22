@@ -25,64 +25,114 @@ class CampusController extends Controller
 	}
 
 	public function store(Request $request){
-		$error="";
 		$campus = Campus::all();
-
-		$introduction = $request->get('introduction');
-		$view_id = $request->get('view_id');
-		$title = $request->get('title');
-
-		$file = Input::file('image_name');
-		$validator = Validator::make(['file'=>$file], ['file'=>'image']);
+		$validator = Validator::make($request->all(),[
+			'image_name' => 'required|image',
+			'view_id' => 'required|integer',
+			'region_id' => 'required|integer',
+			'title' => 'required|string',
+			'introduction' => 'required|string'
+		]);
 		if($validator->fails())
 		{
-			return view('campus.addView')->with('error', "*請傳圖片檔");
+			return view('campus.addView')->with(['error'=>"*輸入有錯誤", 'campus'=>$campus]);
 		}
 
-		if($view_id=="" || $title=="")
+		$view_id = $request->view_id;
+		$region_id = $request->region_id;
+		$title = $request->title;
+		$introduction = $request->introduction;
+		$file = Input::file('image_name');
+		$rows = Campus::where('title', $title)->count();
+		if($rows!=0)
 		{
-			$error="*有空白輸入";
+			return view('campus.addView')->with(['error'=>"*已有此項目", 'campus'=>$campus]);
+		}
+		else if($file!=null)
+		{
+			$destinationPath = "uploads\campus";
+			$filename = uniqid()."_".$file->getClientOriginalName();
+			while (file_exists($destinationPath."\\".$filename))
+			{
+	       	    $filename = uniqid()."_".$filename;
+	       	}
+			$file_success=$file->move($destinationPath, $filename);
+
+			Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
+				'title'=>$title, 'picName'=>$filename, 'region_id'=>$region_id]);
 		}
 		else
 		{
-			$rows = Campus::where('title', $title)->count();
-			if($rows!=0)
-			{
-				$error="*已有此項目";
-			}
-			else if($file!=null)
-			{
-				$destinationPath = "uploads\campus";
-				$filename = uniqid()."_".$file->getClientOriginalName();
-				while (file_exists($destinationPath."\\".$filename)) {
-	        	    $filename = uniqid()."_".$filename;
-	        	}
-				$file_success=$file->move($destinationPath, $filename);
-
-				Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'picName'=>$filename]);
-
-				return view('campus.addView')->with(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'image'=>$filename]);
-			}
-			else
-			{
-				Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'picName'=>""]);
-
-				return view('campus.addView')->with(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'image'=>""]);
-			}
+			Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
+				'title'=>$title, 'picName'=>"", 'region_id'=>$region_id]);
 		}
 
-		if($error!="")
-		{
-			return view('campus.addView')->with(['error'=>$error, 'campus'=>$campus]);
-		}
+		$id = Campus::where('title', $title)->value('id');
+		return redirect('/campus/'.$id);
 	}
 
-	public function showIntro($view_id) {
-    	$introduction = Campus::where('view_id', $view_id)->value('introduction');
-		return response()->json(['introduction'=>$introduction]);
+	public function showView($id){
+		$campus = Campus::all();
+    	$view = Campus::where('id', $id)->first();
+		return view('campus.showView')->with(['campus'=>$campus, 'view'=>$view]);
+	}
+
+	public function editView($id){
+		$campus = Campus::all();
+		$view = Campus::where('id', $id)->first();
+		return view('campus.editView')->with(['campus'=>$campus, 'view'=>$view]);
+	}
+
+	public function update(Request $request, $id){
+		$campus = Campus::all();
+		$validator = Validator::make($request->all(),[
+			'image_name' => 'image',
+			'region_id' => 'required|integer',
+			'view_id' => 'required|integer',
+			'title' => 'required|string',
+			'introduction' => 'required|string'
+		]);
+		if($validator->fails())
+		{
+			return view('campus.editView')->with(['error'=>"*輸入有錯誤", 'campus'=>$campus]);
+		}
+
+		$view_id = $request->view_id;
+		$region_id = $request->region_id;
+		$title = $request->title;
+		$introduction = $request->introduction;
+		$file = Input::file('image_name');
+		$id_title = Campus::where('id', $id)->value('title');
+		$rows = Campus::where('title', $title)->count();
+		if($id_title!=$title && $rows!=0)
+		{
+			return view('campus.editView')->with(['error'=>"*已有此項目", 'campus'=>$campus]);
+		}
+		else if($file!=null)
+		{
+			$destinationPath = "uploads\campus";
+			$filename = uniqid()."_".$file->getClientOriginalName();
+			while (file_exists($destinationPath."\\".$filename)) {
+	       	    $filename = uniqid()."_".$filename;
+	       	}
+			$file_success=$file->move($destinationPath, $filename);
+
+			Campus::where('id', $id)
+				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
+					'title'=>$title, 'picName'=>$filename, 'region_id'=>$region_id]);
+		}
+		else
+		{
+			Campus::where('id', $id)
+				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
+					'title'=>$title, 'region_id'=>$region_id]);
+		}
+
+		return redirect('/campus/'.$id);
+	}
+
+	public function deleteView($id){
+		Campus::where('id', $id)->delete();
+		return redirect('/campus');;
 	}
 }

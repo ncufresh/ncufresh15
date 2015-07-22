@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("a.collection-item").click(function() {
+	$("a.test").click(function() {
 		var title = $(this).text();
 		$("#campus_title").text(title);
 
