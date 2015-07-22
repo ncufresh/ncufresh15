@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title', 'VIDEO2')
 @section('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/video/media2/css/style.css') }}">
 <style type="text/css">
 .center{
   margin-left: auto;
@@ -15,11 +16,33 @@
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
+/* /////////////////////Show the controls (hidden at the start by default)/////////////////////// */
+  .video-js .vjs-control-bar { 
+    height: 50px; 
+    background-color: #00C5FF;
+    display: block;
+    }
+  
+    /* Make the CDN fonts accessible from the CSS */
+
+  @font-face {
+    font-family: 'VideoJS';
+    src: url('http://vjs.zencdn.net/f/1/vjs.eot');
+    src: url('http://vjs.zencdn.net/f/1/vjs.eot?#iefix') format('embedded-opentype'), 
+      url('http://vjs.zencdn.net/f/1/vjs.woff') format('woff'),     
+      url('http://vjs.zencdn.net/f/1/vjs.ttf') format('truetype');
+  }
+
+  /* Make the demo a little prettier */
+  .video-js { margin: 20px auto; }
+
 </style>
+
 @stop
 
 @section('js')
 <!--<script src=''></script> -->
+<script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
 <script>
 $(document).ready(function(){
 
@@ -73,9 +96,18 @@ $(document).ready(function(){
 <div class="row"></div>
 <!--有影片的section( teal lighten-2)-->    
       <div class="col s8" style=";">
-          <div class="video-container">
-         <iframe width="854" height="510" src="https://www.youtube.com/embed/83I_5lq5MwI" frameborder="0" allowfullscreen></iframe>
-          </div>
+
+
+  <video id="my_video_1" class="video-js vjs-default-skin" 
+      controls preload="none" width="583px" height="400px" data-setup='{}'
+      poster='http://video-js.zencoder.com/oceans-clip.jpg'>
+    <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+    <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
+  </video>
+
+
+
+
           <p>影片簡介：</p>
           <p>一一一一</p>
           <p>一一一一</p>
