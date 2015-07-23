@@ -2,6 +2,6 @@
 
 @section('main')
 <div id="pictures">
-	<img src="{{asset('img/campus/NCU_Campus.jpg')}}" id="campus">
+	<img src="{{asset('img/campus/background.png')}}" id="campus">
 </div>
 @stop

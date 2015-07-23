@@ -2,7 +2,7 @@
 
 @section('main')
 <div id="pictures">
-	<img id="map" src="{{ asset('img/campus/NCU_Campus.jpg') }}">
+	<img id="map" src="{{ asset('img/campus/background.png') }}">
 	<img id="small_map" src="{{ asset('img/campus/map.jpg') }}">
 	<img id="view" src="{{ asset('uploads/campus/'.$view->picName) }}">
 </div>

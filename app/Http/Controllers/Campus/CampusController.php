@@ -11,13 +11,18 @@ use App\Http\Controllers\Controller;
 use App\Campus;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
+use App\Helpers\SitemapHelper;
 use Validator;
 
 class CampusController extends Controller
 {
+	function __construct() {
+		SitemapHelper::push('校園導覽', 'campus');
+	}
+
     public function index(){
     	$campus = Campus::all();
-		return view('campus.campus')->with('campus', $campus);
+		return view('campus.campus')->with(['campus'=>$campus, 'index'=>true]);
 	}
 
 	public function addView(){
@@ -75,6 +80,7 @@ class CampusController extends Controller
 	public function showView($id){
 		$campus = Campus::all();
     	$view = Campus::where('id', $id)->first();
+    	SitemapHelper::push($view->title, 'campus/'.$view->view_id);
 		return view('campus.showView')->with(['campus'=>$campus, 'view'=>$view]);
 	}
 
