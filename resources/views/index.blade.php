@@ -11,59 +11,63 @@
 
 @section('content')
 <div id='r1' class='row'>
-	<div id='post-container' class="col s5">
+	<div id='post-container' class="col s12 m12 l5">
 		<div class="row">
             <ul class="tabs">
-                <li class="tab dick col s2 grey darken-1"><a class="active" href="#test1">全部</a></li>
-                <li class="tab dick col s2 grey lighten-1"><a  href="#test2">Q&amp;A</a></li>
-                <li class="tab dick col s2 grey darken-1"><a href="#test3">新生必讀</a></li>
+                <li class="tab dick col s2 grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
+                <li class="tab dick col s2 grey lighten-1"><a  href="#doc-tab">公告</a></li>
+                <li class="tab dick col s2 grey darken-1"><a href="#qa-tab">Q&amp;A</a></li>
             </ul>
-			<div id="test1" class="tab-content">
-				<table>
-					<tbody>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat1'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-						<tr>
-							<td ><span class='category cat2'>Alvin</span></td>
-							<td>Eclair</td>
-							<td>$0.87</td>
-						</tr>
-					</tbody>
-				</table>
+			<div id="ann-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					<div class='row'>
+						<div class='col s3'>
+							@if ($ann->category == '1')
+								<span class='category cat1'>Q&amp;A</span>
+							@else
+								<span class='category cat2'>公告</span>
+							@endif
+						</div>
+						<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+						<div class='col s6'>
+							<a href="{{$ann->url}}">{{$ann->title}}</a>
+						</div>
+					</div>
+				@endforeach
 			</div>
-			<div id="test2" class="tab-content">Test 2</div>
-			<div id="test3" class="tab-content">Test 3</div>
+			<div id="qa-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					@if ($ann->category == '1')
+						<div class='row'>
+							<div class='col s3'>
+								<span class='category cat1'>Q&amp;A</span>
+							</div>
+							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+							<div class='col s6'>
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							</div>
+						</div>
+					@endif
+				@endforeach
+			</div>
+			<div id="doc-tab" class="tab-content">
+				@foreach ($announcements as $ann)
+					@if ($ann->category == '2')
+						<div class='row'>
+							<div class='col s3'>
+								<span class='category cat2'>公告</span>
+							</div>
+							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
+							<div class='col s6'>
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							</div>
+						</div>
+					@endif
+				@endforeach
+			</div>
 		</div>
 	</div>
-	<div id='slider-container'class="col s7">
+	<div id='slider-container'class="col s12 m12 l7">
 		<div class="slider">
 			<ul class="slides">
 				<li>
@@ -101,8 +105,8 @@
 <div id='r2' class='row'>
 	<div id='calender-container'>
 		<div class="row">
-			<div class="col s1 valign-wrapper arrow-container"><a class='waves-effect waves-light btn-flat valign'>&laquo;</a></div>
-			<div class="col s10 valign-wrapper">
+			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&laquo;</a></div>
+			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
 					<div id='event1' class='col s3 dick'></div>
 					<div id='event2' class='col s3 dick'></div>
@@ -110,7 +114,7 @@
 					<div id='event4' class='col s3'></div>
 				</div>
 			</div>
-			<div class="col s1 valign-wrapper"><span class='waves-effect waves-light btn-flat valign'>&raquo;</span></div>
+			<div id='arrow-container2' class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&raquo;</a></div>
 		</div>
 	</div>
 </div>

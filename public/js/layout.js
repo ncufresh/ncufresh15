@@ -7,6 +7,7 @@ window.onload = init;
 $(document).ready(function(){
 	portalToggle = false;
 	portalHover = false;
+	$(".button-collapse").sideNav();
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
