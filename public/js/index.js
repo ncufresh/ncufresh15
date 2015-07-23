@@ -11,7 +11,7 @@ today = yyyy+"-"+mm+"-"+dd;
 $(document).ready(function(){
 	$('.slider').slider({full_width: true, height: 390});
 	$.ajax({
-		url: "calender?date="+today,
+		url: "cal/get?date="+today,
 		type: "GET",
 		success: function(data){
 			console.log(data);

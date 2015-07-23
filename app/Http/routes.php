@@ -25,7 +25,7 @@ Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');
 
 // Calender on Homepage
-Route::get('/calender', 'CalenderController@get');
+Route::get('/cal/get', 'CalenderController@get');
 Route::post('/cal/new', 'CalenderController@store');
 Route::get('/cal/delete/{id}', 'CalenderController@destroy');
 Route::post('/cal/update/{id}', 'CalenderController@update');

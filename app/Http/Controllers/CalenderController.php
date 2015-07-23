@@ -10,7 +10,29 @@ use App\Calender;
 
 class CalenderController extends Controller{
 	public function get(Request $request){
+		$now = $next1 = $next2 = NULL;
+		$pre = Calender::where('event_date', '<', $request->date)
+						->orderBy('event_date', 'desc')
+						->first();
+		if ($pre->event_date == '0000-00-00'){
+			$pre = NULL;
+		}
 
+		$now = Calender::whereBetween('event_date', array($request->date, '2016-12-30'))
+						->orderBy('event_date', 'asc')
+						->first();
+		if ($now){
+			$next1 = Calender::where('event_date', $now->next_date)
+						->where('event_date', '<>', '2016-12-31')
+						->first();
+			if ($next1) {
+				$next2 = Calender::where('event_date', $next1->next_date)
+						->where('event_date', '<>', '2016-12-31')
+						->first();
+			}
+		}
+		//return "pre:".$pre."\nnow:".$now."\nnext1:".$next1."\nnext2".$next2;
+		//return response()->json($now);
 	}
 	public function store(Request $request){
 		$pre_date = $this->getPreviousDate($request->date);
