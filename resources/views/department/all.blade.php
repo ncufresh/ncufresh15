@@ -29,10 +29,12 @@
         @foreach($content as $content)
         @endforeach
         <!--新增-->
+        @permission('management')
         <div>
             <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/add">新增</a>
             <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
         </div>
+        @endpermission
         <div class="col s1">
             <i class="small material-icons" onclick="goBack()">navigate_before</i>
         </div>
@@ -59,6 +61,7 @@
             @endif
         </div>
     @elseif($sect === 2)
+        @permission('management')
         {!! Form::open(array('url'=>'/group/update', 'method'=>'post', 'files' => true))!!}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="id" value="{{ $content->id }}">
@@ -99,6 +102,7 @@
                 <button type="submit" class="waves-effect waves-light btn-large grey lighten-2 butSelect">送出</button>
             </div>
         {!! Form::close()!!}
+        @endpermission
     @endif
     </div>
 </div>
