@@ -1,6 +1,12 @@
-#test1 .row {
+#ann-tab .row {
 	margin-left: 0;
 	margin-top: 30px;
+}
+
+#cal-tab .row {
+	margin-left: 0;
+	margin-top: 30px;
+	margin-right: 0;
 }
 
 #ann-new-trigger {
@@ -20,4 +26,29 @@
 	display: inline-block;
 	color: white;
 	background-color: #006600;
+}
+
+#cal-new {
+	max-height: 95%;
+	height: 91%;
+	width: 80%;
+}
+
+#cals-container {
+	word-break: break-all;
+}
+
+#cal-content {
+	max-height: 200px;
+	overflow: auto;
+}
+
+#cal-update-content {
+	max-height: 200px;
+	overflow: auto;
+}
+
+#cal-update-modal {
+	max-height: 95%;
+	height: 91%;
 }

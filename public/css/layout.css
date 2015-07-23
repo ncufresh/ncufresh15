@@ -12,11 +12,11 @@
     padding: 0 5%;
 }
 .nav-margin {
-	margin-top: 65px;
+	margin-top: 10px;
 }
 #logo {
 	position: absolute;
-	top: 0px;
+	top: 5px;
 	display: inline-block;
 	width: 22.5%;
 	height: 100px;
@@ -43,15 +43,8 @@
 .banner-menu a:hover {
 	background-color: #e3f2fd;
 }
-#nav-fixed {
-	position: fixed;
-	top: 0px;
-	z-index: 3;
-}
+
 nav {
-	opacity: 1;
-	-webkit-transform: translate(0,0);
-	-webkit-transition: -webkit-transform .2s,background .3s,color .3s;
 	background-color: #2196f3;
 }
 .brand-logo {
@@ -98,4 +91,13 @@ body {
     margin: 0;
     display: block;
     width: 30px;
+}
+
+@media only screen and (max-width: 992px) {
+	#container {
+		width: 100%;
+	}
+	#slider-container {
+		padding: 0;
+	}
 }
