@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\Campus;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\File;
 use Validator;
 
 class CampusController extends Controller
@@ -103,6 +104,7 @@ class CampusController extends Controller
 		$introduction = $request->introduction;
 		$file = Input::file('image_name');
 		$id_title = Campus::where('id', $id)->value('title');
+		$picName = Campus::where('id', $id)->value('picName');
 		$rows = Campus::where('title', $title)->count();
 		if($id_title!=$title && $rows!=0)
 		{
@@ -117,6 +119,7 @@ class CampusController extends Controller
 	       	}
 			$file_success=$file->move($destinationPath, $filename);
 
+			File::delete(base_path().'\public\uploads\campus\\'.$picName);
 			Campus::where('id', $id)
 				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
 					'title'=>$title, 'picName'=>$filename, 'region_id'=>$region_id]);
@@ -132,7 +135,9 @@ class CampusController extends Controller
 	}
 
 	public function deleteView($id){
+		$picName = Campus::where('id', $id)->value('picName');
 		Campus::where('id', $id)->delete();
+		File::delete(base_path().'\public\uploads\campus\\'.$picName);
 		return redirect('/campus');;
 	}
 }

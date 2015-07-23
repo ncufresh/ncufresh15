@@ -9,6 +9,29 @@
 	width: 70%;
 }
 
+.category {
+	border-width: 0px 1px 1px;
+	border-style: solid;
+	background-color: rgb(191, 224, 255);
+	border-color: rgb(33, 150, 243);
+}
+
+.category::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	margin-top: -22.5px;
+	width: 0;
+	height: 0;
+	border-left: 16px solid #2196F3;
+	border-top: 22.5px solid transparent;
+	border-bottom: 22.5px solid transparent;
+}
+
+#category1 {
+	border-top: 1px solid rgb(33, 150, 243);
+}
+
 .collection {
 	margin: 0%;
 	border-top: 0px;
