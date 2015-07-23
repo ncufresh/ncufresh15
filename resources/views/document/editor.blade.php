@@ -10,6 +10,12 @@ td {
 </style>
 @stop
 
+@section('js')
+<script type="text/javascript" src="{{ asset('js/document/document_layout.js') }}"></script>
+<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/document/editor.js') }}"></script>
+@stop
+
 @section('text')
 <br>
 <div id="ckeditor">
@@ -95,7 +101,3 @@ td {
 <div id="text"></div>
 @stop
 
-@section('js')
-<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/document/editor.js') }}"></script>
-@stop

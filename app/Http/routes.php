@@ -71,9 +71,9 @@ Route::get('campus', 'Campus\CampusController@index');
 Route::get('document', 'Document\DocumentController@index');	
 Route::get('document/ckeditor', 'Document\DocumentController@editor');
 Route::post('document/edit_content', 'Document\DocumentController@store');
-Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@get_content');
-
-Route::get('document/get_content', 'Document\DocumentController@get_content');
+Route::get('document/{page_id}', 'Document\DocumentController@get_content_1');
+Route::get('document/{page_id}/{page_id_2}', 'Document\DocumentController@get_content_2');
+Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@get_content_3');
 //******************************************************************************************************
 
 // video

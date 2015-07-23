@@ -6,6 +6,7 @@
 @stop
 
 @section('js')
+<script type="text/javascript" src="{{ asset('js/document/document_layout.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/document/page.js') }}"></script>
 @stop
 
