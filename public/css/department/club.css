@@ -44,22 +44,30 @@
 .puzzle1Text {
 	font-size: 80px;
 }
+.puzzle2Text {
+	font-size: 40px;
+}
 /***拼圖******************************************************************************/
 /**兩個**/
-.secPuzzle1 {
+.secPuzzle {
 	padding: 2% 2%;
 	font-size: 200px;
+	vertical-align:middle;
 }
-.groupPuzzle1 {
+.groupPuzzle12 {
 	border-radius: 10px;
 	border-style: solid;
 	border-color: #9e9e9e;
-	vertical-align:middle;
 }
 .puzzle1 {
 	border: solid;
 	border-color: #9e9e9e;
 	height: 400px;
+}
+.puzzle2 {
+	border: solid;
+	border-color: #9e9e9e;
+	height: 200px;
 }
 .material-icons {
 	color: #9e9e9e;

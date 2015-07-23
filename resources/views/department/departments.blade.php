@@ -20,8 +20,8 @@
     </div>
 @if($page === 1)
 	<!--總攬-->
-    <div class="secPuzzle1">
-    	<div class="group row groupPuzzle1">
+    <div class="secPuzzle">
+    	<div class="group row groupPuzzle">
 			<a href="/group/departments">
 	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
 	    			<i class="material-icons large">account_balance</i>
@@ -38,46 +38,72 @@
     </div>
 @elseif($page === 2)
     <!--系所-->
-    <div>
-    	<div class="group">
-			<a href="/group/departments/1"><label class="waves-effect waves-grey white">文學院</label></a>
-			<a href="/group/departments/2"><label class="waves-effect waves-grey white">理學院</label></a>
-		</div>
-		<div class="group">
-			<a href="/group/departments/3"><label class="waves-effect waves-grey white">工學院</label></a>
-			<a href="/group/departments/4"><label class="waves-effect waves-grey white">管理學院</label></a>
-		</div>
-		<div class="group">
-			<a href="/group/departments/5"><label class="waves-effect waves-grey white">資訊電機學院</label></a>
-			<a href="/group/departments/6"><label class="waves-effect waves-grey white">地球科學學院</label></a>
-		</div>
-		<div class="group">
-			<a href="/group/departments/7"><label class="waves-effect waves-grey white">客家學院</label></a>
-			<a href="/group/departments8"><label class="waves-effect waves-grey white">生醫理工學院</label></a>
+    <div class="secPuzzle">
+    	<div class="group row groupPuzzle">
+			<a href="/group/departments/1">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">文學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/2">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">理學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/3">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">工學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/4">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">管理學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/5">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">資訊電機學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/6">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">地球科學學院</label>
+				</div>
+			</a>
+			<a href="/group/departments/7">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">客家學院</label>
+				</div>
+			</a>
+			<a href="/group/departments8">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+					<label class="puzzle1Text">生醫理工學院</label>
+				</div>
+			</a>
 		</div>
 	</div>
 @elseif($page === 3)
 	<!--社團-->
-    <div class="secPuzzle1">
-    	<div class="group row groupPuzzle1">
+    <div class="secPuzzle">
+    	<div class="group row groupPuzzle">
 			<a href="/group/clubs/1">
 				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
-					<label class="waves-effect waves-grey puzzle1Text">學術性</label>
+					<label class="puzzle1Text">學術性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/2">
 				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
-					<label class="waves-effect waves-grey puzzle1Text">康樂性</label>
+					<label class="puzzle1Text">康樂性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/3">
 				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
-					<label class="waves-effect waves-grey puzzle1Text">聯誼性</label>
+					<label class="puzzle1Text">聯誼性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/4">
 				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
-					<label class="waves-effect waves-grey puzzle1Text">服務性</label>
+					<label class="puzzle1Text">服務性</label>
 				</div>
 			</a>
 		</div>
@@ -132,12 +158,16 @@
     </div>
 @elseif($page === 5)
     <!--顯示內容-->
-    <div>
-        @foreach($list as $list)
-        <div class="group">
-            <a href="show/{{ $list->id }}"><label class="waves-effect waves-grey white">{{ $list->name }}</label></a>
-        </div>
-        @endforeach
+    <div class="secPuzzle">
+    	<div class="group row groupPuzzle">
+       		@foreach($list as $list)
+       		    <a href="show/{{ $list->id }}">
+       		    	<div  class="col s12 m6 l3 puzzle2 waves-effect waves-grey">
+       		    		<label class="puzzle2Text">{{ $list->name }}</label>
+       		    	</div>
+       		    </a>
+       		@endforeach
+       	</div>
     </div>
 @endif
 </div>
