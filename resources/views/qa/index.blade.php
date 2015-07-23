@@ -33,7 +33,7 @@ td.expand {
 
 @section('content')
 <div class="row">
-    <div id="category-menu" class="col s3">
+    <div id="category-menu" class="col s12 l3">
         <div class="collection">
             <a href="/qa" class="collection-item {{$category == -1 ? 'active' : ''}}">
                 全部<span class="badge">{{$all_count}}</span>
@@ -57,7 +57,7 @@ td.expand {
             </a>
         @endpermission
     </div>
-    <div class="col s9">
+    <div class="col s12 l9">
         <a href="{{url('qa/create?type=qa')}}" class="waves-effect waves-light btn">
             <i class="material-icons left">message</i>我要發問
         </a>

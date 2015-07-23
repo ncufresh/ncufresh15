@@ -221,7 +221,7 @@ class QaController extends Controller
         if ($validator->fails()) {
             return response()->json(['msg'=> 'error']);
         }
-        $answer = QaQuestion::find($request->id);
+        $answer = QaQuestion::findOrFail($request->id);
         if ($answer != null) {
             $answer->solved = $request->solved;
             $answer->save();
@@ -259,7 +259,7 @@ class QaController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        $answer = QaAnswer::find($id);
+        $answer = QaAnswer::findOrFail($id);
         $answer->category = $request->category;
         $answer->title = strip_tags($request->title);
         $answer->content = $this->sanitize($request->content);
@@ -276,7 +276,7 @@ class QaController extends Controller
     public function destroy($id)
     {
         //
-        $answer = QaAnswer::find($id);
+        $answer = QaAnswer::findOrFail($id);
         if ($answer != null) {
             $answer->delete();
         }

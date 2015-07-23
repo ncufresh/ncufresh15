@@ -18,6 +18,7 @@ return array(
     'CreateDepartmentPicturesTable' => $baseDir . '/database/migrations/2015_07_16_120716_create_department_pictures_table.php',
     'CreateDepartmentsTable' => $baseDir . '/database/migrations/2015_07_14_142833_create_departments_table.php',
     'CreateFileTable' => $baseDir . '/database/migrations/2015_07_21_033152_create_file_table.php',
+    'CreateKnowledgesTable' => $baseDir . '/database/migrations/2015_07_22_113257_create_knowledges_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',
     'CreatePermissionUserTable' => $baseDir . '/database/migrations/2015_02_09_132439_create_permission_user_table.php',
