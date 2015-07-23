@@ -4,25 +4,63 @@ var anim = function (elapsed) {
 	hero.direction.x = 0;
 	hero.direction.y = 0;
 
-	if (37 in keysDown) { // Left
-		hero.direction.x = -1;
-		hero.direction.now = "left";
+
+	// switch (){
+ //        case 37:
+ //        	console.log("left");
+ //            break;
+ //        case 38:  
+ //            break;
+ //        case 39:
+ //            break;
+ //        case 40: 
+ //            break;
+ //    }
+
+ 	window.onkeydown = function(e) {
+		switch (e.keyCode){
+        case 37:
+        	hero.direction.x = -1;
+			hero.direction.now = "left";
+        	console.log("left");
+            break;
+        case 38:
+    		hero.direction.y = -1;
+			hero.direction.now = "up";
+        	console.log("up");
+            break;
+        case 39:
+    		hero.direction.x = 1;
+			hero.direction.now = "right";
+        	console.log("right");
+            break;
+        case 40:
+    		hero.direction.y = 1;
+			hero.direction.now = "down";
+        	console.log("down");
+            break;
+ 	   }
 	}
 
-	if (38 in keysDown) { // Up
-		hero.direction.y = -1;
-		hero.direction.now = "up";
-	}
+	// if (37 in keysDown) { // Left
+	// 	hero.direction.x = -1;
+	// 	hero.direction.now = "left";
+	// }
 
-	if (39 in keysDown) { // Right
-		hero.direction.x = 1;
-		hero.direction.now = "right";
-	}
+	// else if (38 in keysDown) { // Up
+	// 	hero.direction.y = -1;
+	// 	hero.direction.now = "up";
+	// }
 
-	if (40 in keysDown) { // Down
-		hero.direction.y = 1;
-		hero.direction.now = "down";
-	}
+	// else if (39 in keysDown) { // Right
+	// 	hero.direction.x = 1;
+	// 	hero.direction.now = "right";
+	// }
+
+	// else if (40 in keysDown) { // Down
+	// 	hero.direction.y = 1;
+	// 	hero.direction.now = "down";
+	// }
 
 
 	// Update hero animation

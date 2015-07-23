@@ -109,6 +109,6 @@ var question = function () {
 			else if (select==2) {
 				select=3;
 			}			
-		}			
+		}		
 	}
 }

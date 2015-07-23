@@ -3,17 +3,22 @@ var keysDown = {};
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
+	console.log(keysDown);
 }, false);
 
 addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
+	console.log(keysDown);
 }, false);
+
 
 // Update game objects
 var update = function (modifier) {
 
+
 	//var distance = 4 ;
 
+	
 	if (38 in keysDown) { // Player holding up
 		if(hero.y-hero.speed * modifier >= 0 ){ // edge
 			hero.y -= hero.speed * modifier;
@@ -37,7 +42,7 @@ var update = function (modifier) {
 		}
 
 	}
-	else if (40 in keysDown) { // Player holding down
+	if (40 in keysDown) { // Player holding down
 		if(hero.y+hero.speed * modifier <= bgImage.height-32 ){ // edge
 			hero.y += hero.speed * modifier;
 		} else{
@@ -60,7 +65,7 @@ var update = function (modifier) {
 		}
 
 	}
-	else if (37 in keysDown) { // Player holding left
+	if (37 in keysDown) { // Player holding left
 		if(hero.x-hero.speed * modifier >= 0 ){ // edge
 			hero.x -= hero.speed * modifier;
 		} else{
@@ -83,7 +88,7 @@ var update = function (modifier) {
 		}		
 
 	}
-	else if (39 in keysDown) { // Player holding right
+	if (39 in keysDown) { // Player holding right
 		if(hero.x+hero.speed * modifier <= bgImage.width-32 ){ // edge
 			hero.x += hero.speed * modifier;
 		} else {
