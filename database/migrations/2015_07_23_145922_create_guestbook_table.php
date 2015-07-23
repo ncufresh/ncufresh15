@@ -12,11 +12,13 @@ class CreateGuestbookTable extends Migration
      */
     public function up()
     {
-        Schema::create('guestbook', function (Blueprint $table) {
-            $table->string('username');
-            $table->string('comment');
-            $table->increments('id');
-            });
+        Schema::create('calenders', function(Blueprint $table){
+            $table->string('name');
+            $table->string('comment');            
+            $table->increments('id'); 
+        });
+
+
     }
 
     /**
@@ -26,6 +28,6 @@ class CreateGuestbookTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        //
     }
 }
