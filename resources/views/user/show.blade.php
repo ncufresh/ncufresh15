@@ -15,7 +15,4 @@
 @stop
 
 @section('content')
-{{$user->name}}
-{{$user->email}}
-{{$user->student_id}}
 @stop
