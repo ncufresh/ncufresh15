@@ -48,16 +48,14 @@
             <input id="input_student_id" type="text" class="validate" name="student_id" value="{{Input::old('student_id')?Input::old('student_id'):$user->student_id}}">
             <label for="input_student_id">學號</label>
         </div>
-        @role('admin')
-            <div class="input-field">
-                <select name="role">
-                    @foreach ($roles as $role)
-                        <option value="{{$role->id}}" {{($user->is($role->id) || $role == $roles[0]) ?"selected='selected'":""}}>{{$role->description}}</option>
-                    @endforeach
-                </select>
-                <label>權限</label>
-            </div>
-        @endrole
+        <div class="input-field">
+            <select name="role">
+                @foreach ($roles as $role)
+                    <option value="{{$role->id}}" {{($user->is($role->id) || $role == $roles[0]) ?"selected='selected'":""}}>{{$role->description}}</option>
+                @endforeach
+            </select>
+            <label>權限</label>
+        </div>
         <div class="input-field row">
             <button class="btn waves-effect waves-light right indigo" type="submit">修改</button>
         </div>

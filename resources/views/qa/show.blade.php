@@ -65,9 +65,11 @@ td.expand {
         <a href="{{url('qa/create?type=report')}}" class="waves-effect waves-light btn">
             <i class="material-icons left">report_problem</i>問題回報
         </a>
-        <a href="{{url('qa/edit/'.$answer->id)}}" class="waves-effect waves-light btn">
-            <i class="material-icons left">description</i>編輯此Q&amp;A
-        </a>
+        @permission('management')
+            <a href="{{url('qa/edit/'.$answer->id)}}" class="waves-effect waves-light btn">
+                <i class="material-icons left">description</i>編輯此Q&amp;A
+            </a>
+        @endpermission
         <table>
             <thead>
                 <tr>
