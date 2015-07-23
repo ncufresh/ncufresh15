@@ -90,7 +90,7 @@ class LifeController extends Controller
         $show = Life::findOrFail($id);
         $pics = LifePictures::where('lifes_id',$id)->get();
         return view('life.backstage',[
-            'show' => $show,
+            'show' => $show,    /*$show裡面的儲存所有內容，傳過去view後的變數叫做show*/
             'category' => $category,
             'pictures' => $pics
         ]);
@@ -143,18 +143,7 @@ class LifeController extends Controller
     public function introduce($category)
     {
         //
-        $correspond = [                      /*對應成中文字*/
-            'food' => '食',
-            'play' => '樂',
-            'edu'  => '育',
-            'live' => '住',
-            'traffic' => '行'
-        ];
-        $introduces = Life::where('category',$category)->get();
-        return view('life.category',[
-            'introduces' => $introduces,  /*$introduces裡面的儲存所有內容，傳過去view後的變數叫做introduces*/
-            'category' => $correspond[$category]   /*$category裡面儲存輸入的值(food)，再把它傳過去view裡的變數叫category*/
-            ]);                           /*category分開傳出來比較方便*/                   
+        return view('life.category.'.$category);                    
     }
     public function add_pictures(Request $request,$id)
     {

@@ -20,7 +20,6 @@ class LifeTableSeeder extends Seeder
 	    	'宵夜街',
 	    	'後門',
 	    	'松苑廣場',
-	    	'香草庭園',
 	    	'女14地下餐廳',
 	    	'校園café'
 	    ];

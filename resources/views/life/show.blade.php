@@ -3,7 +3,7 @@
 @section('title','中大生活-介紹')
 
 @section('css')
-	<link rel="stylesheet" type="text/css" href='{{ asset('css/life/coverflow.css') }}' />
+	<link rel="stylesheet" type="text/css" href='{{ asset('css/coverflow.css') }}' />
 	<style type="text/css">
 		#coverflow{
 			font-family:inital !importment;
