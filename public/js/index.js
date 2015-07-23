@@ -14,7 +14,7 @@ $(document).ready(function(){
 		url: "cal/get?date="+today,
 		type: "GET",
 		success: function(data){
-			var all = JSON.parse(data);
+			console.log(data);
 		},
 		error: function(xhr,status,error){
 			console.log("Error");

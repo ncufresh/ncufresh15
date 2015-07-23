@@ -6,8 +6,13 @@
 #r2 {
 	height: 100px;
 	padding-top: 30px;
-	margin-left: -4%;
-	margin-right: -4%;
+	margin-left: -8%;
+	margin-right: -8%;
+	margin-bottom: 0;
+}
+
+#container #content {
+	padding-bottom: 0;
 }
 
 #calender-container {
@@ -83,6 +88,8 @@
 
 #calender-container>.row {
 	height: 100%;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 #calender-container .col {
@@ -131,11 +138,49 @@
 
 #event3:after {
 	background-color: #448aff;
-	left: 73.2%;
+	left: 73%;
 }
 
 #event4 {
 	background-color: #82b1ff;
+}
+
+#event4:after {
+	background-color: #82b1ff;
+	left: 98%;
+}
+
+.event-box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	word-break: break-all;
+	padding-top: 0.9rem;
+	color: white;
+}
+
+.event-box:after {
+	content: "9";
+	color: white;
+	padding-left: 7px;
+	width: 11%;
+	height: 1.4em;
+	position: absolute;
+	z-index: 1;
+	top: 1em;
+	left: 101%;
+	border-radius: 50%;
+	background-color: #ec407a;
+}
+
+#event-container>.dick {
+	border-right: 2px solid grey;
+	padding-left: 3%;
+}
+
+#event-container .event-box {
+	text-shadow: 0px 0px 10px black;
 }
 
 .dick:after {
@@ -145,6 +190,7 @@
 	position: absolute;
 	top: 0.7em;
 	border-radius: 50%;
+	/*border-right: 3px solid grey;*/
 }
 
 #ann-tab .row , #qa-tab .row, #doc-tab .row{
@@ -166,11 +212,13 @@
 }
 
 #arrow-container1 {
+	background-color: #5f5f5f;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
 }
 #arrow-container2 {
+	background-color: #CCCCCC;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
@@ -186,6 +234,7 @@
 	padding-right: 0;
 	padding-left: 0;
 }
+
 #home-nav {
 	display: none;
 }

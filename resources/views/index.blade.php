@@ -14,9 +14,9 @@
 	<div id='post-container' class="col s12 m12 l5">
 		<div class="row">
             <ul class="tabs">
-                <li class="tab dick col s2 grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
-                <li class="tab dick col s2 grey lighten-1"><a  href="#doc-tab">公告</a></li>
-                <li class="tab dick col s2 grey darken-1"><a href="#qa-tab">Q&amp;A</a></li>
+                <li class="tab  grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
+                <li class="tab grey lighten-1"><a  href="#doc-tab">公告</a></li>
+                <li class="tab grey darken-1"><a href="#qa-tab">Q&amp;A</a></li>
             </ul>
 			<div id="ann-tab" class="tab-content">
 				@foreach ($announcements as $ann)
@@ -71,31 +71,17 @@
 		<div class="slider">
 			<ul class="slides">
 				<li>
-					<img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-					<div class="caption center-align">
-						<h3>This is our big Tagline!</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-					</div>
-				</li>
-				<li>
-					<img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-					<div class="caption left-align">
-						<h3>Left Aligned Caption</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-					</div>
-				</li>
-				<li>
 					<img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
 					<div class="caption right-align">
-						<h3>Right Aligned Caption</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+						<h3>新生知訊網</h3>
+						<h5 class="light grey-text text-lighten-3">投資一定有風險 基金投資有賺有賠 申購前應詳閱公開說明書</h5>
 					</div>
 				</li>
 				<li>
 					<img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
 					<div class="caption center-align">
-						<h3>This is our big Tagline!</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+						<h3>新生知訊網</h3>
+						<h5 class="light grey-text text-lighten-3">投資一定有風險 基金投資有賺有賠 申購前應詳閱公開說明書</h5>
 					</div>
 				</li>
 			</ul>
@@ -105,16 +91,16 @@
 <div id='r2' class='row'>
 	<div id='calender-container'>
 		<div class="row">
-			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&laquo;</a></div>
+			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'></a></div>
 			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
-					<div id='event1' class='col s3 dick'></div>
-					<div id='event2' class='col s3 dick'></div>
-					<div id='event3' class='col s3 dick'></div>
-					<div id='event4' class='col s3'></div>
+					<div id='event1' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
+					<div id='event2' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
+					<div id='event3' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
+					<div id='event4' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
 				</div>
 			</div>
-			<div id='arrow-container2' class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'>&raquo;</a></div>
+			<div id='arrow-container2' class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'></a></div>
 		</div>
 	</div>
 </div>
