@@ -59,7 +59,7 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        return view('user.show', ['user' => $user]);
+        return view('user.show', ['user' => $user, 'nobreadcrumb' => true]);
     }
 
     /**
