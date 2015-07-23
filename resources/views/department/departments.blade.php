@@ -4,6 +4,18 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
+	<style type="text/css">
+		#container {
+            background-image: url('{{asset("img/department/background1.png")}}');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+		.but {
+			background-image: url('{{asset("img/department/button.png")}}');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+		}
+	</style>
 @stop
 @section('js')
 	<script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
@@ -23,13 +35,13 @@
     <div class="secPuzzle">
     	<div class="group row groupPuzzle">
 			<a href="/group/departments">
-	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 	    			<i class="material-icons large">account_balance</i>
     				<label class="puzzle1Text">系所</label>
     			</div>
     		</a>
     		<a href="/group/clubs">
-	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+	    		<div class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 	    			<i class="material-icons large">supervisor_account</i>
     				<label class="puzzle1Text">社團</label>
     			</div>
@@ -41,42 +53,42 @@
     <div class="secPuzzle">
     	<div class="group row groupPuzzle">
 			<a href="/group/departments/1">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">文學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/2">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">理學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/3">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">工學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/4">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">管理學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/5">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">資訊電機學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/6">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">地球科學學院</label>
 				</div>
 			</a>
 			<a href="/group/departments/7">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">客家學院</label>
 				</div>
 			</a>
 			<a href="/group/departments8">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">生醫理工學院</label>
 				</div>
 			</a>
@@ -87,22 +99,22 @@
     <div class="secPuzzle">
     	<div class="group row groupPuzzle">
 			<a href="/group/clubs/1">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">學術性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/2">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">康樂性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/3">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">聯誼性</label>
 				</div>
 			</a>
 			<a href="/group/clubs/4">
-				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey">
+				<div  class="col s12 m12 l6 puzzle1 waves-effect waves-grey but" style="padding-top: 130px;">
 					<label class="puzzle1Text">服務性</label>
 				</div>
 			</a>
@@ -162,7 +174,7 @@
     	<div class="group row groupPuzzle">
        		@foreach($list as $list)
        		    <a href="show/{{ $list->id }}">
-       		    	<div  class="col s12 m6 l3 puzzle2 waves-effect waves-grey">
+       		    	<div  class="col s12 m6 l3 puzzle2 waves-effect waves-grey but" style="padding-top: 60px;">
        		    		<label class="puzzle2Text">{{ $list->name }}</label>
        		    	</div>
        		    </a>

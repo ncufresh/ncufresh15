@@ -48,10 +48,8 @@
 	font-size: 40px;
 }
 /***拼圖******************************************************************************/
-/**兩個**/
 .secPuzzle {
 	padding: 2% 2%;
-	font-size: 200px;
 	vertical-align:middle;
 }
 .groupPuzzle12 {
@@ -60,15 +58,14 @@
 	border-color: #9e9e9e;
 }
 .puzzle1 {
-	border: solid;
-	border-color: #9e9e9e;
 	height: 400px;
 }
 .puzzle2 {
-	border: solid;
-	border-color: #9e9e9e;
 	height: 200px;
 }
 .material-icons {
 	color: #9e9e9e;
+}
+.puzzlePad {
+	margin: 2% 2%;
 }
