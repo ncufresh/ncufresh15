@@ -3,113 +3,188 @@ var keysDown = {};
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
-	console.log(keysDown);
 }, false);
 
 addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
-	console.log(keysDown);
 }, false);
-
 
 // Update game objects
 var update = function (modifier) {
 
+	//console.log("(endx"+hero.end.x+"&x"+hero.x+")(endy"+hero.end.y+"&y"+hero.y);
+	//console.log("hero.keylock"+hero.keylock);
+	console.log(blocklock.right);
 
-	//var distance = 4 ;
 
-	
-	if (38 in keysDown) { // Player holding up
-		if(hero.y-hero.speed * modifier >= 0 ){ // edge
-			hero.y -= hero.speed * modifier;
-		} else{
-			hero.y = 0 ;
+
+	// left
+	if (hero.direction.now == 'left' && hero.keylock==true) {
+			hero.end.Timer += modifier*1000;
+		if (hero.end.Timer >= hero.end.Delay) {
+			hero.end.Timer = 0;
+			hero.x-=16;
 		}
+	};
 
-		// walls
-		for (i=0;i<blocks.length ;i++ )
-		{
-			if (isTouching(hero,blocks[i]))
-			{
-				hero.y = blocks[i].y + blocks[i].height +1;
-			}
+	// up
+	if (hero.direction.now == 'up' && hero.keylock==true) {
+			hero.end.Timer += modifier*1000;
+		if (hero.end.Timer >= hero.end.Delay) {
+			hero.end.Timer = 0;
+			hero.y-=16;
 		}
+	};
 
-		canask=false;
-		if(isTouching(hero,box)){
-			hero.y = box.y + box.height + 1 ;
-			canask=true;
+	// right
+	if (hero.direction.now == 'right' && hero.keylock==true) {
+			hero.end.Timer += modifier*1000;
+		if (hero.end.Timer >= hero.end.Delay) {
+			hero.end.Timer = 0;
+			hero.x+=16;
 		}
+	};
 
-	}
-	if (40 in keysDown) { // Player holding down
-		if(hero.y+hero.speed * modifier <= bgImage.height-32 ){ // edge
-			hero.y += hero.speed * modifier;
-		} else{
-			hero.y = bgImage.height-hero.height;
+	// down
+	if (hero.direction.now == 'down' && hero.keylock==true) {
+			hero.end.Timer += modifier*1000;
+		if (hero.end.Timer >= hero.end.Delay) {
+			hero.end.Timer = 0;
+			hero.y+=16;
 		}
+	};
 
-		// walls
-		for (i=0;i<blocks.length ;i++ )
-		{
-			if (isTouching(hero,blocks[i]))
-			{
-				hero.y = blocks[i].y - hero.height -1;
-			}
-		}
-
-		canask=false;
-		if(isTouching(hero,box)){
-			hero.y = box.y - box.height - 1 ;
-			canask=true;
-		}
-
-	}
-	if (37 in keysDown) { // Player holding left
-		if(hero.x-hero.speed * modifier >= 0 ){ // edge
-			hero.x -= hero.speed * modifier;
-		} else{
-			hero.x = 0 ;
-		}
-
-		// walls
-		for (i=0;i<blocks.length ;i++ )
-		{
-			if (isTouching(hero,blocks[i]))
-			{
-				hero.x = blocks[i].x + blocks[i].width +1;
-			}
-		}
-
-		canask=false;
-		if(isTouching(hero,box)){
-			hero.x = box.x + box.width + 1 ;
-			canask=true;
-		}		
-
-	}
-	if (39 in keysDown) { // Player holding right
-		if(hero.x+hero.speed * modifier <= bgImage.width-32 ){ // edge
-			hero.x += hero.speed * modifier;
-		} else {
-			hero.x = bgImage.width-hero.width;
-		}
+	if (37 in keysDown && hero.keylock == false) { // Player holding left
 		
 		// walls
 		for (i=0;i<blocks.length ;i++ )
 		{
-			if (isTouching(hero,blocks[i]))
+			if (isTouchingleft(hero,blocks[i]))
 			{
-				hero.x = blocks[i].x - hero.width -1;
+				//hero.x = blocks[i].x + blocks[i].width;
+				blocklock.left = true ;
+			}
+		}
+
+		// canask=false;
+		// if(isTouching(hero,box)){
+		// 	hero.x = box.x + box.width + 1 ;
+		// 	canask=true;
+		// }	
+
+		if(hero.x - grid.length >= 0 && blocklock.left == false ){ // edge
+			//hero.x -=  grid.length;
+			blocklock.left = false;
+			blocklock.top = false;
+			blocklock.right = false;
+			blocklock.bottom = false;			
+			hero.end.x -= grid.length;
+			hero.keylock = true;
+			hero.direction.x = -1;
+			hero.direction.now = "left";
+		}
+
+	}
+
+	if (38 in keysDown && hero.keylock == false) { // Player holding up
+
+		// walls
+		for (i=0;i<blocks.length ;i++ )
+		{
+			if (isTouchingup(hero,blocks[i]))
+			{
+				//hero.y = blocks[i].y + blocks[i].height;
+				blocklock.top = true;
+			}
+		}
+
+		// canask=false;
+		// if(isTouching(hero,box)){
+		// 	hero.y = box.y + box.height + 1 ;
+		// 	canask=true;
+		// }
+
+		if(hero.y - grid.length >= 0 && blocklock.top==false){ // edge
+			//hero.y -=  grid.length;
+			blocklock.left = false;
+			blocklock.top = false;
+			blocklock.right = false;
+			blocklock.bottom = false;			
+			hero.end.y -= grid.length;
+			hero.keylock = true;
+			hero.direction.y = -1;
+			hero.direction.now = "up";
+		}
+
+	}
+
+	if (39 in keysDown && hero.keylock == false) { // Player holding right		
+		// walls
+		for (i=0;i<blocks.length ;i++ )
+		{
+			if (isTouchingright(hero,blocks[i]))
+			{
+				//hero.x = blocks[i].x - blocks[i].width;
+				blocklock.right = true;
 			}
 		}
 		
-		canask=false;
-		if(isTouching(hero,box)){
-			hero.x = box.x - box.width - 1 ;
-			canask=true;
-		}	
+		// canask=false;
+		// if(isTouching(hero,box)){
+		// 	hero.x = box.x - box.width - 1 ;
+		// 	canask=true;
+		// }
 
+		if(hero.x + grid.length <= bgImage.width-grid.length && blocklock.right==false){ // edge
+			//hero.x +=  grid.length;
+			blocklock.left = false;
+			blocklock.top = false;
+			blocklock.right = false;
+			blocklock.bottom = false;		
+			hero.end.x += grid.length;
+			hero.keylock = true;
+			hero.direction.x = 1;
+			hero.direction.now = "right";		
+		}
+	}
+
+	if (40 in keysDown && hero.keylock == false) { // Player holding down
+
+		// walls
+		for (i=0;i<blocks.length ;i++ )
+		{
+			if (isTouchingdown(hero,blocks[i]))
+			{
+				//hero.y = blocks[i].y - blocks[i].height;
+				blocklock.bottom = true;
+			}
+		}
+
+		// canask=false;
+		// if(isTouching(hero,box)){
+		// 	hero.y = box.y - box.height - 1 ;
+		// 	canask=true;
+		// }
+		
+		if(hero.y + grid.length <= bgImage.height-grid.length && blocklock.bottom==false){ // edge
+			//hero.y +=  grid.length;
+			blocklock.left = false;
+			blocklock.top = false;
+			blocklock.right = false;
+			blocklock.bottom = false;		
+			hero.end.y += grid.length;
+			hero.keylock = true;
+			hero.direction.y = 1;
+			hero.direction.now = "down";
+		}
+
+	}	
+
+	if (hero.x == hero.end.x && hero.y == hero.end.y) {
+		hero.keylock = false;
+		// Stop moving the hero
+		hero.direction.x = 0;
+		hero.direction.y = 0;				
 	}
 
 	// Are they touching?
@@ -126,17 +201,76 @@ function isTouching(a,b) {
 		a.x <= (b.x + b.width)
 		&& b.x <= (a.x + a.width)
 		&& a.y <= (b.y + b.height)
-		&& b.y <= (a.y + a.height) 
+		&& b.y <= (a.y + a.height)
 	)
 	{
 		return true;
 	}
 	else {
 		return false
-
 	}
 }
 
+function isTouchingleft(a,b) {
+	if(	
+		b.x < (a.x + a.width)
+		&& a.y < (b.y + b.height)
+		&& b.y < (a.y + a.height)
+
+		&& a.x == (b.x + b.width)
+	)
+	{
+		return true;
+	}
+	else {
+		return false
+	}
+}
+function isTouchingup(a,b) {
+	if(	
+		a.x < (b.x + b.width)
+		&& b.x < (a.x + a.width)
+		&& b.y < (a.y + a.height)
+
+		&& a.y == (b.y + b.height)
+	)
+	{
+		return true;
+	}
+	else {
+		return false
+	}
+}
+function isTouchingright(a,b) {
+	if(	
+		a.x < (b.x + b.width)
+		&& a.y < (b.y + b.height)
+		&& b.y < (a.y + a.height)
+
+		&& b.x == (a.x + a.width)
+	)
+	{
+		return true;
+	}
+	else {
+		return false
+	}
+}
+function isTouchingdown(a,b) {
+	if(	
+		a.x < (b.x + b.width)
+		&& b.x < (a.x + a.width)
+		&& a.y < (b.y + b.height)
+
+		&& b.y == (a.y + a.height)
+	)
+	{
+		return true;
+	}
+	else {
+		return false
+	}
+}
 
 
 

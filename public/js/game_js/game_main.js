@@ -9,12 +9,30 @@ document.getElementById('gamecanvas').appendChild(canvas);
 
 
 // Game objects
+var grid = {
+	length : 32
+};
+
+var blocklock= {
+	left : false ,
+	top : false ,
+	right : false ,
+	bottom : false 
+};
+
 var hero = {
 	speed: 256, // movement in pixels per second
 	x : canvas.width / 2,
 	y : canvas.height / 2,
-	width : 30,  // thin!!!!!!!!!!!!!
-	height : 30, // thin!!!!!!!!!!!!!
+	end: {
+		x: canvas.width / 2,
+		y: canvas.height / 2,
+		Delay: 200,
+		Timer: 0
+	},
+	keylock : false,
+	width : 32,  // thin!!!!!!!!!!!!!
+	height : 32, // thin!!!!!!!!!!!!!
 	direction: {
 		x: 0,
 		y: 0,
@@ -86,6 +104,7 @@ var main = function () {
 		anim(delta); // game_animation.js
 		update(delta / 1000); // game_move.js
 	}
+	
 	render(); // game_draw.js
 	if(canask){
 		question();	// game_quiz.js

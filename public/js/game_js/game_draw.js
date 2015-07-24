@@ -71,7 +71,6 @@ var render = function () {
 	if (true) {
 		var nowimage = hero.animSet+hero.animFrame;
 		if (hero.direction.x==0 && hero.direction.y ==0) {
-			//console.log(hero.direction.now);
 		    switch (hero.direction.now){
             case "up":
             	draw(heroImageArray[0], canvas.width / 2, canvas.height / 2, 'hero');

@@ -1,63 +1,48 @@
 var anim = function (elapsed) {
 
-	// Stop moving the hero
-	hero.direction.x = 0;
-	hero.direction.y = 0;
+	// // Stop moving the hero
+	// hero.direction.x = 0;
+	// hero.direction.y = 0;
 
+	// window.onkeydown = function(e) {
+	// 	switch (e.keyCode){
+	// 		case 37:
+	// 			hero.direction.x = -1;
+	// 			hero.direction.now = "left";
+	// 			break;
+	// 		case 38:
+	// 			hero.direction.y = -1;
+	// 			hero.direction.now = "up";
+	// 			break;
+	// 		case 39:
+	// 			hero.direction.x = 1;
+	// 			hero.direction.now = "right";
+	// 			break;
+	// 		case 40:
+	// 			hero.direction.y = 1;
+	// 			hero.direction.now = "down";
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
 
-	// switch (){
- //        case 37:
- //        	console.log("left");
- //            break;
- //        case 38:  
- //            break;
- //        case 39:
- //            break;
- //        case 40: 
- //            break;
- //    }
-
- 	window.onkeydown = function(e) {
-		switch (e.keyCode){
-        case 37:
-        	hero.direction.x = -1;
-			hero.direction.now = "left";
-        	console.log("left");
-            break;
-        case 38:
-    		hero.direction.y = -1;
-			hero.direction.now = "up";
-        	console.log("up");
-            break;
-        case 39:
-    		hero.direction.x = 1;
-			hero.direction.now = "right";
-        	console.log("right");
-            break;
-        case 40:
-    		hero.direction.y = 1;
-			hero.direction.now = "down";
-        	console.log("down");
-            break;
- 	   }
-	}
-
-	// if (37 in keysDown) { // Left
+	// if (37 in keysDown && hero.keylock == false) { // Left
 	// 	hero.direction.x = -1;
 	// 	hero.direction.now = "left";
 	// }
 
-	// else if (38 in keysDown) { // Up
+	// if (38 in keysDown && hero.keylock == false ) { // Up
 	// 	hero.direction.y = -1;
 	// 	hero.direction.now = "up";
 	// }
 
-	// else if (39 in keysDown) { // Right
+	// if (39 in keysDown && hero.keylock == false ) { // Right
 	// 	hero.direction.x = 1;
 	// 	hero.direction.now = "right";
 	// }
 
-	// else if (40 in keysDown) { // Down
+	// if (40 in keysDown && hero.keylock == false ) { // Down
 	// 	hero.direction.y = 1;
 	// 	hero.direction.now = "down";
 	// }
