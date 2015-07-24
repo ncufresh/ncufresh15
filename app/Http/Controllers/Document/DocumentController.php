@@ -44,11 +44,43 @@ class DocumentController extends Controller
 			]);
 	}
 
+    public function edit($id_) {
+        $id = document::where('id', $id_)->value('id');
+        $content = document::where('id', $id)->value('content');
+        $cate_1 = document::where('catagory', 1)->get();
+        $cate_2 = document::where('catagory', 2)->get();
+        $cate_3 = document::where('catagory', 3)->get();
+        $cate_4 = document::where('catagory', 4)->get();
+        $cate_5 = document::where('catagory', 5)->get();
+        $cate_6 = document::where('catagory', 6)->get();
+        $cate_7 = document::where('catagory', 7)->get();
+        $cate_8 = document::where('catagory', 8)->get();
+        $cate_9 = document::where('catagory', 9)->get();
+        $cate_10 = document::where('catagory', 10)->get();
+        $cate_11 = document::where('catagory', 11)->get();
+        $cate_12 = document::where('catagory', 12)->get();
+        $cate_13 = document::where('catagory', 13)->get();
+        $cate_14 = document::where('catagory', 14)->get();
+        $cate_15 = document::where('catagory', 15)->get();
+        $cate_16 = document::where('catagory', 16)->get();
+        $cate_17 = document::where('catagory', 17)->get();
+        $cate_18 = document::where('catagory', 18)->get();
+        $cate_19 = document::where('catagory', 19)->get();
+
+        return view('document.editor')->with([
+            'id'=>$id, 'content'=>$content,
+            'cate_1'=>$cate_1, 'cate_2'=>$cate_2, 'cate_3'=>$cate_3, 'cate_4'=>$cate_4, 'cate_5'=>$cate_5, 
+            'cate_6'=>$cate_6, 'cate_7'=>$cate_7, 'cate_8'=>$cate_8, 'cate_9'=>$cate_9, 'cate_10'=>$cate_10, 
+            'cate_11'=>$cate_11, 'cate_12'=>$cate_12, 'cate_13'=>$cate_13, 'cate_14'=>$cate_14, 'cate_15'=>$cate_15,
+            'cate_16'=>$cate_16, 'cate_17'=>$cate_17, 'cate_18'=>$cate_18, 'cate_19'=>$cate_19
+            ]);
+    }
+
 	public function store(Request $request) {
 		$selected = $request->get('selected');
 		$content = $request->get('text');
 
-		document::where('id', '=', $selected)->update(['content'=>$content]);
+		document::findOrFail($selected)->update(['content'=>$content]);
 		return response()->json(['content'=>$content]);
 	}
 
