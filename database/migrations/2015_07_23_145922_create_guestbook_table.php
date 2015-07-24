@@ -12,7 +12,7 @@ class CreateGuestbookTable extends Migration
      */
     public function up()
     {
-        Schema::create('calenders', function(Blueprint $table){
+        Schema::create('guestbook', function(Blueprint $table){
             $table->string('name');
             $table->string('comment');            
             $table->increments('id'); 
