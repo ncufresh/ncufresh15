@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuestbookTable extends Migration
+class CraeteGuestbookTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,9 @@ class CreateGuestbookTable extends Migration
         Schema::create('guestbook', function(Blueprint $table){
             $table->string('name');
             $table->string('comment');            
-            $table->increments('id'); 
+            $table->increments('id');
+            $table->timestamps(); 
         });
-
-
     }
 
     /**
@@ -28,6 +27,6 @@ class CreateGuestbookTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('guestbook');
     }
 }

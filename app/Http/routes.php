@@ -130,10 +130,9 @@ Route::get('department/{id_1}/{id_2}/{id_3}', 'Document\DocumentController@docum
 
 // video
 //******************************************************************************************************
-Route::get('video2', function () {
-    return view('video\video2');
-});
-Route::get('video', function () {
-    return view('video\video');
-});
+Route::get('video2','Video\GuestbookController@index2');
+Route::get('video', 'Video\GuestbookController@index');
+Route::get('video2/{id}','Video\GuestbookController@show');
+Route::post('video2','Video\GuestbookController@add');
+Route::get('video/test', 'Video\GuestbookController@add');
 //******************************************************************************************************

@@ -44,20 +44,23 @@
 <!--<script src=''></script> -->
 <script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
 <script>
+
 $(document).ready(function(){
 
- $("#send").on("click", function() {
-    event.preventDefault();
+ $("#send").on("click", function(e) {
+    console.log("click");
+    e.preventDefault();
     $.ajax({  //ajax
-    url:"add.php", //including index.php!!!
-    type: "POST",
-    data: {name: $("#SendName").val() , comment: $("#SendComment").val() },   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
+      url:"/video2", //including index.php!!!
+      type: "POST",
+      data: {comment: $("#SendComment").val() },   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
 
-    success: function(msg) {
-    console.log(msg);   //js, save data
-         $("#0").append($(msg).hide().fadeIn(1000));  //append: add in the back
-          }
-      });
+      success: function(msg) {
+        console.log(msg.comment);   //js, save data
+        ($(".0").append("<p>"+msg.comment+"</p>").hide()).fadeIn(1000);  //append: add in the back
+        //$("#0").append(msg.comment);
+      }
+    });
   });
  $(document).on("click", ".delete" , function() {
      event.preventDefault();
@@ -67,7 +70,7 @@ $(document).ready(function(){
     data: {id: $(this).val()},   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
 
     success: function(msg) {
-    console.log(msg);   //js, save data
+          console.log(msg);   //js, save data
          $("#"+msg).hide(1000);  //append: add in the back
           }
       });
@@ -94,12 +97,16 @@ $(document).ready(function(){
     <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
     <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
   </video>
-
-
-
-
           <p>影片簡介：</p>
           <p>一一一一</p>
+          @foreach($tryconnect as $try)
+            <p>
+            <a href="{{ action('Video\GuestbookController@show',[$try->id]) }}">{{ $try->name }}</a>
+            <div>
+            {{  $try->comment  }}
+            </div>
+            </p>
+          @endforeach
           <p>一一一一</p>
       </div>
 <!--留言的Ssection( orange accent-2)-->    
@@ -108,12 +115,15 @@ $(document).ready(function(){
             <div class="card-content white-text" style="height:85%;">
               <span class="card-title">留言板</span>
 
+              <p class="0"></p>
 
             </div>
             <div class="card-action">
             <div class="col s9">
             <p style="color:white">Message:</p>
-            <input type="text" name="message" style="background-color: white; width:100%;height:25px;margin-left:-5px">
+            <form method="post" >
+            {!! csrf_field() !!}
+            <input type="text" id="SendComment" name="comment" style="background-color: white; width:100%;height:25px;margin-left:-5px">
             </div>
             <div class="col s3">
             <p>  </p>
@@ -123,6 +133,7 @@ $(document).ready(function(){
             </button>
             </div>
             </div>
+            </form>
           </div>
          </div>
     </div>
