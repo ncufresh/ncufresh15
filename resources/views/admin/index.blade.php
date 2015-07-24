@@ -110,7 +110,7 @@
 							<h4>新增行事曆</h4>
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="input-field col s12">
-								<input id="cal-title" type="text" name='title' class="validate" required>
+								<input id="cal-title" type="text" name='title' class="validate" length="20" required>
 								<label for="cal-title">行事曆標題</label>
 							</div>
 							<div class="input-field col s12">
@@ -147,7 +147,7 @@
 						<h4>更新行事曆</h4>
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="input-field col s12">
-							<input id="cal-update-title" type="text" name='title' class="validate" required>
+							<input id="cal-update-title" type="text" name='title' length="20" class="validate" required>
 						</div>
 						<div class="input-field col s12">
 							<textarea id="cal-update-content" name='content' class="validate materialize-textarea" required></textarea>

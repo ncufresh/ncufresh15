@@ -156,27 +156,28 @@
 	height: 100%;
 	display: block;
 	word-break: break-all;
-	padding-top: 0.9rem;
+	padding-top: 0.6rem;
 	color: white;
+	text-align: center;
 }
 
-.event-box:after {
-	content: "9";
+.tag:after {
+	content: attr(num);
 	color: white;
-	padding-left: 7px;
 	width: 11%;
 	height: 1.4em;
 	position: absolute;
 	z-index: 1;
 	top: 1em;
-	left: 101%;
+	left: 106%;
 	border-radius: 50%;
 	background-color: #ec407a;
 }
 
 #event-container>.dick {
 	border-right: 2px solid grey;
-	padding-left: 3%;
+	padding-left: 2%;
+	padding-right: 2%;
 }
 
 #event-container .event-box {
@@ -190,7 +191,7 @@
 	position: absolute;
 	top: 0.7em;
 	border-radius: 50%;
-	/*border-right: 3px solid grey;*/
+	border-right: 2px solid grey;
 }
 
 #ann-tab .row , #qa-tab .row, #doc-tab .row{
@@ -216,19 +217,29 @@
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
+	color: white;
 }
 #arrow-container2 {
 	background-color: #CCCCCC;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
+	color: black;
 }
 
 .arrow {
 	width: 100%;
 	height: 100%;
 	padding: 0;
+	text-align: center;
+	padding-top: 15%;
+	font-size: 35px;
 }
+
+#arrow1 {
+	color: white;
+}
+
 #puzzle-container {
 	width: 90%;
 	padding-right: 0;
