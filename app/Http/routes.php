@@ -43,6 +43,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
+// knowledge
+Route::get('knowledge/{id}', 'KnowledgeController@show');
+
 // Q&A
 //------------------------------------------------------------------------------------------------------
 Route::get ('qa' , 'QaController@index');
