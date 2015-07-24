@@ -10,8 +10,8 @@ class CreateCalenderTable extends Migration{
 			$table->string('title');
 			$table->text('content');
 			$table->date('event_date');
-			$table->date('previous_date')->default('0000-00-00');
-			$table->date('next_date')->default('2016-12-31');
+			$table->date('previous_date');
+			$table->date('next_date');
 			$table->timestamps();
 		});
     }
