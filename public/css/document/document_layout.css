@@ -1,27 +1,17 @@
-#content {
-  padding: 0px;
+.collapsible-header {
+  color: rgb(3, 155, 229);
 }
 
-#main {
-  text-align: center;
-  font-size: 1.5em;
+.collapsible-header {
+  background-color: #eee;
 }
 
-.main-list {
-  display: inline-block;
-  padding: .5em;
-  vertical-align: top;
-  
-  & > ul, & > div {
-    position: absolute;
-    top: 2em;
-    right: 0;
-    display: none;
-    width: 100vw;
+.list_1 {
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
 
-    & > li {
-      display: inline-block;
-      padding: .2em;
-    }
-  }
+.list_2 {
+  margin: 7px;
+  padding-left: 21px;
 }

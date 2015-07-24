@@ -3,6 +3,7 @@
 @section('title', '公告')
 
 @section('css')
+<link type="text/css" rel="stylesheet" href="{{ asset('css/document/document_layout.css') }}"  media="screen,projection"/>
 @stop
 
 @section('js')
@@ -22,29 +23,29 @@
 	<h4>文件及下載專區</h4>
 	@endif
 @else
-	@if($page_id === "university" && $page_id === 1)
+	@if($page_id === "university" && $page_id_2 === 1)
 	<h4>學籍(大學部)</h4>
-	@elseif($page_id === "university" && $page_id === 2)
+	@elseif($page_id === "university" && $page_id_2 === 2)
 	<h4>繳費(大學部)</h4>
-	@elseif($page_id === "university" && $page_id === 3)
+	@elseif($page_id === "university" && $page_id_2 === 3)
 	<h4>兵役(大學部)</h4>
-	@elseif($page_id === "university" && $page_id === 4)
+	@elseif($page_id === "university" && $page_id_2 === 4)
 	<h4>住宿(大學部)</h4>
-	@elseif($page_id === "university" && $page_id === 5)
+	@elseif($page_id === "university" && $page_id_2 === 5)
 	<h4>學生證(大學部)</h4>
-	@elseif($page_id === "university" && $page_id === 6)
+	@elseif($page_id === "university" && $page_id_2 === 6)
 	<h4>其他(大學部)</h4>
-	@elseif($page_id === "graduate" && $page_id === 1)
+	@elseif($page_id === "graduate" && $page_id_2 === 1)
 	<h4>學籍(研究所)</h4>
-	@elseif($page_id === "graduate" && $page_id === 2)
+	@elseif($page_id === "graduate" && $page_id_2 === 2)
 	<h4>繳費(研究所)</h4>
-	@elseif($page_id === "graduate" && $page_id === 3)
+	@elseif($page_id === "graduate" && $page_id_2 === 3)
 	<h4>兵役(研究所)</h4>
-	@elseif($page_id === "graduate" && $page_id === 4)
+	@elseif($page_id === "graduate" && $page_id_2 === 4)
 	<h4>住宿(研究所)</h4>
-	@elseif($page_id === "graduate" && $page_id === 5)
+	@elseif($page_id === "graduate" && $page_id_2 === 5)
 	<h4>學生證(研究所)</h4>
-	@elseif($page_id === "graduate" && $page_id === 6)
+	@elseif($page_id === "graduate" && $page_id_2 === 6)
 	<h4>其他(研究所)</h4>
 	@endif
 @endif

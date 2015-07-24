@@ -3,11 +3,7 @@
 @section('title', '公告編輯')
 
 @section('css')
-<style type="text/css">
-td {
-	  border: 1px solid #989090;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="{{ asset('css/document/document_layout.css') }}"  media="screen,projection"/>
 @stop
 
 @section('js')
