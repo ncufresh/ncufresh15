@@ -5,7 +5,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
 	bgReady = true;
 };
-bgImage.src = "game_images/background2.png";
+bgImage.src = "game_images/background.png";
 
 ///////////////////////////
 bgImage.width = 3200;

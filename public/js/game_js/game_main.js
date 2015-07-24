@@ -1,16 +1,13 @@
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-// canvas.width = 512;
-// canvas.height = 480;
 canvas.width = 640;
 canvas.height = 512;
 document.getElementById('gamecanvas').appendChild(canvas);
 
-
 // Game objects
 var grid = {
-	length : 32
+	length : 64
 };
 
 var blocklock= {
@@ -31,8 +28,8 @@ var hero = {
 		Timer: 0
 	},
 	keylock : false,
-	width : 32,  // thin!!!!!!!!!!!!!
-	height : 32, // thin!!!!!!!!!!!!!
+	width : grid.length,
+	height : grid.length,
 	direction: {
 		x: 0,
 		y: 0,
@@ -45,25 +42,28 @@ var hero = {
 	animNumFrames: 2,
 	animDelay: 200,
 	animTimer: 0,
+
 	canmove : true
 };
 var monster = {};
 var monstersCaught = 0;
 
 var box = {
-	x : 32,
-	y : 64,
-	width : 32,
-	height : 32
+	x : 0,
+	y : 0,
+	width : 64,
+	height : 64
 };
 
-var block1 = {x:160,y:32,width:32,height:320,type:"block"};
-var block2 = {x:960,y:288,width:1280,height:32,type:"block"};
-var block3 = {x:320,y:0,width:32,height:192,type:"block"};
-var block4 = {x:0,y:320,width:896,height:32,type:"block"};
-var block5 = {x:96,y:32,width:32,height:320,type:"block"};
+var road1 = {x:64,y:64,width:64,height:320,type:"block"};
 
-var blocks=[block1,block2,block3,block4,block5];
+var block1 = {x:64,y:128,width:192,height:64,type:"block"};
+var block2 = {x:64,y:128,width:64,height:192,type:"block"};
+var block3 = {x:64,y:256,width:192,height:64,type:"block"};
+// var block4 = {x:0,y:320,width:896,height:32,type:"block"};
+// var block5 = {x:96,y:32,width:32,height:320,type:"block"};
+var blocks=[block1,block2,block3];
+// var blocks=[block1,block2,block3,block4,block5];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");
@@ -78,10 +78,10 @@ var reset = function () {
 	snd.play();
 
 	// Throw the monster somewhere on the screen randomly
-	monster.x = 32 + (Math.random() * (canvas.width - 64));
-	monster.y = 32 + (Math.random() * (canvas.height - 64));
-	monster.width = 32;
-	monster.height = 32;
+	monster.x = grid.length + (Math.random() * (canvas.width - 128));
+	monster.y = grid.length + (Math.random() * (canvas.height - 128));
+	monster.width = grid.length;
+	monster.height = grid.length;
 
 	for (i=0;i<blocks.length ;i++ )
 	{

@@ -58,8 +58,8 @@ var render = function () {
 	if (grassReady) {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
-				//draw(grassImage,32*i,32*j);
-				draw(testImage,32*i,32*j);
+				draw(grassImage,grid.length*i,grid.length*j);
+				//draw(testImage,grid.length*i,grid.length*j);
 			};
 		};
 		
@@ -98,17 +98,25 @@ var render = function () {
 		draw(monsterImage, monster.x, monster.y);
 	}
 	if (blockReady) {
-		for (i=0;i<blocks.length ;i++ )
+		for (i=0;i<blocks.length;i++ )
 		{
-			if (blocks[i].width!=32) {
-				for(j=0;j<blocks[i].width/32;j++){
-					draw(blockImage, blocks[i].x+32*j, blocks[i].y);
+			// if (blocks[i].width!=32 && blocks[i].height==32) {
+			// 	for(j=0;j<blocks[i].width/32;j++){
+			// 		draw(blockImage, blocks[i].x+32*j, blocks[i].y);
+			// 	}
+			// }
+			// else if(blocks[i].width==32 && blocks[i].height!=32){
+			// 	for(j=0;j<blocks[i].height/32;j++){
+			// 		draw(blockImage, blocks[i].x, blocks[i].y+32*j);
+			// 	}			
+			// }
+			// else if(blocks[i].width!=32 && blocks[i].height!=32){
+			if(blocks[i].width!=grid.length || blocks[i].height!=grid.length){
+				for(j=0;j<blocks[i].width/grid.length;j++){
+					for(k=0;k<blocks[i].height/grid.length;k++){
+						draw(blockImage, blocks[i].x+grid.length*j, blocks[i].y+grid.length*k);
+					}
 				}
-			}
-			else if(blocks[i].height!=32){
-				for(j=0;j<blocks[i].height/32;j++){
-					draw(blockImage, blocks[i].x, blocks[i].y+32*j);
-				}			
 			}
 			else{
 				draw(blockImage, blocks[i].x, blocks[i].y);

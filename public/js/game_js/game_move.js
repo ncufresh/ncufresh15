@@ -14,9 +14,6 @@ var update = function (modifier) {
 
 	//console.log("(endx"+hero.end.x+"&x"+hero.x+")(endy"+hero.end.y+"&y"+hero.y);
 	//console.log("hero.keylock"+hero.keylock);
-	console.log(blocklock.right);
-
-
 
 	// left
 	if (hero.direction.now == 'left' && hero.keylock==true) {
@@ -66,11 +63,12 @@ var update = function (modifier) {
 			}
 		}
 
-		// canask=false;
-		// if(isTouching(hero,box)){
-		// 	hero.x = box.x + box.width + 1 ;
-		// 	canask=true;
-		// }	
+		canask=false;
+		if(isTouchingleft(hero,box)){
+			hero.x = box.x + box.width;
+			blocklock.left = true ;
+			canask=true;
+		}	
 
 		if(hero.x - grid.length >= 0 && blocklock.left == false ){ // edge
 			//hero.x -=  grid.length;
@@ -98,11 +96,12 @@ var update = function (modifier) {
 			}
 		}
 
-		// canask=false;
-		// if(isTouching(hero,box)){
-		// 	hero.y = box.y + box.height + 1 ;
-		// 	canask=true;
-		// }
+		canask=false;
+		if(isTouchingup(hero,box)){
+			hero.y = box.y + box.height;
+			blocklock.top = true;
+			canask=true;
+		}
 
 		if(hero.y - grid.length >= 0 && blocklock.top==false){ // edge
 			//hero.y -=  grid.length;
@@ -129,11 +128,12 @@ var update = function (modifier) {
 			}
 		}
 		
-		// canask=false;
-		// if(isTouching(hero,box)){
-		// 	hero.x = box.x - box.width - 1 ;
-		// 	canask=true;
-		// }
+		canask=false;
+		if(isTouchingright(hero,box)){
+			hero.x = box.x - box.width;
+			blocklock.right = true;
+			canask=true;
+		}
 
 		if(hero.x + grid.length <= bgImage.width-grid.length && blocklock.right==false){ // edge
 			//hero.x +=  grid.length;
@@ -160,11 +160,12 @@ var update = function (modifier) {
 			}
 		}
 
-		// canask=false;
-		// if(isTouching(hero,box)){
-		// 	hero.y = box.y - box.height - 1 ;
-		// 	canask=true;
-		// }
+		canask=false;
+		if(isTouchingdown(hero,box)){
+			hero.y = box.y - box.height;
+			blocklock.bottom = true;
+			canask=true;
+		}
 		
 		if(hero.y + grid.length <= bgImage.height-grid.length && blocklock.bottom==false){ // edge
 			//hero.y +=  grid.length;
