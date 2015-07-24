@@ -17,3 +17,6 @@ $("#daily").click(function(){
 $("#download").click(function(){
 	window.location.href = '/document/download';
 });
+$("#contact").click(function(){
+	window.location.href = '/document/contact';
+});

@@ -14,39 +14,44 @@
 <!--標題-->
 @if($page_id_2 === 0)
 	@if($page_id === "freshmen_week")
-	<h4>新生週</h4>
+	<h5>新生週</h5>
 	@elseif($page_id === "activity")
-	<h4>輔導及活動專區</h4>
+	<h5>輔導及活動專區</h5>
 	@elseif($page_id === "daily")
-	<h4>生活相關須知</h4>
+	<h5>生活相關須知</h5>
 	@elseif($page_id === "download")
-	<h4>文件及下載專區</h4>
+	<h5>文件及下載專區</h5>
 	@endif
 @else
 	@if($page_id === "university" && $page_id_2 === 1)
-	<h4>學籍(大學部)</h4>
+	<h5>重要日程(大學部)</h5>
 	@elseif($page_id === "university" && $page_id_2 === 2)
-	<h4>繳費(大學部)</h4>
+	<h5>學籍(大學部)</h5>
 	@elseif($page_id === "university" && $page_id_2 === 3)
-	<h4>兵役(大學部)</h4>
+	<h5>繳費(大學部)</h5>
 	@elseif($page_id === "university" && $page_id_2 === 4)
-	<h4>住宿(大學部)</h4>
+	<h5>兵役(大學部)</h5>
 	@elseif($page_id === "university" && $page_id_2 === 5)
-	<h4>學生證(大學部)</h4>
+	<h5>住宿(大學部)</h5>
 	@elseif($page_id === "university" && $page_id_2 === 6)
-	<h4>其他(大學部)</h4>
+	<h5>學生證(大學部)</h5>
+	@elseif($page_id === "university" && $page_id_2 === 7)
+	<h5>其他(大學部)</h5>
+
 	@elseif($page_id === "graduate" && $page_id_2 === 1)
-	<h4>學籍(研究所)</h4>
+	<h5>重要日程(研究所)</h5>
 	@elseif($page_id === "graduate" && $page_id_2 === 2)
-	<h4>繳費(研究所)</h4>
+	<h5>學籍(研究所)</h5>
 	@elseif($page_id === "graduate" && $page_id_2 === 3)
-	<h4>兵役(研究所)</h4>
+	<h5>繳費(研究所)</h5>
 	@elseif($page_id === "graduate" && $page_id_2 === 4)
-	<h4>住宿(研究所)</h4>
+	<h5>兵役(研究所)</h5>
 	@elseif($page_id === "graduate" && $page_id_2 === 5)
-	<h4>學生證(研究所)</h4>
+	<h5>住宿(研究所)</h5>
 	@elseif($page_id === "graduate" && $page_id_2 === 6)
-	<h4>其他(研究所)</h4>
+	<h5>學生證(研究所)</h5>
+	@elseif($page_id === "graduate" && $page_id_2 === 7)
+	<h5>其他(研究所)</h5>
 	@endif
 @endif
 <!--目錄-->

@@ -32,11 +32,15 @@ class DocumentController extends Controller
     	$cate_14 = document::where('catagory', 14)->get();
     	$cate_15 = document::where('catagory', 15)->get();
     	$cate_16 = document::where('catagory', 16)->get();
+        $cate_17 = document::where('catagory', 17)->get();
+        $cate_18 = document::where('catagory', 18)->get();
+        $cate_19 = document::where('catagory', 19)->get();
 
 		return view('document.editor')->with([
 			'cate_1'=>$cate_1, 'cate_2'=>$cate_2, 'cate_3'=>$cate_3, 'cate_4'=>$cate_4, 'cate_5'=>$cate_5, 
 			'cate_6'=>$cate_6, 'cate_7'=>$cate_7, 'cate_8'=>$cate_8, 'cate_9'=>$cate_9, 'cate_10'=>$cate_10, 
-			'cate_11'=>$cate_11, 'cate_12'=>$cate_12, 'cate_13'=>$cate_13, 'cate_14'=>$cate_14, 'cate_15'=>$cate_15,'cate_16'=>$cate_16
+			'cate_11'=>$cate_11, 'cate_12'=>$cate_12, 'cate_13'=>$cate_13, 'cate_14'=>$cate_14, 'cate_15'=>$cate_15,
+            'cate_16'=>$cate_16, 'cate_17'=>$cate_17, 'cate_18'=>$cate_18, 'cate_19'=>$cate_19
 			]);
 	}
 
@@ -49,8 +53,10 @@ class DocumentController extends Controller
 	}
 
     public function get_content_1($page_id) {
-        if($page_id === "university" || $page_id === "graduate") {
-            return view('document.list')->with('page_id', $page_id);
+        if($page_id === "contact"){
+            $title = document::where('page_id', $page_id)->value('title');
+            $content = document::where('page_id', $page_id)->value('content');
+            return view('document.page')->with(['title'=>$title, 'content'=>$content]);
         }else{
             $id_1 = document::where(['page_id'=>$page_id, 'page_id_2'=>0])->value('page_id');
             $id_2 = document::where(['page_id'=>$page_id, 'page_id_2'=>0])->value('page_id_2');

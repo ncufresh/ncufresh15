@@ -12,7 +12,7 @@
 @stop
 
 @section('text')
-<h3>{{$title}}</h3>
+<h5>{{$title}}</h5>
 <div>
 	{{$content}}
 
