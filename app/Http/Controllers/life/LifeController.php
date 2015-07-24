@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Life;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use App\Helpers\SitemapHelper;
 use App\LifePictures;
 use App\Life;
 use App\Http\Requests;
@@ -12,6 +13,9 @@ use App\Http\Controllers\Controller;
 
 class LifeController extends Controller
 {
+    function __construct() {
+        SitemapHelper::push('中大生活', 'life'); /*前面是顯示的字，後面是網址*/
+    }
     /**
      * Display a listing of the resource.
      *
@@ -63,9 +67,18 @@ class LifeController extends Controller
      */
     public function show($id)
     {
-        
+        $category = [
+            'food' => '食',
+            'play' => '樂',
+            'edu'  => '育',
+            'live' => '住',
+            'traffic' => '行'
+        ];
+
         $show = Life::findOrFail($id);      /*findOrFail()找不到$id會丟一個錯誤訊息*/
-        $pics = LifePictures::where('lifes_id',$id)->get();
+        $pics = LifePictures::where('lifes_id',$id)->get(); /*去找對應的圖片*/
+        SitemapHelper::push($category[$show->category], 'life/category/'.$show->category);/*顯示食住育樂行*/
+        SitemapHelper::push($show->name, 'life/'.$show->id); /*顯示後面的小類別(小木屋鬆餅)*/
         return view('life.show',[
             'show' => $show,
             'pictures' => $pics
@@ -143,6 +156,14 @@ class LifeController extends Controller
     public function introduce($category)
     {
         //
+        $type = [
+            'food' => '食',
+            'play' => '樂',
+            'edu'  => '育',
+            'live' => '住',
+            'traffic' => '行'
+        ];
+        SitemapHelper::push($type[$category], 'life/category/'.$category); /*$category儲存food，$type[food]會對應食*/
         return view('life.category.'.$category);                    
     }
     public function add_pictures(Request $request,$id)

@@ -16,7 +16,6 @@
 		transition:all 0.5s; 
 	}
 	#b{
-		height: 80%;
 		width: 80%;
 		background-image:url("img/life/lifebackground.png");
 		background-size:100% auto;
@@ -24,16 +23,24 @@
 		position: relative; 
 		margin: 0% auto;
 	}
+	#b:before{
+		content:"";
+		display:block;
+		padding-top:80%;
+	}
 	#b1{
 		background-image:url('img/life/live.png');
 		top:-5%;
 		left:-4%;
 		width:30%;
-		height:55%;
+	}
+	#b1:before{
+		content:"";
+		display:block;
+		padding-top:123%;
 	}
 	#b1:hover{
 		width:36%;
-		height:70%;
 		left:-9%;
 		top:-10%;
 	}
@@ -42,11 +49,14 @@
 		right:-4%;
 		top:-5%;
 		width:38%;
-		height: 56%;
+	}
+	#b2:before{
+		content:"";
+		display:block;
+		padding-top:110%;
 	}
 	#b2:hover{
 		width:46%;
-		height:64%;
 		right:-9%;
 		top:-10%;
 	}
@@ -54,40 +64,51 @@
 		background-image:url('img/life/food.png');
 		top:23%;
 		right:30%; 
-		height:62%;
 		width:36%;
+	}
+	#b3:before{
+		content:"";
+		display:block;
+		padding-top:116%;
 	}
 	#b3:hover{
 		width:44%;
-		height:70%;
 		right:23%;
 		top:19%;
 	}
 	#b4{
 		background-image:url('img/life/edu.png');
-		bottom:-17%;
+		bottom:-6%;
 		left:-4%;
 		width:30%;
-		height: 60%;
+	}
+	#b4:before{
+		content:"";
+		display:block;
+		padding-top:120%;
 	}
 	#b4:hover{
 		width:38%;
-		height:69%;
 		left:-9%;
-		bottom:-20%;
+		bottom:-11%;
 	}
 	#b5{
 		background-image:url('img/life/play.png');
-		bottom:-8%;
+		bottom:-12%;
 		right:-3%; 
 		width:34%;
 		height:51%;
+	}
+	#b5:before{
+		content:"";
+		display:block;
+		padding-top:120%;
 	}
 	#b5:hover{
 		width:42%;
 		height:60%;
 		right:-8%;
-		bottom:-11%;
+		bottom:-17%;
 	}
 </style>
 @stop

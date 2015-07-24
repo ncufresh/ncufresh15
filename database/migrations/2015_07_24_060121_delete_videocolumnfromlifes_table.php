@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnLifestable extends Migration
+class DeleteVideocolumnfromlifesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class AddColumnLifestable extends Migration
      */
     public function up()
     {
-        Schema::table('lifes', function (Blueprint $table) {
-            $table->text('video')->nullable();
-        });
         //
+        Schema::table('lifes', function (Blueprint $table) {
+            $table->dropColumn('video');
+        });
     }
 
     /**
@@ -27,7 +27,7 @@ class AddColumnLifestable extends Migration
     {
         //
         Schema::table('lifes', function (Blueprint $table) {
-            $table->dropColumn('video');
+            $table->text('video')->nullable();
         });
     }
 }

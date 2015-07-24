@@ -7,14 +7,6 @@
 	h2{
 		color:blue;
 	}
-	#b{
-		height: 100%;
-		background-image: url("/img/life/food_background.png");
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		position: relative;
-	}
-
 	.puzzle {
 		position: absolute;
 		background-size:100% auto;
@@ -22,16 +14,30 @@
 		display:block;
 		transition: all 0.5s;
 	}
+	#b{
+		background-image: url("/img/life/food_background.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	#b:before{
+		content:"";
+		display:block;
+		padding-top:120%;
+	}
 	#b1{
 		background-image:url('/img/life/food/G14.png');
 		top:6%;
 		left:6%;
-		width:26%;
-		height:30%; 
+		width:26%; 
+	}
+	#b1:before{
+		content:"";
+		display:block;
+		padding-top:100%;
 	}
 	#b1:hover{
 		width:36%;
-		height:40%;
 		left:1%;
 		top:1%;
 	}
@@ -39,12 +45,15 @@
 		background-image:url('/img/life/food/9R.png');
 		top:3%;
 		right:32%;
-		width:31%;
-		height:30%; 
+		width:31%; 
+	}
+	#b2:before{
+		content:"";
+		display:block;
+		padding-top:70%;
 	}
 	#b2:hover{
 		width:41%;
-		height:40%;
 		right:27%;
 		top:-2%;
 	}
@@ -53,11 +62,14 @@
 		top:8%;
 		right:2%;
 		width:28%;
-		height:30%; 
+	}
+	#b3:before{
+		content:"";
+		display:block;
+		padding-top:80%;
 	}
 	#b3:hover{
 		width:38%;
-		height:40%;
 		right:-3%;
 		top:3%;
 	}
@@ -65,12 +77,15 @@
 		background-image:url('/img/life/food/backhome.png');
 		top:27%;
 		left:17%;
-		width:23%;
-		height:30%; 
+		width:23%; 
+	}
+	#b4:before{
+		content:"";
+		display:block;
+		padding-top:100%;
 	}
 	#b4:hover{
 		width:33%;
-		height:40%;
 		left:12%;
 		top:22%;
 	}
@@ -78,12 +93,15 @@
 		background-image:url('/img/life/food/late_night.png');
 		top:21%;
 		right:25%;
-		width:28%;
-		height:30%; 
+		width:28%; 
+	}
+	#b5:before{
+		content:"";
+		display:block;
+		padding-top:70%;
 	}
 	#b5:hover{
 		width:38%;
-		height:40%;
 		right:20%;
 		top:16%;
 	}
@@ -91,12 +109,15 @@
 		background-image:url('/img/life/food/pancake.png');
 		top:32%;
 		right:1%;
-		width:27%;
-		height:30%; 
+		width:27%; 
+	}
+	#b6:before{
+		content:"";
+		display:block;
+		padding-top:70%;
 	}
 	#b6:hover{
 		width:37%;
-		height:40%;
 		right:-4%;
 		top:27%;
 	}
@@ -104,40 +125,58 @@
 		background-image:url('/img/life/food/pine.png');
 		top:40%;
 		right:25%;
-		width:26%;
-		height:30%; 
+		width:26%; 
+	}
+	#b7:before{
+		content:"";
+		display:block;
+		padding-top:80%;
 	}
 	#b7:hover{
 		top:35%;
 		right:20%;
 		width:36%;
-		height:40%; 
 	}
 	#b8{
 		background-image:url('/img/life/food/crepe.png');
-		bottom:8%;
+		bottom:20%;
 		left:1%;
 		width:28%;
-		height:30%; 
+	}
+	#b8:before{
+		content:"";
+		display:block;
+		padding-top:80%;
 	}
 	#b8:hover{
-		bottom:3%;
+		bottom:15%;
 		left:-4%;
 		width:38%;
-		height:40%;
 	}
 	#b9{
 		background-image:url('/img/life/food/cafe.png');
-		bottom:-5%;
-		left:21%;
+		bottom:8%;
+		left:22%;
 		width:28%;
-		height:30%; 
+	}
+	#b9:before{
+		content:"";
+		display:block;
+		padding-top:80%;
 	}
 	#b9:hover{
-		bottom:-10%;
-		left:16%;
+		bottom:3%;
+		left:17%;
 		width:38%;
-		height:40%;
+	}
+	iframe{
+		width:100%;
+		margin:30% auto;
+	}
+	iframe:before{
+		content:"";
+		display:block;
+		padding-top:50%;
 	}
 </style>
 @stop
@@ -146,6 +185,7 @@
 	<div class="row">
 		<div class="col s12 m4 l4">
 			<h2>食</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
 			<div class="col s12 m8 l8" id="b">

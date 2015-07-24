@@ -40,7 +40,7 @@
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
 				<li><a href="#">新生必讀</a></li>
-				<li><a href="#">中大生活</a></li>
+				<li><a href="{{ url('life') }}">中大生活</a></li>
 				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
 				<ul id='nav-links' class='dropdown-content'>
 					<li><a href="#!">one</a></li>
@@ -61,7 +61,7 @@
 			<ul class="side-nav" id="mobile-nav">
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
 				<li><a href="#">新生必讀</a></li>
-				<li><a href="#">中大生活</a></li>
+				<li><a href="{{ url('life') }}">中大生活</a></li>
 				<li class='no-padding'>
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold">
@@ -106,7 +106,7 @@
                             <div id='nop'>yo</div>
                             <a id='logo' href='{{url('/')}}'></a>
                         </div>
-						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>中大生活</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href="{{ url('life') }}">中大生活</a></div>
 						<div class='col s2'><a class='links waves-effect waves-teal btn-flat' data-activates='banner-links'>常用連結</a></div>
 						<ul id='banner-links' class='dropdown-content'>
 							<li><a href="#!">one</a></li>
