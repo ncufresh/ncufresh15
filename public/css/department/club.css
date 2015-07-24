@@ -83,3 +83,10 @@
 	min-height: 150px;
 	max-height: 300px;
 }
+/**Card**/
+.cardCon1 {
+	height: 200px;
+}
+.cardCon2 {
+	height: 220px;
+}
