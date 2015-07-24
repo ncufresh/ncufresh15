@@ -1,0 +1,230 @@
+#campus {
+	width: 100%;
+}
+
+.builging {
+	transition:all 0.5s;
+}
+/*============================================================================*/
+/*space*/
+#administration1 {
+	position: absolute;
+	left: 39%;
+	top: 3.5%;
+	width: 7%;
+	z-index: 1;
+}
+#administration1:hover {
+	left: 38.3%;
+	top: 2.5%;
+	width: 8.5%;
+}
+/*administration*/
+#administration2 {
+	position: absolute;
+	left: 44%;
+	top: 69%;
+	width: 10%;
+	z-index: 1;
+}
+#administration2:hover {
+	left: 43%;
+	top: 68.5%;
+	width: 12%;
+}
+/*library*/
+#administration3 {
+	position: absolute;
+	left: 44.5%;
+	top: 59.1%;
+	width: 8.5%;
+	z-index: 2;
+}
+#administration3:hover {
+	left: 43.5%;
+	top: 58.8%;
+	width: 10%;
+}
+/*oldlibrary*/
+#administration4 {
+	position: absolute;
+	left: 44%;
+	top: 55.5%;
+	width: 9.8%;
+	z-index: 1;
+}
+#administration4:hover {
+	left: 43%;
+	top: 54.8%;
+	width: 11.8%;
+}
+/*country*/
+#administration5 {
+	position: absolute;
+	left: 69%;
+	top: 61%;
+	width: 7%;
+	z-index: 3;
+}
+#administration5:hover {
+	left: 68%;
+	top: 59.7%;
+	width: 9%;
+}
+/*complex*/
+#administration6 {
+	position: absolute;
+	left: 69.5%;
+	top: 48.7%;
+	width: 4%;
+	z-index: 1;
+}
+#administration6:hover {
+	left: 68.5%;
+	top: 47.7%;
+	width: 5.5%;
+}
+/*history*/
+#administration7 {
+	position: absolute;
+	left: 25%;
+	top: 75%;
+	width: 8%;
+	z-index: 1;
+}
+#administration7:hover {
+	left: 24%;
+	top: 74%;
+	width: 10%;
+}
+/*jiuder*/
+#administration8 {
+	position: absolute;
+	left: 16%;
+	top: 79%;
+	width: 7.5%;
+	z-index: 1;
+}
+#administration8:hover {
+	left: 15%;
+	top: 78.5%;
+	width: 9.5%;
+}
+/*yuyi*/
+#administration9 {
+	position: absolute;
+	left: 12%;
+	top: 72.5%;
+	width: 4.5%;
+	z-index: 1;
+}
+#administration9:hover {
+	left: 11.3%;
+	top: 71.3%;
+	width: 6%;
+}
+/*jidao*/
+#administration10 {
+	position: absolute;
+	left: 11.5%;
+	top: 60%;
+	width: 5.5%;
+	z-index: 2;
+}
+#administration10:hover {
+	left: 10.5%;
+	top: 59%;
+	width: 7.5%;
+}
+/*blackbox*/
+#administration11 {
+	position: absolute;
+	left: 58%;
+	top: 67.5%;
+	width: 8%;
+	z-index: 2;
+}
+#administration11:hover {
+	left: 57%;
+	top: 66.5%;
+	width: 10%;
+}
+/*============================================================================*/
+/*literature*/
+#department1 {
+	position: absolute;
+	left: 55%;
+	top: 62.2%;
+	width: 10.5%;
+	z-index: 1;
+}
+#department1:hover {
+	left: 54%;
+	top: 61.9%;
+	width: 12.5%;
+}
+/*engineering1*/
+#department2 {
+	position: absolute;
+	left: 29.3%;
+	top: 47.3%;
+	width: 7%;
+	z-index: 2;
+}
+#department2:hover {
+	left: 28.3%;
+	top: 46.3%;
+	width: 9%;
+}
+/*engineering2*/
+#department3 {
+	position: absolute;
+	left: 30%;
+	top: 39.7%;
+	width: 5.7%;
+	z-index: 1;
+}
+#department3:hover {
+	left: 29%;
+	top: 38.6%;
+	width: 7.7%;
+}
+/*engineering3*/
+#department4 {
+	position: absolute;
+	left: 38%;
+	top: 15.5%;
+	width: 10.5%;
+	z-index: 2;
+}
+#department4:hover {
+	left: 37%;
+	top: 14.5%;
+	width: 12.5%;
+}
+/*engineering4*/
+#department5 {
+	position: absolute;
+	left: 46%;
+	top: 6.5%;
+	width: 11.5%;
+	z-index: 2;
+}
+#department5:hover {
+	left: 45.2%;
+	top: 5.5%;
+	width: 13.5%;
+}
+
+#department12 {
+	position: absolute;
+	left: 71.3%;
+	top: 54%;
+	width: 8.5%;
+	z-index: 2;
+}
+#department12:hover {
+	left: 70.4%;
+	top: 53.2%;
+	width: 10%;
+}

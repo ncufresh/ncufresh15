@@ -1,6 +1,7 @@
 @extends('campus/sidebar')
 
 @section('js')
+<script src="{{ asset('js/campus/campus.js') }}"></script>
 <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     $(function() {
@@ -22,14 +23,14 @@
 		<option value="4">飲食</option>
 		<option value="5">住宿</option>
 	</select>
-	<select class="browser-default" id="region_id" name="region_id">
+	<select class="browser-default" id="region" name="region">
 		<option value="" disabled selected>區域</option>
-		<option value="0">0</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
+		@for($i=1; $i<=11; $i++)
+			<option value="administration{{$i}}">administration{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=16; $i++)
+			<option value="department{{$i}}">department{{$i}}</option>
+		@endfor
 	</select>
 	<div class="input-field" id="title">
 		<input type="text" class="validate" name="title" id="title_name">

@@ -1,13 +1,13 @@
 #slidebar {
 	float: left;
-	width: 20%;
-	margin: 0% 3%;
+	width: 15%;
+	margin: 0%;
 	position: relative;
 }
 
 #main {
-	margin-left: 27%;
-	width: 70%;
+	margin-left: 17.5%;
+	width: 83%;
 }
 
 .collapsible {
@@ -35,7 +35,7 @@
 	width: 0px;
 	height: 0px;
 	border-style: solid;
-	border-width: 22.5px 0px 22.5px 22px;
+	border-width: 22.5px 0px 22.5px 13px;
 	border-color: transparent transparent transparent #2196F3;
 }
 
@@ -51,15 +51,15 @@
 	width: 20%;
 }
 
-#region_id {
+#region {
 	float: left;
-	width: 20%;
+	width: 22%;
 	margin-left: 1%;
 }
 
 #title {
-	margin-left: 43%;
-	width: 57%;
+	margin-left: 45%;
+	width: 55%;
 }
 
 #item_name {
@@ -81,7 +81,7 @@
 	position: relative;
 }
 
-#view, #campus {
+#view{
 	width: 100%;
 	margin-top: 1%;
 }

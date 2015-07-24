@@ -22,7 +22,12 @@ class CampusController extends Controller
 
     public function index(){
     	$campus = Campus::all();
-		return view('campus.campus')->with(['campus'=>$campus, 'index'=>true]);
+		return view('campus.campus')->with(['campus'=>$campus, 'index'=>'all']);
+	}
+
+	public function cate($cate){
+    	$campus = Campus::all();
+		return view('campus.campus')->with(['campus'=>$campus, 'cate'=>$cate]);
 	}
 
 	public function addView(){
@@ -35,7 +40,7 @@ class CampusController extends Controller
 		$validator = Validator::make($request->all(),[
 			'image_name' => 'required|image',
 			'view_id' => 'required|integer',
-			'region_id' => 'required|integer',
+			'region' => 'required|string',
 			'title' => 'required|string',
 			'introduction' => 'required|string'
 		]);
@@ -45,7 +50,7 @@ class CampusController extends Controller
 		}
 
 		$view_id = $request->view_id;
-		$region_id = $request->region_id;
+		$region = $request->region;
 		$title = $request->title;
 		$introduction = $request->introduction;
 		$file = Input::file('image_name');
@@ -65,22 +70,22 @@ class CampusController extends Controller
 			$file_success=$file->move($destinationPath, $filename);
 
 			Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
-				'title'=>$title, 'picName'=>$filename, 'region_id'=>$region_id]);
+				'title'=>$title, 'picName'=>$filename, 'region'=>$region]);
 		}
 		else
 		{
 			Campus::create(['introduction'=>$introduction, 'view_id'=>$view_id,
-				'title'=>$title, 'picName'=>"", 'region_id'=>$region_id]);
+				'title'=>$title, 'picName'=>"", 'region'=>$region]);
 		}
 
 		$id = Campus::where('title', $title)->value('id');
-		return redirect('/campus/'.$id);
+		return redirect('/campus/view/'.$id);
 	}
 
 	public function showView($id){
 		$campus = Campus::all();
     	$view = Campus::where('id', $id)->first();
-    	SitemapHelper::push($view->title, 'campus/'.$view->view_id);
+    	SitemapHelper::push($view->title, 'campus/view/'.$id);
 		return view('campus.showView')->with(['campus'=>$campus, 'view'=>$view]);
 	}
 
@@ -94,7 +99,7 @@ class CampusController extends Controller
 		$campus = Campus::all();
 		$validator = Validator::make($request->all(),[
 			'image_name' => 'image',
-			'region_id' => 'required|integer',
+			'region' => 'required|string',
 			'view_id' => 'required|integer',
 			'title' => 'required|string',
 			'introduction' => 'required|string'
@@ -105,7 +110,7 @@ class CampusController extends Controller
 		}
 
 		$view_id = $request->view_id;
-		$region_id = $request->region_id;
+		$region = $request->region;
 		$title = $request->title;
 		$introduction = $request->introduction;
 		$file = Input::file('image_name');
@@ -128,16 +133,16 @@ class CampusController extends Controller
 			File::delete(base_path().'\public\uploads\campus\\'.$picName);
 			Campus::where('id', $id)
 				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'picName'=>$filename, 'region_id'=>$region_id]);
+					'title'=>$title, 'picName'=>$filename, 'region'=>$region]);
 		}
 		else
 		{
 			Campus::where('id', $id)
 				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
-					'title'=>$title, 'region_id'=>$region_id]);
+					'title'=>$title, 'region'=>$region]);
 		}
 
-		return redirect('/campus/'.$id);
+		return redirect('/campus/view/'.$id);
 	}
 
 	public function deleteView($id){

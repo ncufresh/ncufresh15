@@ -113,10 +113,11 @@ Route::post('group/update','Department\ClubController@update');
 Route::get('campus', 'Campus\CampusController@index');
 Route::get('campus/add_view', 'Campus\CampusController@addView');
 Route::post('campus/add_view', 'Campus\CampusController@store');
-Route::get('campus/{id}', 'Campus\CampusController@showView');
+Route::get('campus/view/{id}', 'Campus\CampusController@showView');
 Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
 Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
 Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
+Route::get('campus/{cate}', 'Campus\CampusController@cate');
 //******************************************************************************************************
 
 
