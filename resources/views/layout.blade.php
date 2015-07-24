@@ -144,7 +144,7 @@
             	@yield('content')
 			</div>
         </div>
-		<footer class="page-footer" id='footer'>NCU Fresh© 2015 Copyright Text</footer>
+		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
 		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
