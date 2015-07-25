@@ -23,14 +23,18 @@
 					<div class='row'>
 						<div class='col s3'>
 							@if ($ann->category == '1')
-								<span class='category cat1'>Q&amp;A</span>
+								<span class='category cat1'>公告</span>
 							@else
-								<span class='category cat2'>公告</span>
+								<span class='category cat2'>Q&amp;A</span>
 							@endif
 						</div>
 						<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
 						<div class='col s6'>
-							<a href="{{$ann->url}}">{{$ann->title}}</a>
+							@if ($ann->category == '1')
+								<a href="{{url('/ann').'/'.$ann->id}}">{{$ann->title}}</a>
+							@else
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							@endif
 						</div>
 					</div>
 				@endforeach

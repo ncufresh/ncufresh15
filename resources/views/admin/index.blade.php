@@ -29,20 +29,24 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="title" type="text" name='title' class="validate" required>
-									<label for="title">公告標題</label>
+									<label for="title">標題</label>
 								</div>
 								<div class="input-field col s12">
-									<input id="url" type="url" name='url' class="validate" required>
-									<label for="url">文章連結</label>
+									<input id="url" type="url" name='url' class="validate">
+									<label for="url">文章頁面連結(對於類別為Q&amp;A)</label>
 								</div>
-									<p>
-										<input class='with-gap' name="category" type="radio" id="cat1" value="1" selected/>
-										<label for="cat1">必讀</label>
-									</p>
-									<p>
-										<input class="with-gap" name="category" type="radio" value="2" id="cat2"/>
-										<label for="cat2">Q&amp;A</label>
-									</p>
+								<div class="input-field col s12">
+									<textarea id="content" class="materialize-textarea" name='content'></textarea>
+									<label for="content">公告事項內容(對於類別為公告)</label>
+								</div>
+								<p>
+									<input class='with-gap' name="category" type="radio" id="cat1" value="1" selected/>
+									<label for="cat1">公告</label>
+								</p>
+								<p>
+									<input class="with-gap" name="category" type="radio" value="2" id="cat2"/>
+									<label for="cat2">Q&amp;A</label>
+								</p>
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -52,18 +56,26 @@
 					</form>
 				</div>
 				<div>
+					<div class="row" style="color: #2bbbad;font-weight: 600; border-bottom: 3px solid #2bbbad; padding-bottom: 10px;">
+						<div class="col s1">類別</div>
+						<div class="col s2">標題</div>
+						<div class="col s2">連結</div>
+						<div class="col s4">文章內容</div>
+						<div class="col s3">操作選項</div>
+					</div>
 					@foreach ($announcements as $ann)
 					<div class='row'>
 						<div class='col s1 ann-cat-col' id='ann-cat-{{ $ann->id }}'>
 							@if($ann->category == 1)
-								<span class='ann-tag-type1'>Q&amp;A</span>
+								<span class='ann-tag-type1'>公告</span>
 							@else
-								<span class='ann-tag-type2'>公告</span>
+								<span class='ann-tag-type2'>Q&amp;A</span>
 							@endif
 						</div>
-						<div class='col s4 ann-title-col' id='ann-title-{{ $ann->id }}'>{{ $ann->title }}</div>
-						<div class='col s3 ann-url-col' id='ann-url-{{$ann->id}}'>{{ $ann->url }}</div>
-						<div class='col s4'>
+						<div class='col s2 ann-title-col' id='ann-title-{{ $ann->id }}'>{{ $ann->title }}</div>
+						<div class='col s2 ann-url-col' id='ann-url-{{$ann->id}}'>&nbsp;{{ $ann->url }}</div>
+						<div class='col s4 ann-content-col' id='ann-content-{{$ann->id}}'>&nbsp;{{$ann->content }}</div>
+						<div class='col s3'>
 							<a class='btn update-ann-trigger' data-id='{{ $ann->id }}' href='#ann-update-modal'>編輯</a>
 							<a href="{{url('ann/delete/'.$ann->id)}}" class="waves-effect waves-light btn">刪除</a>
 						</div>
@@ -80,18 +92,24 @@
 						<div class="row">
 							<div class="input-field col s12">
 								<input id="ann-update-title" type="text" name='title' class="validate" required>
+								<label for="ann-update-title">標題</label>
 							</div>
 							<div class="input-field col s12">
-								<input id="ann-update-url" type="url" name='url' class="validate" required>
+								<input id="ann-update-url" type="text" name='url'>
+								<label for="ann-update-url">文章頁面連結(對於類別為Q&amp;A)</label>
 							</div>
-								<p>
-									<input class='with-gap' name="category" type="radio" id="ann-update-cat1" value="1"/>
-									<label for="ann-update-cat1">必讀</label>
-								</p>
-								<p>
-									<input class="with-gap" name="category" type="radio" value="2" id="ann-update-cat2"/>
-									<label for="ann-update-cat2">Q&amp;A</label>
-								</p>
+							<div class="input-field col s12">
+								<textarea id="ann-update-content" class="materialize-textarea" name='content'></textarea>
+								<label for="ann-update-content">公告事項內容(對於類別為公告)</label>
+							</div>
+							<p>
+								<input class='with-gap' name="category" type="radio" id="ann-update-cat1" value="1"/>
+								<label for="ann-update-cat1">必讀</label>
+							</p>
+							<p>
+								<input class="with-gap" name="category" type="radio" value="2" id="ann-update-cat2"/>
+								<label for="ann-update-cat2">Q&amp;A</label>
+							</p>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -127,6 +145,12 @@
 					</form>
 				</div>
 				<div id='cals-container'>
+					<div class="row" style="color: #2bbbad;font-weight: 600; border-bottom: 3px solid #2bbbad; padding-bottom: 10px;">
+						<div class="col s3">標題</div>
+						<div class="col s4">行事內容</div>
+						<div class="col s2">事件日期</div>
+						<div class="col s3">操作選項</div>
+					</div>
 					@foreach ($calenders as $cal)
 					<div class='row'>
 						<div class='col s3 cal-title-col' id='cal-title-{{ $cal->id }}'>{{ $cal->title }}</div>

@@ -20,6 +20,7 @@ Route::get('/', 'HomepageController@index');
 Route::get('/admin', 'AdminController@index');
 
 //Announcement on Homepage
+Route::get('/ann/{id?}', 'AnnouncementController@get');
 Route::post('/ann/new', 'AnnouncementController@store');
 Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');

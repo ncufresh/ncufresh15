@@ -533,5 +533,6 @@ return array(
     'SplitFilenameExtensionFiletable' => $baseDir . '/database/migrations/2015_07_21_110737_split_filename_extension_filetable.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_25_075413_update_announcement_table.php',
     'UpdateUserTable' => $baseDir . '/database/migrations/2015_07_17_075146_update_user_table.php',
 );
