@@ -18,11 +18,11 @@ var blocklock= {
 
 var hero = {
 	speed: 256, // movement in pixels per second
-	x : canvas.width / 2,
-	y : canvas.height / 2,
+	x : 50*grid.length,
+	y : 8*grid.length,
 	end: {
-		x: canvas.width / 2,
-		y: canvas.height / 2,
+		x: 50*grid.length,
+		y: 8*grid.length,
 		Delay: 35,
 		Timer: 0
 	},

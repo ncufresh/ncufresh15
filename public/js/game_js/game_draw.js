@@ -58,8 +58,8 @@ var render = function () {
 	if (grassReady) {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
-				//draw(grassImage,grid.length*i,grid.length*j);
-				draw(testImage,grid.length*i,grid.length*j);
+				draw(grassImage,grid.length*i,grid.length*j);
+				//draw(testImage,grid.length*i,grid.length*j);
 			};
 		};
 		
@@ -68,32 +68,44 @@ var render = function () {
 	// 	draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
 	// }
 
-	// if (roadReady) {
-	// 	for (var i = 0; i < 100; i++) {
-	// 		for (var j = 0; j < 100; j++) {
-	// 			if (Things[hero.end.y/grid.length][hero.end.x/grid.length]==1) {
-	// 				draw(roadImage,grid.length*i,grid.length*j);
-	// 			}
-	// 		}
-	// 	}
-	// }
+
+	if (roadReady) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==2) {
+					draw(roadImage,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+
+	if (brickReady) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==3) {
+					draw(brickImage,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+
 	if (boxReady) {
 		draw(boxImage, box.x, box.y);
 	}
 	if (monsterReady) {
 		draw(monsterImage, monster.x, monster.y);
 	}
-	if (roadReady) {
-		for (i=0;i<roads.length;i++ )
-		{
-			for(j=0;j<roads[i].width/grid.length;j++){
-				for(k=0;k<roads[i].height/grid.length;k++){
-					draw(roadImage, roads[i].x+grid.length*j, roads[i].y+grid.length*k);
-				}
-			}
+	// if (roadReady) {
+	// 	for (i=0;i<roads.length;i++ )
+	// 	{
+	// 		for(j=0;j<roads[i].width/grid.length;j++){
+	// 			for(k=0;k<roads[i].height/grid.length;k++){
+	// 				draw(roadImage, roads[i].x+grid.length*j, roads[i].y+grid.length*k);
+	// 			}
+	// 		}
 			
-		}
-	}
+	// 	}
+	// }
 	if (blockReady) {
 		for (i=0;i<blocks.length;i++ )
 		{

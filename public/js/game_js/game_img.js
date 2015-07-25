@@ -28,6 +28,16 @@ roadImage.onload = function () {
 };
 roadImage.src = "game_images/road.png";
 
+
+
+// Brick image
+var brickReady = false;
+var brickImage = new Image();
+brickImage.onload = function () {
+	brickReady = true;
+};
+brickImage.src = "game_images/brick.png";
+
 // Hero image
 var heroReady = false;
 var heroImage = new Image();

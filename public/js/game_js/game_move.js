@@ -73,9 +73,9 @@ var update = function (modifier) {
 			}
 		}
 
-		// if (Things[hero.end.y/grid.length][hero.end.x/grid.length-1]==0) {
-		// 	blocklock.left = true;
-		// }
+		if (map[hero.end.y/grid.length][hero.end.x/grid.length-1]==0) {
+			blocklock.left = true;
+		}
 
 		canask=false;
 		if(isTouchingleft(hero,box)){
@@ -110,6 +110,10 @@ var update = function (modifier) {
 			}
 		}
 
+		if (map[hero.end.y/grid.length-1][hero.end.x/grid.length]==0) {
+			blocklock.top = true;
+		}
+
 		canask=false;
 		if(isTouchingup(hero,box)){
 			hero.y = box.y + box.height;
@@ -142,6 +146,10 @@ var update = function (modifier) {
 			}
 		}
 		
+		if (map[hero.end.y/grid.length][hero.end.x/grid.length+1]==0) {
+			blocklock.right = true;
+		}
+
 		canask=false;
 		if(isTouchingright(hero,box)){
 			hero.x = box.x - box.width;
@@ -172,6 +180,10 @@ var update = function (modifier) {
 				//hero.y = blocks[i].y - blocks[i].height;
 				blocklock.bottom = true;
 			}
+		}
+
+		if (map[hero.end.y/grid.length+1][hero.end.x/grid.length]==0) {
+			blocklock.bottom = true;
 		}
 
 		canask=false;
