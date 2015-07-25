@@ -12,7 +12,7 @@ function draw(img, x, y, t) {
 		if (hx) {
 			nx = hero.x; // left
 			if (hero.x > canvas.width) { // or right
-				nx = hero.x - (bgImage.width-canvas.width);
+				nx = hero.x - (game.length-canvas.width);
 			}
 		} else { // always in the middle
 			nx = x;
@@ -21,7 +21,7 @@ function draw(img, x, y, t) {
 		if (hy) { // top
 			ny = hero.y;
 			if (hero.y > canvas.height) { // or botton
-				ny = hero.y - (bgImage.height-canvas.height);
+				ny = hero.y - (game.length-canvas.height);
 			}
 		} else { // always in the middle
 			ny = y;
@@ -30,14 +30,14 @@ function draw(img, x, y, t) {
 		if (hx) {
 			nx = x; // left
 			if (hero.x > canvas.width) { // or right
-				nx = x - (bgImage.width-canvas.width);
+				nx = x - (game.length-canvas.width);
 			}
 		}
 		///
 		if (hy) {
 			ny = y; // top
 			if (hero.y > canvas.height) { // or botton
-				ny = y - (bgImage.height-canvas.height);
+				ny = y - (game.length-canvas.height);
 			}
 		}
 	}
@@ -48,8 +48,8 @@ function draw(img, x, y, t) {
 // Draw everything
 var render = function () {
 	// Is hero in the edge? true->if(){}... || false->direct draw
-	hx = hero.x-canvas.width/2 < 0 || hero.x-canvas.width/2 > bgImage.width-canvas.width;
-	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > bgImage.height-canvas.height;
+	hx = hero.x-canvas.width/2 < 0 || hero.x-canvas.width/2 > game.length-canvas.width;
+	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > game.length-canvas.height;
 
 
 	// if (bgReady) {
@@ -68,34 +68,31 @@ var render = function () {
 	// 	draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
 	// }
 
-	if (true) {
-		var nowimage = hero.animSet+hero.animFrame;
-		if (hero.direction.x==0 && hero.direction.y ==0) {
-		    switch (hero.direction.now){
-            case "up":
-            	draw(heroImageArray[0], canvas.width / 2, canvas.height / 2, 'hero');
-                break;
-            case "down":
-            	draw(heroImageArray[3], canvas.width / 2, canvas.height / 2, 'hero');     
-                break;
-            case "left":
-           		draw(heroImageArray[6], canvas.width / 2, canvas.height / 2, 'hero');   
-                break;
-            case "right":
-            	draw(heroImageArray[9], canvas.width / 2, canvas.height / 2, 'hero');  
-                break;
-      		}
-		} else {
-			draw(heroImageArray[nowimage], canvas.width / 2, canvas.height / 2, 'hero');
-		}
-	}	
-
-
+	// if (roadReady) {
+	// 	for (var i = 0; i < 100; i++) {
+	// 		for (var j = 0; j < 100; j++) {
+	// 			if (Things[hero.end.y/grid.length][hero.end.x/grid.length]==1) {
+	// 				draw(roadImage,grid.length*i,grid.length*j);
+	// 			}
+	// 		}
+	// 	}
+	// }
 	if (boxReady) {
 		draw(boxImage, box.x, box.y);
 	}
 	if (monsterReady) {
 		draw(monsterImage, monster.x, monster.y);
+	}
+	if (roadReady) {
+		for (i=0;i<roads.length;i++ )
+		{
+			for(j=0;j<roads[i].width/grid.length;j++){
+				for(k=0;k<roads[i].height/grid.length;k++){
+					draw(roadImage, roads[i].x+grid.length*j, roads[i].y+grid.length*k);
+				}
+			}
+			
+		}
 	}
 	if (blockReady) {
 		for (i=0;i<blocks.length;i++ )
@@ -124,6 +121,27 @@ var render = function () {
 		}
 	}
 
+	if (true) {
+		var nowimage = hero.animSet+hero.animFrame;
+		if (hero.direction.x==0 && hero.direction.y ==0) {
+		    switch (hero.direction.now){
+            case "up":
+            	draw(heroImageArray[0], canvas.width / 2, canvas.height / 2, 'hero');
+                break;
+            case "down":
+            	draw(heroImageArray[3], canvas.width / 2, canvas.height / 2, 'hero');     
+                break;
+            case "left":
+           		draw(heroImageArray[6], canvas.width / 2, canvas.height / 2, 'hero');   
+                break;
+            case "right":
+            	draw(heroImageArray[9], canvas.width / 2, canvas.height / 2, 'hero');  
+                break;
+      		}
+		} else {
+			draw(heroImageArray[nowimage], canvas.width / 2, canvas.height / 2, 'hero');
+		}
+	}
 	// Score
 	ctx.fillStyle = "rgba(0, 0, 0,0.8)";
 	ctx.font = "24px Helvetica";

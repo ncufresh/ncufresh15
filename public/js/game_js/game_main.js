@@ -6,9 +6,9 @@ canvas.height = 512;
 document.getElementById('gamecanvas').appendChild(canvas);
 
 // Game objects
-var grid = {
-	length : 64
-};
+var grid = { length : 64 };
+
+var game = { length : 6400 };
 
 var blocklock= {
 	left : false ,
@@ -51,19 +51,17 @@ var monstersCaught = 0;
 var box = {
 	x : 0,
 	y : 0,
-	width : 64,
-	height : 64
+	width : grid.length,
+	height : grid.length
 };
 
-var road1 = {x:64,y:64,width:64,height:320,type:"block"};
+var road1 = {x:0,y:64,width:64,height:320,type:"road"};
+var roads = [road1];
 
 var block1 = {x:64,y:128,width:192,height:64,type:"block"};
 var block2 = {x:64,y:128,width:64,height:192,type:"block"};
 var block3 = {x:64,y:256,width:192,height:64,type:"block"};
-// var block4 = {x:0,y:320,width:896,height:32,type:"block"};
-// var block5 = {x:96,y:32,width:32,height:320,type:"block"};
 var blocks=[block1,block2,block3];
-// var blocks=[block1,block2,block3,block4,block5];
 
 // Chomp sound
 var snd = new Audio("game_audio/goat.wav");

@@ -8,8 +8,8 @@ bgImage.onload = function () {
 bgImage.src = "game_images/background.png";
 
 ///////////////////////////
-bgImage.width = 3200;
-bgImage.height = 3200;
+// bgImage.width = 6400;
+// bgImage.height = 6400;
 ///////////////////////////
 
 // Grasss image
@@ -20,13 +20,21 @@ grassImage.onload = function () {
 };
 grassImage.src = "game_images/grass.png";
 
+// Road image
+var roadReady = false;
+var roadImage = new Image();
+roadImage.onload = function () {
+	roadReady = true;
+};
+roadImage.src = "game_images/road.png";
+
 // Hero image
 var heroReady = false;
 var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "game_images/hero.png";
+//heroImage.src = "game_images/hero.png";
 
 // Monster image
 var monsterReady = false;

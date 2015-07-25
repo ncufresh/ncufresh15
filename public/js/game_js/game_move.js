@@ -14,6 +14,7 @@ var update = function (modifier) {
 
 	//console.log("(endx"+hero.end.x+"&x"+hero.x+")(endy"+hero.end.y+"&y"+hero.y);
 	//console.log("hero.keylock"+hero.keylock);
+	console.log(hero.end.x/grid.length+","+hero.end.y/grid.length);
 
 	// left
 	if (hero.direction.now == 'left' && hero.keylock==true) {
@@ -59,9 +60,13 @@ var update = function (modifier) {
 			if (isTouchingleft(hero,blocks[i]))
 			{
 				//hero.x = blocks[i].x + blocks[i].width;
-				blocklock.left = true ;
+				blocklock.left = true;
 			}
 		}
+
+		// if (Things[hero.end.y/grid.length][hero.end.x/grid.length-1]==0) {
+		// 	blocklock.left = true;
+		// }
 
 		canask=false;
 		if(isTouchingleft(hero,box)){
@@ -135,7 +140,7 @@ var update = function (modifier) {
 			canask=true;
 		}
 
-		if(hero.x + grid.length <= bgImage.width-grid.length && blocklock.right==false){ // edge
+		if(hero.x + grid.length <= game.length-grid.length && blocklock.right==false){ // edge
 			//hero.x +=  grid.length;
 			blocklock.left = false;
 			blocklock.top = false;
@@ -167,7 +172,7 @@ var update = function (modifier) {
 			canask=true;
 		}
 		
-		if(hero.y + grid.length <= bgImage.height-grid.length && blocklock.bottom==false){ // edge
+		if(hero.y + grid.length <= game.length-grid.length && blocklock.bottom==false){ // edge
 			//hero.y +=  grid.length;
 			blocklock.left = false;
 			blocklock.top = false;
