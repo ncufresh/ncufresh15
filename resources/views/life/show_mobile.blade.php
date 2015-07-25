@@ -8,13 +8,6 @@
 		#coverflow{
 			font-family:inital !importment;
 		}
-		#a{
-			background-image:url('/img/life/article.png');
-			background-size:100% auto;
-			background-repeat: no-repeat;
-			width:100%;
-			height:100%;
-		}
 	</style>
 @stop
 
@@ -24,6 +17,12 @@
 		$(function() {
 			// and kick off
 	        $('#coverflow').coverflow();
+	        $('#prev').click(function() {
+		    	$('#coverflow' ).coverflow( 'prev' );
+		    });
+		    $('#next').click(function() {
+		    	$('#coverflow' ).coverflow( 'next' );
+		    });
 	    });
 	</script>
 @stop
@@ -34,19 +33,22 @@
 		<a class="waves-effect waves-light btn" href="{{url('life/edit/'.$show->id)}}"><i class="material-icons left">settings</i>後台管理</a>
 	</div>	
 </div>
-<div id="coverflow"  style="height:400px;">
+<div id="coverflow"  style="height:200px;">
 	@foreach($pictures as $picture)
 		<a href="{{ $picture->url }}" target="_blank">
-			<img src="{{$picture->url}}" width="400" height="400">	
+			<img src="{{$picture->url}}" width="200" height="200">	
 		</a>	
 	@endforeach
 </div>
-
 <!--圖片-->
 
-<div id="a" style="margin-top:500px;padding-top:10%;">
-	<div class="center align">
+<div class="row" style="margin-top:250px;">
+	<div class=" center align">
+		<div class="card-panel hoverable">
 		<div>
+			<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
+			<button class="waves-effect waves-light btn blue" id="next">下一張</button>
+		</div>
 			<p>{!! $show->content !!}</p>   <!--  -->
 		</div>
 	</div>		

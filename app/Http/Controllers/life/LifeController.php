@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Life;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Agent;
 use App\Helpers\SitemapHelper;
 use App\LifePictures;
 use App\Life;
@@ -79,10 +80,19 @@ class LifeController extends Controller
         $pics = LifePictures::where('lifes_id',$id)->get(); /*去找對應的圖片*/
         SitemapHelper::push($category[$show->category], 'life/category/'.$show->category);/*顯示食住育樂行*/
         SitemapHelper::push($show->name, 'life/'.$show->id); /*顯示後面的小類別(小木屋鬆餅)*/
-        return view('life.show',[
-            'show' => $show,
-            'pictures' => $pics
-        ]);
+        if (Agent::isMobile()) {
+            return view('life.show_mobile',[
+                'show' => $show,
+                'pictures' => $pics
+            ]);
+        }
+        else
+        {
+            return view('life.show',[
+                'show' => $show,
+                'pictures' => $pics
+            ]);
+        }
     }
 
     /**
