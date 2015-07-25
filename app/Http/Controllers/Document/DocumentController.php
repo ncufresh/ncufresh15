@@ -85,7 +85,7 @@ class DocumentController extends Controller
 	}
 
     public function get_content_1($page_id) {
-        if($page_id === "contact"){
+        if($page_id === "contact" || $page_id === "download"){
             $title = Document::where('page_id', $page_id)->value('title');
             $content = Document::where('page_id', $page_id)->value('content');
             return view('document.page')->with(['title'=>$title, 'content'=>$content]);
@@ -94,7 +94,7 @@ class DocumentController extends Controller
             $id_2 = Document::where(['page_id'=>$page_id, 'page_id_2'=>0])->value('page_id_2');
             $all = Document::where(['page_id'=>$page_id, 'page_id_2'=>0])->get();
 
-            return view('document.list2')->with(['type'=>1, 'page_id'=>$id_1, 'page_id_2'=>$id_2, 'all'=>$all]);
+            return view('document.list')->with(['type'=>1, 'page_id'=>$id_1, 'page_id_2'=>$id_2, 'all'=>$all]);
         }
     }
 
@@ -103,7 +103,7 @@ class DocumentController extends Controller
         $id_2 = Document::where(['page_id'=>$page_id, 'page_id_2'=>$page_id_2])->value('page_id_2');
         $all = Document::where(['page_id'=>$page_id, 'page_id_2'=>$page_id_2])->get();
 
-        return view('document.list2')->with(['type'=>2, 'page_id'=>$id_1, 'page_id_2'=>$id_2, 'all'=>$all]);
+        return view('document.list')->with(['type'=>2, 'page_id'=>$id_1, 'page_id_2'=>$id_2, 'all'=>$all]);
     }
 
 	public function get_content_3($page_id, $page_id_2, $id){

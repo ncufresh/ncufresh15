@@ -16,6 +16,5 @@
 <h5>{{$title}}</h5>
 <div>
 	{!! $content !!}
-
 </div>
 @stop
