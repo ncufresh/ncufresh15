@@ -79,7 +79,7 @@ class DocumentController extends Controller
 
 	public function store(Request $request) {
 		$selected = $request->get('selected');
-        $title = $request->get('title');
+        $title = $this->sanitize($request->get('title'));
 		$content = $request->get('text');
         Document::findOrFail($selected)->update(['title'=>$title, 'content'=>$content]);
 		return response()->json(['title'=>$title, 'content'=>$content]);
@@ -113,4 +113,11 @@ class DocumentController extends Controller
 
 		return view('document.page')->with(['title'=>$title, 'content'=>$content]);
 	}
+
+    // helpers
+    private function sanitize($dirty) {
+        return strip_tags($dirty,
+            '<img><table><thead><tbody><tr><td><th><h1><h2><h3><pre><ins><a><p><s><strong><em><span><ul><ol><li><blockquote>'
+        );
+    }
 }
