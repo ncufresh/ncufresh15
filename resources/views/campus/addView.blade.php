@@ -18,7 +18,7 @@
 		<option value="" disabled selected>分類</option>
 		<option value="0">行政</option>
 		<option value="1">系館</option>
-		<option value="2">中大美景</option>
+		<option value="2">中大景點</option>
 		<option value="3">運動</option>
 		<option value="4">飲食</option>
 		<option value="5">住宿</option>
@@ -30,6 +30,15 @@
 		@endfor
 		@for($i=1; $i<=16; $i++)
 			<option value="department{{$i}}">department{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=7; $i++)
+			<option value="view{{$i}}">view{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=9; $i++)
+			<option value="sport{{$i}}">sport{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=4; $i++)
+			<option value="food{{$i}}">food{{$i}}</option>
 		@endfor
 	</select>
 	<div class="input-field" id="title">

@@ -18,7 +18,7 @@
 		<option value="" disabled selected>分類</option>
 		<option value="0" {{isset($view)&&$view->view_id==0?'selected="selected"':''}}>行政</option>
 		<option value="1" {{isset($view)&&$view->view_id==1?'selected="selected"':''}}>系館</option>
-		<option value="2" {{isset($view)&&$view->view_id==2?'selected="selected"':''}}>中大美景</option>
+		<option value="2" {{isset($view)&&$view->view_id==2?'selected="selected"':''}}>中大景點</option>
 		<option value="3" {{isset($view)&&$view->view_id==3?'selected="selected"':''}}>運動</option>
 		<option value="4" {{isset($view)&&$view->view_id==4?'selected="selected"':''}}>飲食</option>
 		<option value="5" {{isset($view)&&$view->view_id==5?'selected="selected"':''}}>住宿</option>
@@ -30,6 +30,15 @@
 		@endfor
 		@for($i=1; $i<=16; $i++)
 			<option value="department{{$i}}" {{isset($view)&&$view->region=='department'.$i?'selected="selected"':''}}>department{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=7; $i++)
+			<option value="view{{$i}}" {{isset($view)&&$view->region=='view'.$i?'selected="selected"':''}}>view{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=9; $i++)
+			<option value="sport{{$i}}" {{isset($view)&&$view->region=='sport'.$i?'selected="selected"':''}}>sport{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=4; $i++)
+			<option value="food{{$i}}" {{isset($view)&&$view->region=='food'.$i?'selected="selected"':''}}>food{{$i}}</option>
 		@endfor
 		</select>
 	<div class="input-field" id="title">

@@ -41,7 +41,7 @@
 		</li>
 		<li>
 			<a href="/campus/2" class="collapsible-header
-				{{ (isset($view)&&$view->view_id==2) || (isset($cate)&&$cate==2) ?'here active':'category'}}">景點</a>
+				{{ (isset($view)&&$view->view_id==2) || (isset($cate)&&$cate==2) ?'here active':'category'}}">中大景點</a>
 			@foreach($campus as $item)
 				@if($item->view_id==2)
 					<div class="collapsible-body collection">
