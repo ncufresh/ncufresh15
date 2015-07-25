@@ -25,7 +25,7 @@ var update = function (modifier) {
 		hero.direction.y = 0;
 	}
 	
-	var distance = 4;
+	var distance = 8;
 	// left
 	if (hero.direction.now == 'left' && hero.keylock==true) {
 			hero.end.Timer += modifier;

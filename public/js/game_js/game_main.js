@@ -7,7 +7,6 @@ document.getElementById('gamecanvas').appendChild(canvas);
 
 // Game objects
 var grid = { length : 64 };
-
 var game = { length : 6400 };
 
 var blocklock= {
@@ -24,7 +23,7 @@ var hero = {
 	end: {
 		x: canvas.width / 2,
 		y: canvas.height / 2,
-		Delay: 25,
+		Delay: 35,
 		Timer: 0
 	},
 	keylock : false,
@@ -49,7 +48,7 @@ var monster = {};
 var monstersCaught = 0;
 
 var box = {
-	x : 0,
+	x : grid.length*7,
 	y : 0,
 	width : grid.length,
 	height : grid.length
@@ -121,4 +120,88 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 var then = Date.now();
 
 reset();
-main();
+
+    function drawElapsedTime() {
+        var elapsed = parseInt((new Date() - startTime) / 1000);
+        ctx.save();
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.font = "14px Verdana"
+        // draw the running time at half opacity
+        ctx.globalAlpha = 0.50;
+        ctx.fillText(elapsed + " secs", canvas.width - 75, 25);
+        ctx.restore();
+    }
+
+////////////////////////////////////////////////
+//using only on the starting~~~~~~~~~~~~~~~~~~~~
+var starting=false;
+window.onkeydown = function(e) {
+	// enter
+	if(e.keyCode == 13 && starting == true){
+		starting=false;
+		main();
+	}
+}
+
+ctx.fillStyle = '#000000';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+// Loading Message
+ctx.fillStyle = '#ffffff';
+ctx.font = '40px Arial';
+ctx.textAlign = "center";
+ctx.textBaseline = "top";
+ctx.fillText("Loading...", canvas.width / 2, canvas.height / 2 -20);
+
+var loading = setInterval(loaded,2000);		
+function loaded() {
+	clearInterval(loading);
+	
+	starting=true;
+
+	ctx.fillStyle = '#000000';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+		
+	ctx.fillStyle = '#ff0000';
+	ctx.font = '80px Bangers, Impact, Arial, Impact, Arial';
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("Game", canvas.width / 2, canvas.height / 2 - 100);
+		
+	ctx.fillStyle = '#ffffff';
+	ctx.font = '25px Arial';
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("倒數計時5分鐘~找到的寶物都是你的！", canvas.width / 2, canvas.height / 2 );				
+	ctx.fillText("打開寶箱會出現三道問題鎖，全答對就能獲得寶物！", canvas.width / 2, canvas.height / 2 +30);
+	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開喔！", canvas.width / 2, canvas.height / 2 +60);	
+	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 2 +120);
+}
+////////////////////////////////////////////////
+
+
+var gameover = function () {
+
+	starting=true;
+
+	ctx.fillStyle = '#000000';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+	ctx.fillStyle = '#ff0000';
+	ctx.font = "50px Bangers, Impact, Arial";
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("Time's Up!", canvas.width / 2, canvas.height / 2 -60);	
+
+	ctx.fillStyle = '#ffffff';
+	ctx.font = '20px Arial';
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("press RETURN to try again", canvas.width / 2, canvas.height / 2 +90);
+			
+	ctx.fillStyle = '#ffffff';
+	ctx.font = '20px Arial';
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("ㄏㄏ (cc)", canvas.width - 100, canvas.height - 30);
+}
