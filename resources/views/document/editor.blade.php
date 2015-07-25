@@ -4,6 +4,7 @@
 
 @section('css')
 <link type="text/css" rel="stylesheet" href="{{ asset('css/document/document_layout.css') }}"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="{{ asset('css/document/page.css') }}"  media="screen,projection"/>
 @stop
 
 @section('js')
@@ -17,7 +18,7 @@
 <div id="ckeditor">
 	<label>分頁</label>
     <select id="mySelect" class="browser-default">
-    	<option value="" disabled  ><ins><strong>大學部新生註冊須知</strong></ins></option>
+    	<option value="" disabled  {{isset($id)?'':'selected="selected"'}}><ins><strong>大學部新生註冊須知</strong></ins></option>
         <option value="" disabled  >重要日程</option>
         @foreach($cate_1 as $cate_1)
         <option value="{{ $cate_1->id }}" {{ isset($id) && $id==$cate_1->id?'selected="selected"':''}}>{{ $cate_1->title }}</option>

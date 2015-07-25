@@ -4,6 +4,7 @@
 
 @section('css')
 <link type="text/css" rel="stylesheet" href="{{ asset('css/document/document_layout.css') }}"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="{{ asset('css/document/page.css') }}"  media="screen,projection"/>
 @stop
 
 @section('js')
