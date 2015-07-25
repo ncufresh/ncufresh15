@@ -24,7 +24,7 @@ var hero = {
 	end: {
 		x: canvas.width / 2,
 		y: canvas.height / 2,
-		Delay: 200,
+		Delay: 25,
 		Timer: 0
 	},
 	keylock : false,
@@ -100,7 +100,7 @@ var main = function () {
 
 	if (hero.canmove) {
 		anim(delta); // game_animation.js
-		update(delta / 1000); // game_move.js
+		update(delta); // game_move.js
 	}
 	
 	render(); // game_draw.js

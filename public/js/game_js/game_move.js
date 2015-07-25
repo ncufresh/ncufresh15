@@ -14,46 +14,55 @@ var update = function (modifier) {
 
 	//console.log("(endx"+hero.end.x+"&x"+hero.x+")(endy"+hero.end.y+"&y"+hero.y);
 	//console.log("hero.keylock"+hero.keylock);
-	console.log(hero.end.x/grid.length+","+hero.end.y/grid.length);
+	//console.log(hero.end.x/grid.length+","+hero.end.y/grid.length);
+	//console.log(hero.end.Timer);
 
+
+	// Stop moving the hero
+	if (hero.x == hero.end.x && hero.y == hero.end.y) {
+		hero.keylock = false;
+		hero.direction.x = 0;
+		hero.direction.y = 0;
+	}
+	
+	var distance = 4;
 	// left
 	if (hero.direction.now == 'left' && hero.keylock==true) {
-			hero.end.Timer += modifier*1000;
+			hero.end.Timer += modifier;
 		if (hero.end.Timer >= hero.end.Delay) {
 			hero.end.Timer = 0;
-			hero.x-=16;
+			hero.x-=distance;
 		}
 	};
 
 	// up
 	if (hero.direction.now == 'up' && hero.keylock==true) {
-			hero.end.Timer += modifier*1000;
+			hero.end.Timer += modifier;
 		if (hero.end.Timer >= hero.end.Delay) {
 			hero.end.Timer = 0;
-			hero.y-=16;
+			hero.y-=distance;
 		}
 	};
 
 	// right
 	if (hero.direction.now == 'right' && hero.keylock==true) {
-			hero.end.Timer += modifier*1000;
+			hero.end.Timer += modifier;
 		if (hero.end.Timer >= hero.end.Delay) {
 			hero.end.Timer = 0;
-			hero.x+=16;
+			hero.x+=distance;
 		}
 	};
 
 	// down
 	if (hero.direction.now == 'down' && hero.keylock==true) {
-			hero.end.Timer += modifier*1000;
+			hero.end.Timer += modifier;
 		if (hero.end.Timer >= hero.end.Delay) {
 			hero.end.Timer = 0;
-			hero.y+=16;
+			hero.y+=distance;
 		}
 	};
 
 	if (37 in keysDown && hero.keylock == false) { // Player holding left
-		
 		// walls
 		for (i=0;i<blocks.length ;i++ )
 		{
@@ -122,7 +131,7 @@ var update = function (modifier) {
 
 	}
 
-	if (39 in keysDown && hero.keylock == false) { // Player holding right		
+	if (39 in keysDown && hero.keylock == false) { // Player holding right
 		// walls
 		for (i=0;i<blocks.length ;i++ )
 		{
@@ -186,12 +195,7 @@ var update = function (modifier) {
 
 	}	
 
-	if (hero.x == hero.end.x && hero.y == hero.end.y) {
-		hero.keylock = false;
-		// Stop moving the hero
-		hero.direction.x = 0;
-		hero.direction.y = 0;				
-	}
+
 
 	// Are they touching?
 	if(isTouching(hero,monster)){

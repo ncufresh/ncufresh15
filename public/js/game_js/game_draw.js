@@ -58,8 +58,8 @@ var render = function () {
 	if (grassReady) {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
-				draw(grassImage,grid.length*i,grid.length*j);
-				//draw(testImage,grid.length*i,grid.length*j);
+				//draw(grassImage,grid.length*i,grid.length*j);
+				draw(testImage,grid.length*i,grid.length*j);
 			};
 		};
 		
