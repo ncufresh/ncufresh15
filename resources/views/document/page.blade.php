@@ -14,7 +14,7 @@
 @section('text')
 <h5>{{$title}}</h5>
 <div>
-	{{$content}}
+	{!! $content !!}
 
 </div>
 @stop
