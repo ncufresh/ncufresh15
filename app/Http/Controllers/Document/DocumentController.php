@@ -46,7 +46,8 @@ class DocumentController extends Controller
 
     public function edit($id_) {
         $id = document::where('id', $id_)->value('id');
-        $content = document::where('id', $id)->value('content');
+        $title = document::where('id', $id_)->value('title');
+        $content = document::where('id', $id_)->value('content');
         $cate_1 = document::where('catagory', 1)->get();
         $cate_2 = document::where('catagory', 2)->get();
         $cate_3 = document::where('catagory', 3)->get();
@@ -68,7 +69,7 @@ class DocumentController extends Controller
         $cate_19 = document::where('catagory', 19)->get();
 
         return view('document.editor')->with([
-            'id'=>$id, 'content'=>$content,
+            'id'=>$id, 'title'=>$title, 'content'=>$content,
             'cate_1'=>$cate_1, 'cate_2'=>$cate_2, 'cate_3'=>$cate_3, 'cate_4'=>$cate_4, 'cate_5'=>$cate_5, 
             'cate_6'=>$cate_6, 'cate_7'=>$cate_7, 'cate_8'=>$cate_8, 'cate_9'=>$cate_9, 'cate_10'=>$cate_10, 
             'cate_11'=>$cate_11, 'cate_12'=>$cate_12, 'cate_13'=>$cate_13, 'cate_14'=>$cate_14, 'cate_15'=>$cate_15,
@@ -78,10 +79,10 @@ class DocumentController extends Controller
 
 	public function store(Request $request) {
 		$selected = $request->get('selected');
+        $title = $request->get('title');
 		$content = $request->get('text');
-
-		document::findOrFail($selected)->update(['content'=>$content]);
-		return response()->json(['content'=>$content]);
+        document::findOrFail($selected)->where('id', $selected)->update(['title'=>$title, 'content'=>$content]);
+		return response()->json(['title'=>$title, 'content'=>$content]);
 	}
 
     public function get_content_1($page_id) {
