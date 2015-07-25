@@ -11,8 +11,7 @@ use App\Document;
 class DocumentController extends Controller
 {
     public function index() {
-    	//點"新生必讀"必定到104校曆
-		return view('document.document_layout');
+		return view('document.calendar');
 	}
 
 	public function editor() {
