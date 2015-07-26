@@ -7,11 +7,6 @@ bgImage.onload = function () {
 };
 bgImage.src = "game_images/background.png";
 
-///////////////////////////
-// bgImage.width = 6400;
-// bgImage.height = 6400;
-///////////////////////////
-
 // Grasss image
 var grassReady = false;
 var grassImage = new Image();
@@ -20,15 +15,53 @@ grassImage.onload = function () {
 };
 grassImage.src = "game_images/grass.png";
 
-// Road image
-var roadReady = false;
-var roadImage = new Image();
-roadImage.onload = function () {
-	roadReady = true;
+// Road1 image
+var road1Ready = false;
+var road1Image = new Image();
+road1Image.onload = function () {
+	road1Ready = true;
 };
-roadImage.src = "game_images/road.png";
+road1Image.src = "game_images/road1.png";
 
+// Road2 image
+var road2Ready = false;
+var road2Image = new Image();
+road2Image.onload = function () {
+	road2Ready = true;
+};
+road2Image.src = "game_images/road2.png";
 
+// Road_Corner1 image
+var rc1Ready = false;
+var rc1Image = new Image();
+rc1Image.onload = function () {
+	rc1Ready = true;
+};
+rc1Image.src = "game_images/road_corner1.png";
+
+// Road_Corner2 image
+var rc2Ready = false;
+var rc2Image = new Image();
+rc2Image.onload = function () {
+	rc2Ready = true;
+};
+rc2Image.src = "game_images/road_corner2.png";
+
+// Road_Corner3 image
+var rc3Ready = false;
+var rc3Image = new Image();
+rc3Image.onload = function () {
+	rc3Ready = true;
+};
+rc3Image.src = "game_images/road_corner3.png";
+
+// Road_Corner4 image
+var rc4Ready = false;
+var rc4Image = new Image();
+rc4Image.onload = function () {
+	rc4Ready = true;
+};
+rc4Image.src = "game_images/road_corner4.png";
 
 // Brick image
 var brickReady = false;
@@ -37,6 +70,14 @@ brickImage.onload = function () {
 	brickReady = true;
 };
 brickImage.src = "game_images/brick.png";
+
+// BrickSide image
+var bricksideReady = false;
+var bricksideImage = new Image();
+bricksideImage.onload = function () {
+	bricksideReady = true;
+};
+bricksideImage.src = "game_images/brickside.png";
 
 // Hero image
 var heroReady = false;

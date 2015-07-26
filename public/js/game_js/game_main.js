@@ -23,7 +23,7 @@ var hero = {
 	end: {
 		x: 50*grid.length,
 		y: 8*grid.length,
-		Delay: 35,
+		Delay: 30,
 		Timer: 0
 	},
 	keylock : false,

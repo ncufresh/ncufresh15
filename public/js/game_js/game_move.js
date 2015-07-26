@@ -73,7 +73,7 @@ var update = function (modifier) {
 			}
 		}
 
-		if (map[hero.end.y/grid.length][hero.end.x/grid.length-1]==0) {
+		if (map[hero.end.y/grid.length][hero.end.x/grid.length-1]==1) {
 			blocklock.left = true;
 		}
 
@@ -110,7 +110,7 @@ var update = function (modifier) {
 			}
 		}
 
-		if (map[hero.end.y/grid.length-1][hero.end.x/grid.length]==0) {
+		if (map[hero.end.y/grid.length-1][hero.end.x/grid.length]==1) {
 			blocklock.top = true;
 		}
 
@@ -146,7 +146,7 @@ var update = function (modifier) {
 			}
 		}
 		
-		if (map[hero.end.y/grid.length][hero.end.x/grid.length+1]==0) {
+		if (map[hero.end.y/grid.length][hero.end.x/grid.length+1]==1) {
 			blocklock.right = true;
 		}
 
@@ -182,7 +182,7 @@ var update = function (modifier) {
 			}
 		}
 
-		if (map[hero.end.y/grid.length+1][hero.end.x/grid.length]==0) {
+		if (map[hero.end.y/grid.length+1][hero.end.x/grid.length]==1) {
 			blocklock.bottom = true;
 		}
 

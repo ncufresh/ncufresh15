@@ -52,6 +52,20 @@ var render = function () {
 	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > game.length-canvas.height;
 
 
+// 0 草地
+// 1 樹叢
+// 2 磚塊
+// 3 磚塊邊
+
+// 4 直道路 road1
+// 5 橫道路 road2
+
+// 6 轉角1 左上
+// 7 轉角2 右上
+// 8 轉角3 左下
+// 9 轉角4 右下
+
+
 	// if (bgReady) {
 	// 	draw(bgImage, 0, 0);
 	// }
@@ -68,12 +82,11 @@ var render = function () {
 	// 	draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
 	// }
 
-
-	if (roadReady) {
+	if (blockReady) {
 		for (var i = 0; i < 100; i++) {
 			for (var j = 0; j < 100; j++) {
-				if (map[i][j]==2) {
-					draw(roadImage,grid.length*j,grid.length*i);
+				if (map[i][j]==1) {
+					draw(blockImage,grid.length*j,grid.length*i);
 				}
 			}
 		}
@@ -82,12 +95,80 @@ var render = function () {
 	if (brickReady) {
 		for (var i = 0; i < 100; i++) {
 			for (var j = 0; j < 100; j++) {
-				if (map[i][j]==3) {
+				if (map[i][j]==2) {
 					draw(brickImage,grid.length*j,grid.length*i);
 				}
 			}
 		}
 	}
+
+	if (bricksideReady) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==3) {
+					draw(bricksideImage,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+	if (road1Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==4) {
+					draw(road1Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+	if (road2Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==5) {
+					draw(road2Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+
+	if (rc1Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==6) {
+					draw(rc1Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+	if (rc2Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==7) {
+					draw(rc2Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+	if (rc3Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==8) {
+					draw(rc3Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+
+	if (rc4Ready) {
+		for (var i = 0; i < 100; i++) {
+			for (var j = 0; j < 100; j++) {
+				if (map[i][j]==9) {
+					draw(rc4Image,grid.length*j,grid.length*i);
+				}
+			}
+		}
+	}
+
+
 
 	if (boxReady) {
 		draw(boxImage, box.x, box.y);
@@ -109,27 +190,11 @@ var render = function () {
 	if (blockReady) {
 		for (i=0;i<blocks.length;i++ )
 		{
-			// if (blocks[i].width!=32 && blocks[i].height==32) {
-			// 	for(j=0;j<blocks[i].width/32;j++){
-			// 		draw(blockImage, blocks[i].x+32*j, blocks[i].y);
-			// 	}
-			// }
-			// else if(blocks[i].width==32 && blocks[i].height!=32){
-			// 	for(j=0;j<blocks[i].height/32;j++){
-			// 		draw(blockImage, blocks[i].x, blocks[i].y+32*j);
-			// 	}			
-			// }
-			// else if(blocks[i].width!=32 && blocks[i].height!=32){
-			if(blocks[i].width!=grid.length || blocks[i].height!=grid.length){
-				for(j=0;j<blocks[i].width/grid.length;j++){
-					for(k=0;k<blocks[i].height/grid.length;k++){
-						draw(blockImage, blocks[i].x+grid.length*j, blocks[i].y+grid.length*k);
-					}
+			for(j=0;j<blocks[i].width/grid.length;j++){
+				for(k=0;k<blocks[i].height/grid.length;k++){
+					draw(blockImage, blocks[i].x+grid.length*j, blocks[i].y+grid.length*k);
 				}
-			}
-			else{
-				draw(blockImage, blocks[i].x, blocks[i].y);
-			}
+			}	
 		}
 	}
 
@@ -155,9 +220,9 @@ var render = function () {
 		}
 	}
 	// Score
-	ctx.fillStyle = "rgba(0, 0, 0,0.8)";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
+	// ctx.fillStyle = "rgba(0, 0, 0,0.8)";
+	// ctx.font = "24px Helvetica";
+	// ctx.textAlign = "left";
+	// ctx.textBaseline = "top";
+	// ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
 };
