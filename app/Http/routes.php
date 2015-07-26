@@ -138,9 +138,11 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 
 // video
 //******************************************************************************************************
-Route::get('video2', function () {
-    return view('video2');
-});
+Route::get('video2','Video\GuestbookController@index2');
+Route::get('video', 'Video\GuestbookController@index');
+Route::get('video2/{id}','Video\GuestbookController@show');
+Route::post('video2','Video\GuestbookController@add');
+Route::get('video/test', 'Video\GuestbookController@add');
 //******************************************************************************************************
 
 // Game
