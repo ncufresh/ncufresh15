@@ -60,8 +60,14 @@ function setCalenderBar(element, data){
 function setCalenderModal(element, data){
 	var content = "";
 	for(j = 0; j < data.length; j++) {
-		content += "<h4>"+data[j].title+"</h4><h5>"+data[j].event_date+"</h5><p>"+data[j].content+"</p>";
+		content += "<h4 class='cal-modal-title'>"+data[j].title+"</h4>\
+					<h6 class='cal-modal-date'>"+data[j].event_date+"</h6>\
+					<p class='cal-modal-content'>"+nl2br(data[j].content)+"</p>";
 	}
 	$(element).html(content);
+}
+
+function nl2br( str ) {
+	return str.replace(/([^>])\n/g, '$1<br/>\n');
 }
 

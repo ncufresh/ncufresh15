@@ -250,6 +250,26 @@
 	display: none;
 }
 
+.cal-modal-title{
+	color: #0d47a1;
+	font-weight: 600;
+	margin-bottom: 0.5em;
+}
+
+.cal-modal-date{
+	color: #bf360c;
+}
+
+.cal-modal-content{
+	line-height: 2em;
+}
+
+.modal {
+	max-height: 90%;
+	min-height: 60%;
+	top: 5%;
+}
+
 @media only screen and (max-width: 992px) {
 	#home-nav {
 		display: block;
