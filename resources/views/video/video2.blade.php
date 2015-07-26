@@ -2,6 +2,7 @@
 @section('title', 'VIDEO2')
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/video/media2/css/style.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <style type="text/css">
 .center{
   margin-left: auto;
@@ -17,13 +18,16 @@
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 /* /////////////////////Show the controls (hidden at the start by default)/////////////////////// */
-  .video-js .vjs-control-bar { 
-    height: 50px; 
-    background-color: #00C5FF;
-    display: block;
-    }
-  
+.video-js .vjs-control-bar { 
+  height: 50px; 
+  background-color: #00C5FF;
+  display: block;
+}  
     /* Make the CDN fonts accessible from the CSS */
+}
+.unused{
+    color:#ffffff;
+}
 
   @font-face {
     font-family: 'VideoJS';
@@ -48,26 +52,42 @@
 $(document).ready(function(){
 
  $("#send").on("click", function(e) {
-    console.log("click");
     e.preventDefault();
     $.ajax({  //ajax
-      url:"/video2", //including index.php!!!
+      url:"/video2/add", //including index.php!!!
       type: "POST",
       data: {comment: $("#SendComment").val() },   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
 
-      success: function(msg) {
-        console.log(msg.comment);   //js, save data
-        ($(".0").append("<p>"+msg.comment+"</p>").hide()).fadeIn(1000);  //append: add in the back
-        //$("#0").append(msg.comment);
+       success: function(msg) {
+        console.log(msg);   //js, save data
+        var id = msg.id;
+        var str = '<div id="'+msg.id+'" class="card-action , unused"> \
+                      <div class="col s2">'+msg.name+'</div>\
+                      <div class="col s7">留言內容 '+msg.comment+'</div>\
+                      <div class="col s2">\
+                        <form action="comment(delete).php" method="post">\
+                          <button type="submit" id="delete" class="btn " style="width:10px;height:25px;margin-left:-10px">\
+                            <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>\
+                          </botton>\
+                              <input type="hidden" name="delete" value="yes" />\
+                              <input type="hidden" name="username" value="'+msg.name+'"/>\
+                              <input type="hidden" name="comment" value="'+msg.comment+'"/>\
+                          <input type="hidden" name="id" value="'+msg.id+'">\
+                        </form>\
+                      </div>\
+                    </div>\
+                  <div class="row" style="margin-bottom: 15px;margin-top: 0px;"></div>';
+
+        $("#place").append( $(str).hide().fadeIn(1000) );  //append: add in the back
       }
     });
   });
- $(document).on("click", ".delete" , function() {
-     event.preventDefault();
+ $(document).on("click", ".delete" , function(e) {
+    e.preventDefault();
     $.ajax({  //ajax
-    url:"delete.php", //including index.php!!!
+    url:"/video2", //including index.php!!!
     type: "POST",
-    data: {id: $(this).val()},   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
+    data: {id: $(this).val() },   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
 
     success: function(msg) {
           console.log(msg);   //js, save data
@@ -75,6 +95,22 @@ $(document).ready(function(){
           }
       });
   });
+  $(document).ready(function(){
+
+      $(".unused").hide();
+      $(".unused:first").show();
+
+    $(window).scroll(function() {   
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+      
+           $(".unused:first").removeClass("unused");
+           $(".unused:first").fadeIn(3000);
+
+       }  
+    });
+  });
+
+
 
 
 
@@ -99,15 +135,6 @@ $(document).ready(function(){
   </video>
           <p>影片簡介：</p>
           <p>一一一一</p>
-          @foreach($tryconnect as $try)
-            <p>
-            <a href="{{ action('Video\GuestbookController@show',[$try->id]) }}">{{ $try->name }}</a>
-            <div>
-            {{  $try->comment  }}
-            </div>
-            </p>
-          @endforeach
-          <p>一一一一</p>
       </div>
 <!--留言的Ssection( orange accent-2)-->    
       <div class="col s4 " style=";" >
@@ -115,7 +142,24 @@ $(document).ready(function(){
             <div class="card-content white-text" style="height:85%;">
               <span class="card-title">留言板</span>
 
-              <p class="0"></p>
+              <div id="place"></div>
+
+            @foreach($tryconnect as $try)
+      <div id="{{$try->id}}"> 
+         <div class="col s2">{{$try->name}}</div>
+            <div class="col s7">留言內容 {{$try->comment}}</div>
+              <div class="col s2">
+                <form action="comment(delete).php" method="post">
+                  <button type="submit" class="waves-effect waves-teal btn , delete" value="{{ $try->id }}" style="width:8px;height:25px;margin-left:-10px">
+                    <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>
+                  </botton>
+                </form>
+              </div>
+            </div>
+           <div class="row" style="margin-bottom: 15px;margin-top: 0px;">  </div>
+            @endforeach
+
+
 
             </div>
             <div class="card-action">
@@ -137,10 +181,6 @@ $(document).ready(function(){
           </div>
          </div>
     </div>
-
-
-
-
 
 </div>
     </body>
