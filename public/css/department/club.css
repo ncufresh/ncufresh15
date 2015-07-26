@@ -42,25 +42,51 @@
 	max-width: 100%;
 }
 .puzzle1Text {
-	font-size: 80px;
+	font-size: 50px;
+}
+.puzzle2Text {
+	font-size: 30px;
 }
 /***拼圖******************************************************************************/
-/**兩個**/
-.secPuzzle1 {
+.secPuzzle {
 	padding: 2% 2%;
-	font-size: 200px;
-}
-.groupPuzzle1 {
-	border-radius: 10px;
-	border-style: solid;
-	border-color: #9e9e9e;
-	vertical-align:middle;
 }
 .puzzle1 {
-	border: solid;
-	border-color: #9e9e9e;
-	height: 400px;
+	min-height: 400px;
+}
+.puzzle2 {
+	min-height: 200px;
 }
 .material-icons {
 	color: #9e9e9e;
+}
+.puzzlePad {
+	margin: 2% 2%;
+}
+/**總攬**/
+@media (max-width: 992px) {
+	.puzzleLeftTop {
+		border-bottom: solid;
+		border-color: white;
+	}
+}
+@media (min-width: 992px) {
+	.puzzleLeftTop {
+		border-right: solid;
+		border-color: white;
+	}
+}
+.trans1 {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.intro1 {
+	min-height: 150px;
+	max-height: 300px;
+}
+/**Card**/
+.cardCon1 {
+	height: 200px;
+}
+.cardCon2 {
+	height: 220px;
 }
