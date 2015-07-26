@@ -1,4 +1,4 @@
-@extends('document\document_layout')
+@extends('document.document_layout')
 
 @section('title', '公告')
 
@@ -14,7 +14,5 @@
 
 @section('text')
 <h5>104校曆</h5>
-<div>
-	<iframe src="/files/calendar104.pdf" frameborder="0" width="550" height="900" scrolling="auto"></iframe>
-</div>
+<iframe src="/files/calendar104.pdf" frameborder="0" width="100%" height="900" scrolling="auto"></iframe>
 @stop

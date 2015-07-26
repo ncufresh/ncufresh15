@@ -1,4 +1,4 @@
-@extends('document\document_layout')
+@extends('document.document_layout')
 
 @section('title', '公告')
 
