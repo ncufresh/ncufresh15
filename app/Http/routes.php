@@ -143,8 +143,18 @@ Route::get('video2', function () {
 });
 //******************************************************************************************************
 
-
 // Game
 //******************************************************************************************************
 Route::get('game', 'GameController@index');
+//******************************************************************************************************
+
+// life
+//******************************************************************************************************
+Route::get('life', 'Life\LifeController@index');
+Route::get('life/category/{category}', 'Life\LifeController@introduce');
+Route::get('life/{id}','Life\LifeController@show');
+Route::get('life/edit/{id}','Life\LifeController@edit');
+Route::post('life/update/{id}','Life\LifeController@update');
+Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
+Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
 //******************************************************************************************************

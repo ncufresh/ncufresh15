@@ -145,6 +145,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Bican\Roles\RolesServiceProvider::class,
+        'Jenssegers\Agent\AgentServiceProvider',
+
 
     ],
 
@@ -194,7 +196,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 		'Form' => 'Collective\Html\FormFacade',
-		'Html' => 'Collective\Html\HtmlFacade'
+		'Html' => 'Collective\Html\HtmlFacade',
+        'Agent' => 'Jenssegers\Agent\Facades\Agent',
     ],
 
 ];
