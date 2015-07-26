@@ -14,6 +14,7 @@ return array(
     'CalenderSeeder' => $baseDir . '/database/seeds/CalenderSeeder.php',
     'CreatDocument' => $baseDir . '/database/migrations/2015_07_16_142342_creat_document.php',
     'CreateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_19_185404_create_announcement_table.php',
+    'CreateBottlesTable' => $baseDir . '/database/migrations/2015_07_24_071802_create_bottles_table.php',
     'CreateCalenderTable' => $baseDir . '/database/migrations/2015_07_21_034122_create_calender_table.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
     'CreateDepartmentPicturesTable' => $baseDir . '/database/migrations/2015_07_16_120716_create_department_pictures_table.php',

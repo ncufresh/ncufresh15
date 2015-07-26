@@ -15,12 +15,13 @@
 				background-size: 65px;
 			}
 			#banner-img {
-				background: url('{{asset("img/banner.jpg")}}');
+				background: url('{{asset("img/banner/4.png")}}');
 				background-size: 100% 100%;
 			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 100% 100%;
+                margin-left: -20px;
 			}
 			#nop {
 				opacity: 0;
@@ -134,7 +135,9 @@
 			<div id='content'>
 		        @if (Request::url() != url('/'))
                     <div id="breadcrumbs">
-                        <a href="{{url('/')}}">首頁</a>
+                        @if (!isset($nobreadcrumb)) 
+                            <a href="{{url('/')}}">首頁</a>
+                        @endif
                         @foreach (\App\Helpers\SitemapHelper::getLocations() as $location)
                             &gt;
                             <a href="{{$location['url']}}">{{$location['name']}}</a>

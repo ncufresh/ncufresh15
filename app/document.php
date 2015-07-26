@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class document extends Model
+class Document extends Model
 {
 	protected $table = 'document';
-    protected $fillable = ['page_id','page_id_2','page_id_3','text'];
+    protected $fillable = ['title','content'];
 }

@@ -72,7 +72,7 @@ class QaController extends Controller
             'counts' => $counts,
             'answers' => $answers,
             'top_answers' => $top_answers,
-            'categoryString'=> ['中大生活', '行政', '學務', '小遊戲']
+            'category_class'=> ['puzzle-life', 'puzzle-gov', 'puzzle-student', 'puzzle-game']
         ]);
     }
 
@@ -114,7 +114,7 @@ class QaController extends Controller
             'answer' => $answer,
             'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
             'counts' => $counts,
-            'categoryString' => ['中大生活', '行政', '學務', '小遊戲', '問題回報'],
+            'category_class'=> ['puzzle-life', 'puzzle-gov', 'puzzle-student', 'puzzle-game']
         ]);
     }
 
