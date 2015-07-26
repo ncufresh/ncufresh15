@@ -47,6 +47,8 @@
     height: 190px;
     float: left;
     background-size: 100% auto;
+    border-radius: 50%;
+    border: 5px solid #555;
 }
 #detail {
     float: left;
