@@ -1,0 +1,636 @@
+#campus {
+	width: 100%;
+}
+
+.building {
+	transition:all 0.35s;
+}
+/*============================================================================*/
+/*space*/
+#administration1 {
+	position: absolute;
+	left: 39%;
+	top: 3.5%;
+	width: 7%;
+	z-index: 1;
+}
+#administration1:hover {
+	left: 38.3%;
+	top: 2.5%;
+	width: 8.5%;
+}
+/*administration*/
+#administration2 {
+	position: absolute;
+	left: 44%;
+	top: 69%;
+	width: 10%;
+	z-index: 1;
+}
+#administration2:hover {
+	left: 43%;
+	top: 68.5%;
+	width: 12%;
+}
+/*library*/
+#administration3 {
+	position: absolute;
+	left: 44.5%;
+	top: 59.1%;
+	width: 8.5%;
+	z-index: 2;
+}
+#administration3:hover {
+	left: 43.5%;
+	top: 58.8%;
+	width: 10%;
+}
+/*oldlibrary*/
+#administration4 {
+	position: absolute;
+	left: 44%;
+	top: 55.5%;
+	width: 9.8%;
+	z-index: 1;
+}
+#administration4:hover {
+	left: 43%;
+	top: 54.8%;
+	width: 11.8%;
+}
+/*country*/
+#administration5 {
+	position: absolute;
+	left: 69%;
+	top: 61%;
+	width: 7%;
+	z-index: 8;
+}
+#administration5:hover {
+	left: 68%;
+	top: 59.7%;
+	width: 9%;
+}
+/*complex*/
+#administration6 {
+	position: absolute;
+	left: 69.5%;
+	top: 48.7%;
+	width: 4%;
+	z-index: 6;
+}
+#administration6:hover {
+	left: 68.5%;
+	top: 47.7%;
+	width: 5.5%;
+}
+/*history*/
+#administration7 {
+	position: absolute;
+	left: 25%;
+	top: 75%;
+	width: 8%;
+	z-index: 1;
+}
+#administration7:hover {
+	left: 24%;
+	top: 74%;
+	width: 10%;
+}
+/*jiuder*/
+#administration8 {
+	position: absolute;
+	left: 16%;
+	top: 79%;
+	width: 7.5%;
+	z-index: 1;
+}
+#administration8:hover {
+	left: 15%;
+	top: 78.5%;
+	width: 9.5%;
+}
+/*yuyi*/
+#administration9 {
+	position: absolute;
+	left: 12%;
+	top: 72.5%;
+	width: 4.5%;
+	z-index: 1;
+}
+#administration9:hover {
+	left: 11.3%;
+	top: 71.3%;
+	width: 6%;
+}
+/*jidao*/
+#administration10 {
+	position: absolute;
+	left: 11.5%;
+	top: 60%;
+	width: 5.5%;
+	z-index: 2;
+}
+#administration10:hover {
+	left: 10.5%;
+	top: 59%;
+	width: 7.5%;
+}
+/*blackbox*/
+#administration11 {
+	position: absolute;
+	left: 58%;
+	top: 67.5%;
+	width: 8%;
+	z-index: 3;
+}
+#administration11:hover {
+	left: 57%;
+	top: 66.5%;
+	width: 10%;
+}
+/*============================================================================*/
+/*literature*/
+#department1 {
+	position: absolute;
+	left: 55%;
+	top: 62.2%;
+	width: 10.5%;
+	z-index: 2;
+}
+#department1:hover {
+	left: 54%;
+	top: 61.9%;
+	width: 12.5%;
+}
+/*engineering1*/
+#department2 {
+	position: absolute;
+	left: 29.3%;
+	top: 47.3%;
+	width: 7%;
+	z-index: 2;
+}
+#department2:hover {
+	left: 28.3%;
+	top: 46.3%;
+	width: 9%;
+}
+/*engineering2*/
+#department3 {
+	position: absolute;
+	left: 30%;
+	top: 39.7%;
+	width: 5.7%;
+	z-index: 1;
+}
+#department3:hover {
+	left: 29%;
+	top: 38.6%;
+	width: 7.7%;
+}
+/*engineering3*/
+#department4 {
+	position: absolute;
+	left: 38%;
+	top: 15.5%;
+	width: 10.5%;
+	z-index: 2;
+}
+#department4:hover {
+	left: 37%;
+	top: 14.5%;
+	width: 12.5%;
+}
+/*engineering4*/
+#department5 {
+	position: absolute;
+	left: 46%;
+	top: 6.5%;
+	width: 11.5%;
+	z-index: 2;
+}
+#department5:hover {
+	left: 45.2%;
+	top: 5.5%;
+	width: 13.5%;
+}
+/*engineering5*/
+#department6 {
+	position: absolute;
+	left: 24.8%;
+	top: 8.7%;
+	width: 12%;
+	z-index: 1;
+}
+#department6:hover {
+	left: 23.8%;
+	top: 7.7%;
+	width: 14%;
+}
+/*science1*/
+#department7 {
+	position: absolute;
+	left: 29.5%;
+	top: 66.5%;
+	width: 12%;
+	z-index: 1;
+}
+#department7:hover {
+	left: 28.5%;
+	top: 66%;
+	width: 14%;
+}
+/*science2*/
+#department8 {
+	position: absolute;
+	left: 68%;
+	top: 45.5%;
+	width: 6%;
+	z-index: 5;
+}
+#department8:hover {
+	left: 67.3%;
+	top: 44.8%;
+	width: 7.5%;
+}
+/*science3*/
+#department9 {
+	position: absolute;
+	left: 75%;
+	top: 46.5%;
+	width: 5%;
+	z-index: 5;
+}
+#department9:hover {
+	left: 74.3%;
+	top: 45.8%;
+	width: 6.5%;
+}
+/*science4*/
+#department10 {
+	position: absolute;
+	left: 86%;
+	top: 42.8%;
+	width: 8.5%;
+	z-index: 5;
+}
+#department10:hover {
+	left: 85%;
+	top: 41.8%;
+	width: 10.5%;
+}
+/*science5*/
+#department11 {
+	position: absolute;
+	left: 83.8%;
+	top: 47.5%;
+	width: 9%;
+	z-index: 6;
+}
+#department11:hover {
+	left: 82.8%;
+	top: 46.5%;
+	width: 11%;
+}
+/*hope*/
+#department12 {
+	position: absolute;
+	left: 71.3%;
+	top: 54%;
+	width: 8.5%;
+	z-index: 7;
+}
+#department12:hover {
+	left: 70.4%;
+	top: 53.2%;
+	width: 10%;
+}
+/*hakka*/
+#department13 {
+	position: absolute;
+	left: 75.5%;
+	top: 30.5%;
+	width: 13%;
+	z-index: 3;
+}
+#department13:hover {
+	left: 74.5%;
+	top: 29.8%;
+	width: 15%;
+}
+/*light*/
+#department14 {
+	position: absolute;
+	left: 67%;
+	top: 29.5%;
+	width: 8.5%;
+	z-index: 2;
+}
+#department14:hover {
+	left: 66%;
+	top: 28.5%;
+	width: 10.5%;
+}
+/*manage2*/
+#department15 {
+	position: absolute;
+	left: 80.8%;
+	top: 55.8%;
+	width: 9.5%;
+	z-index: 7;
+}
+#department15:hover {
+	left: 79.8%;
+	top: 55%;
+	width: 11.5%;
+}
+/*bird*/
+#department16 {
+	position: absolute;
+	left: 74%;
+	top: 49%;
+	width: 6%;
+	z-index: 6;
+}
+#department16:hover {
+	left: 73.3%;
+	top: 48.3%;
+	width: 7.5%;
+}
+/*============================================================================*/
+/*maindoor*/
+#view1 {
+	position: absolute;
+	left: 43%;
+	top: 92%;
+	width: 11%;
+	z-index: 1;
+}
+#view1:hover {
+	left: 42%;
+	top: 91.2%;
+	width: 13%;
+}
+/*tree*/
+#view2 {
+	position: absolute;
+	left: 30.5%;
+	top: 57%;
+	width: 8.5%;
+	z-index: 4;
+}
+#view2:hover {
+	left: 29.5%;
+	top: 56.2%;
+	width: 10.5%;
+}
+/*sculpture*/
+#view3 {
+	position: absolute;
+	left: 56%;
+	top: 56.7%;
+	width: 6.5%;
+	z-index: 1;
+}
+#view3:hover {
+	left: 55%;
+	top: 56%;
+	width: 8.5%;
+}
+/*lake*/
+#view4 {
+	position: absolute;
+	left: 73.7%;
+	top: 37.5%;
+	width: 12.5%;
+	z-index: 4;
+}
+#view4:hover {
+	left: 72.7%;
+	top: 36.7%;
+	width: 14.5%;
+}
+/*flowers*/
+#view5 {
+	position: absolute;
+	left: 29%;
+	top: 52.8%;
+	width: 12%;
+	z-index: 3;
+}
+#view5:hover {
+	left: 28%;
+	top: 52.2%;
+	width: 14%;
+}
+/*move*/
+#view6 {
+	position: absolute;
+	left: 40%;
+	top: 56.5%;
+	width: 2%;
+	z-index: 4;
+}
+#view6:hover {
+	left: 39.6%;
+	top: 54.2%;
+	width: 4%;
+}
+/*village*/
+#view7 {
+	position: absolute;
+	left: 29%;
+	top: 29%;
+	width: 6%;
+	z-index: 1;
+}
+#view7:hover {
+	left: 28.3%;
+	top: 28%;
+	width: 8%;
+}
+/*============================================================================*/
+/*yilan*/
+#sport1 {
+	position: absolute;
+	left: 43.5%;
+	top: 32%;
+	width: 9%;
+	z-index: 2;
+}
+#sport1:hover {
+	left: 42.5%;
+	top: 31%;
+	width: 11%;
+}
+/*ice*/
+#sport2 {
+	position: absolute;
+	left: 59.5%;
+	top: 36%;
+	width: 6.4%;
+	z-index: 1;
+}
+#sport2:hover {
+	left: 58.5%;
+	top: 35.7%;
+	width: 8.4%;
+}
+/*badminton*/
+#sport3 {
+	position: absolute;
+	left: 52.4%;
+	top: 34.3%;
+	width: 6.2%;
+	z-index: 3;
+}
+#sport3:hover {
+	left: 51.4%;
+	top: 33.3%;
+	width: 8.2%;
+}
+/*tennis*/
+#sport4 {
+	position: absolute;
+	left: 59.5%;
+	top: 26%;
+	width: 6%;
+	z-index: 1;
+}
+#sport4:hover {
+	left: 58.5%;
+	top: 24.9%;
+	width: 8%;
+}
+/*sportfield*/
+#sport5 {
+	position: absolute;
+	left: 39.2%;
+	top: 25.5%;
+	width: 14.5%;
+	z-index: 1;
+}
+#sport5:hover {
+	left: 38.2%;
+	top: 25%;
+	width: 16.5%;
+}
+/*climb*/
+#sport6 {
+	position: absolute;
+	left: 53.3%;
+	top: 24.8%;
+	width: 5%;
+	z-index: 2;
+}
+#sport6:hover {
+	left: 52.3%;
+	top: 23.8%;
+	width: 7%;
+}
+/*volleyball1*/
+#sport7-1 {
+	position: absolute;
+	left: 54%;
+	top: 17%;
+	width: 6%;
+	z-index: 1;
+}
+#sport7-1:hover {
+	left: 53%;
+	top: 16.2%;
+	width: 8%;
+}
+/*volleyball2*/
+#sport7-2 {
+	position: absolute;
+	left: 37.7%;
+	top: 32.5%;
+	width: 5.8%;
+	z-index: 1;
+}
+#sport7-2:hover {
+	left: 36.7%;
+	top: 31.5%;
+	width: 7.8%;
+}
+/*basketball*/
+#sport8 {
+	position: absolute;
+	left: 50%;
+	top: 20.5%;
+	width: 6%;
+	z-index: 2;
+}
+#sport8:hover {
+	left: 49%;
+	top: 19.5%;
+	width: 8%;
+}
+/*pool*/
+#sport9 {
+	position: absolute;
+	left: 67.5%;
+	top: 24%;
+	width: 7%;
+	z-index: 1;
+}
+#sport9:hover {
+	left: 66.5%;
+	top: 23.3%;
+	width: 9%;
+}
+/*============================================================================*/
+/*pine*/
+#food1 {
+	position: absolute;
+	left: 23.8%;
+	top: 34%;
+	width: 10%;
+	z-index: 1;
+}
+#food1:hover {
+	left: 22.8%;
+	top: 33.5%;
+	width: 12%;
+}
+/*treehouse*/
+#food2 {
+	position: absolute;
+	left: 67.2%;
+	top: 57.5%;
+	width: 4%;
+	z-index: 1;
+}
+#food2:hover {
+	left: 66.2%;
+	top: 56.5%;
+	width: 6%;
+}
+/*backdoor*/
+#food3 {
+	position: absolute;
+	left: 0.7%;
+	top: 38.9%;
+	width: 19.5%;
+	z-index: 1;
+}
+#food3:hover {
+	left: -0.3%;
+	top: 38.8%;
+	width: 22.5%;
+}
+/*supper*/
+#food4 {
+	position: absolute;
+	left: 2.7%;
+	top: 57.2%;
+	width: 15.5%;
+	z-index: 1;
+}
+#food4:hover {
+	left: 1.4%;
+	top: 57.1%;
+	width: 18.5%;
+}

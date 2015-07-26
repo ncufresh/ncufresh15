@@ -106,16 +106,19 @@ Route::post('group/new', 'Department\ClubController@store');
 Route::get('group/{group}/{cate}', 'Department\ClubController@cate');
 Route::get('group/{group}/show/{id}', 'Department\ClubController@show');
 Route::post('group/update','Department\ClubController@update');
-
-Route::get('department/{cate}', 'Department\ClubController@department');
-Route::post('department/update', 'Department\ClubController@update');
-Route::post('department/content', 'Department\ClubController@getContent');
 //******************************************************************************************************
 
 
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
+Route::get('campus/add_view', 'Campus\CampusController@addView');
+Route::post('campus/add_view', 'Campus\CampusController@store');
+Route::get('campus/view/{id}', 'Campus\CampusController@showView');
+Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
+Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
+Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
+Route::get('campus/{cate}', 'Campus\CampusController@cate');
 //******************************************************************************************************
 
 

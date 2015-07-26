@@ -1,3 +1,98 @@
+#slidebar {
+	float: left;
+	width: 15%;
+	margin: 0%;
+	position: relative;
+}
+
+#main {
+	margin-left: 17.5%;
+	width: 83%;
+}
+
+.collapsible {
+	border: 0px;
+}
+
+.category {
+	border: 1px;
+	border-style: solid;
+	background-color: #BFE0FF;
+	border-color: #BFE0FF;
+	color: black;
+}
+
+.here {
+	background-color: #2196F3;
+	border: 0px;
+	color: white;
+}
+
+.here::after {
+	content: "";
+	position: absolute;
+	left: 100%;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 22.5px 0px 22.5px 13px;
+	border-color: transparent transparent transparent #2196F3;
+}
+
 .collection {
 	margin: 0%;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#view_id {
+	float: left;
+	width: 20%;
+}
+
+#region {
+	float: left;
+	width: 22%;
+	margin-left: 1%;
+}
+
+#title {
+	margin-left: 45%;
+	width: 55%;
+}
+
+#item_name {
+	left: 0%;
+}
+
+#error {
+	color: red;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+#campus_title {
+	font-size: 180%;
+	margin-bottom: 3%;
+}
+
+#pictures {
+	position: relative;
+}
+
+#view{
+	width: 100%;
+	margin-top: 1%;
+}
+
+#map, #small_map {
+	position: absolute;
+	right: 0.5%;
+	top: 2.2%;
+	width: 8%;
+}
+
+#btn-edit {
+	right: 1%;
 }

@@ -6,6 +6,8 @@
 @stop
 @section('js')
     <script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jssor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jssor.slider.min.js') }}"></script>
 @stop
 
 @section('content')
@@ -18,7 +20,7 @@
         <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
     </div>
     <div class="col s1">
-        <i class="small material-icons">navigate_before</i>
+        <i class="small material-icons" onclick="goBack()">navigate_before</i>
     </div>
 </div>
 <div class="container">
@@ -27,11 +29,14 @@
         <h3>{{ $content->name }}</h3>
         <p>{!! nl2br(htmlentities($content->content)) !!}</p>
     </div>
-    @foreach($picture as $picture)
-    <div>
-        <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+    <div id="slider1_container" style="position: relative; width: 650px; height: 350px;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 650px; height: 350px; overflow: hidden;">
+            @foreach($picture as $picture)
+            <div><img u="image" src="{{ asset('uploads/departments/'.$picture->picName.'') }}" /></div>
+            @endforeach
+        </div>
     </div>
-    @endforeach
 @elseif($sect === 2)
     {!! Form::open(array('url'=>'/group/update', 'method'=>'post', 'files' => true))!!}
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -52,14 +57,20 @@
         @foreach($picture as $picture)
         @if($picture != null)
         <div>
-            <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+            <p>
+                <input name="deleteImage[]" type="checkbox" id="deleteImage{{ $picture->id }}" value="{{ $picture->picName }}">
+                <label for="deleteImage{{ $picture->id }}">刪除</label>
+            </p>
         </div>
+        <div>
+            <img class="contentIamge" src="{{ asset('uploads/departments/'.$picture->picName.'') }}">
+        </div><br>
         @endif
         @endforeach
         <div class="file-field input-field">
             <input class="file-path validate" type="text">
             <div>
-            <input name="fileName[]" id="file" type="file" class="validate" multiple="multiple" onchange="getFileName(this.value)">
+            <input name="fileName[]" id="file" type="file" class="validate" multiple="multiple" accept="image/*" onchange="getFileName(this.value)">
                 <label id="fileName" for="file">選擇圖片</label>
             </div>
         </div>

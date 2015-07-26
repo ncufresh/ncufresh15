@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         SitemapHelper::push($user->name, 'user/'.$user->id);
-        return view('user.show', $user, ['user' => $user]);
+        return view('user.show', ['user' => $user]);
     }
 
     /**
