@@ -145,6 +145,7 @@ $(document).ready(function(){
               <div id="place"></div>
 
             @foreach($tryconnect as $try)
+            
       <div id="{{$try->id}}"> 
          <div class="col s2">{{$try->name}}</div>
             <div class="col s7">留言內容 {{$try->comment}}</div>
