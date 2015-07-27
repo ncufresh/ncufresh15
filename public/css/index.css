@@ -277,4 +277,10 @@
 	#banner {
 		display: none;
 	}
+	#puzzle-container {
+		width: 100%;
+	}
+	#arrow-container1, #arrow-container2 {
+		display: none;
+	}
 }
