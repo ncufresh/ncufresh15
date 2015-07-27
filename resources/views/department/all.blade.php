@@ -9,14 +9,6 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
-        #content {
-            margin-bottom: 120px;
-            padding: 20px;
-            min-height: 1000px;
-            background: url('{{asset("img/department/white.png")}}');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
     </style>
 @stop
 @section('js')
@@ -35,9 +27,6 @@
             <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
         </div>
         @endpermission
-        <div class="col s1">
-            <i class="small material-icons" onclick="goBack()">navigate_before</i>
-        </div>
     </div>
     <div class="container">
     @if($sect === 1)
