@@ -23,7 +23,7 @@
 @section('content')
 <!--選單-->
 <div class="row">
-  <div class="col m3 s12">
+  <div class="col l4 m5 s12">
       <ul class="collapsible" data-collapsible="expandable">
         <li class="list_1">
           <div class="collapsible-header">大學部新生註冊須知</div>
@@ -73,7 +73,7 @@
     <a class="waves-effect waves-light btn" href="/document/ckeditor">編輯</a>
     @endpermission
   </div>
-  <div class="col m9 s12">
+  <div class="col l8 m7 s12">
     @yield('text')
   </div>
 </div>
