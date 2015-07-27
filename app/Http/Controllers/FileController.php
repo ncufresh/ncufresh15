@@ -57,9 +57,9 @@ class FileController extends Controller
             foreach($files as $file) {
                 $is_img = (substr($file->getMimeType(), 0, 5) == 'image');
                 $uploadFolder = base_path().'/storage/app/';
-                $newname = uniqid();
+                $newname = bin2hex(openssl_random_pseudo_bytes(16));
                 while(file_exists($uploadFolder.$newname)) {
-                    $newname = uniqid();
+                    $newname = bin2hex(openssl_random_pseudo_bytes(16));
                 }
                 $file->move($uploadFolder, $newname);
                 $fileRecord = new FileUpload;

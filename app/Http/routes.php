@@ -20,12 +20,13 @@ Route::get('/', 'HomepageController@index');
 Route::get('/admin', 'AdminController@index');
 
 //Announcement on Homepage
+Route::get('/ann/{id?}', 'AnnouncementController@get');
 Route::post('/ann/new', 'AnnouncementController@store');
 Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');
 
 // Calender on Homepage
-Route::get('/calender', 'CalenderController@get');
+Route::get('/cal/get', 'CalenderController@get');
 Route::post('/cal/new', 'CalenderController@store');
 Route::get('/cal/delete/{id}', 'CalenderController@destroy');
 Route::post('/cal/update/{id}', 'CalenderController@update');
@@ -42,6 +43,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 // show user
 Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
+
+// knowledge
+Route::get('knowledge/{id}', 'KnowledgeController@show');
 
 // Q&A
 //------------------------------------------------------------------------------------------------------
@@ -111,22 +115,48 @@ Route::post('group/update','Department\ClubController@update');
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
+Route::get('campus/add_view', 'Campus\CampusController@addView');
+Route::post('campus/add_view', 'Campus\CampusController@store');
+Route::get('campus/view/{id}', 'Campus\CampusController@showView');
+Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
+Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
+Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
+Route::get('campus/{cate}', 'Campus\CampusController@cate');
 //******************************************************************************************************
 
 
 //Document
 //******************************************************************************************************
-Route::get('document', 'Document\DocumentController@index');
+Route::get('document', 'Document\DocumentController@index');	
 Route::get('document/ckeditor', 'Document\DocumentController@editor');
-Route::post('document/add_content', array('as' => 'document/add_content', 'uses' => 'Document\DocumentController@store'));
-Route::get('department/{id_1}', 'Document\DocumentController@document_1');
-Route::get('department/{id_1}/{id_2}', 'Document\DocumentController@document_2');
-Route::get('department/{id_1}/{id_2}/{id_3}', 'Document\DocumentController@document_3');
+Route::get('document/edit_content/{id}', 'Document\DocumentController@edit');
+Route::post('document/store_content', 'Document\DocumentController@store');
+Route::get('document/{page_id}', 'Document\DocumentController@get_content_1');
+Route::get('document/{page_id}/{page_id_2}', 'Document\DocumentController@get_content_2');
+Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@get_content_3');
 //******************************************************************************************************
 
 // video
 //******************************************************************************************************
-Route::get('video2', function () {
-    return view('video2');
-});
+Route::get('video2','Video\GuestbookController@index2');
+Route::get('video', 'Video\GuestbookController@index');
+Route::get('video2/{id}','Video\GuestbookController@show');
+Route::post('video2','Video\GuestbookController@add');
+Route::get('video/test', 'Video\GuestbookController@add');
+//******************************************************************************************************
+
+// Game
+//******************************************************************************************************
+Route::get('game', 'GameController@index');
+//******************************************************************************************************
+
+// life
+//******************************************************************************************************
+Route::get('life', 'Life\LifeController@index');
+Route::get('life/category/{category}', 'Life\LifeController@introduce');
+Route::get('life/{id}','Life\LifeController@show');
+Route::get('life/edit/{id}','Life\LifeController@edit');
+Route::post('life/update/{id}','Life\LifeController@update');
+Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
+Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
 //******************************************************************************************************

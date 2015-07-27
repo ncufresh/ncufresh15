@@ -8,11 +8,26 @@ use App\Http\Controllers\Controller;
 use App\Announcement;
 
 class AnnouncementController extends Controller{
+	public function get($id = null){
+		if ($id){
+			$anns = Announcement::find($id);
+			$type = "single";
+		}else{
+			$anns = Announcement::where('category',1)->get();
+			$type = "all";
+		}
+		return view('announcement',[
+			'type'=>$type,
+			'anns'=>$anns
+		]);
+	}
+
     public function store(Request $request){
 		Announcement::create([
-			'title'=>$request->input('title'),
-			'url'=>$request->input('url'),
-			'category'=>$request->input('category')
+			'title'=>$request->title,
+			'content'=>$request->content,
+			'url'=>$request->url,
+			'category'=>$request->category
 		]);
 		return redirect('admin');
     }
@@ -20,6 +35,7 @@ class AnnouncementController extends Controller{
     public function update(Request $request, $id){
 		$ann = Announcement::find($id);
 		$ann->title = $request->title;
+		$ann->content = $request->content;
 		$ann->url = $request->url;
 		$ann->category = $request->category;
 		$ann->save();

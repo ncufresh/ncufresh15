@@ -72,7 +72,7 @@ class QaController extends Controller
             'counts' => $counts,
             'answers' => $answers,
             'top_answers' => $top_answers,
-            'categoryString'=> ['中大生活', '行政', '學務', '小遊戲']
+            'category_class'=> ['puzzle-life', 'puzzle-gov', 'puzzle-student', 'puzzle-game']
         ]);
     }
 
@@ -114,7 +114,7 @@ class QaController extends Controller
             'answer' => $answer,
             'all_count' => $counts[0] + $counts[1] + $counts[2] + $counts[3],
             'counts' => $counts,
-            'categoryString' => ['中大生活', '行政', '學務', '小遊戲', '問題回報'],
+            'category_class'=> ['puzzle-life', 'puzzle-gov', 'puzzle-student', 'puzzle-game']
         ]);
     }
 
@@ -221,7 +221,7 @@ class QaController extends Controller
         if ($validator->fails()) {
             return response()->json(['msg'=> 'error']);
         }
-        $answer = QaQuestion::find($request->id);
+        $answer = QaQuestion::findOrFail($request->id);
         if ($answer != null) {
             $answer->solved = $request->solved;
             $answer->save();
@@ -259,7 +259,7 @@ class QaController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        $answer = QaAnswer::find($id);
+        $answer = QaAnswer::findOrFail($id);
         $answer->category = $request->category;
         $answer->title = strip_tags($request->title);
         $answer->content = $this->sanitize($request->content);
@@ -276,7 +276,7 @@ class QaController extends Controller
     public function destroy($id)
     {
         //
-        $answer = QaAnswer::find($id);
+        $answer = QaAnswer::findOrFail($id);
         if ($answer != null) {
             $answer->delete();
         }

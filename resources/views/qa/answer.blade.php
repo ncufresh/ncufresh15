@@ -49,7 +49,7 @@
                 <label>類別</label>
             </div>
             <div class="input-field col s9">
-                <i class="material-icons prefix">account_circle</i>
+                <i class="material-icons prefix" style="font-size:1">account_circle</i>
                 <input id="input_title" type="text" class="validate" name="title" value="{{isset($answer)?$answer->title:''}}">
                 <label for="input_title">標題</label>
             </div>
