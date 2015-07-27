@@ -170,8 +170,8 @@ var render = function () {
 
 
 
-	if (boxReady) {
-		draw(boxImage, box.x, box.y);
+	if (boxcloseReady) {
+		draw(boxcloseImage, box.x, box.y);
 	}
 	if (monsterReady) {
 		draw(monsterImage, monster.x, monster.y);

@@ -15,6 +15,22 @@ grassImage.onload = function () {
 };
 grassImage.src = "game_images/grass.png";
 
+// Brick image
+var brickReady = false;
+var brickImage = new Image();
+brickImage.onload = function () {
+	brickReady = true;
+};
+brickImage.src = "game_images/brick.png";
+
+// BrickSide image
+var bricksideReady = false;
+var bricksideImage = new Image();
+bricksideImage.onload = function () {
+	bricksideReady = true;
+};
+bricksideImage.src = "game_images/brickside.png";
+
 // Road1 image
 var road1Ready = false;
 var road1Image = new Image();
@@ -63,21 +79,36 @@ rc4Image.onload = function () {
 };
 rc4Image.src = "game_images/road_corner4.png";
 
-// Brick image
-var brickReady = false;
-var brickImage = new Image();
-brickImage.onload = function () {
-	brickReady = true;
-};
-brickImage.src = "game_images/brick.png";
 
-// BrickSide image
-var bricksideReady = false;
-var bricksideImage = new Image();
-bricksideImage.onload = function () {
-	bricksideReady = true;
+// Road_Three1 image
+var rt1Ready = false;
+var rt1Image = new Image();
+rt1Image.onload = function () {
+	rt1Ready = true;
 };
-bricksideImage.src = "game_images/brickside.png";
+rt1Image.src = "game_images/road_three1.png";
+// Road_Three2 image
+var rt2Ready = false;
+var rt2Image = new Image();
+rt2Image.onload = function () {
+	rt2Ready = true;
+};
+rt2Image.src = "game_images/road_three2.png";
+// Road_Three3 image
+var rt3Ready = false;
+var rt3Image = new Image();
+rt3Image.onload = function () {
+	rt3Ready = true;
+};
+rt3Image.src = "game_images/road_three3.png";
+// Road_Three4 image
+var rt4Ready = false;
+var rt4Image = new Image();
+rt4Image.onload = function () {
+	rt4Ready = true;
+};
+rt4Image.src = "game_images/road_three4.png";
+
 
 // Hero image
 var heroReady = false;
@@ -103,14 +134,14 @@ blockImage.onload = function () {
 };
 blockImage.src = "game_images/block.png";
 
-// Box image
-var boxReady = false;
-var boxImage = new Image();
-boxImage.onload = function () {
-	boxReady = true;
+// Box_Close image
+var boxcloseReady = false;
+var boxcloseImage = new Image();
+boxcloseImage.onload = function () {
+	boxcloseReady = true;
 };
-boxImage.src = "game_images/box1.png";
-////////////////
+boxcloseImage.src = "game_images/box_close.png";
+
 
 // test image
 var testReady = false;
@@ -119,8 +150,6 @@ testImage.onload = function () {
 	testReady = true;
 };
 testImage.src = "game_images/test.png";
-
-
 
 
 var herosReady = false;
