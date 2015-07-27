@@ -39,7 +39,7 @@
 			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
-				<li><a href="#">新生必讀</a></li>
+				<li><a href="{{ url('document') }}">新生必讀</a></li>
 				<li><a href="{{ url('life') }}">中大生活</a></li>
 				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
 				<ul id='nav-links' class='dropdown-content'>
