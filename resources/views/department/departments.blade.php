@@ -17,9 +17,6 @@
 		<a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/add">新增</a>
 	</div>
 	@endpermission
-	<div class="col s1">
-    	<i class="small material-icons" onclick="goBack()">navigate_before</i>
-    </div>
 @if($page === 1)
 	<!--總攬-->
 	<div class="row">

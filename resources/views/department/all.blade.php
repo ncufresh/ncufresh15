@@ -27,9 +27,6 @@
             <a class="waves-effect waves-light grey lighten-2 btn butSelect" href="/group/edit/{{ $content->id }}">編輯</a>
         </div>
         @endpermission
-        <div class="col s1">
-            <i class="small material-icons" onclick="goBack()">navigate_before</i>
-        </div>
     </div>
     <div class="container">
     @if($sect === 1)
