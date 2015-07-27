@@ -5,6 +5,30 @@
 .building {
 	transition:all 0.35s;
 }
+/*circle*/
+#circle {
+	position: absolute;
+	left: 40.5%;
+	top: 78%;
+	width: 16%;
+	z-index: 1;
+}
+/*working*/
+#working {
+	position: absolute;
+	left: 46%;
+	top: 45.5%;
+	width: 5%;
+	z-index: 1;
+}
+/*baseball*/
+#baseball {
+	position: absolute;
+	left: 53.7%;
+	top: 40.3%;
+	width: 12.5%;
+	z-index: 1;
+}
 /*============================================================================*/
 /*space*/
 #administration1 {

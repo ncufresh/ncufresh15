@@ -3,6 +3,10 @@
 @section('main')
 <div id="pictures">
 	<img src="{{asset('img/campus/background.png')}}" id="campus">
+	<img src="{{asset('img/campus/circle.png')}}" id="circle">
+	<img src="{{asset('img/campus/working.png')}}" id="working">
+	<img src="{{asset('img/campus/baseball.png')}}" id="baseball">
+
 	<!--@foreach($campus as $item)
 		@if( isset($index) || (isset($cate)&&$item->view_id==$cate) )
 			<a href="/campus/view/{{$item->id}}">
