@@ -9,14 +9,6 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
-        #content {
-            margin-bottom: 120px;
-            padding: 20px;
-            min-height: 1000px;
-            background: url('{{asset("img/department/white.png")}}');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
     </style>
 @stop
 @section('js')
