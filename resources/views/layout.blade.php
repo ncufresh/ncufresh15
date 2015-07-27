@@ -55,7 +55,7 @@
 					<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
 					<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 				</ul>
-				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="{{ url('video') }}">影音專區</a></li>
 				<li><a href="#">關於我們</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-nav">
@@ -91,7 +91,7 @@
 					</ul>
 				</li>
 				<li><a href="{{ url('group')}}">系所社團</a></li>
-				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="{{ url('video') }}">影音專區</a></li>
 				<li><a href="#">關於我們</a></li>
 			</ul>
 			</div>
@@ -126,7 +126,7 @@
 								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 							</ul>
 						</div>
-						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>
+						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video') }}'>影音專區</a></div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
 					</div>
 				</div>
