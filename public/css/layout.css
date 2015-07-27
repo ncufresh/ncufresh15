@@ -86,7 +86,7 @@ nav {
 }
 body {
 	min-height: 100%;
-    background-image: url('http://140.115.189.176:8000/img/department/background1.png'), url('http://140.115.189.176:8000/img/department/backgrounddown.png');
+    background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
     background-position: left top, left top;
     background-size: 100% auto;
     background-repeat: no-repeat, repeat;
