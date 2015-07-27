@@ -84,7 +84,7 @@
 			@endforeach
 		</li>
 	</ul>
-	<a class="waves-effect waves-light btn right" href="/campus/add_view">新增</a>
+	<a class="waves-effect waves-light btn blue" href="/campus/add_view">新增</a>
 </div>
 <div class="container" id="main">
 	@yield('main')

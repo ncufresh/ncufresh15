@@ -37,8 +37,11 @@
 		@for($i=1; $i<=9; $i++)
 			<option value="sport{{$i}}">sport{{$i}}</option>
 		@endfor
-		@for($i=1; $i<=4; $i++)
+		@for($i=1; $i<=7; $i++)
 			<option value="food{{$i}}">food{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=13; $i++)
+			<option value="live{{$i}}">live{{$i}}</option>
 		@endfor
 	</select>
 	<div class="input-field" id="title">

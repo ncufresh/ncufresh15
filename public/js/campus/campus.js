@@ -1,13 +1,11 @@
 $(document).ready(function() {
 
-	$(".category").on({
-		mouseenter: function() {
+	$(".category").hover(
+		function() {
 			$(this).css("border-color", "#2196F3");
 		},
-		mouseleave: function() {
+		function() {
 			$(this).css("border-color", "#BFE0FF");
 		}
-	});
-
-	$('.materialboxed').materialbox();
+	);
 });

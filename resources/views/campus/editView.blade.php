@@ -37,8 +37,11 @@
 		@for($i=1; $i<=9; $i++)
 			<option value="sport{{$i}}" {{isset($view)&&$view->region=='sport'.$i?'selected="selected"':''}}>sport{{$i}}</option>
 		@endfor
-		@for($i=1; $i<=4; $i++)
+		@for($i=1; $i<=7; $i++)
 			<option value="food{{$i}}" {{isset($view)&&$view->region=='food'.$i?'selected="selected"':''}}>food{{$i}}</option>
+		@endfor
+		@for($i=1; $i<=13; $i++)
+			<option value="live{{$i}}" {{isset($view)&&$view->region=='live'.$i?'selected="selected"':''}}>live{{$i}}</option>
 		@endfor
 		</select>
 	<div class="input-field" id="title">
