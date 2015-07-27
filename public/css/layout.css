@@ -25,6 +25,7 @@
 #banner-img {
 	height: 380px;
 	background-size: 100% 100%;
+	border: 1px solid #bbdefb;
 }
 #banner>.row {
 	margin: 0px;
@@ -41,7 +42,11 @@
 	width: 100%;
 }
 .banner-menu a:hover {
-	background-color: #e3f2fd;
+	background-color: #bbdefb;
+}
+
+#banner .s4 {
+	padding: 0;
 }
 
 nav {

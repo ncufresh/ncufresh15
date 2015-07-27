@@ -24,9 +24,11 @@ $(document).ready(function(){
 		var ann_id = $(this).data("id");
 		var title = $("#ann-title-"+ann_id).text();
 		var url = $("#ann-url-"+ann_id).text();
+		var content = $("#ann-content-"+ann_id).text();
 		var category = $("#ann-cat-"+ann_id).text();
 		$("#ann-update-title").val(title);
 		$("#ann-update-url").val(url);
+		$("#ann-update-content").val(content);
 		if (category == "1"){
 			document.getElementById("ann-update-cat1").checked = true;
 		}else {

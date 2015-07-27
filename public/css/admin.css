@@ -13,6 +13,11 @@
 	margin-bottom: 10px;
 }
 
+#ann-update-modal {
+	max-height: 100%;
+	min-height: 80%;
+}
+
 .ann-url-col {
 	overflow: hidden;
 }
