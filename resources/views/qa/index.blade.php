@@ -80,9 +80,6 @@ td.expand {
     background-color: #4AA7F2;
 }
 
-.container {
-    background-color: #fff !important;
-}
 @media only screen and (max-width: 600px) {
     .ignore {
         display: none;
@@ -154,7 +151,7 @@ td.expand {
             </table>
         </div>
         @endif
-        <div>
+        <div class="card-panel">
             @if ($top_answers != null)
             <h4>全部Q&amp;A</h4>
             @endif
