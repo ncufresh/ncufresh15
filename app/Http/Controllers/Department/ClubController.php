@@ -128,7 +128,7 @@ class ClubController extends Controller {
 			$content = Departments::where('id', $id)->get();
 			$name = Departments::where('id', $id)->value('name');
 			$picture = Department_pictures::where('rfid', $name)->get();
-			return view('department.all')->with(['content'=>$content, 'picture'=>$picture, 'sect'=>1]);
+			return view('department.all')->with(['content'=>$content, 'pictures'=>$picture, 'sect'=>1]);
 		}
 		else
 			return "error link";

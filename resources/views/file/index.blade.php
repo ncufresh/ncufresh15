@@ -41,7 +41,7 @@ $(document).ready(function(){
             <div class="col m4">
                 <div class="card">
                     <div class="card-image">
-                        <img class="materialboxed" src="{{url('file/'.$file->url)}}"/>
+                        <img class="materialboxed" src="{{url('file/'.$file->url)}}" width="270" height="163"/>
                     </div>
                     <div class="card-action">
                         <span class="card-title grey-text text-darken-4">{{$file->name}}</span>

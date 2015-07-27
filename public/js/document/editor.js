@@ -1,28 +1,32 @@
-$(function() {
+$(document).ready(function(){
 	CKEDITOR.replace( 'editor1' );
-
 });
 
-function save() {
-	var content = CKEDITOR.instances.editor1.getData();
-	$.ajaxSetup({
-		headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
+$("#mySelect").change(function(){
+	var id = document.getElementById('mySelect').value;
+	window.location.href = '/document/edit_content/'+id;
 
-	// ajax
+});
+$("#text_done").click(function(){
+	var content = CKEDITOR.instances.editor1.getData();
 	$.ajax({
-		url:"/document/add_content", 
+		url:"/document/store_content", 
 		type: "POST",
-		data: {text: content},
+		data: {
+			"selected": document.getElementById('mySelect').value,
+			"title": $("#first_name2").val(),
+			"text": content
+		},
+		dataType: "json",
+
 		success: function(msg) {
-			console.log(msg);
-			alert("我成功了YA~~");
-     	},
-     	error: function(xhr, status, error){
-     		var err = eval("("+ xhr.respinseText+ ")");
-    		alert(err.Message);
-     	}
+			console.log(msg.title);
+			$("#title").html("<h5>"+msg.title+"</h5>");
+			$("#text").html("<div>"+content+"</div>");
+   	 	},
+   	 	error: function(xhr, status, error){
+   	 		var err = eval("("+ xhr.respinseText+ ")");
+   			alert(err.Message);
+   	 	}
 	});
-}
+});

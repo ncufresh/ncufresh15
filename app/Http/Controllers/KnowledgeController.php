@@ -71,9 +71,7 @@ class KnowledgeController extends Controller
     public function show($id)
     {
         $knowledge = Knowledge::findOrFail($id);
-        return view('knowledge.show', [
-            'knowledge' => $knowledge
-        ]);
+        return response()->json(['knowledge' => $knowledge, 'token' => bin2hex(openssl_random_pseudo_bytes(16))]);
     }
 
     /**
