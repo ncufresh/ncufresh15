@@ -6,6 +6,7 @@
 @stop
 
 @section('text')
+@permission('management')
 <br>
 <div id="ckeditor">
 	<label>分頁</label>
@@ -106,4 +107,5 @@
 </div>
 <h5 id="title"></h5>
 <div id="text"></div>
+@endpermission
 @stop

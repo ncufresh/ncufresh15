@@ -69,7 +69,9 @@
           <div class="collapsible-header"><a id="contact" class="link_1">聯絡我們</a></div>
         </li>
       </ul>
+    @permission('management')
     <a class="waves-effect waves-light btn" href="/document/ckeditor">編輯</a>
+    @endpermission
   </div>
   <div class="col m9 s12">
     @yield('text')
