@@ -124,6 +124,7 @@
 	iframe{
 		width:100%;
 		margin:30% auto;
+		margin-top:77%;
 	}
 	iframe:before{
 		content:"";
@@ -137,7 +138,7 @@
 	<div class="row">
 		<div class="col s12 m4 l4">
 			<h2>住</h2>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+			<iframe width="180" height="200" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
 			<div class="col s12 m8 l8" id="b">

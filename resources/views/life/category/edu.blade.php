@@ -26,209 +26,233 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/edu/.png');
-		top:6%;
-		left:6%;
-		width:26%; 
+		background-image:url('/img/life/edu/1.png');
+		top:13%;
+		left:7%;
+		width:15%; 
 	}
 	#b1:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:80%;
 	}
-	/*#b1:hover{
-		width:36%;
-		left:1%;
-		top:1%;
-	}*/
+	#b1:hover{
+		width:16%;
+		
+	}
 	#b2{
-		background-image:url('/img/life/edu/.png');
-		top:3%;
-		right:32%;
-		width:31%; 
+		background-image:url('/img/life/edu/2.png');
+		top:17%;
+		left:30%;
+		width:14%; 
 	}
 	#b2:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:70%;
 	}
-	/*#b2:hover{
-		width:41%;
-		right:27%;
-		top:-2%;
-	}*/
+	#b2:hover{
+		width:15%;
+	}
 	#b3{
-		background-image:url('/img/life/edu/.png');
-		top:8%;
-		right:2%;
-		width:28%; 
+		background-image:url('/img/life/edu/3.png');
+		top:13%;
+		right:32%;
+		width:16%; 
 	}
 	#b3:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:140%;
 	}
-	/*#b3:hover{
-		width:38%;
-		right:-3%;
-		top:3%;
-	}*/
+	#b3:hover{
+		width:17%;
+	}
 	#b4{
-		background-image:url('/img/life/edu/.png');
-		top:27%;
-		left:17%;
-		width:23%; 
+		background-image:url('/img/life/edu/4.png');
+		top:15%;
+		right:10%;
+		width:11%; 
 	}
 	#b4:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:100%;
 	}
-	/*#b4:hover{
-		width:33%;
-		left:12%;
-		top:22%;
-	}*/
+	#b4:hover{
+		width:12%;
+	}
 	#b5{
-		background-image:url('/img/life/edu/.png');
-		top:21%;
-		right:25%;
-		width:28%;
-		height:30%; 
+		background-image:url('/img/life/edu/5.png');
+		top:31%;
+		left:7%;
+		width:18%;
 	}
 	#b5:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
-	/*#b5:hover{
-		width:38%;
-		right:20%;
-		top:16%;
-	}*/
+	#b5:hover{
+		width:19%;
+	}
 	#b6{
-		background-image:url('/img/life/edu/.png');
-		top:32%;
-		right:1%;
-		width:27%;
+		background-image:url('/img/life/edu/6.png');
+		top:35%;
+		left:31%;
+		width:15%;
 	}
 	#b6:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:70%;
 	}
-	/*#b6:hover{
-		width:37%;
-		right:-4%;
-		top:27%;
-	}*/
+	#b6:hover{
+		width:16%;
+	}
 	#b7{
-		background-image:url('/img/life/edu/.png');
-		top:40%;
-		right:25%;
-		width:26%; 
+		background-image:url('/img/life/edu/7.png');
+		top:30%;
+		right:32%;
+		width:16%; 
 	}
 	#b7:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
-	/*#b7:hover{
-		top:35%;
-		right:20%;
-		width:36%;
-	}*/
+	#b7:hover{
+		width:17%;
+	}
 	#b8{
-		background-image:url('/img/life/edu/.png');
-		bottom:8%;
-		left:1%;
-		width:28%; 
+		background-image:url('/img/life/edu/8.png');
+		top:34%;
+		right:9%;
+		width:15%; 
 	}
 	#b8:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:70%;
 	}
-	/*#b8:hover{
-		bottom:3%;
-		left:-4%;
-		width:38%;
-	}*/
+	#b8:hover{
+		width:16%;
+	}
 	#b9{
-		background-image:url('/img/life/edu/.png');
-		bottom:-5%;
-		left:21%;
-		width:28%;
+		background-image:url('/img/life/edu/9.png');
+		bottom:36%;
+		left:8%;
+		width:14%;
 	}
 	#b9:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:90%;
 	}
-	/*#b9:hover{
-		bottom:-10%;
-		left:16%;
-		width:38%;
-	}*/
+	#b9:hover{
+		width:15%;
+	}
 	#b10{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/10.png');
+		width:8%;
+		bottom:37%;
+		left:35%;
 	}
 	#b10:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
+	#b10:hover{
+		width:9%;
+	}
 	#b11{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/11.png');
+		width:19%;
+		right:29%;
+		bottom:38%;
 	}
 	#b11:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:60%;
+	}
+	#b11:hover{
+		width:20%;
 	}
 	#b12{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/12.png');
+		width:14%;
+		right:8%;
+		bottom:37%;
 	}
 	#b12:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:100%;
+	}
+	#b12:hover{
+		width:15%;
 	}
 	#b13{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/13.png');
+		width:12%;
+		left:9%;
+		bottom:19%;
 	}
 	#b13:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
+	#b13:hover{
+		width:13%;
+	}
 	#b14{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/14.png');
+		width:23%;
+		bottom:18%;
+		left:27%;
 	}
 	#b14:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:50%;
+	}
+	#b14:hover{
+		width:24%;
 	}
 	#b15{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/15.png');
+		width:12%;
+		right:33%;
+		bottom:20%;
 	}
 	#b15:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
+	#b15:hover{
+		width:13%;
+	}
 	#b16{
-		background-image:url('/img/life/edu/.png');
+		background-image:url('/img/life/edu/16.png');
+		width:15%;
+		bottom:15%;
+		right:9%;
 	}
 	#b16:before{
 		content:"";
 		display:block;
-		padding-top:120%;
+		padding-top:100%;
+	}
+	#b16:hover{
+		width:16%;
 	}
 	iframe{
 		width:100%;
-		height:19%;
+		margin-top: 77%;
 		margin:30% auto;
 	}
 	iframe:before{
@@ -243,6 +267,7 @@
 	<div class="row">
 		<div class="col s12 m4 l4">
 			<h2>育</h2>
+			<iframe width="180" height="200" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
 			<div class="col s12 m8 l8" id="b">

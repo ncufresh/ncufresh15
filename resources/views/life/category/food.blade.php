@@ -25,6 +25,17 @@
 		display:block;
 		padding-top:120%;
 	}
+	/*.row{
+		background-image: url("/img/life/food/food_new_background.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	.row:before{
+		content:"";
+		display:block;
+		padding-top:120%;
+	}*/
 	#b1{
 		background-image:url('/img/life/food/G14.png');
 		top:6%;
@@ -172,6 +183,8 @@
 	iframe{
 		width:100%;
 		margin:30% auto;
+		margin-top:77%;
+
 	}
 	iframe:before{
 		content:"";
@@ -185,7 +198,7 @@
 	<div class="row">
 		<div class="col s12 m4 l4">
 			<h2>食</h2>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
+			<iframe width="180" height="200" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
 			<div class="col s12 m8 l8" id="b">
