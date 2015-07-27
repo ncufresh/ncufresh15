@@ -47,46 +47,32 @@
 .puzzle2Text {
 	font-size: 30px;
 }
-/***拼圖******************************************************************************/
-.secPuzzle {
-	padding: 2% 2%;
-}
-.puzzle1 {
-	min-height: 400px;
-}
-.puzzle2 {
-	min-height: 200px;
-}
-.material-icons {
-	color: #9e9e9e;
-}
-.puzzlePad {
-	margin: 2% 2%;
-}
-/**總攬**/
-@media (max-width: 992px) {
-	.puzzleLeftTop {
-		border-bottom: solid;
-		border-color: white;
-	}
-}
-@media (min-width: 992px) {
-	.puzzleLeftTop {
-		border-right: solid;
-		border-color: white;
-	}
-}
-.trans1 {
-	background-color: rgba(255, 255, 255, 0.4);
-}
-.intro1 {
-	min-height: 150px;
-	max-height: 300px;
-}
-/**Card**/
+/***Card******************************************************************************/
 .cardCon1 {
 	height: 200px;
 }
 .cardCon2 {
 	height: 220px;
+}
+@media (min-width: 992px) {
+	.cardImage2 {
+		height: 200px;
+	}
+}
+@media (max-width: 992px) and (min-width: 780px) {
+	.cardImage2 {
+		min-height: 300px;
+		max-height: 300px;
+	}
+}
+@media (max-width: 780px) and (min-width: 600px) {
+	.cardImage2 {
+		height: 250px;
+	}
+}
+@media (max-width: 600px) {
+	.cardImage2 {
+		min-height: 450px;
+		max-height: 450px;
+	}
 }

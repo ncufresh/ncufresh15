@@ -34,7 +34,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/shisuo.png')}}">
 					<span class="card-title">系所</span>
 				</div>
 				<div class="card-action">
@@ -45,7 +45,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/club.png')}}">
 					<span class="card-title">社團</span>
 				</div>
 				<div class="card-action">
@@ -60,7 +60,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/lecture.png')}}">
 					<span class="card-title">文學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -74,7 +74,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/science.png')}}">
 					<span class="card-title">理學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -88,7 +88,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/engineer.png')}}">
 					<span class="card-title">工學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -102,7 +102,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/management.png')}}">
 					<span class="card-title">管理學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -116,7 +116,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/electrical.png')}}">
 					<span class="card-title">資訊電機學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -130,7 +130,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/earth.png')}}">
 					<span class="card-title">地球科學學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -144,7 +144,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/hakka.png')}}">
 					<span class="card-title">客家學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -158,7 +158,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/health.png')}}">
 					<span class="card-title">生醫理工學院</span>
 				</div>
 				<div class="card-content cardCon1">
@@ -176,7 +176,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/shaishu.png')}}">
 					<span class="card-title">學術性</span>
 				</div>
 				<div class="card-content cardCon2">
@@ -191,7 +191,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/kangle.png')}}">
 					<span class="card-title">康樂性</span>
 				</div>
 				<div class="card-content cardCon2">
@@ -206,7 +206,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/liani.png')}}">
 					<span class="card-title">聯誼性</span>
 				</div>
 				<div class="card-content cardCon2">
@@ -220,7 +220,7 @@
 		<div class="col s12 m6 l6">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{asset('img/department/no56p10.jpg')}}">
+					<img class="cardImage1" src="{{asset('img/department/fuu.png')}}">
 					<span class="card-title">服務性</span>
 				</div>
 				<div class="card-content cardCon2">
@@ -289,7 +289,7 @@
 		<div class="col s12 m6 l4">
 			<div class="card">
 				<div class="card-image">
-					<img src="{{ asset('uploads/departments/'.$list->showPicture()) }}" style="max-height: 200px;">
+					<img class="cardImage2" src="{{ asset('uploads/departments/'.$list->showPicture()) }}" style="max-height: 200px;">
 					<span class="card-title">{{ $list->name }}</span>
 				</div>
 				<div class="card-action">
