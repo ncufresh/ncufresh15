@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Auth;
 use App\Helpers\SitemapHelper;
 use App\User;
 use Bican\Roles\Models\Role;
@@ -15,7 +16,6 @@ class UserController extends Controller
 {
 
     public function __construct() {
-        SitemapHelper::push('使用者列表', 'user');
     }
 
     /**
@@ -26,6 +26,7 @@ class UserController extends Controller
     public function index()
     {        
         $users = User::latest()->paginate(15);
+        SitemapHelper::push("使用者列表", 'user');
         return view('user.index', ['users' => $users]);
     }
 
@@ -59,8 +60,10 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        SitemapHelper::push($user->name, 'user/'.$user->id);
-        return view('user.show', $user, ['user' => $user]);
+        return view('user.show', ['user' => $user,
+            'nobreadcrumb' => true, 
+            'isHome' => (Auth::check() && $id == Auth::user()->id)
+        ]);
     }
 
     /**

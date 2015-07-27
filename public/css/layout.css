@@ -3,13 +3,13 @@
 }
 #container {
 	border-radius: 5px;
-	background-color: #ebeff2;
 	overflow: hidden;
 	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
 	min-height: 910px;
     padding: 0 5%;
+	background-color: rgba(245, 245, 245, 0.7);
 }
 .nav-margin {
 	margin-top: 10px;
@@ -23,9 +23,9 @@
 	background-color: transparent;
 }
 #banner-img {
-	height: 324px;
+	height: 380px;
 	background-size: 100% 100%;
-	border: 1px solid #bbdefb;
+	border: 20px solid #fff;
 }
 #banner>.row {
 	margin: 0px;
@@ -85,8 +85,11 @@ nav {
 	background-color: #212121;
 }
 body {
-	background-color: #F5F5F5;
 	min-height: 100%;
+    background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
+    background-position: left top, left top;
+    background-size: 100% auto;
+    background-repeat: no-repeat, repeat;
 }
 
 .pagination li {

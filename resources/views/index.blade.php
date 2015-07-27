@@ -23,14 +23,18 @@
 					<div class='row'>
 						<div class='col s3'>
 							@if ($ann->category == '1')
-								<span class='category cat1'>Q&amp;A</span>
+								<span class='category cat1'>公告</span>
 							@else
-								<span class='category cat2'>公告</span>
+								<span class='category cat2'>Q&amp;A</span>
 							@endif
 						</div>
 						<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
 						<div class='col s6'>
-							<a href="{{$ann->url}}">{{$ann->title}}</a>
+							@if ($ann->category == '1')
+								<a href="{{url('/ann').'/'.$ann->id}}">{{$ann->title}}</a>
+							@else
+								<a href="{{$ann->url}}">{{$ann->title}}</a>
+							@endif
 						</div>
 					</div>
 				@endforeach
@@ -91,17 +95,41 @@
 <div id='r2' class='row'>
 	<div id='calender-container'>
 		<div class="row">
-			<div id='arrow-container1'class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'></a></div>
+			<div id='arrow-container1'class="col s1 valign-wrapper"><a id="arrow1" class='arrow btn-flat valign'>&lt;</a></div>
 			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
-					<div id='event1' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
-					<div id='event2' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
-					<div id='event3' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
-					<div id='event4' class='col s3 dick'><a id='event1-box' class='event-box' href="#">8/6 新生知訊網正式上線</a></div>
+					<div id='event1' class='col s3 dick'><a id='e1' class='event-box' href="#event1-modal"></a></div>
+					<div id='event2' class='col s3 dick'><a id='e2' class='event-box' href="#event2-modal"></a></div>
+					<div id='event3' class='col s3 dick'><a id='e3' class='event-box' href="#event3-modal"></a></div>
+					<div id='event4' class='col s3 dick'><a id='e4' class='event-box' href="#event4-modal"></a></div>
 				</div>
 			</div>
-			<div id='arrow-container2' class="col s1 valign-wrapper"><a class='arrow waves-effect waves-light btn-flat valign'></a></div>
+			<div id='arrow-container2' class="col s1 valign-wrapper"><a id="arrow2" class='arrow btn-flat valign'>&gt;</a></div>
 		</div>
+	</div>
+</div>
+<!-- Event 1 Modal-->
+<div id="event1-modal" class="modal">
+	<div class="modal-content">
+		<p id="e1-content"></p>
+	</div>
+</div>
+<!-- Event 2 Modal-->
+<div id="event2-modal" class="modal">
+	<div class="modal-content">
+		<p id="e2-content"></p>
+	</div>
+</div>
+<!-- Event 1 Modal-->
+<div id="event3-modal" class="modal">
+	<div class="modal-content">
+		<p id="e3-content"></p>
+	</div>
+</div>
+<!-- Event 1 Modal-->
+<div id="event4-modal" class="modal">
+	<div class="modal-content">
+		<p id="e4-content"></p>
 	</div>
 </div>
 @stop
