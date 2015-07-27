@@ -18,11 +18,11 @@ var blocklock= {
 
 var hero = {
 	speed: 256, // movement in pixels per second
-	x : canvas.width/2,//50*grid.length,
-	y : canvas.height/2,//8*grid.length,
+	x : 50*grid.length,
+	y : 8*grid.length,
 	end: {
-		x: canvas.width/2,
-		y: canvas.height/2,
+		x: 50*grid.length,
+		y: 8*grid.length,
 		Delay: 30,
 		Timer: 0
 	},
@@ -48,8 +48,8 @@ var monster = {};
 var monstersCaught = 0;
 
 var box = {
-	x : grid.length*7,
-	y : grid.length*5,
+	x : 52*grid.length,
+	y : 8*grid.length,
 	width : grid.length,
 	height : grid.length
 };

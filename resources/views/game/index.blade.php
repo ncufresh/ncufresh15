@@ -36,12 +36,11 @@ $(function() {
     var btn = $("#gamecanvas");
 
     btn.focus(function(){
-        console.log("Click");
+        //console.log("Click");
         document.body.style.overflow="hidden";
     });
 
     btn.blur(function(){
-        console.log("UnClick");
         document.body.style.overflow="scroll";
     });
 

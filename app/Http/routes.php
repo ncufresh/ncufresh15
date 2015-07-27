@@ -148,6 +148,7 @@ Route::get('video/test', 'Video\GuestbookController@add');
 // Game
 //******************************************************************************************************
 Route::get('game', 'GameController@index');
+Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getquestion');
 //******************************************************************************************************
 
 // life

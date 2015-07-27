@@ -74,6 +74,12 @@ class KnowledgeController extends Controller
         return response()->json(['knowledge' => $knowledge, 'token' => bin2hex(openssl_random_pseudo_bytes(16))]);
     }
 
+    public function getquestion()
+    {
+        $knowledge = Knowledge::orderByRaw('RAND()')->first();
+        return response()->json(['questions' => $knowledge, 'answer' => $knowledge->answer]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

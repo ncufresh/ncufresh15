@@ -70,6 +70,7 @@ var update = function (modifier) {
 			{
 				//hero.x = blocks[i].x + blocks[i].width;
 				blocklock.left = true;
+
 			}
 		}
 
@@ -82,6 +83,8 @@ var update = function (modifier) {
 			hero.x = box.x + box.width;
 			blocklock.left = true ;
 			canask=true;
+			hero.direction.x = -1;
+			hero.direction.now = "left";
 		}	
 
 		if(hero.x - grid.length >= 0 && blocklock.left == false ){ // edge
@@ -119,6 +122,8 @@ var update = function (modifier) {
 			hero.y = box.y + box.height;
 			blocklock.top = true;
 			canask=true;
+			hero.direction.y = -1;
+			hero.direction.now = "up";
 		}
 
 		if(hero.y - grid.length >= 0 && blocklock.top==false){ // edge
@@ -155,6 +160,8 @@ var update = function (modifier) {
 			hero.x = box.x - box.width;
 			blocklock.right = true;
 			canask=true;
+			hero.direction.x = 1;
+			hero.direction.now = "right";
 		}
 
 		if(hero.x + grid.length <= game.length-grid.length && blocklock.right==false){ // edge
@@ -191,6 +198,8 @@ var update = function (modifier) {
 			hero.y = box.y - box.height;
 			blocklock.bottom = true;
 			canask=true;
+			hero.direction.y = 1;
+			hero.direction.now = "down";
 		}
 		
 		if(hero.y + grid.length <= game.length-grid.length && blocklock.bottom==false){ // edge
