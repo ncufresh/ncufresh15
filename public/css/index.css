@@ -11,6 +11,10 @@
 	margin-bottom: 0;
 }
 
+#container {
+	background-color: #ebeff2;
+}
+
 #container #content {
 	padding-bottom: 0;
 }
