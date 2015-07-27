@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Auth;
 use App\Helpers\SitemapHelper;
 use App\User;
 use Bican\Roles\Models\Role;
@@ -59,7 +60,10 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        return view('user.show', ['user' => $user, 'nobreadcrumb' => true]);
+        return view('user.show', ['user' => $user,
+            'nobreadcrumb' => true, 
+            'isHome' => (Auth::check() && $id == Auth::user()->id)
+        ]);
     }
 
     /**

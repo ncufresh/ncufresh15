@@ -21,7 +21,6 @@
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 100% 100%;
-                margin-left: -20px;
 			}
 			#nop {
 				opacity: 0;
@@ -40,7 +39,7 @@
 			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
-				<li><a href="#">新生必讀</a></li>
+				<li><a href="{{ url('document') }}">新生必讀</a></li>
 				<li><a href="{{ url('life') }}">中大生活</a></li>
 				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
 				<ul id='nav-links' class='dropdown-content'>
@@ -56,7 +55,7 @@
 					<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
 					<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 				</ul>
-				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="{{ url('video') }}">影音專區</a></li>
 				<li><a href="#">關於我們</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-nav">
@@ -92,7 +91,7 @@
 					</ul>
 				</li>
 				<li><a href="{{ url('group')}}">系所社團</a></li>
-				<li><a href="{{ url('video2') }}">影音專區</a></li>
+				<li><a href="{{ url('video') }}">影音專區</a></li>
 				<li><a href="#">關於我們</a></li>
 			</ul>
 			</div>
@@ -127,7 +126,7 @@
 								<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 							</ul>
 						</div>
-						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video2') }}'>影音專區</a></div>
+						<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('video') }}'>影音專區</a></div>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
 					</div>
 				</div>
@@ -148,7 +147,7 @@
 			</div>
         </div>
 		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
-		<div id='portal'>
+		<!--<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
 				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
@@ -159,7 +158,7 @@
 					<li><a href="#!">three</a></li>
 				</ul>
 			</div>
-		</div>
+		</div>-->
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/layout.js') }}"></script>

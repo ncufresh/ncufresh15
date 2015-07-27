@@ -16,6 +16,7 @@ return array(
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'CalenderSeeder' => $baseDir . '/database/seeds/CalenderSeeder.php',
+    'CalenderUpdateSeeder' => $baseDir . '/database/seeds/CalenderUpdateSeeder.php',
     'CraeteGuestbookTable' => $baseDir . '/database/migrations/2015_07_24_045242_craete_guestbook_table.php',
     'CreateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_19_185404_create_announcement_table.php',
     'CreateBottlesTable' => $baseDir . '/database/migrations/2015_07_24_071802_create_bottles_table.php',

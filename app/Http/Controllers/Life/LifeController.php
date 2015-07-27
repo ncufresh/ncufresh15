@@ -140,7 +140,6 @@ class LifeController extends Controller
         }
         $life = Life::findOrFail($id);
         $life->category = $request->category;
-        $life->video = $request->video;
         $life->content = $this->sanitize($request->content);
         $life->save();
         //$life->update($request->all()); /*將新輸入的資料更新到資料庫*/
