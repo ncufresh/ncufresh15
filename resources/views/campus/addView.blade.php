@@ -49,7 +49,7 @@
 		<label for="title_name" id="item_name">項目標題</label>
 	</div>
 	<div class="file-field input-field">
-		<div class="btn">
+		<div class="btn blue darken-4">
 			<span>上傳圖片</span>
 			<input type="file" accept="image/*" name="image_name">
 		</div>
@@ -66,7 +66,7 @@
 				{{ $error }}
 			@endif
 		</span>
-		<button type="submit" class="btn waves-effect waves-light right" name="send">確認
+		<button type="submit" class="btn blue darken-4 waves-effect waves-light right" name="send">確認
 			<i class="material-icons right">send</i>
 		</button>
 	</div>

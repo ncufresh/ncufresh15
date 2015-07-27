@@ -1,13 +1,5 @@
 #slidebar {
-	float: left;
-	width: 15%;
-	margin: 0%;
 	position: relative;
-}
-
-#main {
-	margin-left: 17.5%;
-	width: 83%;
 }
 
 .collapsible {
@@ -17,13 +9,13 @@
 .category {
 	border: 1px;
 	border-style: solid;
-	background-color: #BFE0FF;
-	border-color: #BFE0FF;
+	background-color: #FFFFFF;
+	border-color: #FFFFFF;
 	color: black;
 }
 
 .here {
-	background-color: #2196F3;
+	background-color: #0D47A1;
 	border: 0px;
 	color: white;
 }
@@ -31,12 +23,12 @@
 .here::after {
 	content: "";
 	position: absolute;
-	left: 100%;
+	left: 92%;
 	width: 0px;
 	height: 0px;
 	border-style: solid;
 	border-width: 22.5px 0px 22.5px 13px;
-	border-color: transparent transparent transparent #2196F3;
+	border-color: transparent transparent transparent #0D47A1;
 }
 
 .collection {

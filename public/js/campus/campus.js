@@ -2,10 +2,10 @@ $(document).ready(function() {
 
 	$(".category").hover(
 		function() {
-			$(this).css("border-color", "#2196F3");
+			$(this).css("border-color", "#0D47A1");
 		},
 		function() {
-			$(this).css("border-color", "#BFE0FF");
+			$(this).css("border-color", "#FFFFFF");
 		}
 	);
 });
