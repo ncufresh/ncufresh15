@@ -2,7 +2,7 @@
 @section('title', 'VIDEO2')
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/video/media2/css/style.css') }}">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" herf="{{ asset('css/video/scrollbar-plugin/jquery.mCustomScrollbar.min.css') }}">
 <style type="text/css">
 .center{
   margin-left: auto;
@@ -22,7 +22,7 @@
   height: 50px; 
   background-color: #00C5FF;
   display: block;
-}  
+}
     /* Make the CDN fonts accessible from the CSS */
 }
 .unused{
@@ -40,7 +40,12 @@
   /* Make the demo a little prettier */
   .video-js { margin: 20px auto; }
 
-
+#scroll{
+  position: relative;
+  height:600px;
+  width:300px;
+  overflow: auto;
+}
 
 </style>
 
@@ -49,9 +54,22 @@
 @section('js')
 <!--<script src=''></script> -->
 <script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/video/scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+
 <script>
 
 $(document).ready(function(){
+
+      $(".unused").hide();
+      $(".unused:first").show();
+
+      $(".next").click(function(){
+          $(".unused:first").removeClass("unused");
+          $(".unused:first").fadeIn(1000);
+       });
+
 
  $("#send").on("click", function(e) {
     e.preventDefault();
@@ -64,21 +82,21 @@ $(document).ready(function(){
         console.log(msg);   //js, save data
         var id = msg.id;
         var str = '<div id="'+msg.id+'" class="card-action "> \
-                      <div class="col s2">'+msg.name+'</div>\
-                      <div class="col s7">留言內容 '+msg.comment+'</div>\
-                      <div class="col s2">\
-                        <form action="comment(delete).php" method="post">\
-                          <button type="submit" id="delete" class="btn " style="width:10px;height:25px;margin-left:-10px">\
-                            <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>\
-                          </botton>\
-                              <input type="hidden" name="delete" value="yes" />\
-                              <input type="hidden" name="username" value="'+msg.name+'"/>\
-                              <input type="hidden" name="comment" value="'+msg.comment+'"/>\
-                          <input type="hidden" name="id" value="'+msg.id+'">\
-                        </form>\
-                      </div>\
+                        <div class="col s2">'+msg.name+'</div>\
+                        <div class="col s7">留言內容 '+msg.comment+'</div>\
+                        <div class="col s2">\
+                          <form action="comment(delete).php" method="post">\
+                            <button type="submit" id="delete" class="btn " style="width:10px;height:25px;margin-left:-10px">\
+                              <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>\
+                            </botton>\
+                                <input type="hidden" name="delete" value="yes" />\
+                                <input type="hidden" name="username" value="'+msg.name+'"/>\
+                                <input type="hidden" name="comment" value="'+msg.comment+'"/>\
+                            <input type="hidden" name="id" value="'+msg.id+'">\
+                          </form>\
+                        </div>\
                     </div>\
-                  <div class="row" style="margin-bottom: 15px;margin-top: 0px;"></div>';
+                    <div class="row" style="margin-bottom: 15px;margin-top: 0px;"></div>';
 
         $("#place").append( $(str).hide().fadeIn(1000) );  //append: add in the back
       }
@@ -97,18 +115,7 @@ $(document).ready(function(){
           }
       });
   });
-  $(document).ready(function(){
 
-      $(".unused").hide();
-      $(".unused:first").show();
-
-      $(".next").click(function(){
-          $(".unused:first").removeClass("unused");
-          $(".unused:first").fadeIn(1000);
-       });
-
-
-  });
 });
 </script>
 
@@ -121,76 +128,81 @@ $(document).ready(function(){
 <!--有影片的section( teal lighten-2)-->    
   <div class="col s8" style=";">
 
-
     <video id="my_video_1" class="video-js vjs-default-skin" 
       controls preload="none" width="550px" height="400px" data-setup='{}'
       poster='http://video-js.zencoder.com/oceans-clip.jpg'>
       <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
       <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
     </video>
-    <p>影片簡介：</p>
-    <p>一一一一</p>
+      <p>影片簡介：</p>
+      <p>一一一一</p>
   </div>
 <!--留言的Ssection( orange accent-2)-->    
-  <div class="col s4 " style=";" >
-    <div class="card blue-grey darken-1 hoverable" style=";">
-        <div class="card-content white-text" style="height:650px;overflow-y:scroll;">
+  <div class="col s4 " >
+    <div class="card blue-grey darken-1 hoverable">
+        <div class="card-content white-text">
           <span class="card-title">留言板</span>
-          <div id="place"></div>  
+            <div id ="scroll"class="mCustomScrollbar" data-mcs-theme="dark">
+              <p id="place"></p>  
 <?php $i = 0; ?>
 @foreach($tryconnect as $try)
 <?php 
+
 if ( $i % 8 == 0) {
 echo<<<_END
   <div class="unused">
 _END;
 } ?>
-          <div id="{{$try->id}}"> 
-            <div class="col s2">{{$try->name}}</div>
-            <div class="col s7">留言內容 {{$try->comment}}</div>
-            <div class="col s2">
-              <form>
-                <button type="submit" class="waves-effect waves-teal btn , delete" value="{{ $try->id }}" style="width:8px;height:25px;margin-left:-10px">
-                  <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>
-                </botton>
-              </form>
-            </div>
-          </div>
+                  <div id="{{$try->id}}"> 
+                   <div class="col s2">{{$try->name}}</div>
+                   <div class="col s7">留言內容 {{$try->comment}}</div>
+                   <div class="col s2">
+                    <form>
+                      <button type="submit" class="waves-effect waves-teal btn , delete" value="{{ $try->id }}" style="width:8px;height:25px;margin-left:-10px">
+                        <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>
+                      </botton>
+                    </form>
+                   </div>
+                  </div>
 <?php 
 if( (++$i) % 8 == 0 ) {
 echo<<<_END
-<div>
+</div>
 <br>
 <button type="submit" class="next">next 8 messenges</button>
 _END;
-} ?>
+} 
+?>
 <div class="row" style="margin-bottom: 15px;margin-top: 0px;">  </div>
 @endforeach
 
 <?php
-if($i % 8 != 8){
-  echo "</div>";
+if($i / 8 == 0){
+echo "</div>";
 }
 ?>
-        </div></div></div>
-        <div class="card-action" style="height:100px;overflow:hidden;">
-          <div class="col s9">
-            <p style="color:white">Message:</p>
-            <form method="post" >
-              {!! csrf_field() !!}
-              <input type="text" id="SendComment" name="comment" style="background-color: white; position:absolute; width:55%;height:25px;margin-left:-10px; margin-bottom:30px">
-          </div>
-          <div class="col s3">
-            <p>  </p>
-            <br>
+
+      </div><!--end scroll zone-->
+    </div><!--end card content-->
+  <div class="card-action" style="height:100px;">
+    <div class="row">
+      <p style="color:white;position: relative;margin-buttom: 5px;width:10px;height:5px">Message:</p>            
+    </div> <!--avoid messenge & input overlap-->    
+        <div class="col s9">
+          <form method="post" >
+             {!! csrf_field() !!}
+              <input type="text" id="SendComment" name="comment" style=" position:absolute;background-color: white; width:55%;height:25px;margin-left:-10px; margin-bottom:30px">
+        </div>
+        <div class="col s3">
+          <p>  </p>
+          <br>
             <button type="submit" id="send" style="position:absolute;width:20px;height:25px;margin-left:-10px;margin-bottom:30px" class="waves-effect waves-light btn" >
               <i class="material-icons" style="margin-left:-5px;line-height: normal;">send</i>
             </button>
-          </div>
         </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+          </form>
+  </div><!--end card-action-->    
+ </div><!--end card-->
+</div><!--end col-->
+</div><!--end row-->
 @stop
