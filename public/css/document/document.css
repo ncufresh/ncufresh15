@@ -24,6 +24,10 @@
 	font-weight: 600;
 }
 
+table {
+	width: 100% !important;
+}
+
 td {
 	border: 1px solid #000000;
 }

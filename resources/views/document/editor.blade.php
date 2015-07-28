@@ -11,7 +11,7 @@
 <div id="ckeditor">
 	<label>分頁</label>
     <select id="mySelect" class="browser-default">
-    	<option value="" disabled  {{isset($id)?'':'selected="selected"'}}><ins><strong>大學部新生註冊須知</strong></ins></option>
+    	<option value="" disabled  {{isset($id)?'':'selected="selected"'}}>學士班新生註冊通知</option>
         <option value="" disabled>重要日程</option>
         @foreach($cate_1 as $cate_1)
         <option value="{{ $cate_1->id }}" {{ isset($id) && $id==$cate_1->id?'selected="selected"':''}}>{{ $cate_1->title }}</option>
@@ -36,12 +36,12 @@
     	@foreach($cate_6 as $cate_6)
     	<option value="{{ $cate_6->id }}" {{ isset($id) && $id==$cate_6->id?'selected="selected"':''}}>{{ $cate_6->title }}</option>
     	@endforeach
-    	<option value="" disabled>其他注意事項(大學部)</option>
+    	<option value="" disabled>其他注意事項</option>
     	@foreach($cate_7 as $cate_7)
     	<option value="{{ $cate_7->id }}" {{ isset($id) && $id==$cate_7->id?'selected="selected"':''}}>{{ $cate_7->title }}</option>
     	@endforeach
 
-    	<option value="" disabled  >研究所新生須知</option>
+    	<option value="" disabled  >研究所新生註冊通知</option>
         <option value="" disabled>重要日程</option>
         @foreach($cate_8 as $cate_8)
         <option value="{{ $cate_8->id }}" {{ isset($id) && $id==$cate_8->id?'selected="selected"':''}}>{{ $cate_8->title }}</option>
@@ -66,7 +66,7 @@
     	@foreach($cate_13 as $cate_13)
     	<option value="{{ $cate_13->id }}" {{ isset($id) && $id==$cate_13->id?'selected="selected"':''}}>{{ $cate_13->title }}</option>
     	@endforeach
-    	<option value="" disabled>其他注意事項(研究所)</option>
+    	<option value="" disabled>其他注意事項</option>
     	@foreach($cate_14 as $cate_14)
     	<option value="{{ $cate_14->id }}" {{ isset($id) && $id==$cate_14->id?'selected="selected"':''}}>{{ $cate_14->title }}</option>
     	@endforeach
@@ -80,7 +80,7 @@
     	<option value="{{ $cate_16->id }}" {{ isset($id) && $id==$cate_16->id?'selected="selected"':''}}>{{ $cate_16->title }}</option>
     	@endforeach
 
-    	<option value="" disabled>生活相關須知</option>
+    	<option value="" disabled>學習及生活相關須知</option>
     	@foreach($cate_17 as $cate_17)
     	<option value="{{ $cate_17->id }}" {{ isset($id) && $id==$cate_17->id?'selected="selected"':''}}>{{ $cate_17->title }}</option>
     	@endforeach

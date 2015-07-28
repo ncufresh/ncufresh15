@@ -124,7 +124,7 @@ class DocumentController extends Controller
         $all = Document::where(['page_id'=>$page_id, 'page_id_2'=>$page_id_2])->get();
 
         if ($page_id === "university") {
-            SitemapHelper::push('學士班新註冊通知摘要', 'document');
+            SitemapHelper::push('學士班新註冊摘要', 'document');
             switch ($page_id_2) {
                 case '1':
                     SitemapHelper::push('重要日程', 'document/university/1');
@@ -145,7 +145,7 @@ class DocumentController extends Controller
                     SitemapHelper::push('學生證', 'document/university/6');
                     break;
                 case '7':
-                    SitemapHelper::push('其他注意事項(大學部)', 'document/university/7');
+                    SitemapHelper::push('其他注意事項', 'document/university/7');
                     break;
                 
                 default:
@@ -153,7 +153,7 @@ class DocumentController extends Controller
                     break;
             }
         }elseif ($page_id === "graduate") {
-            SitemapHelper::push('研究所新生註冊通知摘要', 'document');
+            SitemapHelper::push('研究所新生註冊摘要', 'document');
             switch ($page_id_2) {
                 case '1':
                     SitemapHelper::push('重要日程', 'document/graduate/1');
@@ -174,7 +174,7 @@ class DocumentController extends Controller
                     SitemapHelper::push('學生證', 'document/graduate/6');
                     break;
                 case '7':
-                    SitemapHelper::push('其他注意事項(研究所)', 'document/graduate/7');
+                    SitemapHelper::push('其他注意事項', 'document/graduate/7');
                     break;
                 
                 default:
@@ -191,7 +191,7 @@ class DocumentController extends Controller
 		$content = Document::where('id', $id)->value('content');
 
         if ($page_id === "university") {
-            SitemapHelper::push('學士班新註冊通知摘要', 'document');
+            SitemapHelper::push('學士班新註冊摘要', 'document');
             switch ($page_id_2) {
                 case '1':
                     SitemapHelper::push('重要日程', 'document/university/1');
@@ -212,7 +212,7 @@ class DocumentController extends Controller
                     SitemapHelper::push('學生證', 'document/university/6');
                     break;
                 case '7':
-                    SitemapHelper::push('其他注意事項(大學部)', 'document/university/7');
+                    SitemapHelper::push('其他注意事項', 'document/university/7');
                     break;
                 
                 default:
@@ -220,7 +220,7 @@ class DocumentController extends Controller
                     break;
             }
         }elseif ($page_id === "graduate") {
-            SitemapHelper::push('研究所新生註冊通知摘要', 'document');
+            SitemapHelper::push('研究所新生註冊摘要', 'document');
             switch ($page_id_2) {
                 case '1':
                     SitemapHelper::push('重要日程', 'document/graduate/1');
@@ -241,7 +241,7 @@ class DocumentController extends Controller
                     SitemapHelper::push('學生證', 'document/graduate/6');
                     break;
                 case '7':
-                    SitemapHelper::push('其他注意事項(研究所)', 'document/graduate/7');
+                    SitemapHelper::push('其他注意事項', 'document/graduate/7');
                     break;
                 
                 default:

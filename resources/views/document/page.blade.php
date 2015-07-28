@@ -2,7 +2,7 @@
 
 @section('text')
 <h5 class="page_title">{{$title}}</h5>
-<div>
+<div style="width">
 	{!! $content !!}
 </div>
 @stop

@@ -26,7 +26,7 @@
   <div class="col l4 m5 s12">
       <ul class="collapsible" data-collapsible="expandable">
         <li class="list_1">
-          <div class="collapsible-header">大學部新生註冊須知</div>
+          <div class="collapsible-header">學士班新生註冊通知</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/university/1">重要日程</a></li>
@@ -35,12 +35,12 @@
               <li><a class="list_2" href="/document/university/4">兵役</a></li>
               <li><a class="list_2" href="/document/university/5">住宿</a></li>
               <li><a class="list_2" href="/document/university/6">學生證</a></li>
-              <li><a class="list_2" href="/document/university/7">其他注意事項(大學部)</a></li>
+              <li><a class="list_2" href="/document/university/7">其他注意事項</a></li>
             </ul>
           </div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header">研究所新生須知</div>
+          <div class="collapsible-header">研究所新生註冊通知</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/graduate/1">重要日程</a></li>
@@ -49,7 +49,7 @@
               <li><a class="list_2" href="/document/graduate/4">兵役</a></li>
               <li><a class="list_2" href="/document/graduate/5">住宿</a></li>
               <li><a class="list_2" href="/document/graduate/6">學生證</a></li>
-              <li><a class="list_2" href="/document/graduate/7">其他注意事項(研究所)</a></li>
+              <li><a class="list_2" href="/document/graduate/7">其他注意事項</a></li>
             </ul>
           </div>
         </li>
@@ -60,7 +60,7 @@
           <div class="collapsible-header"><a id="activity" class="link_1">輔導及活動專區</a></div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header"><a id="daily" class="link_1">生活相關須知</a></div>
+          <div class="collapsible-header"><a id="daily" class="link_1">學習及生活相關須知</a></div>
         </li>
         <li class="list_1">
           <div class="collapsible-header"><a id="download" class="link_1">文件及下載專區</a></div>
