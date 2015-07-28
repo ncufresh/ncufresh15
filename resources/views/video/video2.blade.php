@@ -2,7 +2,7 @@
 @section('title', 'VIDEO2')
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/video/media2/css/style.css') }}">
-<link rel="stylesheet" type="text/css" herf="{{ asset('css/video/scrollbar-plugin/jquery.mCustomScrollbar.min.css') }}">
+<link rel="stylesheet" type="text/css" herf="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
 <style type="text/css">
 .center{
   margin-left: auto;
@@ -55,20 +55,28 @@
 <!--<script src=''></script> -->
 <script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/video/scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 
 
 <script>
 
 $(document).ready(function(){
+  
+  $(".next").click(function(e){
+    e.preventDefault();      
+    $.ajax({
+      url:"/video2/take", //including index.php!!!
+      type: "POST",
+      data: {},   //inside {} is jquery.  val:   //name: is the thing that will be saved in POST
 
-      $(".unused").hide();
-      $(".unused:first").show();
+       success: function(msg) {
+          console.log(msg);
+          
+          $(".load").append( $(str).hide().fadeIn(1000) );
+       }
+    });
+  });
 
-      $(".next").click(function(){
-          $(".unused:first").removeClass("unused");
-          $(".unused:first").fadeIn(1000);
-       });
 
 
  $("#send").on("click", function(e) {
@@ -126,7 +134,7 @@ $(document).ready(function(){
 <!--最上面那條row(red accent-2)-->    
 <div class="row">
 <!--有影片的section( teal lighten-2)-->    
-  <div class="col s8" style=";">
+  <div class="col s8">
 
     <video id="my_video_1" class="video-js vjs-default-skin" 
       controls preload="none" width="550px" height="400px" data-setup='{}'
@@ -144,15 +152,9 @@ $(document).ready(function(){
           <span class="card-title">留言板</span>
             <div id ="scroll"class="mCustomScrollbar" data-mcs-theme="dark">
               <p id="place"></p>  
+
 <?php $i = 0; ?>
 @foreach($tryconnect as $try)
-<?php 
-
-if ( $i % 8 == 0) {
-echo<<<_END
-  <div class="unused">
-_END;
-} ?>
                   <div id="{{$try->id}}"> 
                    <div class="col s2">{{$try->name}}</div>
                    <div class="col s7">留言內容 {{$try->comment}}</div>
@@ -170,18 +172,13 @@ echo<<<_END
 </div>
 <br>
 <button type="submit" class="next">next 8 messenges</button>
+<p class="load"></p>
 _END;
+break;
 } 
 ?>
 <div class="row" style="margin-bottom: 15px;margin-top: 0px;">  </div>
 @endforeach
-
-<?php
-if($i / 8 == 0){
-echo "</div>";
-}
-?>
-
       </div><!--end scroll zone-->
     </div><!--end card content-->
   <div class="card-action" style="height:100px;">

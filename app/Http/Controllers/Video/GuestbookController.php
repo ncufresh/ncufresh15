@@ -25,6 +25,14 @@ class GuestbookController extends Controller
 
     	return view('video.show',compact('tryconnect'));
     }
+
+    public function take(Request $request){
+
+            
+
+
+    }
+
     public function delete(Request $request)
     {
         $id = $request->input('id');
