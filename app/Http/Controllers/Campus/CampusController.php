@@ -61,9 +61,9 @@ class CampusController extends Controller
 		}
 		else if($file!=null)
 		{
-			$destinationPath = "uploads\campus";
+			$destinationPath = base_path().'/public/uploads/campus';
 			$filename = uniqid()."_".$file->getClientOriginalName();
-			while (file_exists($destinationPath."\\".$filename))
+			while (file_exists($destinationPath."/".$filename))
 			{
 	       	    $filename = uniqid()."_".$filename;
 	       	}
