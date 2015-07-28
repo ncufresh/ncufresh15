@@ -111,25 +111,25 @@
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event1-modal" class="modal">
+<div id="event1-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e1-content"></p>
 	</div>
 </div>
 <!-- Event 2 Modal-->
-<div id="event2-modal" class="modal">
+<div id="event2-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e2-content"></p>
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event3-modal" class="modal">
+<div id="event3-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e3-content"></p>
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event4-modal" class="modal">
+<div id="event4-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e4-content"></p>
 	</div>
