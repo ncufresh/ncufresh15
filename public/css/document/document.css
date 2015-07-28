@@ -1,0 +1,37 @@
+.collapsible-header {
+	background-color: rgba(254, 240, 216, 0.51);
+  	font-size: 18px;
+  	font-weight: 600;
+}
+
+.link_1 {
+	color: #01579b;
+}
+
+.list_1 {
+	color: #01579b;
+  	padding-bottom: 3px;
+}
+
+.list_2 {
+	color: rgb(21, 126,208);
+	font-size: 18px;
+  	margin: 7px;
+  	padding-left: 21px;
+}
+
+.page_title {
+	font-weight: 600;
+}
+
+table {
+	width: 100% !important;
+}
+
+td {
+	border: 1px solid #000000;
+}
+
+a:link {
+
+}
