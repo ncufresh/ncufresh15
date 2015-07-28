@@ -62,6 +62,10 @@
 #next-btn {
     display: none;
 }
+
+#avatar.default-avatar:hover {
+	cursor: pointer;
+}
 </style>
 @stop
 
@@ -118,8 +122,18 @@ $(function() {
 </div>
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
-        <div id="avatar" style="background-image:url('https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10982689_937546332932137_8667259228873020363_n.jpg?oh=0b8372e406050943e6b8c9305f7e9d1b&oe=56467A42');">
-        </div>
+		@if (isset($porfileImage))
+			<!--<div id="avatar" style="background-image:url('{{asset("uploads/profiles/brabra.jpg")}}');"></div> -->
+		@else
+			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');">
+				<div>
+					<form>
+						<input type="file" name="image">
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
             <p>請投我一票</p>

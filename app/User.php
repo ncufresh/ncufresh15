@@ -28,9 +28,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $fillable = [
-        'name', 
-        'email', 
-        'password', 
+        'name',
+        'email',
+        'password',
         'student_id',
     ];
 
@@ -42,4 +42,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
 
+	public function profileImage(){
+		return $this->hasOne('App\ProfileImage');
+	}
 }

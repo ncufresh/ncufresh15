@@ -24,7 +24,7 @@ class UserController extends Controller
      * @return Response
      */
     public function index()
-    {        
+    {
         $users = User::latest()->paginate(15);
         SitemapHelper::push("使用者列表", 'user');
         return view('user.index', ['users' => $users]);
@@ -61,8 +61,9 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         return view('user.show', ['user' => $user,
-            'nobreadcrumb' => true, 
-            'isHome' => (Auth::check() && $id == Auth::user()->id)
+            'nobreadcrumb' => true,
+			'isHome' => (Auth::check() && $id == Auth::user()->id),
+			'profileImage' => $user->profileImage
         ]);
     }
 
