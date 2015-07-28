@@ -1,5 +1,6 @@
 #slidebar {
 	position: relative;
+	padding-right: 0%;
 }
 
 .collapsible {
@@ -12,18 +13,20 @@
 	background-color: #FFFFFF;
 	border-color: #FFFFFF;
 	color: black;
+	font-weight: bold;
 }
 
 .here {
 	background-color: #0D47A1;
 	border: 0px;
 	color: white;
+	font-weight: bold;
 }
 
 .here::after {
 	content: "";
 	position: absolute;
-	left: 92%;
+	left: 100%;
 	width: 0px;
 	height: 0px;
 	border-style: solid;
@@ -37,7 +40,7 @@
 	border-left: 0px;
 	border-right: 0px;
 }
-
+/*========================================================================*/
 #view_id {
 	float: left;
 	width: 20%;
@@ -67,6 +70,12 @@
 #campus_title {
 	font-size: 180%;
 	margin-bottom: 3%;
+	font-weight: bold;
+}
+/*========================================================================*/
+#show {
+	width: 95%;
+	margin: 0% 2.5%;
 }
 
 #pictures {
@@ -78,13 +87,26 @@
 	margin-top: 1%;
 }
 
-#map, #small_map {
+#pizzle {
 	position: absolute;
-	right: 0.5%;
-	top: 2.2%;
-	width: 8%;
+	right: 1%;
+	top: 3%;
+	width: 7%;
 }
 
-#btn-edit {
+#map {
+	position: absolute;
+	right: 5%;
+	top: 10%;
+	width: 32%;
+	visibility: hidden;
+}
+
+#btn_edit {
 	right: 1%;
+}
+
+#title_text {
+	font-size: 180%;
+	font-weight: bold;
 }

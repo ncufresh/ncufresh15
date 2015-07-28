@@ -8,4 +8,13 @@ $(document).ready(function() {
 			$(this).css("border-color", "#FFFFFF");
 		}
 	);
+
+	$("#pizzle").hover(
+		function() {
+			$("#map").css("visibility", "visible");
+		},
+		function() {
+			$("#map").css("visibility", "hidden");
+		}
+	);
 });

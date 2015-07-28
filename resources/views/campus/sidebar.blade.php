@@ -24,7 +24,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==0)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -35,7 +35,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==1)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -46,7 +46,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==2)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -57,7 +57,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==3)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -68,7 +68,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==4)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -79,7 +79,7 @@
 				@foreach($campus as $item)
 					@if($item->view_id==5)
 						<div class="collapsible-body collection">
-							<a class="collection-item" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
+							<a class="collection-item blue-text text-darken-4" href="/campus/view/{{$item->id}}">{{ $item->title }}</a>
 						</div>
 					@endif
 				@endforeach
@@ -87,7 +87,7 @@
 		</ul>
 		<a class="waves-effect waves-light btn blue darken-4" href="/campus/add_view">新增</a>
 	</div>
-	<div class="container col s12 m12 l10" id="main">
+	<div id="main" class="container col s12 m12 l10">
 		@yield('main')
 	</div>
 </div>
