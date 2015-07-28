@@ -123,14 +123,14 @@ class CampusController extends Controller
 		}
 		else if($file!=null)
 		{
-			$destinationPath = "uploads\campus";
+			$destinationPath = base_path().'/public/uploads/campus';
 			$filename = uniqid()."_".$file->getClientOriginalName();
-			while (file_exists($destinationPath."\\".$filename)) {
+			while (file_exists($destinationPath."/".$filename)) {
 	       	    $filename = uniqid()."_".$filename;
 	       	}
 			$file_success=$file->move($destinationPath, $filename);
 
-			File::delete(base_path().'\public\uploads\campus\\'.$picName);
+			File::delete(base_path().'/public/uploads/campus/'.$picName);
 			Campus::where('id', $id)
 				->update(['introduction'=>$introduction, 'view_id'=>$view_id,
 					'title'=>$title, 'picName'=>$filename, 'region'=>$region]);
@@ -148,7 +148,7 @@ class CampusController extends Controller
 	public function deleteView($id){
 		$picName = Campus::where('id', $id)->value('picName');
 		Campus::where('id', $id)->delete();
-		File::delete(base_path().'\public\uploads\campus\\'.$picName);
+		File::delete(base_path().'/public/uploads/campus/'.$picName);
 		return redirect('/campus');;
 	}
 }
