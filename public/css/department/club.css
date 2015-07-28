@@ -54,9 +54,16 @@
 .cardCon2 {
 	height: 220px;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 	.cardImage2 {
-		height: 200px;
+		min-height: 250px;
+		max-height: 250px;
+	}
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+	.cardImage2 {
+		min-height: 200px;
+		max-height: 200px;
 	}
 }
 @media (max-width: 992px) and (min-width: 780px) {
@@ -67,12 +74,19 @@
 }
 @media (max-width: 780px) and (min-width: 600px) {
 	.cardImage2 {
-		height: 250px;
+		min-height: 250px;
+		max-height: 250px;
 	}
 }
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-width: 380px) {
 	.cardImage2 {
 		min-height: 450px;
 		max-height: 450px;
+	}
+}
+@media (max-width: 380px) {
+	.cardImage2 {
+		min-height: 300px;
+		max-height: 300px;
 	}
 }

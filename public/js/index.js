@@ -18,11 +18,13 @@ $(document).ready(function(){
 });
 
 $("#arrow1").click(function(){
-	updateCalender($(this).attr("target"));
+	if($(this).attr("target") != '0000-00-00')
+		updateCalender($(this).attr("target"));
 });
 
 $("#arrow2").click(function(){
-	updateCalender($(this).attr("target"));
+	if ($(this).attr("target") != '2016-12-31')
+		updateCalender($(this).attr("target"));
 });
 
 function updateCalender(date){
@@ -32,13 +34,15 @@ function updateCalender(date){
 		success: function(data){
 			for(i = 1; i <= 4; i++) {
 				if(data[i+""]){
-					if (i == 1){
+					if (i == 2){
 						$("#arrow1").attr("target", data[i+""][0].previous_date);
-					} else if (i == 4) {
 						$("#arrow2").attr("target", data[i+""][0].next_date);
 					}
 					setCalenderBar(document.getElementById("e"+i), data[i+""]);
 					setCalenderModal(document.getElementById("e"+i+"-content"), data[i+""]);
+				} else {
+					clearCalenderBar(i);
+					clearCalenderModal(i);
 				}
 			}
 		},
@@ -54,6 +58,9 @@ function setCalenderBar(element, data){
 	if(data.length > 1) {
 		$(element).addClass("tag");
 		$(element).attr("num", data.length)
+	}else {
+		$(element).removeClass("tag");
+		$(element).attr("num", 0);
 	}
 }
 
@@ -65,6 +72,16 @@ function setCalenderModal(element, data){
 					<p class='cal-modal-content'>"+nl2br(data[j].content)+"</p>";
 	}
 	$(element).html(content);
+}
+
+function clearCalenderBar(i){
+	$("#e"+i).text("");
+	$("#e"+i).attr("num", "");
+	$("#e"+i).removeClass("tag");
+}
+
+function clearCalenderModal(i){
+	$("#e"+i+"-content").text("");
 }
 
 function nl2br( str ) {
