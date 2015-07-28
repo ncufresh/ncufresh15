@@ -15,6 +15,7 @@ class UpdateUserProfileTable extends Migration
         Schema::table('users', function($table) {
             $table->string('avatar')->nullable();
             $table->string('quote')->nullable();
+            $table->integer('background')->default(0);
         });
     }
 
@@ -28,6 +29,7 @@ class UpdateUserProfileTable extends Migration
         Schema::table('users', function($table) {
             $table->dropColumn('avatar');
             $table->dropColumn('quote');
+            $table->dropColumn('background');
         });
     }
 }

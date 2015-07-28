@@ -122,22 +122,15 @@ $(function() {
 </div>
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
-		@if (isset($porfileImage))
-			<!--<div id="avatar" style="background-image:url('{{asset("uploads/profiles/brabra.jpg")}}');"></div> -->
+		@if (isset($user->avatar))
+			<div id="avatar" style="background-image:url('{{asset("uploads/profiles/brabra.jpg")}}');"></div>
 		@else
-			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');">
-				<div>
-					<form>
-						<input type="file" name="image">
-						<button type="submit">Submit</button>
-					</form>
-				</div>
-			</div>
+			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
 		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>請投我一票</p>
-            <a class="btn waves-light waves-effect blue">Vote</a>
+            <p>&nbsp;{{$user->quote}}</p>
+            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>
