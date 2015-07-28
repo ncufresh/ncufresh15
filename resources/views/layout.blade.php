@@ -101,7 +101,7 @@
 				<div id='banner'>
 					<div class='row banner-menu'>
 						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
-						<div class='col s2'><a class='waves-effect waves-teal btn-flat'>新生必讀</a></div>
+						<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('document') }}'>新生必讀</a></div>
 						<div class='col s4'>
                             <div id='nop'>yo</div>
                             <a id='logo' href='{{url('/')}}'></a>
