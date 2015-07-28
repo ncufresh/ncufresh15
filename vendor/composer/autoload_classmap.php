@@ -32,7 +32,6 @@ return array(
     'CreatePermissionUserTable' => $baseDir . '/database/migrations/2015_02_09_132439_create_permission_user_table.php',
     'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_01_26_115212_create_permissions_table.php',
     'CreatePicturesTable' => $baseDir . '/database/migrations/2015_07_16_072448_create_pictures_table.php',
-    'CreateProfileImageTable' => $baseDir . '/database/migrations/2015_07_28_014057_create_profile_image_table.php',
     'CreateQaAnswerTable' => $baseDir . '/database/migrations/2015_07_14_020939_create_qa_answer_table.php',
     'CreateQaQuestion' => $baseDir . '/database/migrations/2015_07_14_112041_create_qa_question.php',
     'CreateRoleUserTable' => $baseDir . '/database/migrations/2015_01_15_114412_create_role_user_table.php',
@@ -549,5 +548,6 @@ return array(
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UpdateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_25_075413_update_announcement_table.php',
     'UpdateCampusTable' => $baseDir . '/database/migrations/2015_07_21_040113_update_campus_table.php',
+    'UpdateUserProfileTable' => $baseDir . '/database/migrations/2015_07_28_080454_update_user_profile_table.php',
     'UpdateUserTable' => $baseDir . '/database/migrations/2015_07_17_075146_update_user_table.php',
 );
