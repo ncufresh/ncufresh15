@@ -139,8 +139,7 @@
 	}
 	iframe{
 		width:100%;
-		margin:30% auto;
-		margin-top:77%;
+		margin:77% auto;
 	}
 	iframe:before{
 		content:"";
@@ -153,7 +152,7 @@
 @section('content')
 	<div class="row">
 		<div class="col s12 m4 l4">
-			<h2>玩</h2>
+			<h2>樂</h2>
 			<iframe width="180" height="200" src="https://www.youtube.com/embed/eZFKf0C7UZ4" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>

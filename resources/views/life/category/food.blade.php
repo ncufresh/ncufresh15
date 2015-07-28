@@ -182,9 +182,7 @@
 	}
 	iframe{
 		width:100%;
-		margin:30% auto;
-		margin-top:77%;
-
+		margin:77% auto;
 	}
 	iframe:before{
 		content:"";

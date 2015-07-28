@@ -17,7 +17,7 @@
 	}
 	#b{
 		width: 80%;
-		background-image:url("img/life/lifebackground.png");
+		background-image:url("img/life/.png");
 		background-size:100% auto;
 		background-repeat:no-repeat;
 		position: relative; 
