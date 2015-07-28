@@ -14,7 +14,6 @@
 <div id="show">
 	<div id="campus_title">新增項目</div>
 	{!! Form::open(array('url'=>'/campus/add_view', 'method'=>'post', 'files' => true))!!}
-		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<select class="browser-default" id="view_id" name="view_id">
 			<option value="" disabled selected>分類</option>
 			<option value="0">行政</option>
