@@ -63,9 +63,6 @@
     display: none;
 }
 
-#avatar.default-avatar:hover {
-	cursor: pointer;
-}
 </style>
 @stop
 
@@ -123,7 +120,7 @@ $(function() {
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
 		@if (isset($user->avatar))
-			<div id="avatar" style="background-image:url('{{asset("uploads/profiles/brabra.jpg")}}');"></div>
+			<div id="avatar" style="background-image:url('{{asset("avatar/".$user->avatar)}}');"></div>
 		@else
 			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
 		@endif
