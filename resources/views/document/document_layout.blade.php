@@ -26,7 +26,7 @@
   <div class="col l4 m5 s12">
       <ul class="collapsible" data-collapsible="expandable">
         <li class="list_1">
-          <div class="collapsible-header">學士班新生註冊通知</div>
+          <div class="collapsible-header">學士班新生註冊摘要</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/university/1">重要日程</a></li>
@@ -40,7 +40,7 @@
           </div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header">研究所新生註冊通知</div>
+          <div class="collapsible-header">研究所新生註冊摘要</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/graduate/1">重要日程</a></li>
