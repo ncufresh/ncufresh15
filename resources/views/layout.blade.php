@@ -147,7 +147,7 @@
 			</div>
         </div>
 		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
-		<!--<div id='portal'>
+		<div id='portal'>
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
 				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
@@ -158,7 +158,7 @@
 					<li><a href="#!">three</a></li>
 				</ul>
 			</div>
-		</div>-->
+		</div>
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/layout.js') }}"></script>
