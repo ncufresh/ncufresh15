@@ -56,11 +56,9 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	/*transition: 6s ease-in-out;*/
+	transition: 6s ease-in-out;
 	display: inline-block;
 	position: fixed;
-	top: 65vh;
-	left: 89%;
 	width: 70px;
 	z-index: 4;
 }
@@ -99,6 +97,31 @@ body {
     margin: 0;
     display: block;
     width: 30px;
+}
+
+.position1 {
+	top: 10vh !important;
+	left: 50% !important;
+}
+
+.position2 {
+	top: 10vh !important;
+	left: 88% !important;
+}
+
+.position3 {
+	top: 35vh !important;
+	left: 74% !important;
+}
+
+.position4 {
+	top: 50vh !important;
+	left: 50% !important;
+}
+
+.position5 {
+	top: 50vh !important;
+	left: 88% !important;
 }
 
 @media only screen and (max-width: 992px) {
