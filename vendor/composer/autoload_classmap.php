@@ -16,7 +16,6 @@ return array(
     'AddViewsToQaAnswers' => $baseDir . '/database/migrations/2015_07_14_051828_add_views_to_qa_answers.php',
     'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'CalenderSeeder' => $baseDir . '/database/seeds/CalenderSeeder.php',
-    'CalenderUpdateSeeder' => $baseDir . '/database/seeds/CalenderUpdateSeeder.php',
     'CraeteGuestbookTable' => $baseDir . '/database/migrations/2015_07_24_045242_craete_guestbook_table.php',
     'CreateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_19_185404_create_announcement_table.php',
     'CreateBottlesTable' => $baseDir . '/database/migrations/2015_07_24_071802_create_bottles_table.php',
@@ -549,5 +548,6 @@ return array(
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UpdateAnnouncementTable' => $baseDir . '/database/migrations/2015_07_25_075413_update_announcement_table.php',
     'UpdateCampusTable' => $baseDir . '/database/migrations/2015_07_21_040113_update_campus_table.php',
+    'UpdateUserProfileTable' => $baseDir . '/database/migrations/2015_07_28_080454_update_user_profile_table.php',
     'UpdateUserTable' => $baseDir . '/database/migrations/2015_07_17_075146_update_user_table.php',
 );
