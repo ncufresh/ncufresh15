@@ -30,6 +30,7 @@
     bottom: 20px;
     width: 200px;
     height: 140px;
+    display: none;
 }
 #information-btn {
     display: block;
@@ -46,16 +47,23 @@
     height: 190px;
     float: left;
     background-size: 100% auto;
+    border-radius: 50%;
+    border: 5px solid #555;
 }
 #detail {
     float: left;
     padding-left: 30px;
+	max-width: 70%;
 }
 
-.modal-content {
+.modal-content.grey {
     color: #fff;
     overflow: auto;
 }
+#next-btn {
+    display: none;
+}
+
 </style>
 @stop
 
@@ -65,6 +73,9 @@ $(function() {
     $('.modal-trigger').leanModal();
 });
 </script>
+@if ($isHome)
+<script src="/js/bottle.js"></script>
+@endif
 @stop
 
 @section('content')
@@ -72,14 +83,52 @@ $(function() {
 <div id="treasure" class="item"></div>
 <a id="information-btn" class="modal-trigger" href="#modal-information"></a>
 <!-- Modal Structure -->
+<div id="question-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4 id="question-head">請先回答問題</h4>
+        <p id="question-body">A bunch of text</p>
+        <div id="question-options">
+        </div>
+        <button id="choose-btn" class="btn waves-effect waves-light disabled">
+            <i class="material-icons left">thumb_up</i>
+            就決定是你了
+        </button>
+        <button id="next-btn" class="btn waves-effect waves-light">
+            <i class="material-icons left">play_arrow</i>
+            下一題
+        </button>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+</div>
+<div id="write-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>寫些什麼吧</h4>
+        <div class="input-field col s12">
+          <textarea id="textarea-content" class="materialize-textarea"></textarea>
+          <label for="textarea-content">Textarea</label>
+        </div>
+        <button id="write-btn" class="btn waves-effect waves-light">
+            <i class="material-icons left">play_arrow</i>
+            送出
+        </button>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+</div>
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
-        <div id="avatar" style="background-image:url('https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10982689_937546332932137_8667259228873020363_n.jpg?oh=0b8372e406050943e6b8c9305f7e9d1b&oe=56467A42');">
-        </div>
+		@if (isset($user->avatar))
+			<div id="avatar" style="background-image:url('{{asset("avatar/".$user->avatar)}}');"></div>
+		@else
+			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
+		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>請投我一票</p>
-            <a class="btn waves-light waves-effect blue">Vote</a>
+            <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
+            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>

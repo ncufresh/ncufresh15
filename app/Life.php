@@ -8,5 +8,5 @@ class Life extends Model
 {
     //
     protected $table = 'lifes';
-    protected $fillable = ['category','name','video','content'];
+    protected $fillable = ['category','name','content'];
 }

@@ -44,6 +44,12 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
+// bottle
+Route::get('bottle/new', 'BottleController@getNewBottle');
+Route::get('bottle/open/{token}', 'BottleController@open');
+Route::post('bottle/verify/{token}', 'BottleController@verify');
+Route::post('bottle/write/{token}', 'BottleController@write');
+
 // knowledge
 Route::get('knowledge/{id}', 'KnowledgeController@show');
 
@@ -63,10 +69,12 @@ Route::get('file/{id}', 'FileController@show');
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
-        Route::get ('user/edit/{id}'  , 'UserController@edit');
-        Route::post('user/update/{id}'  , 'UserController@update');
         Route::get ('user/delete/{id}', 'UserController@destroy');
     });
+
+	// Note: Permission must be authorize in controller
+	Route::get ('user/edit/{id}'  , 'UserController@edit');
+	Route::post('user/update/{id}'  , 'UserController@update');
 
     // Home
     Route::get('home', function() {
