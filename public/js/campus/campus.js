@@ -9,7 +9,7 @@ $(document).ready(function() {
 		}
 	);
 
-	$("#pizzle").hover(
+	$("#move").hover(
 		function() {
 			$("#map").css("visibility", "visible");
 		},

@@ -3,7 +3,9 @@
 @section('main')
 <div id="show" class="col s12">
 	<div id="pictures">
-		<img id="pizzle" src="{{ asset('img/map/pizzle.png') }}">
+		<div id="move">
+			<img id="pizzle" src="{{ asset('img/map/pizzle.png') }}">
+		</div>
 		<img id="map" src="{{ asset('img/map/'.$view->region.'.png') }}">
 		<img id="view" src="{{ asset('uploads/campus/'.$view->picName) }}">
 	</div>
