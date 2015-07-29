@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\File;
 use Auth;
 use App\Helpers\SitemapHelper;
 use App\User;
@@ -94,6 +94,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
+            'quote' => 'string|max:255',
         ]);
         if ($validator->fails()) {
             return back()
@@ -114,14 +115,40 @@ class UserController extends Controller
         } else {
             $user->password = bcrypt($request->password);
         }
+
+		// quote and avatar
+		if ($request->has('quote')) {
+			$user->quote = $request->quote;
+		}
+		if ($request->hasFile('avatar')) {
+            $uploadFolder = base_path().'/public/avatar/';
+			$oldAvatar = $user->avatar;
+			if (file_exists($uploadFolder.$oldAvatar)){
+				File::delete($uploadFolder.$oldAvatar);
+			}
+            $file = $request->file('avatar');
+            $is_img = (substr($file->getMimeType(), 0, 5) == 'image');
+			if (!$is_img) {
+				return back()->withInput();
+			}
+            $ext = ".".pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $newname = bin2hex(openssl_random_pseudo_bytes(16)).$ext;
+			while(file_exists($uploadFolder.$newname)) {
+				$newname = bin2hex(openssl_random_pseudo_bytes(16)).$ext;
+			}
+            $file->move($uploadFolder, $newname);
+			$user->avatar = $newname;
+		}
         $user->save();
+
+
         if ($request->has('role')) {
             $newRole = Role::findOrFail($request->role);
             $user->detachAllRoles();
             $user->attachRole($newRole);
         }
-        
-        return redirect('user');
+
+        return redirect('user/'.$id);
     }
 
     /**

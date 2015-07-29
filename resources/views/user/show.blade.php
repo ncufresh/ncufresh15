@@ -53,6 +53,7 @@
 #detail {
     float: left;
     padding-left: 30px;
+	max-width: 70%;
 }
 
 .modal-content.grey {
@@ -63,9 +64,6 @@
     display: none;
 }
 
-#avatar.default-avatar:hover {
-	cursor: pointer;
-}
 </style>
 @stop
 
@@ -123,13 +121,13 @@ $(function() {
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
 		@if (isset($user->avatar))
-			<div id="avatar" style="background-image:url('{{asset("uploads/profiles/brabra.jpg")}}');"></div>
+			<div id="avatar" style="background-image:url('{{asset("avatar/".$user->avatar)}}');"></div>
 		@else
 			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
 		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>&nbsp;{{$user->quote}}</p>
+            <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
             <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">

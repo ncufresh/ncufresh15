@@ -3,19 +3,28 @@
 @section('title', 'YOLO')
 @section('css')
 <style>
-#test {
-	height: 1000px;
+#avatar {
+    width: 190px;
+    height: 190px;
+    float: left;
+    background-size: 100% auto;
+    border-radius: 50%;
+    border: 5px solid #555;
 }
 </style>
 @stop
 
 @section('js')
-<script src="{{ asset('js/select.js') }}"></script>
+<script>
+$(document).ready(function() {
+	$('select').material_select();
+});
+</script>
 @stop
 
 @section('content')
 <div id="edituser-form" class="row" style="padding: 0 10%;">
-    <form class="col s12" action="{{url('user/update/'.$user->id)}}" method="post">
+    <form class="col s12" action="{{url('user/update/'.$user->id)}}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
         {!! csrf_field() !!}
         @if (count($errors) > 0)
             <div id="error-msg" class="card-panel red">
@@ -48,14 +57,34 @@
             <input id="input_student_id" type="text" class="validate" name="student_id" value="{{Input::old('student_id')?Input::old('student_id'):$user->student_id}}">
             <label for="input_student_id">學號</label>
         </div>
-        <div class="input-field">
-            <select name="role">
-                @foreach ($roles as $role)
-                    <option value="{{$role->id}}" {{($user->is($role->id) || $role == $roles[0]) ?"selected='selected'":""}}>{{$role->description}}</option>
-                @endforeach
-            </select>
-            <label>權限</label>
+		@if (isset($user->avatar))
+			<div id="avatar" style="background-image:url('{{asset("avatar/".$user->avatar)}}');"></div>
+		@else
+			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
+		@endif
+        <div class="row input-field file-field">
+            <i class="material-icons prefix">account_circle</i>
+			<input class="file-path validate" type="text"/>
+			<div class="btn">
+				<span>選取大頭貼</span>
+				<input type="file" name="avatar"/>
+			</div>
         </div>
+        <div class="row input-field">
+            <i class="material-icons prefix">account_circle</i>
+			<textarea id="input_quote" name="quote" class="materialize-textarea" length="255">{{Input::old('quote')?Input::old('quote'):$user->quote}}</textarea>
+            <label for="input_quote">簽名檔</label>
+        </div>
+		@permission('admin')
+			<div class="input-field">
+				<select name="role">
+					@foreach ($roles as $role)
+						<option value="{{$role->id}}" {{($user->is($role->id) || $role == $roles[0]) ?"selected='selected'":""}}>{{$role->description}}</option>
+					@endforeach
+				</select>
+				<label>權限</label>
+			</div>
+		@endpermission
         <div class="input-field row">
             <button class="btn waves-effect waves-light right indigo" type="submit">修改</button>
         </div>
