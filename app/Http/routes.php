@@ -147,7 +147,8 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 Route::get('video2','Video\GuestbookController@index2');
 Route::get('video', 'Video\GuestbookController@index');
 Route::post('video2/add','Video\GuestbookController@add');
-Route::post('video2','Video\GuestbookController@delete');
+Route::post('video2/delete','Video\GuestbookController@delete');
+Route::get('/ajax/comment','Video\GuestbookController@load');
 //******************************************************************************************************
 
 // Game

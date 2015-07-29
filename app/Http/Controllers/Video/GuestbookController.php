@@ -15,22 +15,23 @@ class GuestbookController extends Controller
     }
     public function index2()
     {
-        $tryconnect = Guestbook::all();
+        $tryconnect = Guestbook::orderBy('id','desc')->paginate(8);
 
         return view('video.video2',compact('tryconnect'));
     }
-    public function show($id)
-    {
-    	$tryconnect = Guestbook::find($id);
 
-    	return view('video.show',compact('tryconnect'));
+    public function load()
+    {
+        $tryconnect = Guestbook::paginate(8);
+
+        return view('video.AllComments')->with('tryconnect',$tryconnect)->render();
+
     }
 
     public function take(Request $request){
 
-            
-
-
+        $tryconnect = $request->paginate(8);            
+        return response()->json($tryconnect);
     }
 
     public function delete(Request $request)
