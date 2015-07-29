@@ -16,13 +16,15 @@ var blocklock= {
 	bottom : false 
 };
 
+var initialX=52;
+var initialY=6;
 var hero = {
 	speed: 256, // movement in pixels per second
-	x : 50*grid.length,
-	y : 8*grid.length,
+	x : initialX*grid.length,
+	y : initialY*grid.length,
 	end: {
-		x: 50*grid.length,
-		y: 8*grid.length,
+		x: initialX*grid.length,
+		y: initialY*grid.length,
 		Delay: 30,
 		Timer: 0
 	},

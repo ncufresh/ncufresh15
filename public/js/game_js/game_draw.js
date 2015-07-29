@@ -167,7 +167,28 @@ var render = function () {
 			}
 		}
 	}
+	if (rt1Ready) {
+		draw(rt1Image,grid.length*64,grid.length*80);
+		draw(rt1Image,grid.length*67,grid.length*72);
+		draw(rt1Image,grid.length*84,grid.length*69);
+	}
+	if (rc2Ready) {
+		draw(rt2Image,grid.length*82,grid.length*40);
+		draw(rt2Image,grid.length*63,grid.length*63);
+		draw(rt2Image,grid.length*67,grid.length*75);
+		draw(rt2Image,grid.length*75,grid.length*44);
+		draw(rt2Image,grid.length*82,grid.length*69);
+	}
+	if (rc3Ready) {
+		draw(rt3Image,grid.length*48,grid.length*72);
+		draw(rt3Image,grid.length*82,grid.length*44);
+		draw(rt3Image,grid.length*82,grid.length*54);
 
+	}
+	if (rc4Ready) {
+		draw(rt4Image,grid.length*41,grid.length*33);
+		draw(rt4Image,grid.length*20,grid.length*38);
+	}
 	//
 	if (boxcloseReady && boxs[0].open==false) {
 		draw(boxcloseImage, boxs[0].x, boxs[0].y);
@@ -254,5 +275,7 @@ var render = function () {
 		ctx.textBaseline = "top";
 		ctx.fillText("0"+minute+":0"+second, 32, 480);
 	};
+
+
 	
 };

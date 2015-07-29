@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Auth;
+use App\User;
 use App\Knowledge;
 use App\Helpers\SitemapHelper;
 use App\Http\Requests;
@@ -74,10 +76,28 @@ class KnowledgeController extends Controller
         return response()->json(['knowledge' => $knowledge, 'token' => bin2hex(openssl_random_pseudo_bytes(16))]);
     }
 
-    public function getquestion()
+    public function getQuestion()
     {
         $knowledge = Knowledge::orderByRaw('RAND()')->first();
         return response()->json(['questions' => $knowledge, 'answer' => $knowledge->answer]);
+    }
+    public function getTreasure()
+    {
+        $user = Auth::user();
+        $background = $user->getBackground();
+        $decoration = $user->getDecoration();
+        $choice = 0;
+        switch($choice) {
+            case 0:
+                $background->bg1_1 = true;
+                break;
+            case 1:
+                $background->bg1_2 = true;
+                break;
+        }
+        $background->save();
+        $decoration->save();
+        return response()->json(['QQ' => $background]);
     }
 
     /**

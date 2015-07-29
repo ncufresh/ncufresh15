@@ -23,7 +23,15 @@ function getquestion() {
         }
     });
 }
-
+function gettreasure() {
+    $.ajax({
+        url: '/GetTheSecretTreasure',
+        type: 'GET',
+        success: function(data) {
+        	
+        }
+    });
+}
 
 
 var question = function () {
@@ -123,11 +131,13 @@ var question = function () {
 		ctx.fillRect(0, canvas.height/4, canvas.width, canvas.height*3/4);
 
 		if (threetimes==3) {
+			gettreasure();
 			ctx.fillStyle = '#ff0000';
 			ctx.font = "50px Bangers, Impact, Arial";
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top";
-			ctx.fillText("恭喜你獲得道具~!", canvas.width / 2, canvas.height / 2 + 120);
+			ctx.fillText("恭喜獲得神秘道具~!", canvas.width / 2, canvas.height / 2 + 120);
+			ctx.fillText("到個人專區看看吧~!", canvas.width / 2, canvas.height / 2 + 170);
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
