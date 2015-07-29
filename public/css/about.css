@@ -1,0 +1,86 @@
+#top {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#bottom {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#top:before, #bottom:hover {
+	content: "";
+	display: block;
+	padding-top: 5%;
+}
+
+#ceo {
+	height: 175px;
+	width: 299px;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 2s;
+	-moz-transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-o-transition: opacity 2s;
+	background-image: url("http://bostonese.com/wp-content/uploads/2015/06/2015_XiaDa_Graduation1-e1435549106405.jpg");
+	-moz-background-size: 299px 175px;
+	-webkit-background-size: 299px 175px;
+	-o-background-size: 299px 175px;
+	background-size: 299px 175px;
+}
+
+#plann {
+	height: 175px;
+	width: 299px;
+	position: absolute;
+	margin-left: 299px;
+	opacity: 0;	
+	transition: opacity 2s;
+	-moz-transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-o-transition: opacity 2s;
+}
+
+#code {
+	height: 175px;
+	width: 200px;
+	position: relative;
+	top: -174px;
+	opacity: 0;		 
+	transition: opacity 2s;
+	-moz-transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-o-transition: opacity 2s;
+}
+
+#art {
+	height: 175px;
+	width: 200px;
+	position: absolute;
+	margin-top: -174px;
+	opacity: 0;	
+	transition: opacity 2s;
+	-moz-transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-o-transition: opacity 2s;
+}
+
+#video {
+	height: 175px;
+	width: 200px;
+	position: absolute;
+	margin-left: 198px;
+	margin-top: -174px;
+	opacity: 0;	
+	transition: opacity 2s;
+	-moz-transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-o-transition: opacity 2s;
+}
+
+#ceo:hover, #plann:hover, #code:hover, #art:hover, #video:hover {
+	opacity: 1;
+}

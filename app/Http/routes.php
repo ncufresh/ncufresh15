@@ -166,3 +166,10 @@ Route::post('life/update/{id}','Life\LifeController@update');
 Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
 Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
 //******************************************************************************************************
+
+// about
+//******************************************************************************************************
+Route::get('about', function(){
+	return view('about');
+});
+//******************************************************************************************************
