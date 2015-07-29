@@ -1,13 +1,20 @@
 $(document).ready(function() {
 
-	$(".category").on({
-		mouseenter: function() {
-			$(this).css("border-color", "#2196F3");
+	$(".category").hover(
+		function() {
+			$(this).css("border-color", "#0D47A1");
 		},
-		mouseleave: function() {
-			$(this).css("border-color", "#BFE0FF");
+		function() {
+			$(this).css("border-color", "#FFFFFF");
 		}
-	});
+	);
 
-	$('.materialboxed').materialbox();
+	$("#pizzle").hover(
+		function() {
+			$("#map").css("visibility", "visible");
+		},
+		function() {
+			$("#map").css("visibility", "hidden");
+		}
+	);
 });
