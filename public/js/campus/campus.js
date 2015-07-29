@@ -17,4 +17,6 @@ $(document).ready(function() {
 			$("#map").css("visibility", "hidden");
 		}
 	);
+
+	$('.tooltipped').tooltip({delay: 50});
 });
