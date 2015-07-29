@@ -277,9 +277,7 @@ class QaController extends Controller
     {
         //
         $answer = QaAnswer::findOrFail($id);
-        if ($answer != null) {
-            $answer->delete();
-        }
+        $answer->delete();
         return redirect('qa');
     }
 
