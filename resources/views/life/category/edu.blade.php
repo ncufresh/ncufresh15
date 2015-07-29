@@ -15,7 +15,6 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image: url("/img/life/edu_background.png");
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -252,7 +251,6 @@
 	}
 	iframe{
 		width:100%;
-		margin-top: 77%;
 		margin:77% auto;
 	}
 	iframe:before{
@@ -264,13 +262,12 @@
 @stop
 
 @section('content')
-	<div class="row">
-		<div class="col s12 m4 l4">
-			<h2>育</h2>
+	<div class="row" style="background-color:rgb(214,237,237)">
+		<div class="col s12 m6 l6">
 			<iframe width="180" height="200" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
-			<div class="col s12 m8 l8" id="b">
+			<div class="col s12 m6 l6" id="b">
 				<a class="puzzle" href="{{ url('life/16') }}" id="b1"></a>
 				<a class="puzzle" href="{{ url('life/22') }}" id="b2"></a>
 				<a class="puzzle" href="{{ url('life/21') }}" id="b3"></a>

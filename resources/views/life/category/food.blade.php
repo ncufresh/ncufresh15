@@ -15,7 +15,6 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image: url("/img/life/food_background.png");
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -193,13 +192,12 @@
 @stop
 
 @section('content')
-	<div class="row">
-		<div class="col s12 m4 l4">
-			<h2>食</h2>
+	<div class="row" style="background-color:rgb(214,237,237)">
+		<div class="col s12 m6 l6">
 			<iframe width="180" height="200" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<body>
-			<div class="col s12 m8 l8" id="b">
+			<div class="col s12 m6 l6" id="b">
 				<a class="puzzle" href="{{ url('life/8') }}" id="b1"></a>
 				<a class="puzzle" href="{{ url('life/3') }}" id="b2"></a>
 				<a class="puzzle" href="{{ url('life/4') }}" id="b3"></a>
