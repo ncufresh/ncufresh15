@@ -168,11 +168,27 @@ var render = function () {
 		}
 	}
 
-
-
-	if (boxcloseReady) {
-		draw(boxcloseImage, box.x, box.y);
+	//
+	if (boxcloseReady && boxs[0].open==false) {
+		draw(boxcloseImage, boxs[0].x, boxs[0].y);
 	}
+	if (boxopenReady && boxs[0].open) {
+		draw(boxopenImage, boxs[0].x, boxs[0].y);
+	}
+	if (boxcloseReady && boxs[1].open==false) {
+		draw(boxcloseImage,  boxs[1].x, boxs[1].y);
+	}
+	if (boxopenReady && boxs[1].open) {
+		draw(boxopenImage, boxs[1].x, boxs[1].y);
+	}
+	if (boxcloseReady && boxs[2].open==false) {
+		draw(boxcloseImage,  boxs[2].x, boxs[2].y);
+	}
+	if (boxopenReady && boxs[2].open) {
+		draw(boxopenImage, boxs[2].x, boxs[2].y);
+	}
+	//
+
 	if (monsterReady) {
 		draw(monsterImage, monster.x, monster.y);
 	}
@@ -225,4 +241,18 @@ var render = function () {
 	// ctx.textAlign = "left";
 	// ctx.textBaseline = "top";
 	// ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
+	if (second>9) {
+		ctx.fillStyle = "rgba(0, 0, 0,0.8)";
+		ctx.font = "24px Helvetica";
+		ctx.textAlign = "left";
+		ctx.textBaseline = "top";
+		ctx.fillText("0"+minute+":"+second, 32, 480);
+	} else{
+		ctx.fillStyle = "rgba(0, 0, 0,0.8)";
+		ctx.font = "24px Helvetica";
+		ctx.textAlign = "left";
+		ctx.textBaseline = "top";
+		ctx.fillText("0"+minute+":0"+second, 32, 480);
+	};
+	
 };

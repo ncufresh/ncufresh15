@@ -47,12 +47,35 @@ var hero = {
 var monster = {};
 var monstersCaught = 0;
 
-var box = {
+
+var box1 = {
+	isme : false,
+	lock : false,
+	open : false,
 	x : 52*grid.length,
 	y : 8*grid.length,
 	width : grid.length,
 	height : grid.length
 };
+var box2 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : 54*grid.length,
+	y : 8*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var box3 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : 52*grid.length,
+	y : 10*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var boxs = [box1,box2,box3];
 
 var road1 = {x:0,y:64,width:64,height:320,type:"road"};
 var roads = [road1];
@@ -96,7 +119,6 @@ var main = function () {
 	var now = Date.now();
 	var delta = now - then;
 	then = now;
-
 	if (hero.canmove) {
 		anim(delta); // game_animation.js
 		update(delta); // game_move.js
@@ -140,9 +162,26 @@ window.onkeydown = function(e) {
 	// enter
 	if(e.keyCode == 13 && starting == true){
 		starting=false;
+		var timing = setInterval(fiveminute,1000);	
 		main();
 	}
 }
+
+//timing
+var minute=5;
+var second=0;
+var fiveminute = function () {
+	if (second==0) {
+		minute-=1;
+		second=60;
+	}
+	second-=1;
+	if (minute==0 && second==0) {
+		//window.location = "group";
+		window.location.replace("https://www.facebook.com/");
+	}
+}
+//
 
 ctx.fillStyle = '#000000';
 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -163,21 +202,27 @@ function loaded() {
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 		
 	ctx.fillStyle = '#ff0000';
-	ctx.font = '80px Bangers, Impact, Arial, Impact, Arial';
+	ctx.font = '50px Bangers, Impact, Arial, Impact, Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
-	ctx.fillText("Game", canvas.width / 2, canvas.height / 2 - 100);
+	ctx.fillText("點一下遊戲畫面鎖住視窗", canvas.width / 2, canvas.height / 4 - 20);
+	ctx.fillText("遊戲操作:↑,↓,←,→,Enter", canvas.width / 2, canvas.height / 4 - 70);
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.font = '25px Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
-	ctx.fillText("倒數計時5分鐘~找到的寶物都是你的！", canvas.width / 2, canvas.height / 2 );				
-	ctx.fillText("打開寶箱會出現三道問題鎖，全答對就能獲得寶物！", canvas.width / 2, canvas.height / 2 +30);
-	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開喔！", canvas.width / 2, canvas.height / 2 +60);	
-	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 2 +120);
+	ctx.fillText("倒數計時5分鐘！", canvas.width / 2, canvas.height / 3 );				
+	ctx.fillText("在這5分鐘內，找到的寶物都是你的！", canvas.width / 2, canvas.height / 3 +30);
+	ctx.fillText("注意！", canvas.width / 2, canvas.height / 3 +60);
+	ctx.fillText("打開寶箱時會出現三道問題鎖，全部答對才能獲得寶物。", canvas.width / 2, canvas.height / 3 +90);
+	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開喔！", canvas.width / 2, canvas.height / 3 +120);
+	ctx.fillText("好好加油吧！", canvas.width / 2, canvas.height / 3 +150);
+	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 3 +240);
 }
 ////////////////////////////////////////////////
+
+
 
 
 var gameover = function () {

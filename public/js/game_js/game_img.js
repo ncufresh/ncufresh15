@@ -7,7 +7,7 @@ bgImage.onload = function () {
 };
 bgImage.src = "game_images/background.png";
 
-// Grasss image
+// Grass image
 var grassReady = false;
 var grassImage = new Image();
 grassImage.onload = function () {
@@ -141,7 +141,13 @@ boxcloseImage.onload = function () {
 	boxcloseReady = true;
 };
 boxcloseImage.src = "game_images/box_close.png";
-
+// Box_Open image
+var boxopenReady = false;
+var boxopenImage = new Image();
+boxopenImage.onload = function () {
+	boxopenReady = true;
+};
+boxopenImage.src = "game_images/box_open.png";
 
 // test image
 var testReady = false;

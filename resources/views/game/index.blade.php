@@ -5,8 +5,12 @@
 @section('css')
 
 <style>
-    body{ background-color: ivory; }
-    canvas{border:1px solid red;}
+    canvas{border:5px solid black;}
+    #gamecanvas{
+        outline: none;
+        width: 640;
+        height: 512;
+    }
 </style>
 
 @stop
@@ -15,7 +19,6 @@
 <div id="gamecanvas" tabindex="0">
     
 </div>
-
 @stop
 
 @section('js')

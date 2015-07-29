@@ -78,15 +78,22 @@ var update = function (modifier) {
 			blocklock.left = true;
 		}
 
-		canask=false;
-		if(isTouchingleft(hero,box)){
-			hero.x = box.x + box.width;
-			blocklock.left = true ;
-			canask=true;
-			hero.direction.x = -1;
-			hero.direction.now = "left";
-		}	
 
+		canask=false;
+		for (i=0;i<boxs.length ;i++ )
+		{	
+			if (isTouchingleft(hero,boxs[i]))
+			{
+				boxs[i].isme=true;
+				hero.x = boxs[i].x + boxs[i].width;
+				blocklock.left = true ;
+				canask=true;
+				hero.direction.x = -1;
+				hero.direction.now = "left";
+			} else{
+				boxs[i].isme=false;
+			}
+		}
 		if(hero.x - grid.length >= 0 && blocklock.left == false ){ // edge
 			//hero.x -=  grid.length;
 			blocklock.left = false;
@@ -117,13 +124,21 @@ var update = function (modifier) {
 			blocklock.top = true;
 		}
 
+
 		canask=false;
-		if(isTouchingup(hero,box)){
-			hero.y = box.y + box.height;
-			blocklock.top = true;
-			canask=true;
-			hero.direction.y = -1;
-			hero.direction.now = "up";
+		for (i=0;i<boxs.length ;i++ )
+		{	
+			if (isTouchingup(hero,boxs[i]))
+			{
+				boxs[i].isme=true;
+				hero.y = boxs[i].y + boxs[i].height;
+				blocklock.top = true;
+				canask=true;
+				hero.direction.y = -1;
+				hero.direction.now = "up";
+			} else{
+				boxs[i].isme=false;
+			}
 		}
 
 		if(hero.y - grid.length >= 0 && blocklock.top==false){ // edge
@@ -155,13 +170,21 @@ var update = function (modifier) {
 			blocklock.right = true;
 		}
 
+
 		canask=false;
-		if(isTouchingright(hero,box)){
-			hero.x = box.x - box.width;
-			blocklock.right = true;
-			canask=true;
-			hero.direction.x = 1;
-			hero.direction.now = "right";
+		for (i=0;i<boxs.length ;i++ )
+		{	
+			if (isTouchingright(hero,boxs[i]))
+			{
+				boxs[i].isme=true;
+				hero.x = boxs[i].x - boxs[i].width;
+				blocklock.right = true;
+				canask=true;
+				hero.direction.x = 1;
+				hero.direction.now = "right";
+			} else{
+				boxs[i].isme=false;
+			}
 		}
 
 		if(hero.x + grid.length <= game.length-grid.length && blocklock.right==false){ // edge
@@ -193,13 +216,21 @@ var update = function (modifier) {
 			blocklock.bottom = true;
 		}
 
+
 		canask=false;
-		if(isTouchingdown(hero,box)){
-			hero.y = box.y - box.height;
-			blocklock.bottom = true;
-			canask=true;
-			hero.direction.y = 1;
-			hero.direction.now = "down";
+		for (i=0;i<boxs.length ;i++ )
+		{	
+			if (isTouchingdown(hero,boxs[i]))
+			{
+				boxs[i].isme=true;
+				hero.y = boxs[i].y - boxs[i].height;
+				blocklock.bottom = true;
+				canask=true;
+				hero.direction.y = 1;
+				hero.direction.now = "down";
+			} else{
+				boxs[i].isme=false;
+			}
 		}
 		
 		if(hero.y + grid.length <= game.length-grid.length && blocklock.bottom==false){ // edge
