@@ -53,6 +53,7 @@
 #detail {
     float: left;
     padding-left: 30px;
+	max-width: 70%;
 }
 
 .modal-content.grey {
@@ -126,7 +127,7 @@ $(function() {
 		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>&nbsp;{{$user->quote}}</p>
+            <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
             <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
