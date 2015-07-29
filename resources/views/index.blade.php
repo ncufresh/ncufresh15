@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'NCU Fresh')
+@section('title', 'NCU Fresh | 新生知訊網')
 @section('css')
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/index.css') }}"  media="screen,projection"/>
 	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
