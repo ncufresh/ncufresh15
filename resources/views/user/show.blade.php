@@ -62,6 +62,7 @@
 #next-btn {
     display: none;
 }
+
 </style>
 @stop
 
@@ -118,12 +119,15 @@ $(function() {
 </div>
 <div id="modal-information" class="modal bottom-sheet">
     <div class="modal-content grey darken-4">
-        <div id="avatar" style="background-image:url('https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10982689_937546332932137_8667259228873020363_n.jpg?oh=0b8372e406050943e6b8c9305f7e9d1b&oe=56467A42');">
-        </div>
+		@if (isset($user->avatar))
+			<div id="avatar" style="background-image:url('{{asset("avatar/".$user->avatar)}}');"></div>
+		@else
+			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
+		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>請投我一票</p>
-            <a class="btn waves-light waves-effect blue">Vote</a>
+            <p>&nbsp;{{$user->quote}}</p>
+            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>

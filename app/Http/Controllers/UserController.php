@@ -24,7 +24,7 @@ class UserController extends Controller
      * @return Response
      */
     public function index()
-    {        
+    {
         $users = User::latest()->paginate(15);
         SitemapHelper::push("使用者列表", 'user');
         return view('user.index', ['users' => $users]);
@@ -60,9 +60,10 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        return view('user.show', ['user' => $user,
-            'nobreadcrumb' => true, 
-            'isHome' => (Auth::check() && $id == Auth::user()->id)
+		return view('user.show', [
+			'user' => $user,
+            'nobreadcrumb' => true,
+			'isHome' => (Auth::check() && $id == Auth::user()->id),
         ]);
     }
 
@@ -93,6 +94,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
+            'quote' => 'string|max:255',
         ]);
         if ($validator->fails()) {
             return back()
@@ -113,14 +115,36 @@ class UserController extends Controller
         } else {
             $user->password = bcrypt($request->password);
         }
+
+		// quote and avatar
+		if ($request->has('quote')) {
+			$user->quote = $request->quote;
+		}
+		if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $is_img = (substr($file->getMimeType(), 0, 5) == 'image');
+			if (!$is_img) {
+				return back()->withInput();
+			}
+            $uploadFolder = base_path().'/public/avatar/';
+            $ext = ".".pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $newname = bin2hex(openssl_random_pseudo_bytes(16)).$ext;
+			while(file_exists($uploadFolder.$newname)) {
+				$newname = bin2hex(openssl_random_pseudo_bytes(16)).$ext;
+			}
+            $file->move($uploadFolder, $newname);
+			$user->avatar = $newname;
+		}
         $user->save();
+
+
         if ($request->has('role')) {
             $newRole = Role::findOrFail($request->role);
             $user->detachAllRoles();
             $user->attachRole($newRole);
         }
-        
-        return redirect('user');
+
+        return redirect('user/'.$id);
     }
 
     /**

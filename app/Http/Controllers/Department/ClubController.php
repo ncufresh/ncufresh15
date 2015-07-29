@@ -38,10 +38,10 @@ class ClubController extends Controller {
 				$validator = Validator::make(['fileName'=>$file], ['fileName'=>'image',]);
 				if ($validator->fails()) {
 				} else {
-	       	    	$destinationPath = base_path().'\public\uploads\departments';
+	       	    	$destinationPath = base_path().'/public/uploads/departments';
 	       	    	$filename = uniqid()."_".$file->getClientOriginalName();
 	       	    	//Check file name exist or not
-	       	    	while (file_exists($destinationPath."\\".$filename)) {
+	       	    	while (file_exists($destinationPath."/".$filename)) {
 	       	    	    $filename = uniqid()."_".$filename;
 	       	    	}
 	       	    	$upload_success = $file->move($destinationPath, $filename);
@@ -214,7 +214,7 @@ class ClubController extends Controller {
 		if ($deletePics != null) {
 			foreach ($deletePics as $deletePic) {
 				Department_pictures::where('picName', $deletePic)->delete();
-				File::delete(base_path().'\public\uploads\departments\\'.$deletePic);
+				File::delete(base_path().'/public/uploads/departments/'.$deletePic);
 			}
 		}
 		//files upload
@@ -225,10 +225,10 @@ class ClubController extends Controller {
 				$validator = Validator::make(['fileName'=>$file], ['fileName'=>'image',]);
 				if ($validator->fails()) {
 				} else {
-        	    	$destinationPath = base_path().'\public\uploads\departments';
+        	    	$destinationPath = base_path().'/public/uploads/departments';
         	    	$filename = uniqid()."_".$file->getClientOriginalName();
         	    	//Check file name exist or not
-        	    	while (file_exists($destinationPath."\\".$filename)) {
+        	    	while (file_exists($destinationPath."/".$filename)) {
         	    	    $filename = uniqid()."_".$filename;
         	    	}
         	    	$upload_success = $file->move($destinationPath, $filename);
