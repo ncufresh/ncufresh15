@@ -5,6 +5,38 @@
 .building {
 	transition:all 0.35s;
 }
+/*circle*/
+#circle {
+	position: absolute;
+	left: 40.5%;
+	top: 78%;
+	width: 16%;
+	z-index: 1;
+}
+/*working*/
+#working {
+	position: absolute;
+	left: 46%;
+	top: 45.5%;
+	width: 5%;
+	z-index: 1;
+}
+/*baseball*/
+#baseball {
+	position: absolute;
+	left: 53.7%;
+	top: 40.3%;
+	width: 12.5%;
+	z-index: 1;
+}
+/*hotel*/
+#hotel {
+	position: absolute;
+	left: 78%;
+	top: 70%;
+	width: 8.5%;
+	z-index: 1;
+}
 /*============================================================================*/
 /*space*/
 #administration1 {
@@ -87,13 +119,13 @@
 /*history*/
 #administration7 {
 	position: absolute;
-	left: 25%;
+	left: 28.5%;
 	top: 75%;
 	width: 8%;
 	z-index: 1;
 }
 #administration7:hover {
-	left: 24%;
+	left: 27.5%;
 	top: 74%;
 	width: 10%;
 }
@@ -113,10 +145,10 @@
 /*yuyi*/
 #administration9 {
 	position: absolute;
-	left: 12%;
+	left: 12.3%;
 	top: 72.5%;
 	width: 4.5%;
-	z-index: 1;
+	z-index: 8;
 }
 #administration9:hover {
 	left: 11.3%;
@@ -129,7 +161,7 @@
 	left: 11.5%;
 	top: 60%;
 	width: 5.5%;
-	z-index: 2;
+	z-index: 3;
 }
 #administration10:hover {
 	left: 10.5%;
@@ -537,7 +569,7 @@
 	width: 6%;
 	z-index: 1;
 }
-#sport7-1:hover {
+#volleyball:hover #sport7-1 {
 	left: 53%;
 	top: 16.2%;
 	width: 8%;
@@ -550,22 +582,35 @@
 	width: 5.8%;
 	z-index: 1;
 }
-#sport7-2:hover {
+#volleyball:hover #sport7-2 {
 	left: 36.7%;
 	top: 31.5%;
 	width: 7.8%;
 }
-/*basketball*/
-#sport8 {
+/*basketball1*/
+#sport8-1 {
 	position: absolute;
-	left: 50%;
+	left: 50.5%;
 	top: 20.5%;
 	width: 6%;
 	z-index: 2;
 }
-#sport8:hover {
-	left: 49%;
-	top: 19.5%;
+#basketball:hover #sport8-1 {
+	left: 48.5%;
+	top: 20%;
+	width: 8%;
+}
+/*basketball2*/
+#sport8-2 {
+	position: absolute;
+	left: 56.5%;
+	top: 20.5%;
+	width: 6%;
+	z-index: 2;
+}
+#basketball:hover #sport8-2 {
+	left: 56.5%;
+	top: 20%;
 	width: 8%;
 }
 /*pool*/
@@ -627,10 +672,219 @@
 	left: 2.7%;
 	top: 57.2%;
 	width: 15.5%;
-	z-index: 1;
+	z-index: 2;
 }
 #food4:hover {
 	left: 1.4%;
 	top: 57.1%;
 	width: 18.5%;
+}
+/*restaurant7*/
+#food5 {
+	position: absolute;
+	left: 14.7%;
+	top: 69.5%;
+	width: 3%;
+	z-index: 7;
+}
+#food5:hover {
+	left: 13.7%;
+	top: 68.5%;
+	width: 5%;
+}
+/*restaurant9*/
+#food6 {
+	position: absolute;
+	left: 67%;
+	top: 75%;
+	width: 3%;
+	z-index: 1;
+}
+#food6:hover {
+	left: 66%;
+	top: 74%;
+	width: 5%;
+}
+/*cafe*/
+#food7 {
+	position: absolute;
+	left: 86%;
+	top: 67%;
+	width: 3.5%;
+	z-index: 9;
+}
+#food7:hover {
+	left: 85%;
+	top: 66%;
+	width: 5%;
+}
+/*============================================================================*/
+/*international*/
+#live1 {
+	position: absolute;
+	left: 22.5%;
+	top: 61.5%;
+	width: 5%;
+	z-index: 9;
+}
+#live1:hover {
+	left: 21.5%;
+	top: 59.5%;
+	width: 7%;
+}
+/*research*/
+#live2 {
+	position: absolute;
+	left: 76.9%;
+	top: 63.4%;
+	width: 9%;
+	z-index: 8;
+}
+#live2:hover {
+	left: 75.9%;
+	top: 62.4%;
+	width: 11%;
+}
+/*B03*/
+#live3 {
+	position: absolute;
+	left: 12%;
+	top: 53.5%;
+	width: 5.5%;
+	z-index: 1;
+}
+#live3:hover {
+	left: 11%;
+	top: 53%;
+	width: 7.5%;
+}
+/*B05*/
+#live4 {
+	position: absolute;
+	left: 18.5%;
+	top: 70%;
+	width: 4.5%;
+	z-index: 8;
+}
+#live4:hover {
+	left: 17.5%;
+	top: 69%;
+	width: 6.5%;
+}
+/*B06*/
+#live5 {
+	position: absolute;
+	left: 8.5%;
+	top: 72.5%;
+	width: 3%;
+	z-index: 7;
+}
+#live5:hover {
+	left: 7.6%;
+	top: 71.5%;
+	width: 4.5%;
+}
+/*B07*/
+#live6 {
+	position: absolute;
+	left: 9.6%;
+	top: 70.4%;
+	width: 5%;
+	z-index: 6;
+}
+#live6:hover {
+	left: 8.6%;
+	top: 69.4%;
+	width: 7%;
+}
+/*B09*/
+#live7 {
+	position: absolute;
+	left: 69%;
+	top: 73%;
+	width: 5%;
+	z-index: 2;
+}
+#live7:hover {
+	left: 68%;
+	top: 72%;
+	width: 7%;
+}
+/*B11*/
+#live8 {
+	position: absolute;
+	left: 10.3%;
+	top: 66%;
+	width: 3.7%;
+	z-index: 5;
+}
+#live8:hover {
+	left: 9.3%;
+	top: 65%;
+	width: 5.7%;
+}
+/*B12*/
+#live9 {
+	position: absolute;
+	left: 75%;
+	top: 74%;
+	width: 4%;
+	z-index: 1;
+}
+#live9:hover {
+	left: 74%;
+	top: 73%;
+	width: 6%;
+}
+/*B13*/
+#live10 {
+	position: absolute;
+	left: 9.6%;
+	top: 81%;
+	width: 5%;
+	z-index: 9;
+}
+#live10:hover {
+	left: 8.6%;
+	top: 80%;
+	width: 7%;
+}
+/*G1~4*/
+#live11 {
+	position: absolute;
+	left: 19.5%;
+	top: 45%;
+	width: 6%;
+	z-index: 1;
+}
+#live11:hover {
+	left: 18.6%;
+	top: 44%;
+	width: 8%;
+}
+/*G5*/
+#live12 {
+	position: absolute;
+	left: 19.3%;
+	top: 52.3%;
+	width: 5%;
+	z-index: 1;
+}
+#live12:hover {
+	left: 18.3%;
+	top: 51.3%;
+	width: 7%;
+}
+/*G14*/
+#live13 {
+	position: absolute;
+	left: 8.7%;
+	top: 63%;
+	width: 8%;
+	z-index: 4;
+}
+#live13:hover {
+	left: 7.7%;
+	top: 62.3%;
+	width: 10%;
 }

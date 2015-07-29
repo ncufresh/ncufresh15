@@ -51,7 +51,7 @@
 .cardCon1 {
 	height: 200px;
 }
-.cardCon2 {
+.cardCon21 {
 	height: 220px;
 }
 @media (min-width: 1200px) {
@@ -59,11 +59,17 @@
 		min-height: 250px;
 		max-height: 250px;
 	}
+	.cardCon2 {
+		height: 220px;
+	}
 }
 @media (max-width: 1200px) and (min-width: 992px) {
 	.cardImage2 {
 		min-height: 200px;
 		max-height: 200px;
+	}
+	.cardCon2 {
+		height: 250px;
 	}
 }
 @media (max-width: 992px) and (min-width: 780px) {
@@ -71,11 +77,17 @@
 		min-height: 300px;
 		max-height: 300px;
 	}
+	.cardCon2 {
+		height: 270px;
+	}
 }
 @media (max-width: 780px) and (min-width: 600px) {
 	.cardImage2 {
 		min-height: 250px;
 		max-height: 250px;
+	}
+	.cardCon2 {
+		height: 280px;
 	}
 }
 @media (max-width: 600px) and (min-width: 380px) {
@@ -83,10 +95,16 @@
 		min-height: 450px;
 		max-height: 450px;
 	}
+	.cardCon2 {
+		height: 280px;
+	}
 }
 @media (max-width: 380px) {
 	.cardImage2 {
 		min-height: 300px;
 		max-height: 300px;
+	}
+	.cardCon2 {
+		height: 280px;
 	}
 }
