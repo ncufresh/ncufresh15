@@ -53,6 +53,7 @@
 #detail {
     float: left;
     padding-left: 30px;
+	max-width: 70%;
 }
 
 .modal-content.grey {
@@ -62,7 +63,44 @@
 #next-btn {
     display: none;
 }
+#chest-modal {
+	background: url("/img/chest_background.png");
+	background-size: 100% 100%;
+    height: 78%;
+    max-height: 78%;
+	margin-top: 5%;
+    margin-left: 15%;
+    width: 70%;
+}
+#chest-wrapper {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+}
 
+#chest-tab-container {
+	padding: 0;
+}
+
+.bg-padding {
+	padding: 15px;
+	height: 100%;
+}
+
+.bg-item {
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+}
+
+#bg-tab>.row {
+	height: 40%;
+	margin-top: 10px;
+}
 </style>
 @stop
 
@@ -70,6 +108,17 @@
 <script>
 $(function() {
     $('.modal-trigger').leanModal();
+	$('ul.tabs').tabs();
+});
+$("#chest-trigger").click(function(){
+	$("#chest-wrapper").show();
+});
+$("#chest-wrapper").click(function(e){
+	e.stopImmediatePropagation();
+	e.preventDefault();
+	if (e.target.id === "chest-wrapper"){
+		$(this).hide();
+	}
 });
 </script>
 @if ($isHome)
@@ -126,12 +175,38 @@ $(function() {
 		@endif
         <div id="detail">
             <h4>{{$user->name}}</h4>
-            <p>&nbsp;{{$user->quote}}</p>
+            <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
             <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>
         </a>
     </div>
+</div>
+<a id="chest-trigger" class="waves-effect waves-light btn ">Chest</a>
+<div id="chest-wrapper">
+	<div id="chest-modal">
+		<div class="row">
+			<div id="chest-tab-container" class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a class="active" href="#bg-tab">T</a></li>
+					<li class="tab col s3"><a href="#dec-tab">Test 2</a></li>
+					<li class="tab col s3"><a href="#letter-tab">Test 4</a></li>
+				</ul>
+			</div>
+			<div id="bg-tab" class="col s12">
+				<div class="row">
+					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+				</div>
+				<div class="row">
+					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+				</div>
+			</div>
+			<div id="dec-tab" class="col s12">Test 2</div>
+			<div id="letter-tab" class="col s12">Test 4</div>
+		</div>
+	</div>
 </div>
 @stop
