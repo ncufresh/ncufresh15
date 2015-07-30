@@ -15,29 +15,20 @@
 		transition: all 0.5s;
 	}
 	#b{
+		background-image:url('/img/life/food/food_background.png');
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
+		margin-top:17%;
 	}
 	#b:before{
 		content:"";
 		display:block;
 		padding-top:120%;
 	}
-	/*.row{
-		background-image: url("/img/life/food/food_new_background.png");
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		position: relative;
-	}
-	.row:before{
-		content:"";
-		display:block;
-		padding-top:120%;
-	}*/
 	#b1{
 		background-image:url('/img/life/food/G14.png');
-		top:6%;
+		top:-9%;
 		left:6%;
 		width:26%; 
 	}
@@ -49,11 +40,11 @@
 	#b1:hover{
 		width:36%;
 		left:1%;
-		top:1%;
+		top:-14%;
 	}
 	#b2{
 		background-image:url('/img/life/food/9R.png');
-		top:3%;
+		top:-13%;
 		right:32%;
 		width:31%; 
 	}
@@ -65,11 +56,11 @@
 	#b2:hover{
 		width:41%;
 		right:27%;
-		top:-2%;
+		top:-18%;
 	}
 	#b3{
 		background-image:url('/img/life/food/7R.png');
-		top:8%;
+		top:-5%;
 		right:2%;
 		width:28%;
 	}
@@ -81,11 +72,11 @@
 	#b3:hover{
 		width:38%;
 		right:-3%;
-		top:3%;
+		top:-8%;
 	}
 	#b4{
 		background-image:url('/img/life/food/backhome.png');
-		top:27%;
+		top:14%;
 		left:17%;
 		width:23%; 
 	}
@@ -97,12 +88,12 @@
 	#b4:hover{
 		width:33%;
 		left:12%;
-		top:22%;
+		top:9%;
 	}
 	#b5{
 		background-image:url('/img/life/food/late_night.png');
-		top:21%;
-		right:25%;
+		top:8%;
+		right:29%;
 		width:28%; 
 	}
 	#b5:before{
@@ -112,12 +103,12 @@
 	}
 	#b5:hover{
 		width:38%;
-		right:20%;
-		top:16%;
+		right:24%;
+		top:3%;
 	}
 	#b6{
 		background-image:url('/img/life/food/pancake.png');
-		top:32%;
+		top:22%;
 		right:1%;
 		width:27%; 
 	}
@@ -129,12 +120,12 @@
 	#b6:hover{
 		width:37%;
 		right:-4%;
-		top:27%;
+		top:17%;
 	}
 	#b7{
 		background-image:url('/img/life/food/pine.png');
-		top:40%;
-		right:25%;
+		top:26%;
+		right:29%;
 		width:26%; 
 	}
 	#b7:before{
@@ -143,13 +134,13 @@
 		padding-top:80%;
 	}
 	#b7:hover{
-		top:35%;
-		right:20%;
+		top:21%;
+		right:24%;
 		width:36%;
 	}
 	#b8{
 		background-image:url('/img/life/food/crepe.png');
-		bottom:20%;
+		bottom:25%;
 		left:1%;
 		width:28%;
 	}
@@ -159,34 +150,45 @@
 		padding-top:80%;
 	}
 	#b8:hover{
-		bottom:15%;
+		bottom:20%;
 		left:-4%;
 		width:38%;
 	}
-	#b9{
-		background-image:url('/img/life/food/cafe.png');
-		bottom:8%;
-		left:22%;
-		width:28%;
+	#word{
+		width:78%;
+		padding-top:6%;
 	}
-	#b9:before{
+	#word:before{
 		content:"";
 		display:block;
-		padding-top:80%;
+		padding-top:100%;
 	}
-	#b9:hover{
-		bottom:3%;
-		left:17%;
-		width:38%;
+	#video{
+		width:80%;
+		position:relative;
+	}
+	#video:before{
+		content:"";
+		display:block;
+		padding-top:2%;
 	}
 	iframe{
-		width:100%;
-		margin:77% auto;
+		width:112%;
+		margin:2% auto;
 	}
-	iframe:before{
-		content:"";
-		display:block;
-		padding-top:50%;
+	@media only screen and (max-width:600px){
+		#b{
+			background-image:url('/img/life/food/food_background.png');
+			background-repeat: no-repeat;
+			position: relative;
+			margin-top:9%;
+		}
+		iframe{
+			width:120%;
+			height:250px;
+			margin:15% auto;
+		}
+
 	}
 </style>
 @stop
@@ -194,7 +196,10 @@
 @section('content')
 	<div class="row" style="background-color:rgb(214,237,237)">
 		<div class="col s12 m6 l6">
-			<iframe width="180" height="200" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
+			<img src="{{ url('/img/life/food/food_word.png') }}" id="word">
+			<div id="video">
+				<iframe height="250" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
 		<body>
 			<div class="col s12 m6 l6" id="b">
@@ -206,7 +211,6 @@
 				<a class="puzzle" href="{{ url('life/1') }}" id="b6"></a>
 				<a class="puzzle" href="{{ url('life/7') }}" id="b7"></a>
 				<a class="puzzle" href="{{ url('life/2') }}" id="b8"></a>
-				<a class="puzzle" href="{{ url('life/9') }}" id="b9"></a>
 			</div>
 		</body>	
 	</div>	

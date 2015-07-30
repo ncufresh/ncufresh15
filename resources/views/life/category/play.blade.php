@@ -15,9 +15,11 @@
 		transition: all 0.5s;
 	}
 	#b{
+		background-image: url('/img/life/play/play_background.png');
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
+		margin-top:8%;
 	}
 	#b:before{
 		content:"";
@@ -136,32 +138,62 @@
 		right:15%;
 		width:44%;
 	}
-	iframe{
-		width:100%;
-		margin:77% auto;
+	#word{
+		width:78%;
+		padding-top:6%;
 	}
-	iframe:before{
+	#word:before{
 		content:"";
 		display:block;
-		padding-top:50%;
+		padding-top:100%;
+	}
+	#video{
+		width:80%;
+		position:relative;
+	}
+	#video:before{
+		content:"";
+		display:block;
+		padding-top:2%;
+	}
+	iframe{
+		width:112%;
+		margin:2% auto;
+	}
+	@media only screen and (max-width:600px){
+		#b{
+			background-image:url('/img/life/play/play_background.png');
+			background-repeat: no-repeat;
+			position: relative;
+			margin-top:-2%;
+		}
+		iframe{
+			width:120%;
+			height:250px;
+			margin:15% auto;
+		}
+
 	}
 </style>
 @stop
 
 @section('content')
-	<div class="row" style="background-color:rgb(241,237,237)">
+	<div class="row" style="background-color:rgb(214,237,237)">
 		<div class="col s12 m6 l6">
-			<iframe width="180" height="200" src="https://www.youtube.com/embed/eZFKf0C7UZ4" frameborder="0" allowfullscreen></iframe>
+			<img src="{{ url('img/life/play/play_word.png') }}" id="word">
+			<div id="video">
+				<iframe height="250" src="https://www.youtube.com/embed/eZFKf0C7UZ4" frameborder="0" allowfullscreen></iframe>
+			</div>	
 		</div>
 		<body>
 			<div class="col s12 m6 l6" id="b">
-				<a class="puzzle" href="{{ url('life/32') }}" id="b1"></a>
-				<a class="puzzle" href="{{ url('life/34') }}" id="b2"></a>
-				<a class="puzzle" href="{{ url('life/35') }}" id="b3"></a>
-				<a class="puzzle" href="{{ url('life/38') }}" id="b4"></a>
-				<a class="puzzle" href="{{ url('life/33') }}" id="b5"></a>
-				<a class="puzzle" href="{{ url('life/36') }}" id="b6"></a>
-				<a class="puzzle" href="{{ url('life/37') }}" id="b7"></a>
+				<a class="puzzle" href="{{ url('life/31') }}" id="b1"></a>
+				<a class="puzzle" href="{{ url('life/33') }}" id="b2"></a>
+				<a class="puzzle" href="{{ url('life/34') }}" id="b3"></a>
+				<a class="puzzle" href="{{ url('life/37') }}" id="b4"></a>
+				<a class="puzzle" href="{{ url('life/32') }}" id="b5"></a>
+				<a class="puzzle" href="{{ url('life/35') }}" id="b6"></a>
+				<a class="puzzle" href="{{ url('life/36') }}" id="b7"></a>
 			</div>
 		</body>	
 	</div>	

@@ -16,8 +16,8 @@
 			height:100%;
 		}
 		.article{
-			width:538px;
-			height:217px;
+			width:581px;
+			height:324px;
 			overflow:scroll;
 			margin:0% auto;
 		}

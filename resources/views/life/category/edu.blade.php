@@ -15,9 +15,11 @@
 		transition: all 0.5s;
 	}
 	#b{
+		background-image:url('/img/life/edu/teach_background.png');
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
+		margin-top:13%;
 	}
 	#b:before{
 		content:"";
@@ -55,7 +57,7 @@
 	}
 	#b3{
 		background-image:url('/img/life/edu/3.png');
-		top:13%;
+		top:12%;
 		right:32%;
 		width:16%; 
 	}
@@ -154,7 +156,7 @@
 	#b10{
 		background-image:url('/img/life/edu/10.png');
 		width:8%;
-		bottom:37%;
+		bottom:36%;
 		left:35%;
 	}
 	#b10:before{
@@ -197,7 +199,7 @@
 		background-image:url('/img/life/edu/13.png');
 		width:12%;
 		left:9%;
-		bottom:19%;
+		bottom:18%;
 	}
 	#b13:before{
 		content:"";
@@ -210,7 +212,7 @@
 	#b14{
 		background-image:url('/img/life/edu/14.png');
 		width:23%;
-		bottom:18%;
+		bottom:17%;
 		left:27%;
 	}
 	#b14:before{
@@ -225,7 +227,7 @@
 		background-image:url('/img/life/edu/15.png');
 		width:12%;
 		right:33%;
-		bottom:20%;
+		bottom:19%;
 	}
 	#b15:before{
 		content:"";
@@ -238,8 +240,8 @@
 	#b16{
 		background-image:url('/img/life/edu/16.png');
 		width:15%;
-		bottom:15%;
-		right:9%;
+		bottom:14%;
+		right:7%;
 	}
 	#b16:before{
 		content:"";
@@ -249,14 +251,41 @@
 	#b16:hover{
 		width:16%;
 	}
-	iframe{
-		width:100%;
-		margin:77% auto;
+	#word{
+		width:78%;
+		padding-top:6%;
 	}
-	iframe:before{
+	#word:before{
 		content:"";
 		display:block;
-		padding-top:50%;
+		padding-top:100%;
+	}
+	#video{
+		width:80%;
+		position: relative;
+	}
+	#video:before{
+		content: "";
+		display:block;
+		padding-top:2%;
+	}
+	iframe{
+		width:112%;
+		margin:2% auto;
+	}
+	@media only screen and (max-width:600px){
+		#b{
+			background-image:url('/img/life/edu/teach_background.png');
+			background-repeat: no-repeat;
+			position: relative;
+			margin-top:9%;
+		}
+		iframe{
+			width:120%;
+			height:250px;
+			margin:15% auto;
+		}
+
 	}
 </style>
 @stop
@@ -264,26 +293,29 @@
 @section('content')
 	<div class="row" style="background-color:rgb(214,237,237)">
 		<div class="col s12 m6 l6">
-			<iframe width="180" height="200" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+			<img src="{{ url('/img/life/edu/teach__word.png') }}" id="word">
+			<div id="video">
+				<iframe height="250" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
 		<body>
 			<div class="col s12 m6 l6" id="b">
-				<a class="puzzle" href="{{ url('life/16') }}" id="b1"></a>
-				<a class="puzzle" href="{{ url('life/22') }}" id="b2"></a>
-				<a class="puzzle" href="{{ url('life/21') }}" id="b3"></a>
-				<a class="puzzle" href="{{ url('life/30') }}" id="b4"></a>
-				<a class="puzzle" href="{{ url('life/17') }}" id="b5"></a>
-				<a class="puzzle" href="{{ url('life/29') }}" id="b6"></a>
-				<a class="puzzle" href="{{ url('life/25') }}" id="b7"></a>
-				<a class="puzzle" href="{{ url('life/23') }}" id="b8"></a>
-				<a class="puzzle" href="{{ url('life/28') }}" id="b9"></a>
-				<a class="puzzle" href="{{ url('life/20') }}" id="b10"></a>
-				<a class="puzzle" href="{{ url('life/24') }}" id="b11"></a>
-				<a class="puzzle" href="{{ url('life/27') }}" id="b12"></a>
-				<a class="puzzle" href="{{ url('life/26') }}" id="b13"></a>
-				<a class="puzzle" href="{{ url('life/18') }}" id="b14"></a>
-				<a class="puzzle" href="{{ url('life/19') }}" id="b15"></a>
-				<a class="puzzle" href="{{ url('life/31') }}" id="b16"></a>
+				<a class="puzzle" href="{{ url('life/15') }}" id="b1"></a>
+				<a class="puzzle" href="{{ url('life/21') }}" id="b2"></a>
+				<a class="puzzle" href="{{ url('life/20') }}" id="b3"></a>
+				<a class="puzzle" href="{{ url('life/29') }}" id="b4"></a>
+				<a class="puzzle" href="{{ url('life/16') }}" id="b5"></a>
+				<a class="puzzle" href="{{ url('life/28') }}" id="b6"></a>
+				<a class="puzzle" href="{{ url('life/24') }}" id="b7"></a>
+				<a class="puzzle" href="{{ url('life/22') }}" id="b8"></a>
+				<a class="puzzle" href="{{ url('life/27') }}" id="b9"></a>
+				<a class="puzzle" href="{{ url('life/19') }}" id="b10"></a>
+				<a class="puzzle" href="{{ url('life/23') }}" id="b11"></a>
+				<a class="puzzle" href="{{ url('life/26') }}" id="b12"></a>
+				<a class="puzzle" href="{{ url('life/25') }}" id="b13"></a>
+				<a class="puzzle" href="{{ url('life/17') }}" id="b14"></a>
+				<a class="puzzle" href="{{ url('life/18') }}" id="b15"></a>
+				<a class="puzzle" href="{{ url('life/30') }}" id="b16"></a>
 			</div>
 		</body>	
 	</div>	
