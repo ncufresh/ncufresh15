@@ -132,3 +132,15 @@ body {
 		padding: 0;
 	}
 }
+
+@media only screen and (max-width: 600px) {
+    #footer {
+        margin-top: 0;
+        height: 100px;
+    }
+    #container {
+        border-radius: 0 !important;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}

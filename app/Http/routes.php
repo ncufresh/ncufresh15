@@ -86,6 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('qa/create'      , 'QaController@store_question');
     Route::group(['middleware' => 'permission:management'], function() {
         Route::get ('qa/questions'   , 'QaController@index_questions');
+        Route::get ('qa/bottle/{id}' , 'QaController@create_bottle');
         Route::get ('qa/answer'      , 'QaController@create_answer');
         Route::post('qa/answer'      , 'QaController@store_answer');
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
@@ -101,6 +102,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+        
+        Route::post('bottle/pm/{id}', 'BottleController@private_message');
     });
 
 });

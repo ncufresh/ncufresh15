@@ -46,7 +46,7 @@
     width: 190px;
     height: 190px;
     float: left;
-    background-size: 100% auto;
+    background-size: cover;
     border-radius: 50%;
     border: 5px solid #555;
 }
@@ -90,6 +90,7 @@
 .bg-padding {
 	padding: 15px;
 	height: 100%;
+	max-width: 500px;
 }
 
 .bg-item {
@@ -176,7 +177,7 @@ $("#chest-wrapper").click(function(e){
         <div id="detail">
             <h4>{{$user->name}}</h4>
             <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
-            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
+            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">編輯個人資料</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>
@@ -189,9 +190,9 @@ $("#chest-wrapper").click(function(e){
 		<div class="row">
 			<div id="chest-tab-container" class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a class="active" href="#bg-tab">T</a></li>
-					<li class="tab col s3"><a href="#dec-tab">Test 2</a></li>
-					<li class="tab col s3"><a href="#letter-tab">Test 4</a></li>
+					<li class="tab col s3"><a class="active" href="#bg-tab">背景拼圖</a></li>
+					<li class="tab col s3"><a href="#dec-tab">魚飼料</a></li>
+					<li class="tab col s3"><a href="#letter-tab">收到的瓶中信</a></li>
 				</ul>
 			</div>
 			<div id="bg-tab" class="col s12">
@@ -205,7 +206,15 @@ $("#chest-wrapper").click(function(e){
 				</div>
 			</div>
 			<div id="dec-tab" class="col s12">Test 2</div>
-			<div id="letter-tab" class="col s12">Test 4</div>
+            <div id="letter-tab" class="col s12" style="overflow: auto;height: 90%;">
+                <ul class="collection">
+                    @foreach ($bottles as $bottle)
+                    <li class="collection-item">
+                        {!! nl2br(e($bottle->content)) !!}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
 		</div>
 	</div>
 </div>
