@@ -46,7 +46,7 @@
     width: 190px;
     height: 190px;
     float: left;
-    background-size: 100% auto;
+    background-size: cover;
     border-radius: 50%;
     border: 5px solid #555;
 }
@@ -177,7 +177,7 @@ $("#chest-wrapper").click(function(e){
         <div id="detail">
             <h4>{{$user->name}}</h4>
             <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
-            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">Edit Profile</a>
+            <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">編輯個人資料</a>
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>
