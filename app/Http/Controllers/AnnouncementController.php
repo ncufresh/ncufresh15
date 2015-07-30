@@ -10,7 +10,7 @@ use App\Announcement;
 class AnnouncementController extends Controller{
 	public function get($id = null){
 		if ($id){
-			$anns = Announcement::find($id);
+			$anns = Announcement::findOrFail($id);
 			$type = "single";
 		}else{
 			$anns = Announcement::where('category',1)->get();
