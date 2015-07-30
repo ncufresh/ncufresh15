@@ -62,6 +62,7 @@ td.expand {
                 <td class="shrink">檢視</td>
                 <td class="shrink">狀態</td>
                 <td class="shrink">發問者</td>
+                <td class="shrink">寄瓶中信</td>
             </tr>
         </thead>
         <tbody>
@@ -82,6 +83,11 @@ td.expand {
                     <td class="expand">
                         <a href="{{ url('user/'.$question->author->id) }}" class="tooltipped" data-position="bottom" data-tooltip="{{ $question->author->email }}">
                             {{ $question->author->name }}
+                        </a>
+                    </td>
+                    <td class="expand">
+                        <a class="waves-effect waves-light btn"href="{{ url('qa/bottle/'.$question->author->id) }}">
+                            <i class="material-icons">mail</i>
                         </a>
                     </td>
                 </tr>
