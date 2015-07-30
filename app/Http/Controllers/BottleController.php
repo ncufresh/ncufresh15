@@ -80,6 +80,7 @@ class BottleController extends Controller
         if ($request->has('content')) {
             $bottle->content = $request->content;
         }
+        $bottle->author = Auth::user()->id;
         $bottle->save();
         return response()->json(['msg'=>'saved', 'result' => true]);
     }

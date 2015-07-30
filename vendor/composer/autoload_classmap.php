@@ -114,6 +114,7 @@ return array(
     'ImportantCal' => $baseDir . '/database/migrations/2015_07_13_115025_important_cal.php',
     'LifeTableSeeder' => $baseDir . '/database/seeds/LifeTableSeeder.php',
     'LifesPictures' => $baseDir . '/database/migrations/2015_07_19_135253_lifes_pictures.php',
+    'LogAuthorBottle' => $baseDir . '/database/migrations/2015_07_30_121343_log_author_bottle.php',
     'Mobile_Detect' => $vendorDir . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
