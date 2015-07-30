@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use App\User;
 use App\Bottle;
 use App\Knowledge;
 use App\Http\Requests;
@@ -88,5 +89,20 @@ class BottleController extends Controller
         }
         $bottle->save();
         return response()->json(['msg'=>'saved', 'result' => true]);
+    }
+
+    public function private_message(Request $request, $id) {
+        $user = User::findOrFail($id);
+        if (!$request->has('content')) {
+            return back(); 
+        }
+        $bottle = new Bottle;
+        $bottle->sent = true;
+        $bottle->hp = 0;
+        $bottle->content = $request->content;
+        $bottle->token = bin2hex(openssl_random_pseudo_bytes(16)); 
+        $bottle->owner = $user->id;
+        $bottle->save();
+        return redirect('qa/questions');
     }
 }
