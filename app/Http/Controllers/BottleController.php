@@ -93,10 +93,14 @@ class BottleController extends Controller
 
     public function private_message(Request $request, $id) {
         $user = User::findOrFail($id);
+        if (!$request->has('content')) {
+            return back(); 
+        }
         $bottle = new Bottle;
         $bottle->sent = true;
         $bottle->hp = 0;
         $bottle->content = $request->content;
+        $bottle->token = bin2hex(openssl_random_pseudo_bytes(16)); 
         $bottle->owner = $user->id;
         $bottle->save();
         return redirect('qa/questions');
