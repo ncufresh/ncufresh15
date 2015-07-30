@@ -37,13 +37,13 @@ function gettreasure() {
 var question = function () {
 	if (questionON==-1) {
 		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-		ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 2);
+		ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 3);
 	
 		ctx.fillStyle = '#ffffff';
-		ctx.font = '21px Arial';
+		ctx.font = '35px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
-		ctx.fillText("鎖住了QQ", canvas.width / 2, canvas.height / 2);
+		ctx.fillText("鎖住了QQ", canvas.width / 2, canvas.height / 2-50);
 	}
 	if (questionON==1) {
 		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
@@ -145,16 +145,60 @@ var question = function () {
 			};
 		}
 		else{
-			ctx.fillStyle = '#ff0000';
-			ctx.font = "50px Bangers, Impact, Arial";
-			ctx.textAlign = "center";
-			ctx.textBaseline = "top";
-			ctx.fillText("Idiot!", canvas.width / 2, canvas.height / 2 + 120);
+			var splitquestion = qadata.questions.question.split("");
+			var adjustY = 150; // 文字欄位初始 Y
+			var padding = 40; // 行距
+			var breakline = 0; // 換第X行
+			var between = 30; // 字距
+			for(var i=0;i<splitquestion.length;i++)
+			{
+				ctx.fillStyle = "rgb(1, 199, 255)";
+				ctx.font = "bold 25pt 微軟正黑體";
+				ctx.textAlign = "left";
+				ctx.textBaseline = "top";
+				if (i%20==0 && i!=0) {
+					breakline+=1;
+				}
+				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
+			}
+			switch (qadata.answer){
+				case 1:
+					ctx.fillStyle = "rgb(255, 240, 0)";
+					ctx.font = '21px Arial';
+					ctx.textAlign = "center";
+					ctx.textBaseline = "top";
+					ctx.fillText(qadata.questions.option1, canvas.width / 2, canvas.height - 180+padding*0);
+					break;
+				case 2:
+					ctx.fillStyle = "rgb(255, 240, 0)";
+					ctx.font = '21px Arial';
+					ctx.textAlign = "center";
+					ctx.textBaseline = "top";
+					ctx.fillText(qadata.questions.option2, canvas.width / 2, canvas.height - 180+padding*1);
+					break;
+				case 3:
+					ctx.fillStyle = "rgb(255, 240, 0)";
+					ctx.font = '21px Arial';
+					ctx.textAlign = "center";
+					ctx.textBaseline = "top";
+					ctx.fillText(qadata.questions.option3, canvas.width / 2, canvas.height - 180+padding*2);
+					break;
+				case 4:
+					ctx.fillStyle = "rgb(255, 240, 0)";
+					ctx.font = '21px Arial';
+					ctx.textAlign = "center";
+					ctx.textBaseline = "top";
+					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
+					break;
+			}
+
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].lock=true;
 				};
 			};
+
+
 		}
 	}
 	

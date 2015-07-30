@@ -7,6 +7,7 @@
 <style>
     canvas{border:5px solid black;}
     #gamecanvas{
+        margin: 0px auto;
         outline: none;
         width: 640;
         height: 512;

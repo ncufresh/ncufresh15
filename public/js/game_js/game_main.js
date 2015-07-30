@@ -16,8 +16,36 @@ var blocklock= {
 	bottom : false 
 };
 
-var initialX=52;
-var initialY=6;
+
+function getRandom(minNum, maxNum) {	//取得 minNum(最小值) ~ maxNum(最大值) 之間的亂數
+	return Math.floor( Math.random() * (maxNum - minNum + 1) ) + minNum;
+}
+function getRandomArray(minNum, maxNum, n) {	//隨機產生不重覆的n個數字
+	var rdmArray = [n];		//儲存產生的陣列
+ 
+	for(var i=0; i<n; i++) {
+		var rdm = 0;		//暫存的亂數
+ 
+		do {
+			var exist = false;			//此亂數是否已存在
+			rdm = getRandom(minNum, maxNum);	//取得亂數
+ 
+			//檢查亂數是否存在於陣列中，若存在則繼續回圈
+			if(rdmArray.indexOf(rdm) != -1) exist = true;
+ 
+		} while (exist);	//產生沒出現過的亂數時離開迴圈
+ 
+		rdmArray[i] = rdm;
+	}
+	return rdmArray;
+}
+
+var arrayIndex=getRandomArray(0,21,4);
+var arrayX = [52,66,41,82,91,33,53,72,25,87,35,41,66,87,23,9,53,73,55,90,82,70];
+var arrayY = [8,12,18,19,24,29,37,38,39,42,53,49,49,43,56,72,66,64,79,72,82,88];
+
+var initialX=arrayX[arrayIndex[0]];
+var initialY=arrayY[arrayIndex[0]];
 var hero = {
 	speed: 256, // movement in pixels per second
 	x : initialX*grid.length,
@@ -49,13 +77,12 @@ var hero = {
 var monster = {};
 var monstersCaught = 0;
 
-
 var box1 = {
 	isme : false,
 	lock : false,
 	open : false,
-	x : 52*grid.length,
-	y : 8*grid.length,
+	x : arrayX[arrayIndex[1]]*grid.length,
+	y : arrayY[arrayIndex[1]]*grid.length,
 	width : grid.length,
 	height : grid.length
 };
@@ -63,8 +90,8 @@ var box2 = {
 	isme : false,
 	lock : false,
 	open : false,
-	x : 54*grid.length,
-	y : 8*grid.length,
+	x : arrayX[arrayIndex[2]]*grid.length,
+	y : arrayY[arrayIndex[2]]*grid.length,
 	width : grid.length,
 	height : grid.length
 };
@@ -72,8 +99,8 @@ var box3 = {
 	isme : false,
 	lock : false,
 	open : false,
-	x : 52*grid.length,
-	y : 10*grid.length,
+	x : arrayX[arrayIndex[3]]*grid.length,
+	y : arrayY[arrayIndex[3]]*grid.length,
 	width : grid.length,
 	height : grid.length
 };
@@ -145,18 +172,6 @@ var then = Date.now();
 
 reset();
 
-    function drawElapsedTime() {
-        var elapsed = parseInt((new Date() - startTime) / 1000);
-        ctx.save();
-        ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.font = "14px Verdana"
-        // draw the running time at half opacity
-        ctx.globalAlpha = 0.50;
-        ctx.fillText(elapsed + " secs", canvas.width - 75, 25);
-        ctx.restore();
-    }
-
 ////////////////////////////////////////////////
 //using only on the starting~~~~~~~~~~~~~~~~~~~~
 var starting=false;
@@ -194,7 +209,7 @@ ctx.textAlign = "center";
 ctx.textBaseline = "top";
 ctx.fillText("Loading...", canvas.width / 2, canvas.height / 2 -20);
 
-var loading = setInterval(loaded,2000);		
+var loading = setInterval(loaded,1000);		
 function loaded() {
 	clearInterval(loading);
 	
@@ -223,32 +238,3 @@ function loaded() {
 	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 3 +240);
 }
 ////////////////////////////////////////////////
-
-
-
-
-var gameover = function () {
-
-	starting=true;
-
-	ctx.fillStyle = '#000000';
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-	ctx.fillStyle = '#ff0000';
-	ctx.font = "50px Bangers, Impact, Arial";
-	ctx.textAlign = "center";
-	ctx.textBaseline = "top";
-	ctx.fillText("Time's Up!", canvas.width / 2, canvas.height / 2 -60);	
-
-	ctx.fillStyle = '#ffffff';
-	ctx.font = '20px Arial';
-	ctx.textAlign = "center";
-	ctx.textBaseline = "top";
-	ctx.fillText("press RETURN to try again", canvas.width / 2, canvas.height / 2 +90);
-			
-	ctx.fillStyle = '#ffffff';
-	ctx.font = '20px Arial';
-	ctx.textAlign = "center";
-	ctx.textBaseline = "top";
-	ctx.fillText("ㄏㄏ (cc)", canvas.width - 100, canvas.height - 30);
-}

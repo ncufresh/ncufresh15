@@ -83,10 +83,11 @@ class KnowledgeController extends Controller
     }
     public function getTreasure()
     {
+        // you need to login
         $user = Auth::user();
         $background = $user->getBackground();
         $decoration = $user->getDecoration();
-        $choice = 0;
+        $choice = rand(0,22);
         switch($choice) {
             case 0:
                 $background->bg1_1 = true;
@@ -94,10 +95,70 @@ class KnowledgeController extends Controller
             case 1:
                 $background->bg1_2 = true;
                 break;
+            case 2:
+                $background->bg1_3 = true;
+                break;
+            case 3:
+                $background->bg1_4 = true;
+                break;
+            case 4:
+                $background->bg2_1 = true;
+                break;
+            case 5:
+                $background->bg2_2 = true;
+                break;
+            case 6:
+                $background->bg2_3 = true;
+                break;
+            case 7:
+                $background->bg2_4 = true;
+                break;
+            case 8:
+                $background->bg3_1 = true;
+                break;
+            case 9:
+                $background->bg3_2 = true;
+                break;
+            case 10:
+                $background->bg3_3 = true;
+                break;
+            case 11:
+                $background->bg3_4 = true;
+                break;
+            case 12:
+                $background->bg4_1 = true;
+                break;
+            case 13:
+                $background->bg2_2 = true;
+                break;
+            case 14:
+                $background->bg4_3 = true;
+                break;
+            case 15:
+                $background->bg4_4 = true;
+                break;
+            case 16:
+                $decoration->chest = true;
+                break;
+            case 17:
+                $decoration->sg1 = true;
+                break;
+            case 18:
+                $decoration->sg2 = true;
+                break;
+            case 19:
+                $decoration->shell = true;
+                break;
+            case 20:
+                $decoration->level_food = true;
+                break;
+            case 21:
+                $decoration->growth_food = true;
+                break;
         }
         $background->save();
         $decoration->save();
-        return response()->json(['QQ' => $background]);
+        return response()->json(['background' => $background ,'decoration'=>$decoration ,'random' => $choice]);
     }
 
     /**
