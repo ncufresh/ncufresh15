@@ -127,17 +127,19 @@ var question = function () {
         }
 
 	} else if (questionON==2) {
-		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-		ctx.fillRect(0, canvas.height/4, canvas.width, canvas.height*3/4);
 
 		if (threetimes==3) {
 			gettreasure();
-			ctx.fillStyle = '#ff0000';
-			ctx.font = "50px Bangers, Impact, Arial";
+
+			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+			ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 3);
+	
+			ctx.fillStyle = '#ffffff';
+			ctx.font = '35px Arial';
 			ctx.textAlign = "center";
 			ctx.textBaseline = "top";
-			ctx.fillText("恭喜獲得神秘道具~!", canvas.width / 2, canvas.height / 2 + 120);
-			ctx.fillText("到個人專區看看吧~!", canvas.width / 2, canvas.height / 2 + 170);
+			ctx.fillText("恭喜獲得神秘道具<3", canvas.width / 2, canvas.height / 2-90);
+			ctx.fillText("到個人專區看看吧~~", canvas.width / 2, canvas.height / 2-50);
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
@@ -145,6 +147,9 @@ var question = function () {
 			};
 		}
 		else{
+			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+			ctx.fillRect(0, canvas.height/4, canvas.width, canvas.height*3/4);
+
 			var splitquestion = qadata.questions.question.split("");
 			var adjustY = 150; // 文字欄位初始 Y
 			var padding = 40; // 行距

@@ -264,16 +264,16 @@ var render = function () {
 	// ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
 	if (second>9) {
 		ctx.fillStyle = "rgba(0, 0, 0,0.8)";
-		ctx.font = "24px Helvetica";
-		ctx.textAlign = "left";
+		ctx.font = "bold 30px Helvetica";
+		ctx.textAlign = "right";
 		ctx.textBaseline = "top";
-		ctx.fillText("0"+minute+":"+second, 32, 480);
+		ctx.fillText("0"+minute+":"+second, canvas.width -32, 20);
 	} else{
 		ctx.fillStyle = "rgba(0, 0, 0,0.8)";
-		ctx.font = "24px Helvetica";
-		ctx.textAlign = "left";
+		ctx.font = "bold 30px Helvetica";
+		ctx.textAlign = "right";
 		ctx.textBaseline = "top";
-		ctx.fillText("0"+minute+":0"+second, 32, 480);
+		ctx.fillText("0"+minute+":0"+second, canvas.width -32, 20);
 	};
 
 
