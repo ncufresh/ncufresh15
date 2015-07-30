@@ -11,6 +11,7 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 		<link rel="icon" href="{{asset('favicon.png')}}" type="image/png">
+		<meta charset="UTF-8">
 		<style>
 			#portal-img {
 				background: url('{{asset("img/Untitled.png")}}');
