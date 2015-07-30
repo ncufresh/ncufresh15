@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+
 use Auth;
 use App\Helpers\SitemapHelper;
+use App\Bottle;
 use App\User;
 use Bican\Roles\Models\Role;
 use App\Http\Requests;
@@ -60,10 +62,15 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
+        $bottles = Bottle::where('owner', $id)
+            ->where('sent', true)
+            ->orderBy('updated_at', 'desc')
+            ->get();
 		return view('user.show', [
 			'user' => $user,
             'nobreadcrumb' => true,
 			'isHome' => (Auth::check() && $id == Auth::user()->id),
+            'bottles' => $bottles,
         ]);
     }
 
@@ -117,6 +124,9 @@ class UserController extends Controller
         }
 
 		// quote and avatar
+        if ($request->has('name')) {
+            $user->name = $request->name;
+        }
 		if ($request->has('quote')) {
 			$user->quote = $request->quote;
 		}
