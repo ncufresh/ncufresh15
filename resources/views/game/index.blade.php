@@ -5,8 +5,13 @@
 @section('css')
 
 <style>
-    body{ background-color: ivory; }
-    canvas{border:1px solid red;}
+    canvas{border:5px solid black;}
+    #gamecanvas{
+        margin: 0px auto;
+        outline: none;
+        width: 640;
+        height: 512;
+    }
 </style>
 
 @stop
@@ -15,7 +20,6 @@
 <div id="gamecanvas" tabindex="0">
     
 </div>
-
 @stop
 
 @section('js')
@@ -36,12 +40,11 @@ $(function() {
     var btn = $("#gamecanvas");
 
     btn.focus(function(){
-        console.log("Click");
+        //console.log("Click");
         document.body.style.overflow="hidden";
     });
 
     btn.blur(function(){
-        console.log("UnClick");
         document.body.style.overflow="scroll";
     });
 
