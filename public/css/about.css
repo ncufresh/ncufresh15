@@ -1,86 +1,134 @@
 #top {
 	position: relative;
-	width: 100%;
+	width: 80%;
+/*	background: url("http://twimg.edgesuite.net/images/ReNews/20141029/640_d04921ee79dc4323dbdec443ad8ff46a.jpg");
+*/	background-repeat: no-repeat;
 	margin: 0 auto;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}
+
+#top:before {
+	content: "";
+	display: block;
+	padding-top: 50%;
 }
 
 #bottom {
 	position: relative;
-	width: 100%;
+	width: 70%;
+	background: blue;
 	margin: 0 auto;
 }
 
-#top:before, #bottom:hover {
+#bottom:before {
 	content: "";
 	display: block;
-	padding-top: 5%;
+	padding-top: 50%;
 }
-
 #ceo {
-	height: 175px;
-	width: 299px;
 	position: absolute;
+	width: 50%;
+	height: 50%;
+	left: 0;
+	top: 0;
 	opacity: 0;
+/*	background: url("http://bostonese.com/wp-content/uploads/2015/06/2015_XiaDa_Graduation1-e1435549106405.jpg");
+*/	background-repeat: no-repeat;
 	transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-o-transition: opacity 2s;
-	background-image: url("http://bostonese.com/wp-content/uploads/2015/06/2015_XiaDa_Graduation1-e1435549106405.jpg");
-	-moz-background-size: 299px 175px;
-	-webkit-background-size: 299px 175px;
-	-o-background-size: 299px 175px;
-	background-size: 299px 175px;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 
-#plann {
-	height: 175px;
-	width: 299px;
+#plan {
 	position: absolute;
-	margin-left: 299px;
-	opacity: 0;	
+	width: 50%;
+	height: 50%;
+	right: 0;
+	top: 0;
+	opacity: 0;
+/*	background: url("http://www.fhm.com.tw/fhm_upload/img_1401269619.jpg");
+*/	background-repeat: no-repeat;
 	transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-o-transition: opacity 2s;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 
-#code {
-	height: 175px;
-	width: 200px;
-	position: relative;
-	top: -174px;
-	opacity: 0;		 
+#hack {
+	position: absolute;
+	width: 33.33%;
+	height: 50%;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+/*	background: url("http://mag.nownews.com/img/69/i68812-22.jpg");
+*/	background-repeat: no-repeat;
 	transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-o-transition: opacity 2s;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 
 #art {
-	height: 175px;
-	width: 200px;
 	position: absolute;
-	margin-top: -174px;
-	opacity: 0;	
+	width: 33.33%;
+	height: 50%;
+	left:33.33%;
+	bottom: 0;
+	opacity: 0;
+/*	background: url("http://setmoney.blob.core.windows.net/newsimages/2014/07/31/118683.jpg");
+*/	background-repeat: no-repeat;
 	transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-o-transition: opacity 2s;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 
 #video {
-	height: 175px;
-	width: 200px;
 	position: absolute;
-	margin-left: 198px;
-	margin-top: -174px;
-	opacity: 0;	
+	width: 33.33%;
+	height: 50%;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+/*	background: url("http://cdn.kingstone.com.tw/mag/images/product/20717/2071710458625/2071710458625p-02.jpg");
+*/	background-repeat: no-repeat;
 	transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-o-transition: opacity 2s;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 
-#ceo:hover, #plann:hover, #code:hover, #art:hover, #video:hover {
+#ceo:hover, #plan:hover, #hack:hover, #art:hover, #video:hover {
 	opacity: 1;
+}
+
+.close {
+	position: absolute;
+	right: 0;
+	top: 5;
 }
