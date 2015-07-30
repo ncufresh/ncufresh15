@@ -95,7 +95,7 @@
 	transition:all 0.35s;
 }
 
-#pizzle:hover {
+#move:hover #pizzle {
 	right: 1.5%;
 	top: 3.5%;
 	width: 6%;
