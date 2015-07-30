@@ -90,6 +90,7 @@
 .bg-padding {
 	padding: 15px;
 	height: 100%;
+	max-width: 500px;
 }
 
 .bg-item {
