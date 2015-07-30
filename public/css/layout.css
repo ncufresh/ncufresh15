@@ -4,10 +4,8 @@
 #container {
 	border-radius: 5px;
 	overflow: hidden;
-	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
-	min-height: 910px;
     padding: 0 5%;
 	background-color: rgba(245, 245, 245, 0.7);
 }

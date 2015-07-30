@@ -15,7 +15,7 @@
 			#body {
 				min-height: 80%;
 				text-align: center;
-				padding-top: 5%;
+				padding-top: 3%;
 				color: #333333;
 			}
 			nav {
@@ -30,7 +30,11 @@
 				font-size: 10em;
 			}
 			#msg1 {
-				font-size: 2em;
+				background-image: url("{{asset('img/404.png')}}");
+				width: 41%;
+				margin-left: 29.5%;
+				height: 60%;
+				background-size: 100% 100%;
 			}
 			#msg2 {
 				font-size: 1.5em;
@@ -103,9 +107,8 @@
 		</nav>
 		<div id="body">
 			<div class="row">
-				<div class="col s12"><i id="error-icon" class="material-icons dp48">error</i></div>
-				<div id="msg1"class="col s12">Page Not Found</div>
-				<div id="msg2"class="col s12">
+				<div id="msg1" class="col s12"></div>
+				<div id="msg2" class="col s12">
 					<span>Please Check if the request Url is correct</span><br/>
 					<span>If there's any question, please <a href="mailto:ncufreshweb@gmail.com" target="_top">Report To Us</a></span>
 				</div>
