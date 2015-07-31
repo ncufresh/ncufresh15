@@ -178,9 +178,6 @@
 	}
 	@media only screen and (max-width:600px){
 		#b{
-			background-image:url('/img/life/food/food_background.png');
-			background-repeat: no-repeat;
-			position: relative;
 			margin-top:9%;
 		}
 		iframe{

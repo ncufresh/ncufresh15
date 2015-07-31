@@ -28,7 +28,7 @@
 	}
 	#b1{
 		background-image:url('/img/life/edu/1.png');
-		top:13%;
+		top:12%;
 		left:7%;
 		width:15%; 
 	}
@@ -128,7 +128,7 @@
 	#b8{
 		background-image:url('/img/life/edu/8.png');
 		top:34%;
-		right:9%;
+		right:8%;
 		width:15%; 
 	}
 	#b8:before{
@@ -171,7 +171,7 @@
 		background-image:url('/img/life/edu/11.png');
 		width:19%;
 		right:29%;
-		bottom:38%;
+		bottom:37%;
 	}
 	#b11:before{
 		content:"";
@@ -184,7 +184,7 @@
 	#b12{
 		background-image:url('/img/life/edu/12.png');
 		width:14%;
-		right:8%;
+		right:7%;
 		bottom:37%;
 	}
 	#b12:before{
@@ -198,8 +198,8 @@
 	#b13{
 		background-image:url('/img/life/edu/13.png');
 		width:12%;
-		left:9%;
-		bottom:18%;
+		left:8%;
+		bottom:17%;
 	}
 	#b13:before{
 		content:"";
@@ -212,7 +212,7 @@
 	#b14{
 		background-image:url('/img/life/edu/14.png');
 		width:23%;
-		bottom:17%;
+		bottom:16%;
 		left:27%;
 	}
 	#b14:before{
@@ -227,7 +227,7 @@
 		background-image:url('/img/life/edu/15.png');
 		width:12%;
 		right:33%;
-		bottom:19%;
+		bottom:18%;
 	}
 	#b15:before{
 		content:"";
@@ -275,9 +275,6 @@
 	}
 	@media only screen and (max-width:600px){
 		#b{
-			background-image:url('/img/life/edu/teach_background.png');
-			background-repeat: no-repeat;
-			position: relative;
 			margin-top:9%;
 		}
 		iframe{

@@ -147,11 +147,6 @@
 	}
 	@media only screen and (max-width: 600px){
 		#b{
-			background-image:url('/img/life/live/live_background.png');
-			background-size: 60% auto;
-			background-repeat: no-repeat;
-			position: relative;
-			margin-top:19%;
 			left:19%;
 		}
 		iframe{

@@ -114,9 +114,6 @@
 	}
 	@media only screen and (max-width:600px){
 		#b{
-			background-image:url('/img/life/traffic/traffic_background.png');
-			background-repeat: no-repeat;
-			position: relative;
 			margin-top:9%;
 		}
 		#b1{

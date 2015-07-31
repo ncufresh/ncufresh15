@@ -162,9 +162,6 @@
 	}
 	@media only screen and (max-width:600px){
 		#b{
-			background-image:url('/img/life/play/play_background.png');
-			background-repeat: no-repeat;
-			position: relative;
 			margin-top:-2%;
 		}
 		iframe{
