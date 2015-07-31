@@ -20,6 +20,7 @@
 	display: inline-block;
 	width: 22.5%;
 	background-color: transparent;
+	max-width: 365px;
 }
 
 #logo:before {
