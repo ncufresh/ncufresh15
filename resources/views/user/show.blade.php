@@ -102,6 +102,25 @@
 	height: 40%;
 	margin-top: 10px;
 }
+
+#dec-tab > .row {
+    height: 80%;
+}
+
+.dec-item {
+	height: 100%;
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#food1 {
+    background-image: url('/img/home/food1.png');
+}
+
+#food2 {
+    background-image: url('/img/home/food2.png');
+}
 </style>
 @stop
 
@@ -205,7 +224,16 @@ $("#chest-wrapper").click(function(e){
 					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
 				</div>
 			</div>
-			<div id="dec-tab" class="col s12">Test 2</div>
+            <div id="dec-tab" class="col s12">
+                <div class="row">
+                    <div id="food1" class="col s12 m6 dec-item">
+                        <h5>進化飼料</h5>
+                    </div>
+                    <div id="food2" class="col s12 m6 dec-item">
+                        <h5>成長飼料</h5>
+                    </div>
+                </div>
+            </div>
             <div id="letter-tab" class="col s12" style="overflow: auto;height: 90%;">
                 <ul class="collection">
                     @foreach ($bottles as $bottle)
