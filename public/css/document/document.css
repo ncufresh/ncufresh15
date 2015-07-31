@@ -1,27 +1,54 @@
 .collapsible-header {
-	background-color: rgba(254, 240, 216, 0.51);
+	background-color: rgba(1, 95, 27, 0.82);
   	font-size: 18px;
   	font-weight: 600;
 }
 
-.link_1 {
-	color: #01579b;
-}
-
 .list_1 {
-	color: #01579b;
+	background-color: rgba(238, 247, 218, 0.49);
+	color: #ffffff;
   	padding-bottom: 3px;
 }
 
 .list_2 {
-	color: rgb(21, 126,208);
+	color: #000000;
 	font-size: 18px;
-  	margin: 7px;
-  	padding-left: 21px;
+  	margin: 5px;
+  	padding-left: 16px;
+}
+
+.list_3 {
+    padding-top: 13px;
+    padding-bottom: 20px;
+}
+
+.list_3 a {
+	color: #235FD5;
+	font-size: 147%;
+    line-height: 1.5;
+}
+
+.list_3 a:hover {
+	padding-top: 13px;
+    padding-bottom: 20px;
+    text-decoration: underline;
+    color: #7b1fa2;
+}
+
+h5 {
+	font-size: 2.0rem;
 }
 
 .page_title {
 	font-weight: 600;
+}
+
+a {
+	color: rgb(21, 126, 208);
+}
+
+.link_1 {
+	color: #ffffff;
 }
 
 table {
@@ -32,6 +59,7 @@ td {
 	border: 1px solid #000000;
 }
 
-a:link {
-
+.list_menu {
+	padding: 3px;
+    padding-left: 20px;
 }
