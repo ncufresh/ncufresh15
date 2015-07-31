@@ -109,9 +109,14 @@
 
 .dec-item {
 	height: 100%;
-    background-size: 50% auto;
+    background-size: 80% auto;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+}
+
+.dec-item:hover h5 {
+    color: #fff;
 }
 
 #food1 {
@@ -226,11 +231,11 @@ $("#chest-wrapper").click(function(e){
 			</div>
             <div id="dec-tab" class="col s12">
                 <div class="row">
-                    <div id="food1" class="col s12 m6 dec-item">
-                        <h5>進化飼料</h5>
+                    <div id="food1" class="col s4 offset-s1 dec-item">
+                        <h5 class="center-align">成長飼料</h5>
                     </div>
-                    <div id="food2" class="col s12 m6 dec-item">
-                        <h5>成長飼料</h5>
+                    <div id="food2" class="col s4 offset-s2 dec-item">
+                        <h5 class="center-align">進化飼料</h5>
                     </div>
                 </div>
             </div>

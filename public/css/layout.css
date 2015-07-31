@@ -38,6 +38,7 @@
 	padding: 10px;
 }
 .banner-menu a{
+    padding: 0;
 	text-align: center;
 	width: 100%;
 }
