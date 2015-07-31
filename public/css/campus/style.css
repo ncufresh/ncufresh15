@@ -92,6 +92,13 @@
 	right: 1%;
 	top: 3%;
 	width: 7%;
+	transition:all 0.35s;
+}
+
+#move:hover #pizzle {
+	right: 1.5%;
+	top: 3.5%;
+	width: 6%;
 }
 
 #map {
