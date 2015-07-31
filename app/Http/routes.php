@@ -69,10 +69,12 @@ Route::get('file/{id}', 'FileController@show');
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
-        Route::get ('user/edit/{id}'  , 'UserController@edit');
-        Route::post('user/update/{id}'  , 'UserController@update');
         Route::get ('user/delete/{id}', 'UserController@destroy');
     });
+
+	// Note: Permission must be authorize in controller
+	Route::get ('user/edit/{id}'  , 'UserController@edit');
+	Route::post('user/update/{id}'  , 'UserController@update');
 
     // Home
     Route::get('home', function() {
@@ -84,6 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('qa/create'      , 'QaController@store_question');
     Route::group(['middleware' => 'permission:management'], function() {
         Route::get ('qa/questions'   , 'QaController@index_questions');
+        Route::get ('qa/bottle/{id}' , 'QaController@create_bottle');
         Route::get ('qa/answer'      , 'QaController@create_answer');
         Route::post('qa/answer'      , 'QaController@store_answer');
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
@@ -99,6 +102,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+        
+        Route::post('bottle/pm/{id}', 'BottleController@private_message');
     });
 
 });
@@ -153,7 +158,11 @@ Route::get('video/test', 'Video\GuestbookController@add');
 
 // Game
 //******************************************************************************************************
-Route::get('game', 'GameController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('game', 'GameController@index');
+    Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
+    Route::get('GetTheSecretTreasure', 'KnowledgeController@getTreasure');
+});
 //******************************************************************************************************
 
 // life

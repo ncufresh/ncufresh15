@@ -1,12 +1,14 @@
 @extends('layout')
 
-@section('title', 'NCU Fresh')
+@section('title', 'NCU Fresh | 新生知訊網')
 @section('css')
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/index.css') }}"  media="screen,projection"/>
+	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
 @stop
 
 @section('js')
 	<script src='{{asset("js/index.js")}}'></script>
+	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 @stop
 
 @section('content')
@@ -18,7 +20,7 @@
                 <li class="tab grey lighten-1"><a  href="#doc-tab">公告</a></li>
                 <li class="tab grey darken-1"><a href="#qa-tab">Q&amp;A</a></li>
             </ul>
-			<div id="ann-tab" class="tab-content">
+			<div id="ann-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($announcements as $ann)
 					<div class='row'>
 						<div class='col s3'>
@@ -39,9 +41,9 @@
 					</div>
 				@endforeach
 			</div>
-			<div id="qa-tab" class="tab-content">
+			<div id="qa-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($announcements as $ann)
-					@if ($ann->category == '1')
+					@if ($ann->category == '2')
 						<div class='row'>
 							<div class='col s3'>
 								<span class='category cat1'>Q&amp;A</span>
@@ -54,9 +56,9 @@
 					@endif
 				@endforeach
 			</div>
-			<div id="doc-tab" class="tab-content">
+			<div id="doc-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($announcements as $ann)
-					@if ($ann->category == '2')
+					@if ($ann->category == '1')
 						<div class='row'>
 							<div class='col s3'>
 								<span class='category cat2'>公告</span>
@@ -109,25 +111,25 @@
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event1-modal" class="modal">
+<div id="event1-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e1-content"></p>
 	</div>
 </div>
 <!-- Event 2 Modal-->
-<div id="event2-modal" class="modal">
+<div id="event2-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e2-content"></p>
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event3-modal" class="modal">
+<div id="event3-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e3-content"></p>
 	</div>
 </div>
 <!-- Event 1 Modal-->
-<div id="event4-modal" class="modal">
+<div id="event4-modal" class="modal mCustomScrollbar" data-mcs-theme="dark">
 	<div class="modal-content">
 		<p id="e4-content"></p>
 	</div>

@@ -38,6 +38,7 @@
 	padding: 10px;
 }
 .banner-menu a{
+    padding: 0;
 	text-align: center;
 	width: 100%;
 }
@@ -56,11 +57,9 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	/*transition: 6s ease-in-out;*/
+	transition: 6s ease-in-out;
 	display: inline-block;
 	position: fixed;
-	top: 65vh;
-	left: 89%;
 	width: 70px;
 	z-index: 4;
 }
@@ -101,6 +100,31 @@ body {
     width: 30px;
 }
 
+.position1 {
+	top: 30vh !important;
+	left: 75% !important;
+}
+
+.position2 {
+	top: 30vh !important;
+	left: 88% !important;
+}
+
+.position3 {
+	top: 40vh !important;
+	left: 80% !important;
+}
+
+.position4 {
+	top: 50vh !important;
+	left: 75% !important;
+}
+
+.position5 {
+	top: 50vh !important;
+	left: 88% !important;
+}
+
 @media only screen and (max-width: 992px) {
 	#container {
 		width: 100%;
@@ -108,4 +132,16 @@ body {
 	#slider-container {
 		padding: 0;
 	}
+}
+
+@media only screen and (max-width: 600px) {
+    #footer {
+        margin-top: 0;
+        height: 100px;
+    }
+    #container {
+        border-radius: 0 !important;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 }
