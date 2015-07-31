@@ -9,7 +9,7 @@ $(document).ready(function() {
 		}
 	);
 
-	$("#pizzle").hover(
+	$("#move").hover(
 		function() {
 			$("#map").css("visibility", "visible");
 		},
@@ -17,4 +17,6 @@ $(document).ready(function() {
 			$("#map").css("visibility", "hidden");
 		}
 	);
+
+	$('.tooltipped').tooltip({delay: 50});
 });
