@@ -88,6 +88,8 @@ class KnowledgeController extends Controller
         $background = $user->getBackground();
         $decoration = $user->getDecoration();
         $choice = rand(0,22);
+
+        
         switch($choice) {
             case 0:
                 $background->bg1_1 = true;
@@ -150,10 +152,10 @@ class KnowledgeController extends Controller
                 $decoration->shell = true;
                 break;
             case 20:
-                $decoration->level_food = true;
+                $decoration->level_food += 1;
                 break;
             case 21:
-                $decoration->growth_food = true;
+                $decoration->growth_food += 1;
                 break;
         }
         $background->save();
