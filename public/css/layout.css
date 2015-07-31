@@ -86,10 +86,11 @@ nav {
 }
 body {
 	min-height: 100%;
-    background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
+    background-image: url('/img/department/background1.jpg'), url('/img/department/backgrounddown.png');
     background-position: left top, left top;
     background-size: 100% auto;
     background-repeat: no-repeat, repeat;
+    font-family: "微軟正黑體","Microsoft JhengHei","Times New Roman",Times,serif;
 }
 
 .pagination li {
