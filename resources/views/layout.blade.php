@@ -17,10 +17,6 @@
 				background: url('{{asset("img/Untitled.png")}}');
 				background-size: 65px;
 			}
-			#banner-img {
-				background: url('{{asset("img/banner/4.png")}}');
-				background-size: 100% 100%;
-			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 100% 100%;
