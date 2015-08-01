@@ -7,7 +7,7 @@
     width: 190px;
     height: 190px;
     float: left;
-    background-size: 100% auto;
+    background-size: cover;
     border-radius: 50%;
     border: 5px solid #555;
 }
@@ -63,7 +63,6 @@ $(document).ready(function() {
 			<div id="avatar" class="default-avatar" style="background-image:url('{{asset("img/default-user-image.png")}}');"></div>
 		@endif
         <div class="row input-field file-field">
-            <i class="material-icons prefix">account_circle</i>
 			<input class="file-path validate" type="text"/>
 			<div class="btn">
 				<span>選取大頭貼</span>

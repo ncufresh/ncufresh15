@@ -17,15 +17,28 @@
 	top: 5px;
 	display: inline-block;
 	width: 22.5%;
-	height: 100px;
 	background-color: transparent;
 	max-width: 365px;
 }
+
+#logo:before {
+	content: "";
+	display: block;
+	padding-top: 35%;
+}
+
 #banner-img {
-	height: 380px;
 	background-size: 100% 100%;
 	border: 20px solid #fff;
 }
+
+#banner-img:before {
+	content: "";
+	display: block;
+	padding-top: 40%;
+}
+
+
 #banner>.row {
 	margin: 0px;
 }
@@ -37,6 +50,7 @@
 	padding: 10px;
 }
 .banner-menu a{
+    padding: 0;
 	text-align: center;
 	width: 100%;
 }
@@ -83,13 +97,14 @@ nav {
 	flex: 1 0 auto;
 }
 body {
-    background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
-    background-position: left top, left top;
-    background-size: 100% auto;
-    background-repeat: no-repeat, repeat;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+    background-image: url('/img/department/background1.jpg'), url('/img/department/backgrounddown.png');
+    background-position: left top, left top;
+    background-size: 100% auto;
+    background-repeat: no-repeat, repeat;
+    font-family: "微軟正黑體","Microsoft JhengHei","Times New Roman",Times,serif;
 }
 
 .pagination li {

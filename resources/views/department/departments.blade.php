@@ -4,6 +4,14 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
+	<style type="text/css">
+        .opBack {
+        	width: 100%;
+            background-color: rgba(0,0,0,0.3);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
 @stop
 @section('js')
 	<script type="text/javascript" src="{{ asset('js/department/departmentClub.js') }}"></script>
@@ -267,7 +275,7 @@
 				<div class="card">
 					<div class="card-image">
 						<img class="cardImage2" src="{{ asset('uploads/departments/'.$list->showPicture()) }}" style="max-height: 200px;">
-						<span class="card-title">{{ $list->name }}</span>
+						<span class="card-title opBack">{{ $list->name }}</span>
 					</div>
 				</div>
 			</a>
