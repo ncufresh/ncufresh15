@@ -48,8 +48,8 @@
 					<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 				</ul>
 				<li><a href="{{ url('video') }}">影音專區</a></li>
-				<li><a href="#">關於我們</a></li>
 				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
+				<li><a href="#">關於我們</a></li>
 				<ul id='nav-links' class='dropdown-content'>
 					<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
 					<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
@@ -82,7 +82,6 @@
 				</li>
 				<li><a href="{{ url('group')}}">系所社團</a></li>
 				<li><a href="{{ url('video') }}">影音專區</a></li>
-				<li><a href="#">關於我們</a></li>
 				<li class='no-padding'>
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold">
@@ -103,6 +102,7 @@
 						</li>
 					</ul>
 				</li>
+				<li><a href="#">關於我們</a></li>
 			</ul>
 			</div>
 		</nav>
