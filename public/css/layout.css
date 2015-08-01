@@ -19,6 +19,7 @@
 	width: 22.5%;
 	height: 100px;
 	background-color: transparent;
+	max-width: 365px;
 }
 #banner-img {
 	height: 380px;
@@ -79,13 +80,16 @@ nav {
 	color: rgb(255,255,255);
 	text-align: center;
 	background-color: #212121;
+	flex: 1 0 auto;
 }
 body {
-	min-height: 100%;
     background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
     background-position: left top, left top;
     background-size: 100% auto;
     background-repeat: no-repeat, repeat;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .pagination li {
@@ -125,20 +129,15 @@ body {
 @media only screen and (max-width: 992px) {
 	#container {
 		width: 100%;
+        border-radius: 0 !important;
+        margin-bottom: 0;
+        margin-top: 0;
 	}
 	#slider-container {
 		padding: 0;
 	}
-}
-
-@media only screen and (max-width: 600px) {
     #footer {
         margin-top: 0;
         height: 100px;
-    }
-    #container {
-        border-radius: 0 !important;
-        margin-bottom: 0;
-        margin-top: 0;
     }
 }

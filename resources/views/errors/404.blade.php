@@ -25,19 +25,41 @@
 				background-color: black !important;
 				color: white;
 				text-align: center;
+				padding-bottom: 20px;
 			}
 			#error-icon {
 				font-size: 10em;
 			}
 			#msg1 {
 				background-image: url("{{asset('img/404.png')}}");
-				width: 41%;
-				margin-left: 29.5%;
-				height: 60%;
+				width: 50%;
+				margin-left: 25%;
 				background-size: 100% 100%;
+				position: relative;
+			}
+			#msg1:before {
+				content: "";
+				display: block;
+				padding-top: 80%;
 			}
 			#msg2 {
 				font-size: 1.5em;
+			}
+			 body {
+				display: flex;
+				min-height: 100vh;
+				flex-direction: column;
+			}
+
+			main {
+				flex: 1 0 auto;
+			}
+
+			@media only screen and (max-width: 600px) {
+				#msg1 {
+					width: 100%;
+					margin-left: 0;
+				}
 			}
 		</style>
     </head>
@@ -105,15 +127,17 @@
 			</ul>
 			</div>
 		</nav>
-		<div id="body">
-			<div class="row">
-				<div id="msg1" class="col s12"></div>
-				<div id="msg2" class="col s12">
-					<span>Please Check if the request Url is correct</span><br/>
-					<span>If there's any question, please <a href="mailto:ncufreshweb@gmail.com" target="_top">Report To Us</a></span>
+		<main>
+			<div id="body">
+				<div class="row">
+					<div id="msg1" class="col s12"></div>
+					<div id="msg2" class="col s12">
+						<span>您所查詢的頁面不存在</span><br/>
+						<span>如果有任何問題， 歡迎 <a href="mailto:ncufreshweb@gmail.com" target="_top">向我們反應</a></span>
+					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
