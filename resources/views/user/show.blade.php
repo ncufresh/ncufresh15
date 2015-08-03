@@ -22,6 +22,7 @@
     bottom: 20px;
     width: 200px;
     height: 200px;
+    cursor: pointer;
 }
 
 #bottle {
