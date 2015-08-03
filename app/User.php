@@ -44,4 +44,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
+
+    public function getBackground() {
+        $first = $this->hasMany('App\Background', 'user_id', 'id')->first();
+
+        return $first;
+    }
+    public function getDecoration() {
+        $first = $this->hasMany('App\Decoration', 'user_id', 'id')->first();
+
+        return $first;
+    }
 }

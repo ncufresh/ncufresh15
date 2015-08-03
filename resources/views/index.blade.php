@@ -1,10 +1,18 @@
 @extends('layout')
 
-@section('title', 'NCU Fresh')
+@section('title', 'NCU Fresh | 新生知訊網')
 @section('css')
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/index.css') }}"  media="screen,projection"/>
 	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
+	<style type="text/css">
+		#banner-img {
+			background: url('{{asset("img/banner/4.jpg")}}');
+			background-size: 100% 100%;
+		}
+	</style>
 @stop
+	
+	
 
 @section('js')
 	<script src='{{asset("js/index.js")}}'></script>

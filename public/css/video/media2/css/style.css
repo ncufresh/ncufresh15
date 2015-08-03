@@ -53,21 +53,26 @@ The control icons are from a custom font. Each icon corresponds to a character
 .vjs-default-skin .vjs-slider-handle {
   position: absolute;
   /* Needed for IE6 */
-  left: 0;
-  top: 0;
+  left: -10px;
+  top: 10px;
 }
-.vjs-default-skin .vjs-slider-handle:before {
-  content: url(http://placehold.it/10x13);
-  font-family: VideoJS;
-  font-size: 1em;
-  line-height: 1;
+.vjs-volume-handle.vjs-slider-handle:before {
+  content: url('/img/video/media/mute.png');
   text-align: center;
   text-shadow: 0em 0em 1em #fff;
   position: absolute;
-  top: -1px;
+  top: -30px;
   left: 0;
-  /* Rotate the square icon to make a diamond */
-  /* transform */
+  color: #fff;
+}
+/*
+.vjs-default-skin .vjs-slider-handle:before {
+  content: url(http://placehold.it/10x13);
+  text-align: center;
+  text-shadow: 0em 0em 1em #fff;
+  position: absolute;
+  top: -10px;
+  left: 0;
   color: #fff;
 }
 /* Control Bar
@@ -146,13 +151,12 @@ The default control bar that is a container for most of the controls.
   cursor: pointer;
 }
 .vjs-default-skin .vjs-play-control:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/pause.png');
 }
-
 .vjs-default-skin.vjs-playing .vjs-play-control:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/play.png');
 }
-/* e/Mute
+/* VolumeMenu0,1,2,3
 -------------------------------------------------------------------------------- */
 .vjs-default-skin .vjs-mute-control,
 .vjs-default-skin .vjs-volume-menu-button {
@@ -164,48 +168,54 @@ The default control bar that is a container for most of the controls.
 }
 .vjs-default-skin .vjs-mute-control:before,
 .vjs-default-skin .vjs-volume-menu-button:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/VolumeMenu3.png');
 }
 .vjs-default-skin .vjs-mute-control.vjs-vol-0:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-0:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/VolumeMenu0.png');
 }
 .vjs-default-skin .vjs-mute-control.vjs-vol-1:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-1:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/VolumeMenu1.png');
 }
 .vjs-default-skin .vjs-mute-control.vjs-vol-2:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-2:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/VolumeMenu2.png');
 }
+/*---------------------------------------------------------------------------------------*/
 .vjs-default-skin .vjs-volume-control {
   width: 5em;
   position: absolute;
   float: left;
   margin-left: 100px;
 }
+/*////////////////////////////////////////////音量條///////////////////////////////////////////////////////////////////*/
 .vjs-default-skin .vjs-volume-bar {
-  top:1px;
+  position: absolute;
+  float: left;
+  top:20px;
+  border-radius: 5px;
   width: 5em;
   height: 0.6em;
-  margin: 1.1em auto 0;
 }
 .vjs-default-skin .vjs-volume-menu-button .vjs-menu-content {
   height: 2.9em;
 }
 .vjs-default-skin .vjs-volume-level {
   position: absolute;
-  top: 0;
+  border-radius: 5px;
   left: 0;
   height: 0.5em;
-  background: #b40c1e url() -50% 0 repeat;
+  background: #fd9e0a url() -50% 0 repeat;
 }
 .vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
+  position: absolute;
+  top: 0px;
   width: 0.5em;
   height: 0.5em;
 }
+/*///////////////////////////////////////////調音紐////////////////////////////////////////////////////////////*/
 .vjs-default-skin .vjs-volume-handle:before {
-  font-size: 0.9em;
   top: -0.2em;
   left: -0.2em;
   width: 1em;
@@ -216,22 +226,19 @@ The default control bar that is a container for most of the controls.
   left: -4em;
 }
 /* Progress
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 */
 .vjs-default-skin .vjs-progress-control {
   position: absolute;
+  border-image:url('/img/video/media/middle.png') 30 stretch;
+  border-bottom-width: 8px;
+  border-top-width: 0px; 
   left: 0;
   right: 0;
   width: auto;
   font-size: 0.3em;
   height: 1em;
-  /* Set above the rest of the controls. */
   top: -1em;
-  /* Shrink the bar slower than it grows. */
-  /* transition */
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
   transition: all 0.4s;
 }
 /* On hover, make the progress bar grow to something that's more clickable.
@@ -247,6 +254,7 @@ The default control bar that is a container for most of the controls.
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
+
 /* Box containing play and load progresses. Also acts as seek scrubber. */
 .vjs-default-skin .vjs-progress-holder {
   height: 100%;
@@ -271,9 +279,11 @@ The default control bar that is a container for most of the controls.
     Changing the first color value will change the bar color.
     Also using a paralax effect to make the lines move backwards.
       The -50% left position makes that happen.
-  */
+-----------------------------------------------------------------------------------*/
   background: #ffdb9a url() -50% 0 repeat;
+
 }
+
 .vjs-default-skin .vjs-load-progress {
   background: #757575;
 }
@@ -315,13 +325,14 @@ The default control bar that is a container for most of the controls.
   width: 3.8em;
   cursor: pointer;
   float: right;
+  right: 5px;
 }
 .vjs-default-skin .vjs-fullscreen-control:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/Fullscreen.png');
 }
 /* Switch to the exit icon when the player is in fullscreen */
 .vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control:before {
-  content: url(http://placehold.it/26x23);
+  content: url('/img/video/media/Fullscreen.png');
 }
 /* Big Play Button (play button at start)
 --------------------------------------------------------------------------------
@@ -341,7 +352,7 @@ easily in the skin designer. http://designer.videojs.com/
 .vjs-loading-spinner {
   display: none;
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
   font-size: 5em;
   line-height: 1;
@@ -555,6 +566,7 @@ control positioning and full window mode. **
   left: 0;
   width: 100%;
   height: 100%;
+
 }
 /* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when 
    checking fullScreenEnabled. */
@@ -596,7 +608,8 @@ body.vjs-full-window {
   margin: 0;
   padding: 0;
   position: relative;
-  width: 100%;
+  width: 100%;  
+
 }
 .vjs-poster img {
   display: block;
