@@ -17,9 +17,6 @@
 	}
 	#b{
 		width: 80%;
-		background-image:url("img/life/.png");
-		background-size:100% auto;
-		background-repeat:no-repeat;
 		position: relative; 
 		margin: 0% auto;
 	}
@@ -114,7 +111,7 @@
 @stop
 
 @section('content')
-<div class="row" style="background-color:rgb(214,237,237)">
+<div class="row">
 	<div style="text-align:center;">
 		<h1>中大生活</h1>
 	</div><br>

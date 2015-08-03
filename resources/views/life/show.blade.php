@@ -16,12 +16,11 @@
 			height:100%;
 		}
 		.article{
-			width:581px;
-			height:324px;
-			overflow:scroll;
-			margin:0% auto;
+			width:90%;
+			height:50%;
+			overflow-y:auto;
+			margin:5% auto;
 		}
-
 	</style>
 @stop
 
