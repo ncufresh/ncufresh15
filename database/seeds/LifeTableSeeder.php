@@ -21,7 +21,6 @@ class LifeTableSeeder extends Seeder
 	    	'後門',
 	    	'松苑廣場',
 	    	'女14地下餐廳',
-	    	'校園café'
 	    ];
 	    $life_live = [
 	    	'男3舍',
@@ -62,7 +61,7 @@ class LifeTableSeeder extends Seeder
 	    	'公車',
 	    	'火車',
 	    	'高鐵',
-	    	'台聯大公車',
+	    	'校內交通',
 	    ];
 	    foreach($life_food as $food){
 	    	Life::create([
