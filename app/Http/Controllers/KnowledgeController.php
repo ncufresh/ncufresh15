@@ -76,12 +76,12 @@ class KnowledgeController extends Controller
         return response()->json(['knowledge' => $knowledge, 'token' => bin2hex(openssl_random_pseudo_bytes(16))]);
     }
 
-    public function getQuestion()
+    public static function getQuestion()
     {
         $knowledge = Knowledge::orderByRaw('RAND()')->first();
         return response()->json(['questions' => $knowledge, 'answer' => $knowledge->answer]);
     }
-    public function getTreasure()
+    public static function getTreasure()
     {
         // you need to login
         $user = Auth::user();
