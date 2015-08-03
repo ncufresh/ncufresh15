@@ -12,8 +12,9 @@
 @stop
 
 @section('content')
-<div id="slidebar">
-	<ul class="collapsible col" data-collapsible="accordion">
+<div class="row">
+<div id="slidebar" class="col s12 m12 l2">
+	<ul class="collapsible" data-collapsible="accordion">
 		<li>
 			<a class="collapsible-header {{isset($index)?'here':'category'}}" href="{{ url('/campus')}}">校園地圖</a>
 		</li>
@@ -88,7 +89,8 @@
 	<a class="waves-effect waves-light btn right" href="/campus/add_view">新增</a>
     @endpermission
 </div>
-<div class="container" id="main">
+<div class="container col s12 m12 l10" id="main">
 	@yield('main')
+</div>
 </div>
 @stop
