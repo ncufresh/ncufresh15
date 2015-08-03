@@ -28,19 +28,25 @@
             <ul class="side-nav" id="mobile-nav">
                 <li><a href="{{ url('/') }}">首頁</a></li>
                 <li><a href="{{ url('campus') }}">校園導覽</a></li>
-                <li><a href="#">新生必讀</a></li>
-                <li><a href="#">中大生活</a></li>
+                <li><a href="{{ url('document')}}">新生必讀</a></li>
+                <li><a href="{{ url('life')}}">中大生活</a></li>
                 <li class='no-padding' style="line-height:64px;">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold">
-                            <a class="collapsible-header  waves-effect waves-teal">常用連結</a>
-                            <div class="collapsible-body" style="display: block;">
-                                <ul>
-                                    <li><a href="#">Link1</a></li>
-                                    <li><a href="#">Link2</a></li>
-                                    <li><a href="#">Link3</a></li>
-                                </ul>
-                            </div>
+							<a class="collapsible-header  waves-effect waves-teal">常用連結</a>
+							<div class="collapsible-body" style="display: block;">
+								<ul>
+									<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
+									<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
+									<li><a href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
+									<li><a href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
+									<li><a href="http://passport.ncu.edu.tw/">服務學習網</a></li>
+									<li><a href="http://love.adm.ncu.edu.tw/center/Gender_Equal/main/index.html">性平教育</a></li>
+									<li><a href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
+									<li><a href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
+									<li><a href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
+								</ul>
+							</div>
                         </li>
                     </ul>
                 </li>
@@ -59,8 +65,8 @@
                     </ul>
                 </li>
                 <li><a href="{{ url('group')}}">系所社團</a></li>
-                <li><a href="{{ url('video2') }}">影音專區</a></li>
-                <li><a href="#">關於我們</a></li>
+                <li><a href="{{ url('video') }}">影音專區</a></li>
+                <li><a href="{{ url('about')}}">關於我們</a></li>
             </ul>
             @yield('content')
         </div>
