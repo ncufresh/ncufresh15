@@ -5,6 +5,30 @@ var questionON = 0;
 
 var threetimes = 0;
 
+function init() {
+    $.ajax({
+        url: '/GameOveri',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
+function setThreeTimes() {
+    $.ajax({
+        url: '/GameOvers',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
+function deleteAll() {
+    $.ajax({
+        url: '/GameOverc',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
 
 var qadata;
 function getquestion() {
@@ -20,15 +44,6 @@ function getquestion() {
         	else{
         		qadata = data;
         	}
-        }
-    });
-}
-function gettreasure() {
-    $.ajax({
-        url: '/GetTheSecretTreasure',
-        type: 'GET',
-        success: function(data) {
-        	
         }
     });
 }
@@ -129,7 +144,6 @@ var question = function () {
 	} else if (questionON==2) {
 
 		if (threetimes==3) {
-			gettreasure();
 
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 			ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 3);
@@ -213,6 +227,7 @@ var question = function () {
 				if (boxs[i].isme && boxs[i].lock==false && boxs[i].open==false) {
 					hero.canmove=false;
 					getquestion();
+					init();
 					questionON=1;
 					select=1;
 				} else if(boxs[i].isme && boxs[i].lock && boxs[i].open==false){
@@ -225,6 +240,7 @@ var question = function () {
 			if (select!=qadata.answer) {
 				questionON=2;
 			} else if(select==qadata.answer){
+				setThreeTimes();
 				threetimes+=1;
 				if (threetimes==3) {
 					questionON=2;
@@ -237,11 +253,13 @@ var question = function () {
 			hero.canmove=true;
 			questionON=0;
 			threetimes=0;
+			deleteAll();
 		}
 		else if(e.keyCode == 13 && questionON==-1){
 			hero.canmove=true;
 			questionON=0;
 			threetimes=0;
+			deleteAll();
 		}
 		//
 		if (e.keyCode == 38 && questionON==1) { // up choice

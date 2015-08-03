@@ -166,7 +166,9 @@ Route::get('/ajax/comment','Video\GuestbookController@load');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('game', 'GameController@index');
     Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
-    Route::get('GetTheSecretTreasure', 'KnowledgeController@getTreasure');
+    Route::get('GameOveri', 'GameController@init');
+    Route::get('GameOvers', 'GameController@setRightAnswer');
+    Route::get('GameOverc', 'GameController@cleanAir');
 });
 //******************************************************************************************************
 
