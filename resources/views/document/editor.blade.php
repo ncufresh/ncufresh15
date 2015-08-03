@@ -70,7 +70,7 @@
     	@foreach($cate_14 as $cate_14)
     	<option value="{{ $cate_14->id }}" {{ isset($id) && $id==$cate_14->id?'selected="selected"':''}}>{{ $cate_14->title }}</option>
     	@endforeach
-    	<option value="" disabled>新生周</option>
+    	<option value="" disabled>新生週</option>
     	@foreach($cate_15 as $cate_15)
     	<option value="{{ $cate_15->id }}" {{ isset($id) && $id==$cate_15->id?'selected="selected"':''}}>{{ $cate_15->title }}</option>
     	@endforeach
