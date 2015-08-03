@@ -17,13 +17,18 @@
 Route::get('/', 'HomepageController@index');
 
 //Admin of Homepage
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin/{category?}', 'AdminController@index');
 
 //Announcement on Homepage
 Route::get('/ann/{id?}', 'AnnouncementController@get');
 Route::post('/ann/new', 'AnnouncementController@store');
 Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+//Announcement for QA on Homepage
+Route::post('/annqa/new', 'AnnQAController@store');
+Route::get('/annqa/delete/{id}', 'AnnQAController@destroy');
+Route::post('/annqa/update/{id}', 'AnnQAController@update');
 
 // Calender on Homepage
 Route::get('/cal/get', 'CalenderController@get');
@@ -151,9 +156,9 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 //******************************************************************************************************
 Route::get('video2','Video\GuestbookController@index2');
 Route::get('video', 'Video\GuestbookController@index');
-Route::get('video2/{id}','Video\GuestbookController@show');
-Route::post('video2','Video\GuestbookController@add');
-Route::get('video/test', 'Video\GuestbookController@add');
+Route::post('video2/add','Video\GuestbookController@add');
+Route::post('video2/delete','Video\GuestbookController@delete');
+Route::get('/ajax/comment','Video\GuestbookController@load');
 //******************************************************************************************************
 
 // Game

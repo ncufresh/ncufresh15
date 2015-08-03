@@ -10,7 +10,7 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <style>
             #wrapper {
-                background-image: url('/img/banner/2.png');
+                background-image: url('/img/banner/2.jpg');
                 background-size: 100% auto;
                 height: 100%;
             }

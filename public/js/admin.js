@@ -1,40 +1,48 @@
 $(document).ready(function(){
-	$('#ann-new-trigger').leanModal();
+	$('#ann-new-trigger').leanModal({
+		ready: function(){
+			$("#ann-new").css("top","5%");
+		}
+	});
+	$('#qa-new-trigger').leanModal();
 	$('#cal-new-trigger').leanModal({
 		ready: function(){
 			$("#cal-new").css("top", "5%");
 		}
 	});
-	$(".update-ann-trigger").leanModal();
+	$(".update-ann-trigger").leanModal({
+		ready: function(){
+			$("#ann-update-modal").css("top","5%");
+		}
+	});
+	$(".update-qa-trigger").leanModal();
 	$(".update-cal-trigger").leanModal({
 		ready: function(){
-			console.log("Hello");
 			$("#cal-update-modal").css("top","5%");
 		}
 	});
-	$("#cal-date").pickadate({
-		selectMonths: true,
-		format: 'yyyy-mm-dd'
-	});
-	$("#cal-update-date").pickadate({
+
+	$("#ann-date, #ann-update-date, #cal-date, #cal-update-date").pickadate({
 		selectMonths: true,
 		format: 'yyyy-mm-dd'
 	});
 	$(".update-ann-trigger").click(function(){
 		var ann_id = $(this).data("id");
 		var title = $("#ann-title-"+ann_id).text();
-		var url = $("#ann-url-"+ann_id).text();
+		var date = $("#ann-showat-"+ann_id).text();
 		var content = $("#ann-content-"+ann_id).text();
-		var category = $("#ann-cat-"+ann_id).text();
 		$("#ann-update-title").val(title);
-		$("#ann-update-url").val(url);
+		$("#ann-update-date").val(date);
 		$("#ann-update-content").val(content);
-		if (category == "1"){
-			document.getElementById("ann-update-cat1").checked = true;
-		}else {
-			document.getElementById("ann-update-cat2").checked = true;
-		}
 		document.getElementById("ann-update-form").action = document.getElementById("ann-update-form").action + ann_id;
+	});
+	$(".update-qa-trigger").click(function(){
+		var qa_id = $(this).data("id");
+		var title = $("#qa-title-"+qa_id).text();
+		var url = $("#qa-url-"+qa_id).text();
+		$("#qa-update-title").val(title);
+		$("#qa-update-url").val(url);
+		document.getElementById("qa-update-form").action = document.getElementById("qa-update-form").action + qa_id;
 	});
 
 	$(".update-cal-trigger").click(function(){
@@ -47,4 +55,14 @@ $(document).ready(function(){
 		$("#cal-update-date").val(date);
 		document.getElementById("cal-update-form").action = document.getElementById("cal-update-form").action + cal_id;
 	});
+});
+
+$("#ann-link").click(function(){
+	window.location.href = "/admin/announcement";
+});
+$("#qa-link").click(function(){
+	window.location.href = "/admin/qa";
+});
+$("#calender-link").click(function(){
+	window.location.href = "/admin/calender";
 });
