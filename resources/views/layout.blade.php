@@ -17,10 +17,40 @@
 			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
-				background-size: 100% 100%;
+				background-size: 85% 85%;
 			}
 			#nop {
 				opacity: 0;
+			}
+			@font-face {
+				font-family: 'Material Icons';
+				font-style: normal;
+				font-weight: 400;
+				src:
+				url({{ asset('font/MaterialIcons-Regular.woff2')}}) format('woff2'),
+				url({{ asset('/font/MaterialIcons-Regular.woff')}}) format('woff'),
+				url({{ asset('/font/MaterialIcons-Regular.ttf')}}) format('truetype');
+			}
+
+			.material-icons {
+				font-family: 'Material Icons';
+				font-weight: normal;
+				font-style: normal;
+				font-size: 24px;
+				line-height: 1;
+				letter-spacing: normal;
+				text-transform: none;
+				display: inline-block;
+				word-wrap: normal;
+				-moz-font-feature-settings: 'liga';
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				text-rendering: optimizeLegibility;
+				-moz-osx-font-smoothing: grayscale;
+				font-feature-settings: 'liga';
+			}
+			body {
+				background-image: url({{asset('img/department/background1.jpg')}} ), url({{asset('img/department/backgrounddown.png')}});
 			}
 		</style>
 		@yield('css')

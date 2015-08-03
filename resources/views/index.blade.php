@@ -11,9 +11,6 @@
 		}
 	</style>
 @stop
-	
-	
-
 @section('js')
 	<script src='{{asset("js/index.js")}}'></script>
 	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
@@ -24,59 +21,27 @@
 	<div id='post-container' class="col s12 m12 l5">
 		<div class="row">
             <ul class="tabs">
-                <li class="tab  grey darken-1"><a class="active" href="#ann-tab">全部</a></li>
-                <li class="tab grey lighten-1"><a  href="#doc-tab">公告</a></li>
-                <li class="tab grey darken-1"><a href="#qa-tab">Q&amp;A</a></li>
+                <li class="tab grey lighten-1"><a  href="#ann-tab">公告</a></li>
+                <li class="tab grey darken-1"><a href="#qa-tab">熱門Q&amp;A</a></li>
             </ul>
 			<div id="ann-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($announcements as $ann)
 					<div class='row'>
-						<div class='col s3'>
-							@if ($ann->category == '1')
-								<span class='category cat1'>公告</span>
-							@else
-								<span class='category cat2'>Q&amp;A</span>
-							@endif
-						</div>
-						<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
-						<div class='col s6'>
-							@if ($ann->category == '1')
-								<a href="{{url('/ann').'/'.$ann->id}}">{{$ann->title}}</a>
-							@else
-								<a href="{{$ann->url}}">{{$ann->title}}</a>
-							@endif
+						<div class='col s2'><span class="tag tag1">{{date('m-d', strtotime($ann->show_at))}}</span></div>
+						<div class='col s10'>
+							<a href="{{url("ann")."/".$ann->id}}">{{$ann->title}}</a>
 						</div>
 					</div>
 				@endforeach
 			</div>
 			<div id="qa-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
-				@foreach ($announcements as $ann)
-					@if ($ann->category == '2')
-						<div class='row'>
-							<div class='col s3'>
-								<span class='category cat1'>Q&amp;A</span>
-							</div>
-							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
-							<div class='col s6'>
-								<a href="{{$ann->url}}">{{$ann->title}}</a>
-							</div>
+				@foreach ($annqas as $ann)
+					<div class='row'>
+						<div class='col s2'><span class="tag tag2">{{date('m-d', strtotime($ann->created_at))}}</span></div>
+						<div class='col s10'>
+							<a href="{{$ann->url}}">{{$ann->title}}</a>
 						</div>
-					@endif
-				@endforeach
-			</div>
-			<div id="doc-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
-				@foreach ($announcements as $ann)
-					@if ($ann->category == '1')
-						<div class='row'>
-							<div class='col s3'>
-								<span class='category cat2'>公告</span>
-							</div>
-							<div class='col s3'>{{date('m-d', strtotime($ann->created_at))}}</div>
-							<div class='col s6'>
-								<a href="{{$ann->url}}">{{$ann->title}}</a>
-							</div>
-						</div>
-					@endif
+					</div>
 				@endforeach
 			</div>
 		</div>
