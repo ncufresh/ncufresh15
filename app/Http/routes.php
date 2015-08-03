@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Home
     Route::get('home', function() {
-        return view('home.index');
+        return redirect('/');
     });
 
     // Manage Q&A
@@ -107,6 +107,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+
+        // Campus admin
+        //------------------------------------------------------------------------------------------------------
+        Route::get('campus/add_view', 'Campus\CampusController@addView');
+        Route::post('campus/add_view', 'Campus\CampusController@store');
+        Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
+        Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
+        Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
+        //------------------------------------------------------------------------------------------------------
+
         
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
     });
@@ -131,13 +141,8 @@ Route::post('group/update','Department\ClubController@update');
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
-Route::get('campus/add_view', 'Campus\CampusController@addView');
-Route::post('campus/add_view', 'Campus\CampusController@store');
-Route::get('campus/view/{id}', 'Campus\CampusController@showView');
-Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
-Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
-Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
 Route::get('campus/{cate}', 'Campus\CampusController@cate');
+Route::get('campus/view/{id}', 'Campus\CampusController@showView');
 //******************************************************************************************************
 
 
