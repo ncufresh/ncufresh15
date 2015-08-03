@@ -8,6 +8,7 @@
             background: url('{{asset("img/department/background.jpg")}}');
             background-size: 100% 100%;
             background-repeat: no-repeat;
+            min-height: 1000px;
         }
     </style>
 @stop
