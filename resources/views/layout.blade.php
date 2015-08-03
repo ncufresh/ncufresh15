@@ -18,9 +18,13 @@
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 85% 85%;
+				background-repeat: no-repeat;
 			}
 			#nop {
 				opacity: 0;
+			}
+			.banner-menu .s4{
+				padding-left: 2% !important;
 			}
 			@font-face {
 				font-family: 'Material Icons';
@@ -76,7 +80,7 @@
 					<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 				</ul>
 				<li><a href="{{ url('video') }}">影音專區</a></li>
-				<li><a class='links' data-activates='nav-links' href="#">常用連結</a></li>
+				<li><a class='nav-links' data-activates='nav-links' href="#">常用連結</a></li>
 				<li><a href="#">關於我們</a></li>
 				<ul id='nav-links' class='dropdown-content'>
 					<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>

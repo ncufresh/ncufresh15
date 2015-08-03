@@ -172,7 +172,6 @@
 }
 
 #event-container>.dick {
-	border-right: 2px solid grey;
 	padding-left: 2%;
 	padding-right: 2%;
 }
@@ -188,7 +187,6 @@
 	position: absolute;
 	top: 0.7em;
 	border-radius: 50%;
-	border-right: 2px solid grey;
 }
 
 #ann-tab .row , #qa-tab .row, #doc-tab .row{
