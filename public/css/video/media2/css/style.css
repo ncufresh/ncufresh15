@@ -368,6 +368,7 @@ easily in the skin designer. http://designer.videojs.com/
   animation: spin 1.5s infinite linear;
 }
 .vjs-default-skin .vjs-loading-spinner:before {
+  display: none;
   content: "\e00a";
   font-family: VideoJS;
   position: absolute;

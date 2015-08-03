@@ -67,6 +67,7 @@ Route::get('file/{id}', 'FileController@show');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    Route::post('video2/add','Video\GuestbookController@add');
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
         Route::get ('user/edit/{id}'  , 'UserController@edit');
@@ -99,6 +100,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+        Route::post('video2/delete','Video\GuestbookController@delete');
     });
 
 });
@@ -146,8 +148,6 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 //******************************************************************************************************
 Route::get('video2','Video\GuestbookController@index2');
 Route::get('video', 'Video\GuestbookController@index');
-Route::post('video2/add','Video\GuestbookController@add');
-Route::post('video2/delete','Video\GuestbookController@delete');
 Route::get('/ajax/comment','Video\GuestbookController@load');
 //******************************************************************************************************
 
