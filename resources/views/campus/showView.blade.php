@@ -19,7 +19,7 @@
 			</p>
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn blue darken-4 right" href="/campus/delete_view/{{$view->id}}">刪除</a>
-	<a class="waves-effect waves-light btn blue darken-4 right" href="/campus/edit_view/{{$view->id}}" id="btn_edit">編輯</a>
+	<a class="waves-effect waves-light btn blue darken-4 right" href="{{ url('campus/delete_view/'.$view->id) }}">刪除</a>
+	<a class="waves-effect waves-light btn blue darken-4 right" href="{{ url('campus/edit_view/'.$view->id) }}" id="btn_edit">編輯</a>
 </div>
 @stop
