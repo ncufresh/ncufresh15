@@ -50,7 +50,7 @@
 }
 
 nav {
-	background-color: #2196f3;
+	background-color: #2196f3 !important;
 }
 .brand-logo {
 	margin-left: 10px;

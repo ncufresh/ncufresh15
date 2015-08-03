@@ -15,21 +15,19 @@ function add()
         console.log(msg);   //js, save data
         var id = msg.id;
         var str = '<div id="'+msg.id+'""> \
-                        <div class="col s2">'+msg.name+'</div>\
-                        <div class="col s7">留言內容 '+msg.comment+'</div>\
-                        <div class="col s2">\
-                          <form>\
-                            <button type="submit" id="delete" class="btn " style="width:10px;height:25px;margin-left:-10px">\
-                              <i class="material-icons" style="margin-left:-8px;line-height: normal;">delete</i>\
+                      <div class="row">\
+                        <div class="col s2 m2 l2">'+msg.name+'</div>\
+                        <div class="col s6 m6 l6" style="word-break: break-all;">留言內容 '+msg.comment+'</div>\
+                        <div class="col s4 m4 l4">\
+                            <button type="submit" class="btn delete" value="'+msg.id+'">\
+                              <i class="material-icons" style="line-height: normal;">delete</i>\
                             </botton>\
-                                <input type="hidden" name="username" value="'+msg.name+'"/>\
-                                <input type="hidden" name="comment" value="'+msg.comment+'"/>\
-                            <input type="hidden" name="id" value="'+msg.id+'">\
-                          </form>\
                         </div>\
-                    </div>\
-                    <div class="row" style="margin-bottom: 15px;margin-top: 0px;"></div>';
+                      </div>\
+                     <br>\
+                   </div>';
         $("#mCSB_1_container").prepend( $(str).hide().fadeIn(1000) );  //append: add in the back
+        $("#SendComment").val('');
       }
     });
   });
