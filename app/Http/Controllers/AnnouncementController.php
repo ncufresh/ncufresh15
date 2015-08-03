@@ -13,7 +13,7 @@ class AnnouncementController extends Controller{
 			$anns = Announcement::findOrFail($id);
 			$type = "single";
 		}else{
-			$anns = Announcement::where('category',1)->get();
+			$anns = Announcement::all();
 			$type = "all";
 		}
 		return view('announcement',[
@@ -26,25 +26,23 @@ class AnnouncementController extends Controller{
 		Announcement::create([
 			'title'=>$request->title,
 			'content'=>$request->content,
-			'url'=>$request->url,
-			'category'=>$request->category
+			'show_at'=>$request->date,
 		]);
-		return redirect('admin');
+		return redirect('admin/announcement');
     }
 
     public function update(Request $request, $id){
 		$ann = Announcement::find($id);
 		$ann->title = $request->title;
 		$ann->content = $request->content;
-		$ann->url = $request->url;
-		$ann->category = $request->category;
+		$ann->show_at = $request->date;
 		$ann->save();
-		return redirect('admin');
+		return redirect('admin/announcement');
     }
 
     public function destroy($id){
 		$ann = Announcement::find($id);
 		$ann->delete();
-		return redirect('admin');
+		return redirect('admin/announcement');
     }
 }

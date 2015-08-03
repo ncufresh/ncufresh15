@@ -17,13 +17,18 @@
 Route::get('/', 'HomepageController@index');
 
 //Admin of Homepage
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin/{category?}', 'AdminController@index');
 
 //Announcement on Homepage
 Route::get('/ann/{id?}', 'AnnouncementController@get');
 Route::post('/ann/new', 'AnnouncementController@store');
 Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+//Announcement for QA on Homepage
+Route::post('/annqa/new', 'AnnQAController@store');
+Route::get('/annqa/delete/{id}', 'AnnQAController@destroy');
+Route::post('/annqa/update/{id}', 'AnnQAController@update');
 
 // Calender on Homepage
 Route::get('/cal/get', 'CalenderController@get');

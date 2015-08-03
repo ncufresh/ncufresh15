@@ -508,6 +508,7 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'RemoveAnnounceTableColumn' => $baseDir . '/database/migrations/2015_08_01_071312_remove_announce_table_column.php',
     'RemoveColUserTable' => $baseDir . '/database/migrations/2015_07_17_142315_remove_col_user_table.php',
     'RoleSeeder' => $baseDir . '/database/seeds/RoleSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
