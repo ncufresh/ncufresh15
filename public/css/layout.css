@@ -121,7 +121,6 @@ nav {
 	color: rgb(255,255,255);
 	text-align: center;
 	background-color: #212121;
-	flex: 1 0 auto;
 }
 body {
 	display: flex;
