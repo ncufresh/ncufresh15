@@ -68,10 +68,12 @@
 		</div>
 	</form>
 	<div class="row">
-		<div class="center-align">
+		<div class="center-align">	
 			@foreach($pictures as $picture)
-				<img src="{{$picture->url}}" width="40%">
+			<div class="col s6">
+				<img src="{{$picture->url}}" width="100%">
 				<a class="btn-floating btn-large waves-effect waves-light red" href="{{url('life/delpic/'.$picture->id)}}"><i class="material-icons">delete</i>刪除</a>
+			</div>
 			@endforeach
 		</div>
 	</div>		

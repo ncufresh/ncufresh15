@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'QAQ')
+@section('title', 'Q&amp;A')
 
 @section('css')
 @stop
@@ -21,6 +21,11 @@
     <a href="{{url('qa/questions')}}" class="waves-effect waves-light btn">
         <i class="material-icons left">input</i>返回問題列表
     </a>
+    @if (isset($answer))
+    <a href="{{url('qa/delete/'.$answer->id)}}" class="waves-effect waves-light btn red">
+        <i class="material-icons right">clear</i>Delete
+    </a>
+    @endif
     <form class="col s12" action="{{isset($answer)?action('QaController@update', $answer->id):url('qa/answer')}}" method="post">
         {!! csrf_field() !!}
         @if (count($errors) > 0)

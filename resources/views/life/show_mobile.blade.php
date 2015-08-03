@@ -8,6 +8,12 @@
 		#coverflow{
 			font-family:inital !importment;
 		}
+		.article{
+			width:281px;
+			height:182px;
+			overflow:scroll;
+			margin:4% auto;
+		}
 	</style>
 @stop
 
@@ -49,7 +55,9 @@
 			<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
 			<button class="waves-effect waves-light btn blue" id="next">下一張</button>
 		</div>
-			<p>{!! $show->content !!}</p>   <!--  -->
+		<div class="article">
+			<p>{!! $show->content !!}</p>   
+		</div>	
 		</div>
 	</div>		
 </div>

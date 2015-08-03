@@ -42,6 +42,12 @@ class Handler extends ExceptionHandler
         if ($e instanceof \Bican\Roles\Exceptions\PermissionDeniedException) {
             return redirect()->back();
         }
+
+		//Return 404Page while Model Not Found
+		if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+			return response()->view('errors.404');
+		}
+
         return parent::render($request, $e);
     }
 }

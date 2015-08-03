@@ -51,7 +51,7 @@ class CalenderController extends Controller{
 			'next_date'=>$next_date
 		]);
 		$this->updateNearDate($request->date, $request->date, $pre_date, $next_date);
-		return redirect('admin');
+		return redirect('admin/calender');
 	}
 
 	public function update(Request $request, $id){
@@ -70,7 +70,7 @@ class CalenderController extends Controller{
 			$this->updateNearDate($next_date_ori, $pre_date_ori, $pre_date_ori, $next_date_ori);
 		}
 		$cal->save();
-		return redirect('admin');
+		return redirect('admin/calender');
 	}
 
 	public function destroy($id){
@@ -79,7 +79,7 @@ class CalenderController extends Controller{
 		$next_date = $this->getNextDate($cal->event_date);
 		$cal->delete();
 		$this->updateNearDate($next_date, $pre_date, $pre_date, $next_date);
-		return redirect('admin');
+		return redirect('admin/calender');
 	}
 
 	public function getPreviousDate($now){

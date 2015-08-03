@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use App\User;
 use App\Helpers\SitemapHelper;
 use App\QaAnswer;
 use App\QaQuestion;
@@ -277,10 +278,13 @@ class QaController extends Controller
     {
         //
         $answer = QaAnswer::findOrFail($id);
-        if ($answer != null) {
-            $answer->delete();
-        }
+        $answer->delete();
         return redirect('qa');
+    }
+
+    public function create_bottle($id) {
+        $user = User::findOrFail($id);
+        return view('qa.bottle', ['user' => $user]);
     }
 
 

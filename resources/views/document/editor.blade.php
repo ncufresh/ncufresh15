@@ -11,7 +11,7 @@
 <div id="ckeditor">
 	<label>分頁</label>
     <select id="mySelect" class="browser-default">
-    	<option value="" disabled  {{isset($id)?'':'selected="selected"'}}>學士班新生註冊通知</option>
+    	<option value="" disabled  {{isset($id)?'':'selected="selected"'}}>學士班新生註冊摘要</option>
         <option value="" disabled>重要日程</option>
         @foreach($cate_1 as $cate_1)
         <option value="{{ $cate_1->id }}" {{ isset($id) && $id==$cate_1->id?'selected="selected"':''}}>{{ $cate_1->title }}</option>
@@ -41,7 +41,7 @@
     	<option value="{{ $cate_7->id }}" {{ isset($id) && $id==$cate_7->id?'selected="selected"':''}}>{{ $cate_7->title }}</option>
     	@endforeach
 
-    	<option value="" disabled  >研究所新生註冊通知</option>
+    	<option value="" disabled  >研究所新生註冊摘要</option>
         <option value="" disabled>重要日程</option>
         @foreach($cate_8 as $cate_8)
         <option value="{{ $cate_8->id }}" {{ isset($id) && $id==$cate_8->id?'selected="selected"':''}}>{{ $cate_8->title }}</option>

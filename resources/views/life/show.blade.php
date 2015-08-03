@@ -15,6 +15,13 @@
 			width:100%;
 			height:100%;
 		}
+		.article{
+			width:581px;
+			height:324px;
+			overflow:scroll;
+			margin:0% auto;
+		}
+
 	</style>
 @stop
 
@@ -44,9 +51,9 @@
 
 <!--圖片-->
 
-<div id="a" style="margin-top:500px;padding-top:10%;">
+<div id="a" style="margin-top:500px;padding-top:3%;">
 	<div class="center align">
-		<div>
+		<div class="article">
 			<p>{!! $show->content !!}</p>   <!--  -->
 		</div>
 	</div>		

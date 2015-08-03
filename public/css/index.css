@@ -244,6 +244,10 @@
 	color: white;
 }
 
+#arrow2 {
+	padding-left: 5px;
+}
+
 #puzzle-container {
 	width: 90%;
 	padding-right: 0;
@@ -282,10 +286,16 @@
 	#banner {
 		display: none;
 	}
+	#r2 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	/*
 	#puzzle-container {
 		width: 100%;
 	}
 	#arrow-container1, #arrow-container2 {
 		display: none;
 	}
+	*/
 }

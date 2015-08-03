@@ -6,11 +6,9 @@
 <link type="text/css" rel="stylesheet" href="{{ asset('css/document/document.css') }}"  media="screen,projection"/>
 <style type="text/css">
 #container {
-  background-image: url('{{asset("img/document/background.png")}}');
-  background-color: rgba(224,242,228,0.37);
-  background-position: right top;
+  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-ms-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250));
+  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-webkit-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250)); 
   background-size: auto 100%;
-  background-repeat: no-repeat;
 }
 </style>
 @stop
@@ -26,7 +24,7 @@
   <div class="col l4 m5 s12">
       <ul class="collapsible" data-collapsible="expandable">
         <li class="list_1">
-          <div class="collapsible-header">學士班新生註冊通知</div>
+          <div class="collapsible-header">學士班新生註冊摘要</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/university/1">重要日程</a></li>
@@ -40,7 +38,7 @@
           </div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header">研究所新生註冊通知</div>
+          <div class="collapsible-header">研究所新生註冊摘要</div>
           <div>
             <ul>
               <li><a class="list_2" href="/document/graduate/1">重要日程</a></li>
