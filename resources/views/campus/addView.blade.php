@@ -37,7 +37,7 @@
 			@for($i=1; $i<=9; $i++)
 				<option value="sport{{$i}}">sport{{$i}}</option>
 			@endfor
-			@for($i=1; $i<=7; $i++)
+			@for($i=1; $i<=8; $i++)
 				<option value="food{{$i}}">food{{$i}}</option>
 			@endfor
 			@for($i=1; $i<=13; $i++)

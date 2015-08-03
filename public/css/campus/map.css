@@ -718,6 +718,19 @@
 	top: 66%;
 	width: 5%;
 }
+/*restaurant14*/
+#food8 {
+	position: absolute;
+	left: 17%;
+	top: 64.8%;
+	width: 2.8%;
+	z-index: 1;
+}
+#food8:hover {
+	left: 16%;
+	top: 63.8%;
+	width: 4.8%;
+}
 /*============================================================================*/
 /*international*/
 #live1 {
