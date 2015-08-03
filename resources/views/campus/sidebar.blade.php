@@ -86,7 +86,7 @@
 			</li>
 		</ul>
 		@permission('management')
-		<a class="waves-effect waves-light btn right" href="/campus/add_view">新增</a>
+		<a class="waves-effect waves-light btn blue darken-4 right" href="/campus/add_view">新增</a>
 	    @endpermission
 	</div>
 	<div id="main" class="container col s12 m12 l10">
