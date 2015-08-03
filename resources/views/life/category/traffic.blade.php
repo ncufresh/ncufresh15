@@ -15,7 +15,7 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image:url('/img/life/traffic/traffic_background.png');
+		background-image:url({{ asset('/img/life/traffic/traffic_background.png') }});
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -27,7 +27,7 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/traffic/bus.png');
+		background-image:url({{ asset('/img/life/traffic/bus.png') }});
 		top:-14%;
 		left:-4%;
 		width:35%;
@@ -43,7 +43,7 @@
 		top:-19%;
 	}
 	#b2{
-		background-image:url('/img/life/traffic/school.png');
+		background-image:url({{ asset('/img/life/traffic/school.png') }});
 		top:-15%;
 		right:1%;
 		width:59%;
@@ -59,7 +59,7 @@
 		top:-20%;
 	}
 	#b3{
-		background-image:url('/img/life/traffic/train.png');
+		background-image:url({{ asset('/img/life/traffic/train.png') }});
 		top:18%;
 		left:5%;
 		width:26%;	 
@@ -75,7 +75,7 @@
 		top:13%;
 	}
 	#b4{
-		background-image:url('/img/life/traffic/THSR.png');
+		background-image:url({{ asset('/img/life/traffic/THSR.png') }});
 		bottom:8%;
 		left:-7%;
 		width:32%;

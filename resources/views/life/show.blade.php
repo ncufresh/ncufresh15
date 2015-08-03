@@ -9,7 +9,7 @@
 			font-family:inital !importment;
 		}
 		#a{
-			background-image:url('/img/life/article.png');
+			background-image:url({{asset('/img/life/article.png')}});
 			background-size:100% auto;
 			background-repeat: no-repeat;
 			width:100%;
@@ -25,7 +25,7 @@
 @stop
 
 @section('js')
-	<script src='{{ asset('js/life/coverflow.min.js') }}'></script>
+	<script src="{{ asset('js/life/coverflow.min.js') }}"></script>
 	<script>
 		$(function() {
 			// and kick off

@@ -26,7 +26,7 @@
 		padding-top:80%;
 	}
 	#b1{
-		background-image:url('img/life/left_up.png');
+		background-image:url({{ asset('img/life/left_up.png') }});
 		top:-5%;
 		left:-4%;
 		width:30%;
@@ -42,7 +42,7 @@
 		top:-10%;
 	}
 	#b2{
-		background-image:url('img/life/right_up.png');
+		background-image:url({{ asset('img/life/right_up.png') }});
 		right:-4%;
 		top:-5%;
 		width:38%;
@@ -58,7 +58,7 @@
 		top:-10%;
 	}
 	#b3{
-		background-image:url('img/life/center.png');
+		background-image:url({{ asset('img/life/center.png') }});
 		top:23%;
 		right:30%; 
 		width:36%;
@@ -74,7 +74,7 @@
 		top:19%;
 	}
 	#b4{
-		background-image:url('img/life/left_down.png');
+		background-image:url({{ asset('img/life/left_down.png') }});
 		bottom:-6%;
 		left:-4%;
 		width:30%;
@@ -90,7 +90,7 @@
 		bottom:-11%;
 	}
 	#b5{
-		background-image:url('img/life/right_down.png');
+		background-image:url({{ asset('img/life/right_down.png') }});
 		bottom:-12%;
 		right:-3%; 
 		width:34%;
