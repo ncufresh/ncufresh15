@@ -17,15 +17,15 @@
 
 #category-menu .collection a {
     color: #000;
-    background-color: #BEF0FF;
-    border: 1px solid #BEF0FF;
+    background-color: #fff;
+    border: 1px solid #fff;
     font-size: 1.1em;
 }
 
 #category-menu .collection a.active {
     color: #fff;
-    background-color: #2196F3;
-    border: 1px solid #2196F3;
+    background-color: #0D47A1;
+    border: 1px solid #0D47A1;
     position: relative;
 }
 
@@ -36,7 +36,7 @@
   left: 100%;
   margin-top: -22.5px;
   width: 0; height: 0;
-  border-left: 16px solid #2196F3;
+  border-left: 16px solid #0D47A1;
   border-top: 22.5px solid transparent;
   border-bottom: 22.5px solid transparent;
 }
@@ -80,9 +80,6 @@ td.expand {
     background-color: #4AA7F2;
 }
 
-.container {
-    background-color: #fff !important;
-}
 @media only screen and (max-width: 600px) {
     .ignore {
         display: none;
@@ -154,7 +151,7 @@ td.expand {
             </table>
         </div>
         @endif
-        <div>
+        <div class="card-panel">
             @if ($top_answers != null)
             <h4>全部Q&amp;A</h4>
             @endif

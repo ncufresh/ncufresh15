@@ -140,7 +140,6 @@ class LifeController extends Controller
         }
         $life = Life::findOrFail($id);
         $life->category = $request->category;
-        $life->video = $request->video;
         $life->content = $this->sanitize($request->content);
         $life->save();
         //$life->update($request->all()); /*將新輸入的資料更新到資料庫*/
@@ -174,7 +173,7 @@ class LifeController extends Controller
             'traffic' => '行'
         ];
         SitemapHelper::push($type[$category], 'life/category/'.$category); /*$category儲存food，$type[food]會對應食*/
-        return view('life.category.'.$category);                    
+        return view('life.category.'.$category);                 
     }
     public function add_pictures(Request $request,$id)
     {

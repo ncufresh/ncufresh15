@@ -1,13 +1,6 @@
 #slidebar {
-	float: left;
-	width: 15%;
-	margin: 0%;
 	position: relative;
-}
-
-#main {
-	margin-left: 17.5%;
-	width: 83%;
+	padding-right: 0%;
 }
 
 .collapsible {
@@ -17,15 +10,17 @@
 .category {
 	border: 1px;
 	border-style: solid;
-	background-color: #BFE0FF;
-	border-color: #BFE0FF;
+	background-color: #FFFFFF;
+	border-color: #FFFFFF;
 	color: black;
+	font-weight: bold;
 }
 
 .here {
-	background-color: #2196F3;
+	background-color: #0D47A1;
 	border: 0px;
 	color: white;
+	font-weight: bold;
 }
 
 .here::after {
@@ -36,7 +31,7 @@
 	height: 0px;
 	border-style: solid;
 	border-width: 22.5px 0px 22.5px 13px;
-	border-color: transparent transparent transparent #2196F3;
+	border-color: transparent transparent transparent #0D47A1;
 }
 
 .collection {
@@ -45,7 +40,7 @@
 	border-left: 0px;
 	border-right: 0px;
 }
-
+/*========================================================================*/
 #view_id {
 	float: left;
 	width: 20%;
@@ -75,6 +70,12 @@
 #campus_title {
 	font-size: 180%;
 	margin-bottom: 3%;
+	font-weight: bold;
+}
+/*========================================================================*/
+#show {
+	width: 95%;
+	margin: 0% 2.5%;
 }
 
 #pictures {
@@ -86,13 +87,33 @@
 	margin-top: 1%;
 }
 
-#map, #small_map {
+#pizzle {
 	position: absolute;
-	right: 0.5%;
-	top: 2.2%;
-	width: 8%;
+	right: 1%;
+	top: 3%;
+	width: 7%;
+	transition:all 0.35s;
 }
 
-#btn-edit {
+#move:hover #pizzle {
+	right: 1.5%;
+	top: 3.5%;
+	width: 6%;
+}
+
+#map {
+	position: absolute;
+	right: 5%;
+	top: 10%;
+	width: 32%;
+	visibility: hidden;
+}
+
+#btn_edit {
 	right: 1%;
+}
+
+#title_text {
+	font-size: 180%;
+	font-weight: bold;
 }

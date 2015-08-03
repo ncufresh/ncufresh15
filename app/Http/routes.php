@@ -17,13 +17,18 @@
 Route::get('/', 'HomepageController@index');
 
 //Admin of Homepage
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin/{category?}', 'AdminController@index');
 
 //Announcement on Homepage
 Route::get('/ann/{id?}', 'AnnouncementController@get');
 Route::post('/ann/new', 'AnnouncementController@store');
 Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
 Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+//Announcement for QA on Homepage
+Route::post('/annqa/new', 'AnnQAController@store');
+Route::get('/annqa/delete/{id}', 'AnnQAController@destroy');
+Route::post('/annqa/update/{id}', 'AnnQAController@update');
 
 // Calender on Homepage
 Route::get('/cal/get', 'CalenderController@get');
@@ -44,6 +49,12 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
+// bottle
+Route::get('bottle/new', 'BottleController@getNewBottle');
+Route::get('bottle/open/{token}', 'BottleController@open');
+Route::post('bottle/verify/{token}', 'BottleController@verify');
+Route::post('bottle/write/{token}', 'BottleController@write');
+
 // knowledge
 Route::get('knowledge/{id}', 'KnowledgeController@show');
 
@@ -63,10 +74,12 @@ Route::get('file/{id}', 'FileController@show');
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
-        Route::get ('user/edit/{id}'  , 'UserController@edit');
-        Route::post('user/update/{id}'  , 'UserController@update');
         Route::get ('user/delete/{id}', 'UserController@destroy');
     });
+
+	// Note: Permission must be authorize in controller
+	Route::get ('user/edit/{id}'  , 'UserController@edit');
+	Route::post('user/update/{id}'  , 'UserController@update');
 
     // Home
     Route::get('home', function() {
@@ -78,6 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('qa/create'      , 'QaController@store_question');
     Route::group(['middleware' => 'permission:management'], function() {
         Route::get ('qa/questions'   , 'QaController@index_questions');
+        Route::get ('qa/bottle/{id}' , 'QaController@create_bottle');
         Route::get ('qa/answer'      , 'QaController@create_answer');
         Route::post('qa/answer'      , 'QaController@store_answer');
         Route::get ('qa/edit/{id}'   , 'QaController@edit');
@@ -93,6 +107,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+        
+        Route::post('bottle/pm/{id}', 'BottleController@private_message');
     });
 
 });
@@ -140,14 +156,18 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 //******************************************************************************************************
 Route::get('video2','Video\GuestbookController@index2');
 Route::get('video', 'Video\GuestbookController@index');
-Route::get('video2/{id}','Video\GuestbookController@show');
-Route::post('video2','Video\GuestbookController@add');
-Route::get('video/test', 'Video\GuestbookController@add');
+Route::post('video2/add','Video\GuestbookController@add');
+Route::post('video2/delete','Video\GuestbookController@delete');
+Route::get('/ajax/comment','Video\GuestbookController@load');
 //******************************************************************************************************
 
 // Game
 //******************************************************************************************************
-Route::get('game', 'GameController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('game', 'GameController@index');
+    Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
+    Route::get('GetTheSecretTreasure', 'KnowledgeController@getTreasure');
+});
 //******************************************************************************************************
 
 // life

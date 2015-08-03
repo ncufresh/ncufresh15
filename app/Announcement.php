@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model{
 	protected $table = 'announcements';
 
-	protected $fillable = ['title', 'content','url','category'];
+	protected $fillable = ['title', 'content','show_at'];
 }

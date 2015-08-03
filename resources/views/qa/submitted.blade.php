@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'QAQ')
+@section('title', 'Q&amp;A')
 
 @section('css')
 @stop
