@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
         $admin = User::create([
             'name' => '神',
             'email' => 'god@god.com',
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('j!zzeverywhere'),
         ]);
 
 		Decoration::create([

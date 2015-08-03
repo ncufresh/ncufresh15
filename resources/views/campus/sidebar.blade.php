@@ -85,7 +85,9 @@
 				@endforeach
 			</li>
 		</ul>
-		<a class="waves-effect waves-light btn blue darken-4" href="{{ url('campus/add_view') }}">新增</a>
+		@permission('management')
+		<a class="waves-effect waves-light btn right" href="/campus/add_view">新增</a>
+	    @endpermission
 	</div>
 	<div id="main" class="container col s12 m12 l10">
 		@yield('main')

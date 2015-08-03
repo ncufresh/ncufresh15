@@ -12,7 +12,7 @@
 
 @section('content')
 <div id="login-form" class="row">
-    <form class="col s12" action="/auth/login" method="post">
+    <form class="col s12" action="{{ url('/auth/login')}}" method="post">
         {!! csrf_field() !!}
         @if (count($errors) > 0)
             <div id="error-msg" class="card-panel red">
