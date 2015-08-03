@@ -135,16 +135,16 @@
 $(function() {
     $('.modal-trigger').leanModal();
 	$('ul.tabs').tabs();
-});
-$("#chest-trigger").click(function(){
-	$("#chest-wrapper").show();
-});
-$("#chest-wrapper").click(function(e){
-	e.stopImmediatePropagation();
-	e.preventDefault();
-	if (e.target.id === "chest-wrapper"){
-		$(this).hide();
-	}
+    $("#treasure").click(function(){
+        $("#chest-wrapper").show();
+    });
+    $("#chest-wrapper").click(function(e){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        if (e.target.id === "chest-wrapper"){
+            $(this).hide();
+        }
+    });
 });
 </script>
 @if ($isHome)
@@ -154,7 +154,7 @@ $("#chest-wrapper").click(function(e){
 
 @section('content')
 <div id="bottle"   class="item"></div>
-<div id="treasure" class="item"></div>
+<div id="treasure" class="item tooltipped" data-position="top" data-delay="50" data-tooltip="Open"></div>
 <a id="information-btn" class="modal-trigger" href="#modal-information"></a>
 <!-- Modal Structure -->
 <div id="question-modal" class="modal modal-fixed-footer">
@@ -209,7 +209,6 @@ $("#chest-wrapper").click(function(e){
         </a>
     </div>
 </div>
-<a id="chest-trigger" class="waves-effect waves-light btn ">Chest</a>
 <div id="chest-wrapper">
 	<div id="chest-modal">
 		<div class="row">
