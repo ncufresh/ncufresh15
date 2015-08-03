@@ -4,8 +4,8 @@
 <div id="show" class="col s12">
 	<div id="pictures">
 		<div id="move">
-			<img id="pizzle" src="{{ asset('img/map/pizzle.png') }}">
-			<img id="map" src="{{ asset('img/map/'.$view->region.'.png') }}">
+			<img id="pizzle" src="{{ asset('img/map/puzzle.png') }}">
+			<img id="map" src="{{ asset('img/map/'.$view->region.'.jpg') }}">
 		</div>
 		<img id="view" src="{{ asset('uploads/campus/'.$view->picName) }}">
 	</div>
