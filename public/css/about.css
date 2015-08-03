@@ -1,8 +1,8 @@
 #top {
 	position: relative;
-	width: 80%;
-/*	background: url("http://twimg.edgesuite.net/images/ReNews/20141029/640_d04921ee79dc4323dbdec443ad8ff46a.jpg");
-*/	background-repeat: no-repeat;
+	width: 90%;
+	background: url("/img/about/all.jpg");
+	background-repeat: no-repeat;
 	margin: 0 auto;
 	background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
@@ -13,13 +13,12 @@
 #top:before {
 	content: "";
 	display: block;
-	padding-top: 50%;
+	padding-top: 70%;
 }
 
 #bottom {
 	position: relative;
 	width: 70%;
-	background: blue;
 	margin: 0 auto;
 }
 
@@ -35,16 +34,7 @@
 	left: 0;
 	top: 0;
 	opacity: 0;
-/*	background: url("http://bostonese.com/wp-content/uploads/2015/06/2015_XiaDa_Graduation1-e1435549106405.jpg");
-*/	background-repeat: no-repeat;
-	transition: opacity 2s;
-	-moz-transition: opacity 2s;
-	-webkit-transition: opacity 2s;
-	-o-transition: opacity 2s;
-	background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
+	background-image: url("/img/about/ceo-1.jpg");
 }
 
 #plan {
@@ -54,16 +44,7 @@
 	right: 0;
 	top: 0;
 	opacity: 0;
-/*	background: url("http://www.fhm.com.tw/fhm_upload/img_1401269619.jpg");
-*/	background-repeat: no-repeat;
-	transition: opacity 2s;
-	-moz-transition: opacity 2s;
-	-webkit-transition: opacity 2s;
-	-o-transition: opacity 2s;
-	background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
+	background-image: url("/img/about/plan-1.jpg");
 }
 
 #hack {
@@ -73,16 +54,7 @@
 	left: 0;
 	bottom: 0;
 	opacity: 0;
-/*	background: url("http://mag.nownews.com/img/69/i68812-22.jpg");
-*/	background-repeat: no-repeat;
-	transition: opacity 2s;
-	-moz-transition: opacity 2s;
-	-webkit-transition: opacity 2s;
-	-o-transition: opacity 2s;
-	background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
+	background-image: url("/img/about/hack-1.jpg");
 }
 
 #art {
@@ -92,16 +64,7 @@
 	left:33.33%;
 	bottom: 0;
 	opacity: 0;
-/*	background: url("http://setmoney.blob.core.windows.net/newsimages/2014/07/31/118683.jpg");
-*/	background-repeat: no-repeat;
-	transition: opacity 2s;
-	-moz-transition: opacity 2s;
-	-webkit-transition: opacity 2s;
-	-o-transition: opacity 2s;
-	background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
+	background-image: url("/img/about/art-1.jpg");
 }
 
 #video {
@@ -111,20 +74,31 @@
 	right: 0;
 	bottom: 0;
 	opacity: 0;
-/*	background: url("http://cdn.kingstone.com.tw/mag/images/product/20717/2071710458625/2071710458625p-02.jpg");
-*/	background-repeat: no-repeat;
-	transition: opacity 2s;
-	-moz-transition: opacity 2s;
-	-webkit-transition: opacity 2s;
-	-o-transition: opacity 2s;
+	background-image: url("/img/about/video-1.jpg");
+}
+
+#ceo:hover, #plan:hover, #hack:hover, #art:hover, #video:hover {
+	opacity: 1;
+}
+
+.bt {
+	transition: opacity 0.7s;
+	-moz-transition: opacity 0.7s;
+	-webkit-transition: opacity 0.7s;
+	-o-transition: opacity 0.7s;
+	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
 	-webkit-background-size: 100% 100%;
 	-o-background-size: 100% 100%;
 }
 
-#ceo:hover, #plan:hover, #hack:hover, #art:hover, #video:hover {
-	opacity: 1;
+.border {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .close {
