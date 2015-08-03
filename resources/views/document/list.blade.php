@@ -43,10 +43,12 @@
 	@endif
 @endif
 <!--目錄-->
-@foreach($all as $all)
+<div class="list_menu">
 <ul>
-	<li><a href="/document/{{$all->page_id}}/{{$all->page_id_2}}/{{$all->id}}">{{ $all->title }}</a></li>
+	@foreach($all as $all)
+	<li class="list_3"><a href="/document/{{$all->page_id}}/{{$all->page_id_2}}/{{$all->id}}">{{ $all->title }}</a></li>
+	@endforeach
 </ul>
-@endforeach
 
+</div>
 @stop
