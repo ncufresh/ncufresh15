@@ -3,7 +3,7 @@ var select = 1; // four choices
 var questionON = 0;
 //-1:lock, 0:close, 1:in, 2:result 
 
-var threetimes = 1;
+var threetimes = 0;
 
 
 var qadata;
@@ -206,7 +206,6 @@ var question = function () {
 
 		}
 	}
-	
 	window.onkeydown = function(e) {
 		// enter
 		if(e.keyCode == 13 && canask && questionON==0 ){
@@ -223,22 +222,26 @@ var question = function () {
 			}
 		}
 		else if(e.keyCode == 13 && questionON==1){
-			if (select!=qadata.answer || threetimes==3) {
+			if (select!=qadata.answer) {
 				questionON=2;
 			} else if(select==qadata.answer){
 				threetimes+=1;
-				getquestion();
-			};
+				if (threetimes==3) {
+					questionON=2;
+				} else{
+					getquestion();
+				}
+			}
 		}
 		else if(e.keyCode == 13 && questionON==2){
 			hero.canmove=true;
 			questionON=0;
-			threetimes=1;
+			threetimes=0;
 		}
 		else if(e.keyCode == 13 && questionON==-1){
 			hero.canmove=true;
 			questionON=0;
-			threetimes=1;
+			threetimes=0;
 		}
 		//
 		if (e.keyCode == 38 && questionON==1) { // up choice
