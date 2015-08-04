@@ -164,14 +164,14 @@ $(function() {
         e.stopImmediatePropagation();
         e.preventDefault();
         if (e.target.id === "chest-wrapper"){
-            $(this).hide();
+            $(this).fadeOut();
         }
     });
     $('#food1').click(function() {
-        $('#chest-wrapper').hide();
+        $('#chest-wrapper').fadeOut();
     });
     $('#food2').click(function() {
-        $('#chest-wrapper').hide();
+        $('#chest-wrapper').fadeOut();
     });
 });
 </script>
