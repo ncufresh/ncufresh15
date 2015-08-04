@@ -35,7 +35,7 @@
 	margin-bottom: 3%;
 	width: 75%;
     padding: 0 5%;
-	background-color: rgba(245, 245, 245, 0.7);
+	background-color: rgba(245, 245, 245, 0.9);
 }
 .nav-margin {
 	margin-top: 10px;
@@ -91,7 +91,7 @@
 }
 
 nav {
-	background-color: #2196f3 !important;
+	background-color: #5D5555 !important;
 }
 .brand-logo {
 	margin-left: 10px;
