@@ -8,14 +8,6 @@
   margin-right: auto;
   width: 50%;
 }
-#doom {
-    opacity: 0.7;
-    filter: alpha(opacity=70); /* For IE8 and earlier */
-}
-#doom:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
-}
 .pic{
   border-radius:10%;
   border: 2px white;
@@ -100,13 +92,18 @@ $(document).ready(function(){
 @section('content')
 <div class="row">
   <div class="upstair" style="height:500px">
-    <img id="Left" src="{{ asset('img/video/video1/LeftClose.png') }}"></img>
-    <img id="Right" src="{{ asset('img/video/video1/RightClose.png') }}"></img>
-
+    <a href="/video2">
+      <img id="Left" src="{{ asset('img/video/video1/LeftClose.png') }}"></img>
+    </a>
+    <a href="/video2">
+      <img id="Right" src="{{ asset('img/video/video1/RightClose.png') }}"></img>
+    </a>
   </div>
 
   <div class="downstair" style="height:400px">
-    <img id="Door" src="{{ asset('img/video/video1/DoorClose.png') }}"></img>
+    <a href="/video2">
+      <img id="Door" src="{{ asset('img/video/video1/DoorClose.png') }}"></img>
+    </a>
   </div>
 </div>
 

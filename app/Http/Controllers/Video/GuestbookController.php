@@ -15,14 +15,14 @@ class GuestbookController extends Controller
     }
     public function index2()
     {
-        $tryconnect = Guestbook::orderBy('id','desc')->paginate(8);
+        $tryconnect = Guestbook::orderBy('id','desc')->paginate(7);
 
         return view('video.video2',compact('tryconnect'));
     }
 
     public function load()
     {
-        $tryconnect = Guestbook::paginate(8);
+        $tryconnect = Guestbook::paginate(7);
 
         return view('video.AllComments')->with('tryconnect',$tryconnect)->render();
 
@@ -30,7 +30,7 @@ class GuestbookController extends Controller
 
     public function take(Request $request){
 
-        $tryconnect = $request->paginate(8);            
+        $tryconnect = $request->paginate(7);            
         return response()->json($tryconnect);
     }
 
