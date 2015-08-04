@@ -14,6 +14,9 @@
 			overflow:scroll;
 			margin:4% auto;
 		}
+		strong{
+			font-weight: bold;
+		}
 	</style>
 @stop
 
@@ -51,16 +54,14 @@
 <!--圖片-->
 
 <div class="row" style="margin-top:250px;">
-	<div class=" center align">
-		<div class="card-panel hoverable">
-		<div>
-			<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
-			<button class="waves-effect waves-light btn blue" id="next">下一張</button>
-		</div>
-		<div class="article">
-			<p>{!! $show->content !!}</p>   
-		</div>	
-		</div>
-	</div>		
+	<div class="card-panel hoverable">
+	<div>
+		<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
+		<button class="waves-effect waves-light btn blue" id="next">下一張</button>
+	</div>
+	<div class="article">
+		<p>{!! $show->content !!}</p>   
+	</div>	
+	</div>	
 </div>
 @stop

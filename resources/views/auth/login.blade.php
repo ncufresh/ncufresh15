@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'login')
+@section('title', '登入')
 
 @section('css')
 <link type="text/css" rel="stylesheet" href="{{ asset('css/login.css') }}"  media="screen,projection"/>

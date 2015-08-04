@@ -16,25 +16,11 @@
 // index
 Route::get('/', 'HomepageController@index');
 
-//Admin of Homepage
-Route::get('/admin/{category?}', 'AdminController@index');
-
 //Announcement on Homepage
 Route::get('/ann/{id?}', 'AnnouncementController@get');
-Route::post('/ann/new', 'AnnouncementController@store');
-Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
-Route::post('/ann/update/{id}', 'AnnouncementController@update');
-
-//Announcement for QA on Homepage
-Route::post('/annqa/new', 'AnnQAController@store');
-Route::get('/annqa/delete/{id}', 'AnnQAController@destroy');
-Route::post('/annqa/update/{id}', 'AnnQAController@update');
 
 // Calender on Homepage
 Route::get('/cal/get', 'CalenderController@get');
-Route::post('/cal/new', 'CalenderController@store');
-Route::get('/cal/delete/{id}', 'CalenderController@destroy');
-Route::post('/cal/update/{id}', 'CalenderController@update');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -46,7 +32,6 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // show user
-Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
 // bottle
@@ -74,6 +59,7 @@ Route::get('file/{id}', 'FileController@show');
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
+		Route::get('user'     , 'UserController@index');
         Route::get ('user/delete/{id}', 'UserController@destroy');
     });
 
@@ -128,15 +114,33 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
         //------------------------------------------------------------------------------------------------------
 
-        
+
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
+
+		//Announcement
+		//-----------------------------------------------------------------------------------------------------
+		Route::post('/ann/new', 'AnnouncementController@store');
+		Route::get('/ann/delete/{id}', 'AnnouncementController@destroy');
+		Route::post('/ann/update/{id}', 'AnnouncementController@update');
+
+		//Announcement for QA on Homepage
+		//-----------------------------------------------------------------------------------------------------
+		Route::post('/annqa/new', 'AnnQAController@store');
+		Route::get('/annqa/delete/{id}', 'AnnQAController@destroy');
+		Route::post('/annqa/update/{id}', 'AnnQAController@update');
+
+		//Calender
+		//----------------------------------------------------------------------------------------------------
+		Route::post('/cal/new', 'CalenderController@store');
+		Route::get('/cal/delete/{id}', 'CalenderController@destroy');
+		Route::post('/cal/update/{id}', 'CalenderController@update');
+
+		//Admin of Homepage
+		Route::get('/admin/{category?}', 'AdminController@index');
     });
 
 });
 //******************************************************************************************************
-
-
-
 
 //Department and club
 //******************************************************************************************************
