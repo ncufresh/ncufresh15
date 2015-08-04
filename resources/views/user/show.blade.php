@@ -46,7 +46,6 @@
     bottom: 20px;
     width: 200px;
     height: 200px;
-    cursor: pointer;
 }
 
 #bottle {
@@ -276,10 +275,10 @@ $(function() {
             <div id="dec-tab" class="col s12">
                 <div class="row">
                     <div id="food1" class="col s4 offset-s1 dec-item">
-                        <h5 class="center-align">成長飼料</h5>
+                        <h5 class="center-align">成長飼料*{{$decoration->growth_food}}</h5>
                     </div>
                     <div id="food2" class="col s4 offset-s2 dec-item">
-                        <h5 class="center-align">進化飼料</h5>
+                        <h5 class="center-align">進化飼料*{{$decoration->level_food}}</h5>
                     </div>
                 </div>
             </div>
