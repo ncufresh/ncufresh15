@@ -50,7 +50,7 @@
 		<div class="slider">
 			<ul class="slides">
 				<li>
-					<a href="http://www.google.com"><img src="{{ asset('img/pine.jpg') }}" ></a>
+					<a target="_blank" href="http://radio.pinewave.tw"><img src="{{ asset('img/pine.jpg') }}" ></a>
 					<div class="caption right-align">
 					</div>
 				</li>
