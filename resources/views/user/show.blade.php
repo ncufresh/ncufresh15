@@ -20,8 +20,8 @@
     background-image: url('/img/home/sg1.png');
     left: 20%;
     bottom: 50px;
-    width: 292px;
-    height: 300px;
+    width: 250px;
+    height: 257px;
 }
 
 #sg2 {
@@ -35,9 +35,9 @@
 #shell {
     background-image: url('/img/home/shell.png');
     left: 40%;
-    bottom: 90px;
-    width: 381px;
-    height: 300px;
+    bottom: 30px;
+    width: 250px;
+    height: 197px;
 }
 
 #treasure {
@@ -192,9 +192,11 @@ $(function() {
 @if ($decoration->shell)
 <div id="shell" class="item"></div>
 @endif
+@if ($decoration->chest)
+<div id="treasure" class="item"></div>
+@endif
 
 <div id="bottle"   class="item"></div>
-<div id="treasure" class="item tooltipped" data-position="top" data-delay="50" data-tooltip="開啟寶箱"></div>
 <a id="information-btn" class="modal-trigger center-align" href="#modal-information">
     <i class="material-icons" style="color: #fff;">keyboard_arrow_up</i>
 </a>
