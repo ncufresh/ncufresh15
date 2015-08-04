@@ -25,11 +25,12 @@ class GameController extends Controller
     }
     public function setRightAnswer(Request $request)
     {
-    	$value = $request->session()->get('CorrectTimes');
+    	//$value = $request->session()->get('CorrectTimes');
+        $value = session('CorrectTimes');
         // $value = (int)($value);
-        // $value = $value + 1;
         $value+=1;
-    	$request->session()->put('CorrectTimes', $value);
+    	//$request->session()->put('CorrectTimes', $value);
+        session(['CorrectTimes' => $value]);
     	$booo = $request->session()->get('InQuestion');
 
     	if ($booo==true && $value==3) {
