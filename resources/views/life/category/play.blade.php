@@ -15,7 +15,7 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image: url('/img/life/play/play_background.png');
+		background-image: url({{ asset('/img/life/play/play_background.png') }});
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -27,7 +27,7 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/play/movie.png');
+		background-image:url({{ asset('/img/life/play/movie.png') }});
 		top:11%;
 		left:2%;
 		width:30%;
@@ -43,7 +43,7 @@
 		top:6%;
 	}
 	#b2{
-		background-image:url('/img/life/play/night.png');
+		background-image:url({{ asset('/img/life/play/night.png') }});
 		top:2%;
 		right:38%;
 		width:27%; 
@@ -59,7 +59,7 @@
 		top:-3%;
 	}
 	#b3{
-		background-image:url('/img/life/play/stone.png');
+		background-image:url({{ asset('/img/life/play/stone.png') }});
 		top:18%;
 		right:8%;
 		width:30%;
@@ -75,7 +75,7 @@
 		top:13%;
 	}
 	#b4{
-		background-image:url('/img/life/play/home.png');
+		background-image:url({{ asset('/img/life/play/home.png') }});
 		top:40%;
 		left:2%;
 		width:30%; 
@@ -91,7 +91,7 @@
 		top:35%;
 	}
 	#b5{
-		background-image:url('/img/life/play/KTV.png');
+		background-image:url({{ asset('/img/life/play/KTV.png') }});
 		bottom:25%;
 		right:4%;
 		width:26%;
@@ -107,7 +107,7 @@
 		bottom:20%;
 	}
 	#b6{
-		background-image:url('/img/life/play/float.png');
+		background-image:url({{ asset('/img/life/play/float.png') }});
 		bottom:8%;
 		left:14%;
 		width:25%;
@@ -123,7 +123,7 @@
 		bottom:3%;
 	}
 	#b7{
-		background-image:url('/img/life/play/NOVA.png');
+		background-image:url({{ asset('/img/life/play/NOVA.png') }});
 		bottom:6%;
 		right:20%;
 		width:34%;
@@ -179,7 +179,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('img/life/play/play_word.png') }}" id="word">
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/eZFKf0C7UZ4" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/zUWBdoewacY" frameborder="0" allowfullscreen></iframe>
 			</div>	
 		</div>
 		<body>

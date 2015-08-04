@@ -31,7 +31,8 @@ $(function() {
                         loading_question = false;
                         $('#question-options').html('');
                         $('#question-head').html('恭喜');
-                        $('#question-body').html('你已經打開了瓶子 Bitch!');
+                        $('#question-body').html('你已經打開了瓶子!');
+                        $('#bottle').css({'background-image': 'url(/img/home/bottle2.png)'});
                         if (modal_opened == false) {
                             $('#write-modal').openModal();
                         }
@@ -39,7 +40,7 @@ $(function() {
                     } else if (data.msg == 'need answer') {
                         if (modal_opened == false) {
                             modal_opened = true;
-                            $('#question-modal').openModal();
+                            $('#question-modal').openModal({complete: function() { loading_question = false;modal_opened=false; }});
                         }
                         $('#question-body').html(data.knowledge.question);
                         $('#question-options').html('');
@@ -105,7 +106,8 @@ $(function() {
                                 .html('<i class="large material-icons">done</i><h4>Good job</h4>')
                         } else {
                             $('#question-options')
-                                .html('<i class="large material-icons">thumb_down</i><h4>UCCU</h4>')
+                                .html('<i class="large material-icons">thumb_down</i><h4>答錯囉!</h4>')
+                            console.log(data);
                         }
                         $('#choose-btn').hide();
                         $('#question-options')

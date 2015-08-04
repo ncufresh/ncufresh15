@@ -1,3 +1,4 @@
+/*
 @font-face {
 	font-family: 'Material Icons';
 	font-style: normal;
@@ -24,7 +25,7 @@
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: 'liga';
-}
+}*/
 #content {
 	padding: 30px 0;
 }
@@ -34,7 +35,7 @@
 	margin-bottom: 3%;
 	width: 75%;
     padding: 0 5%;
-	background-color: rgba(245, 245, 245, 0.7);
+	background-color: rgba(245, 245, 245, 0.9);
 }
 .nav-margin {
 	margin-top: 10px;
@@ -90,7 +91,7 @@
 }
 
 nav {
-	background-color: #2196f3 !important;
+	background-color: #5D5555 !important;
 }
 .brand-logo {
 	margin-left: 10px;
@@ -126,7 +127,6 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-    background-image: url('/img/department/background1.jpg'), url('/img/department/backgrounddown.png');
     background-position: left top, left top;
     background-size: 100% auto;
     background-repeat: no-repeat, repeat;

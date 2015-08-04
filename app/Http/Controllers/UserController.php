@@ -10,6 +10,9 @@ use Auth;
 use App\Helpers\SitemapHelper;
 use App\Bottle;
 use App\User;
+use App\Creature;
+use App\Decoration;
+use App\Background;
 use Bican\Roles\Models\Role;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -66,11 +69,17 @@ class UserController extends Controller
             ->where('sent', true)
             ->orderBy('updated_at', 'desc')
             ->get();
+        $background = Background::where('user_id', $id)->first();
+        $decoration = Decoration::where('user_id', $id)->first();
+        $creature = Creature::where('user_id', $id)->first();
 		return view('user.show', [
 			'user' => $user,
             'nobreadcrumb' => true,
 			'isHome' => (Auth::check() && $id == Auth::user()->id),
             'bottles' => $bottles,
+            'background' => $background,
+            'decoration' => $decoration,
+            'creature' => $creature,
         ]);
     }
 

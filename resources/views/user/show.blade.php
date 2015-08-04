@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'YOLO')
+@section('title', '個人專區')
 @section('css')
 <style>
 .menu-btn {
@@ -16,9 +16,33 @@
     position: fixed;
 }
 
+#sg1 {
+    background-image: url('/img/home/sg1.png');
+    left: 20%;
+    bottom: 50px;
+    width: 250px;
+    height: 257px;
+}
+
+#sg2 {
+    background-image: url('/img/home/sg2.png');
+    right: 20px;
+    bottom: 100px;
+    width: 238px;
+    height: 300px;
+}
+
+#shell {
+    background-image: url('/img/home/shell.png');
+    left: 40%;
+    bottom: 30px;
+    width: 250px;
+    height: 197px;
+}
+
 #treasure {
     background-image: url('/img/home/treasure.png');
-    right: 20px;
+    right: 15%;
     bottom: 20px;
     width: 200px;
     height: 200px;
@@ -90,10 +114,10 @@
 .bg-padding {
 	padding: 15px;
 	height: 100%;
-	max-width: 500px;
 }
 
 .bg-item {
+    background-size: 100% 100%;
 	background-color: rgba(0,0,0,0.5);
 	height: 100%;
 }
@@ -123,8 +147,85 @@
     background-image: url('/img/home/food1.png');
 }
 
+.food1 {
+  cursor: url('/img/home/food1.gif'), auto;
+}
+
 #food2 {
     background-image: url('/img/home/food2.png');
+}
+
+.food2 {
+  cursor: url('/img/home/food2.gif'), auto;
+}
+
+#bg-alt {
+    background-image: 
+    @if ($background->bg1_1)
+    url('/img/home/bg/alt_1.png'),
+    @endif
+    @if ($background->bg1_2)
+    url('/img/home/bg/alt_2.png'),
+    @endif
+    @if ($background->bg1_3)
+    url('/img/home/bg/alt_3.png'),
+    @endif
+    @if ($background->bg1_4)
+    url('/img/home/bg/alt_4.png'),
+    @endif
+    url('/img/home/bg/alt_back.png')
+    ;
+}
+#bg-f {
+    background-image: 
+    @if ($background->bg2_1)
+    url('/img/home/bg/f_1.png'),
+    @endif
+    @if ($background->bg2_2)
+    url('/img/home/bg/f_2.png'),
+    @endif
+    @if ($background->bg2_3)
+    url('/img/home/bg/f_3.png'),
+    @endif
+    @if ($background->bg2_4)
+    url('/img/home/bg/f_4.png'),
+    @endif
+    url('/img/home/bg/f_back.png')
+    ;
+}
+#bg-g14 {
+    background-image: 
+    @if ($background->bg3_1)
+    url('/img/home/bg/g14_1.png'),
+    @endif
+    @if ($background->bg3_2)
+    url('/img/home/bg/g14_2.png'),
+    @endif
+    @if ($background->bg3_3)
+    url('/img/home/bg/g14_3.png'),
+    @endif
+    @if ($background->bg3_4)
+    url('/img/home/bg/g14_4.png'),
+    @endif
+    url('/img/home/bg/g14_back.png')
+    ;
+}
+#bg-sea {
+    background-image: 
+    @if ($background->bg4_1)
+    url('/img/home/bg/sea_1.png'),
+    @endif
+    @if ($background->bg4_2)
+    url('/img/home/bg/sea_2.png'),
+    @endif
+    @if ($background->bg4_3)
+    url('/img/home/bg/sea_3.png'),
+    @endif
+    @if ($background->bg4_4)
+    url('/img/home/bg/sea_4.png'),
+    @endif
+    url('/img/home/bg/sea_back.png')
+    ;
 }
 </style>
 @stop
@@ -134,16 +235,32 @@
 $(function() {
     $('.modal-trigger').leanModal();
 	$('ul.tabs').tabs();
-});
-$("#chest-trigger").click(function(){
-	$("#chest-wrapper").show();
-});
-$("#chest-wrapper").click(function(e){
-	e.stopImmediatePropagation();
-	e.preventDefault();
-	if (e.target.id === "chest-wrapper"){
-		$(this).hide();
-	}
+    $("#treasure").click(function(){
+        $("#chest-wrapper").show();
+    });
+    $("#chest-wrapper").click(function(e){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        if (e.target.id === "chest-wrapper"){
+            $(this).fadeOut();
+        }
+    });
+
+    $('#wrapper').click(function() {
+        $('body').removeClass('food1');
+        $('body').removeClass('food2');
+    });
+    $('#food1').click(function() {
+        $('body').removeClass('food2');
+        $('body').addClass('food1');
+        $('#chest-wrapper').hide();
+    });
+    $('#food2').click(function() {
+        $('body').removeClass('food1');
+        $('body').addClass('food2');
+        $('#chest-wrapper').hide();
+    });
+
 });
 </script>
 @if ($isHome)
@@ -152,9 +269,24 @@ $("#chest-wrapper").click(function(e){
 @stop
 
 @section('content')
-<div id="bottle"   class="item"></div>
+<!-- decorations -->
+@if ($decoration->sg1)
+<div id="sg1" class="item"></div>
+@endif
+@if ($decoration->sg2)
+<div id="sg2" class="item"></div>
+@endif
+@if ($decoration->shell)
+<div id="shell" class="item"></div>
+@endif
+@if ($decoration->chest)
 <div id="treasure" class="item"></div>
-<a id="information-btn" class="modal-trigger" href="#modal-information"></a>
+@endif
+
+<div id="bottle"   class="item"></div>
+<a id="information-btn" class="modal-trigger center-align" href="#modal-information">
+    <i class="material-icons" style="color: #fff;">keyboard_arrow_up</i>
+</a>
 <!-- Modal Structure -->
 <div id="question-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -208,7 +340,6 @@ $("#chest-wrapper").click(function(e){
         </a>
     </div>
 </div>
-<a id="chest-trigger" class="waves-effect waves-light btn ">Chest</a>
 <div id="chest-wrapper">
 	<div id="chest-modal">
 		<div class="row">
@@ -221,21 +352,21 @@ $("#chest-wrapper").click(function(e){
 			</div>
 			<div id="bg-tab" class="col s12">
 				<div class="row">
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-alt" class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-f" class="bg-item"></div></div>
 				</div>
 				<div class="row">
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-g14" class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-sea" class="bg-item"></div></div>
 				</div>
 			</div>
             <div id="dec-tab" class="col s12">
                 <div class="row">
                     <div id="food1" class="col s4 offset-s1 dec-item">
-                        <h5 class="center-align">成長飼料</h5>
+                        <h5 class="center-align">成長飼料*{{$decoration->growth_food}}</h5>
                     </div>
                     <div id="food2" class="col s4 offset-s2 dec-item">
-                        <h5 class="center-align">進化飼料</h5>
+                        <h5 class="center-align">進化飼料*{{$decoration->level_food}}</h5>
                     </div>
                 </div>
             </div>
