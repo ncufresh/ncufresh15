@@ -158,8 +158,8 @@ var question = function () {
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
-				};
-			};
+				}
+			}
 		}
 		else{
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
@@ -181,7 +181,6 @@ var question = function () {
 				}
 				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 			}
-			console.log(qadata.answer);
 			switch (qadata.answer){
 				case 1:
 					ctx.fillStyle = "rgb(255, 240, 0)";
@@ -212,14 +211,11 @@ var question = function () {
 					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
 					break;
 			}
-
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].lock=true;
-				};
-			};
-
-
+				}
+			}
 		}
 	}
 	window.onkeydown = function(e) {
