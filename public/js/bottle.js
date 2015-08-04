@@ -39,7 +39,7 @@ $(function() {
                     } else if (data.msg == 'need answer') {
                         if (modal_opened == false) {
                             modal_opened = true;
-                            $('#question-modal').openModal();
+                            $('#question-modal').openModal({complete: function() { loading_question = false;modal_opened=false; }});
                         }
                         $('#question-body').html(data.knowledge.question);
                         $('#question-options').html('');
