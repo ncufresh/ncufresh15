@@ -69,9 +69,9 @@ class UserController extends Controller
             ->where('sent', true)
             ->orderBy('updated_at', 'desc')
             ->get();
-        $background = Background::where('user_id', 1)->first();
-        $decoration = Decoration::where('user_id', 1)->first();
-        $creature = Creature::where('user_id', 1)->first();
+        $background = Background::where('user_id', $id)->first();
+        $decoration = Decoration::where('user_id', $id)->first();
+        $creature = Creature::where('user_id', $id)->first();
 		return view('user.show', [
 			'user' => $user,
             'nobreadcrumb' => true,
