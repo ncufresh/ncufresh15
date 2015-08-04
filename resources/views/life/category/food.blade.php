@@ -195,7 +195,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/food/food_word.png') }}" id="word">
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/HRPXCxIs3os" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<body>

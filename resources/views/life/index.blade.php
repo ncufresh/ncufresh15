@@ -5,7 +5,8 @@
 @section('css')
 <style>
 	h1 {
-		color:blue;
+		color:rgb(9,9,81);
+		font-weight:bold;
 		/*margin: 0px auto;*/
 	}
 	.puzzle{

@@ -143,7 +143,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/traffic/traffic_word.png') }}" id="word">
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/dAd9R2pReoA" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/b7bGleYmFcA" frameborder="0" allowfullscreen></iframe>
 			</div>	
 		</div>
 		<body>

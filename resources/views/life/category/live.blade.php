@@ -164,7 +164,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/live/live_word.png') }}" id="word" >
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/dy7a0HQdZv8" frameborder="0" allowfullscreen></iframe>
 			</div>	
 		</div>
 		<body>
