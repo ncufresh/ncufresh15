@@ -32,7 +32,7 @@ class GameController extends Controller
 
     	if ($booo==true && $value==3) {
     		KnowledgeController::getTreasure();
-    		return "go fuck yourself";
+    		return "你拿到寶物了";
     	} else{
     		return "go fuck yourself";
     	}
