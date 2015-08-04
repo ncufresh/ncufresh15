@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'QAQ')
+@section('title', 'Q&amp;A')
 
 @section('css')
 <style>
@@ -17,15 +17,15 @@
 
 #category-menu .collection a {
     color: #000;
-    background-color: #BEF0FF;
-    border: 1px solid #BEF0FF;
+    background-color: #fff;
+    border: 1px solid #fff;
     font-size: 1.1em;
 }
 
 #category-menu .collection a.active {
     color: #fff;
-    background-color: #2196F3;
-    border: 1px solid #2196F3;
+    background-color: #0D47A1;
+    border: 1px solid #0D47A1;
     position: relative;
 }
 
@@ -36,7 +36,7 @@
   left: 100%;
   margin-top: -22.5px;
   width: 0; height: 0;
-  border-left: 16px solid #2196F3;
+  border-left: 16px solid #0D47A1;
   border-top: 22.5px solid transparent;
   border-bottom: 22.5px solid transparent;
 }
@@ -60,16 +60,16 @@ td.expand {
 }
 
 .puzzle-life {
-    background-image: url('/img/qa/puzzle_life.png');
+    background-image: url({{ asset('/img/qa/puzzle_life.png')}});
 }
 .puzzle-gov {
-    background-image: url('/img/qa/puzzle_gov.png');
+    background-image: url({{ asset('/img/qa/puzzle_gov.png')}});
 }
 .puzzle-student {
-    background-image: url('/img/qa/puzzle_student.png');
+    background-image: url({{ asset('/img/qa/puzzle_student.png')}});
 }
 .puzzle-game {
-    background-image: url('/img/qa/puzzle_game.png');
+    background-image: url({{ asset('/img/qa/puzzle_game.png')}});
 }
 
 .top-btn {
@@ -97,19 +97,19 @@ td.expand {
 <div class="row">
     <div id="category-menu" class="col s12 l3">
         <div class="collection">
-            <a href="/qa" class="collection-item {{$category == -1 ? 'active' : ''}}">
+            <a href="{{ url('/qa')}}" class="collection-item {{$category == -1 ? 'active' : ''}}">
                 全部<span class="badge">{{$all_count}}</span>
             </a>
-            <a href="/qa/category/life" class="collection-item {{$category == 0 ? 'active' : ''}}">
+            <a href="{{ url('/qa/category/life')}}" class="collection-item {{$category == 0 ? 'active' : ''}}">
                 中大生活<span class="badge">{{$counts[0]}}</span>
             </a>
-            <a href="/qa/category/gov" class="collection-item {{$category == 1 ? 'active' : ''}}">
+            <a href="{{ url('/qa/category/gov')}}" class="collection-item {{$category == 1 ? 'active' : ''}}">
                 行政<span class="badge">{{$counts[1]}}</span>
             </a>
-            <a href="/qa/category/student" class="collection-item {{$category == 2 ? 'active' : ''}}">
+            <a href="{{ url('/qa/category/student')}}" class="collection-item {{$category == 2 ? 'active' : ''}}">
                 學務<span class="badge">{{$counts[2]}}</span>
             </a>
-            <a href="/qa/category/game" class="collection-item {{$category == 3 ? 'active' : ''}}">
+            <a href="{{ url('/qa/category/game')}}" class="collection-item {{$category == 3 ? 'active' : ''}}">
                 小遊戲<span class="badge">{{$counts[3]}}</span>
             </a>
         </div> 
@@ -166,7 +166,7 @@ td.expand {
                 </thead>
                 <tbody>
                     @foreach ($answers as $answer)
-                        <tr class="answer" onclick="document.location = '/qa/{{$answer->id}}'" data-id="{{$answer->id}}">
+                        <tr class="answer" onclick="document.location = '{{url('/qa/'.$answer->id)}}'" data-id="{{$answer->id}}">
                             <td class="shrink category {{$category_class[$answer->category]}}"></td>
                             <td class="shrink ignore">{{ date('m-d', strtotime($answer->created_at)) }}</td>
                             <td class="expand">{{ $answer->title }}</td>

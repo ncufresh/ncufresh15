@@ -21,7 +21,14 @@ $(document).ready(function(){
 		belowOrigin: true // Displays dropdown below the button
 	});
 
+	$(".nav-links").dropdown({
+		constrain_width: false, // Does not change width of dropdown to that of the activator
+		hover: true, // Activate on hover
+		belowOrigin: true // Displays dropdown below the button
+	});
+
 	$("#portal-trigger").dropdown({
+		constrain_width: false,
 		hover: false
 	});
 

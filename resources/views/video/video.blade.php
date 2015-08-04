@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'VIDEO')
+@section('title', '影音專區')
 @section('css')
 <style type="text/css">
 .center{
@@ -20,6 +20,53 @@
   border-radius:10%;
   border: 2px white;
 }
+.upstair{
+position: relative;
+height: 65%;
+z-index: 2;
+}
+.downstair{
+position: relative;
+height: 35%;
+z-index: 2;
+}
+.centerimg{
+  position: relative;
+  width: 100%;
+  left:auto;
+  right:auto;
+  z-index: 1;
+}
+#content{
+  background-image: url('/img/video/video1/background1.png');
+  background-position: center;
+  background-size:cover;
+}
+#Right{
+  position: absolute;
+  top:25%;
+  right: 5%;
+  width: 29%;
+  height: 35%;
+  float: right;
+}
+
+#Left{
+  position: absolute;
+  float: left;
+  top:25%;
+  left:5%;
+  width: 29%;
+  height: 35%;  
+}
+#Door{
+  position: relative;
+  float:right;
+  width: 23%;
+  right:8%;
+  top:25%;
+}
+
 </style>
 
 @stop
@@ -27,6 +74,34 @@
 @section('js')
 <!--<script src=''></script> -->
 <script>
+/*
+$(document).ready(function(){
+    $("#Left").mouseover(function(){
+        $("#Left").attr("src","{{ asset('img/video/video1/LeftOpen.png') }}");
+    });
+    $("#Left").mouseout(function(){
+        $("#Left").attr("src","{{ asset('img/video/video1/LeftClose.png') }}");
+    });
+
+});
+*/
+function changeLeft() {
+    var image = document.getElementById('Left');
+    if (image.src.match("LeftClose")) {
+        image.src = "{{ asset('img/video/video1/LeftOpen.png') }}";
+    } else {
+        image.src = "{{ asset('img/video/video1/LeftClose.png') }}";
+    }
+}
+
+function changeRight() {
+    var image = document.getElementById('ImageB');
+    if (image.src.match("Dclmc")) {
+        image.src = "https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400";
+    } else {
+        image.src = "https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400";
+    }
+}
 
 function changeImageC() {
     var image = document.getElementById('ImageC');
@@ -37,83 +112,21 @@ function changeImageC() {
     }
 }
 
-
-function changeImageA() {
-    var image = document.getElementById('ImageA');
-    if (image.src.match("tJ8PE")) {
-        image.src = "https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400";
-    } else {
-        image.src = "https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400";
-    }
-}
-
-function changeImageB() {
-    var image = document.getElementById('ImageB');
-    if (image.src.match("Dclmc")) {
-        image.src = "https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400";
-    } else {
-        image.src = "https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400";
-    }
-}
-
-$(document).ready(function(){
-  $("#send").click(function(){
-    event.preventDefault();//preven default event from happens
-
-    $.post("some.php",
-    {
-      name: $("#n").val(),
-      comment: $("#c").val()
-    },
-    function(result){
-      $("#0").prepend(result);
-    });
-  }); 
-});
 </script>
 
 @stop
 
 @section('content')
-
-<!--最上面那條row(red accent-2)-->    
 <div class="row">
-<div class="row"></div>
-<!--左邊-->
-<div class="card-action">
-<div class="row">
-<h5 style="color:black;text-align:center;">影音專區</h5>  
+  <div class="upstair" style="height:500px">
+    <img id="Left" src="{{ asset('img/video/video1/LeftClose.png') }}"></img>
+    <img id="Right" src="{{ asset('img/video/video1/RightClose.png') }}"></img>
+
+  </div>
+
+  <div class="downstair" style="height:400px">
+    <img id="Door" src="{{ asset('img/video/video1/DoorClose.png') }}"></img>
+  </div>
 </div>
-<div class="col s12">
-<img  id="ImageC" onmouseover="changeImageC()" class="pic" src="http://drtaflan.com/wp-content/uploads/2013/01/MG_28423-800x300.jpg">
-</div>
-<div class="col s12"><br></div>
-<div class="col s12"><br></div>
-
-<div class="col" style="width:46%">
-<img  id="ImageA" onmouseover="changeImageA()" class="pic" src="https://lh3.googleusercontent.com/-JZqJp9JK4qRJ64XTV2JdTI6GpKyIDR7nmrc0htJ8PE=s400" align="right">
-</div>
-<div class="col s2 " style="width:8%">
-<p>  </p>
-</div>
-<div class="col s5 " style="width:46%">
-<img id="ImageB" onmouseover="changeImageB()" class="pic" src="https://lh3.googleusercontent.com/0ae0qYlyAbkmtNnHNlLyvLGqpy0o4Pn-ry98NEDclmc=s400" >
-</div>
-</div>
-
-
-
-
-
-    </body>
-  </html>
-
-
-
-
-
-
-content yolo!!!!
-
 
 @stop

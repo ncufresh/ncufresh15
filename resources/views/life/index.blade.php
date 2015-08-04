@@ -5,7 +5,8 @@
 @section('css')
 <style>
 	h1 {
-		color:blue;
+		color:rgb(9,9,81);
+		font-weight:bold;
 		/*margin: 0px auto;*/
 	}
 	.puzzle{
@@ -17,9 +18,6 @@
 	}
 	#b{
 		width: 80%;
-		background-image:url("img/life/lifebackground.png");
-		background-size:100% auto;
-		background-repeat:no-repeat;
 		position: relative; 
 		margin: 0% auto;
 	}
@@ -29,7 +27,7 @@
 		padding-top:80%;
 	}
 	#b1{
-		background-image:url('img/life/live.png');
+		background-image:url({{ asset('img/life/left_up.png') }});
 		top:-5%;
 		left:-4%;
 		width:30%;
@@ -45,7 +43,7 @@
 		top:-10%;
 	}
 	#b2{
-		background-image:url('img/life/traffic.png');
+		background-image:url({{ asset('img/life/right_up.png') }});
 		right:-4%;
 		top:-5%;
 		width:38%;
@@ -61,7 +59,7 @@
 		top:-10%;
 	}
 	#b3{
-		background-image:url('img/life/food.png');
+		background-image:url({{ asset('img/life/center.png') }});
 		top:23%;
 		right:30%; 
 		width:36%;
@@ -69,7 +67,7 @@
 	#b3:before{
 		content:"";
 		display:block;
-		padding-top:116%;
+		padding-top:120%;
 	}
 	#b3:hover{
 		width:44%;
@@ -77,7 +75,7 @@
 		top:19%;
 	}
 	#b4{
-		background-image:url('img/life/edu.png');
+		background-image:url({{ asset('img/life/left_down.png') }});
 		bottom:-6%;
 		left:-4%;
 		width:30%;
@@ -93,8 +91,8 @@
 		bottom:-11%;
 	}
 	#b5{
-		background-image:url('img/life/play.png');
-		bottom:-12%;
+		background-image:url({{ asset('img/life/right_down.png') }});
+		bottom:-14%;
 		right:-3%; 
 		width:34%;
 		height:51%;

@@ -10,8 +10,8 @@
 .category {
 	border: 1px;
 	border-style: solid;
-	background-color: #FFFFFF;
-	border-color: #FFFFFF;
+	background-color: #F5F5F5;
+	border-color: #F5F5F5;
 	color: black;
 	font-weight: bold;
 }
@@ -95,7 +95,7 @@
 	transition:all 0.35s;
 }
 
-#pizzle:hover {
+#move:hover #pizzle {
 	right: 1.5%;
 	top: 3.5%;
 	width: 6%;

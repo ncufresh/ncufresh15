@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use Bican\Roles\Models\Role;
 use Bican\Roles\Models\Permission;
 use App\User;
+use App\Decoration;
+use App\Background;
 
 class AdminSeeder extends Seeder
 {
@@ -18,8 +20,17 @@ class AdminSeeder extends Seeder
         $admin = User::create([
             'name' => '神',
             'email' => 'god@god.com',
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('j!zzeverywhere'),
         ]);
+
+		Decoration::create([
+			'user_id' => $admin->id
+		]);
+
+		Background::create([
+			'user_id' => $admin->id
+		]);
+
         $admin->attachRole($adminRole);
     }
 }

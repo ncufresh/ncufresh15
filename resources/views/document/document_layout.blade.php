@@ -6,11 +6,9 @@
 <link type="text/css" rel="stylesheet" href="{{ asset('css/document/document.css') }}"  media="screen,projection"/>
 <style type="text/css">
 #container {
-  background-image: url('{{asset("img/document/background.png")}}');
-  background-color: rgba(224,242,228,0.37);
-  background-position: right top;
+  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-ms-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250));
+  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-webkit-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250)); 
   background-size: auto 100%;
-  background-repeat: no-repeat;
 }
 </style>
 @stop
@@ -54,7 +52,7 @@
           </div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header"><a id="freshmen_week" class="link_1">新生周</a></div>
+          <div class="collapsible-header"><a id="freshmen_week" class="link_1">新生週</a></div>
         </li>
         <li class="list_1">
           <div class="collapsible-header"><a id="activity" class="link_1">輔導及活動專區</a></div>

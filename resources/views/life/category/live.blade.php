@@ -15,10 +15,12 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image: url("/img/life/livebackground.png");
-		background-size: 100% auto;
+		background-image:url({{ asset('/img/life/live/live_background.png') }});
+		background-size: 59% auto;
 		background-repeat: no-repeat;
 		position: relative;
+		margin-top:19%;
+		left:7%;
 	}
 	#b:before{
 		content:"";
@@ -26,9 +28,9 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/live/G4.png');
-		top:1%;
-		left:2%;
+		background-image:url({{ asset('/img/life/live/G4.png') }});
+		top:-24%;
+		left:-12%;
 		width:30%;
 	}
 	#b1:before{
@@ -38,13 +40,13 @@
 	}
 	#b1:hover{
 		width:40%;
-		left:-3%;
-		top:-4%;
+		left:-17%;
+		top:-29%;
 	}
 	#b2{
-		background-image:url('/img/life/live/G1.png');
-		top:2%;
-		right:15%;
+		background-image:url({{ asset('/img/life/live/G1.png') }});
+		top:-21%;
+		right:29%;
 		width:30%;
 	}
 	#b2:before{
@@ -54,29 +56,29 @@
 	}
 	#b2:hover{
 		width:40%;
-		right:10%;
-		top:-3%;
+		right:24%;
+		top:-26%;
 	}
 	#b3{
-		background-image:url('/img/life/live/B9.png');
-		top:34%;
-		left:-1%;
+		background-image:url({{ asset('/img/life/live/B9.png') }});
+		top:19%;
+		left:-21%;
 		width:21%; 
 	}
 	#b3:before{
 		content:"";
 		display:block;
-		padding-top:150%;
+		padding-top:153%;
 	}
 	#b3:hover{
 		width:31%;
-		left:-6%;
-		top:29%;
+		left:-26%;
+		top:16%;
 	}
 	#b4{
-		background-image:url('/img/life/live/B7.png');
-		top:34%;
-		right:-1%;
+		background-image:url({{ asset('/img/life/live/B7.png') }});
+		top:19%;
+		right:15%;
 		width:25%;
 	}
 	#b4:before{
@@ -86,13 +88,13 @@
 	}
 	#b4:hover{
 		width:35%;
-		right:-6%;
-		top:29%;
+		right:10%;
+		top:15%;
 	}
 	#b5{
-		background-image:url('/img/life/live/B11.png');
-		bottom:12%;
-		left:4%;
+		background-image:url({{ asset('/img/life/live/B11.png') }});
+		bottom:21%;
+		left:-9%;
 		width:35%;
 	}
 	#b5:before{
@@ -102,51 +104,77 @@
 	}
 	#b5:hover{
 		width:45%;
-		left:-1%;
-		bottom:7%;
+		left:-14%;
+		bottom:16%;
 	}
 	#b6{
-		background-image:url('/img/life/live/B3.png');
-		bottom:10%;
-		right:8%;
+		background-image:url({{ asset('/img/life/live/B3.png') }});
+		bottom:21%;
+		right:28%;
 		width:30%;
 	}
 	#b6:before{
 		content:"";
 		display:block;
-		padding-top:90%;
+		padding-top:92%;
 	}
 	#b6:hover{
 		width:40%;
-		right:3%;
-		bottom:5%;
+		right:23%;
+		bottom:16%;
 	}
-	iframe{
-		width:100%;
-		margin:30% auto;
+	#word{
+		width:78%;
+		padding-top:6%;
 	}
-	iframe:before{
+	#word:before{
 		content:"";
 		display:block;
-		padding-top:50%;
+		padding-top:100%;
+	}
+	#video{
+		width:80%;
+		position:relative;
+	}
+	#video:before{
+		content:"";
+		display:block;
+		padding-top:2%;
+	}
+	iframe{
+		width:112%;
+		margin:2% auto;
+	}
+	@media only screen and (max-width: 600px){
+		#b{
+			left:19%;
+		}
+		iframe{
+			width:120%;
+			height:250px;
+			margin:15% auto;
+		}
+
 	}
 </style>
 @stop
 
 @section('content')
-	<div class="row">
-		<div class="col s12 m4 l4">
-			<h2>住</h2>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+	<div class="row" style="background-color:rgb(214,237,237)">
+		<div class="col s12 m6 l6">
+			<img src="{{ url('/img/life/live/live_word.png') }}" id="word" >
+			<div id="video">
+				<iframe height="250" src="https://www.youtube.com/embed/dy7a0HQdZv8" frameborder="0" allowfullscreen></iframe>
+			</div>	
 		</div>
 		<body>
-			<div class="col s12 m8 l8" id="b">
-				<a class="puzzle" href="{{ url('life/15') }}" id="b1"></a>
-				<a class="puzzle" href="{{ url('life/14') }}" id="b2"></a>
-				<a class="puzzle" href="{{ url('life/12') }}" id="b3"></a>
-				<a class="puzzle" href="{{ url('life/11') }}" id="b4"></a>
-				<a class="puzzle" href="{{ url('life/13') }}" id="b5"></a>
-				<a class="puzzle" href="{{ url('life/10') }}" id="b6"></a>
+			<div class="col s12 m6 l6" id="b">
+				<a class="puzzle" href="{{ url('life/14') }}" id="b1"></a>
+				<a class="puzzle" href="{{ url('life/13') }}" id="b2"></a>
+				<a class="puzzle" href="{{ url('life/11') }}" id="b3"></a>
+				<a class="puzzle" href="{{ url('life/10') }}" id="b4"></a>
+				<a class="puzzle" href="{{ url('life/12') }}" id="b5"></a>
+				<a class="puzzle" href="{{ url('life/9') }}" id="b6"></a>
 			</div>
 		</body>	
 	</div>	

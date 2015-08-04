@@ -4,13 +4,16 @@
 #container {
 	border-radius: 5px;
 	overflow: hidden;
-	min-height: 87%;
 	margin-bottom: 3%;
 	width: 75%;
-	min-height: 910px;
     padding: 0 5%;
-	background-color: rgba(245, 245, 245, 0.7);
+	background-color: rgba(245, 245, 245, 0.9);
 }
+
+#nav-qa a , #nav-links a{
+	color: #5D5555 !important;
+}
+
 .nav-margin {
 	margin-top: 10px;
 }
@@ -19,14 +22,28 @@
 	top: 5px;
 	display: inline-block;
 	width: 22.5%;
-	height: 100px;
 	background-color: transparent;
+	max-width: 365px;
 }
+
+#logo:before {
+	content: "";
+	display: block;
+	padding-top: 35%;
+}
+
 #banner-img {
-	height: 380px;
 	background-size: 100% 100%;
 	border: 20px solid #fff;
 }
+
+#banner-img:before {
+	content: "";
+	display: block;
+	padding-top: 40%;
+}
+
+
 #banner>.row {
 	margin: 0px;
 }
@@ -38,6 +55,7 @@
 	padding: 10px;
 }
 .banner-menu a{
+    padding: 0;
 	text-align: center;
 	width: 100%;
 }
@@ -50,7 +68,7 @@
 }
 
 nav {
-	background-color: #2196f3;
+	background-color: #5D5555 !important;
 }
 .brand-logo {
 	margin-left: 10px;
@@ -83,11 +101,13 @@ nav {
 	background-color: #212121;
 }
 body {
-	min-height: 100%;
-    background-image: url('/img/department/background1.png'), url('/img/department/backgrounddown.png');
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
     background-position: left top, left top;
     background-size: 100% auto;
     background-repeat: no-repeat, repeat;
+    font-family: "微軟正黑體","Microsoft JhengHei","Times New Roman",Times,serif;
 }
 
 .pagination li {
@@ -100,23 +120,23 @@ body {
 }
 
 .position1 {
-	top: 10vh !important;
-	left: 50% !important;
+	top: 30vh !important;
+	left: 75% !important;
 }
 
 .position2 {
-	top: 10vh !important;
+	top: 30vh !important;
 	left: 88% !important;
 }
 
 .position3 {
-	top: 35vh !important;
-	left: 74% !important;
+	top: 40vh !important;
+	left: 80% !important;
 }
 
 .position4 {
 	top: 50vh !important;
-	left: 50% !important;
+	left: 75% !important;
 }
 
 .position5 {
@@ -127,8 +147,16 @@ body {
 @media only screen and (max-width: 992px) {
 	#container {
 		width: 100%;
+        border-radius: 0 !important;
+        margin-bottom: 0;
+        margin-top: 0;
 	}
 	#slider-container {
 		padding: 0;
 	}
+    #footer {
+        margin-top: 0;
+        height: 100px;
+    }
 }
+

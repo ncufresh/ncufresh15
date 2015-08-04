@@ -173,7 +173,7 @@ class LifeController extends Controller
             'traffic' => '行'
         ];
         SitemapHelper::push($type[$category], 'life/category/'.$category); /*$category儲存food，$type[food]會對應食*/
-        return view('life.category.'.$category);                    
+        return view('life.category.'.$category);                 
     }
     public function add_pictures(Request $request,$id)
     {

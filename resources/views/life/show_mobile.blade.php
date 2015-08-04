@@ -8,6 +8,12 @@
 		#coverflow{
 			font-family:inital !importment;
 		}
+		.article{
+			width:281px;
+			height:182px;
+			overflow:scroll;
+			margin:4% auto;
+		}
 	</style>
 @stop
 
@@ -28,11 +34,13 @@
 @stop
 
 @section('content')
+@permission('management')
 <div class="row">
 	<div class="right align">
 		<a class="waves-effect waves-light btn" href="{{url('life/edit/'.$show->id)}}"><i class="material-icons left">settings</i>後台管理</a>
 	</div>	
 </div>
+@endpermission
 <div id="coverflow"  style="height:200px;">
 	@foreach($pictures as $picture)
 		<a href="{{ $picture->url }}" target="_blank">
@@ -49,7 +57,9 @@
 			<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
 			<button class="waves-effect waves-light btn blue" id="next">下一張</button>
 		</div>
-			<p>{!! $show->content !!}</p>   <!--  -->
+		<div class="article">
+			<p>{!! $show->content !!}</p>   
+		</div>	
 		</div>
 	</div>		
 </div>
