@@ -40,7 +40,7 @@ function getRandomArray(minNum, maxNum, n) {	//隨機產生不重覆的n個數�
 	return rdmArray;
 }
 
-var arrayIndex=getRandomArray(0,20,4);
+var arrayIndex=getRandomArray(0,20,6);
 var arrayX = [52,66,41,82,91,33,53,72,25,87,35,41,66,23,9,53,73,55,90,82,70];
 var arrayY = [8,12,18,19,24,29,37,38,39,42,53,49,49,56,72,66,64,79,72,82,88];
 
@@ -104,7 +104,25 @@ var box3 = {
 	width : grid.length,
 	height : grid.length
 };
-var boxs = [box1,box2,box3];
+var box4 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : arrayX[arrayIndex[4]]*grid.length,
+	y : arrayY[arrayIndex[4]]*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var box5 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : arrayX[arrayIndex[5]]*grid.length,
+	y : arrayY[arrayIndex[5]]*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var boxs = [box1,box2,box3,box4,box5];
 
 var road1 = {x:0,y:64,width:64,height:320,type:"road"};
 var roads = [road1];

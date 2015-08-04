@@ -179,9 +179,9 @@ Route::get('/ajax/comment','Video\GuestbookController@load');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('game', 'GameController@index');
     Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
-    Route::get('GameOveri', 'GameController@init');
-    Route::get('GameOvers', 'GameController@setRightAnswer');
-    Route::get('GameOverc', 'GameController@cleanAir');
+    Route::get('GameOver', 'GameController@init');
+    Route::get('GemeOver', 'GameController@setRightAnswer');
+    Route::get('GamaOver', 'GameController@cleanAir');
 });
 //******************************************************************************************************
 

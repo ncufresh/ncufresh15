@@ -190,24 +190,46 @@ var render = function () {
 		draw(rt4Image,grid.length*20,grid.length*38);
 	}
 	//
-	if (boxcloseReady && boxs[0].open==false) {
-		draw(boxcloseImage, boxs[0].x, boxs[0].y);
-	}
-	if (boxopenReady && boxs[0].open) {
-		draw(boxopenImage, boxs[0].x, boxs[0].y);
-	}
-	if (boxcloseReady && boxs[1].open==false) {
-		draw(boxcloseImage,  boxs[1].x, boxs[1].y);
-	}
-	if (boxopenReady && boxs[1].open) {
-		draw(boxopenImage, boxs[1].x, boxs[1].y);
-	}
-	if (boxcloseReady && boxs[2].open==false) {
-		draw(boxcloseImage,  boxs[2].x, boxs[2].y);
-	}
-	if (boxopenReady && boxs[2].open) {
-		draw(boxopenImage, boxs[2].x, boxs[2].y);
-	}
+
+	for (var i = 0; i < boxs.length; i++) {
+		if (boxcloseReady && boxs[i].open==false) {
+			draw(boxcloseImage, boxs[i].x, boxs[i].y);
+		}
+		if (boxopenReady && boxs[i].open) {
+			draw(boxopenImage, boxs[i].x, boxs[i].y);
+		}
+	};
+
+	// if (boxcloseReady && boxs[0].open==false) {
+	// 	draw(boxcloseImage, boxs[0].x, boxs[0].y);
+	// }
+	// if (boxopenReady && boxs[0].open) {
+	// 	draw(boxopenImage, boxs[0].x, boxs[0].y);
+	// }
+	// if (boxcloseReady && boxs[1].open==false) {
+	// 	draw(boxcloseImage,  boxs[1].x, boxs[1].y);
+	// }
+	// if (boxopenReady && boxs[1].open) {
+	// 	draw(boxopenImage, boxs[1].x, boxs[1].y);
+	// }
+	// if (boxcloseReady && boxs[2].open==false) {
+	// 	draw(boxcloseImage,  boxs[2].x, boxs[2].y);
+	// }
+	// if (boxopenReady && boxs[2].open) {
+	// 	draw(boxopenImage, boxs[2].x, boxs[2].y);
+	// }
+	// if (boxcloseReady && boxs[3].open==false) {
+	// 	draw(boxcloseImage,  boxs[3].x, boxs[3].y);
+	// }
+	// if (boxopenReady && boxs[3].open) {
+	// 	draw(boxopenImage, boxs[3].x, boxs[3].y);
+	// }
+	// if (boxcloseReady && boxs[4].open==false) {
+	// 	draw(boxcloseImage,  boxs[4].x, boxs[4].y);
+	// }
+	// if (boxopenReady && boxs[4].open) {
+	// 	draw(boxopenImage, boxs[4].x, boxs[4].y);
+	// }
 	//
 
 	if (monsterReady) {
