@@ -54,7 +54,6 @@ $(document).ready(function(){
 			<img style="margin-left: 10%; width: 80%;" src="/img/about/hack-2.jpg">
 			<p>&emsp;&emsp;負責架構網站、撰寫程式，將整個知訊網推動的幕後功臣；程設組運用程式碼編織而成的知訊網，將帶給新生最好的知訊網體驗。
 			</p>
-			<h1>鳳梨、建勳：又被雷了一場，還好我Carry！</h1>
 	    </div>
 		<div class="modal-footer">
 		</div>
