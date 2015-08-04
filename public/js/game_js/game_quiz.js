@@ -188,6 +188,7 @@ var question = function () {
 					ctx.textAlign = "center";
 					ctx.textBaseline = "top";
 					ctx.fillText(qadata.questions.option1, canvas.width / 2, canvas.height - 180+padding*0);
+					console.log("我可以顯示第一選項");
 					break;
 				case 2:
 					ctx.fillStyle = "rgb(255, 240, 0)";
@@ -195,6 +196,7 @@ var question = function () {
 					ctx.textAlign = "center";
 					ctx.textBaseline = "top";
 					ctx.fillText(qadata.questions.option2, canvas.width / 2, canvas.height - 180+padding*1);
+					console.log("我可以顯示第二選項");
 					break;
 				case 3:
 					ctx.fillStyle = "rgb(255, 240, 0)";
@@ -202,6 +204,7 @@ var question = function () {
 					ctx.textAlign = "center";
 					ctx.textBaseline = "top";
 					ctx.fillText(qadata.questions.option3, canvas.width / 2, canvas.height - 180+padding*2);
+					console.log("我可以顯示第三選項");
 					break;
 				case 4:
 					ctx.fillStyle = "rgb(255, 240, 0)";
@@ -209,6 +212,7 @@ var question = function () {
 					ctx.textAlign = "center";
 					ctx.textBaseline = "top";
 					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
+					console.log("我可以顯示第四選項");
 					break;
 			}
 			for (var i = 0; i < boxs.length; i++) {
