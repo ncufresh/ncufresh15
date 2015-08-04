@@ -81,48 +81,79 @@ class KnowledgeController extends Controller
         $knowledge = Knowledge::orderByRaw('RAND()')->first();
         return response()->json(['questions' => $knowledge, 'answer' => $knowledge->answer]);
     }
-    public static function getTreasure(Request $request)
+    public static function getTreasure()
     {
         // you need to login
         $user = Auth::user();
         $decoration = $user->getDecoration();
 
-        $value1 = $request->session()->get('level_food');  //1
-        $value2 = $request->session()->get('growth_food'); //2
-        $value3 = $request->session()->get('background');  //2
-        $value4 = $request->session()->get('decoration');  //1
-
-
         while (true) {
-
-            $choice = rand(0,100);
-            if ($choice>=80 && $value1==false) {
+            $choice = rand(0,70);
+            if ($choice>60) {
                 $decoration->level_food += 1;
-                $request->session()->put('level_food', true);
                 break;
             }
-            else if($choice<80 && $choice>=50 && $value2<2){
+            else if($choice<60 && $choice>=40){
                 $decoration->growth_food += 1;
-                $value2+=1;
-                $request->session()->put('growth_food', $value2);
                 break;
             }
-            else if($choice<50 && $choice>=25 && $value3<2){
+            else if($choice<40 && $choice>=30){
+                KnowledgeController::getFish();
+                break;
+            }
+            else if($choice<30 && $choice>=10){
                 KnowledgeController::getTrashBackground();
-                $value3+=1;
-                $request->session()->put('background', $value3);
                 break;
             }
-            else if($choice<25 && $choice>=0 && $value4==false){
+            else if($choice<10 && $choice>=0){
                 KnowledgeController::getTrashDecoration();
-                $request->session()->put('decoration', true);
                 break;
             }
         }
-
-        $data = $request->session()->all();
         $decoration->save();
-        return response()->json(['random' => $choice , 'session' => $data]);
+        //return response()->json(['random' => $choice , 'data' => $user]);
+    }
+    public static function getFish()
+    {
+        // you need to login
+        $user = Auth::user();
+        $fishfish = $user->getFish();
+
+        $three = 0;
+        $getting = true;
+        while ($three<3 && $getting) {
+            $choice = rand(0,2);
+            switch ($choice) {
+                case 0:
+                    if ($fishfish->level2==false) {
+                        $fishfish->level2 = true;
+                        $getting = false;
+                    } else {
+                        $three+=1;
+                    }
+                    break;
+                case 1:
+                    if ($fishfish->level3==false) {
+                        $fishfish->level3 = true;
+                        $getting = false;
+                    } else {
+                        $three+=1;
+                    }
+                    break;
+                case 2:
+                    if ($fishfish->level4==false) {
+                        $fishfish->level4 = true;
+                        $getting = false;
+                    } else {
+                        $three+=1;
+                    }
+                    break;
+            }
+        }
+        $fishfish->save();
+        if ($three==3) {
+            KnowledgeController::getTreasure();
+        }
     }
     public static function getTrashBackground()
     {
@@ -133,7 +164,7 @@ class KnowledgeController extends Controller
         $twelve=0;
         $getting = true;
         while ($twelve<12 && $getting) {
-            $choice = rand(0,12);
+            $choice = rand(0,11);
             switch ($choice) {
                 case 0:
                     if ($background->bg1_1==false) {
@@ -234,6 +265,9 @@ class KnowledgeController extends Controller
             }
         }
         $background->save();
+        if ($twelve==12) {
+            KnowledgeController::getTreasure();
+        }
     }
 
     public static function getTrashDecoration()
@@ -282,6 +316,9 @@ class KnowledgeController extends Controller
             }
         }
         $decoration->save();
+        if ($four==4) {
+            KnowledgeController::getTreasure();
+        }
     }
 
 

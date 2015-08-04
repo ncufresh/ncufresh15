@@ -44,8 +44,8 @@ var arrayIndex=getRandomArray(0,20,6);
 var arrayX = [52,66,41,82,91,33,53,72,25,87,35,41,66,23,9,53,73,55,90,82,70];
 var arrayY = [8,12,18,19,24,29,37,38,39,42,53,49,49,56,72,66,64,79,72,82,88];
 
-var initialX=arrayX[arrayIndex[1]];
-var initialY=arrayY[arrayIndex[1]];
+var initialX=arrayX[arrayIndex[0]];
+var initialY=arrayY[arrayIndex[0]];
 var hero = {
 	speed: 256, // movement in pixels per second
 	x : initialX*grid.length,

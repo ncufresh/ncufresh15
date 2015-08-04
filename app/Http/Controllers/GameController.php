@@ -21,12 +21,6 @@ class GameController extends Controller
     {
     	$request->session()->put('CorrectTimes', '0');
     	$request->session()->put('InQuestion', true);
-
-
-        $request->session()->put('level_food', false);
-        $request->session()->put('growth_food', '0');
-        $request->session()->put('background', '0');
-        $request->session()->put('decoration', false);
         return "go fuck yourself";
     }
     public function setRightAnswer(Request $request)
@@ -35,13 +29,12 @@ class GameController extends Controller
     	$value = $request->session()->get('CorrectTimes');
     	$value+=1;
     	$request->session()->put('CorrectTimes', $value);
-
     	$booo = $request->session()->get('InQuestion');
 
     	if ($booo==true && $value==3) {
     		KnowledgeController::getTreasure();
     		return "go fuck yourself";
-    	} else {
+    	} else{
     		return "go fuck yourself";
     	}
     }
@@ -49,11 +42,6 @@ class GameController extends Controller
     {
     	$request->session()->forget('CorrectTimes');
         $request->session()->forget('InQuestion');
-
-        $request->session()->forget('level_food');
-        $request->session()->forget('growth_food');
-        $request->session()->forget('background');
-        $request->session()->forget('decoration');
         return "go fuck yourself";
     }
 }
