@@ -61,6 +61,13 @@
 			body {
 				background-image: url({{asset('img/department/background1.jpg')}} ), url({{asset('img/department/backgrounddown.png')}});
 			}
+
+			.brand-logo {
+				width: 142px;
+				background-image: url("{{asset('img/navLogo.png')}}");
+				background-repeat: no-repeat;
+				background-position-y: 6px;
+			}
 		</style>
 		@yield('css')
     </head>
@@ -71,7 +78,7 @@
 		<nav id="home-nav">
 		@endif
 			<div class="nav-wrapper">
-			<a href="{{url('/')}}" class="brand-logo">NCU Fresh</a>
+			<a href="{{url('/')}}" class="brand-logo">&nbsp;</a>
 			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
@@ -205,11 +212,18 @@
 			<div id='portal-img'></div>
 			<div id='portal-menu'>
 				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
-				<ul id='menu-list' class='dropdown-content'>
-					<li><a href="#!">one</a></li>
-					<li><a href="#!">two</a></li>
+				<ul id='menu-list' class='dropdown-content' style="min-width: 120px;">
+					@if (Auth::check())
+						<li><a href="{{ url('/user/').'/'.Auth::user()->id }}">User Profile</a></li>
+					@endif
+					<li><a href="{{ url('/game') }}">Game</a></li>
 					<li class="divider"></li>
-					<li><a href="#!">three</a></li>
+					@if (Auth::check())
+						<li><a href="{{ url('/auth/logout') }}">Log out</a></li>
+					@else
+						<li><a href="{{ url('/auth/login') }}">Log in</a></li>
+						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+					@endif
 				</ul>
 			</div>
 		</div>
