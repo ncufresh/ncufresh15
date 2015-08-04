@@ -105,7 +105,7 @@
 		width:42%;
 		height:60%;
 		right:-8%;
-		bottom:-19%;
+		bottom:-17%;
 	}
 </style>
 @stop
