@@ -7,7 +7,7 @@ var threetimes = 0;
 
 function init() {
     $.ajax({
-        url: '/GameOveri',
+        url: '/GameOver',
         type: 'GET',
         success: function(data) {
         }
@@ -15,15 +15,16 @@ function init() {
 }
 function setThreeTimes() {
     $.ajax({
-        url: '/GameOvers',
+        url: '/GemeOver',
         type: 'GET',
         success: function(data) {
+        	console.log(data);
         }
     });
 }
 function deleteAll() {
     $.ajax({
-        url: '/GameOverc',
+        url: '/GamaOver',
         type: 'GET',
         success: function(data) {
         }
