@@ -4,6 +4,7 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href='{{ asset('css/coverflow.css') }}' />
+	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
 	<style type="text/css">
 		#coverflow{
 			font-family:inital !importment;
@@ -15,10 +16,9 @@
 			width:100%;
 			height:100%;
 		}
-		.article{
+		#article{
 			width:90%;
 			height:50%;
-			overflow-y:auto;
 			margin:5% auto;
 		}
 		strong{
@@ -35,6 +35,7 @@
 	        $('#coverflow').coverflow();
 	    });
 	</script>
+	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 @stop
 
 @section('content')
@@ -54,7 +55,7 @@
 <!--圖片-->
 
 <div id="a" style="margin-top:500px;padding-top:3%;">
-	<div class="article">
+	<div id="article" class="mCustomScrollbar tab-content" data-mcs-theme="dark-thick">
 		<p>{!! $show->content !!}</p>   <!--  -->
 	</div>		
 </div>
