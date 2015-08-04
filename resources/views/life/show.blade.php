@@ -18,11 +18,14 @@
 		}
 		#article{
 			width:90%;
-			height:50%;
-			margin:5% auto;
+			height:65%;
+			margin:3% auto;
 		}
 		strong{
 			font-weight:bold;
+		}
+		p{
+			font-size:120%;
 		}
 	</style>
 @stop

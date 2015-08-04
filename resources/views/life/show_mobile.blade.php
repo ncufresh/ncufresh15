@@ -4,14 +4,14 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href='{{ asset('css/coverflow.css') }}' />
+	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
 	<style type="text/css">
 		#coverflow{
 			font-family:inital !importment;
 		}
-		.article{
-			width:281px;
-			height:182px;
-			overflow:scroll;
+		#article{
+			width:90%;
+			height:29%;
 			margin:4% auto;
 		}
 		strong{
@@ -34,6 +34,7 @@
 		    });
 	    });
 	</script>
+	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 @stop
 
 @section('content')
@@ -55,11 +56,11 @@
 
 <div class="row" style="margin-top:250px;">
 	<div class="card-panel hoverable">
-	<div>
+	<div class="center-align">
 		<button class="waves-effect waves-light btn blue" id="prev">上一張</button>
 		<button class="waves-effect waves-light btn blue" id="next">下一張</button>
 	</div>
-	<div class="article">
+	<div id="article" class="mCustomScrollbar tab-content" data-mcs-theme="dark-thick">
 		<p>{!! $show->content !!}</p>   
 	</div>	
 	</div>	
