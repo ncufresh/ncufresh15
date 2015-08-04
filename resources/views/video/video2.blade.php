@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'VIDEO2')
+@section('title', '影音專區')
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/video/media2/css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">

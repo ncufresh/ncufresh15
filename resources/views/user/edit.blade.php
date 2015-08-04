@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'YOLO')
+@section('title', '編輯使用者')
 @section('css')
 <style>
 #avatar {

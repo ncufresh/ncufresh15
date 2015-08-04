@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'YOLO')
+@section('title', '使用者列表')
 @section('css')
 <style>
 tbody>tr:hover {

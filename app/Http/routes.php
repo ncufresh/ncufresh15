@@ -46,7 +46,6 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // show user
-Route::get('user'     , 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
 // bottle
@@ -74,6 +73,7 @@ Route::get('file/{id}', 'FileController@show');
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
+		Route::get('user'     , 'UserController@index');
         Route::get ('user/delete/{id}', 'UserController@destroy');
     });
 
