@@ -32,9 +32,9 @@
 /*hotel*/
 #hotel {
 	position: absolute;
-	left: 78%;
-	top: 70%;
-	width: 8.5%;
+	left: 76%;
+	top: 71.5%;
+	width: 9.5%;
 	z-index: 1;
 }
 /*============================================================================*/
@@ -94,7 +94,7 @@
 #administration5 {
 	position: absolute;
 	left: 69%;
-	top: 61%;
+	top: 60.9%;
 	width: 7%;
 	z-index: 8;
 }
@@ -826,15 +826,15 @@
 /*B12*/
 #live9 {
 	position: absolute;
-	left: 75%;
-	top: 74%;
-	width: 4%;
+	left: 88%;
+	top: 67%;
+	width: 5%;
 	z-index: 1;
 }
 #live9:hover {
-	left: 74%;
-	top: 73%;
-	width: 6%;
+	left: 87%;
+	top: 66%;
+	width: 7%;
 }
 /*B13*/
 #live10 {

@@ -1,6 +1,10 @@
 @extends('layout')
 
-@section('title', 'QAQ')
+@if ($type == "qa")
+@section('title', 'Q&amp;A - 發問')
+@else
+@section('title', 'Q&amp;A - 問題回報')
+@endif
 
 @section('css')
 @stop
