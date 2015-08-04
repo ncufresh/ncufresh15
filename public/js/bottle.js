@@ -31,7 +31,7 @@ $(function() {
                         loading_question = false;
                         $('#question-options').html('');
                         $('#question-head').html('恭喜');
-                        $('#question-body').html('你已經打開了瓶子 Bitch!');
+                        $('#question-body').html('你已經打開了瓶子!');
                         if (modal_opened == false) {
                             $('#write-modal').openModal();
                         }
@@ -105,7 +105,8 @@ $(function() {
                                 .html('<i class="large material-icons">done</i><h4>Good job</h4>')
                         } else {
                             $('#question-options')
-                                .html('<i class="large material-icons">thumb_down</i><h4>UCCU</h4>')
+                                .html('<i class="large material-icons">thumb_down</i><h4>答錯囉!</h4>')
+                            console.log(data);
                         }
                         $('#choose-btn').hide();
                         $('#question-options')

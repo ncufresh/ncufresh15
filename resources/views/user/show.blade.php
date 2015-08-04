@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'YOLO')
+@section('title', '個人專區')
 @section('css')
 <style>
 .menu-btn {
