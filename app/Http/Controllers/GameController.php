@@ -27,7 +27,7 @@ class GameController extends Controller
     {
     	$value = $request->session()->get('CorrectTimes');
         $value = (int)($value);
-        $value+=1;
+        $value = $value + 1;
     	$request->session()->put('CorrectTimes', $value);
     	$booo = $request->session()->get('InQuestion');
 
