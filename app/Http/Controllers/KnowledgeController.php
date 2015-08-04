@@ -167,32 +167,32 @@ class KnowledgeController extends Controller
             $choice = rand(0,11);
             switch ($choice) {
                 case 0:
-                    if ($background->bg1_1==false) {
-                        $background->bg1_1 = true;
+                    if ($background->bg4_1==false) {
+                        $background->bg4_1 = true;
                         $getting = false;
                     } else {
                         $twelve+=1;
                     }
                     break;
                 case 1:
-                    if ($background->bg1_2==false) {
-                        $background->bg1_2 = true;
+                    if ($background->bg4_2==false) {
+                        $background->bg4_2 = true;
                         $getting = false;
                     } else {
                         $twelve+=1;
                     }
                     break;
                 case 2:
-                    if ($background->bg1_3==false) {
-                        $background->bg1_3 = true;
+                    if ($background->bg4_3==false) {
+                        $background->bg4_3 = true;
                         $getting = false;
                     } else {
                         $twelve+=1;
                     }
                     break;
                 case 3:
-                    if ($background->bg1_4==false) {
-                        $background->bg1_4 = true;
+                    if ($background->bg4_4==false) {
+                        $background->bg4_4 = true;
                         $getting = false;
                     } else {
                         $twelve+=1;
