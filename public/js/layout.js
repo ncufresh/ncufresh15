@@ -28,6 +28,7 @@ $(document).ready(function(){
 	});
 
 	$("#portal-trigger").dropdown({
+		constrain_width: false,
 		hover: false
 	});
 
