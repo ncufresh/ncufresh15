@@ -30,7 +30,8 @@ class GameController extends Controller
         var_dump($value);
         $value+=1;
         var_dump($value);
-        $request->session()->put('CorrectTimes', $value);
+        //$request->session()->put('CorrectTimes', $value);
+        app('session')->set('CorrectTimes', $value);
         //session(['CorrectTimes' => $value]);
     	$booo = $request->session()->get('InQuestion');
     	if ($booo==true && $value==3) {
