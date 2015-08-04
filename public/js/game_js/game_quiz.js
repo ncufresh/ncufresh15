@@ -181,7 +181,8 @@ var question = function () {
 				}
 				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 			}
-			switch (qadata.answer){
+			//console.log(parseInt(qadata.answer,10));
+			switch (parseInt(qadata.answer,10)){
 				case 1:
 					ctx.fillStyle = "rgb(255, 240, 0)";
 					ctx.font = '21px Arial';
