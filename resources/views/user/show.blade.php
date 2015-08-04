@@ -117,6 +117,7 @@
 }
 
 .bg-item {
+    background-size: 100% 100%;
 	background-color: rgba(0,0,0,0.5);
 	height: 100%;
 }
@@ -156,6 +157,75 @@
 
 .food2 {
   cursor: url('/img/home/food2.gif'), auto;
+}
+
+#bg-alt {
+    background-image: 
+    @if ($background->bg1_1)
+    url('/img/home/bg/alt_1.png'),
+    @endif
+    @if ($background->bg1_2)
+    url('/img/home/bg/alt_2.png'),
+    @endif
+    @if ($background->bg1_3)
+    url('/img/home/bg/alt_3.png'),
+    @endif
+    @if ($background->bg1_4)
+    url('/img/home/bg/alt_4.png'),
+    @endif
+    url('/img/home/bg/alt_back.png')
+    ;
+}
+#bg-f {
+    background-image: 
+    @if ($background->bg2_1)
+    url('/img/home/bg/f_1.png'),
+    @endif
+    @if ($background->bg2_2)
+    url('/img/home/bg/f_2.png'),
+    @endif
+    @if ($background->bg2_3)
+    url('/img/home/bg/f_3.png'),
+    @endif
+    @if ($background->bg2_4)
+    url('/img/home/bg/f_4.png'),
+    @endif
+    url('/img/home/bg/f_back.png')
+    ;
+}
+#bg-g14 {
+    background-image: 
+    @if ($background->bg3_1)
+    url('/img/home/bg/g14_1.png'),
+    @endif
+    @if ($background->bg3_2)
+    url('/img/home/bg/g14_2.png'),
+    @endif
+    @if ($background->bg3_3)
+    url('/img/home/bg/g14_3.png'),
+    @endif
+    @if ($background->bg3_4)
+    url('/img/home/bg/g14_4.png'),
+    @endif
+    url('/img/home/bg/g14_back.png')
+    ;
+}
+#bg-sea {
+    background-image: 
+    @if ($background->bg4_1)
+    url('/img/home/bg/sea_1.png'),
+    @endif
+    @if ($background->bg4_2)
+    url('/img/home/bg/sea_2.png'),
+    @endif
+    @if ($background->bg4_3)
+    url('/img/home/bg/sea_3.png'),
+    @endif
+    @if ($background->bg4_4)
+    url('/img/home/bg/sea_4.png'),
+    @endif
+    url('/img/home/bg/sea_back.png')
+    ;
 }
 </style>
 @stop
@@ -282,12 +352,12 @@ $(function() {
 			</div>
 			<div id="bg-tab" class="col s12">
 				<div class="row">
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-alt" class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-f" class="bg-item"></div></div>
 				</div>
 				<div class="row">
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
-					<div class="col s12 m6 bg-padding"><div class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-g14" class="bg-item"></div></div>
+					<div class="col s12 m6 bg-padding"><div id="bg-sea" class="bg-item"></div></div>
 				</div>
 			</div>
             <div id="dec-tab" class="col s12">
