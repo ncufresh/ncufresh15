@@ -79,11 +79,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// Note: Permission must be authorize in controller
 	Route::get ('user/edit/{id}'  , 'UserController@edit');
+	Route::get ('user/chbg/{bg}'  , 'UserController@changeBackground');
 	Route::post('user/update/{id}'  , 'UserController@update');
 
     // Home
     Route::get('home', function() {
-        return view('home.index');
+        return redirect('/');
     });
 
     // Manage Q&A
@@ -99,6 +100,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get ('qa/delete/{id}' , 'QaController@destroy');
         Route::get ('qa/solved'      , 'QaController@solved');
 
+        Route::get('document/ckeditor', 'Document\DocumentController@editor');
+        Route::get('document/edit_content/{id}', 'Document\DocumentController@edit');
+        Route::post('document/store_content', 'Document\DocumentController@store');
+
+
+        Route::get('life/edit/{id}','Life\LifeController@edit');
+        Route::post('life/update/{id}','Life\LifeController@update');
+        Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
+        Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
+
         // File upload center
         //------------------------------------------------------------------------------------------------------
         Route::get('file', 'FileController@index');
@@ -107,6 +118,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/update/{id}', 'FileController@update');
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
+
+        // Campus admin
+        //------------------------------------------------------------------------------------------------------
+        Route::get('campus/add_view', 'Campus\CampusController@addView');
+        Route::post('campus/add_view', 'Campus\CampusController@store');
+        Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
+        Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
+        Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
+        //------------------------------------------------------------------------------------------------------
+
         
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
     });
@@ -131,22 +152,14 @@ Route::post('group/update','Department\ClubController@update');
 //Campus
 //******************************************************************************************************
 Route::get('campus', 'Campus\CampusController@index');
-Route::get('campus/add_view', 'Campus\CampusController@addView');
-Route::post('campus/add_view', 'Campus\CampusController@store');
-Route::get('campus/view/{id}', 'Campus\CampusController@showView');
-Route::get('campus/edit_view/{id}', 'Campus\CampusController@editView');
-Route::post('campus/edit_view/{id}', 'Campus\CampusController@update');
-Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
 Route::get('campus/{cate}', 'Campus\CampusController@cate');
+Route::get('campus/view/{id}', 'Campus\CampusController@showView');
 //******************************************************************************************************
 
 
 //Document
 //******************************************************************************************************
 Route::get('document', 'Document\DocumentController@index');	
-Route::get('document/ckeditor', 'Document\DocumentController@editor');
-Route::get('document/edit_content/{id}', 'Document\DocumentController@edit');
-Route::post('document/store_content', 'Document\DocumentController@store');
 Route::get('document/{page_id}', 'Document\DocumentController@get_content_1');
 Route::get('document/{page_id}/{page_id_2}', 'Document\DocumentController@get_content_2');
 Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@get_content_3');
@@ -166,7 +179,9 @@ Route::get('/ajax/comment','Video\GuestbookController@load');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('game', 'GameController@index');
     Route::get('RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
-    Route::get('GetTheSecretTreasure', 'KnowledgeController@getTreasure');
+    Route::get('GameOveri', 'GameController@init');
+    Route::get('GameOvers', 'GameController@setRightAnswer');
+    Route::get('GameOverc', 'GameController@cleanAir');
 });
 //******************************************************************************************************
 
@@ -175,8 +190,11 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('life', 'Life\LifeController@index');
 Route::get('life/category/{category}', 'Life\LifeController@introduce');
 Route::get('life/{id}','Life\LifeController@show');
-Route::get('life/edit/{id}','Life\LifeController@edit');
-Route::post('life/update/{id}','Life\LifeController@update');
-Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
-Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
+//******************************************************************************************************
+
+// about
+//******************************************************************************************************
+Route::get('about', function(){
+	return view('about');
+});
 //******************************************************************************************************

@@ -718,6 +718,32 @@
 	top: 66%;
 	width: 5%;
 }
+/*restaurant14*/
+#food8 {
+	position: absolute;
+	left: 17%;
+	top: 64.8%;
+	width: 2.8%;
+	z-index: 1;
+}
+#food8:hover {
+	left: 16%;
+	top: 63.8%;
+	width: 4.8%;
+}
+/*fiesta*/
+#food9 {
+	position: absolute;
+	left: 88.5%;
+	top: 60%;
+	width: 3%;
+	z-index: 8;
+}
+#food9:hover {
+	left: 87.5%;
+	top: 59%;
+	width: 5%;
+}
 /*============================================================================*/
 /*international*/
 #live1 {

@@ -15,7 +15,7 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image:url('/img/life/edu/teach_background.png');
+		background-image:url({{ asset('/img/life/edu/teach_background.png') }});
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -27,7 +27,7 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/edu/1.png');
+		background-image:url({{ asset('/img/life/edu/1.jpg') }});
 		top:12%;
 		left:7%;
 		width:15%; 
@@ -42,7 +42,7 @@
 		
 	}
 	#b2{
-		background-image:url('/img/life/edu/2.png');
+		background-image:url({{ asset('/img/life/edu/2.jpg') }});
 		top:17%;
 		left:30%;
 		width:14%; 
@@ -56,7 +56,7 @@
 		width:15%;
 	}
 	#b3{
-		background-image:url('/img/life/edu/3.png');
+		background-image:url({{ asset('/img/life/edu/3.png') }});
 		top:12%;
 		right:32%;
 		width:16%; 
@@ -70,7 +70,7 @@
 		width:17%;
 	}
 	#b4{
-		background-image:url('/img/life/edu/4.png');
+		background-image:url({{ asset('/img/life/edu/4.png') }});
 		top:15%;
 		right:10%;
 		width:11%; 
@@ -84,7 +84,7 @@
 		width:12%;
 	}
 	#b5{
-		background-image:url('/img/life/edu/5.png');
+		background-image:url({{ asset('/img/life/edu/5.jpg') }});
 		top:31%;
 		left:7%;
 		width:18%;
@@ -98,7 +98,7 @@
 		width:19%;
 	}
 	#b6{
-		background-image:url('/img/life/edu/6.png');
+		background-image:url({{ asset('/img/life/edu/6.jpg') }});
 		top:35%;
 		left:31%;
 		width:15%;
@@ -112,7 +112,7 @@
 		width:16%;
 	}
 	#b7{
-		background-image:url('/img/life/edu/7.png');
+		background-image:url({{ asset('/img/life/edu/7.jpg') }});
 		top:30%;
 		right:32%;
 		width:16%; 
@@ -126,7 +126,7 @@
 		width:17%;
 	}
 	#b8{
-		background-image:url('/img/life/edu/8.png');
+		background-image:url({{ asset('/img/life/edu/8.jpg') }});
 		top:34%;
 		right:8%;
 		width:15%; 
@@ -140,7 +140,7 @@
 		width:16%;
 	}
 	#b9{
-		background-image:url('/img/life/edu/9.png');
+		background-image:url({{ asset('/img/life/edu/9.jpg') }});
 		bottom:36%;
 		left:8%;
 		width:14%;
@@ -154,7 +154,7 @@
 		width:15%;
 	}
 	#b10{
-		background-image:url('/img/life/edu/10.png');
+		background-image:url({{ asset('/img/life/edu/10.jpg') }});
 		width:8%;
 		bottom:36%;
 		left:35%;
@@ -168,7 +168,7 @@
 		width:9%;
 	}
 	#b11{
-		background-image:url('/img/life/edu/11.png');
+		background-image:url({{ asset('/img/life/edu/11.jpg') }});
 		width:19%;
 		right:29%;
 		bottom:37%;
@@ -182,7 +182,7 @@
 		width:20%;
 	}
 	#b12{
-		background-image:url('/img/life/edu/12.png');
+		background-image:url({{ asset('/img/life/edu/12.jpg') }}); 
 		width:14%;
 		right:7%;
 		bottom:37%;
@@ -196,7 +196,7 @@
 		width:15%;
 	}
 	#b13{
-		background-image:url('/img/life/edu/13.png');
+		background-image:url({{ asset('/img/life/edu/13.png') }});
 		width:12%;
 		left:8%;
 		bottom:17%;
@@ -210,7 +210,7 @@
 		width:13%;
 	}
 	#b14{
-		background-image:url('/img/life/edu/14.png');
+		background-image:url({{ asset('/img/life/edu/14.jpg') }});
 		width:23%;
 		bottom:16%;
 		left:27%;
@@ -224,7 +224,7 @@
 		width:24%;
 	}
 	#b15{
-		background-image:url('/img/life/edu/15.png');
+		background-image:url({{ asset('/img/life/edu/15.jpg') }});
 		width:12%;
 		right:33%;
 		bottom:18%;
@@ -238,7 +238,7 @@
 		width:13%;
 	}
 	#b16{
-		background-image:url('/img/life/edu/16.png');
+		background-image:url({{ asset('/img/life/edu/16.png') }});
 		width:15%;
 		bottom:14%;
 		right:7%;
@@ -292,7 +292,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/edu/teach__word.png') }}" id="word">
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/ndsJE-c-1us" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<body>

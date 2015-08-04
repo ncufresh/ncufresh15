@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Decoration;
 use App\Background;
+use App\Creature;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -72,6 +73,10 @@ class AuthController extends Controller
 		Decoration::create([
 			'user_id' => $user->id
 		]);
+
+        Creature::create([
+            'user_id' => $user->id
+        ]);
 
 		return $user;
     }

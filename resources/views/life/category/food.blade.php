@@ -15,7 +15,7 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image:url('/img/life/food/food_background.png');
+		background-image:url({{ asset('/img/life/food/food_background.png') }});
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -27,7 +27,7 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/food/G14.png');
+		background-image:url({{ asset('/img/life/food/G14.png') }});
 		top:-9%;
 		left:6%;
 		width:26%; 
@@ -43,7 +43,7 @@
 		top:-14%;
 	}
 	#b2{
-		background-image:url('/img/life/food/9R.png');
+		background-image:url({{ asset('/img/life/food/9R.png') }});
 		top:-13%;
 		right:32%;
 		width:31%; 
@@ -59,7 +59,7 @@
 		top:-18%;
 	}
 	#b3{
-		background-image:url('/img/life/food/7R.png');
+		background-image:url({{ asset('/img/life/food/7R.png') }});
 		top:-5%;
 		right:2%;
 		width:28%;
@@ -75,7 +75,7 @@
 		top:-8%;
 	}
 	#b4{
-		background-image:url('/img/life/food/backhome.png');
+		background-image:url({{ asset('/img/life/food/backhome.png') }});
 		top:14%;
 		left:17%;
 		width:23%; 
@@ -91,7 +91,7 @@
 		top:9%;
 	}
 	#b5{
-		background-image:url('/img/life/food/late_night.png');
+		background-image:url({{ asset('/img/life/food/late_night.png') }});
 		top:8%;
 		right:29%;
 		width:28%; 
@@ -107,7 +107,7 @@
 		top:3%;
 	}
 	#b6{
-		background-image:url('/img/life/food/pancake.png');
+		background-image:url({{ asset('/img/life/food/pancake.png') }});
 		top:22%;
 		right:1%;
 		width:27%; 
@@ -123,7 +123,7 @@
 		top:17%;
 	}
 	#b7{
-		background-image:url('/img/life/food/pine.png');
+		background-image:url({{ asset('/img/life/food/pine.png') }});
 		top:26%;
 		right:29%;
 		width:26%; 
@@ -139,7 +139,7 @@
 		width:36%;
 	}
 	#b8{
-		background-image:url('/img/life/food/crepe.png');
+		background-image:url({{ asset('/img/life/food/crepe.png') }});
 		bottom:25%;
 		left:1%;
 		width:28%;
@@ -195,7 +195,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/food/food_word.png') }}" id="word">
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/DlF-6DDZh3E" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/HRPXCxIs3os" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<body>

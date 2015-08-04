@@ -52,7 +52,7 @@
           </div>
         </li>
         <li class="list_1">
-          <div class="collapsible-header"><a id="freshmen_week" class="link_1">新生周</a></div>
+          <div class="collapsible-header"><a id="freshmen_week" class="link_1">新生週</a></div>
         </li>
         <li class="list_1">
           <div class="collapsible-header"><a id="activity" class="link_1">輔導及活動專區</a></div>
