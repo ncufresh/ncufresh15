@@ -32,6 +32,7 @@ $(function() {
                         $('#question-options').html('');
                         $('#question-head').html('恭喜');
                         $('#question-body').html('你已經打開了瓶子!');
+                        $('#bottle').css({'background-image': 'url(/img/home/bottle2.png)'});
                         if (modal_opened == false) {
                             $('#write-modal').openModal();
                         }

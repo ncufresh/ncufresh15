@@ -16,9 +16,33 @@
     position: fixed;
 }
 
+#sg1 {
+    background-image: url('/img/home/sg1.png');
+    left: 20%;
+    bottom: 50px;
+    width: 292px;
+    height: 300px;
+}
+
+#sg2 {
+    background-image: url('/img/home/sg2.png');
+    right: 20px;
+    bottom: 100px;
+    width: 238px;
+    height: 300px;
+}
+
+#shell {
+    background-image: url('/img/home/shell.png');
+    left: 40%;
+    bottom: 90px;
+    width: 381px;
+    height: 300px;
+}
+
 #treasure {
     background-image: url('/img/home/treasure.png');
-    right: 20px;
+    right: 15%;
     bottom: 20px;
     width: 200px;
     height: 200px;
@@ -144,6 +168,12 @@ $(function() {
             $(this).hide();
         }
     });
+    $('#food1').click(function() {
+        $('#chest-wrapper').hide();
+    });
+    $('#food2').click(function() {
+        $('#chest-wrapper').hide();
+    });
 });
 </script>
 @if ($isHome)
@@ -152,9 +182,22 @@ $(function() {
 @stop
 
 @section('content')
+<!-- decorations -->
+@if ($decoration->sg1)
+<div id="sg1" class="item"></div>
+@endif
+@if ($decoration->sg2)
+<div id="sg2" class="item"></div>
+@endif
+@if ($decoration->shell)
+<div id="shell" class="item"></div>
+@endif
+
 <div id="bottle"   class="item"></div>
 <div id="treasure" class="item tooltipped" data-position="top" data-delay="50" data-tooltip="開啟寶箱"></div>
-<a id="information-btn" class="modal-trigger" href="#modal-information"></a>
+<a id="information-btn" class="modal-trigger center-align" href="#modal-information">
+    <i class="material-icons" style="color: #fff;">keyboard_arrow_up</i>
+</a>
 <!-- Modal Structure -->
 <div id="question-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
