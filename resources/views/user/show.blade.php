@@ -146,8 +146,16 @@
     background-image: url('/img/home/food1.png');
 }
 
+.food1 {
+  cursor: url('/img/home/food1.gif'), auto;
+}
+
 #food2 {
     background-image: url('/img/home/food2.png');
+}
+
+.food2 {
+  cursor: url('/img/home/food2.gif'), auto;
 }
 </style>
 @stop
@@ -167,12 +175,22 @@ $(function() {
             $(this).fadeOut();
         }
     });
+
+    $('#wrapper').click(function() {
+        $('body').removeClass('food1');
+        $('body').removeClass('food2');
+    });
     $('#food1').click(function() {
-        $('#chest-wrapper').fadeOut();
+        $('body').removeClass('food2');
+        $('body').addClass('food1');
+        $('#chest-wrapper').hide();
     });
     $('#food2').click(function() {
-        $('#chest-wrapper').fadeOut();
+        $('body').removeClass('food1');
+        $('body').addClass('food2');
+        $('#chest-wrapper').hide();
     });
+
 });
 </script>
 @if ($isHome)
