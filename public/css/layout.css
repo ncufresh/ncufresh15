@@ -9,6 +9,11 @@
     padding: 0 5%;
 	background-color: rgba(245, 245, 245, 0.9);
 }
+
+#nav-qa a , #nav-links a{
+	color: #5D5555 !important;
+}
+
 .nav-margin {
 	margin-top: 10px;
 }
