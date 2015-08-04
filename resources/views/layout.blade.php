@@ -106,7 +106,7 @@
 				<li class='no-padding'>
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold">
-							<a class="collapsible-header  waves-effect waves-teal">新生Q&amp;A</a>
+							<a class="collapsible-header  waves-effect waves-light">新生Q&amp;A</a>
 							<div class="collapsible-body" style="display: block;">
 								<ul>
 									<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
@@ -122,7 +122,7 @@
 				<li class='no-padding'>
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold">
-							<a class="collapsible-header  waves-effect waves-teal">常用連結</a>
+							<a class="collapsible-header  waves-effect waves-light">常用連結</a>
 							<div class="collapsible-body" style="display: block;">
 								<ul>
 									<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
@@ -148,28 +148,28 @@
 				@if (Request::url() === url('/'))
 					<div id='banner'>
 						<div class='row banner-menu'>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('document') }}'>新生必讀</a></div>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat' href='{{ url('campus') }}'>校園導覽</a></div>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat' href='{{ url('document') }}'>新生必讀</a></div>
 							<div class='col s4'>
 								<div id='nop'>yo</div>
 								<a id='logo' href='{{url('/')}}'></a>
 							</div>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat' href="{{ url('life') }}">中大生活</a></div>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('group')}}'>系所社團</a></div>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat' href="{{ url('life') }}">中大生活</a></div>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat' href='{{ url('group')}}'>系所社團</a></div>
 						</div>
 						<div id='banner-img' class='row'>
 						</div>
 						<div class='row banner-menu'>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat links' data-activates='qadropdown'>新生Q&amp;A</a>
 								<ul id='qadropdown' class='dropdown-content'>
 									<li><a href="{{ url('qa') }}">Q&amp;A</a></li>
 									<li><a href="{{ url('qa/create?type=qa') }}">我要發問</a></li>
 									<li><a href="{{ url('/qa/create?type=report') }}">問題回報</a></li>
 								</ul>
 							</div>
-							<div class='col s2'><a class='waves-effect waves-teal btn-flat' href='{{ url('video') }}'>影音專區</a></div>
-							<div class='col s2 offset-s4'><a class='waves-effect waves-teal btn-flat' href='{{ url('about')}}'>關於我們</a></div>
-							<div class='col s2'><a class='links waves-effect waves-teal btn-flat' data-activates='banner-links'>常用連結</a></div>
+							<div class='col s2'><a class='waves-effect waves-light btn-flat' href='{{ url('video') }}'>影音專區</a></div>
+							<div class='col s2 offset-s4'><a class='waves-effect waves-light btn-flat' href='{{ url('about')}}'>關於我們</a></div>
+							<div class='col s2'><a class='links waves-effect waves-light btn-flat' data-activates='banner-links'>常用連結</a></div>
 							<ul id='banner-links' class='dropdown-content'>
 								<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
 								<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
