@@ -19,19 +19,21 @@ class GameController extends Controller
 
     public function init(Request $request)
     {
-    	$request->session()->put('CorrectTimes', '0');
+    	$request->session()->put('CorrectTimes', 0);
     	$request->session()->put('InQuestion', true);
         return "go fuck yourself";
     }
     public function setRightAnswer(Request $request)
     {
-    	$value = $request->session()->get('CorrectTimes');
-        // $value = (int)($value);
-        // $value = $value + 1;
+    	$value = $request->session()->pull('CorrectTimes');
+        //$value = session('CorrectTimes');
+        var_dump($value);
         $value+=1;
-    	$request->session()->put('CorrectTimes', $value);
+        var_dump($value);
+        //$request->session()->put('CorrectTimes', $value);
+        app('session')->set('CorrectTimes', $value);
+        //session(['CorrectTimes' => $value]);
     	$booo = $request->session()->get('InQuestion');
-
     	if ($booo==true && $value==3) {
     		KnowledgeController::getTreasure();
     		return "你拿到寶物了";
