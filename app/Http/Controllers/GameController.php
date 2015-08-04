@@ -25,7 +25,6 @@ class GameController extends Controller
     }
     public function setRightAnswer(Request $request)
     {
-    	//$question = KnowledgeController::getQuestion();
     	$value = $request->session()->get('CorrectTimes');
     	$value+=1;
     	$request->session()->put('CorrectTimes', $value);
