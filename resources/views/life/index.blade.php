@@ -91,7 +91,7 @@
 	}
 	#b5{
 		background-image:url({{ asset('img/life/right_down.png') }});
-		bottom:-12%;
+		bottom:-14%;
 		right:-3%; 
 		width:34%;
 		height:51%;
@@ -105,7 +105,7 @@
 		width:42%;
 		height:60%;
 		right:-8%;
-		bottom:-17%;
+		bottom:-19%;
 	}
 </style>
 @stop
