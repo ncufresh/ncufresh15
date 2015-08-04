@@ -1,3 +1,14 @@
+/***Browser detection************************************************************************************/
+// var isIE = function(){
+//     var b = document.createElement('b')
+//     b.innerHTML = '<!--[if IE]><i></i><![endif]-->'
+//     return b.getElementsByTagName('i').length === 1
+// }
+// //alert('ie:' + isIE());
+// if (isIE()) {
+// 	window.location.replace("support");
+// };
+/********************************************************************************************************/
 var currentScroll;
 var portal = null; // object
 var portalToggle;
