@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'GAME')
+@section('title', '小遊戲')
 
 @section('css')
 
