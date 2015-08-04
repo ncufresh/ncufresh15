@@ -9,7 +9,7 @@
 		</div>
 		<img id="view" src="{{ asset('uploads/campus/'.$view->picName) }}">
 	</div>
-	<div class="card white">
+	<div class="card grey lighten-4">
 		<div class="card-content">
 			<span class="card-title indigo-text text-darken-4" id="title_text">
 				{{ $view->title }}
