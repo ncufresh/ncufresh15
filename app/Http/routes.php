@@ -99,6 +99,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get ('qa/delete/{id}' , 'QaController@destroy');
         Route::get ('qa/solved'      , 'QaController@solved');
 
+        Route::get('document/ckeditor', 'Document\DocumentController@editor');
+        Route::get('document/edit_content/{id}', 'Document\DocumentController@edit');
+        Route::post('document/store_content', 'Document\DocumentController@store');
+
+
+        Route::get('life/edit/{id}','Life\LifeController@edit');
+        Route::post('life/update/{id}','Life\LifeController@update');
+        Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
+        Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
+
         // File upload center
         //------------------------------------------------------------------------------------------------------
         Route::get('file', 'FileController@index');
@@ -149,9 +159,6 @@ Route::get('campus/view/{id}', 'Campus\CampusController@showView');
 //Document
 //******************************************************************************************************
 Route::get('document', 'Document\DocumentController@index');	
-Route::get('document/ckeditor', 'Document\DocumentController@editor');
-Route::get('document/edit_content/{id}', 'Document\DocumentController@edit');
-Route::post('document/store_content', 'Document\DocumentController@store');
 Route::get('document/{page_id}', 'Document\DocumentController@get_content_1');
 Route::get('document/{page_id}/{page_id_2}', 'Document\DocumentController@get_content_2');
 Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@get_content_3');
@@ -182,10 +189,6 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('life', 'Life\LifeController@index');
 Route::get('life/category/{category}', 'Life\LifeController@introduce');
 Route::get('life/{id}','Life\LifeController@show');
-Route::get('life/edit/{id}','Life\LifeController@edit');
-Route::post('life/update/{id}','Life\LifeController@update');
-Route::post('life/addpic/{id}','Life\LifeController@add_pictures');
-Route::get('life/delpic/{id}','Life\LifeController@delete_pictures');
 //******************************************************************************************************
 
 // about
