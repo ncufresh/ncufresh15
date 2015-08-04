@@ -52,7 +52,8 @@ a {
 }
 
 table {
-	width: 100% !important;
+	max-width: 100% !important; 
+	min-width: 100% !important;
 }
 
 td {
