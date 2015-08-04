@@ -199,7 +199,7 @@
 		background-image:url({{ asset('/img/life/edu/13.png') }});
 		width:12%;
 		left:8%;
-		bottom:17%;
+		bottom:18%;
 	}
 	#b13:before{
 		content:"";
