@@ -25,14 +25,13 @@ class GameController extends Controller
     }
     public function setRightAnswer(Request $request)
     {
-    	//$value = $request->session()->get('CorrectTimes');
-        $value = session('CorrectTimes');
-        // $value = (int)($value);
+    	$value = $request->session()->pull('CorrectTimes');
+        //$value = session('CorrectTimes');
         var_dump($value);
         $value+=1;
         var_dump($value);
-    	//$request->session()->put('CorrectTimes', $value);
-        session(['CorrectTimes' => $value]);
+        $request->session()->put('CorrectTimes', $value);
+        //session(['CorrectTimes' => $value]);
     	$booo = $request->session()->get('InQuestion');
     	if ($booo==true && $value==3) {
     		KnowledgeController::getTreasure();
