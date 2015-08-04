@@ -19,7 +19,7 @@ class GameController extends Controller
 
     public function init(Request $request)
     {
-    	$request->session()->put('CorrectTimes', '0');
+    	$request->session()->put('CorrectTimes', 0);
     	$request->session()->put('InQuestion', true);
         return "go fuck yourself";
     }
@@ -28,11 +28,12 @@ class GameController extends Controller
     	//$value = $request->session()->get('CorrectTimes');
         $value = session('CorrectTimes');
         // $value = (int)($value);
+        var_dump($value);
         $value+=1;
+        var_dump($value);
     	//$request->session()->put('CorrectTimes', $value);
         session(['CorrectTimes' => $value]);
     	$booo = $request->session()->get('InQuestion');
-
     	if ($booo==true && $value==3) {
     		KnowledgeController::getTreasure();
     		return "你拿到寶物了";
