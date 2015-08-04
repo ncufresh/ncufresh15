@@ -9,24 +9,23 @@
 			font-family:inital !importment;
 		}
 		#a{
-			background-image:url('/img/life/article.png');
+			background-image:url({{asset('/img/life/article.png')}});
 			background-size:100% auto;
 			background-repeat: no-repeat;
 			width:100%;
 			height:100%;
 		}
 		.article{
-			width:581px;
-			height:324px;
-			overflow:scroll;
-			margin:0% auto;
+			width:90%;
+			height:50%;
+			overflow-y:auto;
+			margin:5% auto;
 		}
-
 	</style>
 @stop
 
 @section('js')
-	<script src='{{ asset('js/life/coverflow.min.js') }}'></script>
+	<script src="{{ asset('js/life/coverflow.min.js') }}"></script>
 	<script>
 		$(function() {
 			// and kick off
