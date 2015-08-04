@@ -225,7 +225,7 @@ var question = function () {
 				if (boxs[i].isme && boxs[i].lock==false && boxs[i].open==false) {
 					hero.canmove=false;
 					getquestion();
-					deleteAll();
+					//deleteAll();
 					init();
 					questionON=1;
 					select=1;
