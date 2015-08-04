@@ -91,7 +91,6 @@
 .bg-padding {
 	padding: 15px;
 	height: 100%;
-	max-width: 500px;
 }
 
 .bg-item {
@@ -154,7 +153,7 @@ $(function() {
 
 @section('content')
 <div id="bottle"   class="item"></div>
-<div id="treasure" class="item tooltipped" data-position="top" data-delay="50" data-tooltip="Open"></div>
+<div id="treasure" class="item tooltipped" data-position="top" data-delay="50" data-tooltip="開啟寶箱"></div>
 <a id="information-btn" class="modal-trigger" href="#modal-information"></a>
 <!-- Modal Structure -->
 <div id="question-modal" class="modal modal-fixed-footer">
