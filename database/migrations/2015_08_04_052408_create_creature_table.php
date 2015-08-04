@@ -15,7 +15,7 @@ class CreateCreatureTable extends Migration
         Schema::create('creatures', function(Blueprint $table){
             $table->increments('id');
             $table->integer('user_id')->default(0);
-            $table->integer('level1')->default(0);
+            $table->integer('level1')->default(1);
             $table->integer('color1')->default(0);
             $table->integer('size1')->default(0);
             $table->integer('level2')->default(0);
