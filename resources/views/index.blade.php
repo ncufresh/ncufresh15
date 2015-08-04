@@ -50,10 +50,8 @@
 		<div class="slider">
 			<ul class="slides">
 				<li>
-					<img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+					<a href="http://www.google.com"><img src="{{ asset('img/pine.jpg') }}" ></a>
 					<div class="caption right-align">
-						<h3>新生知訊網</h3>
-						<h5 class="light grey-text text-lighten-3">投資一定有風險 基金投資有賺有賠 申購前應詳閱公開說明書</h5>
 					</div>
 				</li>
 				<li>

@@ -10,6 +10,11 @@
 		<link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 		<link rel="icon" href="{{asset('icon.png')}}" type="image/png">
 		<meta charset="UTF-8">
+		<meta property="og:title" content="中央大學|2015 新生知訊網" />
+		<meta property="og:site_name" content="新生知訊網"/>
+		<meta property="og:image" content="{{asset('img/ogp.jpg')}}"/>
+		<meta property="og:description" content="為歡迎大學新鮮人，新生知訊網，主打各項貼心服務，從飲食、住宿、交通、教育、藝文等主題出發的生活資訊，與大考放榜同步上線"/>
+		<meta property="og:type" content="article">
 		<style>
 			#portal-img {
 				background: url('{{asset("img/Untitled.png")}}');
