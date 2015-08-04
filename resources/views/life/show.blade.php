@@ -21,6 +21,9 @@
 			overflow-y:auto;
 			margin:5% auto;
 		}
+		strong{
+			font-weight:bold;
+		}
 	</style>
 @stop
 
@@ -35,13 +38,11 @@
 @stop
 
 @section('content')
-@permission('management')
 <div class="row">
 	<div class="right align">
 		<a class="waves-effect waves-light btn" href="{{url('life/edit/'.$show->id)}}"><i class="material-icons left">settings</i>後台管理</a>
 	</div>	
 </div>
-@endpermission
 <div id="coverflow"  style="height:400px;">
 	@foreach($pictures as $picture)
 		<a href="{{ $picture->url }}" target="_blank">
@@ -53,10 +54,8 @@
 <!--圖片-->
 
 <div id="a" style="margin-top:500px;padding-top:3%;">
-	<div class="center align">
-		<div class="article">
-			<p>{!! $show->content !!}</p>   <!--  -->
-		</div>
+	<div class="article">
+		<p>{!! $show->content !!}</p>   <!--  -->
 	</div>		
 </div>
 @stop
