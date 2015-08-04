@@ -79,6 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// Note: Permission must be authorize in controller
 	Route::get ('user/edit/{id}'  , 'UserController@edit');
+	Route::get ('user/chbg/{bg}'  , 'UserController@changeBackground');
 	Route::post('user/update/{id}'  , 'UserController@update');
 
     // Home
