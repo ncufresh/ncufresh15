@@ -34,7 +34,7 @@ class GameController extends Controller
     		KnowledgeController::getTreasure();
     		return "你拿到寶物了";
     	} else{
-    		return "go fuck yourself";
+            return $value . "次";
     	}
     }
     public function cleanAir(Request $request)
