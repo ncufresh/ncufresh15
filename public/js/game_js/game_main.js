@@ -213,13 +213,18 @@ function loaded() {
 
 	ctx.fillStyle = "#000000";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-		
+	
+	ctx.fillStyle = '#FF5675';
+	ctx.font = '15px Bangers,Arial';
+	ctx.textAlign = "left";
+	ctx.textBaseline = "top";
+	ctx.fillText("溫興提醒:小遊戲只能在電腦玩", 5, 5);
+
 	ctx.fillStyle = '#FF4500';
-	ctx.font = '45px Bangers,Arial';
+	ctx.font = 'bold 45px Bangers,Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
-	ctx.fillText("遊戲操作:↑↓←→,Enter", canvas.width / 2, canvas.height / 4 - 20);
-	ctx.fillText("點一下遊戲畫面鎖住視窗", canvas.width / 2, canvas.height / 4 - 70);
+	ctx.fillText("遊戲操作:↑↓←→,Enter", canvas.width / 2, canvas.height / 4 - 30);
 
     ctx.beginPath();
     ctx.strokeStyle="#FFD700";
@@ -236,12 +241,13 @@ function loaded() {
 	ctx.fillText("注意！", canvas.width / 2, canvas.height / 3 +60);
 	ctx.fillText("打開寶箱時會出現三道問題鎖！", canvas.width / 2, canvas.height / 3 +90);
 	ctx.fillText("全部答對才能獲得寶物！", canvas.width / 2, canvas.height / 3 +120);
-	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開喔！", canvas.width / 2, canvas.height / 3 +150);
+	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開！", canvas.width / 2, canvas.height / 3 +150);
 
-	ctx.fillStyle = '#ffffff';
-	ctx.font = '25px Arial';
+	ctx.fillStyle = '#007CDC';
+	ctx.font = 'bold 25px Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
+	ctx.fillText("點一下遊戲畫面鎖住視窗", canvas.width / 2, canvas.height / 3 +215);
 	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 3 +240);
 }
 ////////////////////////////////////////////////
