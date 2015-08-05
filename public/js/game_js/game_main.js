@@ -39,7 +39,7 @@ function getRandomArray(minNum, maxNum, n) {	//隨機產生不重覆的n個數�
 	return rdmArray;
 }
 
-var arrayIndex=getRandomArray(0,20,6);
+var arrayIndex=getRandomArray(0,20,8);
 var arrayX = [52,66,41,82,91,33,53,72,25,87,35,41,66,23,9,53,73,55,90,82,70];
 var arrayY = [8,12,18,19,24,29,37,38,39,42,53,49,49,56,72,66,64,79,72,82,88];
 
@@ -52,7 +52,7 @@ var hero = {
 	end: {
 		x: initialX*grid.length,
 		y: initialY*grid.length,
-		Delay: 16,
+		Delay: 17,
 		Timer: 0
 	},
 	keylock : false,
@@ -119,7 +119,25 @@ var box5 = {
 	width : grid.length,
 	height : grid.length
 };
-var boxs = [box1,box2,box3,box4,box5];
+var box6 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : arrayX[arrayIndex[6]]*grid.length,
+	y : arrayY[arrayIndex[6]]*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var box7 = {
+	isme : false,
+	lock : false,
+	open : false,
+	x : arrayX[arrayIndex[7]]*grid.length,
+	y : arrayY[arrayIndex[7]]*grid.length,
+	width : grid.length,
+	height : grid.length
+};
+var boxs = [box1,box2,box3,box4,box5,box6,box7];
 
 
 var block1 = {x:64,y:128,width:192,height:64,type:"block"};
