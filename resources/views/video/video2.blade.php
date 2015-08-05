@@ -8,38 +8,77 @@
 
 @media (min-width: 1400px){
     .videoSty {
-        min-width: 600px;
+        min-width: 100%;/*700px*/
         min-height: 510px;
     }
     .video-js .vjs-tech {
-        top: -30px;
+        top: 1px;
     }
 }
-@media (min-width: 1200px) and (max-width: 1400px){
+@media (min-width: 1227px) and (max-width: 1400px){
     .videoSty {
-        min-width: 500px;
+        min-width: 100%;/*500px*/
         min-height: 425px;
     }
     .video-js .vjs-tech {
-        top: -30px;
+        top: 1px;
     }
 }
-@media (min-width: 1050px) and (max-width: 1200px){
+@media (min-width: 1205px) and (max-width: 1227px){
     .videoSty {
-        min-width: 450px;
+        min-width: 100%;/*490px*/
+        min-height: 425px;
+    }
+    .video-js .vjs-tech {
+        top: 1px;
+    }
+}
+@media (min-width: 1172px) and (max-width: 1205px){
+    .videoSty {
+        min-width: 100%;/*450px*/
+        min-height: 410px;
+    }
+    .video-js .vjs-tech {
+        top: 1px;
+    }
+}
+@media (min-width: 1193px) and (max-width: 1227px){
+    .videoSty {
+        min-width: 100%;/*450px*/
         min-height: 400px;
     }
     .video-js .vjs-tech {
-        top: -30px;
+        top: 1px;
     }
 }
+
+@media (min-width: 1050px) and (max-width: 1193px){
+    .videoSty {
+        min-width: 100%;/*500px*/
+        min-height: 380px;
+    }
+    .video-js .vjs-tech {
+        top: 1px;
+    }
+}
+
+@media (min-width: 1033px) and (max-width: 1050px){
+    .videoSty {
+        min-width: 100%;/*415px*/
+        min-height: 390px;
+    }
+    .video-js .vjs-tech {
+        top: 1px;
+    }
+}
+
 @media (min-width: 992px) and (max-width: 1050px){
     .videoSty {
-        min-width: 400px;
+        min-width: 100%;/*400px*/
         min-height: 360px;
     }
     .video-js .vjs-tech {
-        top: -30px;
+        top: 1px;
     }
 }
 @media (min-width: 850px) and (max-width: 1050px) {
@@ -62,7 +101,7 @@
 /* /////////////////////Show the controls (hidden at the start by default)/////////////////////// */
 .video-js .vjs-control-bar {
   position: absolute;
-  height: 63px; 
+  height: 47px; 
   background-color: rgba(0, 0, 0, 0);
   display: block;
   border-image:url('/img/video/media/bottom.png') 30 30 30 30 stretch;
@@ -247,6 +286,7 @@ video{
 @section('js')
 <!--<script src=''></script> -->
 <script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
+<script src="{{ asset('js/video/youtube.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/video/delete.js') }}"></script>
@@ -264,8 +304,12 @@ $(document).ready(function(){
     $("#Stop").on("submit",function(e) {
         e.preventDefault();
     });
-    $("#my_video_1").attr('width','auto');
-
+/*
+    $(".vjs-fullscreen-control.vjs-control").click(function(){
+      $(".vjs-default-skin.vjs-play-control").css("margin-left","0px");
+      $(".vjs-default-skin.vjs-playing .vjs-play-control").css("margin-left","0px");
+    });
+*/
 });
 </script>
 
@@ -279,12 +323,10 @@ $(document).ready(function(){
        <div class="WrapTop">
             <div class="WrapRight">
                 <div class="WrapLeft">
-                    <video id="my_video_1" class="video-js vjs-default-skin videoSty" 
-                      controls preload="none" data-setup='{}'
-                      poster='http://video-js.zencoder.com/oceans-clip.jpg'>
-                        <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
-                        <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
-                    </video>
+                  <video id="my_video_1" src="" class="video-js vjs-default-skin videoSty" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+                   controls preload="none" data-setup='{ "techOrder": ["youtube"],
+                    "src": "https://www.youtube.com/embed/{{$url}}" }'>   
+                  </video>
                 </div>
             </div>    
         </div>
@@ -328,7 +370,7 @@ $(document).ready(function(){
                             <div id="{{$try->id}}">
                                 <div class="row">
                                     <div class="col s2 m2 l2">{{$try->name}}</div>
-                                    <div class="col s6 m6 l6" style="word-break: break-all;">留言內容 {{$try->comment}}</div>
+                                    <div class="col s6 m6 l6" style="word-break: break-all;">留言內容 {{{$try->comment}}}</div>
                                     <div class="col s4 m4 l4" style="height: auto;">
                                       <button type="submit" class="waves-effect waves-teal btn , delete" value="{{ $try->id }}" style="    position: absolute;
             display: inline-block;
@@ -375,7 +417,7 @@ $(document).ready(function(){
                             <div id="{{$try->id}}">
                                 <div class="row">
                                     <div class="col s4 m3 l3">{{$try->name}}</div>
-                                    <div class="col s8 m9 l9" style="word-break: break-all;">留言內容 {{$try->comment}}</div>
+                                    <div class="col s8 m9 l9" style="word-break: break-all;">留言內容 {{{$try->comment}}}</div>
                                 </div><!--end row-->
                                 <br>
 

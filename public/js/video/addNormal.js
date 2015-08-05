@@ -16,7 +16,7 @@ $(document).ready(function(){
                       </div>\
                       <br>\
                    </div>';
-        $("#mCSB_2_container").prepend( $(str).hide().fadeIn(1000) );  //append: add in the back
+        $("#mCSB_2_container").prepend($(str).hide().fadeIn(1000));  //append: add in the back
         $("#SendComment").val('');
 
       }
