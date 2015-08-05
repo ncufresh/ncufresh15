@@ -5,7 +5,6 @@
 @section('css')
 
 <style>
-
     #gamecanvas{
         margin: 0px auto;
         outline: none;
@@ -38,6 +37,7 @@
 
 
 <script type="text/javascript">
+var id = <?php echo $userid; ?>;
 //hide the scroll
 $(function() {
     var btn = $("#gamecanvas");

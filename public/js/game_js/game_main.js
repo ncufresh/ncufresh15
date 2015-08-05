@@ -202,14 +202,6 @@ window.onkeydown = function(e) {
 	}
 }
 
-function redirect() {
-    $.ajax({
-        url: '/game/redirect',
-        type: 'GET',
-        success: function(data) {
-        }
-    });
-}
 //timing
 var minute=5;
 var second=0;
@@ -218,13 +210,11 @@ var fiveminute = function () {
 		minute-=1;
 		second=60;
 	}
-	second-=1;
 	if (minute==0 && second==0) {
-		//window.location = "auth/login";
-		//window.location.replace("https://www.facebook.com/");
-		//window.history.go(-1);
-		clearInterval(timing);
-		redirect();
+		window.location = "user/" + id; // id getting by view
+	}
+	else{
+		second-=1;
 	}
 }
 //

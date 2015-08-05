@@ -5,9 +5,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/department/club.css') }}">
     <style type="text/css">
         #container {
-            background: url('{{asset("img/department/background.png")}}');
+            background: url('{{asset("img/department/background.jpg")}}');
             background-size: 100% 100%;
             background-repeat: no-repeat;
+            min-height: 1000px;
         }
     </style>
 @stop

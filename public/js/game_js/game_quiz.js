@@ -4,7 +4,7 @@ var questionON = 0; //-1:lock, 0:close, 1:in, 2:result
 var threetimes = 0;
 var qadata;
 
-function redirect() {
+function init() {
     $.ajax({
         url: '/game/save',
         type: 'GET',

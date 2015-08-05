@@ -88,7 +88,7 @@
 	#b4:hover{
 		width:38%;
 		left:-9%;
-		bottom:-11%;
+		bottom:-9%;
 	}
 	#b5{
 		background-image:url({{ asset('img/life/right_down.png') }});
@@ -106,7 +106,7 @@
 		width:42%;
 		height:60%;
 		right:-8%;
-		bottom:-17%;
+		bottom:-15%;
 	}
 </style>
 @stop
