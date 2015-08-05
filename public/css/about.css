@@ -1,6 +1,6 @@
 #top {
 	position: relative;
-	width: 95%;
+	width: 100%;
 	background: url("/img/about/all.jpg");
 	background-repeat: no-repeat;
 	margin: 0 auto;
@@ -18,7 +18,7 @@
 
 #bottom {
 	position: relative;
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 }
 
