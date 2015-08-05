@@ -17,7 +17,7 @@ Route::before(function(){
     $version = Agent::version($browser);
     // var_dump($browser);
     // var_dump($version);
-    if ($browser == "IE" ) {
+    if ($browser == "IE" && $version <= 9) {
         return view('support');
     }
 });
