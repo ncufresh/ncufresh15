@@ -43,8 +43,8 @@ var arrayIndex=getRandomArray(0,20,6);
 var arrayX = [52,66,41,82,91,33,53,72,25,87,35,41,66,23,9,53,73,55,90,82,70];
 var arrayY = [8,12,18,19,24,29,37,38,39,42,53,49,49,56,72,66,64,79,72,82,88];
 
-var initialX=arrayX[arrayIndex[1]];
-var initialY=arrayY[arrayIndex[1]];
+var initialX=arrayX[arrayIndex[0]];
+var initialY=arrayY[arrayIndex[0]];
 var hero = {
 	speed: 256, // movement in pixels per second
 	x : initialX*grid.length,
@@ -52,7 +52,7 @@ var hero = {
 	end: {
 		x: initialX*grid.length,
 		y: initialY*grid.length,
-		Delay: 30,
+		Delay: 17,
 		Timer: 0
 	},
 	keylock : false,
@@ -192,27 +192,39 @@ reset();
 ////////////////////////////////////////////////
 //using only on the starting~~~~~~~~~~~~~~~~~~~~
 var starting=false;
+var timing;
 window.onkeydown = function(e) {
 	// enter
 	if(e.keyCode == 13 && starting == true){
 		starting=false;
-		var timing = setInterval(fiveminute,1000);	
+		timing = setInterval(fiveminute,1000);	
 		main();
 	}
 }
 
+function redirect() {
+    $.ajax({
+        url: '/game/redirect',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
 //timing
 var minute=5;
 var second=0;
 var fiveminute = function () {
-	if (second==0) {
+	if (second==0 && minute!=0) {
 		minute-=1;
 		second=60;
 	}
 	second-=1;
 	if (minute==0 && second==0) {
-		//window.location = "group";
-		window.location.replace("https://www.facebook.com/");
+		//window.location = "auth/login";
+		//window.location.replace("https://www.facebook.com/");
+		//window.history.go(-1);
+		clearInterval(timing);
+		redirect();
 	}
 }
 //
@@ -226,7 +238,7 @@ ctx.textAlign = "center";
 ctx.textBaseline = "top";
 ctx.fillText("Loading...", canvas.width / 2, canvas.height / 2 -20);
 
-var loading = setInterval(loaded,1000);		
+var loading = setInterval(loaded,2500);		
 function loaded() {
 	clearInterval(loading);
 	

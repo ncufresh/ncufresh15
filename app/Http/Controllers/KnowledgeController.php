@@ -76,11 +76,14 @@ class KnowledgeController extends Controller
         return response()->json(['knowledge' => $knowledge, 'token' => bin2hex(openssl_random_pseudo_bytes(16))]);
     }
 
+    // return question
     public static function getQuestion()
     {
         $knowledge = Knowledge::orderByRaw('RAND()')->first();
         return response()->json(['questions' => $knowledge, 'answer' => $knowledge->answer]);
     }
+
+    // get treasure in database
     public static function getTreasure()
     {
         // you need to login
@@ -111,7 +114,6 @@ class KnowledgeController extends Controller
             }
         }
         $decoration->save();
-        //return response()->json(['random' => $choice , 'data' => $user]);
     }
     public static function getFish()
     {
