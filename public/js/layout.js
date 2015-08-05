@@ -24,12 +24,13 @@ $(document).ready(function(){
 	$(".nav-links").dropdown({
 		constrain_width: false, // Does not change width of dropdown to that of the activator
 		hover: true, // Activate on hover
-		belowOrigin: true // Displays dropdown below the button
+		belowOrigin: true
 	});
 
-	$("#portal-trigger").dropdown({
+	$("#portal").dropdown({
 		constrain_width: false,
-		hover: false
+		hover: false,
+		belowOrigin: true
 	});
 
 	$("#nav-qa-trigger").dropdown({
@@ -38,25 +39,17 @@ $(document).ready(function(){
 		belowOrigin: true
 	});
 
-	$("#portal-img, #menu-list").hover(function(){
+	$("#portal, #menu-list").hover(function(){
 		portalHover = true;
 		portalPause();
 	},function(){
 		portalHover = false;
 		portalResume();
-		setTimeout(portalMenuOff, 2000);
+		setTimeout(portalMenuOff, 500);
 	});
-
-	$('#portal-img').click(function(e) {
-		e.stopPropagation();
-		if (portalToggle) {
-			portalMenuOff();
-		} else {
-			portalMenuOn();
-		}
-		portalToggle = !portalToggle;
+	$("#portal").click(function(){
+		$("#menu-list").css("position", "fixed");
 	});
-
 	setInterval(doMove, 6000);
 });
 

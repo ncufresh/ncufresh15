@@ -79,6 +79,8 @@ nav {
 	position: fixed;
 	width: 70px;
 	z-index: 4;
+	height: 65px;
+	width: 65px;
 }
 #portal-menu {
 	display: inline-block;
@@ -87,11 +89,6 @@ nav {
 	width: 1px;
 	height: 1px;
 	padding: 0;
-}
-#portal-img {
-	height: 65px;
-	width: 65px;
-	display: inline-block;
 }
 #footer {
 	height: 70px;
