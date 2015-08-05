@@ -2,6 +2,7 @@
 
 @section('title', '個人專區')
 @section('css')
+<link href="{{asset('css/user.css')}}" rel="stylesheet" type="text/css">
 <style>
 .menu-btn {
     color: #fff;
@@ -11,46 +12,32 @@
 }
 
 .item {
-    background-size: 100% auto;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     position: fixed;
 }
 
-.creature {
-    transition: top 5s ease-in-out, left 5s ease-in-out, transform .2s;
-    display: inline-block;
-    position: fixed;
-    z-index: 100;
-    background-size: 100% 100%;
-}
-
-#sand {
-    background: linear-gradient(#C9BC9C, #B28247);
-    left:0;
-    bottom: 20px;
-    width: 100%;
-    height: 90px;
-}
-
 #sg1 {
     background-image: url('/img/home/sg1.png');
-    left: 20%;
-    bottom: 50px;
+    left: 11%;
+    bottom: 12px;
     width: 250px;
     height: 257px;
+	z-index: 52;
 }
 
 #sg2 {
     background-image: url('/img/home/sg2.png');
-    right: 20px;
-    bottom: 100px;
+    right: 160px;
+	bottom: 16px;
     width: 238px;
     height: 234px;
+	z-index: 52;
 }
 
 #shell {
     background-image: url('/img/home/shell.png');
-    left: 40%;
+    left: 0%;
     bottom: 30px;
     width: 250px;
     height: 197px;
@@ -58,7 +45,7 @@
 
 #treasure {
     background-image: url('/img/home/treasure.png');
-    right: 15%;
+    right: 0%;
     bottom: 20px;
     width: 200px;
     height: 200px;
@@ -164,7 +151,7 @@
 }
 
 .food1 {
-  cursor: url('/img/home/food1.gif'), auto;
+  cursor: url('/img/home/food1.gif'), auto !important;
 }
 
 #food2 {
@@ -172,7 +159,11 @@
 }
 
 .food2 {
-  cursor: url('/img/home/food2.gif'), auto;
+  cursor: url('/img/home/food2.gif'), auto !important;
+}
+
+.food1 #c0 {
+    cursor: inherit;
 }
 
 #bg-alt {
@@ -255,6 +246,9 @@ $(function() {
     $("#treasure").click(function(){
         $("#chest-wrapper").show();
     });
+    $("#treasure-trigger").click(function(){
+        $("#chest-wrapper").show();
+    });
     $("#chest-wrapper").click(function(e){
         e.stopImmediatePropagation();
         e.preventDefault();
@@ -313,7 +307,6 @@ $(function() {
 @section('content')
 <input type="hidden" value="{{$user->id}}" id="user_id"/>
 <!-- decorations -->
-<div id="sand" class="item"></div>
 @if ($decoration->sg1)
 <div id="sg1" class="item"></div>
 @endif
@@ -418,17 +411,30 @@ $(function() {
             </div>
             <div id="letter-tab" class="col s12" style="overflow: auto;height: 90%;">
                 <ul class="collection">
-                    @foreach ($bottles as $bottle)
-                    <li class="collection-item">
-                        {!! nl2br(e($bottle->content)) !!}
-                    </li>
-                    @endforeach
+					@if ($bottles != null)
+						@foreach ($bottles as $bottle)
+						<li class="collection-item">
+							{!! nl2br(e($bottle->content)) !!}
+						</li>
+						@endforeach
+					@endif
                 </ul>
             </div>
 		</div>
 	</div>
 </div>
-<div id="c0" class="creature"></div>
+<a id="c0" class="creature dropdown-button btn-flat" href='#' data-activates='nenu'></a>
+<ul id='nenu' class='dropdown-content'>
+	@if(Auth::check())
+		<li><a id="treasure-trigger" href="#!">打開道具欄</a></li>
+		<li><a href="{{ url('game')}}">小遊戲</a></li>
+		<li class="divider"></li>
+		<li><a href="{{ url('auth/logout')}}">登出</a></li>
+	@else
+		<li><a href="{{ url('auth/login')}}">登入</a></li>
+		<li><a href="{{ url('auth/register')}}">註冊</a></li>
+	@endif
+</ul>
 <div id="c1" class="creature"></div>
 <div id="c2" class="creature"></div>
 <div id="c3" class="creature"></div>

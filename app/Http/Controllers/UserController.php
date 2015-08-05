@@ -65,17 +65,21 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $bottles = Bottle::where('owner', $id)
-            ->where('sent', true)
-            ->orderBy('updated_at', 'desc')
-            ->get();
+		$isHome = (Auth::check() && $id == Auth::user()->id);
+		$bottles = null;
+		if ($isHome){
+			$bottles = Bottle::where('owner', $id)
+				->where('sent', true)
+				->orderBy('updated_at', 'desc')
+				->get();
+		}
         $background = Background::where('user_id', $id)->first();
         $decoration = Decoration::where('user_id', $id)->first();
         $creature = Creature::where('user_id', $id)->first();
 		return view('user.show', [
 			'user' => $user,
             'nobreadcrumb' => true,
-			'isHome' => (Auth::check() && $id == Auth::user()->id),
+			'isHome' => $isHome,
             'bottles' => $bottles,
             'background' => $background,
             'decoration' => $decoration,

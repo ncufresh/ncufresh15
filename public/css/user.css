@@ -1,0 +1,29 @@
+.creature {
+	transition: top 5s ease-in-out, left 5s ease-in-out, transform .2s;
+	display: inline-block;
+	position: fixed;
+	z-index: 51;
+	background-size: 100% 100%;
+}
+
+#c0 {
+	top: 10vh;
+	left: 5%;
+}
+
+#c1 {
+	top: 30vh;
+	left: 69%;
+}
+
+#c2 {
+	top: 60vh;
+	left: 30%;
+}
+
+#c3 {
+	transition: top 5s ease-in-out, left 10s ease-in-out, transform .2s;
+	top: 80vh;
+	left: 30%;
+	z-index: 50;
+}

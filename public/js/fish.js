@@ -1,10 +1,11 @@
-function Fish(id){
+function Fish(id, menu){
 	this.id = id;
+	this.menu = menu;
 }
 
 Fish.prototype.setTimer = function(interval){
 	var a = this;
-	this.timer = $.timer(function(){
+	a.timer = $.timer(function(){
 		var x = Math.random() * a.boundX + a.startX;
 		a.y = Math.random() * a.boundY + a.startY;
 		if(x > a.x){
@@ -13,13 +14,21 @@ Fish.prototype.setTimer = function(interval){
 			$("#"+a.id).css("transform", "rotateY(180deg)");
 		}
 		a.x = x;
+		if(this.menu != null){
+			$("#"+a.id+",#"+a.menu).hover(function(){
+				a.pause();
+			},function(){
+				a.resume();
+			});
+		}else{
+			$("#"+a.id).hover(function(){ a.pause();}, function(){a.resume();});
+		}
 		a.move();
 	});
 	this.timer.set({
-		time : 5000,
+		time : interval,
 		autostart : true
 	});
-	console.log("set");
 };
 
 Fish.prototype.getDOM = function(){
@@ -52,6 +61,7 @@ Fish.prototype.move = function(){
 };
 
 Fish.prototype.pause = function(){
+	console.log(this.p);
 	var t = window.getComputedStyle(this.getDOM()).top;
 	var l = window.getComputedStyle(this.getDOM()).left;
 	(this.getDOM()).style.top = t;
@@ -60,5 +70,11 @@ Fish.prototype.pause = function(){
 };
 
 Fish.prototype.resume = function(){
+	console.log(this.p);
 	this.timer.play(false);
+	setTimeout(this.close, 5000);
 };
+
+Fish.prototype.close = function(){
+	$("body").click();
+}

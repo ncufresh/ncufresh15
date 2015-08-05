@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use App\User;
 use App\Creature;
 use App\Decoration;
 use App\Http\Requests;
@@ -20,8 +21,8 @@ class CreatureController extends Controller
         // check creature num
         if ($creature < 0 || $creature>3) {
             return response()->json(['result' => false, 'msg' => '沒這隻']);
-        }
-        
+        } 
+
         // check level
         if ($creature == 0) {
             return response()->json(['result' => true, 'level' => $cre->level1, 'size' => $cre->size1, 'color' => $cre->color1]);
