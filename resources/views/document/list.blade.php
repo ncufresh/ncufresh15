@@ -2,7 +2,7 @@
 
 @section('text')
 <!--標題-->
-@if($page_id_2 === 0)
+@if($page_id_2 == 0)
 	@if($page_id === "freshmen_week")
 	<h5 class="page_title">新生週</h5>
 	@elseif($page_id === "activity")
