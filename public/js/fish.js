@@ -6,6 +6,7 @@ Fish.prototype.setTimer = function(interval){
 	var a = this;
 	this.timer = $.timer(function(){
 		var x = Math.random() * a.boundX + a.startX;
+		console.log("old:"+a.x+", new:"+x);
 		a.y = Math.random() * a.boundY + a.startY;
 		if(x > a.x){
 			$("#"+a.id).css("transform", "rotateY(0deg)");
@@ -46,8 +47,8 @@ Fish.prototype.setBound = function(x, y, width, height){
 };
 
 Fish.prototype.move = function(){
-	$("#"+this.id).css("top", this.x+"vh");
-	$("#"+this.id).css("left", this.y+"%");
+	$("#"+this.id).css("top", this.y+"vh");
+	$("#"+this.id).css("left", this.x+"%");
 };
 
 Fish.prototype.pause = function(){

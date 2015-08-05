@@ -1,7 +1,7 @@
 var portal = new Fish("portal");
 portal.setImage("/img/fish1.gif");
 portal.setSize(80, 50);
-portal.setBound(30, 75, 20, 13);
+portal.setBound(75, 30, 13, 20);
 portal.setTimer();
 var portalHover;
 $(document).ready(function(){
