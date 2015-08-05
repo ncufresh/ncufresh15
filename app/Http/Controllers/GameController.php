@@ -15,7 +15,8 @@ class GameController extends Controller
 {
     public function index()
     {
-        return view('game.index');
+        $id = Auth::user()->id;
+        return view('game.index', ['userid'=>$id]);
     }
 
     // init security
@@ -47,8 +48,4 @@ class GameController extends Controller
         return "go fuck yourself";
     }
 
-    public function redirect(Request $request) {
-        $id = Auth::user()->id;//$request->get('id');
-        return redirect('/user/'.$id);
-    }
 }

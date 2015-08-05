@@ -192,7 +192,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('game/RandomQuestionAndAnswer', 'KnowledgeController@getQuestion');
     Route::get('game/save', 'GameController@init');
     Route::get('game/whether', 'GameController@setRightAnswer');
-    Route::get('game/redirect','GameController@redirect');
 });
 //******************************************************************************************************
 
