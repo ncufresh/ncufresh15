@@ -121,6 +121,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
 
+
         // Campus admin
         //------------------------------------------------------------------------------------------------------
         Route::get('campus/add_view', 'Campus\CampusController@addView');

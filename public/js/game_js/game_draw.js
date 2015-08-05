@@ -190,16 +190,6 @@ var render = function () {
 		}
 	};
 
-	// if (roadReady) {
-	// 	for (i=0;i<roads.length;i++ )
-	// 	{
-	// 		for(j=0;j<roads[i].width/grid.length;j++){
-	// 			for(k=0;k<roads[i].height/grid.length;k++){
-	// 				draw(roadImage, roads[i].x+grid.length*j, roads[i].y+grid.length*k);
-	// 			}
-	// 		}
-	// 	}
-	// }
 	// if (blockReady) {
 	// 	for (i=0;i<blocks.length;i++ )
 	// 	{

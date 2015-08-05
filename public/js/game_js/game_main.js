@@ -122,8 +122,6 @@ var box5 = {
 var boxs = [box1,box2,box3,box4,box5];
 
 
-var road1 = {x:0,y:64,width:64,height:320,type:"road"};
-var roads = [road1];
 var block1 = {x:64,y:128,width:192,height:64,type:"block"};
 var block2 = {x:64,y:128,width:64,height:192,type:"block"};
 var block3 = {x:64,y:256,width:192,height:64,type:"block"};
@@ -213,16 +211,27 @@ function loaded() {
 	
 	starting=true;
 
-	ctx.fillStyle = '#000000';
+	ctx.fillStyle = "#000000";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-		
-	ctx.fillStyle = '#ff0000';
-	ctx.font = '50px Bangers, Impact, Arial, Impact, Arial';
+	
+	ctx.fillStyle = '#FF5675';
+	ctx.font = '15px Bangers,Arial';
+	ctx.textAlign = "left";
+	ctx.textBaseline = "top";
+	ctx.fillText("溫興提醒:小遊戲只能在電腦玩", 5, 5);
+
+	ctx.fillStyle = '#FF4500';
+	ctx.font = 'bold 45px Bangers,Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
-	ctx.fillText("點一下遊戲畫面鎖住視窗", canvas.width / 2, canvas.height / 4 - 20);
-	ctx.fillText("遊戲操作:↑,↓,←,→,Enter", canvas.width / 2, canvas.height / 4 - 70);
-		
+	ctx.fillText("遊戲操作:↑↓←→,Enter", canvas.width / 2, canvas.height / 4 - 30);
+
+    ctx.beginPath();
+    ctx.strokeStyle="#FFD700";
+    ctx.lineWidth=6;
+    ctx.rect(canvas.width/10,165,canvas.width*8/10,canvas.height*4/10);
+    ctx.stroke();  
+
 	ctx.fillStyle = '#ffffff';
 	ctx.font = '25px Arial';
 	ctx.textAlign = "center";
@@ -230,9 +239,15 @@ function loaded() {
 	ctx.fillText("倒數計時5分鐘！", canvas.width / 2, canvas.height / 3 );				
 	ctx.fillText("在這5分鐘內，找到的寶物都是你的！", canvas.width / 2, canvas.height / 3 +30);
 	ctx.fillText("注意！", canvas.width / 2, canvas.height / 3 +60);
-	ctx.fillText("打開寶箱時會出現三道問題鎖，全部答對才能獲得寶物。", canvas.width / 2, canvas.height / 3 +90);
-	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開喔！", canvas.width / 2, canvas.height / 3 +120);
-	ctx.fillText("好好加油吧！", canvas.width / 2, canvas.height / 3 +150);
+	ctx.fillText("打開寶箱時會出現三道問題鎖！", canvas.width / 2, canvas.height / 3 +90);
+	ctx.fillText("全部答對才能獲得寶物！", canvas.width / 2, canvas.height / 3 +120);
+	ctx.fillText("答錯任一題，寶箱就會鎖死，再也打不開！", canvas.width / 2, canvas.height / 3 +150);
+
+	ctx.fillStyle = '#007CDC';
+	ctx.font = 'bold 25px Arial';
+	ctx.textAlign = "center";
+	ctx.textBaseline = "top";
+	ctx.fillText("點一下遊戲畫面鎖住視窗", canvas.width / 2, canvas.height / 3 +215);
 	ctx.fillText("按<Enter>來開始", canvas.width / 2, canvas.height / 3 +240);
 }
 ////////////////////////////////////////////////
