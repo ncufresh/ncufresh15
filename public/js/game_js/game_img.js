@@ -1,12 +1,4 @@
 ///////////////////
-// Background image
-var bgReady = false;
-var bgImage = new Image();
-bgImage.onload = function () {
-	bgReady = true;
-};
-bgImage.src = "game_images/background.png";
-
 // Grass image
 var grassReady = false;
 var grassImage = new Image();
@@ -79,7 +71,6 @@ rc4Image.onload = function () {
 };
 rc4Image.src = "game_images/road_corner4.png";
 
-
 // Road_Three1 image
 var rt1Ready = false;
 var rt1Image = new Image();
@@ -109,23 +100,6 @@ rt4Image.onload = function () {
 };
 rt4Image.src = "game_images/road_three4.png";
 
-
-// Hero image
-var heroReady = false;
-var heroImage = new Image();
-heroImage.onload = function () {
-	heroReady = true;
-};
-//heroImage.src = "game_images/hero.png";
-
-// Monster image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function () {
-	monsterReady = true;
-};
-monsterImage.src = "game_images/monster.png";
-
 // Block image
 var blockReady = false;
 var blockImage = new Image();
@@ -149,15 +123,8 @@ boxopenImage.onload = function () {
 };
 boxopenImage.src = "game_images/box_open.png";
 
-// test image
-var testReady = false;
-var testImage = new Image();
-testImage.onload = function () {
-	testReady = true;
-};
-testImage.src = "game_images/test.png";
-
-
+//Heros image
+//bugs at ready
 var herosReady = false;
 var heroImageArray = new Array();
 heroImageArray.onload = function () {
