@@ -4,15 +4,6 @@
 
 @section('css')
 <link type="text/css" rel="stylesheet" href="{{ asset('css/document/document.css') }}"  media="screen,projection"/>
-<style type="text/css">
-#container {
-  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-ms-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250));
-  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-webkit-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250)); 
-  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-moz-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250)); 
-  background: url('{{asset("img/document/puzzle.png")}}') right top no-repeat ,-o-linear-gradient(left,rgba(245, 245, 245, 0.7),rgb(172, 216, 250)); 
-  background-size: auto 100%;
-}
-</style>
 @stop
 
 @section('js')
@@ -23,7 +14,7 @@
 @section('content')
 <!--選單-->
 <div class="row">
-  <div class="col l3 m12 s12">
+  <div class="col l4 m12 s12 menu">
       <ul class="collapsible" data-collapsible="expandable">
         <li class="list_1">
           <div class="collapsible-header">學士班新生註冊摘要</div>
@@ -73,7 +64,7 @@
     <a class="waves-effect waves-light btn" href="/document/ckeditor">編輯</a>
     @endpermission
   </div>
-  <div class="col l9 m12 s12">
+  <div class="col l8 m12 s12">
     @yield('text')
   </div>
 </div>

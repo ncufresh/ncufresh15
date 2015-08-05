@@ -1,13 +1,27 @@
+@media (min-width: 1200px) {
+	.menu{
+		max-width: 260px;
+	}
+}
+
 .collapsible-header {
-	background-color: rgba(1, 95, 27, 0.82);
+	background: #2025aa; /* Old browsers */
+	background: -moz-linear-gradient(top, #2025aa 0%, #0141c1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2025aa), color-stop(100%,#0141c1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #2025aa 0%,#0141c1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #2025aa 0%,#0141c1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2025aa 0%,#0141c1 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #2025aa 0%,#0141c1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2025aa', endColorstr='#0141c1',GradientType=0 ); /* IE6-9 */
   	font-size: 18px;
   	font-weight: 600;
+  	border-radius: 2px;
+  	border-bottom: 2px solid #C6C7C7;
 }
 
 .list_1 {
-	background-color: rgba(238, 247, 218, 0.49);
-	color: #ffffff;
-  	padding-bottom: 3px;
+	background-color: rgb(255,255,255);
+	color: #fafafa;
 }
 
 .list_2 {
