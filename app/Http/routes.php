@@ -10,7 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//browser detection
+//******************************************************************************************************
+Route::before(function(){
+    $browser = Agent::browser();
+    $version = Agent::version($browser);
+    // var_dump($browser);
+    // var_dump($version);
+    if ($browser == "IE" ) {
+        return view('support');
+    }
+});
 // crash and jxcode
 //******************************************************************************************************
 // index
