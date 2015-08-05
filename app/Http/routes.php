@@ -72,6 +72,7 @@ Route::get('creature/info/{creature}/{id}', 'CreatureController@info');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    Route::post('video2/add','Video\GuestbookController@add');
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
 		Route::get('user'     , 'UserController@index');
@@ -120,6 +121,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
 
+
         // Campus admin
         //------------------------------------------------------------------------------------------------------
         Route::get('campus/add_view', 'Campus\CampusController@addView');
@@ -130,6 +132,7 @@ Route::group(['middleware' => 'auth'], function () {
         //------------------------------------------------------------------------------------------------------
 
 
+        Route::post('video2/delete','Video\GuestbookController@delete');
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
 
 		//Announcement
@@ -186,11 +189,10 @@ Route::get('document/{page_id}/{page_id_2}/{id}', 'Document\DocumentController@g
 
 // video
 //******************************************************************************************************
-Route::get('video2','Video\GuestbookController@index2');
 Route::get('video', 'Video\GuestbookController@index');
-Route::post('video2/add','Video\GuestbookController@add');
-Route::post('video2/delete','Video\GuestbookController@delete');
+Route::get('video/{vid}','Video\GuestbookController@index2');
 Route::get('/ajax/comment','Video\GuestbookController@load');
+Route::get('videotest', 'Video\GuestbookController@videotest');
 //******************************************************************************************************
 
 // Game

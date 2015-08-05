@@ -90,15 +90,16 @@
 				<li><a class='nav-links' data-activates='nav-links' href="#">常用連結</a></li>
 				<li><a href="{{ url('about')}}">關於我們</a></li>
 				<ul id='nav-links' class='dropdown-content'>
-					<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
-					<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
-					<li><a href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
-					<li><a href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
-					<li><a href="http://passport.ncu.edu.tw/">服務學習網</a></li>
-					<li><a href="http://140.115.184.179/gender">性平教育</a></li>
-					<li><a href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
-					<li><a href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
-					<li><a href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
+					<li><a target="_blank" href="http://www.ncu.edu.tw/">中大首頁</a></li>
+					<li><a target="_blank" href="https://portal.ncu.edu.tw/login">portal入口</a></li>
+					<li><a target="_blank" href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
+					<li><a target="_blank" href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
+					<li><a target="_blank" href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
+					<li><a target="_blank" href="http://passport.ncu.edu.tw/">服務學習網</a></li>
+					<li><a target="_blank" href="http://140.115.184.179/gender">性平教育</a></li>
+					<li><a target="_blank" href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
+					<li><a target="_blank" href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
+					<li><a target="_blank" href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
 				</ul>
 			</ul>
 			<ul class="side-nav" id="mobile-nav">
@@ -128,15 +129,16 @@
 							<a class="collapsible-header  waves-effect waves-light">常用連結</a>
 							<div class="collapsible-body" style="display: block;">
 								<ul>
-									<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
-									<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
-									<li><a href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
-									<li><a href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
-									<li><a href="http://passport.ncu.edu.tw/">服務學習網</a></li>
-									<li><a href="http://140.115.184.179/gender">性平教育</a></li>
-									<li><a href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
-									<li><a href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
-									<li><a href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
+                                    <li><a target="_blank" href="http://www.ncu.edu.tw/">中大首頁</a></li>
+                                    <li><a target="_blank" href="https://portal.ncu.edu.tw/login">portal入口</a></li>
+                                    <li><a target="_blank" href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
+                                    <li><a target="_blank" href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
+                                    <li><a target="_blank" href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
+                                    <li><a target="_blank" href="http://passport.ncu.edu.tw/">服務學習網</a></li>
+                                    <li><a target="_blank" href="http://140.115.184.179/gender">性平教育</a></li>
+                                    <li><a target="_blank" href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
 								</ul>
 							</div>
 						</li>
@@ -174,15 +176,16 @@
 							<div class='col s2 offset-s4'><a class='waves-effect waves-light btn-flat' href='{{ url('about')}}'>關於我們</a></div>
 							<div class='col s2'><a class='links waves-effect waves-light btn-flat' data-activates='banner-links'>常用連結</a></div>
 							<ul id='banner-links' class='dropdown-content'>
-								<li><a href="https://portal.ncu.edu.tw/login">portal入口</a></li>
-								<li><a href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
-								<li><a href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
-								<li><a href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
-								<li><a href="http://passport.ncu.edu.tw/">服務學習網</a></li>
-								<li><a href="http://140.115.184.179/gender">性平教育</a></li>
-								<li><a href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
-								<li><a href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
-								<li><a href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
+                                <li><a target="_blank" href="http://www.ncu.edu.tw/">中大首頁</a></li>
+                                <li><a target="_blank" href="https://portal.ncu.edu.tw/login">portal入口</a></li>
+                                <li><a target="_blank" href="https://lms.ncu.edu.tw/q?pg=home_welcome&cp=2000">LMS系統</a></li>
+                                <li><a target="_blank" href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
+                                <li><a target="_blank" href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
+                                <li><a target="_blank" href="http://passport.ncu.edu.tw/">服務學習網</a></li>
+                                <li><a target="_blank" href="http://140.115.184.179/gender">性平教育</a></li>
+                                <li><a target="_blank" href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>
 							</ul>
 						</div>
 					</div>
@@ -209,15 +212,15 @@
 		</a>
 		<ul id='menu-list' class='dropdown-content' style="min-width: 120px; position: fixed;">
 			@if (Auth::check())
-				<li><a href="{{ url('/user/').'/'.Auth::user()->id }}">User Profile</a></li>
+				<li><a href="{{ url('/user/').'/'.Auth::user()->id }}">個人專區</a></li>
 			@endif
-			<li><a href="{{ url('/game') }}">Game</a></li>
+			<li><a href="{{ url('/game') }}">小遊戲</a></li>
 			<li class="divider"></li>
 			@if (Auth::check())
-				<li><a href="{{ url('/auth/logout') }}">Log out</a></li>
+				<li><a href="{{ url('/auth/logout') }}">登出</a></li>
 			@else
-				<li><a href="{{ url('/auth/login') }}">Log in</a></li>
-				<li><a href="{{ url('/auth/register') }}">Register</a></li>
+				<li><a href="{{ url('/auth/login') }}">登入</a></li>
+				<li><a href="{{ url('/auth/register') }}">註冊</a></li>
 			@endif
 		</ul>
 		<!--[if lte IE 8]>

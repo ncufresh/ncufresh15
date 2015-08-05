@@ -18,7 +18,7 @@ e.g. <video class="video-js my-skin-name">
 The control icons are from a custom font. Each icon corresponds to a character
 (e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
 */
-
+/*
 @font-face {
   font-family: 'VideoJS';
   src: url('font/vjs.eot');
@@ -112,7 +112,7 @@ The default control bar that is a container for most of the controls.
   font-size: 1.5em;
   line-height: 2;
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -146,15 +146,20 @@ The default control bar that is a container for most of the controls.
 --------------------------------------------------------------------------------
 */
 .vjs-default-skin .vjs-play-control {
+  position: relative;
   float:left;
-  margin-left: 0.5%;
+  margin-left: 0;/*-5.5%*/
   cursor: pointer;
 }
 .vjs-default-skin .vjs-play-control:before {
-  content: url('/img/video/media/pause.png');
+  position: absolute;
+  float:left;
+  margin-left: 0px;
+  content: url('/img/video/media/pause1.png');
 }
 .vjs-default-skin.vjs-playing .vjs-play-control:before {
-  content: url('/img/video/media/play.png');
+  margin-left: 0px;
+  content: url('/img/video/media/play1.png');
 }
 /* VolumeMenu0,1,2,3
 -------------------------------------------------------------------------------- */
@@ -236,7 +241,7 @@ The default control bar that is a container for most of the controls.
   left: 0;
   right: 0;
   width: auto;
-  font-size: 0.3em;
+  font-size: 1em;
   height: 1em;
   top: -1em;
   transition: all 0.4s;
@@ -245,7 +250,7 @@ The default control bar that is a container for most of the controls.
     This simply changes the overall font for the progress bar, and this
     updates both the em-based widths and heights, as wells as the icon font */
 .vjs-default-skin:hover .vjs-progress-control {
-  font-size: .9em;
+  font-size: 1.5em;
   /* Even though we're not changing the top/height, we need to include them in
       the transition so they're handled correctly. */
   /* transition */
@@ -348,7 +353,7 @@ easily in the skin designer. http://designer.videojs.com/
 
 /* Loading Spinner
 --------------------------------------------------------------------------------
-*/
+
 .vjs-loading-spinner {
   display: none;
   position: absolute;
@@ -362,12 +367,14 @@ easily in the skin designer. http://designer.videojs.com/
   margin-top: -0.5em;
   opacity: 0.75;
   /* animation */
+/*
   -webkit-animation: spin 1.5s infinite linear;
   -moz-animation: spin 1.5s infinite linear;
   -o-animation: spin 1.5s infinite linear;
   animation: spin 1.5s infinite linear;
 }
 .vjs-default-skin .vjs-loading-spinner:before {
+  display: none;
   content: "\e00a";
   font-family: VideoJS;
   position: absolute;
@@ -379,9 +386,11 @@ easily in the skin designer. http://designer.videojs.com/
 /* Add a gradient to the spinner by overlaying another copy.
    Text gradient plus a text shadow doesn't work
    and `background-clip: text` only works in Webkit. */
+/*
 .vjs-default-skin .vjs-loading-spinner:after {
   content: "\e00b";
   /* Loading spinner icon */
+/*
   font-family: VideoJS;
   position: absolute;
   width: 1em;
@@ -390,6 +399,7 @@ easily in the skin designer. http://designer.videojs.com/
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+*/
 @-moz-keyframes spin {
   0% {
     -moz-transform: rotate(0deg);
@@ -601,14 +611,13 @@ body.vjs-full-window {
 /* Poster Styles */
 .vjs-poster {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: left bottom;
   background-size: contain;
   cursor: pointer;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
-  width: 100%;  
 
 }
 .vjs-poster img {
@@ -616,7 +625,6 @@ body.vjs-full-window {
   margin: 0 auto;
   max-height: 100%;
   padding: 0;
-  width: 100%;
 }
 /* Text Track Styles */
 /* Overall track holder for both captions and subtitles */
@@ -662,7 +670,7 @@ body.vjs-full-window {
 }
 .vjs-fade-out {
   display: block !important;
-  visibility: hidden;
+  visibility: hidden !important;
   opacity: 0;
   /* transition */
   -webkit-transition: visibility 1.5s, opacity 1.5s;
