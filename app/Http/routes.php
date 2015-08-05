@@ -54,6 +54,7 @@ Route::get ('qa/submitted' , function() {
 });
 //------------------------------------------------------------------------------------------------------
 Route::get('file/{id}', 'FileController@show');
+Route::get('upload_img/{id}', 'FileController@show_img');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
