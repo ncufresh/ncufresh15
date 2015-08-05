@@ -12,7 +12,7 @@
         <style>
             #wrapper {
                 background-image: url('/img/banner/{{$user->background}}.jpg');
-                background-size: 100% auto;
+                background-size: cover;
                 height: 100%;
             }
             #menu-btn {
