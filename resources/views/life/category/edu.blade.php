@@ -112,7 +112,7 @@
 		width:16%;
 	}
 	#b7{
-		background-image:url({{ asset('/img/life/edu/7.jpg') }});
+		background-image:url({{ asset('/img/life/edu/7.png') }});
 		top:30%;
 		right:32%;
 		width:16%; 
@@ -227,7 +227,7 @@
 		background-image:url({{ asset('/img/life/edu/15.jpg') }});
 		width:12%;
 		right:33%;
-		bottom:18%;
+		bottom:19%;
 	}
 	#b15:before{
 		content:"";
