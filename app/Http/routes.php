@@ -57,6 +57,10 @@ Route::get('file/{id}', 'FileController@show');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('level/{creature}', 'CreatureController@level');
+    Route::get('grow/{creature}', 'CreatureController@grow');
+
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
 		Route::get('user'     , 'UserController@index');
@@ -203,3 +207,4 @@ Route::get('about', function(){
 	return view('about');
 });
 //******************************************************************************************************
+
