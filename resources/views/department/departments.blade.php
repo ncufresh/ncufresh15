@@ -32,7 +32,7 @@
 			<a href="/group/departments">
 				<div class="card">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/shisuo.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/shisuo.jpg')}}">
 						<span class="card-title">系所</span>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 			<a href="/group/clubs">
 				<div class="card">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/club.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/club.jpg')}}">
 						<span class="card-title">社團</span>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 			<div class="card">
 				<a href="/group/departments/1">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/lecture.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/lecture.jpg')}}">
 						<span class="card-title">文學院</span>
 					</div>
 				</a>
@@ -70,7 +70,7 @@
 			<div class="card">
 				<a href="/group/departments/2">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/science.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/science.jpg')}}">
 						<span class="card-title">理學院</span>
 					</div>
 				</a>
@@ -83,7 +83,7 @@
 			<div class="card">
 				<a href="/group/departments/3">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/engineer.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/engineer.jpg')}}">
 						<span class="card-title">工學院</span>
 					</div>
 				</a>
@@ -96,7 +96,7 @@
 			<div class="card">
 				<a href="/group/departments/4">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/management.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/management.jpg')}}">
 						<span class="card-title">管理學院</span>
 					</div>
 				</a>
@@ -109,7 +109,7 @@
 			<div class="card">
 				<a href="/group/departments/5">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/electrical.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/electrical.jpg')}}">
 						<span class="card-title">資訊電機學院</span>
 					</div>
 				</a>
@@ -122,7 +122,7 @@
 			<div class="card">
 				<a href="/group/departments/6">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/earth.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/earth.jpg')}}">
 						<span class="card-title">地球科學學院</span>
 					</div>
 				</a>
@@ -135,7 +135,7 @@
 			<div class="card">
 				<a href="/group/departments/7">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/hakka.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/hakka.jpg')}}">
 						<span class="card-title">客家學院</span>
 					</div>
 				</a>
@@ -148,7 +148,7 @@
 			<div class="card">
 				<a href="/group/departments/8">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/health.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/health.jpg')}}">
 						<span class="card-title">生醫理工學院</span>
 					</div>
 				</a>
@@ -165,7 +165,7 @@
 			<div class="card">
 				<a href="/group/clubs/1">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/shaishu.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/shaishu.jpg')}}">
 						<span class="card-title">學術性</span>
 					</div>
 				</a>
@@ -179,7 +179,7 @@
 			<div class="card">
 				<a href="/group/clubs/2">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/kangle.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/kangle.jpg')}}">
 						<span class="card-title">康樂性</span>
 					</div>
 				</a>
@@ -193,7 +193,7 @@
 			<div class="card">
 				<a href="/group/clubs/3">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/liani.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/liani.jpg')}}">
 						<span class="card-title">聯誼性</span>
 					</div>
 				</a>
@@ -206,7 +206,7 @@
 			<div class="card">
 				<a href="/group/clubs/4">
 					<div class="card-image">
-						<img class="cardImage1" src="{{asset('img/department/fuu.png')}}">
+						<img class="cardImage1" src="{{asset('img/department/fuu.jpg')}}">
 						<span class="card-title">服務性</span>
 					</div>
 				</a>
