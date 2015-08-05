@@ -51,9 +51,11 @@
 
 @section('content')
 <div class="row">
+    @permission('management')
 	<div class="right align">
 		<a class="waves-effect waves-light btn" href="{{url('life/edit/'.$show->id)}}"><i class="material-icons left">settings</i>後台管理</a>
 	</div>	
+    @endpermission
 </div>
 <div id="coverflow"  style="height:400px;">
 	@foreach($pictures as $picture)

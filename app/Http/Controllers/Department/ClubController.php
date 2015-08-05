@@ -67,12 +67,13 @@ class ClubController extends Controller {
 				SitemapHelper::push('社團', 'group/clubs');
 				return view('department.departments')->with('page', 3);
 				break;
-			case 'add':
-				SitemapHelper::push('新增', 'group/add');
-				return view('department.departments')->with('page', 4);
-				break;
 		}
 	}
+
+    public function add() {
+        SitemapHelper::push('新增', 'group/add');
+        return view('department.departments')->with('page', 4);
+    }
 
 	public function cate($group, $cate) {
 		if ($group === 'departments') {

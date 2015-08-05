@@ -66,12 +66,12 @@ Route::get ('qa/submitted' , function() {
 Route::get('file/{id}', 'FileController@show');
 Route::get('upload_img/{id}', 'FileController@show_img');
 
-Route::get('creature/level/{creature}/{id}', 'CreatureController@level');
-Route::get('creature/grow/{creature}/{id}', 'CreatureController@grow');
 Route::get('creature/info/{creature}/{id}', 'CreatureController@info');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('creature/level/{creature}/{id}', 'CreatureController@level');
+    Route::get('creature/grow/{creature}/{id}', 'CreatureController@grow');
     Route::post('video2/add','Video\GuestbookController@add');
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
@@ -93,6 +93,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get ('qa/create'      , 'QaController@create_question');
     Route::post('qa/create'      , 'QaController@store_question');
     Route::group(['middleware' => 'permission:management'], function() {
+        Route::get('group/add', 'Department\ClubController@add');
+        Route::post('group/new', 'Department\ClubController@store');
+        Route::post('group/update','Department\ClubController@update');
+
         Route::get ('qa/questions'   , 'QaController@index_questions');
         Route::get ('qa/bottle/{id}' , 'QaController@create_bottle');
         Route::get ('qa/answer'      , 'QaController@create_answer');
@@ -164,10 +168,8 @@ Route::group(['middleware' => 'auth'], function () {
 //******************************************************************************************************
 Route::get('group', 'Department\ClubController@index');
 Route::get('group/{group}', 'Department\ClubController@group');
-Route::post('group/new', 'Department\ClubController@store');
 Route::get('group/{group}/{cate}', 'Department\ClubController@cate');
 Route::get('group/{group}/show/{id}', 'Department\ClubController@show');
-Route::post('group/update','Department\ClubController@update');
 //******************************************************************************************************
 
 
