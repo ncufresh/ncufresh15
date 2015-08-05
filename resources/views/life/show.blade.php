@@ -8,17 +8,19 @@
 	<style type="text/css">
 		#coverflow{
 			font-family:inital !importment;
+			position:relative;
 		}
 		#a{
 			background-image:url({{asset('/img/life/article.png')}});
 			background-size:100% auto;
 			background-repeat: no-repeat;
 			width:100%;
-			height:100%;
+			height: 520px;
+			margin-top: 30px;
 		}
 		#article{
 			width:90%;
-			height:65%;
+			height:55%;
 			margin:3% auto;
 		}
 		strong{
@@ -36,6 +38,12 @@
 		$(function() {
 			// and kick off
 	        $('#coverflow').coverflow();
+	        $('#prev').click(function() {
+		    	$('#coverflow' ).coverflow( 'prev' );
+		    });
+		    $('#next').click(function() {
+		    	$('#coverflow' ).coverflow( 'next' );
+		    });
 	    });
 	</script>
 	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
@@ -57,7 +65,11 @@
 
 <!--圖片-->
 
-<div id="a" style="margin-top:500px;padding-top:3%;">
+<div id="a">
+	<div class="center-align" style="padding-top:5%;">
+		<button class="waves-effect waves-light btn blue darken-4" id="prev">上一張</button>
+		<button class="waves-effect waves-light btn blue darken-4" id="next">下一張</button>
+	</div>
 	<div id="article" class="mCustomScrollbar tab-content" data-mcs-theme="dark-thick">
 		<p>{!! $show->content !!}</p>   <!--  -->
 	</div>		

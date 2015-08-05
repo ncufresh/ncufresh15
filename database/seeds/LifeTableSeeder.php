@@ -41,7 +41,7 @@ class LifeTableSeeder extends Seeder
 	    	'敦煌',
 	    	'中大眼鏡行',
 	    	'印象美髮',
-	    	'龍成影印',
+	    	'龍誠影印',
 	    	'圖美影印',
 	    	'校園KTV',
 	    	'諮商中心',
