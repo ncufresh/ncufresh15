@@ -159,13 +159,13 @@ var then = Date.now();
 
 ///////////////////////////////////////////////////
 // Chomp sound
-var snd = new Audio("game_audio/If_I_Had_a_Chicken.mp3");
+myAudio = new Audio('game_audio/If_I_Had_a_Chicken.ogg'); 
 var bgmusic = function () {
-	if(snd.currentTime > 0)
-	{
-		snd.currentTime=0; //this is to make sure the sound resets if it is still playing
-	}
-	snd.play();
+	$(myAudio).bind('ended', function()  {
+  	  myAudio.currentTime = 0;
+  	  myAudio.play();
+	});
+	myAudio.play();
 }
 ////////////////////////////////////////////////
 //using only on the starting~~~~~~~~~~~~~~~~~~~~
@@ -194,10 +194,6 @@ var fiveminute = function () {
 	}
 	else{
 		second-=1;
-	}
-
-	if (minute==3 && second==1) {
-		bgmusic();
 	}
 }
 //
