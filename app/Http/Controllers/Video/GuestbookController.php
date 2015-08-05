@@ -28,7 +28,7 @@ class GuestbookController extends Controller
         $tryconnect = Guestbook::orderBy('id','desc')->paginate(7);
         $urls = [
             "TYpIHmARQVo",
-            "FgxUUNe53V4",
+            "vnT7hAl1Gao",
             "ANQBlZCff_c"
         ];
         $articles = [
@@ -44,11 +44,15 @@ class GuestbookController extends Controller
 到底是莊周夢蝶？ 還是天意作弄？
 到底是情愛的糾葛，還是命運的糾纏，讓我們看不清也望不穿。
 現在，就由你來親自為他按下「未來」吧！",
-            "華美世界
-            
-            天地有情、人生無常，命運就像一張網，讓人掙不開也逃不脫。
-            上大學有三大必修學分：愛情、課業、社團活動。容華是一位大一新生，好不容易上了大學，卻整天沉溺於網路世界和愛情中，到最後功課一落千丈，愛情也變得不順遂，究竟他能不能奮發向上，重新找到屬於他的真愛嗎？讓我們繼續看下去.....。",
-            "2  blablabla"
+"天地有情、人生無常，
+命運就像一張網，讓人掙不開也逃不脫。
+上大學有三大必修學分：愛情、課業、社團活動。
+容華是一位大一新生，
+好不容易上了大學，卻整天沉溺於網路世界和愛情中，
+到最後功課一落千丈，愛情也變得不順遂，
+究竟他能不能奮發向上，重新找到屬於他的真愛嗎？
+讓我們繼續看下去.....。",
+"2  blablabla"
         ];
 
         $url = $urls[$vid];
