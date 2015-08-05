@@ -16,10 +16,6 @@
 		<meta property="og:description" content="為歡迎大學新鮮人，新生知訊網，主打各項貼心服務，從飲食、住宿、交通、教育、藝文等主題出發的生活資訊，與大考放榜同步上線"/>
 		<meta property="og:type" content="article">
 		<style>
-			#portal {
-				background: url('{{asset("img/Untitled.png")}}');
-				background-size: 65px;
-			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 85% 85%;
