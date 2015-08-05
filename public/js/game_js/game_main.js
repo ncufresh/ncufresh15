@@ -210,9 +210,11 @@ var fiveminute = function () {
 		minute-=1;
 		second=60;
 	}
-	second-=1;
 	if (minute==0 && second==0) {
 		window.location = "user/" + id; // id getting by view
+	}
+	else{
+		second-=1;
 	}
 }
 //
