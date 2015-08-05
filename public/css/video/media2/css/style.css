@@ -670,7 +670,7 @@ body.vjs-full-window {
 }
 .vjs-fade-out {
   display: block !important;
-  visibility: hidden;
+  visibility: hidden !important;
   opacity: 0;
   /* transition */
   -webkit-transition: visibility 1.5s, opacity 1.5s;

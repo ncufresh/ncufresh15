@@ -12,6 +12,21 @@
  */
 videojs.Youtube = videojs.MediaTechController.extend({
   init: function(player, options, ready){
+
+    var resetDelay, inactivityTimeout;
+
+    resetDelay = function(){
+        clearTimeout(inactivityTimeout);
+        inactivityTimeout = setTimeout(function(){
+            $('.vjs-control-bar').addClass('vjs-fade-out');
+        }, 2000);
+    };
+
+    player.on('mousemove', function(){
+          $('.vjs-control-bar').removeClass('vjs-fade-out');
+          resetDelay();
+    });
+
     videojs.MediaTechController.call(this, player, options, ready);
     
     this.features.fullscreenResize = true;
