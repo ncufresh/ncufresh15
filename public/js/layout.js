@@ -1,13 +1,11 @@
-var currentScroll;
-var portal = null; // object
-var portalToggle;
-var position, pre_position, save_position;
-var portalHover, pause;
-window.onload = init;
+var portal = new Fish("portal");
+portal.setImage("/img/fish1.gif");
+portal.setSize(80, 50);
+portal.setBound(30, 75, 20, 13);
+portal.setTimer();
+var portalHover;
 $(document).ready(function(){
-	portalToggle = false;
 	portalHover = false;
-	pause = false;
 	$(".button-collapse").sideNav();
 	$.ajaxSetup({
 		headers: {
@@ -41,59 +39,20 @@ $(document).ready(function(){
 
 	$("#portal, #menu-list").hover(function(){
 		portalHover = true;
-		portalPause();
+		portal.pause();
 	},function(){
 		portalHover = false;
-		portalResume();
-		setTimeout(portalMenuOff, 500);
+		portal.resume();
+		setTimeout(MenuOff, 500);
 	});
-	$("#portal").click(function(){
+
+	$("#"+portal.id).click(function(){
 		$("#menu-list").css("position", "fixed");
 	});
-	setInterval(doMove, 6000);
 });
 
-function portalMenuOn(){
-	$("#portal-trigger").click();
-}
-
-function portalMenuOff(){
+function MenuOff(){
 	if (!portalHover) {
 		$("body").click();
 	}
-}
-
-function portalPause(){
-	pause = true;
-	save_position = position;
-	var t = window.getComputedStyle(portal).top;
-	var l = window.getComputedStyle(portal).left;
-	$("#portal").removeClass("position"+position);
-	portal.style.top = t;
-	portal.style.left = l;
-}
-
-function portalResume(){
-	pause = false;
-	position = save_position;
-	$("#portal").addClass("position"+position);
-	doMove();
-}
-
-function randomPosition(){
-	pre_position = position;
-	position = Math.ceil(Math.random()*5);
-}
-
-function doMove() {
-	if (!pause){
-		randomPosition();
-		$("#portal").removeClass("position"+pre_position);
-		$("#portal").addClass("position"+position);
-	}
-}
-
-function init() {
-	portal = document.getElementById("portal");
-	doMove();
 }
