@@ -49,7 +49,7 @@
 </div>
 <div id="coverflow"  style="height:400px;">
 	@foreach($pictures as $picture)
-		<a href="{{ $picture->url }}" target="_blank">
+		<a href="{{ str_replace('file','upload_img',$picture->url) }}" target="_blank">
 			<img src="{{$picture->url}}" width="400" height="400">	
 		</a>	
 	@endforeach

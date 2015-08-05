@@ -85,6 +85,11 @@ class FileController extends Controller
         return response()->download(base_path().'/storage/app/'.$id, $file->name.".".$file->ext);
     }
 
+    public function show_img($id) {
+        $img = FileUpload::where('url', $id)->first();
+        return view('img', ['imgurl' => '/file/'.$img->url]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
