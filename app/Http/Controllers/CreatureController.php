@@ -24,16 +24,16 @@ class CreatureController extends Controller
         
         // check level
         if ($creature == 0) {
-            return response()->json(['result' => true, 'level' => $cre->level1, 'size' => $cre-size1, 'color' => $cre->color1]);
+            return response()->json(['result' => true, 'level' => $cre->level1, 'size' => $cre->size1, 'color' => $cre->color1]);
         }
         if ($creature == 1) {
-            return response()->json(['result' => true, 'level' => $cre->level2, 'size' => $cre-size2, 'color' => $cre->color2]);
+            return response()->json(['result' => true, 'level' => $cre->level2, 'size' => $cre->size2, 'color' => $cre->color2]);
         }
         if ($creature == 2) {
-            return response()->json(['result' => true, 'level' => $cre->level3, 'size' => $cre-size3, 'color' => $cre->color3]);
+            return response()->json(['result' => true, 'level' => $cre->level3, 'size' => $cre->size3, 'color' => $cre->color3]);
         }
         if ($creature == 3) {
-            return response()->json(['result' => true, 'level' => $cre->level4, 'size' => $cre-size4, 'color' => $cre->color4]);
+            return response()->json(['result' => true, 'level' => $cre->level4, 'size' => $cre->size4, 'color' => $cre->color4]);
         }
         
     }
