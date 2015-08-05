@@ -52,7 +52,7 @@ var hero = {
 	end: {
 		x: initialX*grid.length,
 		y: initialY*grid.length,
-		Delay: 17,
+		Delay: 16,
 		Timer: 0
 	},
 	keylock : false,
