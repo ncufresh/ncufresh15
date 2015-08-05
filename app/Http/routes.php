@@ -121,7 +121,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('file/store', 'FileController@store');
         //------------------------------------------------------------------------------------------------------
 
-<<<<<<< HEAD
         // Campus admin
         //------------------------------------------------------------------------------------------------------
         Route::get('campus/add_view', 'Campus\CampusController@addView');
@@ -132,10 +131,7 @@ Route::group(['middleware' => 'auth'], function () {
         //------------------------------------------------------------------------------------------------------
 
 
-=======
         Route::post('video2/delete','Video\GuestbookController@delete');
-        
->>>>>>> video
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
 
 		//Announcement
