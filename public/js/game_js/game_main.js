@@ -73,8 +73,6 @@ var hero = {
 
 	canmove : true
 };
-var monster = {};
-var monstersCaught = 0;
 
 var box1 = {
 	isme : false,
@@ -123,42 +121,13 @@ var box5 = {
 };
 var boxs = [box1,box2,box3,box4,box5];
 
+
 var road1 = {x:0,y:64,width:64,height:320,type:"road"};
 var roads = [road1];
-
 var block1 = {x:64,y:128,width:192,height:64,type:"block"};
 var block2 = {x:64,y:128,width:64,height:192,type:"block"};
 var block3 = {x:64,y:256,width:192,height:64,type:"block"};
 var blocks=[block1,block2,block3];
-
-// Chomp sound
-var snd = new Audio("game_audio/goat.wav");
-///////////////////////////////////////////////////
-// Reset the game when the player catches a monster
-var reset = function () {
-	
-	if(snd.currentTime > 0)
-	{
-		snd.currentTime=0; //this is to make sure the sound resets if it is still playing
-	}
-	snd.play();
-
-	// Throw the monster somewhere on the screen randomly
-	monster.x = grid.length + (Math.random() * (canvas.width - 128));
-	monster.y = grid.length + (Math.random() * (canvas.height - 128));
-	monster.width = grid.length;
-	monster.height = grid.length;
-
-	for (i=0;i<blocks.length ;i++ )
-	{
-		if (isTouching(monster,blocks[i]))
-		{
-			reset();
-		}
-	}
-};
-/////////////////////////////////////////////////////
-
 
 // The main game loop
 var main = function () {
@@ -187,8 +156,17 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 // Let's play this game!
 var then = Date.now();
 
-reset();
 
+///////////////////////////////////////////////////
+// Chomp sound
+var snd = new Audio("game_audio/If_I_Had_a_Chicken.mp3");
+var bgmusic = function () {
+	if(snd.currentTime > 0)
+	{
+		snd.currentTime=0; //this is to make sure the sound resets if it is still playing
+	}
+	snd.play();
+}
 ////////////////////////////////////////////////
 //using only on the starting~~~~~~~~~~~~~~~~~~~~
 var starting=false;
@@ -197,7 +175,8 @@ window.onkeydown = function(e) {
 	// enter
 	if(e.keyCode == 13 && starting == true){
 		starting=false;
-		timing = setInterval(fiveminute,1000);	
+		timing = setInterval(fiveminute,1000);
+		bgmusic();
 		main();
 	}
 }
@@ -215,6 +194,10 @@ var fiveminute = function () {
 	}
 	else{
 		second-=1;
+	}
+
+	if (minute==3 && second==1) {
+		bgmusic();
 	}
 }
 //

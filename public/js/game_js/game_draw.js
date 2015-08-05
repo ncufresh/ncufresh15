@@ -64,9 +64,6 @@ var render = function () {
 // 8 轉角3 左下
 // 9 轉角4 右下
 
-	// if (bgReady) {
-	// 	draw(bgImage, 0, 0);
-	// }
 	if (grassReady) {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
@@ -75,9 +72,6 @@ var render = function () {
 		};
 		
 	}
-	// if (heroReady) {
-	// 	draw(heroImage, canvas.width / 2, canvas.height / 2, 'hero');
-	// }
 
 	if (blockReady) {
 		for (var i = 0; i < 100; i++) {
@@ -186,7 +180,6 @@ var render = function () {
 		draw(rt4Image,grid.length*41,grid.length*33);
 		draw(rt4Image,grid.length*20,grid.length*38);
 	}
-	//
 
 	for (var i = 0; i < boxs.length; i++) {
 		if (boxcloseReady && boxs[i].open==false) {
@@ -197,9 +190,6 @@ var render = function () {
 		}
 	};
 
-	if (monsterReady) {
-		draw(monsterImage, monster.x, monster.y);
-	}
 	// if (roadReady) {
 	// 	for (i=0;i<roads.length;i++ )
 	// 	{
@@ -210,17 +200,18 @@ var render = function () {
 	// 		}
 	// 	}
 	// }
-	if (blockReady) {
-		for (i=0;i<blocks.length;i++ )
-		{
-			for(j=0;j<blocks[i].width/grid.length;j++){
-				for(k=0;k<blocks[i].height/grid.length;k++){
-					draw(blockImage, blocks[i].x+grid.length*j, blocks[i].y+grid.length*k);
-				}
-			}	
-		}
-	}
+	// if (blockReady) {
+	// 	for (i=0;i<blocks.length;i++ )
+	// 	{
+	// 		for(j=0;j<blocks[i].width/grid.length;j++){
+	// 			for(k=0;k<blocks[i].height/grid.length;k++){
+	// 				draw(blockImage, blocks[i].x+grid.length*j, blocks[i].y+grid.length*k);
+	// 			}
+	// 		}	
+	// 	}
+	// }
 
+	// hero image
 	if (true) {
 		var nowimage = hero.animSet+hero.animFrame;
 		if (hero.direction.x==0 && hero.direction.y ==0) {
