@@ -82,8 +82,8 @@
 }
 
 .modal {
-	max-height: 100%;
-	height: 560px;
+	max-height: 1080px;
+	height: 90%;
 	overflow: hidden;
     top: 3% !important;
 }
