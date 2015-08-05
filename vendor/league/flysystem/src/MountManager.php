@@ -229,7 +229,6 @@ class MountManager
      *
      * @param $from
      * @param $to
-     *
      * @return bool
      */
     public function move($from, $to)
@@ -249,7 +248,6 @@ class MountManager
      * @param $method
      * @param $arguments
      * @param $prefix
-     *
      * @return mixed
      */
     public function invokePluginOnFilesystem($method, $arguments, $prefix)

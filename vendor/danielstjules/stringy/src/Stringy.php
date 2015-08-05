@@ -277,7 +277,7 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
      */
     public function dasherize()
     {
-        return $this->delimit('-');
+        return $this->applyDelimiter('-');
     }
 
     /**
@@ -290,27 +290,24 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
      */
     public function underscored()
     {
-        return $this->delimit('_');
+        return $this->applyDelimiter('_');
     }
 
     /**
      * Returns a lowercase and trimmed string separated by the given delimiter.
-     * Delimiters are inserted before uppercase characters (with the exception
-     * of the first character of the string), and in place of spaces, dashes,
-     * and underscores. Alpha delimiters are not converted to lowercase.
      *
      * @param  string  $delimiter Sequence used to separate parts of the string
      * @return Stringy Object with a delimited $str
      */
-    public function delimit($delimiter)
+    protected function applyDelimiter($delimiter)
     {
         // Save current regex encoding so we can reset it after
         $regexEncoding = mb_regex_encoding();
         mb_regex_encoding($this->encoding);
 
-        $str = mb_ereg_replace('\B([A-Z])', '-\1', $this->trim());
-        $str = mb_strtolower($str, $this->encoding);
+        $str = mb_ereg_replace('\B([A-Z])', $delimiter .'\1', $this->trim());
         $str = mb_ereg_replace('[-_\s]+', $delimiter, $str);
+        $str = mb_strtolower($str, $this->encoding);
 
         mb_regex_encoding($regexEncoding);
 
@@ -523,7 +520,7 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
                             'Ἇ', 'ᾈ', 'ᾉ', 'ᾊ', 'ᾋ', 'ᾌ', 'ᾍ', 'ᾎ', 'ᾏ', 'Ᾰ',
                             'Ᾱ', 'Ὰ', 'Ά', 'ᾼ', 'А'),
             'B'    => array('Б', 'Β'),
-            'C'    => array('Ç','Ć', 'Č', 'Ĉ', 'Ċ'),
+            'C'    => array('Ć', 'Č', 'Ĉ', 'Ċ'),
             'D'    => array('Ď', 'Ð', 'Đ', 'Ɖ', 'Ɗ', 'Ƌ', 'ᴅ', 'ᴆ', 'Д', 'Δ'),
             'E'    => array('É', 'È', 'Ẻ', 'Ẽ', 'Ẹ', 'Ê', 'Ế', 'Ề', 'Ể', 'Ễ',
                             'Ệ', 'Ë', 'Ē', 'Ę', 'Ě', 'Ĕ', 'Ė', 'Ε', 'Έ', 'Ἐ',
@@ -818,7 +815,7 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
         $pattern = "/[^a-zA-Z\d\s-_$quotedReplacement]/u";
         $stringy->str = preg_replace($pattern, '', $stringy);
 
-        return $stringy->toLowerCase()->delimit($replacement)
+        return $stringy->toLowerCase()->applyDelimiter($replacement)
                        ->removeLeft($replacement)->removeRight($replacement);
     }
 
@@ -888,36 +885,6 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
         }
 
         return true;
-    }
-
-    /**
-     * Returns the index of the first occurrence of $needle in the string,
-     * and false if not found. Accepts an optional offset from which to begin
-     * the search.
-     *
-     * @param  string   $needle Substring to look for
-     * @param  int      $offset Offset from which to search
-     * @return int|bool The occurrence's index if found, otherwise false
-     */
-    public function indexOf($needle, $offset = 0)
-    {
-        return mb_strpos($this->str, (string) $needle,
-            (int) $offset, $this->encoding);
-    }
-
-    /**
-     * Returns the index of the last occurrence of $needle in the string,
-     * and false if not found. Accepts an optional offset from which to begin
-     * the search.
-     *
-     * @param  string   $needle Substring to look for
-     * @param  int      $offset Offset from which to search
-     * @return int|bool The last occurrence's index if found, otherwise false
-     */
-    public function indexOfLast($needle, $offset = 0)
-    {
-        return mb_strrpos($this->str, (string) $needle,
-            (int) $offset, $this->encoding);
     }
 
     /**
@@ -1057,48 +1024,13 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
     }
 
     /**
-     * Returns a string with whitespace removed from the start and end of the
-     * string. Supports the removal of unicode whitespace. Accepts an optional
-     * string of characters to strip instead of the defaults.
+     * Returns the trimmed string. An alias for PHP's trim() function.
      *
-     * @param  string  $chars Optional string of characters to strip
      * @return Stringy Object with a trimmed $str
      */
-    public function trim($chars = null)
+    public function trim()
     {
-        $chars = ($chars) ? preg_quote($chars) : '[:space:]';
-
-        return $this->regexReplace("^[$chars]+|[$chars]+\$", '');
-    }
-
-    /**
-     * Returns a string with whitespace removed from the start of the string.
-     * Supports the removal of unicode whitespace. Accepts an optional
-     * string of characters to strip instead of the defaults.
-     *
-     * @param  string  $chars Optional string of characters to strip
-     * @return Stringy Object with a trimmed $str
-     */
-    public function trimLeft($chars = null)
-    {
-        $chars = ($chars) ? preg_quote($chars) : '[:space:]';
-
-        return $this->regexReplace("^[$chars]+", '');
-    }
-
-    /**
-     * Returns a string with whitespace removed from the end of the string.
-     * Supports the removal of unicode whitespace. Accepts an optional
-     * string of characters to strip instead of the defaults.
-     *
-     * @param  string  $chars Optional string of characters to strip
-     * @return Stringy Object with a trimmed $str
-     */
-    public function trimRight($chars = null)
-    {
-        $chars = ($chars) ? preg_quote($chars) : '[:space:]';
-
-        return $this->regexReplace("[$chars]+\$", '');
+        return static::create(trim($this->str), $this->encoding);
     }
 
     /**
@@ -1526,32 +1458,6 @@ class Stringy implements \Countable, \IteratorAggregate, \ArrayAccess
 
         $str = mb_ereg_replace($pattern, $replacement, $this->str, $options);
         mb_regex_encoding($regexEncoding);
-
-        return static::create($str, $this->encoding);
-    }
-
-    /**
-     * Convert all applicable characters to HTML entities.
-     *
-     * @param  int|null $flags See http://php.net/manual/en/function.htmlentities.php
-     * @return Stringy  Object with the resulting $str after being html encoded.
-     */
-    public function htmlEncode($flags = ENT_COMPAT)
-    {
-        $str = htmlentities($this->str, $flags, $this->encoding);
-
-        return static::create($str, $this->encoding);
-    }
-
-    /**
-     * Convert all HTML entities to their applicable characters.
-     *
-     * @param  int|null $flags See http://php.net/manual/en/function.html-entity-decode.php
-     * @return Stringy  Object with the resulting $str after being html decoded.
-     */
-    public function htmlDecode($flags = ENT_COMPAT)
-    {
-        $str = html_entity_decode($this->str, $flags, $this->encoding);
 
         return static::create($str, $this->encoding);
     }

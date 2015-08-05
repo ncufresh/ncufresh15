@@ -108,7 +108,7 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface
      * @param  string  $locale
      * @param  string  $item
      * @param  array   $replace
-     * @return string|array|null
+     * @return string|null
      */
     protected function getLine($namespace, $group, $locale, $item, array $replace)
     {

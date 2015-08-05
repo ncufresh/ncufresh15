@@ -30,20 +30,6 @@ class ListenerMakeCommand extends GeneratorCommand
     protected $type = 'Listener';
 
     /**
-     * Execute the console command.
-     *
-     * @return void
-     */
-    public function fire()
-    {
-        if (! $this->option('event')) {
-            return $this->error('Missing required option: --event');
-        }
-
-        parent::fire();
-    }
-
-    /**
      * Build the class with the given name.
      *
      * @param  string  $name

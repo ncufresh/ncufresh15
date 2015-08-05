@@ -21,7 +21,6 @@ PHP 5.3+ and HHVM. Inspired by underscore.string.js.
     * [countSubstr](#countsubstr)
     * [create](#create)
     * [dasherize](#dasherize)
-    * [delimit](#delimit)
     * [endsWith](#endswith)
     * [ensureLeft](#ensureleft)
     * [ensureRight](#ensureright)
@@ -29,11 +28,7 @@ PHP 5.3+ and HHVM. Inspired by underscore.string.js.
     * [getEncoding](#getencoding)
     * [hasLowerCase](#haslowercase)
     * [hasUpperCase](#hasuppercase)
-    * [htmlDecode](#htmldecode)
-    * [htmlEncode](#htmlencode)
     * [humanize](#humanize)
-    * [indexOf](#indexof)
-    * [indexOfLast](#indexoflast)
     * [insert](#insert)
     * [isAlpha](#isalpha)
     * [isAlphanumeric](#isalphanumeric)
@@ -74,8 +69,6 @@ PHP 5.3+ and HHVM. Inspired by underscore.string.js.
     * [toTitleCase](#totitlecase)
     * [toUpperCase](#touppercase)
     * [trim](#trim)
-    * [trimLeft](#trimLeft)
-    * [trimRight](#trimRight)
     * [truncate](#truncate)
     * [underscored](#underscored)
     * [upperCamelize](#uppercamelize)
@@ -92,7 +85,7 @@ in your composer.json file:
 ```json
 {
     "require": {
-        "danielstjules/stringy": "~1.10"
+        "danielstjules/stringy": "~1.9"
     }
 }
 ```
@@ -350,22 +343,6 @@ S::create('TestDCase')->dasherize();
 S::dasherize('TestDCase');  // 'test-d-case'
 ```
 
-#### delimit
-
-$stringy->delimit($delimiter);
-
-S::delimit(string $str [, string $delimiter, string $encoding ])
-
-Returns a lowercase and trimmed string separated by the given delimiter.
-Delimiters are inserted before uppercase characters (with the exception
-of the first character of the string), and in place of spaces, dashes,
-and underscores. Alpha delimiters are not converted to lowercase.
-
-```php
-S::create('TestDCase')->delimit('>>');
-S::delimit('TestCase', '>>');  // 'test>>case'
-```
-
 #### endsWith
 
 $stringy->endsWith(string $substring [, boolean $caseSensitive = true ])
@@ -456,32 +433,6 @@ S::create('fòô bàř', 'UTF-8')->hasUpperCase();
 S::hasUpperCase('fòô bàř', 'UTF-8');  // false
 ```
 
-#### htmlDecode
-
-$stringy->htmlDecode()
-
-S::htmlDecode(string $str [, int $flags, string $encoding ])
-
-Convert all HTML entities to their applicable characters.
-
-```php
-S::create('&amp;')->htmlDecode();
-S::htmlDecode('&amp;');  // '&'
-```
-
-#### htmlEncode
-
-$stringy->htmlEncode()
-
-S::htmlEncode(string $str [, int $flags, string $encoding ])
-
-Convert all applicable characters to HTML entities.
-
-```php
-S::create('&')->htmlEncode();
-S::htmlEncode('&');  // '&amp;'
-```
-
 #### humanize
 
 $stringy->humanize()
@@ -494,36 +445,6 @@ spaces, and strips '_id'.
 ```php
 S::create('author_id')->humanize();
 S::humanize('author_id');  // 'Author'
-```
-
-#### indexOf
-
-$stringy->indexOf(string $needle [, $offset = 0 ]);
-
-S::indexOf(string $haystack , string $needle [, $offset = 0 [, $encoding = null ]])
-
-Returns the index of the first occurrence of $needle in the string,
-and false if not found. Accepts an optional offset from which to begin
-the search.
-
-```php
-S::create('string', 'UTF-8')->indexOf('ing');
-S::indexOf('string', 'ing');  // 3
-```
-
-#### indexOfLast
-
-$stringy->indexOfLast(string $needle [, $offset = 0 ]);
-
-S::indexOfLast(string $haystack , string $needle [, $offset = 0 [, $encoding = null ]])
-
-Returns the index of the last occurrence of $needle in the string,
-and false if not found. Accepts an optional offset from which to begin
-the search.
-
-```php
-S::create('string', 'UTF-8')->indexOfLast('ing');
-S::indexOfLast('string string', 'ing');  // 10
 ```
 
 #### insert
@@ -1071,47 +992,15 @@ S::toUpperCase('fòô bàř', 'UTF-8');  // 'FÒÔ BÀŘ'
 
 #### trim
 
-$stringy->trim([, string $chars])
+$stringy->trim()
 
-S::trim(string $str [, string $chars [, string $encoding ]])
+S::trim(string $str)
 
-Returns a string with whitespace removed from the start and end of the
-string. Supports the removal of unicode whitespace. Accepts an optional
-string of characters to strip instead of the defaults.
+Returns the trimmed string. An alias for PHP's trim() function.
 
 ```php
-S::create('  fòô bàř  ', 'UTF-8')->trim();
-S::trim('  fòô bàř  ');  // 'fòô bàř'
-```
-
-#### trimLeft
-
-$stringy->trimLeft([, string $chars])
-
-S::trimLeft(string $str [, string $chars [, string $encoding ]])
-
-Returns a string with whitespace removed from the start of the string.
-Supports the removal of unicode whitespace. Accepts an optional
-string of characters to strip instead of the defaults.
-
-```php
-S::create('  fòô bàř  ', 'UTF-8')->trimLeft();
-S::trimLeft('  fòô bàř  ');  // 'fòô bàř  '
-```
-
-#### trimRight
-
-$stringy->trimRight([, string $chars])
-
-S::trimRight(string $str [, string $chars [, string $encoding ]])
-
-Returns a string with whitespace removed from the end of the string.
-Supports the removal of unicode whitespace. Accepts an optional
-string of characters to strip instead of the defaults.
-
-```php
-S::create('  fòô bàř  ', 'UTF-8')->trimRight();
-S::trimRight('  fòô bàř  ');  // '  fòô bàř'
+S::create('fòô bàř', 'UTF-8')->trim();
+S::trim(' fòô bàř ');  // 'fòô bàř'
 ```
 
 #### truncate
@@ -1178,8 +1067,6 @@ The following is a list of libraries that extend Stringy:
 
  * [SliceableStringy](https://github.com/danielstjules/SliceableStringy):
 Python-like string slices in PHP
- * [SubStringy](https://github.com/TCB13/SubStringy):
-Advanced substring methods
 
 ## Tests
 

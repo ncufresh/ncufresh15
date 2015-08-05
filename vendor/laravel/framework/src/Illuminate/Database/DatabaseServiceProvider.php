@@ -31,8 +31,6 @@ class DatabaseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Model::clearBootedModels();
-
         $this->registerEloquentFactory();
 
         $this->registerQueueableEntityResolver();

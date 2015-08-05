@@ -124,8 +124,6 @@ trait HasRoleAndPermission
      */
     public function detachRole($role)
     {
-        $this->roles = null;
-
         return $this->roles()->detach($role);
     }
 
@@ -136,8 +134,6 @@ trait HasRoleAndPermission
      */
     public function detachAllRoles()
     {
-        $this->roles = null;
-
         return $this->roles()->detach();
     }
 
@@ -164,10 +160,12 @@ trait HasRoleAndPermission
             throw new InvalidArgumentException('[roles.models.permission] must be an instance of \Illuminate\Database\Eloquent\Model');
         }
 
-        return $permissionModel::select(['permissions.*', 'permission_role.created_at as pivot_created_at', 'permission_role.updated_at as pivot_updated_at'])
-                ->join('permission_role', 'permission_role.permission_id', '=', 'permissions.id')->join('roles', 'roles.id', '=', 'permission_role.role_id')
-                ->whereIn('roles.id', $this->getRoles()->lists('id')->toArray()) ->orWhere('roles.level', '<', $this->level())
-                ->groupBy(['permissions.id', 'pivot_created_at', 'pivot_updated_at']);
+        $prefix = config('database.connections.' . config('database.default') . '.prefix');
+
+        return $permissionModel::select([$prefix . 'permissions.*', $prefix . 'permission_role.created_at as pivot_created_at', $prefix . 'permission_role.updated_at as pivot_updated_at'])
+                ->join($prefix . 'permission_role', $prefix . 'permission_role.permission_id', '=', $prefix . 'permissions.id')->join($prefix . 'roles', $prefix . 'roles.id', '=', $prefix . 'permission_role.role_id')
+                ->whereIn($prefix . 'roles.id', $this->getRoles()->lists('id')->toArray()) ->orWhere($prefix . 'roles.level', '<', $this->level())
+                ->groupBy($prefix . 'permissions.id');
     }
 
     /**
@@ -314,8 +312,6 @@ trait HasRoleAndPermission
      */
     public function detachPermission($permission)
     {
-        $this->permissions = null;
-
         return $this->userPermissions()->detach($permission);
     }
 
@@ -326,8 +322,6 @@ trait HasRoleAndPermission
      */
     public function detachAllPermissions()
     {
-        $this->permissions = null;
-        
         return $this->userPermissions()->detach();
     }
 

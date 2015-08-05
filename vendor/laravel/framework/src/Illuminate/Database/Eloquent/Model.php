@@ -316,16 +316,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Clear the list of booted models so they will be re-booted.
-     *
-     * @return void
-     */
-    public static function clearBootedModels()
-    {
-        static::$booted = [];
-    }
-
-    /**
      * Register a new global scope on the model.
      *
      * @param  \Illuminate\Database\Eloquent\ScopeInterface  $scope
@@ -713,7 +703,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Begin querying a model with eager loading.
+     * Being querying a model with eager loading.
      *
      * @param  array|string  $relations
      * @return \Illuminate\Database\Eloquent\Builder|static

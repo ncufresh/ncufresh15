@@ -4,9 +4,6 @@ namespace League\Flysystem\Util;
 
 use Finfo;
 
-/**
- * @internal
- */
 class MimeType
 {
     /**
