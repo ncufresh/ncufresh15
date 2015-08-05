@@ -180,7 +180,7 @@ window.onkeydown = function(e) {
 }
 
 //timing
-var minute=5;
+var minute=3;
 var second=0;
 var fiveminute = function () {
 	if (second==0 && minute!=0) {
@@ -236,8 +236,8 @@ function loaded() {
 	ctx.font = '25px Arial';
 	ctx.textAlign = "center";
 	ctx.textBaseline = "top";
-	ctx.fillText("倒數計時5分鐘！", canvas.width / 2, canvas.height / 3 );				
-	ctx.fillText("在這5分鐘內，找到的寶物都是你的！", canvas.width / 2, canvas.height / 3 +30);
+	ctx.fillText("倒數計時3分鐘！", canvas.width / 2, canvas.height / 3 );				
+	ctx.fillText("在這3分鐘內，找到的寶物都是你的！", canvas.width / 2, canvas.height / 3 +30);
 	ctx.fillText("注意！", canvas.width / 2, canvas.height / 3 +60);
 	ctx.fillText("打開寶箱時會出現三道問題鎖！", canvas.width / 2, canvas.height / 3 +90);
 	ctx.fillText("全部答對才能獲得寶物！", canvas.width / 2, canvas.height / 3 +120);
