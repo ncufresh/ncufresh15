@@ -133,7 +133,7 @@
 									<li><a href="https://uncia.cc.ncu.edu.tw/dormnet/">宿網系統</a></li>
 									<li><a href="http://volley.cc.ncu.edu.tw:8080/RepairSystem/index.do?action=news">宿舍修繕</a></li>
 									<li><a href="http://passport.ncu.edu.tw/">服務學習網</a></li>
-									<li><a href="http://love.adm.ncu.edu.tw/center/Gender_Equal/main/index.html">性平教育</a></li>
+									<li><a href="http://140.115.184.179/gender">性平教育</a></li>
 									<li><a href="http://www4.is.ncu.edu.tw/register/check/stdno_check.php">學號查詢</a></li>
 									<li><a href="https://www.facebook.com/groups/2015MeetNcu/">2015 相遇中央大學</a></li>
 									<li><a href="https://www.facebook.com/groups/802172676461763/?fref=ts">中央研究生Family</a></li>

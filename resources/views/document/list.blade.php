@@ -11,7 +11,7 @@
 	<h5 class="page_title">學習及生活相關須知</h5>
 	@endif
 @else
-	@if($page_id === "university" && $page_id_2 === 1)
+	@if ($page_id === "university" && $page_id_2 === 1)
 	<h5 class="page_title">重要日程</h5>
 	@elseif($page_id === "university" && $page_id_2 === 2)
 	<h5 class="page_title">學籍</h5>
