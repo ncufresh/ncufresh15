@@ -74,11 +74,14 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	transition: 6s ease-in-out;
+	transition: top 5s ease-in-out, left 5s ease-in-out, transform .7s;
 	display: inline-block;
 	position: fixed;
 	width: 70px;
 	z-index: 4;
+	height: 65px;
+	width: 65px;
+	background-size: 100% 100%;
 }
 #portal-menu {
 	display: inline-block;
@@ -87,11 +90,6 @@ nav {
 	width: 1px;
 	height: 1px;
 	padding: 0;
-}
-#portal-img {
-	height: 65px;
-	width: 65px;
-	display: inline-block;
 }
 #footer {
 	height: 70px;
