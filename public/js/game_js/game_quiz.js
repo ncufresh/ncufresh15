@@ -1,13 +1,12 @@
 var canask = false; // check by _move.js&_main
 var select = 1; // four choices
-var questionON = 0;
-//-1:lock, 0:close, 1:in, 2:result 
-
+var questionON = 0; //-1:lock, 0:close, 1:in, 2:result 
 var threetimes = 0;
+var qadata;
 
-function init() {
+function redirect() {
     $.ajax({
-        url: '/GameOver',
+        url: '/game/save',
         type: 'GET',
         success: function(data) {
         }
@@ -15,26 +14,16 @@ function init() {
 }
 function setThreeTimes() {
     $.ajax({
-        url: '/GemeOver',
+        url: '/game/whether',
         type: 'GET',
         success: function(data) {
-        	console.log(data);
+        	//console.log(data);
         }
     });
 }
-function deleteAll() {
-    $.ajax({
-        url: '/GamaOver',
-        type: 'GET',
-        success: function(data) {
-        }
-    });
-}
-
-var qadata;
 function getquestion() {
     $.ajax({
-        url: '/RandomQuestionAndAnswer',
+        url: '/game/RandomQuestionAndAnswer',
         type: 'GET',
         async: false, // run ajax until it OK
         success: function(data) {
@@ -48,7 +37,6 @@ function getquestion() {
         }
     });
 }
-
 
 var question = function () {
 	if (questionON==-1) {
@@ -64,8 +52,7 @@ var question = function () {
 	if (questionON==1) {
 		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 		ctx.fillRect(0, canvas.height/4, canvas.width, canvas.height*3/4);
-
-
+		// print question
 		var splitquestion = qadata.questions.question.split("");
 		var adjustY = 150; // 文字欄位初始 Y
 		var padding = 40; // 行距
@@ -82,35 +69,31 @@ var question = function () {
 			}
 			ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 		}
-
+		// print the options
 		ctx.fillStyle = '#ffffff';
-		//ctx.fillStyle = "rgb(255, 240, 0)";
 		ctx.font = '21px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText(qadata.questions.option1, canvas.width / 2, canvas.height - 180+padding*0);
 
 		ctx.fillStyle = '#ffffff';
-		//ctx.fillStyle = "rgb(255, 240, 0)";
 		ctx.font = '21px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText(qadata.questions.option2, canvas.width / 2, canvas.height - 180+padding*1);
 
 		ctx.fillStyle = '#ffffff';
-		//ctx.fillStyle = "rgb(255, 240, 0)";
 		ctx.font = '21px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText(qadata.questions.option3, canvas.width / 2, canvas.height - 180+padding*2);
 
 		ctx.fillStyle = '#ffffff';
-		//ctx.fillStyle = "rgb(255, 240, 0)";
 		ctx.font = '21px Arial';
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
-
+		// select rec
         switch (select){
             case 1:
             	ctx.beginPath();
@@ -141,11 +124,9 @@ var question = function () {
         		ctx.stroke();            
                 break;
         }
-
 	} else if (questionON==2) {
-
+		// AC
 		if (threetimes==3) {
-
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 			ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 3);
 	
@@ -155,16 +136,18 @@ var question = function () {
 			ctx.textBaseline = "top";
 			ctx.fillText("恭喜獲得神秘道具<3", canvas.width / 2, canvas.height / 2-90);
 			ctx.fillText("到個人專區看看吧~~", canvas.width / 2, canvas.height / 2-50);
+			// open the box
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
 				}
 			}
 		}
+		// WA
 		else{
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 			ctx.fillRect(0, canvas.height/4, canvas.width, canvas.height*3/4);
-
+			// print question
 			var splitquestion = qadata.questions.question.split("");
 			var adjustY = 150; // 文字欄位初始 Y
 			var padding = 40; // 行距
@@ -181,6 +164,7 @@ var question = function () {
 				}
 				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 			}
+			// print correct ans
 			switch (parseInt(qadata.answer,10)){
 				case 1:
 					ctx.fillStyle = "rgb(255, 240, 0)";
@@ -211,6 +195,7 @@ var question = function () {
 					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
 					break;
 			}
+			// lock the box
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].lock=true;
@@ -219,14 +204,13 @@ var question = function () {
 		}
 	}
 	window.onkeydown = function(e) {
-		// enter
+		// enter controller
 		if(e.keyCode == 13 && canask && questionON==0 ){
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme && boxs[i].lock==false && boxs[i].open==false) {
 					hero.canmove=false;
-					getquestion();
-					//deleteAll();
 					init();
+					getquestion();
 					questionON=1;
 					select=1;
 				} else if(boxs[i].isme && boxs[i].lock && boxs[i].open==false){
@@ -252,15 +236,13 @@ var question = function () {
 			hero.canmove=true;
 			questionON=0;
 			threetimes=0;
-			deleteAll();
 		}
 		else if(e.keyCode == 13 && questionON==-1){
 			hero.canmove=true;
 			questionON=0;
 			threetimes=0;
-			deleteAll();
 		}
-		//
+		// options controller
 		if (e.keyCode == 38 && questionON==1) { // up choice
 			if (select==2) {
 				select=1;
