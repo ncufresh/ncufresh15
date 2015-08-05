@@ -14,7 +14,7 @@ class Departments extends Model
     		return $first->picName;
     	}
     	else {
-    		return "None.png";
+    		return "None.jpg";
     	}
     }
 }

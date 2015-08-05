@@ -243,11 +243,4 @@ class ClubController extends Controller {
 		else
 			return redirect('/group/departments/show/'.$id);
 	}
-
-	public function getContent(Request $request) {
-		$id = $request->get('id');
-		$name = Departments::where('id', $id)->value('name');
-		$content = Departments::where('id', $id)->value('content');
-		return response()->json(['content'=>$content, 'name'=>$name]);
-	}
 }
