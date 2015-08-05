@@ -74,7 +74,7 @@ nav {
 	margin-left: 10px;
 }
 #portal {
-	transition: top 5s ease-in-out, left 5s ease-in-out, transform .7s;
+	transition: top 5s ease-in-out, left 5s ease-in-out, transform .2s;
 	display: inline-block;
 	position: fixed;
 	width: 70px;
