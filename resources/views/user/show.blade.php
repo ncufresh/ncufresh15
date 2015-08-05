@@ -311,6 +311,7 @@ $(function() {
 @stop
 
 @section('content')
+<input type="hidden" value="{{$user->id}}" id="user_id"/>
 <!-- decorations -->
 <div id="sand" class="item"></div>
 @if ($decoration->sg1)
