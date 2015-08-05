@@ -206,7 +206,7 @@
 				</div>
 			</div>
 		</main>
-		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
+		<footer class="page-footer" id='footer'>國立中央大學2015新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved<br/>建議使用Chrome、Firefox或者IE11等瀏覽器，以獲得最佳體驗</footer>
 		<a id='portal' class="dropdown-button btn-flat" href="#" data-activates="menu-list">
 				<!--<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a> -->
 		</a>

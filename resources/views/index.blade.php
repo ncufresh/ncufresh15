@@ -27,8 +27,8 @@
 			<div id="ann-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($announcements as $ann)
 					<div class='row'>
-						<div class='col s2'><span class="tag tag1">{{date('m-d', strtotime($ann->show_at))}}</span></div>
-						<div class='col s10'>
+						<div class='col s3'><span class="tag tag1">{{date('m-d', strtotime($ann->show_at))}}</span></div>
+						<div class='col s9'>
 							<a href="{{url("ann")."/".$ann->id}}">{{$ann->title}}</a>
 						</div>
 					</div>
@@ -37,8 +37,8 @@
 			<div id="qa-tab" class="mCustomScrollbar tab-content" data-mcs-theme="light-thick">
 				@foreach ($annqas as $ann)
 					<div class='row'>
-						<div class='col s2'><span class="tag tag2">{{date('m-d', strtotime($ann->created_at))}}</span></div>
-						<div class='col s10'>
+						<div class='col s3'><span class="tag tag2">{{date('m-d', strtotime($ann->created_at))}}</span></div>
+						<div class='col s9'>
 							<a href="{{$ann->url}}">{{$ann->title}}</a>
 						</div>
 					</div>
@@ -49,6 +49,12 @@
 	<div id='slider-container'class="col s12 m12 l7">
 		<div class="slider">
 			<ul class="slides">
+				<li>
+					<a href="https://www.facebook.com/groups/2015MeetNcu/" target="_blank"><img src="{{ asset('img/fbAd.jpg') }}" ></a>
+				</li>
+				<li>
+					<a href="http://www.ncu.edu.tw" target="_blank"><img src="{{ asset('img/ncuAd.jpg') }}" ></a>
+				</li>
 				<li>
 					<a href="http://radio.pinewave.tw" target="_blank"><img src="{{ asset('img/pine.jpg') }}" ></a>
 				</li>
