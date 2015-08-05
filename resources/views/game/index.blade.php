@@ -14,6 +14,7 @@
     canvas{
         border:5px solid black;
     }
+
 </style>
 
 @stop
