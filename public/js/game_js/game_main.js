@@ -218,7 +218,7 @@ function loaded() {
 	ctx.font = '15px Bangers,Arial';
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("溫興提醒:小遊戲只能在電腦玩", 5, 5);
+	ctx.fillText("溫馨提醒:小遊戲只能在電腦玩", 5, 5);
 
 	ctx.fillStyle = '#FF4500';
 	ctx.font = 'bold 45px Bangers,Arial';
