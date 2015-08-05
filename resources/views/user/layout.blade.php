@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="csrf-token" content="{{ csrf_token() }}">
+		<link rel="icon" href="{{asset('icon.png')}}" type="image/png">
         <style>
             #wrapper {
                 background-image: url('/img/banner/{{$user->background}}.jpg');
@@ -72,7 +73,7 @@
         </div>
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/layout.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/user.js') }}"></script>
 		@yield('js')
     </body>
 </html>

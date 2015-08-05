@@ -81,8 +81,14 @@ class FileController extends Controller
      */
     public function show($id)
     {
+        $id = str_replace("..","",$id);
         $file = FileUpload::where('url', $id)->first();
         return response()->download(base_path().'/storage/app/'.$id, $file->name.".".$file->ext);
+    }
+
+    public function show_img($id) {
+        $img = FileUpload::where('url', $id)->first();
+        return view('img', ['imgurl' => '/file/'.$img->url]);
     }
 
     /**

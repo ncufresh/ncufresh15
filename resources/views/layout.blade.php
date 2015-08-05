@@ -7,7 +7,6 @@
 		<!--Let browser know website is optimized for mobile-->
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="csrf-token" content="{{ csrf_token() }}">
-		<link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 		<link rel="icon" href="{{asset('icon.png')}}" type="image/png">
 		<meta charset="UTF-8">
 		<meta property="og:title" content="中央大學|2015 新生知訊網" />
@@ -16,10 +15,6 @@
 		<meta property="og:description" content="為歡迎大學新鮮人，新生知訊網，主打各項貼心服務，從飲食、住宿、交通、教育、藝文等主題出發的生活資訊，與大考放榜同步上線"/>
 		<meta property="og:type" content="article">
 		<style>
-			#portal-img {
-				background: url('{{asset("img/Untitled.png")}}');
-				background-size: 65px;
-			}
 			#logo {
 				background-image: url('{{asset("img/indexLogo.png")}}');
 				background-size: 85% 85%;
@@ -194,7 +189,7 @@
 				<div id='content'>
 					@if (Request::url() != url('/'))
 						<div id="breadcrumbs">
-							@if (!isset($nobreadcrumb)) 
+							@if (!isset($nobreadcrumb))
 								<a href="{{url('/')}}">首頁</a>
 							@endif
 							@foreach (\App\Helpers\SitemapHelper::getLocations() as $location)
@@ -208,27 +203,30 @@
 			</div>
 		</main>
 		<footer class="page-footer" id='footer'>新生知訊網團隊 版權所有 © 2015 NCU Fresh All Rights Reserved</footer>
-		<div id='portal'>
-			<div id='portal-img'></div>
-			<div id='portal-menu'>
-				<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a>
-				<ul id='menu-list' class='dropdown-content' style="min-width: 120px;">
-					@if (Auth::check())
-						<li><a href="{{ url('/user/').'/'.Auth::user()->id }}">User Profile</a></li>
-					@endif
-					<li><a href="{{ url('/game') }}">Game</a></li>
-					<li class="divider"></li>
-					@if (Auth::check())
-						<li><a href="{{ url('/auth/logout') }}">Log out</a></li>
-					@else
-						<li><a href="{{ url('/auth/login') }}">Log in</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@endif
-				</ul>
-			</div>
-		</div>
-		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+		<a id='portal' class="dropdown-button btn-flat" href="#" data-activates="menu-list">
+				<!--<a id='portal-trigger' class='dropdown-button btn' href='#' data-activates='menu-list'></a> -->
+		</a>
+		<ul id='menu-list' class='dropdown-content' style="min-width: 120px; position: fixed;">
+			@if (Auth::check())
+				<li><a href="{{ url('/user/').'/'.Auth::user()->id }}">User Profile</a></li>
+			@endif
+			<li><a href="{{ url('/game') }}">Game</a></li>
+			<li class="divider"></li>
+			@if (Auth::check())
+				<li><a href="{{ url('/auth/logout') }}">Log out</a></li>
+			@else
+				<li><a href="{{ url('/auth/login') }}">Log in</a></li>
+				<li><a href="{{ url('/auth/register') }}">Register</a></li>
+			@endif
+		</ul>
+		<!--[if lte IE 8]>
+			<script src="https://raw.githubusercontent.com/zhangxinxu/ieBetter.js/master/ieBetter.js"></script>
+		<![endif]-->
+		<!--<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>-->
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/jquery.timer.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/fish.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/layout.js') }}"></script>
 		@yield('js')
     </body>

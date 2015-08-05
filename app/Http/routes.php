@@ -54,9 +54,14 @@ Route::get ('qa/submitted' , function() {
 });
 //------------------------------------------------------------------------------------------------------
 Route::get('file/{id}', 'FileController@show');
+Route::get('upload_img/{id}', 'FileController@show_img');
 
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('level/{creature}', 'CreatureController@level');
+    Route::get('grow/{creature}', 'CreatureController@grow');
+
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
 		Route::get('user'     , 'UserController@index');
@@ -202,3 +207,4 @@ Route::get('about', function(){
 	return view('about');
 });
 //******************************************************************************************************
+
