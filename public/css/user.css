@@ -9,6 +9,7 @@
 #c0 {
 	top: 10vh;
 	left: 5%;
+	cursor: inherit !important;
 }
 
 #c1 {

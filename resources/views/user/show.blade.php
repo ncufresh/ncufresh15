@@ -67,6 +67,7 @@
     left: 0;
     width: 100%;
     height: 20px;
+	z-index: 1000;
 }
 
 #avatar {
