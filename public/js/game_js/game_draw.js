@@ -51,7 +51,6 @@ var render = function () {
 	hx = hero.x-canvas.width/2 < 0 || hero.x-canvas.width/2 > game.length-canvas.width;
 	hy = hero.y-canvas.height/2 < 0 || hero.y-canvas.height/2 > game.length-canvas.height;
 
-
 // 0 草地
 // 1 樹叢
 // 2 磚塊
@@ -65,7 +64,6 @@ var render = function () {
 // 8 轉角3 左下
 // 9 轉角4 右下
 
-
 	// if (bgReady) {
 	// 	draw(bgImage, 0, 0);
 	// }
@@ -73,7 +71,6 @@ var render = function () {
 		for (var i = 0; i <100; i++) {
 			for (var j = 0; j < 100; j++) {
 				draw(grassImage,grid.length*i,grid.length*j);
-				//draw(testImage,grid.length*i,grid.length*j);
 			};
 		};
 		
@@ -190,25 +187,15 @@ var render = function () {
 		draw(rt4Image,grid.length*20,grid.length*38);
 	}
 	//
-	if (boxcloseReady && boxs[0].open==false) {
-		draw(boxcloseImage, boxs[0].x, boxs[0].y);
-	}
-	if (boxopenReady && boxs[0].open) {
-		draw(boxopenImage, boxs[0].x, boxs[0].y);
-	}
-	if (boxcloseReady && boxs[1].open==false) {
-		draw(boxcloseImage,  boxs[1].x, boxs[1].y);
-	}
-	if (boxopenReady && boxs[1].open) {
-		draw(boxopenImage, boxs[1].x, boxs[1].y);
-	}
-	if (boxcloseReady && boxs[2].open==false) {
-		draw(boxcloseImage,  boxs[2].x, boxs[2].y);
-	}
-	if (boxopenReady && boxs[2].open) {
-		draw(boxopenImage, boxs[2].x, boxs[2].y);
-	}
-	//
+
+	for (var i = 0; i < boxs.length; i++) {
+		if (boxcloseReady && boxs[i].open==false) {
+			draw(boxcloseImage, boxs[i].x, boxs[i].y);
+		}
+		if (boxopenReady && boxs[i].open) {
+			draw(boxopenImage, boxs[i].x, boxs[i].y);
+		}
+	};
 
 	if (monsterReady) {
 		draw(monsterImage, monster.x, monster.y);
@@ -221,7 +208,6 @@ var render = function () {
 	// 				draw(roadImage, roads[i].x+grid.length*j, roads[i].y+grid.length*k);
 	// 			}
 	// 		}
-			
 	// 	}
 	// }
 	if (blockReady) {
@@ -256,12 +242,8 @@ var render = function () {
 			draw(heroImageArray[nowimage], canvas.width / 2, canvas.height / 2, 'hero');
 		}
 	}
-	// Score
-	// ctx.fillStyle = "rgba(0, 0, 0,0.8)";
-	// ctx.font = "24px Helvetica";
-	// ctx.textAlign = "left";
-	// ctx.textBaseline = "top";
-	// ctx.fillText("Random monster caught: " + monstersCaught, 32, 480);
+
+	// draw time
 	if (second>9) {
 		ctx.fillStyle = "rgba(0, 0, 0,0.8)";
 		ctx.font = "bold 30px Helvetica";

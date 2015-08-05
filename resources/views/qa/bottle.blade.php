@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'QAQ')
+@section('title', 'Q&amp;A-瓶中信回覆')
 
 @section('css')
 @stop

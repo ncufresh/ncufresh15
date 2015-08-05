@@ -9,10 +9,10 @@ class CreateBackgroundTable extends Migration{
 		Schema::create('backgrounds', function(Blueprint $table){
 			$table->increments('id');
 			$table->integer('user_id');
-			$table->boolean('bg1_1')->default(false);
-			$table->boolean('bg1_2')->default(false);
-			$table->boolean('bg1_3')->default(false);
-			$table->boolean('bg1_4')->default(false);
+			$table->boolean('bg1_1')->default(true);
+			$table->boolean('bg1_2')->default(true);
+			$table->boolean('bg1_3')->default(true);
+			$table->boolean('bg1_4')->default(true);
 			$table->boolean('bg2_1')->default(false);
 			$table->boolean('bg2_2')->default(false);
 			$table->boolean('bg2_3')->default(false);

@@ -7,7 +7,7 @@ var threetimes = 0;
 
 function init() {
     $.ajax({
-        url: '/GameOveri',
+        url: '/GameOver',
         type: 'GET',
         success: function(data) {
         }
@@ -15,15 +15,16 @@ function init() {
 }
 function setThreeTimes() {
     $.ajax({
-        url: '/GameOvers',
+        url: '/GemeOver',
         type: 'GET',
         success: function(data) {
+        	console.log(data);
         }
     });
 }
 function deleteAll() {
     $.ajax({
-        url: '/GameOverc',
+        url: '/GamaOver',
         type: 'GET',
         success: function(data) {
         }
@@ -157,8 +158,8 @@ var question = function () {
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
-				};
-			};
+				}
+			}
 		}
 		else{
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
@@ -180,7 +181,7 @@ var question = function () {
 				}
 				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 			}
-			switch (qadata.answer){
+			switch (parseInt(qadata.answer,10)){
 				case 1:
 					ctx.fillStyle = "rgb(255, 240, 0)";
 					ctx.font = '21px Arial';
@@ -210,14 +211,11 @@ var question = function () {
 					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
 					break;
 			}
-
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].lock=true;
-				};
-			};
-
-
+				}
+			}
 		}
 	}
 	window.onkeydown = function(e) {
@@ -227,6 +225,7 @@ var question = function () {
 				if (boxs[i].isme && boxs[i].lock==false && boxs[i].open==false) {
 					hero.canmove=false;
 					getquestion();
+					//deleteAll();
 					init();
 					questionON=1;
 					select=1;

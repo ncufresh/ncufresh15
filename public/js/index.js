@@ -18,13 +18,17 @@ $(document).ready(function(){
 });
 
 $("#arrow1").click(function(){
-	if($(this).attr("target") != '0000-00-00')
-		updateCalender($(this).attr("target"));
+	var dom = document.getElementById("arrow1");
+	if (dom.hasAttribute("target") && dom.getAttribute("target")!= "0000-00-00"){
+		updateCalender(dom.getAttribute("target"));
+	}
 });
 
 $("#arrow2").click(function(){
-	if ($(this).attr("target") != '2016-12-31')
-		updateCalender($(this).attr("target"));
+	var dom = document.getElementById("arrow2");
+	if (dom.hasAttribute("target") && dom.getAttribute("target")!= "2016-12-31"){
+		updateCalender(dom.getAttribute("target"));
+	}
 });
 
 function updateCalender(date){

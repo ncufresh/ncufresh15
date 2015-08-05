@@ -234,6 +234,7 @@
 <script>
 $(function() {
     $('.modal-trigger').leanModal();
+    @if ($isHome)
 	$('ul.tabs').tabs();
     $("#treasure").click(function(){
         $("#chest-wrapper").show();
@@ -245,6 +246,7 @@ $(function() {
             $(this).fadeOut();
         }
     });
+    @endif
 
     $('#wrapper').click(function() {
         $('body').removeClass('food1');
@@ -261,6 +263,30 @@ $(function() {
         $('#chest-wrapper').hide();
     });
 
+    $('#bg-alt').click(function() {
+        changeBackground(0);
+    });
+    $('#bg-f').click(function() {
+        changeBackground(1);
+    });
+    $('#bg-g14').click(function() {
+        changeBackground(2);
+    });
+    $('#bg-sea').click(function() {
+        changeBackground(3);
+    });
+    function changeBackground(bg) {
+        console.log('change to ' + bg);
+        $.ajax({
+            url: '/user/chbg/' + bg,
+            type: 'GET',
+            success: function(data) {
+              if (data.result) {
+                $('#wrapper').css({'background-image': 'url(/img/banner/'+data.newbg+'.jpg)'});
+              }
+            }
+        }); 
+    }
 });
 </script>
 @if ($isHome)

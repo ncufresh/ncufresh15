@@ -180,6 +180,17 @@
 	text-shadow: 0px 0px 10px black;
 }
 
+.ass:before {
+	content: "";
+	width: 4%;
+	height: 2em;
+	position: absolute;
+	top: 0.7em;
+	border-radius: 50%;
+	left: -1.5%;
+	background-color: #2962ff;
+}
+
 .dick:after {
 	content: "";
 	width: 4%;
@@ -208,14 +219,14 @@
 }
 
 #arrow-container1 {
-	background-color: #5f5f5f;
+	background-color: #9E9C9C;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
 	color: white;
 }
 #arrow-container2 {
-	background-color: #CCCCCC;
+	background-color: #9E9C9C;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
@@ -237,6 +248,7 @@
 
 #arrow2 {
 	padding-left: 5px;
+	color: white;
 }
 
 #puzzle-container {

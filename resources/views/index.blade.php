@@ -50,7 +50,7 @@
 		<div class="slider">
 			<ul class="slides">
 				<li>
-					<a href="http://www.google.com"><img src="{{ asset('img/pine.jpg') }}" ></a>
+					<a target="_blank" href="http://radio.pinewave.tw"><img src="{{ asset('img/pine.jpg') }}" ></a>
 					<div class="caption right-align">
 					</div>
 				</li>
@@ -71,7 +71,7 @@
 			<div id='arrow-container1'class="col s1 valign-wrapper"><a id="arrow1" class='arrow btn-flat valign'>&lt;</a></div>
 			<div id='puzzle-container' class="col s10 valign-wrapper">
 				<div id='event-container' class="row">
-					<div id='event1' class='col s3 dick'><a id='e1' class='event-box' href="#event1-modal"></a></div>
+					<div id='event1' class='col s3 dick ass'><a id='e1' class='event-box' href="#event1-modal"></a></div>
 					<div id='event2' class='col s3 dick'><a id='e2' class='event-box' href="#event2-modal"></a></div>
 					<div id='event3' class='col s3 dick'><a id='e3' class='event-box' href="#event3-modal"></a></div>
 					<div id='event4' class='col s3 dick'><a id='e4' class='event-box' href="#event4-modal"></a></div>

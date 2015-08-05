@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'GAME')
+@section('title', '小遊戲')
 
 @section('css')
 
@@ -43,7 +43,6 @@ $(function() {
     var btn = $("#gamecanvas");
 
     btn.focus(function(){
-        //console.log("Click");
         //document.body.style.overflow="hidden";
         document.body.style.overflowY = "hidden";
     });
