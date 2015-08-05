@@ -131,6 +131,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('campus/delete_view/{id}', 'Campus\CampusController@deleteView');
         //------------------------------------------------------------------------------------------------------
 
+
         Route::post('video2/delete','Video\GuestbookController@delete');
         Route::post('bottle/pm/{id}', 'BottleController@private_message');
 

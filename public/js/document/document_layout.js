@@ -20,3 +20,6 @@ $("#download").click(function(){
 $("#contact").click(function(){
 	window.location.href = '/document/contact';
 });
+$("table").css({
+	"width": "100%"
+});
