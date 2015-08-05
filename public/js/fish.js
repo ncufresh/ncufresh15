@@ -6,7 +6,6 @@ Fish.prototype.setTimer = function(interval){
 	var a = this;
 	this.timer = $.timer(function(){
 		var x = Math.random() * a.boundX + a.startX;
-		console.log("old:"+a.x+", new:"+x);
 		a.y = Math.random() * a.boundY + a.startY;
 		if(x > a.x){
 			$("#"+a.id).css("transform", "rotateY(0deg)");

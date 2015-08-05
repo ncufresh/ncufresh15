@@ -13,17 +13,17 @@
 			height: 650px;
 		}
 		#content_left{
-			max-width:500px;
+			width:32%;
 			height:600px;
 			float: left;
 		}
 		#content_right{
-			max-width:500px;
+			width:32%;
 			height:600px;
 			float: left;
 		}
 		#content_center{
-			max-width:500px;
+			width:32%;
 			height:600px;
 			float: left;
 		}
@@ -51,9 +51,9 @@
 			padding: 10%;
 		}
 		.con {
-			min-width: 500px;
-			max-width: 500px;
-			width: 500px;
+			min-width: 400px;
+			max-width: 400px;
+			width: 400px;
 		}
 		a:link {
 			text-decoration:none;
@@ -93,13 +93,8 @@
 				<div>
 					<img src="{{asset('img/chrome.png')}}" style="max-height: 250px;">
 				</div>
-				<div>
-					<label class="big">Google Chrome</label>
-				</div>
 			</div>
-			<div class="content">
-				<label class="middle con">由Google公司開發的網頁瀏覽器，Chrome的整體發展目標是提升穩定性、速度和安全性，並創造出簡單且有效率的使用者介面CNET旗下的Download.com網站評筆為2008年最佳Windows應用程式，CSS3 Selectors Test中 578 項全部通過。</label>
-			</div>
+            <br>
 			<div class="center">
 				<a href="https://www.google.com.tw/chrome/browser/desktop/index.html" class="btn">
 					下載Chrome
@@ -112,13 +107,8 @@
 				<div>
 					<img src="{{asset('img/firefox.png')}}" style="max-height: 250px;">
 				</div>
-				<div>
-					<label class="big">Firefox</label>
-				</div>
 			</div>
-			<div class="content">
-				<label class="middle">是由Mozilla基金會與開放源碼社群共同開發的網頁瀏覽器，每年都被媒體PC Magazine選為年度最佳瀏覽器，市佔率僅次於微軟的IE， Firefox擁有分頁瀏覽、拼字檢查、即時書籤、下載管理員及自訂搜尋引擎等功能。</label>
-			</div><br>
+            <br>
 			<div class="center">
 				<a href="https://www.mozilla.org/zh-TW/firefox/new/" class="btn">
 					下載Firefox
@@ -130,13 +120,8 @@
 				<div>
 					<img src="{{asset('img/opera.png')}}" style="max-height: 250px;">
 				</div>
-				<div>
-					<label class="big">Opera</label>
-				</div>
 			</div>
-			<div class="content">
-				<label class="middle">Opera支援多種操作系統，如Windows、Linux、Mac、FreeBSD、Solaris、BeOS、OS/2、QNX等，此外，Opera還有手機用的版本（Opera Mini和Opera Mobile），也支援多語言，包括簡體中文和繁體中文。</label>
-			</div><br>
+            <br>
 			<div class="center">
 				<a href="http://www.opera.com/zh-tw" class="btn">
 					下載Opera
