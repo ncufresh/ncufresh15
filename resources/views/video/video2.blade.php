@@ -340,7 +340,7 @@ $(document).ready(function(){
               <div id="IntroBottom"></div>
               <div id="TextBox" class="mCustomScrollbar">
 
-              {{$article}}
+              {!! nl2br($article)!!}
 
               </div>
            </div><!--id IntroRight-->

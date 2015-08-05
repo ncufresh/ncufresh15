@@ -32,11 +32,11 @@ class GuestbookController extends Controller
             "ANQBlZCff_c"
         ];
         $articles = [
-            "
-當我和妳再相遇
+"鳳凰花開，鳳凰花落，在這個相逢與分離交錯的季節裡，
+校園依舊充斥著輕快的腳步與嘻笑的臉龐，只是多了幾分淡淡的惆悵。
+大學四年，有著人生太多太多的第一次：
+第一次離家、第一次交往、第一次喝醉、第一次夜遊、第一次打工、第一次翹課...
 
-鳳凰花開，鳳凰花落，在這個相逢與分離交錯的季節裡，校園依舊充斥著輕快的腳步與嘻笑的臉龐，只是多了幾分淡淡的惆悵。
-大學四年，有著人生太多太多的第一次，第一次離家、第一次交往、第一次喝醉、第一次夜遊、第一次打工、第一次翹課...
 如果人生可以重來，再經歷這一切，你會不會好好把握，不留下任何遺憾？
 凱傑是個快畢業的大四生，某天因為某種原因竟然重新成為大一新生，
 究竟事情的真相是怎麼一回事，
@@ -57,7 +57,7 @@ class GuestbookController extends Controller
         switch($vid) {
 
         case '0': 
-            SitemapHelper::push('當我和你再相遇', 'video/0');
+            SitemapHelper::push('當我和妳再相遇', 'video/0');
             break;
         case '1': 
             SitemapHelper::push('華美世界', 'video/1');
