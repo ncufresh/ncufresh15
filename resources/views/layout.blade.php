@@ -102,6 +102,7 @@
 				</ul>
 			</ul>
 			<ul class="side-nav" id="mobile-nav">
+				<li><a href="{{ url('/') }}">Home</a></li>
 				<li><a href="{{ url('campus') }}">校園導覽</a></li>
 				<li><a href="{{ url('document')}}">新生必讀</a></li>
 				<li><a href="{{ url('life') }}">中大生活</a></li>

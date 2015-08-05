@@ -59,8 +59,10 @@ Route::get('upload_img/{id}', 'FileController@show_img');
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('level/{creature}', 'CreatureController@level');
-    Route::get('grow/{creature}', 'CreatureController@grow');
+    Route::get('creature/level/{creature}', 'CreatureController@level');
+    Route::get('creature/grow/{creature}', 'CreatureController@grow');
+    Route::get('creature/info/{creature}', 'CreatureController@info');
+
 
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {

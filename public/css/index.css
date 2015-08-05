@@ -213,6 +213,10 @@
 	color: #bbdefb;
 }
 
+#post-container {
+    height: 100%;
+}
+
 .indicators {
 	top: 355px;
 	z-index: 2;
