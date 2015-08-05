@@ -19,6 +19,7 @@ Fish.prototype.setTimer = function(interval){
 		time : 5000,
 		autostart : true
 	});
+	console.log("set");
 };
 
 Fish.prototype.getDOM = function(){
