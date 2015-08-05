@@ -15,7 +15,7 @@
 		transition: all 0.5s;
 	}
 	#b{
-		background-image:url('/img/life/live/live_background.png');
+		background-image:url({{ asset('/img/life/live/live_background.png') }});
 		background-size: 59% auto;
 		background-repeat: no-repeat;
 		position: relative;
@@ -28,7 +28,7 @@
 		padding-top:120%;
 	}
 	#b1{
-		background-image:url('/img/life/live/G4.png');
+		background-image:url({{ asset('/img/life/live/G4.png') }});
 		top:-24%;
 		left:-12%;
 		width:30%;
@@ -44,7 +44,7 @@
 		top:-29%;
 	}
 	#b2{
-		background-image:url('/img/life/live/G1.png');
+		background-image:url({{ asset('/img/life/live/G1.png') }});
 		top:-21%;
 		right:29%;
 		width:30%;
@@ -60,7 +60,7 @@
 		top:-26%;
 	}
 	#b3{
-		background-image:url('/img/life/live/B9.png');
+		background-image:url({{ asset('/img/life/live/B9.png') }});
 		top:19%;
 		left:-21%;
 		width:21%; 
@@ -76,7 +76,7 @@
 		top:16%;
 	}
 	#b4{
-		background-image:url('/img/life/live/B7.png');
+		background-image:url({{ asset('/img/life/live/B7.png') }});
 		top:19%;
 		right:15%;
 		width:25%;
@@ -92,7 +92,7 @@
 		top:15%;
 	}
 	#b5{
-		background-image:url('/img/life/live/B11.png');
+		background-image:url({{ asset('/img/life/live/B11.png') }});
 		bottom:21%;
 		left:-9%;
 		width:35%;
@@ -108,7 +108,7 @@
 		bottom:16%;
 	}
 	#b6{
-		background-image:url('/img/life/live/B3.png');
+		background-image:url({{ asset('/img/life/live/B3.png') }});
 		bottom:21%;
 		right:28%;
 		width:30%;
@@ -164,7 +164,7 @@
 		<div class="col s12 m6 l6">
 			<img src="{{ url('/img/life/live/live_word.png') }}" id="word" >
 			<div id="video">
-				<iframe height="250" src="https://www.youtube.com/embed/bUk4wPqR1Og" frameborder="0" allowfullscreen></iframe>
+				<iframe height="250" src="https://www.youtube.com/embed/dy7a0HQdZv8" frameborder="0" allowfullscreen></iframe>
 			</div>	
 		</div>
 		<body>

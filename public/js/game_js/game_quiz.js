@@ -3,8 +3,33 @@ var select = 1; // four choices
 var questionON = 0;
 //-1:lock, 0:close, 1:in, 2:result 
 
-var threetimes = 1;
+var threetimes = 0;
 
+function init() {
+    $.ajax({
+        url: '/GameOver',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
+function setThreeTimes() {
+    $.ajax({
+        url: '/GemeOver',
+        type: 'GET',
+        success: function(data) {
+        	console.log(data);
+        }
+    });
+}
+function deleteAll() {
+    $.ajax({
+        url: '/GamaOver',
+        type: 'GET',
+        success: function(data) {
+        }
+    });
+}
 
 var qadata;
 function getquestion() {
@@ -20,15 +45,6 @@ function getquestion() {
         	else{
         		qadata = data;
         	}
-        }
-    });
-}
-function gettreasure() {
-    $.ajax({
-        url: '/GetTheSecretTreasure',
-        type: 'GET',
-        success: function(data) {
-        	
         }
     });
 }
@@ -129,7 +145,6 @@ var question = function () {
 	} else if (questionON==2) {
 
 		if (threetimes==3) {
-			gettreasure();
 
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 			ctx.fillRect(0, canvas.height/3, canvas.width, canvas.height / 3);
@@ -143,8 +158,8 @@ var question = function () {
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].open=true;
-				};
-			};
+				}
+			}
 		}
 		else{
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
@@ -166,7 +181,7 @@ var question = function () {
 				}
 				ctx.fillText(splitquestion[i],20+(i%20)*between , adjustY + padding*breakline);
 			}
-			switch (qadata.answer){
+			switch (parseInt(qadata.answer,10)){
 				case 1:
 					ctx.fillStyle = "rgb(255, 240, 0)";
 					ctx.font = '21px Arial';
@@ -196,17 +211,13 @@ var question = function () {
 					ctx.fillText(qadata.questions.option4, canvas.width / 2, canvas.height - 180+padding*3);
 					break;
 			}
-
 			for (var i = 0; i < boxs.length; i++) {
 				if (boxs[i].isme) {
 					boxs[i].lock=true;
-				};
-			};
-
-
+				}
+			}
 		}
 	}
-	
 	window.onkeydown = function(e) {
 		// enter
 		if(e.keyCode == 13 && canask && questionON==0 ){
@@ -214,6 +225,8 @@ var question = function () {
 				if (boxs[i].isme && boxs[i].lock==false && boxs[i].open==false) {
 					hero.canmove=false;
 					getquestion();
+					//deleteAll();
+					init();
 					questionON=1;
 					select=1;
 				} else if(boxs[i].isme && boxs[i].lock && boxs[i].open==false){
@@ -223,22 +236,29 @@ var question = function () {
 			}
 		}
 		else if(e.keyCode == 13 && questionON==1){
-			if (select!=qadata.answer || threetimes==3) {
+			if (select!=qadata.answer) {
 				questionON=2;
 			} else if(select==qadata.answer){
+				setThreeTimes();
 				threetimes+=1;
-				getquestion();
-			};
+				if (threetimes==3) {
+					questionON=2;
+				} else{
+					getquestion();
+				}
+			}
 		}
 		else if(e.keyCode == 13 && questionON==2){
 			hero.canmove=true;
 			questionON=0;
-			threetimes=1;
+			threetimes=0;
+			deleteAll();
 		}
 		else if(e.keyCode == 13 && questionON==-1){
 			hero.canmove=true;
 			questionON=0;
-			threetimes=1;
+			threetimes=0;
+			deleteAll();
 		}
 		//
 		if (e.keyCode == 38 && questionON==1) { // up choice

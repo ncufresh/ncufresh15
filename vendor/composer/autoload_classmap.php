@@ -22,6 +22,7 @@ return array(
     'CreateBottlesTable' => $baseDir . '/database/migrations/2015_07_24_071802_create_bottles_table.php',
     'CreateCalenderTable' => $baseDir . '/database/migrations/2015_07_21_034122_create_calender_table.php',
     'CreateCampusTable' => $baseDir . '/database/migrations/2015_07_13_122939_create_campus_table.php',
+    'CreateCreatureTable' => $baseDir . '/database/migrations/2015_08_04_052408_create_creature_table.php',
     'CreateDecorationTable' => $baseDir . '/database/migrations/2015_07_29_074325_create_decoration_table.php',
     'CreateDepartmentPicturesTable' => $baseDir . '/database/migrations/2015_07_16_120716_create_department_pictures_table.php',
     'CreateDepartmentsTable' => $baseDir . '/database/migrations/2015_07_14_142833_create_departments_table.php',

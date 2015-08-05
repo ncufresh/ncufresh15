@@ -4,35 +4,41 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href='{{ asset('css/coverflow.css') }}' />
+	<link rel="stylesheet" href="{{url('css/jquery.mCustomScrollbar.min.css')}}"/>
 	<style type="text/css">
 		#coverflow{
 			font-family:inital !importment;
 		}
 		#a{
-			background-image:url('/img/life/article.png');
+			background-image:url({{asset('/img/life/article.png')}});
 			background-size:100% auto;
 			background-repeat: no-repeat;
 			width:100%;
 			height:100%;
 		}
-		.article{
-			width:581px;
-			height:324px;
-			overflow:scroll;
-			margin:0% auto;
+		#article{
+			width:90%;
+			height:65%;
+			margin:3% auto;
 		}
-
+		strong{
+			font-weight:bold;
+		}
+		p{
+			font-size:120%;
+		}
 	</style>
 @stop
 
 @section('js')
-	<script src='{{ asset('js/life/coverflow.min.js') }}'></script>
+	<script src="{{ asset('js/life/coverflow.min.js') }}"></script>
 	<script>
 		$(function() {
 			// and kick off
 	        $('#coverflow').coverflow();
 	    });
 	</script>
+	<script src="{{url('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 @stop
 
 @section('content')
@@ -52,10 +58,8 @@
 <!--圖片-->
 
 <div id="a" style="margin-top:500px;padding-top:3%;">
-	<div class="center align">
-		<div class="article">
-			<p>{!! $show->content !!}</p>   <!--  -->
-		</div>
+	<div id="article" class="mCustomScrollbar tab-content" data-mcs-theme="dark-thick">
+		<p>{!! $show->content !!}</p>   <!--  -->
 	</div>		
 </div>
 @stop

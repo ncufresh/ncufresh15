@@ -40,23 +40,11 @@
 }
 
 .tabs>li:nth-child(odd)>a {
-    color: #fefefe;
+    color:#424242;
 }
-
-.tabs>li:nth-child(1):after {
-	background-color: #757575;
-	left: 31.5%;
-	content: "";
-	width: 4%;
-	height: 1.4em;
-	position: absolute;
-	top: 0.8em;
-	border-radius: 50%;
-}
-
 .tabs>li:nth-child(2):after {
 	background-color: #bdbdbd;
-	left: 65%;
+	left: 48%;
 	content: "";
 	width: 4%;
 	height: 1.4em;
@@ -70,7 +58,7 @@
 }
 
 .tabs>li:nth-child(even)>a {
-    color: #424242;
+    color: #fefefe;
 }
 
 .tabs>li:nth-child(even)>a:hover {
@@ -79,6 +67,21 @@
 
 .tabs .indicator {
     background-color: #fff;
+}
+
+.tag {
+	display: inline-block;
+	padding: 2px;
+	border-radius: 15%;
+	color: black;
+}
+
+.tag1{
+	background-color: #bbdefb;
+}
+
+.tag2{
+	background-color: #fce4ec;
 }
 
 .category {
@@ -106,16 +109,6 @@
 	margin-left: 0;
 	margin-bottom: 0;
 	position: relative;
-}
-
-.cat1 {
-	background-color: #bbdefb;
-	color: black;
-}
-
-.cat2 {
-	background-color: #ffcdd2;
-	color: black;
 }
 
 #event1 {
@@ -179,13 +172,23 @@
 }
 
 #event-container>.dick {
-	border-right: 2px solid grey;
 	padding-left: 2%;
 	padding-right: 2%;
 }
 
 #event-container .event-box {
 	text-shadow: 0px 0px 10px black;
+}
+
+.ass:before {
+	content: "";
+	width: 4%;
+	height: 2em;
+	position: absolute;
+	top: 0.7em;
+	border-radius: 50%;
+	left: -1.5%;
+	background-color: #2962ff;
 }
 
 .dick:after {
@@ -195,7 +198,6 @@
 	position: absolute;
 	top: 0.7em;
 	border-radius: 50%;
-	border-right: 2px solid grey;
 }
 
 #ann-tab .row , #qa-tab .row, #doc-tab .row{
@@ -217,14 +219,14 @@
 }
 
 #arrow-container1 {
-	background-color: #5f5f5f;
+	background-color: #9E9C9C;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
 	color: white;
 }
 #arrow-container2 {
-	background-color: #CCCCCC;
+	background-color: #9E9C9C;
 	width: 5%;
 	padding-right: 0;
 	padding-left: 0;
@@ -246,6 +248,7 @@
 
 #arrow2 {
 	padding-left: 5px;
+	color: white;
 }
 
 #puzzle-container {
@@ -290,12 +293,4 @@
 		margin-left: 0;
 		margin-right: 0;
 	}
-	/*
-	#puzzle-container {
-		width: 100%;
-	}
-	#arrow-container1, #arrow-container2 {
-		display: none;
-	}
-	*/
 }

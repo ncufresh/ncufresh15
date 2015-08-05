@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'VIDEO')
+@section('title', '影音專區')
 @section('css')
 <style type="text/css">
 .center{
