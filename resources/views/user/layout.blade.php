@@ -73,6 +73,8 @@
         </div>
 		<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/jquery.timer.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/fish.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/user.js') }}"></script>
 		@yield('js')
     </body>
