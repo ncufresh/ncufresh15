@@ -16,6 +16,14 @@
     position: fixed;
 }
 
+.creature {
+    transition: top 5s ease-in-out, left 5s ease-in-out, transform .2s;
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+    background-size: 100% 100%;
+}
+
 #sg1 {
     background-image: url('/img/home/sg1.png');
     left: 20%;
@@ -408,4 +416,8 @@ $(function() {
 		</div>
 	</div>
 </div>
+<div id="c0" class="creature"></div>
+<div id="c1" class="creature"></div>
+<div id="c2" class="creature"></div>
+<div id="c3" class="creature"></div>
 @stop
