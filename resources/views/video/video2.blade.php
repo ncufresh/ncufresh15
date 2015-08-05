@@ -323,7 +323,7 @@ $(document).ready(function(){
        <div class="WrapTop">
             <div class="WrapRight">
                 <div class="WrapLeft">
-                  <video id="my_video_1" src="" class="video-js vjs-default-skin videoSty" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+                  <video id="my_video_1" src="" class="video-js vjs-default-skin videoSty" poster="{{ asset('img/video/media/ClickMe.png') }}"
                    controls preload="none" data-setup='{ "techOrder": ["youtube"],
                     "src": "https://www.youtube.com/embed/{{$url}}" }'>   
                   </video>
@@ -336,6 +336,9 @@ $(document).ready(function(){
            <div id="IntroRight">
               <div id="IntroBottom"></div>
               <div id="TextBox" class="mCustomScrollbar">
+
+              {{$article}}
+
       古之學者必有師。師者，所以傳道、受業、解惑也。人非生而知之者，孰能無惑？惑而不從師，其為惑也，終不解矣。
 　　生乎吾前，其聞道也，固先乎吾，吾從而師之。生乎吾後，其聞道也，亦先乎吾，吾從而師之。吾師道也，夫庸知其年之先後生於吾乎？是故無貴，無賤，無長，無少，道之所存，師之所存也。
 

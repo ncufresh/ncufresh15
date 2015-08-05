@@ -18,7 +18,7 @@ e.g. <video class="video-js my-skin-name">
 The control icons are from a custom font. Each icon corresponds to a character
 (e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
 */
-
+/*
 @font-face {
   font-family: 'VideoJS';
   src: url('font/vjs.eot');
@@ -611,7 +611,7 @@ body.vjs-full-window {
 /* Poster Styles */
 .vjs-poster {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: left bottom;
   background-size: contain;
   cursor: pointer;
   height: 100%;

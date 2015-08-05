@@ -27,12 +27,29 @@ class GuestbookController extends Controller
         }
         $tryconnect = Guestbook::orderBy('id','desc')->paginate(7);
         $urls = [
-            "ANQBlZCff_c",
+            "TYpIHmARQVo",
             "FgxUUNe53V4",
             "ANQBlZCff_c"
         ];
+        $articles = [
+            "
+當我和妳再相遇
+
+鳳凰花開，鳳凰花落，在這個相逢與分離交錯的季節裡，校園依舊充斥著輕快的腳步與嘻笑的臉龐，只是多了幾分淡淡的惆悵。
+大學四年，有著人生太多太多的第一次，第一次離家、第一次交往、第一次喝醉、第一次夜遊、第一次打工、第一次翹課...
+如果人生可以重來，再經歷這一切，你會不會好好把握，不留下任何遺憾？
+凱傑是個快畢業的大四生，某天因為某種原因竟然重新成為大一新生，
+究竟事情的真相是怎麼一回事，
+到底是無稽之談？ 還是事出有因？
+到底是莊周夢蝶？ 還是天意作弄？
+到底是情愛的糾葛，還是命運的糾纏，讓我們看不清也望不穿。
+現在，就由你來親自為他按下「未來」吧！",
+            "1  blablabla",
+            "2  blablabla"
+        ];
+
         $url = $urls[$vid];
-        
+        $article = $articles[$vid];
 
         switch($vid) {
 
@@ -48,7 +65,7 @@ class GuestbookController extends Controller
         };
 
 
-        return view('video.video2',compact('tryconnect', 'url'));
+        return view('video.video2',compact('tryconnect', 'url' ,'article' ));
     }
 
     public function load()
