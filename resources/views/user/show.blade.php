@@ -43,9 +43,9 @@
 #sg2 {
     background-image: url('/img/home/sg2.png');
     right: 20px;
-    bottom: 100px;
+    bottom: 50px;
     width: 238px;
-    height: 234px;
+    height: 300px;
 }
 
 #shell {
