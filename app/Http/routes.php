@@ -66,14 +66,12 @@ Route::get ('qa/submitted' , function() {
 Route::get('file/{id}', 'FileController@show');
 Route::get('upload_img/{id}', 'FileController@show_img');
 
+Route::get('creature/level/{creature}/{id}', 'CreatureController@level');
+Route::get('creature/grow/{creature}/{id}', 'CreatureController@grow');
+Route::get('creature/info/{creature}/{id}', 'CreatureController@info');
+
 // Authenticated routes...
 Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('creature/level/{creature}', 'CreatureController@level');
-    Route::get('creature/grow/{creature}', 'CreatureController@grow');
-    Route::get('creature/info/{creature}', 'CreatureController@info');
-
-
     // Dashboard
     Route::group(['middleware' => 'permission:admin'], function() {
 		Route::get('user'     , 'UserController@index');
