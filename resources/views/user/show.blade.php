@@ -24,6 +24,14 @@
     background-size: 100% 100%;
 }
 
+#sand {
+    background: linear-gradient(#C9BC9C, #B28247);
+    left:0;
+    bottom: 20px;
+    width: 100%;
+    height: 90px;
+}
+
 #sg1 {
     background-image: url('/img/home/sg1.png');
     left: 20%;
@@ -37,7 +45,7 @@
     right: 20px;
     bottom: 100px;
     width: 238px;
-    height: 300px;
+    height: 234px;
 }
 
 #shell {
@@ -303,7 +311,9 @@ $(function() {
 @stop
 
 @section('content')
+<input type="hidden" value="{{$user->id}}" id="user_id"/>
 <!-- decorations -->
+<div id="sand" class="item"></div>
 @if ($decoration->sg1)
 <div id="sg1" class="item"></div>
 @endif
@@ -367,7 +377,9 @@ $(function() {
         <div id="detail">
             <h4>{{$user->name}}</h4>
             <p>&nbsp;{!!nl2br(e($user->quote))!!}</p>
+            @if ($isHome)
             <a class="btn waves-light waves-effect blue" href="{{url("user/edit")."/".$user->id}}">編輯個人資料</a>
+            @endif
         </div>
         <a href="#!" class="right modal-action modal-close waves-effect waves-light btn-flat red" style="color:#fff;">
             <i class="material-icons">settings_power</i>

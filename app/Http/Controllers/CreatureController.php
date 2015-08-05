@@ -12,8 +12,8 @@ use App\Http\Controllers\Controller;
 
 class CreatureController extends Controller
 {
-    public function info($creature) {
-        $user = Auth::user();
+    public function info($creature, $id) {
+        $user = User::findOrFail($id);
         $cre = Creature::where('user_id', $user->id)->first();
         $dec = Decoration::where('user_id', $user->id)->first();
 

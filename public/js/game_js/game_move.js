@@ -181,12 +181,6 @@ var update = function (modifier) {
 
 	}
 
-	// Are they touching?
-	if(isTouching(hero,monster)){
-		++monstersCaught;
-		reset();
-	}
-
 };
 
 // Handle touching
