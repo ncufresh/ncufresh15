@@ -7,7 +7,7 @@ $(document).ready(function(){
 			url: "/creature/info/"+ i,
 			type: "GET",
 			success: function(data){
-				console.log();
+				console.log(data);
 			}
 		});
 	}
