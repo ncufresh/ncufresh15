@@ -53,7 +53,7 @@
 
 #bottle {
     background-image: url('/img/home/bottle.png');
-    left: 20px;
+    left: 47%;
     bottom: 20px;
     width: 200px;
     height: 140px;
@@ -245,6 +245,7 @@ $(function() {
     @if ($isHome)
 	$('ul.tabs').tabs();
     $("#treasure").click(function(){
+        console.log(13);
         $("#chest-wrapper").show();
     });
     $("#treasure-trigger").click(function(){
@@ -403,10 +404,10 @@ $(function() {
             <div id="dec-tab" class="col s12">
                 <div class="row">
                     <div id="food1" class="col s4 offset-s1 dec-item">
-                        <h5 class="center-align">成長飼料*{{$decoration->growth_food}}</h5>
+                        <h5 class="center-align">成長飼料*<span id="growth_rem">{{$decoration->growth_food}}</span></h5>
                     </div>
                     <div id="food2" class="col s4 offset-s2 dec-item">
-                        <h5 class="center-align">進化飼料*{{$decoration->level_food}}</h5>
+                        <h5 class="center-align">進化飼料*<span id="level_rem">{{$decoration->level_food}}</span></h5>
                     </div>
                 </div>
             </div>

@@ -61,6 +61,9 @@
 				<li>
 					<a href="http://ncutv.ncu.edu.tw/" target="_blank"><img src="{{ asset('img/ncutv.jpg') }}"></a>
 				</li>
+				<li>
+					<a href="https://www.facebook.com/pages/IEEE-NCU-Student-Branch/1045673762117443" target="_blank"><img src="{{ asset('img/ieee.jpg') }}" ></a>
+				</li>
 			</ul>
 		</div>
 	</div>
