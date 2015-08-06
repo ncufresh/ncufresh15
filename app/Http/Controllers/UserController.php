@@ -210,4 +210,13 @@ class UserController extends Controller
         $user->save();
         return response()->json(['result' => true, 'msg' => 'changed', 'newbg' => $user->background]);
     }
+
+    public function openbag() {
+       if (Auth::check()) {
+            $user = Auth::user();
+            $user->new_mail = false;
+            $user->save();
+       }
+       return response()->json([]);
+    }
 }

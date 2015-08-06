@@ -37,9 +37,19 @@ class Kernel extends ConsoleKernel
                 if ($bottles_num > 1) {
                     $first_owner = $bottles[0]->owner;
                     for($i=0;$i<$bottles_num-1;$i++) {
+                        $theuser = User::find($bottles[$i]->owner);
+                        if ($theuser != null) {
+                            $theuser->newmail = true;
+                            $theuser->save();
+                        }
                         $bottles[$i]->owner = $bottles[$i+1]->owner;
                         $bottles[$i]->sent = 1;
                         $bottles[$i]->save();
+                    }
+                    $theuser = User::find($bottles[$bottles_num-1]->owner);
+                    if ($theuser != null) {
+                        $theuser->newmail = true;
+                        $theuser->save();
                     }
                     $bottles[$bottles_num-1]->owner = $first_owner;
                     $bottles[$bottles_num-1]->sent = 1;

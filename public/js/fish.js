@@ -61,7 +61,6 @@ Fish.prototype.move = function(){
 };
 
 Fish.prototype.pause = function(){
-	console.log(this.p);
 	var t = window.getComputedStyle(this.getDOM()).top;
 	var l = window.getComputedStyle(this.getDOM()).left;
 	(this.getDOM()).style.top = t;
@@ -70,7 +69,6 @@ Fish.prototype.pause = function(){
 };
 
 Fish.prototype.resume = function(){
-	console.log(this.p);
 	this.timer.play(false);
 	setTimeout(this.close, 5000);
 };

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddAuthorColQuestionTable' => $baseDir . '/database/migrations/2015_07_18_053252_add_author_col_question_table.php',
+    'AddBottleNotification' => $baseDir . '/database/migrations/2015_08_06_151205_add_bottle_notification.php',
     'AddColumnLifestable' => $baseDir . '/database/migrations/2015_07_18_113115_add_column_lifestable.php',
     'AddRegionColumnCampusTable' => $baseDir . '/database/migrations/2015_07_26_074421_add_region_column_campus_table.php',
     'AddRegionIdToCampusTable' => $baseDir . '/database/migrations/2015_07_22_143912_add_region_id_to_campus_table.php',

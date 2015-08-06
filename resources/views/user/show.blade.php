@@ -235,6 +235,11 @@
     url('/img/home/bg/sea_back.png')
     ;
 }
+#new-mail {
+    position: fixed;
+    top: 50px;
+    left: 90px;
+}
 </style>
 @stop
 
@@ -245,11 +250,10 @@ $(function() {
     @if ($isHome)
 	$('ul.tabs').tabs();
     $("#treasure").click(function(){
-        console.log(13);
-        $("#chest-wrapper").show();
+        openBag();
     });
     $("#treasure-trigger").click(function(){
-        $("#chest-wrapper").show();
+        openBag();
     });
     $("#chest-wrapper").click(function(e){
         e.stopImmediatePropagation();
@@ -288,7 +292,6 @@ $(function() {
         changeBackground(3);
     });
     function changeBackground(bg) {
-        console.log('change to ' + bg);
         $.ajax({
             url: '/user/chbg/' + bg,
             type: 'GET',
@@ -296,6 +299,16 @@ $(function() {
               if (data.result) {
                 $('#wrapper').css({'background-image': 'url(/img/banner/'+data.newbg+'.jpg)'});
               }
+            }
+        }); 
+    }
+    function openBag() {
+        $("#chest-wrapper").show();
+        $.ajax({
+            url: '/user/openbag/',
+            type: 'GET',
+            success: function(data) {
+                $('#new-mail').hide();
             }
         }); 
     }
@@ -307,6 +320,9 @@ $(function() {
 @stop
 
 @section('content')
+@if ($isHome && Auth::user()->new_mail)
+<div id="new-mail" class="toast">你有收到新的瓶中信，點擊小丑魚打開背包!</div>
+@endif
 <input type="hidden" value="{{$user->id}}" id="user_id"/>
 <!-- decorations -->
 @if ($decoration->sg1)

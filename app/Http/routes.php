@@ -42,6 +42,7 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // show user
+Route::get('user/openbag', 'UserController@openbag');
 Route::get('user/{id}', 'UserController@show');
 
 // bottle

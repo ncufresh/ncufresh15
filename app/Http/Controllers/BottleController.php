@@ -94,6 +94,8 @@ class BottleController extends Controller
 
     public function private_message(Request $request, $id) {
         $user = User::findOrFail($id);
+        $user->new_mail = true;
+        $user->save();
         if (!$request->has('content')) {
             return back(); 
         }

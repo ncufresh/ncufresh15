@@ -4,7 +4,7 @@
 	}
 }
 
-.collapsible-header {
+.menu .collapsible-header {
 	background: #2025aa; /* Old browsers */
 	background: -moz-linear-gradient(top, #2025aa 0%, #0141c1 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2025aa), color-stop(100%,#0141c1)); /* Chrome,Safari4+ */
