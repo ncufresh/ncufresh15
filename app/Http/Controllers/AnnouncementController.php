@@ -25,7 +25,7 @@ class AnnouncementController extends Controller{
     public function store(Request $request){
 		Announcement::create([
 			'title'=>$request->title,
-			'content'=>$request->content,
+			'content'=>$this->sanitize($request->content),
 			'show_at'=>$request->date,
 		]);
 		return redirect('admin/announcement');
@@ -34,7 +34,7 @@ class AnnouncementController extends Controller{
     public function update(Request $request, $id){
 		$ann = Announcement::find($id);
 		$ann->title = $request->title;
-		$ann->content = $request->content;
+		$ann->content = $this->sanitize($request->content);
 		$ann->show_at = $request->date;
 		$ann->save();
 		return redirect('admin/announcement');
@@ -45,4 +45,10 @@ class AnnouncementController extends Controller{
 		$ann->delete();
 		return redirect('admin/announcement');
     }
+
+	private function sanitize($dirty) {
+		return strip_tags($dirty,
+			'<img><table><thead><tbody><tr><td><th><h1><h2><h3><pre><ins><a><p><s><strong><em><span><ul><ol><li><blockquote>'
+		);
+	}
 }

@@ -30,10 +30,11 @@ $(document).ready(function(){
 		var ann_id = $(this).data("id");
 		var title = $("#ann-title-"+ann_id).text();
 		var date = $("#ann-showat-"+ann_id).text();
-		var content = $("#ann-content-"+ann_id).text();
+		var content = $("#ann-content-"+ann_id).html();
 		$("#ann-update-title").val(title);
 		$("#ann-update-date").val(date);
-		$("#ann-update-content").val(content);
+		//$("#ann-update-content").text(content);
+		CKEDITOR.instances.annUpdateContent.setData(content);
 		document.getElementById("ann-update-form").action = document.getElementById("ann-update-form").action + ann_id;
 	});
 	$(".update-qa-trigger").click(function(){

@@ -8,6 +8,13 @@
 
 @section('js')
 	<script src="{{ asset('js/admin.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+	<script>
+		$(function(){
+			CKEDITOR.replace('ann-content');
+			CKEDITOR.replace('annUpdateContent');
+		});
+	</script>
 @stop
 
 @section('content')
@@ -37,7 +44,6 @@
 								</div>
 								<div class="input-field col s12">
 									<textarea id="ann-content" class="materialize-textarea" name='content'></textarea>
-									<label for="ann-content">公告事項內容</label>
 								</div>
 								<div class="input-field col s12">
 									<input id='ann-date' name='date' type="date" class="datepicker validate" required>
@@ -61,7 +67,7 @@
 					@foreach ($data as $ann)
 					<div class='row'>
 						<div class='col s2 ann-title-col' id='ann-title-{{ $ann->id }}'>{{ $ann->title }}</div>
-						<div class='col s4 ann-content-col' id='ann-content-{{$ann->id}}'>&nbsp;{{$ann->content }}</div>
+						<div class='col s4 ann-content-col' id='ann-content-{{$ann->id}}'>&nbsp;{!!$ann->content !!}</div>
 						<div class='col s3 ann-showat-col' id='ann-showat-{{$ann->id}}'>{{$ann->show_at}}</div>
 						<div class='col s3'>
 							<a class='btn update-ann-trigger' data-id='{{ $ann->id }}' href='#ann-update-modal'>編輯</a>
@@ -82,12 +88,11 @@
 								<label for="ann-update-title">標題</label>
 							</div>
 							<div class="input-field col s12">
-								<textarea id="ann-update-content" class="materialize-textarea" name='content'></textarea>
-								<label for="ann-update-content">公告事項內容</label>
+								<textarea id="annUpdateContent" class="materialize-textarea" name='content'></textarea>
 							</div>
 							<div class="input-field col s12">
 								<input id='ann-update-date' name='date' type="date" class="datepicker validate" required>
-								<label for'ann-update-date'>New Show Date</label>
+								<label for'ann-update-date'>公告日期</label>
 							</div>
 						</div>
 					</div>
