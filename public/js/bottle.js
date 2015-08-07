@@ -31,7 +31,7 @@ $(function() {
                         loading_question = false;
                         $('#question-options').html('');
                         $('#question-head').html('恭喜');
-                        $('#question-body').html('你已經打開了瓶子!');
+                        $('#question-body').html('你已經打開了瓶子!關閉這個對話框再次點擊瓶中信就可以留言給別人囉!');
                         $('#bottle').css({'background-image': 'url(/img/home/bottle2.png)'});
                         if (modal_opened == false) {
                             $('#write-modal').openModal();

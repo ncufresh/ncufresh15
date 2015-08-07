@@ -40,7 +40,7 @@ class Kernel extends ConsoleKernel
                     for($i=0;$i<$bottles_num-1;$i++) {
                         $theuser = User::find($bottles[$i]->owner);
                         if ($theuser != null) {
-                            $theuser->newmail = true;
+                            $theuser->new_mail = true;
                             $theuser->save();
                         }
                         $bottles[$i]->owner = $bottles[$i+1]->owner;
@@ -49,7 +49,7 @@ class Kernel extends ConsoleKernel
                     }
                     $theuser = User::find($bottles[$bottles_num-1]->owner);
                     if ($theuser != null) {
-                        $theuser->newmail = true;
+                        $theuser->new_mail = true;
                         $theuser->save();
                     }
                     $bottles[$bottles_num-1]->owner = $first_owner;
@@ -68,6 +68,7 @@ class Kernel extends ConsoleKernel
                 $newBottle->token = bin2hex(openssl_random_pseudo_bytes(16));
                 $newBottle->save();
             }
-        })->daily();
+          })->daily();
+//        })->when(function() {return true;});
     }
 }
