@@ -29,6 +29,7 @@ class Kernel extends ConsoleKernel
         //$schedule->command('inspire')
         //         ->hourly();
         $schedule->call(function() {
+            touch('/tmp/bottle.send');
             Bottle::where('content', '')->delete();
             $bottles = Bottle::where('sent', 0)->orderBy('token', 'asc')->get();
 
@@ -67,6 +68,6 @@ class Kernel extends ConsoleKernel
                 $newBottle->token = bin2hex(openssl_random_pseudo_bytes(16));
                 $newBottle->save();
             }
-        })->when(function() {return true;});
+        })->daily();
     }
 }

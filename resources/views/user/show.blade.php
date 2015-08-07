@@ -432,6 +432,7 @@ $(function() {
 					@if ($bottles != null)
 						@foreach ($bottles as $bottle)
 						<li class="collection-item">
+                            <span>日期：{{ $bottle->updated_at }}</span><br/>
 							{!! nl2br(e($bottle->content)) !!}
 						</li>
 						@endforeach
@@ -444,7 +445,9 @@ $(function() {
 <a id="c0" class="creature dropdown-button btn-flat" href='#' data-activates='nenu'></a>
 <ul id='nenu' class='dropdown-content'>
 	@if(Auth::check())
-		<li><a id="treasure-trigger" href="#!">打開道具欄</a></li>
+        @if ($isHome)
+		    <li><a id="treasure-trigger" href="#!">打開道具欄</a></li>
+        @endif
 		<li><a href="{{ url('game')}}">小遊戲</a></li>
 		<li class="divider"></li>
 		<li><a href="{{ url('auth/logout')}}">登出</a></li>

@@ -268,7 +268,6 @@ z-index: 2;
 <script>
 
 $(document).ready(function(){
-/*有待開放，敬請期待
     $("#Door").mouseover(function(){
         $("#Door").attr("src","{{ asset('img/video/video1/DoorOpen.png') }}");
         $("#Light").attr("src","{{ asset('img/video/video1/LightOpen.png') }}");
@@ -277,7 +276,6 @@ $(document).ready(function(){
         $("#Door").attr("src","{{ asset('img/video/video1/DoorClose.png') }}");
         $("#Light").attr("src","{{ asset('img/video/video1/LightClose.png') }}");
     });
-*/
     $("#Left").mouseover(function(){
         $("#Left").attr("src","{{ asset('img/video/video1/LeftOpen.png') }}");
     });
@@ -310,7 +308,7 @@ $(document).ready(function(){
     <a>
       <img id="Light" src="{{ asset('img/video/video1/LightClose.png') }}">
     </a>
-    <a alt="還未開放，敬請期待">
+    <a href="/video/2">
       <img id="Door" src="{{ asset('img/video/video1/DoorClose.png') }}"></img>
     </a>
   </div>

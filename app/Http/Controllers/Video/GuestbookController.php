@@ -29,7 +29,7 @@ class GuestbookController extends Controller
         $urls = [
             "TYpIHmARQVo",
             "vnT7hAl1Gao",
-            "ANQBlZCff_c"
+            "cjlJfMxjKfY"
         ];
         $articles = [
 "鳳凰花開，鳳凰花落，在這個相逢與分離交錯的季節裡，
@@ -52,7 +52,18 @@ class GuestbookController extends Controller
 到最後功課一落千丈，愛情也變得不順遂，
 究竟他能不能奮發向上，重新找到屬於他的真愛嗎？
 讓我們繼續看下去.....。",
-"2  blablabla"
+"讀中央就是要被訪問啊 不然要幹嘛
+讀中央就是要訪問人啊 不然要幹嘛
+讀中央就是要加入小中大啊 不然要幹嘛
+
+小中大電視台目前分為三個部門：
+轉播工程部負責學校各項活動的轉播錄影，例如：新生營、舞蹈大賽、畢業典禮傳播創作部出產中大師生關注的新聞資訊，並且與學校合作短片拍攝，例如：2013畢業MV
+行銷企劃部為台內籌辦各項活動，提供中大師生有更多元的管道，接觸傳播媒體界的大人物，例如：邀請哈遠儀主播來演講、舉辦校園主播大賽等。
+
+小中大電視台歡迎你
+
+小中大電視台官網: <a href='http://ncutv.ncu.edu.tw/'>http://ncutv.ncu.edu.tw/</a>
+小中大電視台粉絲專業: <a href='https://www.facebook.com/NCUTVsince2010'>https://www.facebook.com/NCUTVsince2010</a>"
         ];
 
         $url = $urls[$vid];
@@ -67,7 +78,7 @@ class GuestbookController extends Controller
             SitemapHelper::push('華美世界', 'video/1');
             break;
         case '2': 
-            SitemapHelper::push('影片2', 'video/2');
+            SitemapHelper::push('讀中央就是要被訪問啊　不然要幹嘛', 'video/2');
             break;
         };
 
